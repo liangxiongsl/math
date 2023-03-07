@@ -1,0 +1,25 @@
+<!-- 语言 -->
+<!-- 语言的导入翻译和回退 -->
+{% import "partials/languages/de.html" as language %}
+{% import "partials/languages/en.html" as fallback %} 
+
+<!-- 定义自定义翻译 -->
+{% macro override(key) %}{{ {
+  "source.file.date.created": "Erstellt am", 
+  "source.file.date.updated": "Aktualisiert am"
+}[key] }}{% endmacro %}
+
+<!-- 再出口语言翻译 -->
+{% macro t(key) %}{{
+  override(key) or language.t(key) or fallback.t(key)
+}}{% endmacro %}
+
+
+<!-- 标头(标题栏) -->
+<!-- 公告栏 -->
+{% extends "base.html" %}
+
+{% block announce %}
+    <!-- Add announcement here, including arbitrary HTML -->
+    <p>公告内容....</p>
+{% endblock %}

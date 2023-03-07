@@ -1,0 +1,259 @@
+site_name: 数学
+nav: 
+    - 高等数学:
+        - 高等数学/index.md
+        - 高等数学/函数&极限.md
+        - 高等数学/导数&微分.md
+        - 高等数学/微分中值定理&导数应用.md
+        - 高等数学/不定积分.md
+        - 高等数学/定积分.md
+        - 高等数学/微分方程.md
+        - 高等数学/附录.md
+        - 高等数学/向量代数&空间解析几何.md
+        - 高等数学/多元函数微分法&&应用.md
+        - 高等数学/重积分.md
+        - 高等数学/曲线积分&曲面积分.md
+        - 高等数学/无穷级数.md
+    - 线性代数:
+        - 线性代数/index.md
+        - 线性代数/行列式.md
+        - 线性代数/矩阵&&运算.md
+        - 线性代数/矩阵的初等变换&线性方程组.md
+        - 线性代数/向量组的线性相关性.md
+        - 线性代数/相似矩阵&二次型.md
+        - 线性代数/线性空间&线性变换.md
+    - 概率论与数理统计:
+        - 概率论与数理统计/index.md
+        - 概率论与数理统计/概率论基本概念.md
+        - 概率论与数理统计/随机变量&&分布.md
+        - 概率论与数理统计/多维随机变量&&分布.md
+        - 概率论与数理统计/随机变量的数字特征.md
+        - 概率论与数理统计/大数定律&中心极限定理.md
+        - 概率论与数理统计/样本&抽样分布.md
+        - 概率论与数理统计/参数估计.md
+        - 概率论与数理统计/假设检验.md
+        - 概率论与数理统计/方差分析&回归分析.md
+        - 概率论与数理统计/bootstrap方法.md
+        - 概率论与数理统计/数理统计中应用Excel.md
+        - 概率论与数理统计/随机过程&&统计描述.md
+        - 概率论与数理统计/马尔科夫链.md
+        - 概率论与数理统计/平稳随机过程.md
+        
+extra_css:
+    - res/extra.css
+extra_javascript:
+    - res/extra.js
+
+    - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; 2022 - 2023 travis
+
+# repo_url: @
+# repo_name: @
+
+theme:
+    name: material
+    # custom_dir: overrides
+
+    palette:
+        - media: "(prefers-color-scheme)"
+          primary: red
+          accent: red
+          toggle:
+            icon: material/brightness-auto
+            name: 切换到暗模式
+        - media: "(prefers-color-scheme: light)"
+          primary: green
+          accent: green
+          scheme: default 
+          toggle:
+            icon: material/brightness-7
+            name: 切换到默认模式
+        - media: "(prefers-color-scheme: dark)"
+          primary: blue
+          accent: blue
+          scheme: slate
+          toggle:
+            icon: material/brightness-4
+            name: 切换到亮模式
+
+    font:
+        text: Roboto
+        code: Roboto Mono
+
+    language: zh
+    direction: ltr
+
+    logo: https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png
+    favicon: https://pic.peo.pw/a/2023/01/12/63bfb934b1b06.png
+    icon:
+        logo: octicons/heart-fill-24
+
+        repo: fontawesome/brands/github
+        edit: material/pencil
+        view: material/eye
+
+
+        admonition:
+            note: fontawesome/solid/note-sticky
+            abstract: fontawesome/solid/book
+            info: fontawesome/solid/circle-info
+            tip: fontawesome/solid/bullhorn
+            success: fontawesome/solid/check
+            question: fontawesome/solid/circle-question
+            warning: fontawesome/solid/triangle-exclamation
+            failure: fontawesome/solid/bomb
+            danger: fontawesome/solid/skull
+            bug: fontawesome/solid/robot
+            example: fontawesome/solid/flask
+            quote: fontawesome/solid/quote-left
+
+
+
+
+    features:
+        - navigation.instant
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.sections
+        # - navigation.expand
+        - navigation.prune
+        - navigation.indexes
+        - toc.follow
+        # - toc.integrate
+        - navigation.top
+
+        - search.suggest
+        - search.highlight
+        - search.share
+
+        - header.autohide
+
+        - navigation.footer
+
+        - content.action.edit
+        - content.action.view
+
+        - content.code.copy
+        - content.code.annotate
+
+        - content.tooltips
+
+
+extra:
+    alternate:
+        - name: English
+          link: /en/ 
+          lang: en
+        - name: 中文
+          link: /zh/
+          lang: zh
+
+    homepage: /
+
+    #consent:
+    #    title: cookie
+    #    description:    >-
+    #        sdd
+    #    cookies:
+    #        analytics:
+    #            github
+
+
+    social:
+        - icon: fontawesome/brands/github
+          link: 链接url地址
+          name: 标识名
+        - icon: fontawesome/brands/docker
+          link: 链接url地址
+          name: 标识名
+    generator: false
+
+
+plugins:
+    - search:
+        lang:
+            - en
+            - ja
+        # '[\s\-,:!=\[\]]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+        separator: '[\s\-\.]+'
+        jieba_dict: res/dict.txt
+        jieba_dict_user: res/user_dict.txt
+    - search:
+        lang:
+            - en
+        jieba_dict: dict/dict.txt
+        separator: '[\s\-\.]+'
+    # - typeset
+
+    - glightbox
+
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+
+    - attr_list
+    - md_in_html
+    - pymdownx.superfences
+
+    - attr_list
+
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true
+    #- pymdownx.tabbed:
+    #    slugify: !!python/object/apply:pymdownx.slugs.slugify
+    #        kwds:
+    #            case: lower
+
+    # - content.tabs.link
+
+
+    - tables
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+    - footnotes
+
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+    - attr_list
+    - md_in_html
+
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
+
+    - pymdownx.arithmatex:
+        generic: true
+
+    - abbr
+    - attr_list
+    - pymdownx.snippets
+    - pymdownx.snippets:
+        auto_append:
+            - includes/abbr.md
+
