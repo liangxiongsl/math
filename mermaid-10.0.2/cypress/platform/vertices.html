@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Mermaid Quick Test Page</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=" />
+    <style>
+      body {
+        font-family: 'trebuchet ms', verdana, arial;
+      }
+    </style>
+  </head>
+  <body>
+    <pre class="mermaid">
+    info
+    </pre>
+    <pre class="mermaid">
+    graph TD
+      subgraph one
+        1
+      end
+    </pre>
+    <pre class="mermaid">
+    graph TD
+      A --> B --> C
+    </pre>
+
+    <script type="module">
+      import mermaid from './mermaid.esm.mjs';
+      function showFullFirstSquad(elemName) {
+        console.log('show ' + elemName);
+      }
+      mermaid.initialize({ startOnLoad: true, securityLevel: 'loose', logLevel: 1 });
+    </script>
+  </body>
+</html>
