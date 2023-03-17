@@ -89,3 +89,12 @@
     }
 }
 
+body{
+	background-image: ("/img/72277559_p0_master1200.jpg");
+	background-image: ("https://raw.githubusercontent.com/liangxiongsl/nlch/main/PicGo/36604959_3.jpg");
+	background-image: linear-gradient(rgba(255, 255, 255,0.9), rgba(255, 255, 255, 0.9)), url("http://localhost:8080/img/xiyin.jpg");
+	background-image: linear-gradient(rgba(255, 255, 255,0.9), rgba(255, 255, 255, 0.9)), url("http://localhost:8080/img");
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
