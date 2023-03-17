@@ -32,3 +32,12 @@ window.MathJax = {
 document$.subscribe(() => { 
   MathJax.typesetPromise()
 })
+
+
+// 引用块
+function init(){
+	var queto = document.getElementsByTagName("blockquote")
+	for(var i=0; i<queto.length; ++i) queto[i].style.color="red"
+}
+document.getElementsByTagName("body")[0].addEventListener("click", init)
+//init()

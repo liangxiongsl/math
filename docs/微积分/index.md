@@ -1,3 +1,8 @@
+!!! 数学工具
+	- 函数 - [反函数](https://www.numberempire.com/inversefunctioncalculator.php)，[泰勒展开](https://www.numberempire.com/taylorseriesexpansion.php)
+	- 代数 - [表达式求值](https://www.numberempire.com/expressioncalculator.php)，[方程求解](https://www.numberempire.com/equationsolver.php)，[因式分解](https://www.numberempire.com/factoringcalculator.php)，[表达式简化](https://www.numberempire.com/simplifyexpression.php)
+	- 微积分 - [极限](https://www.numberempire.com/limitcalculator.php)，[微分](https://www.numberempire.com/derivativecalculator.php)，[不定积分](https://www.numberempire.com/integralcalculator.php)，[定积分](https://www.numberempire.com/definiteintegralcalculator.php)，[级数](https://www.numberempire.com/seriescalculator.php)
+
 
 
 ### 解题原则 ###
@@ -40,14 +45,20 @@
 !!! question
 	- 如何计算多项式的因子？
 	- 有用的代数方法有哪些？
-	- 函数在a处 没有定义，导数不存在，间断，可微 的联系？
+	- 函数在a处 有定义，极限存在，间断，连续，导数不存在(可导)，可微 的联系？
 	- 平滑？不可微？
+
+```mermaid
+graph LR
+有定义 --> 连续
+```
 
 !!! idea
 	- 低次多项式 除 高次多项式 会得到 两个低次多项式 + 一个常数  =>  这个方法可以用来凑因子 简化微积分！！！
 		- 如果这个常数为零，意味着这个低次多项式整除这个高次多项式
 		- 多项式除法的思想可以借鉴10进制数的除法，x就能代表 多少进制
 	- 做证明时，注意从证明的假设条件或已知条件出发，并且注意等价化简要证明的数学模型
+	- 灵活运用微积分定理的组合！！
 
 !!! warning
 	- 区间的定义：如$[a, b) \iff \{x | a \le x \lt b \}$
@@ -59,3 +70,12 @@
 	- $x^{2/3} + y^{2/3} = 4$ - 星形线
 
 [英语词汇](https://zhuanlan.zhihu.com/p/134603058)
+
+
+!!! note
+	- 两个重要人物：Leibniz（莱布尼茨），Newton（牛顿）
+	- 事实上，2500年前， Eudoxus（欧多克斯） 和 Archimedes（阿基米德）已经研究和揭示了积分的基本思想
+	- Pierre Fermat（费马）和Issac Barrow则率先提出了求切线的方法
+
+
+

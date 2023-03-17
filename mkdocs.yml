@@ -90,7 +90,29 @@ nav:
         - 微积分/15.多重积分.md
         - 微积分/16.向量积分.md
         - 微积分/17.二阶微分方程.md
-        
+        - 微积分/附录.md
+    - img:
+        - img/1.md
+        - img/2.md
+        - img/3.md
+        - img/4.md
+        - img/5.md
+        - img/6.md
+        - img/7.md
+        - img/8.md
+        - img/9.md
+        - img/10.md
+        - img/11.md
+        - img/12.md
+        - img/13.md
+        - img/14.md
+        - img/15.md
+        - img/16.md
+        - img/17.md
+        - img/18.md
+        - img/19.md
+        - img/20.md
+        - img/21.md
 extra_css:
     - res/extra.css
 extra_javascript:
@@ -198,12 +220,25 @@ theme:
 
 extra:
     alternate:
-        - name: English
-          link: /en/ 
-          lang: en
-        - name: 中文
-          link: /zh/
+        - name: number empire
+          link: https://www.numberempire.com/
           lang: zh
+        - name: wolframalpha
+          link: https://www.wolframalpha.com/
+          lang: zh
+        - name: copychar
+          link: https://copychar.cc/math/
+          lang: zh
+        - name: mathnotepad
+          link: https://mathnotepad.com/
+          lang: zh
+        - name: 电子书
+          link: https://freecomputerbooks.com/mathCategory.html
+          lang: zh
+        - name: latex识别
+          link: https://zhuanlan.zhihu.com/p/527170537
+          lang: zh
+
 
     homepage: /
 
