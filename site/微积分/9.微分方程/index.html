@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -102,6 +105,11 @@
 <li class="md-select__item">
 <a class="md-select__link" href="https://mathnotepad.com/" hreflang="zh">
                     mathnotepad
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.desmos.com/" hreflang="zh">
+                    desmos
                   </a>
 </li>
 <li class="md-select__item">
@@ -682,9 +690,56 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          9.微分方程
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         9.微分方程
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.利用微分方程建立模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.方向场 &amp; 欧拉方法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.分离变量法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.指数增长和衰变
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.逻辑斯蒂方程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.线性微分方程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-">
+    7.捕食者-被捕食者问题
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../10.%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%26%E6%9E%81%E5%9D%90%E6%A0%87/">
@@ -863,12 +918,193 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.利用微分方程建立模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.方向场 &amp; 欧拉方法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.分离变量法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.指数增长和衰变
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.逻辑斯蒂方程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.线性微分方程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-">
+    7.捕食者-被捕食者问题
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<h1>9.微分方程</h1>
+<p>微积分学最主要的应用可能就是 微分方程 了，如物理学家或社会学家往往利用微分方程对他们所研究的问题进行建模</p>
+<p>尽管有些微分方程很难找到准确解，但是使用图形或数值近似的方法能对求解问题有所帮助</p>
+<h3 id="1">1.利用微分方程建立模型</h3>
+<p>根据 1.2 节数学建模的介绍：可以通过 对现象进行直接推理为真实世界建模，也可以 通过实验应用物理法则建模</p>
+<p>数学模型通常是 微分方程，即<mark class="critic">包含 未知函数 及其导数 的方程</mark></p>
+<div class="admonition 种群增长模型">
+<p class="admonition-title">种群增长模型</p>
+</div>
+<blockquote>
+<p>假设1：理想状态下，种群增长量 和 种群数量 成正比</p>
+<p>定义变量：<span class="arithmatex">\(t = 时间\)</span> (自变量)，<span class="arithmatex">\(P = 种群中的个体数量\)</span> (因变量)</p>
+<p>模型：<span class="arithmatex">\(\frac {d_P}{d_x} = kP\)</span>，P(t) &gt; 0</p>
+<p>可以得到它的一个解： <span class="arithmatex">\(P(y) = Ce^{kt}\)</span>，C &gt; 0</p>
+<p>假设2： <span class="arithmatex">\(\frac {d_P}{d_t} \approx kP\)</span>，当 P 很小时；<span class="arithmatex">\(\frac {d_P}{d_t} &lt; 0\)</span>，当 P &gt; K 时</p>
+<p>模型（Logistic 逻辑斯蒂方程）：<span class="arithmatex">\(\frac {d_P}{d_t} = kP(1 - \frac PK)\)</span></p>
+</blockquote>
+<div class="admonition 弹簧震动模型">
+<p class="admonition-title">弹簧震动模型</p>
+</div>
+<blockquote>
+<p>弹簧承受的力与x成正比（x为弹簧 伸长 或 缩短 的长度，k为弹性系数 (k&gt;0) ），即 回复力 = -kx</p>
+<p>弹簧垂直悬挂重物的模型：<span class="arithmatex">\(m\frac {d^2_x}{d_{t^2}} = -kx \implies \frac {d^2_x}{d_{t^2}} = -\frac {kx}m\)</span>，此模型为 二阶微分方程</p>
+<p>该模型表示 x 的二阶导数 与 x 成正比，比例系数为负，两种函数满足此性质：正弦 和 余弦函数</p>
+<p>实际上该模型可以用 正弦 和 余弦函数 的组合来表示（弹簧在平衡位置振荡）</p>
+</blockquote>
+<div class="admonition 一般微分方程">
+<p class="admonition-title">一般微分方程</p>
+</div>
+<blockquote>
+<p>通常，微分方程是包含一个 未知函数 及其 多个导数 的等式，等式中导数的最高阶称为 微分方程的阶</p>
+<p>微分方程通常有一族解</p>
+</blockquote>
+<h3 id="2">2.方向场 &amp; 欧拉方法</h3>
+<p>通常没有明确的公式可以解微分方程，但还是可以利用图像 （方向场） 和 数值方式（欧拉方法）求解微分方程</p>
+<div class="admonition 方向场">
+<p class="admonition-title">方向场</p>
+</div>
+<blockquote>
+<p>一般说来，形如 <span class="arithmatex">\(y' = F(x, y)\)</span> 的一阶微分方程，表明曲线在 (x, y) 点处的斜率为 <span class="arithmatex">\(F(x, y)\)</span></p>
+<p>在多个点处画出斜率为 F(x, y) 的线段就得到了 方向场 （或 斜率场），借助这些线段知识了曲线在这些点处的延伸方向，因此可以近似地画出曲线的大致方向，通常可以借助计算机完成这个过程</p>
+</blockquote>
+<div class="admonition 欧拉方法">
+<p class="admonition-title">欧拉方法</p>
+</div>
+<blockquote>
+<p>欧拉方法求近似解时，从已知的初始点开始，计算斜率并沿着斜率方向延伸一小段 h，然后停下并重新计算新的斜率，如此反复便可求得近似解</p>
+<p>数学描述如下： 假设步长为 h，初始点为 <span class="arithmatex">\((x_0, y_0)\)</span>，那么递推式为 <span class="arithmatex">\(y_{i+1} = y_{i} + h \cdot F(x_{i}, y_{i})\)</span>  &amp;  <span class="arithmatex">\(i\ge 0\)</span></p>
+</blockquote>
+<h3 id="3">3.分离变量法</h3>
+<p>上两节从 几何（方向场） 和 数值（欧拉方法） 角度 分析了一阶微分方程，以下介绍一种能精确求解微分方程的模式的方法</p>
+<div class="admonition 分离变量法">
+<p class="admonition-title">分离变量法</p>
+</div>
+<blockquote>
+<p>然后微分方程符合如下模式： <span class="arithmatex">\(\frac {d_y}{d_x} = g(x)f(y)\)</span></p>
+<ol>
+<li>当 <span class="arithmatex">\(f(y) \ne 0\)</span>， <span class="arithmatex">\(\frac {d_y}{d_x} = g(x)f(y) \implies \frac 1{f(y)}d_y = g(x)d_x\)</span>，两边积分得到： <span class="arithmatex">\(\int \frac 1{f(y)}d_y = \int g(x)d_x\)</span>，此时得到关于 y 的隐函数形式</li>
+<li>当 <span class="arithmatex">\(f(y) = 0\)</span> ，该方程本身就是关于 y 的隐函数，而且 <span class="arithmatex">\(\frac {d_y}{d_x}=0\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition 正交轨线">
+<p class="admonition-title">正交轨线</p>
+</div>
+<blockquote>
+<p>定义：曲线族的 正交轨线 是指和曲线族中的每条曲线都正交（夹角为直角）的曲线</p>
+<p>如：坐标为零点的圆 与 经过原点的直线 互为正交轨线；再如：某些限制下，椭圆 与 双曲线 正交</p>
+<p>一个正交轨线的获取方法：
+      1.  给定 原函数<span class="arithmatex">\(y_1\)</span>的隐函数，对两边求导，
+      2.  若匹配 分离变量法 的模式，则令正交轨线 <span class="arithmatex">\(\frac {d_{y_2}}{d_x} = -\frac 1{\frac {d_{y_1}}{d_x}}\)</span>
+      3.  将两边求积分得到关于 <span class="arithmatex">\(y_2\)</span> 的隐函数 （如果在此之前将 原函数曲线族依赖的常数 k 代换进 "2" 中，将得到不依赖于原函数曲线族的正交轨线）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>对于任意曲线族，正交轨线可能不唯一，如 <span class="arithmatex">\(x=kx^2\)</span> 的正交轨线 可以是 <span class="arithmatex">\(e^{-2kx+C} = Ae^{-2kx}\)</span> 或 <span class="arithmatex">\(x^2 + \frac {y^2}{2} = C\)</span></li>
+</ul>
+</div>
+<div class="admonition 混合问题">
+<p class="admonition-title">混合问题</p>
+</div>
+<h3 id="4">4.指数增长和衰变</h3>
+<div class="admonition note">
+<p class="admonition-title">初值问题?</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\frac {d_y}{d_x} = ky\)</span>，<span class="arithmatex">\(y(0) = y_0\)</span> 的解为 <span class="arithmatex">\(y(t) = y_0 e^{kt&gt; }\)</span></p>
+</blockquote>
+<div class="admonition 应用">
+<p class="admonition-title">应用</p>
+<ul>
+<li>（生物）种群增长模型，（物理）放射性物质的质量衰变比例和质量成正比，（化学）单分子一阶反应速度和物质浓度成正比，（金融学）复利存款账户的金额增长率和金额成正比</li>
+</ul>
+</div>
+<h3 id="5">5.逻辑斯蒂方程</h3>
+<div class="admonition 逻辑斯蒂模型">
+<p class="admonition-title">逻辑斯蒂模型</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\displaystyle \frac {d_P}{d_t} = kP(1-\frac PK)\)</span> （k 为种群增长率，K 为种群承载能力，P为种群数量）</p>
+<p>根据分离变量得到解析解为： <span class="arithmatex">\(\displaystyle P = \frac {K}{1+Ae^{-kt}}\)</span> （<span class="arithmatex">\(A = ±e^C = \frac {K-P_0}{P_0}\)</span>，<span class="arithmatex">\(C = C_2-C_1\)</span>）</p>
+</blockquote>
+<h3 id="6">6.线性微分方程</h3>
+<p><span class="arithmatex">\(\frac {d_y}{d_x} + P(x)y = Q(x)\)</span>，P 和 Q 为给定区间上的连续函数</p>
+<p>令 <span class="arithmatex">\([R(x)]'=R(x)P(x)\)</span>，并将两边同时乘以R(x)得到： <span class="arithmatex">\(R(x)\frac {d_y}{d_x}+R(x)P(x)y=R(x)Q(x)\)</span></p>
+<p><span class="arithmatex">\(\frac {d_R}{d_x} = RP  \implies \frac {1}{R}d_R=Pd_x  \implies \int \frac {1}{R}d_R = \int Pd_x \implies \ln {|R|} = \int Pd_x + C_1 \implies R=±e^{\int Pd_x + C_1}\)</span></p>
+<p>得到 <span class="arithmatex">\(R=Ae^{\int Pd_x}\)</span> （<span class="arithmatex">\(A = ±e^{C_1}\)</span>）</p>
+<p>此时可以将微分方程 <span class="arithmatex">\(R(x)\frac {d_y}{d_x}+R(x)P(x)y=R(x)Q(x)\)</span> 等价为 <span class="arithmatex">\([R(x)y]'=R(x)Q(x)\)</span></p>
+<p>将两边求积分得到： <span class="arithmatex">\(R(x)y = \int R(x)Q(x) d_x + C\)</span>，</p>
+<p>最后得到： <span class="arithmatex">\(y = \frac {\int R(x)Q(x) d_x + C}{R(x)}\)</span> ，其中 <span class="arithmatex">\(R(x) = Ae^{\int P(x)d_x}\)</span></p>
+<div class="admonition 线性微分方程">
+<p class="admonition-title">线性微分方程</p>
+</div>
+<blockquote>
+<p>若出现微分方程模式： <span class="arithmatex">\(\frac {d_y}{d_x} + P(x)y = Q(x)\)</span></p>
+<p>那么通解为： <span class="arithmatex">\(y = \frac {\int R(x)Q(x) d_x + C_0}{R(x)}\)</span> ，其中 <span class="arithmatex">\(R(x) = Ae^{\int P(x)d_x}\)</span></p>
+<p>若给定函数中的一个键值对，就能确定该特定的函数的参数 C (分子中的积分求解后得到的常数)</p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>切勿遗失积分后的常数 （如 C）</li>
+<li>而且该作法至少涉及 三个 C ！！！但最后一个 C 最重要</li>
+<li>若分子中的积分不能用初等函数表示（如 <span class="arithmatex">\(\int e^{x^2}~d_x\)</span> ），分子中的 <span class="arithmatex">\(C_0\)</span> 就显得尤为重要</li>
+</ul>
+</div>
+<h3 id="7-">7.捕食者-被捕食者问题</h3>
+<p>以下讨论两个种群 捕食者-被捕食者 之间种群数量的变化关系</p>
+<p>用 R(t) 表示兔子 (被捕食者)，W(t) 表示狼 (捕食者)</p>
+<ol>
+<li>被捕食者 没有天敌，食物充足时，满足： <span class="arithmatex">\(\frac {d_R}{d_t} = kR\)</span> (k 为正常数)</li>
+<li>捕食者 没有猎物时，种群数量减少速度与种群数量成正比： <span class="arithmatex">\(\frac {d_W}{d_t} = -rW\)</span> (r 为正常数)</li>
+<li>被捕食者 和 捕食者共存时，有<ul>
+<li><span class="arithmatex">\(\frac {d_R}{d_t} = kR - aRW\)</span></li>
+<li><span class="arithmatex">\(\frac {d_W}{d_t} = -rW + bRW\)</span></li>
+<li>其中 k, w, a, b 均为正数常数，该方程被称为 Lotka-Volterra方程 （捕猎-食饵 方程）</li>
+<li>将 Lotka-Volterra 方程用 方向场 画出，可以观察到一族 闭环的曲线，沿着曲线移动将看到 R 和 W 的变化（即被捕食者 和 捕食者种群数量 关于时间的变化关系，尽管只有 R 和 W 轴）</li>
+</ul>
+</li>
+</ol>
 </article>
 </div>
 </div>

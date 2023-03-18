@@ -108,6 +108,11 @@
                   </a>
 </li>
 <li class="md-select__item">
+<a class="md-select__link" href="https://www.desmos.com/" hreflang="zh">
+                    desmos
+                  </a>
+</li>
+<li class="md-select__item">
 <a class="md-select__link" href="https://freecomputerbooks.com/mathCategory.html" hreflang="zh">
                     电子书
                   </a>
@@ -970,6 +975,21 @@
 <p><span class="arithmatex">\(\iff\)</span></p>
 <h3 id="2">2.  数学模型：基本函数导引</h3>
 <p>数学模型是<mark class="critic">对现实问题某种现象的数学描述</mark>（通常表达为函数或者方程），比如人口的数量、产品的需求量、落体的速度、化学反应中物质的浓度、初生儿生命的预期以及降低辐射的费用等问题。建模的目的是理解这些现象，如果可能的话对系统未来的行为作一些预测</p>
+<ol>
+<li>对于一个实际问题，首要任务是分析和确定 自变量 和 因变量 并位置命名，作一些假设使所研究的详细简化为数学上可以处理的程度，从而建立数学模型；我们通常利用自己的 物理 / 数学 技巧老得到联系这些变量的放，若没有规律可用的情况下，我们需要采集数据（图书馆 / 物理 / 自身经验）并用表格来研究数据，以看清楚其分布；从函数的数值表达出发，通过数据描点，可用得到函数的图像。有时这种图像甚至能其实一个合适的代数表达</li>
+<li>将数学知识和工具要用到数学模型，设法给出数学问题的解答</li>
+<li>利用数学上的结论解释为原始实际问题的信息，依次说明现象或预测未来</li>
+<li>通过新的数据测试我们的预想结果；若预测与实现吻合度不好，我们有必要修正偶像或建立新模型，并重新开始循环</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>数学模型永远不是自然界真实问题的精确表现————他只是理想化的东西</p>
+</div>
+<pre class="mermaid"><code>graph LR
+a(实际问题) --&gt;|建模| b(数学模型)
+b --&gt;|求解| c(数学结论)
+c --&gt;|解释| d(对实际问题的预测)
+d --&gt;|验证| a</code></pre>
 <div class="highlight"><span class="filename">数学模型</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>线性模型 - 函数图像为一条直线
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>多项式 - p(x) = \sum_{i=0}^n a_i * x^i (a_n != 0)
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>    - 当 n=2 时，称为二次函数（二次多项式）
