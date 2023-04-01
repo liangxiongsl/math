@@ -363,37 +363,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#6">
-    6.绝对收敛 &amp; 比值 &amp; 根值判别法
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7">
-    7.判别级数收敛的策略
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#8">
-    8.
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#9">
-    9.函数的幂级数展开
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#10">
-    10.泰勒级数 &amp; 麦克劳林技术
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#11">
-    11.二项级数
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#12">
-    12.泰勒多项式的应用
+    6.绝对收敛 &amp; 比值 / 根值 判别法
   </a>
 </li>
 </ul>
@@ -981,37 +951,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#6">
-    6.绝对收敛 &amp; 比值 &amp; 根值判别法
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7">
-    7.判别级数收敛的策略
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#8">
-    8.
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#9">
-    9.函数的幂级数展开
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#10">
-    10.泰勒级数 &amp; 麦克劳林技术
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#11">
-    11.二项级数
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#12">
-    12.泰勒多项式的应用
+    6.绝对收敛 &amp; 比值 / 根值 判别法
   </a>
 </li>
 </ul>
@@ -1023,17 +963,416 @@
 <article class="md-content__inner md-typeset">
 <h1>11.无穷序列&amp;级数</h1>
 <h3 id="1">1.序列</h3>
+<div class="admonition 序列">
+<p class="admonition-title">序列</p>
+<ul>
+<li>序列是有一定顺序的一列数，并且是定义在 正整数集 上的函数，写作 <span class="arithmatex">\(a_n\)</span></li>
+<li>序列 <span class="arithmatex">\(\{ a_1, a_2, a_3, ... \}\)</span> 也记作 <span class="arithmatex">\(\{ a_n \}\)</span> 或 <span class="arithmatex">\(\{ a_n \}_{n=1}^∞\)</span></li>
+<li>如： <span class="arithmatex">\(a_n \iff \{ a_n = \frac {n}{n+1} \} \iff \{ \frac 12, \frac 23, \cdots, \frac n{n+1}, \cdots \}\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">“隐式序列”</p>
+<ul>
+<li>这些序列往往不能以简单的等式定义</li>
+<li>如：Fibonacci序列 (<span class="arithmatex">\(f_1 = f_2 = 1, f_n = f_{n-1} + f_{n-2}, n\ge 3\)</span>)</li>
+<li>又如：<span class="arithmatex">\(\{ a_n \}\)</span> 为常数 e 在第 n 位小数上的数字，即 <span class="arithmatex">\(\{ 7, 1, 8, 2, 8, \cdots \}\)</span></li>
+<li>再如：<span class="arithmatex">\(\{ P_n \}\)</span> 表示年份 n 的一月世界人口数</li>
+</ul>
+</div>
+<div class="admonition 几何表示">
+<p class="admonition-title">几何表示</p>
+<ul>
+<li>一维数轴上的离散的点：<span class="arithmatex">\((1, a_1), (2, a_2), (3, a_3), \cdots\)</span></li>
+<li>二维笛卡尔坐标系中的离散点</li>
+</ul>
+</div>
+<div class="admonition 序列极限">
+<p class="admonition-title">序列极限</p>
+</div>
+<blockquote>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 具有极限 L 且记作 <span class="arithmatex">\(\lim\limits_{n\to \infty} = L\)</span></p>
+<p>或 <span class="arithmatex">\(a_n \to L\)</span> 当 <span class="arithmatex">\(n\to \infty\)</span></p>
+<p>若通过取充分大的 n 我们可以使项 <span class="arithmatex">\(a_n\)</span> 任意接近 L，</p>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 存在，我们称此序列 收敛 (或 是收敛的)，否则称此发散 (或 是发散的)</p>
+</blockquote>
+<div class="admonition 序列极限的精确描述">
+<p class="admonition-title">序列极限的精确描述</p>
+</div>
+<blockquote>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 具有极限 L 且记作 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = L\)</span> 或 <span class="arithmatex">\(a_n \to L\)</span> 当 <span class="arithmatex">\(n\to \infty\)</span></p>
+<p>若对任意小的 <span class="arithmatex">\(\epsilon &gt; 0\)</span> 存在相应的整数 N，只要 <span class="arithmatex">\(n &gt; N\)</span>，就有 <span class="arithmatex">\(|a_n - L| &lt; \epsilon\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">如何理解？</p>
+<ol>
+<li><span class="arithmatex">\(\{ a_n \}\)</span> 在一维数轴上，无论区间 <span class="arithmatex">\((L -\epsilon, L + \epsilon)\)</span> 取得多小，都存在一个 N，使得序列中 <span class="arithmatex">\(a_{N+1}\)</span> 往后的所有项都落在这个区间里
+    <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/03/23/641c532ddee29.png"><img alt="" src="https://pic.peo.pw/a/2023/03/23/641c532ddee29.png"/></a></li>
+<li><span class="arithmatex">\(\{ a_n \}\)</span> 在二维笛卡尔坐标系上，当 n &gt; N 时 <span class="arithmatex">\(\{ a_n \}\)</span> 的图像必然位于水平线 <span class="arithmatex">\(y = L + \epsilon\)</span> 和 <span class="arithmatex">\(y = L - \epsilon\)</span> 之间，无论对多小的 <span class="arithmatex">\(\epsilon\)</span>，这个图像都是对的，但越小的 <span class="arithmatex">\(\epsilon\)</span> 就对应越大的 N
+    <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/03/23/641c5368d147f.png"><img alt="" src="https://pic.peo.pw/a/2023/03/23/641c5368d147f.png"/></a></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理(连续函数极限 <span class="arithmatex">\(\to\)</span> 序列极限)</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\lim\limits_{x\to ∞}f(x) = L\)</span> 且 当 n 为整数时有 <span class="arithmatex">\(f(n) = a_n\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞}a_n = L\)</span></p>
+</blockquote>
+<div class="admonition 无穷大极限">
+<p class="admonition-title">无穷大极限</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = ∞\)</span> 意味着对任意正数 M，存在整数 N，对任意的 n &gt; N 使得 <span class="arithmatex">\(a_n &gt; M\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">序列的极限定律</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\{ a_n \}\)</span> 和 <span class="arithmatex">\(\{ b_n \}\)</span> 为收敛序列，c 为常数，则：</p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞}(a_n + b_n) = \lim\limits_{n\to ∞}a_n + \lim\limits_{n\to ∞}b_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}(a_n - b_n) = \lim\limits_{n\to ∞}a_n - \lim\limits_{n\to ∞}b_n\)</span></p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞}c\cdot a_n = c\cdot \lim\limits_{n\to ∞} a_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}c = c\)</span></p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞}a_n\cdot b_n = \lim\limits_{n\to ∞} a_n \cdot \lim\limits_{n\to ∞} b_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}\frac {a_n}{b_n} = \frac {\lim\limits_{n\to ∞} a_n}{\lim\limits_{n\to ∞} b_n}\)</span>  &amp;  <span class="arithmatex">\(\lim\limits_{n\to ∞} b_n\ne 0\)</span></p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n^p = (\lim\limits_{n\to ∞} a_n)^p\)</span>  &amp; <span class="arithmatex">\(p &gt; 0, a_n &gt; 0\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">夹逼定理</p>
+</div>
+<blockquote>
+<p>若对 <span class="arithmatex">\(n\ge n_0\)</span> 有 <span class="arithmatex">\(a_n\le b_n \le c_n\)</span> 且 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = \lim\limits_{n\to ∞} c_n = L\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} b_n = L\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">\lim\limits_{n\to ∞} \frac {n!}{n^n}</p>
+<ul>
+<li>n! 在非整数域上没有定义，所以不能用 洛必达法则 或 泰勒展开</li>
+<li>可以考虑 夹逼定理</li>
+</ul>
+</div>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} |a_n| = 0\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span></p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>周期函数 或 周期序列 在无穷远处都是 振荡的？（发散）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(\{ r^n \}\)</span> 的敛散性</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} r^n = \begin{cases} 0 &amp; |r|&lt;1 \\ 1 &amp; r=1 \\ ∞ &amp; |r|&gt;1 \\ -1\to 1振荡 &amp; r=-1 \end{cases}\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">单调性</p>
+</div>
+<blockquote>
+<p>若对所有 <span class="arithmatex">\(n\ge 1\)</span> 都有 <span class="arithmatex">\(a_n &lt; a_{n+1}\)</span>，则 <span class="arithmatex">\(\{ a_n \}\)</span> 称为递增的</p>
+<p>若对所有 <span class="arithmatex">\(n\ge 1\)</span> 都有 <span class="arithmatex">\(a_n &gt; a_{n+1}\)</span>，则 <span class="arithmatex">\(\{ a_n \}\)</span> 称为递减的</p>
+<p>递增 或 递减 都被称为单调</p>
+<p>tip：还可以利用连续函数的导函数判断 序列单调性</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">有界性</p>
+</div>
+<blockquote>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 有上界，若存在数 M 使得 <span class="arithmatex">\(a_n \le M\)</span> 对所有 <span class="arithmatex">\(n\ge 1\)</span></p>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 有下界，若存在数 m 使得 <span class="arithmatex">\(a_n \ge m\)</span> 对所有 <span class="arithmatex">\(n\ge 1\)</span></p>
+<p>若它既有 上界 又有 下界，则 <span class="arithmatex">\(\{ a_n \}\)</span> 是有界序列</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">单调序列定理(证明：p15)</p>
+</div>
+<blockquote>
+<p>任何 <mark class="critic">有界</mark>，<mark class="critic">单调</mark> 的序列都是收敛的（递增，有上界 或 递减，有下界）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>此定理基于 完备性定理：若 S 为非空实数集并由上界 M（对所有 x 属于 S 有 <span class="arithmatex">\(x\le M\)</span>），则 S 有一个最小上界 b</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>研究递归序列时经常用到数学归纳法，如证明 单调性 或 有界性</li>
+<li>在数学归纳之前往往要打表找规律</li>
+<li>证明序列 单调 并 有界 后，此时就能通过方程 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_{n+1} = f(L), \lim\limits_{n\to ∞} a_n = L\)</span> 求解极限了</li>
+</ul>
+</div>
 <h3 id="2">2.级数</h3>
+<div class="admonition 无穷级数">
+<p class="admonition-title">无穷级数</p>
+<ul>
+<li>我们尝试将无穷序列 <span class="arithmatex">\(\{ a_n \}_{n=1}^∞\)</span> 的各项加起来，得到 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 或 <span class="arithmatex">\(\sum a_n\)</span></li>
+</ul>
+</div>
+<div class="admonition 无穷级数">
+<p class="admonition-title">无穷级数</p>
+</div>
+<blockquote>
+<p>已知级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞\)</span>，令 <span class="arithmatex">\(s_n\)</span> 为其第 n 个部分和(前缀和)： <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n a_i\)</span></p>
+<p>若序列 <span class="arithmatex">\(\{ s_n \}\)</span> 收敛且 <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n = s\)</span> 作为实数存在，则级数 <span class="arithmatex">\(\sum a_n\)</span> 称为收敛的，</p>
+<p>且我们即 <span class="arithmatex">\(a_1 + a_2 + \cdots + a_n + \cdots = s\)</span> 或 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n = s\)</span>数 s 称为级数的和；否则，级数被称为发散的</p>
+<p>注意： <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n a_i\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>无穷级数 类似于 函数在无穷处的反常积分，如 <span class="arithmatex">\(\int_a^∞ f(x)~d_x = \lim\limits_{t\to ∞}\int_a^t f(x)~d_x\)</span></li>
+<li>为了求无穷级数，我们先从 1..n 求和，再令 <span class="arithmatex">\(n\to ∞\)</span>；为了求反常积分，我们先从 a 积到 t，然后令 <span class="arithmatex">\(t\to ∞\)</span></li>
+<li>无穷级数的三种表示：<span class="arithmatex">\(\lim\limits_{n\to ∞} \sum\limits_{i=1}^n a_i\)</span>，<span class="arithmatex">\(\sum\limits_{i=1}^∞ a_i\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞} s_n\)</span></li>
+</ul>
+</div>
+<div class="admonition 几何级数">
+<p class="admonition-title">几何级数</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://pic.peo.pw/a/2023/03/24/641d2989cc150.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/03/24/641d2989cc150.png"/></a></p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ a\cdot r^{n-1}, a\ne 0\)</span></li>
+<li>若 r=1，则 <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n a = n\cdot a \to ±∞\)</span>，因为 <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n\)</span> 不存在，这种情况下几何级数发散</li>
+<li>若 <span class="arithmatex">\(r\ne 1\)</span>，由 <span class="arithmatex">\(s_n = \sum\limits_{i=0}^{n-1}a\cdot r^i\)</span>，<span class="arithmatex">\(r\cdot s_n = \sum\limits_{i=1}^{n}a\cdot r^i\)</span>，可得 <span class="arithmatex">\(s_n = a\cdot \frac {1-r^n}{1-r}\)</span><ul>
+<li>若 <span class="arithmatex">\(|r| &lt; 1\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to∞} s_n = \lim\limits_{n\to ∞} s_n = a\cdot \frac {1-r^n}{1-r} = \frac {a}{1-r}\)</span>，此时几何级数收敛 且和为 <span class="arithmatex">\(\frac a{1-r}\)</span></li>
+<li>若 <span class="arithmatex">\(r \le -1\)</span> 或 <span class="arithmatex">\(r &gt; 1\)</span>，此时几何级数发散</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition 几何级数">
+<p class="admonition-title">几何级数</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\sum\limits_{n=1}^∞ a r^{n-1}\)</span> 是收敛的，若 |r| &lt; 1，它的和为 <span class="arithmatex">\(\sum\limits_{n=1}^∞ ar^{n-1} = \frac a{1-r}, |r| &lt; 1\)</span></p>
+<p>若 <span class="arithmatex">\(|r| \ge 1\)</span>，几何级数发散</p>
+<p>即： <span class="arithmatex">\(\sum\limits_{n=1}^∞ a r^{n-1} = \begin{cases} \frac {a}{1-r} &amp; |r|&lt;1 \\ ∞ &amp; r=1 或 |r|&gt;1 \\ -a \to 0 振荡 &amp; r=-1 \end{cases}\)</span></p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 发散 <span class="arithmatex">\(\to\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} \sum\limits_{i=1}^n a_i\)</span> 发散？</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ 2^{2i}3^{1-n}\)</span>，<span class="arithmatex">\(2.3\overline{17}=2.3171717\cdots\)</span> 均可转化为几何级数</li>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ (f_{i+1} - f_{i})\)</span> 收敛，仅当 <span class="arithmatex">\(\lim\limits_{n\to ∞}f_{n+1}-f_1\)</span> 存在</li>
+</ul>
+</div>
+<div class="admonition 调和级数">
+<p class="admonition-title">调和级数</p>
+<ul>
+<li>证明调和级数 <span class="arithmatex">\(\sum\limits_{i=1}^∞ \frac 1i\)</span> 发散：</li>
+<li>令 <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n \frac 1i\)</span>，有 <span class="arithmatex">\(s_{2^n} = \sum\limits_{i=1}^{2^n} \frac 1i\)</span></li>
+<li>其中 <span class="arithmatex">\(\displaystyle s_{\displaystyle 2^n} = \sum\limits_{i=1}^{2^n} \frac 1i = 1 + \sum\limits_{i=1}^n \sum\limits_{j=2^{i-1}+1}^{2^i} \frac 1j \ge 1 + \sum\limits_{i=1}^n(2^i-(2^{i-1}+1)-1) \frac {1}{2^i} = 1  + \sum\limits_{i=1}^n\frac {2^{i-1}}{2^i} = 1 + \frac n2\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} 1+\frac n2\)</span> 发散 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} s_{\displaystyle 2^n}\)</span> 发散 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n\)</span> 发散</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理(收敛推论)</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span></p>
+<p>逆命题不成立</p>
+</blockquote>
+<div class="admonition 发散的判别法">
+<p class="admonition-title">发散的判别法</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 不存在 或 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n \ne 0\)</span>，则级数 <span class="arithmatex">\(\lim\limits_{n\to ∞} \sum\limits_{i=1}^n a_i\)</span> 发散</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 不存在 或 不为0 <span class="arithmatex">\(\implies\)</span> 级数发散</li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span>，级数可能 发散 或 收敛</li>
+</ul>
+</div>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 为收敛级数，则级数 <span class="arithmatex">\(\sum c\cdot a_n\)</span> (c 为常数)，<span class="arithmatex">\(\sum (a_n + b_n)\)</span>，<span class="arithmatex">\(\sum (a_n - b_n)\)</span> 也收敛，且</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ c\cdot a_n = c\sum\limits_{n=1}^∞ a_n\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ (a_n + b_n) = \sum\limits_{n=1}^∞ a_n + \sum\limits_{n=1}^∞ b_n\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ (a_n - b_n) = \sum\limits_{n=1}^∞ a_n - \sum\limits_{n=1}^∞ b_n\)</span></li>
+</ul>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>级数的有限项不影响它的 收敛性 或 发散性：假设 <span class="arithmatex">\(\sum\limits_{n=N+1}^∞ a_n\)</span> 是收敛的 (<span class="arithmatex">\(N \ge 0\)</span>)，那么 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 也是收敛的</li>
+</ul>
+</div>
 <h3 id="3">3.和式的积分判别法 &amp; 估计</h3>
+<p>接下来介绍的判别法使得我们 <mark class="critic">不用求出级数具体的和</mark> 就能确定其是否收敛</p>
+<div class="admonition note">
+<p class="admonition-title">idea</p>
+<ul>
+<li>设 <span class="arithmatex">\(a_i\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 的生成数列，并且 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\([0, ∞)\)</span> 上的 <mark class="critic">连续递减的正值函数</mark></li>
+<li>那么 <span class="arithmatex">\(\int_{i}^{i+1} f(x)~d_x \le a_i \le \int_{i-1}^{i} f(x)~d_x\)</span></li>
+<li>同样的有： <span class="arithmatex">\(\sum\limits_{i=n}^∞\int_{i}^{i+1} f(x)~d_x \le \sum\limits_{i=n}^∞a_i \le \sum\limits_{i=n}^∞\int_{i-1}^{i} f(x)~d_x \iff \int_{n}^∞ f(x)~d_x \le \sum\limits_{i=n}^∞a_i \le \int_{n-1}^{∞} f(x)~d_x\)</span></li>
+<li>注意：上式中 n 应该取适当的值，以使不等式左右两边的积分都是有限值（否则意义不大，如： <span class="arithmatex">\(\int_0^∞ f_x d_x\)</span> 和 <span class="arithmatex">\(\int_1^∞ f_x d_x\)</span> 后者是有限值并且极限为 1）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{n^2} \approx \frac {\pi^2}{6}\)</span> （由 Euler 证明）</li>
+<li>上述证明相当困难，但是可以用积分证明 <span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{n^2} &lt; 2\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{\sqrt n}\)</span> 的敛散性也用类似的方法证明</li>
+</ul>
+</div>
+<div class="admonition 积分判别法">
+<p class="admonition-title">积分判别法</p>
+</div>
+<blockquote>
+<p>设 f 为 [0, +∞) 上的<mark class="critic">连续</mark>、取<mark class="critic">正值</mark>的<mark class="critic">(基本)递减</mark>函数</p>
+<p>令 <span class="arithmatex">\(a_n = f(n)\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛 <span class="arithmatex">\(\iff\)</span> 反常积分 <span class="arithmatex">\(\int_1^∞ f(x)~d_x\)</span> 收敛</p>
+<p>换句话说：</p>
+<ul>
+<li><span class="arithmatex">\(\int_1^∞ f(x)~d_x\)</span> 收敛，则 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛</li>
+<li><span class="arithmatex">\(\int_1^∞ f(x)~d_x\)</span> 发散，则 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 发散</li>
+</ul>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>基本递减：指的是 x &gt; N 时 f 递减</li>
+<li>积分判别法 <mark class="critic">未必要在1处开始积分</mark></li>
+<li>更通用的说法：<ul>
+<li><span class="arithmatex">\(\int_{h-1}^∞ f(x)~d_x\)</span> 收敛，则 <span class="arithmatex">\(\sum\limits_{n=h}^∞ a_n\)</span> 收敛</li>
+<li><span class="arithmatex">\(\int_h^∞ f(x)~d_x\)</span> 发散，则 <span class="arithmatex">\(\sum\limits_{n=h}^∞ a_n\)</span> 发散</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><mark class="critic">p级数</mark></p>
+<ul>
+<li><span class="arithmatex">\(\displaystyle \lim\limits_{n\to∞} \frac 1{n^p} = \begin{cases} +∞ &amp; p &lt; 0 \\ 1 &amp; p = 0 \\ 0 &amp; p&gt;0 \end{cases}\)</span></li>
+<li>但是 <span class="arithmatex">\(\displaystyle \sum\limits_{i=1}^∞ \frac 1{n^p} = \begin{cases} 收敛 &amp; p &gt; 1 \\ 发散 &amp; p \le 1 ​\end{cases}\)</span></li>
+</ul>
+</div>
+<div class="admonition 估计级数的和">
+<p class="admonition-title">估计级数的和</p>
+</div>
+<div class="admonition 积分判别法的余项估计">
+<p class="admonition-title">积分判别法的余项估计</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(f(k) = a_k\)</span>，其中 f 是在 <span class="arithmatex">\(x\ge n\)</span> 上连续，取正值的递减函数，<span class="arithmatex">\(\sum a_n\)</span> 收敛</p>
+<p>若 <span class="arithmatex">\(R_n = s - s_n = \sum\limits_{i=n+1}^{∞} a_i\)</span>，则 <span class="arithmatex">\(\int_{n+1}^{+∞}~d_x \le R_n \le \int_{n}^{+∞} f(x)~d_x\)</span></p>
+<p>因而：<span class="arithmatex">\(s_n + \int_{n+1}^{+∞}~d_x \le s_n + R_n = s \le s_n + \int_{n}^{+∞} f(x)~d_x\)</span></p>
+</blockquote>
+<div class="admonition 积分判别法的证明">
+<p class="admonition-title">积分判别法的证明</p>
+</div>
 <h3 id="4">4.比较判别法</h3>
+<p>将所给的级数 与 一个已知收敛或发散的计数进行比较</p>
+<div class="admonition 比较判别法">
+<p class="admonition-title">比较判别法</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\sum a_n\)</span>，<span class="arithmatex">\(\sum l_n\)</span>，<span class="arithmatex">\(\sum r_n\)</span> 是各项都为正的级数</p>
+<ol>
+<li>若 <span class="arithmatex">\(\sum r_n\)</span> 收敛且对所有的 n 都有 <span class="arithmatex">\(a_n \le r_n\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 也收敛</li>
+<li>若 <span class="arithmatex">\(\sum l_n\)</span> 发散且对所有的 n 都有 <span class="arithmatex">\(a_n \ge l_n\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 也发散</li>
+</ol>
+<p>证明详见 p38</p>
+<p>细节：仅需 <span class="arithmatex">\(n\ge \lceil N\rceil\)</span> 也能使结论成立（级数的收敛性不受有限项的影响）</p>
+</blockquote>
+<div class="admonition 例子">
+<p class="admonition-title">例子</p>
+<ul>
+<li>有理函数</li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac {\ln x}{x}\)</span></li>
+</ul>
+</div>
+<div class="admonition 极限的比较判别法">
+<p class="admonition-title">极限的比较判别法</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 是各项都为正的计数，</p>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}\frac {a_n}{b_n} = c\)</span> （c为有限数，且 <span class="arithmatex">\(c &gt; 0\)</span>），则两边都 收敛 或 发散</p>
+</blockquote>
+<div class="admonition 估计和">
+<p class="admonition-title">估计和</p>
+</div>
+<blockquote>
+<p>若对于所有的 n，<span class="arithmatex">\(a_n \le b_n\)</span>，我们有 <span class="arithmatex">\(R_n \le T_n\)</span></p>
+</blockquote>
 <h3 id="5">5.交错级数</h3>
-<h3 id="6">6.绝对收敛 &amp; 比值 &amp; 根值判别法</h3>
-<h3 id="7">7.判别级数收敛的策略</h3>
-<h3 id="8">8.</h3>
-<h3 id="9">9.函数的幂级数展开</h3>
-<h3 id="10">10.泰勒级数 &amp; 麦克劳林技术</h3>
-<h3 id="11">11.二项级数</h3>
-<h3 id="12">12.泰勒多项式的应用</h3>
+<p>目前位置我们讨论的级数都是为正数的，接下来介绍重要的技术：交错级数</p>
+<div class="admonition 交错级数收敛性的判别">
+<p class="admonition-title">交错级数收敛性的判别</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\sum\limits_{i=1}^∞ (-1)^{n-1}a_i\)</span> (<span class="arithmatex">\(a_i &gt; 0\)</span>)</p>
+<p>满足：</p>
+<ol>
+<li>对所有 n，<span class="arithmatex">\(a_{i} \ge a_{i+1}\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}a_n = 0\)</span></li>
+</ol>
+<p>则，此级数收敛</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">估计和(交错级数估计定理)</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(s = \sum (-1)^{n-1}b_n\)</span> 为交错级数，满足：</p>
+<ol>
+<li><span class="arithmatex">\(b_n\ge b_{n+1} \ge 0\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}b_n = 0\)</span></li>
+</ol>
+<p>则 <span class="arithmatex">\(|R_n| = |s - s_n| = \le b_{n+1}\)</span> （即 s 在 <span class="arithmatex">\(s_n\)</span> 两侧“波动”，误差为 <span class="arithmatex">\(b_{n+1}\)</span>）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>任何收敛级数的 部分和<span class="arithmatex">\(s_n\)</span> 都可以用作 总和<span class="arithmatex">\(s\)</span> 的一个近似，但如果不能估计其精确值就没有多少意义了</li>
+<li>当问及 “精确到 m 位小数” 时，选取合适的 n，使得 <span class="arithmatex">\([(s_n + b_{n+1}) \cdot 10^m] = [(s_n - b_{n+1}) \cdot 10^m]\)</span></li>
+</ul>
+</div>
+<h3 id="6">6.绝对收敛 &amp; 比值 / 根值 判别法</h3>
+<div class="admonition 绝对收敛">
+<p class="admonition-title">绝对收敛</p>
+</div>
+<blockquote>
+<p>级数 <span class="arithmatex">\(\sum a_n\)</span> 称为绝对收敛的，若其绝对值级数 <span class="arithmatex">\(\sum |a_n|\)</span> 收敛</p>
+</blockquote>
+<div class="admonition 条件收敛">
+<p class="admonition-title">条件收敛</p>
+</div>
+<blockquote>
+<p>级数 <span class="arithmatex">\(\sum a_n\)</span> 称为条件收敛的，若它收敛但非绝对收敛的</p>
+</blockquote>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若级数 <span class="arithmatex">\(\sum a_n\)</span> 是绝对收敛的，则它一定是收敛的</p>
+</blockquote>
+<pre class="mermaid"><code>graph
+收敛 --&gt; 绝对收敛</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{i=1}^∞ \frac {\cos i}{i^2}\)</span> 不能直接用 比较判别法，因为不能保证对于所有 n 有 <span class="arithmatex">\(\cos i \ge 0\)</span>，应当间接地取绝对值证明其收敛性，再推出原级数收敛</li>
+</ul>
+</div>
+<div class="admonition 比值判别法">
+<p class="admonition-title">比值判别法</p>
+</div>
+<blockquote>
+<ol>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = L &lt; 1\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 绝对收敛（从而收敛）</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = L &gt; 1\)</span> 或 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = +∞\)</span> ，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 发散</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = 1\)</span>，比值判别法无法确定收敛性（即得不到有关 <span class="arithmatex">\(\sum a_n\)</span> 的收敛性 或 发散性的结论）</li>
+</ol>
+<p>相关证明：p48</p>
+</blockquote>
+<p>!!! </p>
 </article>
 </div>
 </div>

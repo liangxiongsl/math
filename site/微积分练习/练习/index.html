@@ -902,20 +902,62 @@
 <li>函数族图像 (练习 29, 30)   (tip： 注意一个函数如何表现时该函数有 x轴 或 y轴 的变换，注意 变换 和 复合 容易混淆)</li>
 </ul>
 </li>
-<li>解题原则 (p91)</li>
+<li>解题原则 (p91)<ul>
+<li></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>极限 &amp; 导数<ul>
 <li>复习题 (p190 - p723)<ul>
-<li>极限不存在的情形 (2)</li>
-<li>枚举 &amp; 阐述 极限定理 (3)</li>
+<li><mark class="critic">极限不存在</mark>的情形 (2)
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>趋于无穷大 或 振荡
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>递归定义：左右极限不存在 或 左右极限存在但不相等(如：|x|在 0 处的变化率)
+</code></pre></div></li>
+<li>枚举 &amp; 阐述 极限定理 (3)<ul>
+<li>假设 f 和 g 都存在：和/差/乘/商/常数乘积 法则</li>
+<li>幂函数法则 (<span class="arithmatex">\(a=\frac 1n\)</span> 或 <span class="arithmatex">\(a = n\)</span>，<span class="arithmatex">\(n\in N^+\)</span>)，有理函数直接替换性质 (前提：x 处有定义)</li>
+<li>不等式法则，夹逼原理</li>
+<li>复合函数极限定理 (f 在 g(x) 上连续)</li>
+</ul>
+</li>
 <li>垂直 / 水平渐近线 (5/6)</li>
+<li><mark class="critic">连续</mark> (7)<ul>
+<li>左右极限存在且相等，并且等于函数值</li>
+</ul>
+</li>
 <li>中值定理 (8)</li>
-<li>连续 (7)</li>
-<li>可微，可微 &amp; 连续 (13)</li>
+<li>可微，可微 &amp; 连续 (13)<ul>
+<li>连续 但 不可微 的点：尖点（如：|x| 在 0 处）</li>
+</ul>
+</li>
 <li>不可微的情形 (14)</li>
 <li>判断 (判断题 1~18，尤其是 15, 16)</li>
 <li>极限存在性 / 水平渐近线 / 垂直渐近线 / 不连续 (练习 1)</li>
+<li>求极限 (练习 3-22)<ul>
+<li><span class="arithmatex">\(\lim\limits_{x\to 0} \frac {1-\sqrt{1-x^2}}{x}\)</span> 试试Taylor会怎么样</li>
+<li><span class="arithmatex">\(\lim\limits_{x\to 9} \frac {\sqrt r}{(r-9)^4}\)</span> 能否用洛必达</li>
+<li><span class="arithmatex">\(\lim\limits_{x\to +∞} \frac {\sqrt {x^2-9}}{2x-6}\)</span> 用什么方法最合适</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(\frac {(\cos x)^2}{x^2}, \sqrt {x^2+x+1} - \sqrt {x^2-x}\)</span> 的渐近线 (注意 <span class="arithmatex">\(|x| = \sqrt {x^2}\)</span>)</li>
+<li>极限的严格证明 (练习 27-30)</li>
+<li>证明连续 (练习 33-34)</li>
+<li>证明有根 (练习 35-36)</li>
+<li>切线 (练习 37)</li>
+<li>根据函数图像画出导函数图像 (练习 44-46)</li>
+<li>导数定义求f'... (练习 47-48)</li>
+<li>不可微点的判断 (练习 49)
+    <div class="highlight"><span class="filename">满足以下条件之一即为不可微点</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>1.  不连续：$f_x \to ±∞$ (垂直渐近线) 或 f 左右极限不等(跳跃间断) 或 f 振荡
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>2.  竖直切线：$f'(x) \to ±∞$
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>3.  拐角处(尖角)：f' 左右极限不等
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>4.  f' 振荡
+</code></pre></div></li>
+<li>函数 图像 或 图表 估计导函数值 (练习 50-51)</li>
+<li>夹逼 (练习 53)</li>
+</ul>
+</li>
+<li>附加题 (p194)<ul>
 <li></li>
 </ul>
 </li>
@@ -943,6 +985,17 @@
 <li>夹逼</li>
 </ul>
 </li>
+<li><span class="arithmatex">\(\frac00\)</span> 不定型意味着可以尝试消去公分母</li>
+<li>代换<ul>
+<li>正向代换：<span class="arithmatex">\(t = f(x)\)</span></li>
+<li>逆代换(逆换元)：<span class="arithmatex">\(x = f(t)\)</span>，最常用的是 用于积分的三角代换</li>
+<li>隐式代换：<span class="arithmatex">\(F(x, t) = 0\)</span><ul>
+<li>“万能代换”：令 <span class="arithmatex">\(t = \tan {\frac x2}\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\displaystyle \sin x = \frac {2t}{1+t^2}, \cos x = \frac {1-t^2}{1+t^2}\)</span></li>
+<li>如果函数出现变量序列 <span class="arithmatex">\(\displaystyle A = \{ x^{\displaystyle \frac 1{n_i}} \}\)</span>，可以令 <span class="arithmatex">\(\displaystyle t = x^{\displaystyle \frac 1{gcd(n_i)}}\)</span>  (<span class="arithmatex">\(n_i\in N^+\)</span>)，有 <span class="arithmatex">\(x^{\displaystyle \frac 1{n_i}} = t^{\displaystyle \frac {gcd(n_i)}{n_i}}\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <pre class="mermaid"><code>graph
@@ -958,7 +1011,16 @@ end
 cc --&gt; b</code></pre>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>Taylor 应该展开多少项？</p>
+<ul>
+<li>Taylor 应该展开多少项？</li>
+</ul>
+</div>
+<div class="admonition 杂项">
+<p class="admonition-title">杂项</p>
+<ul>
+<li><span class="arithmatex">\(\lfloor -x\rfloor = -\lceil x\rceil\)</span></li>
+<li><span class="arithmatex">\(|x| = \sqrt {x^2}\)</span></li>
+</ul>
 </div>
 </article>
 </div>
