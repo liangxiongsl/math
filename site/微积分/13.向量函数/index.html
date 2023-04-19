@@ -8,11 +8,11 @@
 <link href="../12.%E5%90%91%E9%87%8F%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/" rel="prev"/>
 <link href="../14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>13.向量函数 - 数学</title>
-<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -36,10 +36,13 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -151,7 +154,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -159,7 +162,7 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
+<div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
@@ -169,11 +172,6 @@
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../">
         微积分
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/">
-        微积分练习
       </a>
 </li>
 <li class="md-tabs__item">
@@ -196,11 +194,6 @@
         概率论&amp;数理统计
       </a>
 </li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../img/1/">
-        img
-      </a>
-</li>
 </ul>
 </div>
 </nav>
@@ -220,12 +213,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="概述" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -255,19 +248,29 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="微积分" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           微积分
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E5%A4%8D%E4%B9%A0/">
+        复习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
         1.函数&amp;模型
@@ -329,10 +332,42 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          13.向量函数
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         13.向量函数
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.向量函数 &amp; 空间曲线
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.向量函数的导数和积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.弧长 &amp; 曲率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.空间运动：速度 &amp; 加速度
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/">
@@ -363,127 +398,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/">微积分练习</a>
+<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="微积分练习" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-          微积分练习
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/%E7%BB%83%E4%B9%A0/">
-        练习
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
-        1.函数&amp;模型
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/2.%E6%9E%81%E9%99%90%26%E5%AF%BC%E6%95%B0/">
-        2.极限&amp;导数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/3.%E6%B1%82%E5%AF%BC%E6%B3%95%E5%88%99/">
-        3.求导法则
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/4.%E5%AF%BC%E6%95%B0%E7%9A%84%E5%BA%94%E7%94%A8/">
-        4.导数的应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/5.%E7%A7%AF%E5%88%86/">
-        5.积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/6.%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E5%BA%94%E7%94%A8/">
-        6.定积分的应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/7.%E7%A7%AF%E5%88%86%E6%96%B9%E6%B3%95/">
-        7.积分方法
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/8.%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%BA%94%E7%94%A8/">
-        8.定积分的进一步应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/9.%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        9.微分方程
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/10.%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%26%E6%9E%81%E5%9D%90%E6%A0%87/">
-        10.参数方程&amp;极坐标
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/11.%E6%97%A0%E7%A9%B7%E5%BA%8F%E5%88%97%26%E7%BA%A7%E6%95%B0/">
-        11.无穷序列&amp;级数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/12.%E5%90%91%E9%87%8F%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        12.向量&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/13.%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0/">
-        13.向量函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/">
-        14.多元函数的偏导数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/15.%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/">
-        15.多重积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/16.%E5%90%91%E9%87%8F%E7%A7%AF%E5%88%86/">
-        16.向量积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/17.%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        17.二阶微分方程
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0/%E9%99%84%E5%BD%95/">
-        附录
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
-<label for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="高数" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           高数
         </label>
@@ -532,15 +455,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
-<label for="__nav_5">
+<label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="线性代数" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           线性代数
         </label>
@@ -589,13 +512,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_6" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="概率论及其应用" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           概率论及其应用
         </label>
@@ -689,15 +612,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
-<label for="__nav_7">
+<label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="概率论&amp;数理统计" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           概率论&amp;数理统计
         </label>
@@ -745,126 +668,6 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_8" tabindex="0">
-          img
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="img" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
-          img
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/1/">
-        1
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/2/">
-        2
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/3/">
-        3
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/4/">
-        4
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/5/">
-        5
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/6/">
-        6
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/7/">
-        7
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/8/">
-        8
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/9/">
-        9
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/10/">
-        10
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/11/">
-        11
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/12/">
-        12
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/13/">
-        13
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/14/">
-        14
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/15/">
-        15
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/16/">
-        16
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/17/">
-        17
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/18/">
-        18
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/19/">
-        19
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/20/">
-        20
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/21/">
-        21
-      </a>
-</li>
-</ul>
-</nav>
-</li>
 </ul>
 </nav>
 </div>
@@ -874,19 +677,366 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.向量函数 &amp; 空间曲线
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.向量函数的导数和积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.弧长 &amp; 曲率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.空间运动：速度 &amp; 加速度
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<h1>13.向量函数</h1>
+<p>本证将介绍向量函数，使得空间中的 曲线 和 曲面 能更方便的描述</p>
+<h3 id="1">1.向量函数 &amp; 空间曲线</h3>
+<p>向量值函数 或 向量函数 是定义域为 实数 且值域为 向量集合 的函数</p>
+<p>我们对取值为三维向量的向量函数 <strong>r</strong> 最感兴趣；定义域中每个数 t，对应着 <span class="arithmatex">\(V_3\)</span> 中的唯一的向量 <strong>r</strong>(t)</p>
+<p>若 f(t), g(t), h(t) 是向量 <strong>r</strong>(t) 的分量，那么实值函数 f,g,h 称为 <strong>r</strong> 的 分量函数，写作 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle = f(t)\overrightarrow i + g(t)\overrightarrow j + h(t)\overrightarrow k\)</span></p>
+<div class="admonition 定义域">
+<p class="admonition-title">定义域</p>
+</div>
+<blockquote>
+<p>向量函数的定义域由分量函数的 定义域的交集 决定</p>
+</blockquote>
+<div class="admonition 极限">
+<p class="admonition-title">极限</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle = f(t)\overrightarrow i + g(t)\overrightarrow j + h(t)\overrightarrow k\)</span>，那么 <span class="arithmatex">\(\lim\limits_{t\to a}\overrightarrow r(t) = \langle \lim\limits_{t\to a}f(t), \lim\limits_{t\to a}g(t), \lim\limits_{t\to a}h(t) \rangle\)</span> （假设分量函数的极限都存在）</p>
+<p><span class="arithmatex">\(\epsilon-\delta\)</span> 定义详见 练习43</p>
+</blockquote>
+<div class="admonition 运算法则">
+<p class="admonition-title">运算法则</p>
+</div>
+<blockquote>
+<p>参见 练习41</p>
+</blockquote>
+<div class="admonition 连续">
+<p class="admonition-title">连续</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(\lim\limits_{t\to a}\overrightarrow r(t) = \overrightarrow r(a)\)</span>，那么称向量函数 <strong>r</strong> 在 a 处是连续的</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">连续向量函数 与 空间曲线</p>
+<ul>
+<li>假设 f,g,h 是在区间 l 上连续的实值函数，那么 t 在区间 l 变化，满足 x=f(t), y=g(t), z=h(t) 的所有点 (x, y, z) 的集合 C 叫做一条 空间曲线；该方程为 C 的 参数方程，t 称为 参数</li>
+<li>如果向量函数为 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle\)</span>，那么 <strong>r</strong>(t) 是点 P(f(t), g(t), h(t)) 在 C 上的位置向量</li>
+<li>因此，任意的向量函数 <strong>r</strong> 定义了一条空间曲线 C，它是以坐标原点 O 为起点的向量 <strong>r</strong>(t) 末端的运动轨迹</li>
+</ul>
+</div>
+<div class="admonition 练习">
+<p class="admonition-title">练习</p>
+<ul>
+<li>求两平面交线的向量方程：<ol>
+<li>对其中之一投影到某个平面，若得到二维曲线，那么尝试用二维曲线的参数来表示它，再将参数 t 带回另一个平面方程</li>
+<li>对曲线方程进行直接的逆变量代换</li>
+<li>参考 柱面坐标 和 球坐标 的参数 t 来作为参数</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="admonition 计算机绘制空间曲线">
+<p class="admonition-title">计算机绘制空间曲线</p>
+<ul>
+<li>环形螺旋线：<span class="arithmatex">\(&lt;(4+\sin t)\cos t, (4+\sin 20t)\sin t, \cos 20t&gt;\)</span></li>
+<li>三叶形扭结：<span class="arithmatex">\(&lt;(2+\cos 1.5t)\cos t, (2+\cos 1.5t)\sin t, \sin 1.5t&gt;\)</span></li>
+<li>三次绕线：<span class="arithmatex">\(&lt;t, t^2, t^3&gt;\)</span></li>
+<li>螺旋线：<span class="arithmatex">\(&lt;2\cos t, \sin t, t&gt;\)</span></li>
+</ul>
+</div>
+<h3 id="2">2.向量函数的导数和积分</h3>
+<p>若下面的极限存在，那么 <span class="arithmatex">\(\frac {d_{\overrightarrow r}}{d_t} = \overrightarrow r'(t) = \lim\limits_{h\to 0}\frac {\overrightarrow r(t+h)-\overrightarrow r(t)}{h}\)</span></p>
+<p>割线向量：<span class="arithmatex">\(\overrightarrow r(t+h)-\overrightarrow r(t)\)</span></p>
+<p>切向量：<span class="arithmatex">\(\frac {\overrightarrow r(t+h)-\overrightarrow r(t)}{h}\)</span></p>
+<p>单位切向量：<span class="arithmatex">\(\overrightarrow \tau(t) = \frac {\overrightarrow r'(t)}{|\overrightarrow r'(t)|}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\overrightarrow r'(t)\)</span> 存在，并且 <span class="arithmatex">\(\overrightarrow r(t) \ne \overrightarrow 0\)</span>，向量 <span class="arithmatex">\(\overrightarrow r'(t)\)</span> 称为 <strong>r</strong> 在点 P 的切向量</li>
+</ul>
+</div>
+<div class="admonition 导数">
+<p class="admonition-title">导数</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle = f(t)\overrightarrow i + g(t)\overrightarrow j + h(t)\overrightarrow k\)</span>，这里 f,g,h 是可微函数，那么</p>
+<p><span class="arithmatex">\(\overrightarrow r'(t) = \langle f'(t), g'(t), h'(t) \rangle = f'(t)\overrightarrow i + g'(t)\overrightarrow j + h'(t)\overrightarrow k\)</span></p>
+</blockquote>
+<div class="admonition 光滑">
+<p class="admonition-title">光滑</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(\overrightarrow r'(t)\)</span> 在区间 I 上满足 <strong>r'</strong> 连续，<span class="arithmatex">\(\overrightarrow r'(t)\ne 0\)</span>（除了端点之外），我们称 <strong>r</strong>(t) 在区间 I 上是光滑的</p>
+<p>若向量函数由有限多的光滑片段构成，那么就称这条曲线为 分段光滑</p>
+<p>若存在一个点 t=a，使得 <span class="arithmatex">\(\overrightarrow r'(a)=0\)</span>，那么可以称 a 为一个 尖点</p>
+</blockquote>
+<div class="admonition 求导法则">
+<p class="admonition-title">求导法则</p>
+</div>
+<blockquote>
+<p>假设 <strong>u, v</strong> 是可微的向量函数，c 是一个数量，f 是一个实值函数，那么</p>
+<ol>
+<li><span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(t) + \overrightarrow v(t)] = \overrightarrow u'(t) + \overrightarrow v'(t)\)</span></li>
+<li><span class="arithmatex">\(\frac d{d_t}[c\overrightarrow u(t)] = c\overrightarrow u'(t)\)</span></li>
+<li><span class="arithmatex">\(\frac d{d_t}[f(t)\overrightarrow u(t)] = f'(t)\overrightarrow u(t) + f(t)\overrightarrow u'(t)\)</span></li>
+<li><span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(t)\cdot \overrightarrow v(t)] = \overrightarrow u'(t)\cdot \overrightarrow v(t) + \overrightarrow u(t)\cdot \overrightarrow v'(t)\)</span></li>
+<li><span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(t)\times \overrightarrow v(t)] = \overrightarrow u'(t)\times \overrightarrow v(t) + \overrightarrow u(t)\times \overrightarrow v'(t)\)</span></li>
+<li><span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(f(t))] = f'(t) \overrightarrow u'(f(t))\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition 证明">
+<p class="admonition-title">证明</p>
+<ul>
+<li>如果 <span class="arithmatex">\(|\mathbf r(t)|=c\)</span> (一个常数)，那么对于所有的 t，<span class="arithmatex">\(\mathbf r'(t)\)</span> 和 <span class="arithmatex">\(\mathbf r(t)\)</span> 相垂直</li>
+<li>证明：<ul>
+<li><span class="arithmatex">\(\mathbf r\cdot \mathbf r = |\mathbf r|^2 = c^2\)</span></li>
+<li>对两边求导有：<span class="arithmatex">\(\mathbf r'\cdot \mathbf r + \mathbf r\cdot \mathbf r' = 2\mathbf r'\cdot \mathbf r = 0\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\mathbf r \cdot \mathbf r' = 0\)</span></li>
+<li>因此 <span class="arithmatex">\(\mathbf r\)</span> 和 <span class="arithmatex">\(\mathbf r'\)</span> 相互垂直</li>
+</ul>
+</li>
+<li>推论：<span class="arithmatex">\(|\mathbf r\times \mathbf r'|=|\mathbf r||\mathbf r'|\sin {90} = |\mathbf r||\mathbf r'|\)</span></li>
+</ul>
+</div>
+<div class="admonition 积分">
+<p class="admonition-title">积分</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n \overrightarrow r(t_i^*) \Delta t = \lim\limits_{n\to ∞} [(\sum\limits_{i=1}^n f(t_i^*)\Delta t)\overrightarrow i, (\sum\limits_{i=1}^n g(t_i^*)\Delta t)\overrightarrow j, (\sum\limits_{i=1}^n h(t_i^*)\Delta t)\overrightarrow k]\)</span></p>
+<p>于是，<span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = (\int_a^b f(t)~d_t)\overrightarrow i + (\int_a^b g(t)~d_t)\overrightarrow j + (\int_a^b h(t)~d_t)\overrightarrow k\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">微积分基本定理(扩展)</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = \overrightarrow R(t)]_a^b = \overrightarrow R(b) - \overrightarrow R(b)\)</span></p>
+<p>这里 <strong>R</strong> 是 <strong>r</strong> 的一个原函数，即 <strong>R</strong>'(t) = <strong>r</strong>(t)</p>
+<p><span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t\)</span> 表示不定积分</p>
+</blockquote>
+<h3 id="3">3.弧长 &amp; 曲率</h3>
+<p>参考平面参数方程 x=f(t), y=g(t), <span class="arithmatex">\(a\le t\le b\)</span> 的曲线长度为它的内接多边形长度的极限，如果 f', g' 连续，那么有 <span class="arithmatex">\(L = \int_a^b \sqrt {[f'(t)]^2 + [g'(t)]^2}~d_t = \int_a^b \sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2} d_t\)</span>，空间上的曲线长度可以得到类似的结论</p>
+<div class="admonition 空间曲线长度">
+<p class="admonition-title">空间曲线长度</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle, a\le t\le b\)</span> 或者 用参数方程表示为 x=f(t), y=g(t), z=h(t)，这里 f', g', h' 连续</p>
+<p>如果变量 t 由 a 增加到 b，正好通过曲线一次，那么我们得到曲线的长度为 <span class="arithmatex">\(L = \int_a^b \sqrt {[f'(t)]^2 + [g'(t)]^2 + [h'(t)]^2}~d_t = \int_a^b \sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2 + (\frac {d_z}{d_t})^2}~d_t\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>弧长公式的统一形式：<span class="arithmatex">\(L = \int_a^b |\overrightarrow r'(t)|~d_t\)</span> （<span class="arithmatex">\(\overrightarrow r(t)\)</span> 为 n 维向量函数）</li>
+<li>曲线 C 可以由不同形式的参数表示（这些参数在形式上只有取值范围的不同）；然而，在不同参数表示下的曲线 C 在两点之间的弧长应是相等的，即计算分段光滑的弧长大小与所选用的参数无关</li>
+</ul>
+</div>
+<div class="admonition 弧长函数">
+<p class="admonition-title">弧长函数</p>
+</div>
+<blockquote>
+<p>假设 C 是由向量方程 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle, a\le t\le b\)</span> 所给出的分段光滑的曲线，当变量 t <mark class="critic">从 a 增加到 b</mark>，正好经过曲线一次，</p>
+<p>我们定义弧长函数为 <span class="arithmatex">\(s(t) = \int_a^t |\overrightarrow r'(u)|~d_u = \int_a^t \sqrt {(\frac {d_x}{d_u})^2 + (\frac{d_y}{d_u})^2 + (\frac{d_z}{d_u})^2}~d_u\)</span></p>
+<p>对两边使用微积分基本定理： <span class="arithmatex">\(\frac {d_s}{d_t} = |\overrightarrow r(t)|\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">向量函数参数逆变换</p>
+</div>
+<blockquote>
+<p>给定 <span class="arithmatex">\(\overrightarrow r(t)\)</span>，其中 <strong>r</strong>(t) 表示的曲线是关于 t 的参数方程，如何用曲线到点 A 的弧长作为参数来表示该曲线？</p>
+<p>由于弧长函数 <span class="arithmatex">\(s(t) = \int_a^t |\overrightarrow r'(u)|~d_u\)</span> 可以得到 s 关于参数 t 的方程，</p>
+<p>如果 <span class="arithmatex">\(s(t)\)</span> 单射，那么就能计算出 <span class="arithmatex">\(t = s^{-1}(s)\)</span> （简记 <span class="arithmatex">\(s = \int_a^t |\overrightarrow r'(u)|~d_u\)</span>），</p>
+<p>将其代入 <span class="arithmatex">\(\overrightarrow r(t)\)</span> 中得到：<span class="arithmatex">\(\overrightarrow r(s^{-1}(s))\)</span></p>
+</blockquote>
+<div class="admonition 单位切向量">
+<p class="admonition-title">单位切向量</p>
+</div>
+<blockquote>
+<p>C 是一条有向量方程 <strong>r</strong> 所确定的光滑曲线，而且 <strong>r</strong>'(t)<span class="arithmatex">\(\ne\)</span><strong>0</strong>（没有尖点），</p>
+<p>由于 <strong>r</strong>(t) 表示曲线 C 的切向量，我们定义：</p>
+<p>单位切向量 <strong>T</strong>(t) 为 <span class="arithmatex">\(\overrightarrow T(t) = \frac {\overrightarrow r'(t)}{|\overrightarrow r'(t)|}\)</span></p>
+<p>可以观察到 <strong>T</strong>(t) 在曲线 C 比较直的时候方向变化较慢，而在弯度较大的地方变化较快</p>
+</blockquote>
+<div class="admonition 曲率">
+<p class="admonition-title">曲率</p>
+</div>
+<blockquote>
+<p>曲率定义为 单位切向量 和 相应弧长 的比值，用以描述曲线在这一个点<mark class="critic">方向变化快慢程度</mark></p>
+<p>曲率为 <span class="arithmatex">\(K = |\frac {d_{\overrightarrow T}}{d_s}|\)</span></p>
+<ul>
+<li>
+<p>假设曲线用参数 t 表示，那么 <span class="arithmatex">\(K = |\frac {d_{\overrightarrow T}}{d_s}| = |\frac {d_{\overrightarrow T}/d_t}{d_s/d_t}|\)</span>，</p>
+<ul>
+<li>又由 <span class="arithmatex">\(|\overrightarrow r'(t)| = \frac {d_s}{d_t}\)</span></li>
+<li>有 <span class="arithmatex">\(K = \frac {|\overrightarrow T'(t)|}{|\overrightarrow r'(t)|}\)</span></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>该推理是否正确？<span class="arithmatex">\(\displaystyle K = \frac {|\overrightarrow T'(t)|}{|\overrightarrow r'(t)|} = \frac {|d{\overrightarrow T(t)}/d_t|}{|\overrightarrow r'(t)|} = \frac {|d{\frac {\overrightarrow r'(t)}{|\overrightarrow r'(t)|}}/d_t|}{|\overrightarrow r'(t)|} = \frac {|d{\overrightarrow r'(t)}/d_t|}{|\overrightarrow r'(t)|^2} = \frac {|{\overrightarrow r^{"}(t)}|}{|\overrightarrow r'(t)|^2}\)</span></li>
+</ul>
+</div>
+<p>由 <span class="arithmatex">\(\mathbf T = \frac {\mathbf r'}{|\mathbf r'|}\)</span> 和 <span class="arithmatex">\(|\mathbf r'| = \frac {d_s}{d_t}\)</span>，有 <span class="arithmatex">\(\mathbf r'=|\mathbf r'|\mathbf T = \frac {d_s}{d_t}\mathbf T\)</span> (1)</p>
+<p>又由乘法法则有 <span class="arithmatex">\(\mathbf r^{"} = \frac {d_s^2}{d_{t^2}}\mathbf T + \frac {d_s}{d_t}\mathbf T'\)</span> (2)</p>
+<p>因而，<span class="arithmatex">\(\mathbf r'\times \mathbf r^{"} = \frac {d_s}{d_t}\mathbf T\times \frac {d_s^2}{d_{t^2}}\mathbf T + \frac {d_s}{d_t}\mathbf T\times \frac {d_s}{d_t}\mathbf T' = (\frac {d_s}{d_t})^2\mathbf T \times \mathbf T'\)</span> (3)</p>
+<p>又因为 <span class="arithmatex">\(\mathbf T\)</span> 的定义是单位切向量，故而 <span class="arithmatex">\(|\mathbf T| = 1\)</span>，</p>
+<p>由 13.2 中“求导法则”后的证明有 <span class="arithmatex">\(\mathbf T\)</span> 和 <span class="arithmatex">\(\mathbf T'\)</span> 相互垂直，并且 <span class="arithmatex">\(|\mathbf T\times \mathbf T'| = |\mathbf T||\mathbf T'| = 1|\mathbf T'| = |\mathbf T'|\)</span></p>
+<p>对 (3) 两边取绝对值有 <span class="arithmatex">\(|\mathbf r'\times \mathbf r^{"}|  = (\frac {d_s}{d_t})^2 |\mathbf T \times \mathbf T'| = (\frac {d_s}{d_t})^2\mathbf |\mathbf T'|\)</span>，得到 <span class="arithmatex">\(\displaystyle |\mathbf T'| = \frac {|\mathbf r'\times \mathbf r^{"}|} {(\frac {d_s}{d_t})^2}\)</span></p>
+<p>最后，<span class="arithmatex">\(K = \frac {|\mathbf T'|}{|\mathbf r'|} = \frac {|\mathbf r'\times \mathbf r^{"}|}{(\frac {d_s}{d_t})^2|\mathbf r'|} = \frac {|\mathbf r'\times \mathbf r^{"}|}{|\mathbf r'|^3}\)</span></p>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>向量函数 <span class="arithmatex">\(\mathbf r\)</span> 所确定的曲线的曲率为 <span class="arithmatex">\(\displaystyle  K(t) = \frac {|\mathbf r'(r)\times \mathbf r^{"}(t)|}{|\mathbf r'(t)|^3}\)</span></p>
+</blockquote>
+<div class="admonition 二维曲线斜率">
+<p class="admonition-title">二维曲线斜率</p>
+</div>
+<blockquote>
+<p>给定平面曲线 y = f(x)，以 x 为参数有 <span class="arithmatex">\(\mathbf r(x) = x\mathbf i + f(x)\mathbf j\)</span></p>
+<p>对两边分别求 1 次 和 2 次导数，有 <span class="arithmatex">\(\mathbf r'(x) = \mathbf i + f'(x)\mathbf j\)</span>，<span class="arithmatex">\(\mathbf r^{"}(x) = f^{"}(x)\mathbf j\)</span>，</p>
+<p>那么，<span class="arithmatex">\(\mathbf r'(x)\times \mathbf r^{"}(x) = f^{"}(x)\mathbf i\times \mathbf j + f'(x)f^{"}(x)\mathbf j\times \mathbf j = f^{"}(x)\mathbf i\times \mathbf j = f^{"}(x) k\)</span></p>
+<p>由曲率定理有 <span class="arithmatex">\(\displaystyle  K(x) = \frac {|\mathbf r'(x)\times \mathbf r^{"}(x)|}{|\mathbf r'(x)|^3} = \frac {|f^{"}(x) K|}{|\mathbf i + f'(x)\mathbf j|^3} = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
+<p>因此，二维曲线的斜率为：<span class="arithmatex">\(\displaystyle K(x) = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
+</blockquote>
+<div class="admonition 单位法向量">
+<p class="admonition-title">单位法向量</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\mathbf N(t) = \frac {\mathbf T'(t)}{\mathbf T'(t)}\)</span></p>
+</blockquote>
+<div class="admonition 副法线向量">
+<p class="admonition-title">副法线向量</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\mathbf B(t) = \mathbf T(t) \times \mathbf N(t)\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">法平面 &amp; 密切面 &amp; 密切圆</p>
+</div>
+<blockquote>
+<p>假设曲线 C 上任意一点为点 P</p>
+<p>点 P 的单位法向量 <span class="arithmatex">\(\mathbf N\)</span> 和 副法线向量 <span class="arithmatex">\(\mathbf B\)</span> 所确定的平面，称为点 P 的 <strong>法平面</strong></p>
+<p>点 P 的单位切向量 <span class="arithmatex">\(\mathbf T\)</span> 和 单位法向量 <span class="arithmatex">\(\mathbf N\)</span> 所确定的平面，称为点 P 的 <strong>密切面</strong> （该词来自于拉丁语 osculum，“接吻”的意思；这是最接近包含这条曲线，点 P 附近部分的平面）</p>
+<p>点 P 的密切面上存在一个圆，其圆心位于曲线 C 的凹面部分（<span class="arithmatex">\(\mathbf N\)</span> 指向其圆心），其半径为 <span class="arithmatex">\(\rho = \frac 1K\)</span>，称该圆为 <strong>密切圆</strong></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">法平面 &amp; 密切面 &amp; 密切圆 的计算</p>
+<ul>
+<li>法平面：其法向量为 切向量 <span class="arithmatex">\(\mathbf r'(t)\)</span> 或 单位切向量 <span class="arithmatex">\(\mathbf T(t)\)</span></li>
+<li>密切面：其法向量为 副法线向量 <span class="arithmatex">\(\mathbf B(t)\)</span></li>
+<li>密切圆：？？？</li>
+</ul>
+</div>
+<div class="admonition 公式总结">
+<p class="admonition-title">公式总结</p>
+<ol>
+<li><span class="arithmatex">\(\displaystyle \mathbf T(t) = \frac {\mathbf r'(t)}{|\mathbf r'(t)|}\)</span></li>
+<li><span class="arithmatex">\(\displaystyle \mathbf N(t) = \frac {\mathbf T'(t)}{|\mathbf T'(t)|}\)</span></li>
+<li><span class="arithmatex">\(\displaystyle \mathbf B(t) = \mathbf T(t) \times \mathbf N(t)\)</span></li>
+<li><span class="arithmatex">\(\displaystyle K = |\frac {d_{\mathbf T}}{d_s}| = |\frac {\mathbf T'(t)}{\mathbf r'(t)}| = \frac {|\mathbf r'(t)\times \mathbf r^{"}(t)|}{\mathbf r'(t)}^3\)</span></li>
+</ol>
+</div>
+<h3 id="4">4.空间运动：速度 &amp; 加速度</h3>
+<p>本节使用 切向量，法向量，曲率 等概念研究曲线运动物体的 速度，加速度</p>
+<div class="admonition 速度">
+<p class="admonition-title">速度</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\mathbf v(t) = \lim\limits_{h\to 0}\frac {\mathbf r(t+h) - \mathbf r(t)}{h} = \mathbf r'(t)\)</span></p>
+<p>即 速度向量 也是 切向量，指向切线方向</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(|\mathbf v(t)| = |\mathbf r'(t)| = \frac {d_s}{d_t}\)</span> = 相应距离关于时间的变化率</li>
+</ul>
+</div>
+<div class="admonition 加速度">
+<p class="admonition-title">加速度</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\mathbf a(t) = \mathbf v'(t) = \mathbf r^{"}(t)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf v(t) = \mathbf v(t_0) + \int_{t_0}^t \mathbf a(u)~d_u\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t) = \mathbf r(t_0) + \int_{t_0}^t \mathbf v(u)~d_u\)</span></li>
+</ul>
+</div>
+<div class="admonition 牛顿第二定律">
+<p class="admonition-title">牛顿第二定律</p>
+</div>
+<blockquote>
+<p>在任意时刻 t，一个力 <span class="arithmatex">\(\mathbf F(t)\)</span> 作用于一个质量为 m 的物体上产生的加速度为 <span class="arithmatex">\(\mathbf a(t)\)</span>，那么 <span class="arithmatex">\(\mathbf F(t) = m\mathbf a(t)\)</span></p>
+</blockquote>
+<div class="admonition 习题">
+<p class="admonition-title">习题</p>
+<ul>
+<li>以固定角速度 <span class="arithmatex">\(\omega\)</span>（<span class="arithmatex">\(\omega = \frac {d_\theta}{d_t}\)</span>） 沿着一个圆周运动，位置向量为 <span class="arithmatex">\(\mathbf r(t) = a\cos\omega t\mathbf i + a\sin\omega t\mathbf j\)</span>，证明：作用于物体上的力指向原点（即 力的方向 与 位置向量 平行）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">加速度的 切线方向分量 &amp; 法线方向分量</p>
+</div>
+<blockquote>
+<p>根据单位切向量定义 和 <span class="arithmatex">\(v = |\mathbf v|\)</span> 有：<span class="arithmatex">\(\mathbf T(t) = \frac {\mathbf r'(t)}{|\mathbf r'(t)|} = \frac {\mathbf v(t)}{\mathbf v(t)} = \frac {\mathbf v}{v}\)</span>，进而 <span class="arithmatex">\(\mathbf v = v\mathbf T\)</span></p>
+<p>两边对 t 求导，有：<span class="arithmatex">\(\mathbf a = \mathbf v' = v'\mathbf T + v\mathbf T'\)</span> (1)</p>
+<p>由曲率定义 <span class="arithmatex">\(K = \frac {|\mathbf T'|}{|\mathbf r'|} = \frac {|\mathbf T'|}{v}\)</span>，于是 <span class="arithmatex">\(|\mathbf T'| = Kv\)</span></p>
+<p>又由单位法向量定义 <span class="arithmatex">\(\mathbf N = \frac {\mathbf T'}{|\mathbf T'|}\)</span>，得到 <span class="arithmatex">\(\mathbf T' = N|\mathbf T'| = \mathbf N Kv\)</span> (2)</p>
+<p>由(1)，(2) 得到：<span class="arithmatex">\(\mathbf a = v'\mathbf T + Kv^2N\)</span></p>
+<p>我们记 <span class="arithmatex">\(a_T\)</span>，<span class="arithmatex">\(a_N\)</span> 分别为加速度的 切线方向分量 和 法线方向分量 有：<span class="arithmatex">\(\mathbf a = a_T\mathbf T + a_N\mathbf N\)</span> （<span class="arithmatex">\(a_T = v', a_N = Kv^2\)</span>）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">加速度 切线方向分量 &amp; 法线方向分量 的进一步化简</p>
+</div>
+<p>我们希望把上一定理关于 <span class="arithmatex">\(\mathbf a\)</span> 的方程表达为只依赖 <span class="arithmatex">\(\mathbf r, \mathbf r', \mathbf r^{"}\)</span> 的形式</p>
+<p>对上述公式 <span class="arithmatex">\(\mathbf a = v'\mathbf T + Kv^2N\)</span> 两边对 <span class="arithmatex">\(\mathbf v\)</span> 求点积：<span class="arithmatex">\(\mathbf v\cdot \mathbf a = v\mathbf T\cdot (v'\mathbf T + Kv^2\mathbf N) = vv'\)</span> (<span class="arithmatex">\(\mathbf T\cdot \mathbf T=1, \mathbf T\cdot \mathbf N=0\)</span>)</p>
+<p>因此 <span class="arithmatex">\(a_T = v' = \frac {\mathbf v\cdot \mathbf a}{v} = \frac {\mathbf r'(t)\cdot \mathbf r^{"}(t)}{|\mathbf r'(t)|}\)</span>，<span class="arithmatex">\(a_N = Kv^2 = \frac {|\mathbf r'(t)\times \mathbf r^{"}(t)|}{|\mathbf r'(t)|^3}|\mathbf r'(t)|^2 = \frac {|\mathbf r'(t)\times \mathbf r^{"}(t)|}{|\mathbf r'(t)|}\)</span></p>
+<div class="admonition 开普勒定律">
+<p class="admonition-title">开普勒定律</p>
+</div>
+<blockquote>
+<p>Johannes Kepler(1571-1630) 提出</p>
+<ol>
+<li>行星围绕太阳运动的轨道是一个椭圆，太阳位于这个椭圆的一个焦点</li>
+<li>联结太阳和行星的直线在相同的时间内扫过的面积相等</li>
+<li>行星的旋转周期的平方和它的轨道长轴的立方成正比</li>
+</ol>
+<p>注：牛顿的《自然哲学的数学原理》证明了这三条定律与牛顿定律中的 第二运动定律 和 万有引力定律 一致</p>
+</blockquote>
 </article>
 </div>
 </div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </a>
+          </button>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -895,20 +1045,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  上一页
-                </span>
+                上一页
+              </span>
+<div class="md-ellipsis">
                 12.向量&amp;空间解析几何
               </div>
 </div>
 </a>
 <a aria-label="下一页: 14.多元函数的偏导数" class="md-footer__link md-footer__link--next" href="../14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/" rel="next">
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  下一页
-                </span>
+                下一页
+              </span>
+<div class="md-ellipsis">
                 14.多元函数的偏导数
               </div>
 </div>
@@ -926,10 +1076,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -939,8 +1089,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

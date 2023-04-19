@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/" rel="prev"/>
-<link href="../3.%E6%B1%82%E5%AF%BC%E6%B3%95%E5%88%99/" rel="next"/>
+<link href="../" rel="prev"/>
+<link href="../%E7%BB%83%E4%B9%A0/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
-<title>2.极限&amp;导数 - 数学</title>
+<title>复习 - 数学</title>
 <link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              2.极限&amp;导数
+              复习
             
           </span>
 </div>
@@ -261,29 +261,14 @@
           微积分
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E5%A4%8D%E4%B9%A0/">
-        复习
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
-        练习
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
-        1.函数&amp;模型
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          2.极限&amp;导数
+          复习
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        2.极限&amp;导数
+        复习
       </a>
 <nav aria-label="目录" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -297,51 +282,26 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
-    1.切线和速度问题
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2.函数的极限
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3.利用极限运算法则求极限
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4.极限的严格定义
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5">
-    5.函数的连续性
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6">
-    6.无穷远的极限 &amp; 水平渐近线
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7">
-    7.切线、速度&amp;其他变化率
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#8">
-    8.导数
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#9">
-    9.导函数
+    1.函数&amp;模型
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
+        1.函数&amp;模型
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.%E6%9E%81%E9%99%90%26%E5%AF%BC%E6%95%B0/">
+        2.极限&amp;导数
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../3.%E6%B1%82%E5%AF%BC%E6%B3%95%E5%88%99/">
@@ -717,47 +677,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
-    1.切线和速度问题
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2.函数的极限
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3.利用极限运算法则求极限
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4.极限的严格定义
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5">
-    5.函数的连续性
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6">
-    6.无穷远的极限 &amp; 水平渐近线
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7">
-    7.切线、速度&amp;其他变化率
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#8">
-    8.导数
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#9">
-    9.导函数
+    1.函数&amp;模型
   </a>
 </li>
 </ul>
@@ -767,439 +687,19 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>2.极限&amp;导数</h1>
+<h1>复习</h1>
 <h3 id="_1"></h3>
-<h3 id="1">1.切线和速度问题</h3>
-<h3 id="2">2.函数的极限</h3>
-<div class="admonition note">
-<p class="admonition-title">极限 定义</p>
-</div>
-<blockquote>
-<p><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = L\)</span></p>
-<p>当 x 趋于 a 时，函数 f(x) 的极限等于 L</p>
-<p>如果我们可以通过让 x 充分地接近 a (在 a 的两边均可)，但不等于a (<span class="arithmatex">\(x \ne a\)</span>)，使得到f(x)的值任意地接近 L</p>
-<p>另一种表达：<span class="arithmatex">\(x \to a\)</span>, <span class="arithmatex">\(f(x) \to L\)</span></p>
-</blockquote>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ul>
-<li>f(x) 无需在 x=a 处有定义，我们只需关注 x=a 附近f(x)是如何定义的<ul>
-<li>也就是说，求极限时可以先清楚3个事情： x=a左侧，x=a右侧，x=a(无需考虑)</li>
-<li>无论 f(x) 在 x=a 处取何值，都与其在此处的极限无关</li>
+<h3 id="1">1.函数&amp;模型</h3>
+<div class="admonition 数学模型">
+<p class="admonition-title">数学模型</p>
+<ol>
+<li>多项式： <span class="arithmatex">\(p_n(x) = \sum\limits_{i=0}^n a_i\cdot x^i, a_n\ne 0\)</span></li>
+<li>幂函数： <span class="arithmatex">\(f_x = x^a\)</span><ul>
+<li></li>
 </ul>
 </li>
-<li>计算机计算极限时由精度问题会出现计算错误的情况</li>
-<li>若两侧极限取不同值时，极限不存在</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">单侧极限</p>
-</div>
-<blockquote>
-<p>如果 x 充分接近 a 且 x 小于 a 时，则称当 x 趋近于 a 时f(x)的左极限等于 L, 记为 <span class="arithmatex">\(\lim\limits_{x \to a^-}f(x) = L\)</span></p>
-<p>如果 x 充分接近 a 且 x 大于 a 时，则称当 x 趋近于 a 时f(x)的右极限等于 L, 记为 <span class="arithmatex">\(\lim\limits_{x \to a^+}f(x) = L\)</span></p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">单侧极限 &amp; 两侧极限</p>
-</div>
-<blockquote>
-<p><span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L  \iff  \lim\limits_{x \to a^-}f(x) = L\)</span> &amp; <span class="arithmatex">\(\lim\limits_{x \to a^+}f(x) = L\)</span></p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">无穷大极限</p>
-</div>
-<blockquote>
-<p>设 f 是一个函数，它在 a 的两边都有定义(a点本身可能除外)，那么 <span class="arithmatex">\(\lim\limits_{x \to a} f(x) = +∞\)</span> 表示当 x 充分地靠近但不等于 a 时，f(x) 的值可以任意的大</p>
-<p>另一种表示方法： <span class="arithmatex">\(f(x) \to +∞\)</span>， 当 <span class="arithmatex">\(x \to a\)</span></p>
-</blockquote>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ul>
-<li>∞ 既不表示一个数，也不表示极限存在，<mark class="critic">它只是极限不存在的一种特殊表示</mark></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = +∞\)</span> 读作"当x趋近于a时，f(x)的极限是/变得无穷大" 或 "当x趋近于a时，f(x)无界地增长"</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">无穷大极限</p>
-</div>
-<blockquote>
-<p>设 f 是一个函数它在 a 的两边都有定义(a点本身可能除外)，那么 <span class="arithmatex">\(\lim\limits_{x \to a} f(x) = -∞\)</span> 表示当 x 充分地靠近但不等于 a 时，f(x) 的值是绝对值任意大的负数</p>
-<p>另一种表示方法： <span class="arithmatex">\(f(x) \to -∞\)</span>， 当 <span class="arithmatex">\(x \to a\)</span></p>
-</blockquote>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ul>
-<li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = -∞\)</span> 读作"当x趋近于a时，f(x)的极限是/变得负无穷大" 或 "当x趋近于a时，f(x)无界地减少"</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">垂直渐近线</p>
-</div>
-<blockquote>
-<p>直线 x = a 称为曲线 y = f(x) 的垂直渐近线，如果下面的条件至少满足一个：</p>
-<ul>
-<li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = +∞\)</span>, <span class="arithmatex">\(\lim\limits_{x \to a^-} f(x) = +∞\)</span>, <span class="arithmatex">\(\lim_{x \to a^+} f(x) = +∞\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = -∞\)</span>, <span class="arithmatex">\(\lim\limits_{x \to a^-} f(x) = -∞\)</span>, <span class="arithmatex">\(\lim_{x \to a^+} f(x) = -∞\)</span></li>
-</ul>
-</blockquote>
-<h3 id="3">3.利用极限运算法则求极限</h3>
-<p>正确函数极限函数值不见得总是能通过猜测来得到，如下给出极限的一些性质，称为 极限法则，来计算极限</p>
-<div class="admonition note">
-<p class="admonition-title"><mark class="critic">极限法则</mark></p>
-</div>
-<blockquote>
-<p>假设 c 是一个常数，极限 <mark class="critic"><span class="arithmatex">\(\lim\limits_{x \to a}f(x)\)</span></mark> 和 <mark class="critic"><span class="arithmatex">\(\lim\limits_{x \to a}g(x)\)</span> 存在</mark>，那么：</p>
-<ol>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) + g(x)] = \lim\limits_{x \to a}f(x) + \lim\limits_{x \to a}g(x)\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) - g(x)] = \lim\limits_{x \to a}f(x) - \lim\limits_{x \to a}g(x)\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) * g(x)] = \lim\limits_{x \to a}f(x) * \lim\limits_{x \to a}g(x)\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) / g(x)] = \lim\limits_{x \to a}f(x) / \lim\limits_{x \to a}g(x)\)</span> &amp; <span class="arithmatex">\(\lim\limits_{x \to a}g(x) != 0\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}[c * f(x)] = c * \lim\limits_{x \to a}f(x)\)</span></li>
-</ol>
-<p>// 分别称为 和/差/乘/商/常数乘积 法则</p>
-</blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>极限法则 可以通过 极限的严格定义 证明</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title"><mark class="critic">其他极限法则</mark></p>
-</div>
-<blockquote>
-<ol>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}c = c\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}x = a\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}x^n = a^n\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}f(x)^n = [\lim_{x \to a}f(x)]^n\)</span>  &amp;  n 是正整数</li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}\sqrt[n]{x} = \sqrt[n]{a}\)</span>  &amp;  n是正整数(如果n是偶数，我们假设 a&gt;0)</li>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}\sqrt[n]{f(x)} = \sqrt[n]{\lim\limits_{x \to a}f(x)}\)</span></li>
-</ol>
-</blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>上述6个法则均与超越函数无关</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">直接替换性质</p>
-</div>
-<blockquote>
-<p>如果 f 是一个 多项式 或 有理函数，<mark class="critic">a 在 f 的定义域里</mark>，那么 <span class="arithmatex">\(\lim\limits_{x \to a} f(x) = f(a)\)</span></p>
-</blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>对于一个分数，其分母的一部分因子在 a 处没有定义，可以尝试通过初等代数消去分子和分母的相同因子来计算极限</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>p199 - 关于牛顿的经历</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">定理</p>
-</div>
-<blockquote>
-<ol>
-<li><span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L  \iff  \lim\limits_{x \to a^-}f(x) = L = \lim\limits_{x \to a^+}f(x)\)</span></li>
-<li>如果 x 在 a 附近时(除了在a处) <span class="arithmatex">\(f(x) \le g(x)\)</span>，并且 x 趋于 f 和 g 时的极限都存在，那么 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) \le \lim\limits_{x \to a}g(x)\)</span></li>
-<li><mark class="critic">夹逼原理</mark> - 如果 x 在 a 附近时(除了在a处) <span class="arithmatex">\(f(x) \le g(x) \le h(x)\)</span>，
-  并且 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = \lim\limits_{x \to a}g(x) = L\)</span>，那么 <span class="arithmatex">\(\lim\limits_{x \to a}g(x) = L\)</span></li>
-</ol>
-</blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>夹逼原理通常运用在超越函数的精确上下界(如：对于某些三角函数具有精确的常数上下界；某些常见的不等式)</li>
-<li><span class="arithmatex">\(\lim\limits_{x\to0}sin{\frac1x}\)</span>极限不存在</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>夹逼原理 有时称为 "三明治定理" 或 "摘心定理"</li>
-</ul>
-</div>
-<h3 id="4">4.极限的严格定义</h3>
-<div class="admonition waring">
-<p class="admonition-title">Waring</p>
-<p>以下含有高难度定义，不要崩溃</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">极限的严格定义</p>
-</div>
-<blockquote>
-<p>设 f 为定义在某个包含a的开区间上的函数（在 a 处可能没有定义），</p>
-<p>如果对于任意 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，都存在一个 <span class="arithmatex">\(\delta &gt; 0\)</span>，只要 <span class="arithmatex">\(0 &lt; |x-a| &lt; \delta\)</span> 都有：  <span class="arithmatex">\(|f(x) - L| &lt; \epsilon\)</span>，那么我们说 x 趋于 a 时 f(x) 的极限是 L，记为：<span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L\)</span></p>
-<p>自然语言定义：<span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L\)</span> 表示通过将 x 与 a 之间的距离变得充分小（但不为0），可以使 f(x) 与 L 之间的距离变得任意小</p>
-<p>或者：<span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L\)</span> 表示通过使 x 与 a 足够地靠近（但不等于 a），可以使 f(x) 与 L 之间的距离任意地靠近</p>
-<p>集合的解释：给定 <span class="arithmatex">\(\epsilon &gt; 0\)</span>, 能够找出足够小的 <span class="arithmatex">\(\delta &gt; 0\)</span>，使得 <span class="arithmatex">\(\{x | 0&lt;|x-a|&lt;\delta\}\)</span> 能够全部映射到 <span class="arithmatex">\(\{f(x) |~~|f(x)-L|&lt;\epsilon\}\)</span> 之内</p>
-<p>// 几何方面的描述。。。</p>
-</blockquote>
-<details class="如何理解">
-<summary>如何理解</summary>
-<p>在证明极限时，将极限定义看成是一场对抗，可能会是有益的．首先 <span class="arithmatex">\(\epsilon\)</span> 向你挑战，你必须能够拿出一个适合的 <span class="arithmatex">\(\delta\)</span> 与之抗衡，你必须能够对付每一个 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，而不只是某个特殊的 <span class="arithmatex">\(\epsilon\)</span></p>
-</details>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>关于极限的严格定义的更多内容，参考p128</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">无穷大极限</p>
-</div>
-<blockquote>
-<p>无穷大极限:</p>
-<ul>
-<li>设 f 是定义在某个包含 a 的开区间（可能不包含a本身）上的一个函数。那么 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = +∞\)</span>
-      表示对于每个正数M，存在一个正数 <span class="arithmatex">\(\delta\)</span>，使得当 <span class="arithmatex">\(0 &lt; |x-a| &lt; \epsilon 时，有 f(x) &gt; M\)</span></li>
-<li>设 f 是定义在某个包含 a 的开区间（可能不包含a本身）上的一个函数。那么 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = -∞\)</span>
-      表示对于每个负数N，存在一个正数 <span class="arithmatex">\(\delta\)</span>，使得当 <span class="arithmatex">\(0 &lt; |x-a| &lt; \epsilon 时，有 f(x) &lt; N\)</span></li>
-</ul>
-</blockquote>
-<h3 id="5">5.函数的连续性</h3>
-<div class="admonition note">
-<p class="admonition-title">函数的 连续性</p>
-</div>
-<blockquote>
-<p>函数 f 在 a 点连续，如果  <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = f(a)\)</span></p>
-</blockquote>
-<div class="admonition tip">
-<p class="admonition-title">该定义隐含了三件事情</p>
-<ol>
-<li>f(a) 有定义 (即 a 在 f 的定义域里)</li>
-<li><span class="arithmatex">\(\lim\limits_{x\to a}f(x)\)</span>存在</li>
-<li><span class="arithmatex">\(\lim\limits_{x\to a}f(x) = f(a)\)</span></li>
 </ol>
 </div>
-<div class="admonition note">
-<p class="admonition-title">函数的 左右连续性</p>
-</div>
-<blockquote>
-<p>函数 f 在 a 点左连续，如果 <span class="arithmatex">\(\lim\limits_{x \to a^-}f(x) = f(a)\)</span>
-函数 f 在 a 点右连续，如果 <span class="arithmatex">\(\lim\limits_{x \to a^+}f(x) = f(a)\)</span></p>
-</blockquote>
-<pre class="mermaid"><code>graph
-a(f 在 a 处 左 &amp; 右极限 存在 而且 相等) --&gt; c("左右极限 = f(a)")
-b(f 在 a 处有定义) --&gt; c
-c --&gt; d(f 连续)</code></pre>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>函数 f 在一个区间上是连续的，如果它在区间内每一点都连续
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>(在端点连续表示 右连续或是左连续)
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">定理(连续函数线性组合 <span class="arithmatex">\(\implies\)</span> 连续函数)</p>
-</div>
-<blockquote>
-<p>如果函数 f 和 g 在a点连续，且 c 是一个常数，那么下列函数在a点也连续：</p>
-<ul>
-<li><span class="arithmatex">\(f + g\)</span>, <span class="arithmatex">\(f - g\)</span>, <span class="arithmatex">\(c \cdot f\)</span>, <span class="arithmatex">\(f \cdot g\)</span>, <span class="arithmatex">\(f / g\)</span> &amp; <span class="arithmatex">\(g(a) \ne 0\)</span></li>
-</ul>
-<p>// 即任意个连续函数的线性组合都能构成连续函数（而 除法 可能损失 定义域）</p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">定理</p>
-</div>
-<blockquote>
-<ol>
-<li>多项式 在每一点处都连续，即它在 R = (-∞, +∞) 上连续</li>
-<li>有理函数 在每一个有定义的点都连续，即它在自己的定义域上连续</li>
-</ol>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">定理(默认连续函数)</p>
-</div>
-<blockquote>
-<p>以下函数在定义域内处处连续：</p>
-<ul>
-<li>有理函数（多项式，平方根函数）</li>
-<li>常见的超越函数：三角函数，反三角函数，指数函数，对数函数</li>
-</ul>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">定理(复合 的极限定理？)</p>
-</div>
-<blockquote>
-<p>如果 f 在 b 点连续，并且 <span class="arithmatex">\(\lim\limits_{x \to a}g(x) = b\)</span>，那么<span class="arithmatex">\(\lim\limits_{x \to a}f(g(x)) = f(b)\)</span></p>
-<p>即  <span class="arithmatex">\(\lim\limits_{x \to a}f(g(x)) = f(\lim\limits_{x \to a}g(x))\)</span></p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">定理(“连续函数的连续函数也是连续函数”)</p>
-</div>
-<blockquote>
-<p>如果 g 在 a 连续 &amp; f 在 g(a) 连续，那么 f o g 也在 a 连续</p>
-<p>// 对此定理做一个连续的“迭代”即可扩展到区间上的问题</p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">介值定理</p>
-</div>
-<blockquote>
-<p>假设 <mark class="critic">f 在 [a, b] 上连续</mark>， <span class="arithmatex">\(N \in [f(a), f(b)]\)</span> （其中 <span class="arithmatex">\(f(a) \ne f(b)\)</span>, 可说明 <span class="arithmatex">\(a \ne b\)</span>），</p>
-<p>那么，存在 <span class="arithmatex">\(c \in (a, b)\)</span>，使得 f(c) = N</p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">我的理解</p>
-<p>f 在 [a, b] 连续，那么，对于满足 <span class="arithmatex">\(y\in[f(a), f(b)]\)</span> 局部值域的每一点y，都能映射到满足 <span class="arithmatex">\(x\in[a, b]\)</span> 多个定义域上的点x</p>
-</div>
-<pre class="mermaid"><code>graph LR
-a("f 在[a, b]连续") --&gt; b("c ∈ (a, b), f(c) ∈ [f(a), f(b)]")</code></pre>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>介值定理通常可以用来求函数(只需要某个区间连续)的零点</li>
-<li>如果能确定某些连续区间内可能有零点，那么可以用算法(比如：二分)来求精确解</li>
-</ul>
-</div>
-<h3 id="6">6.无穷远的极限 &amp; 水平渐近线</h3>
-<div class="admonition note">
-<p class="admonition-title">无穷远处的极限</p>
-</div>
-<blockquote>
-<ul>
-<li>
-<p>设 f 是一个定义在 (a, ∞) 上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}f(x) = L\)</span> 表示通过让 x 足够的大，可以使 f(x) 的值任意的接近 L</p>
-</li>
-<li>
-<p>设 f 是一个定义在 (-∞, a) 上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to -∞}f(x) = L\)</span> 表示通过让 x 从负方向足够的大，可以使 f(x) 的值任意的接近 L</p>
-</li>
-</ul>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">水平渐近线</p>
-</div>
-<blockquote>
-<p>指向 y = L 称为曲线 y = f(x) 的水平渐近线，如果 <span class="arithmatex">\(\lim\limits_{x \to +∞}f(x) = L\)</span> 或 <span class="arithmatex">\(\lim\limits_{x \to -∞}f(x) = L\)</span></p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li><span class="arithmatex">\(\lim\limits_{x\to~-\infty}tan^{-1}{x} = -\frac{\pi}{2}\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x\to+\infty}tan^{-1}{x} = \frac{\pi}{2}\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x\to-\infty}e^x = 0\)</span></li>
-</ul>
-</div>
-<div class="admonition note">
-<p>如果 r &gt; 0 是一个有理数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}\frac{1}{x^r} = 0\)</span></p>
-<p>如果 r &gt; 0 是一个 使 <span class="arithmatex">\(x^r\)</span> 对所有x都有定义的有理数，那么 <span class="arithmatex">\(\lim\limits_{x \to -∞}\frac{1}{x^r} = 0\)</span></p>
-</div>
-<p>a*(x-2)/(x^2-b)</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ul>
-<li>不要用某些定式思维解某些极限问题，比如有理函数中的多项式切勿直接代入无穷来求极限，而要把分母每一项的次数不大于0</li>
-</ul>
-</div>
-<div class="admonition 解题要点">
-<p class="admonition-title">解题要点</p>
-<ul>
-<li>计算有理函数无穷远处的极限，通常将分子和分母同时除以分母最高次项</li>
-<li>计算两个单项式相减，可以考虑分子和分母同时乘以共轭根式</li>
-<li><span class="arithmatex">\(\sqrt[n]{x^n}=|x|\)</span>  &amp;  <span class="arithmatex">\(2\mid n\)</span></li>
-<li>无理函数(通常指 正整数的倒数次方的幂函数)可以通过引入中间变量化简(但是必须注意原变量取极限时，中间变量取何值)</li>
-</ul>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ul>
-<li>无穷大极限不能用 "极限法则" 来求解，因为<span class="arithmatex">\(\infty\)</span>不是一个数字</li>
-<li>对多个无穷大做运算是没有意义的(而乘积或加法除外？)，但是极限的结果可以用无穷大表示</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">无穷远处的极限 - 严格的定义</p>
-</div>
-<blockquote>
-<p>设 f 是一个定义在某个区间 (a, +∞)上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}f(x) = L\)</span>
-表示对于任意的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，总存在一个数 N，使得 x &gt; N 时，有 <span class="arithmatex">\(|f(x) - L| &lt; \epsilon\)</span></p>
-<p>设 f 是一个定义在某个区间 (-∞, a)上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to -∞}f(x) = L\)</span>
-表示对于任意的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，总存在一个数 N，使得 x &lt; N 时，有 <span class="arithmatex">\(|f(x) - L| &lt; \epsilon\)</span></p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">无穷远处的无穷大极限</p>
-</div>
-<blockquote>
-<p>设 f 是一个定义在某个区间 (a, +∞)上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}\)</span>
-表示对于任意正数 M，相应的总存在一个正数 N，使得 当 x &gt; N 时，f(x) &gt; M</p>
-</blockquote>
-<h3 id="7">7.切线、速度&amp;其他变化率</h3>
-<div class="admonition 切线斜率">
-<p class="admonition-title">切线斜率</p>
-<ul>
-<li>曲线 y=f(x) 在点 P(a, f(a)) 处的切线是一条过点 P 且斜率为 <span class="arithmatex">\(m=\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}\)</span> 的直线，如果上式极限存在</li>
-<li>切线斜率另一种表示： <span class="arithmatex">\(m=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}\)</span>  (在x=a处的斜率)</li>
-</ul>
-</div>
-<h3 id="8">8.导数</h3>
-<div class="admonition 导数定义">
-<p class="admonition-title">导数定义</p>
-</div>
-<blockquote>
-<p>如果极限 <span class="arithmatex">\(\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}\)</span> 存在</p>
-<p>则函数 f(x) 在 x=a 处的导数 <span class="arithmatex">\(f'(a)\)</span> 定义为：<span class="arithmatex">\(f'(a)=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}\)</span></p>
-<p>又或者： <span class="arithmatex">\(f'(a)=\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}\)</span></p>
-</blockquote>
-<div class="admonition 导数的解释">
-<p class="admonition-title">导数的解释</p>
-</div>
-<blockquote>
-<p>曲线 y = f(x) 在点 (a, f(a)) 的切线是一条过点 (a, f(a))，斜率为 f'(a) 是直线</p>
-<p>导数 <span class="arithmatex">\(f'(a)\)</span> 是函数 y = f(x) 关于 x 在 x=a 处的瞬时变化率 <span class="arithmatex">\(\lim\limits_{\Delta x\to 0}\frac{\Delta{y}}{\Delta{x}} = \lim\limits_{x2\to x1}\frac{f(x2)-f(x1)}{x2 - x1}\)</span>
-</p>
-</blockquote>
-<h3 id="9">9.导函数</h3>
-<div class="admonition 导函数">
-<p class="admonition-title">导函数</p>
-</div>
-<blockquote>
-<p>迭代导数中的a，扩展至函数 f 的定义域的子集，得到 <span class="arithmatex">\(f'(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)</span> &amp; <span class="arithmatex">\(定义域=\{x | f'(x)存在\}\)</span></p>
-</blockquote>
-<div class="admonition 其他符号">
-<p class="admonition-title">其他符号</p>
-</div>
-<blockquote>
-<p>导数的一些通用记号如下：</p>
-<p><span class="arithmatex">\(f'(x) = y' = \frac{d_y}{d_x}= \frac{d_f}{d_x} = \frac{d}{d_x}f(x) = D~f(x) = D_x~f(x)\)</span></p>
-<p>可以用莱布尼茨公式重写导数：<span class="arithmatex">\(\frac{d_y}{d_x} = \lim\limits_{\Delta x\to 0}\frac{\Delta x}{\Delta y}\)</span></p>
-<p>特殊点处的导数：<span class="arithmatex">\(\left. \frac{d_y}{d_x}\right|_{x=a}\)</span> 或 <span class="arithmatex">\(\left. \frac{d_y}{d_x}\right]_{x=a}\)</span>
-</p>
-</blockquote>
-<div class="admonition 可微">
-<p class="admonition-title">可微</p>
-</div>
-<blockquote>
-<p>如果 f'(a) 存在，则称 f 在点 a 是可微的</p>
-<p>如果 f 在开区间 (a, b) [或 (a, +∞), (-∞, a), (-∞, +∞)]，则称 f 在开区间 (a, b) 上是可微的</p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">连续(单边极限定理)</p>
-</div>
-<blockquote>
-<p>如果 f 在 a 点可微，则 f 在 a 点连续</p>
-</blockquote>
-<div class="admonition 不可微的判断">
-<p class="admonition-title">不可微的判断</p>
-</div>
-<blockquote>
-<ol>
-<li>函数图像有“隅角" 或 “纽结”</li>
-<li>如果 f 在 a 点不连续，则 f 在 a 点不可微</li>
-<li>曲线在 x=a 有垂直切线，则 f 在 a 点连续，且 <span class="arithmatex">\(\lim\limits_{x\to a}|f'(x)|=∞\)</span></li>
-</ol>
-</blockquote>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<ul>
-<li>垂直切线 = 垂直渐近线 ？</li>
-<li><span class="arithmatex">\(num(f'(x) = 0) \ge num(水平切线) \ge num(水平渐近线)\)</span> ？</li>
-</ul>
-</div>
-<div class="admonition 函数性质关系树">
-<p class="admonition-title">函数性质关系树</p>
-</div>
-<pre class="mermaid"><code>graph
-a(可积) --&gt; b(连续)
-b --&gt; c(可导 = 可微)
-
-b --&gt; 有垂直切线</code></pre>
 </article>
 </div>
 </div>
@@ -1210,7 +710,7 @@ b --&gt; 有垂直切线</code></pre>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: 1.函数&amp;模型" class="md-footer__link md-footer__link--prev" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/" rel="prev">
+<a aria-label="上一页: Index" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1219,17 +719,17 @@ b --&gt; 有垂直切线</code></pre>
                 上一页
               </span>
 <div class="md-ellipsis">
-                1.函数&amp;模型
+                Index
               </div>
 </div>
 </a>
-<a aria-label="下一页: 3.求导法则" class="md-footer__link md-footer__link--next" href="../3.%E6%B1%82%E5%AF%BC%E6%B3%95%E5%88%99/" rel="next">
+<a aria-label="下一页: 练习" class="md-footer__link md-footer__link--next" href="../%E7%BB%83%E4%B9%A0/" rel="next">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 下一页
               </span>
 <div class="md-ellipsis">
-                3.求导法则
+                练习
               </div>
 </div>
 <div class="md-footer__button md-icon">
