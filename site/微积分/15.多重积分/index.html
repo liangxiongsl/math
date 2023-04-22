@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -340,9 +343,65 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          15.多重积分
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         15.多重积分
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.矩形区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.累次积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.一般区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.极坐标下的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.二重积分的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.曲面积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.三重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.柱面坐标系 &amp; 球坐标系下的三重积分
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../16.%E5%90%91%E9%87%8F%E7%A7%AF%E5%88%86/">
@@ -642,6 +701,56 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.矩形区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.累次积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.一般区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.极坐标下的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.二重积分的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.曲面积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.三重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.柱面坐标系 &amp; 球坐标系下的三重积分
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -649,6 +758,96 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>15.多重积分</h1>
+<p>这一章中我们将 定积分 扩展到 二重 和 三重积分上，其中被积函数有两个或三个变量</p>
+<p>这些想法被用于计算 体积、面积、质量、区域上的质心 等问题，这些区域比我们在第 6 章和第 8 章中提到的更加一般化</p>
+<p>我们还将用 二重积分 计算两个随机变量的概率问题</p>
+<h3 id="_1"></h3>
+<h3 id="1">1.矩形区域上的二重积分</h3>
+<div class="admonition note">
+<p class="admonition-title">回顾 定积分</p>
+<ul>
+<li>我们将区间 [a,b] 等分成 n 个区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span>（<span class="arithmatex">\(i=1..n\)</span>）,其中 <span class="arithmatex">\(\Delta x=x_i-x_{i-1}=\frac {b-a}n\)</span></li>
+<li>在每个区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span> 上取一个样本点，记为 <span class="arithmatex">\(x_i^*\)</span>，每一个区间“可负面积”为 <span class="arithmatex">\(f(x_i^*)\Delta x\)</span></li>
+<li>因而整个区间 [a,b] 的“可负面积”为黎曼和：<span class="arithmatex">\(\sum\limits_{i=1}^n f(x_i^*)\Delta x\)</span></li>
+<li>令 <span class="arithmatex">\(n\to ∞\)</span>，得到 f 从 a 到 b 的定积分：<span class="arithmatex">\(\int_a^b f(x)~d_x = \lim\limits_{n\to ∞} \sum\limits_{i=1}^n f(x_i^*)\Delta x\)</span></li>
+<li>注：<span class="arithmatex">\(f(x) \ge 0\)</span> 时，黎曼和 解释为 f 的近似矩形面积的和；积分解释为 f 之下，[a,b] 之上的图形的面积</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">二重积分</p>
+<ul>
+<li>定义闭矩形区域 <span class="arithmatex">\(R=[a,b]\times[c,d] = \{(x,y)|a\le x\le b,c\le y\le d,(x,y)\in \mathbb R^2\}\)</span> </li>
+<li>将区间 [a,b] 分成 n 个区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span>（<span class="arithmatex">\(i=1..n\)</span>）,其中 <span class="arithmatex">\(\Delta x=x_i-x_{i-1}=\frac {b-a}n\)</span></li>
+<li>将区间 [c,d] 分成 m 个区间 <span class="arithmatex">\([y_{i-1},y_i]\)</span>（<span class="arithmatex">\(i=1..m\)</span>）,其中 <span class="arithmatex">\(\Delta y=y_i-y_{i-1}=\frac {d-c}m\)</span></li>
+<li>每个子区域为 <span class="arithmatex">\(R=[x_{i-1},x_i]\times[y_{j-1},y_j] = \{(x,y)|x_{i-1}\le x\le x_i,y_{j-1}\le y\le y_j,(x,y)\in \mathbb R^2\}\)</span> ，对应的面积为 <span class="arithmatex">\(\Delta A = \Delta A_{ij} = (x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x\Delta y\)</span><ul>
+<li>在每个子区域上选取一个样本点，记为 <span class="arithmatex">\((x_{ij}^*, y_{ij}^*)\)</span></li>
+<li>在每个子区域“可负体积”为 <span class="arithmatex">\(f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></li>
+</ul>
+</li>
+<li>因而整个区域 R 的“可负体积”为 二重黎曼和：<span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></li>
+<li>令 <span class="arithmatex">\(n\to ∞, m\to ∞\)</span>，得到 f 在矩形区域 R 上的 二重积分：<span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></li>
+<li>注：<span class="arithmatex">\(f(x,y) \ge 0\)</span> 时，二重黎曼和 解释为 f 的近似立体体积的和；二重积分解释为 f 之下，区域 R 之上的立体的体积</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">二重积分 定义</p>
+</div>
+<blockquote>
+<p>在矩形区域 R 上的 f 的二重积分为： <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></p>
+<p>如果上面的极限存在</p>
+<p>精确定义：对于任意的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，总存在正整数 N，对于所有 <span class="arithmatex">\(n,m &gt; N\)</span>，使得 <span class="arithmatex">\(R_{ij}\)</span> 中任取样本点 <span class="arithmatex">\((x_{ij}^*,y_{ij}^*)\)</span> 都有 <span class="arithmatex">\(|\iint\limits_R f(x,y)~d_A - \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A| &lt; \epsilon\)</span></p>
+<p>可以证明如果 f 是连续函数，上述定义的极限存在；而有些具有较好的性质但不连续的函数，上述定义的极限也是可能存在的</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>如果 <span class="arithmatex">\(f(x,y)\ge 0\)</span>，那么以矩形 R 为底，z=f(x,y) 形成的曲面为定的立体的体积 V 可以表示为： <span class="arithmatex">\(V = \iint f(x,y)~d_A\)</span></li>
+</ul>
+</div>
+<div class="admonition 二重样本点的选择">
+<p class="admonition-title">二重样本点的选择</p>
+</div>
+<blockquote>
+<ul>
+<li>选择右上角 <span class="arithmatex">\((x_{ij}^*,y_{ij}^*) = (x_i,y_j)\)</span></li>
+<li>中点法则：<span class="arithmatex">\((x_{ij}^*,y_{ij}^*) = (\overline x_i, \overline y_j) = (\frac {x_i+x_{i-1}}2, \frac {y_j+y_{j-1}}2)\)</span></li>
+<li>梯形法则：</li>
+<li>辛普森法则：</li>
+</ul>
+</blockquote>
+<div class="admonition 函数平均值">
+<p class="admonition-title">函数平均值</p>
+</div>
+<blockquote>
+<p>矩形区域 R 上的二元函数的平均值为：</p>
+<p><span class="arithmatex">\(f_{avg} = \frac 1{A(R)}\iint\limits_R f(x,y)~d_A\)</span></p>
+<p>A(R) 表示 R 的面积</p>
+<p>注：<span class="arithmatex">\(A(R)\cdot f_{avg} = \iint\limits_R f(x,y)~d_A\)</span> 表示以 R 为底 <span class="arithmatex">\(f_{avg}\)</span> 为高的盒子 和 f 图像下的立体有着相同的体积</p>
+</blockquote>
+<div class="admonition 二重积分的性质">
+<p class="admonition-title">二重积分的性质</p>
+</div>
+<blockquote>
+<ol>
+<li>
+<p><span class="arithmatex">\(\iint\limits_R [f(x,y) + g(x,y)]~d_A = \iint\limits_R f(x,y)~d_A + \iint\limits_R g(x,y)~d_A\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\iint\limits_R cf(x,y)~d_A = c\iint\limits_R f(x,y)~d_A\)</span> （c 为常数）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(f(x,y) \ge g(x,y)\)</span> 对于 R 中所有 (x,y) 都成立 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A \ge \iint\limits_R g(x,y)~d_A\)</span></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="2">2.累次积分</h3>
+<p>本节我们将看到 二重积分 可以表示成 累次积分 的形式，即二重积分通过两次一重积分得到</p>
+<h3 id="3">3.一般区域上的二重积分</h3>
+<h3 id="4">4.极坐标下的二重积分</h3>
+<h3 id="5">5.二重积分的应用</h3>
+<h3 id="6">6.曲面积分</h3>
+<h3 id="7">7.三重积分</h3>
+<h3 id="8">8.柱面坐标系 &amp; 球坐标系下的三重积分</h3>
 </article>
 </div>
 </div>
