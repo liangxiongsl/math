@@ -945,7 +945,57 @@
 <p class="admonition-title">第 II 类区域</p>
 </div>
 <h3 id="5">5.二重积分的应用</h3>
+<p>从上几节可以观察到，二重积分的用途可以是计算 体积，接下来将讨论如何计算物理量 质量，电荷量，质心，惯性矩</p>
+<div class="admonition note">
+<p class="admonition-title">二维密度 &amp; 质量</p>
+</div>
+<blockquote>
+<p>二维密度指的是由两个变量决定的密度，如：薄片单位面积上的质量密度，区域上单位面积的电荷密度</p>
+<p>这里的质量指的是广义上的质量，如：带电量可以由电荷密度得到</p>
+<p>将区域细分为若干个 <span class="arithmatex">\(R_{ij}\)</span> 区域，其质量为 <span class="arithmatex">\(m \approx \rho(x_{ij}^*, y_{ij}^*)\Delta A\)</span></p>
+<p><span class="arithmatex">\(m = \lim\limits_{k,l\to ∞}\sum\limits_{i=1}^k\sum\limits_{j=1}^l\rho(x_{ij}^*, y_{ij}^*)\Delta A = \iint\limits_D \rho(x,y)~d_A\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">力矩 &amp; 质心</p>
+</div>
+<blockquote>
+<p>力矩：将质量与其到一条轴的距离的乘积，称为力矩；即 <span class="arithmatex">\(M_d = m r_d\)</span>（d 指某个坐标轴）</p>
+<p>将区域细分为若干个 <span class="arithmatex">\(R_{ij}\)</span> 区域，质量为 <span class="arithmatex">\(m \approx \rho(x_{ij}^*, y_{ij}^*)\Delta A\)</span>，因而对 d 轴的力矩为 <span class="arithmatex">\(M_d = m r_d \approx (\rho(x_{ij}^*, y_{ij}^*)\Delta A)r_d\)</span>（<span class="arithmatex">\(r_d = x_{ij}^*\)</span> 或 <span class="arithmatex">\(r_d = y_{ij}^*\)</span>）</p>
+<p>得到两个轴的力矩： <span class="arithmatex">\(M_x = \iint\limits_D y\rho(x,y)~d_A\)</span>,<span class="arithmatex">\(M_y = \iint\limits_D x\rho(x,y)~d_A\)</span></p>
+<p>质心：质心 <span class="arithmatex">\((\overline x, \overline y)\)</span> 满足 <span class="arithmatex">\(m\overline x = M_y, m\overline y = M_x\)</span></p>
+<p>得到质心公式：<span class="arithmatex">\(\overline x = \frac {M_y}{m} = \frac 1m\iint\limits_D x\rho(x,y)~d_A, \overline y = \frac {M_x}{m} = \frac 1m\iint\limits_D y\rho(x,y)~d_A\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">惯性矩 &amp; 旋转半径</p>
+</div>
+<blockquote>
+<p>惯性矩：又称二阶矩，定义为 <span class="arithmatex">\(I_d = m r_d^2\)</span>（<span class="arithmatex">\(r_d\)</span> 为到轴 d 的距离）</p>
+<p>可以得到：<span class="arithmatex">\(I_x = \iint\limits_D y^2\rho(x,y)~d_A, I_y = \iint\limits_D x^2\rho(x,y)~d_A\)</span></p>
+<p>还可以得到关于原点的惯性矩：<span class="arithmatex">\(I_O = \iint\limits_D x^2+y^2\rho(x,y)~d_A\)</span>（因为质点(x,y)到原点的距离为 <span class="arithmatex">\(\sqrt {x^2+y^2}\)</span>）</p>
+<p>注意到：<span class="arithmatex">\(I_O = I_x + I_y\)</span></p>
+<p>旋转半径：薄片对一条轴的旋转半径满足 <span class="arithmatex">\(m R_d^2 = I_d\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">概率</p>
+</div>
 <h3 id="6">6.曲面积分</h3>
+<p>假设二元函数 f (<span class="arithmatex">\(f\ge 0\)</span>)，构成曲面 S，将 S 划分为若干个 <span class="arithmatex">\(R_{ij}\)</span>，记该处的面积为 <span class="arithmatex">\(S_{ij}\)</span>，近似的切平面面积为 <span class="arithmatex">\(T_{ij}\)</span></p>
+<p>注意到 <span class="arithmatex">\(T_{ij}\)</span> 由 <span class="arithmatex">\((x_i^*,y_j^*)\)</span> 处沿着 x 轴 和 y 轴的切向量 <span class="arithmatex">\(\mathbf a, \mathbf b\)</span> 决定</p>
+<p>将 <span class="arithmatex">\(\mathbf a\)</span> 投影于 xoz，可以得到关系 <span class="arithmatex">\(\Delta z = \Delta x f_x\)</span> （<span class="arithmatex">\(f_x\)</span> 为 f 在 x 轴的偏导数），得到三维向量 <span class="arithmatex">\(\mathbf a = \langle \Delta x, 0, \Delta x f_x\rangle\)</span></p>
+<p>同理 <span class="arithmatex">\(\mathbf b = \langle 0, \Delta y, \Delta y f_y\rangle\)</span></p>
+<p><span class="arithmatex">\(|\mathbf a \times \mathbf b|\)</span> 恰好是这两个向量构成的平行四边形的面积，即 <span class="arithmatex">\(T_{ij} = |\mathbf a \times \mathbf b|\)</span></p>
+<p><span class="arithmatex">\(\mathbf a \times \mathbf b = \left|\begin{array}{c c c}{\mathbf i}&amp;{\mathbf j}&amp;{\mathbf k}\\ {\Delta x}&amp;{0}&amp;{f_{x}(x_{i},y_{j})}\Delta x\\ {0}&amp;{\Delta y}&amp;{f_{y}(x_{i},y_{j})\Delta y}\\ \end{array}\right|\)</span></p>
+<p><span class="arithmatex">\(= -f_x(x_i,y_j)\Delta x\Delta y \mathbf i - f_y(x_i,y_j)\Delta x\Delta y \mathbf j + \Delta x\Delta y \mathbf k\)</span></p>
+<p><span class="arithmatex">\(= (-f_x(x_i,y_j) \mathbf i - f_y(x_i,y_j) \mathbf j + \mathbf k)\Delta A\)</span></p>
+<p><span class="arithmatex">\(A(S) = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^∞\sum\limits_{j=1}^∞\Delta T_{ij} = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^∞\sum\limits_{j=1}^∞\sqrt {([f_x(x_i,y_j)]^2 + [f_y(x_i,y_j)]^2 + 1)}\Delta A\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">曲面面积</p>
+</div>
+<blockquote>
+<p>由方程 z=f(x,y), <span class="arithmatex">\((x,y)\in D\)</span> 定义的曲面的面积可以表示为：</p>
+<p><span class="arithmatex">\(A(S) = \iint\limits_D \sqrt {([f_x(x_i,y_j)]^2 + [f_y(x_i,y_j)]^2 + 1)}\Delta A\)</span></p>
+<p>Leibniz 记号：<span class="arithmatex">\(A(S) = \iint\limits_D \sqrt {1 + (\frac {\partial z}{\partial x})^2 + (\frac {\partial z}{\partial y})^2}~d_A\)</span></p>
+</blockquote>
 <h3 id="7">7.三重积分</h3>
 <h3 id="8">8.柱面坐标系 &amp; 球坐标系下的三重积分</h3>
 </article>
