@@ -842,8 +842,108 @@
 </blockquote>
 <h3 id="2">2.累次积分</h3>
 <p>本节我们将看到 二重积分 可以表示成 累次积分 的形式，即二重积分通过两次一重积分得到</p>
+<div class="admonition note">
+<p class="admonition-title">部分积分 &amp; 累次积分</p>
+</div>
+<blockquote>
+<p>设二元函数 f 在矩形 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span> 上连续，我们用记号 <span class="arithmatex">\(\int_c^d f(x,y)~d_y\)</span> 表示 x 固定 y 从 y=c 到 y=d 的积分，该过程称做对变量 y 的 <strong>部分积分</strong></p>
+<p>因而，会得到依赖于 x 的函数 <span class="arithmatex">\(A(x) = \int_c^d f(x,y)~d_y\)</span></p>
+<p>然后，<span class="arithmatex">\(\int_a^b A(x)~d_x = \int_a^b[\int_c^d f(x,y)~d_y]~d_x\)</span>，称之为 <strong>累次积分</strong></p>
+<p>性质：<span class="arithmatex">\(\int_a^b[\int_c^d f(x,y)~d_y]~d_x = \int_a^b\int_c^d f(x,y)~d_y~d_x\)</span>，<span class="arithmatex">\(\int_c^d[\int_a^b f(x,y)~d_x]~d_y = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Fubini 傅比尼定理</p>
+</div>
+<blockquote>
+<p>如果 f 是定义子在 <span class="arithmatex">\(R = \{(x,y)|a\le x\le b, c\le y\le d\}\)</span> 上的连续函数，则：</p>
+<p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_a^b\int_c^d f(x,y)~d_y~d_x = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span></p>
+<p>更一般地：当 f 时 R 上的旨在优先多条光滑曲线上不连续的有界函数，且对 f 的累次积分存在时，上述定理任然成立</p>
+<p>证明：过于困难</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>累计积分的顺序（即先对什么变量进行积分）可以简化计算</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">累次积分的 性质</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\int\limits_R f(x)g(y)~d_A = \int_a^b f(x)~d_x\int_c^d g(y)~d_y\)</span>，当 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span></p>
+<p>注：但是遇到 x 和 y 耦合的情况如何解决？</p>
+</blockquote>
 <h3 id="3">3.一般区域上的二重积分</h3>
+<p>我们考虑在更一般的区域 D 上的积分，其中 D 可能不是一个矩形</p>
+<div class="admonition note">
+<p class="admonition-title">第 I 类平面区域 D 上的二重积分</p>
+</div>
+<blockquote>
+<p>f 是在第 I 类平面区域 D 上的连续函数，其中： <span class="arithmatex">\(D = \{(x,y)|a\le x\le b, g_1(x)\le y\le g_2(x)\}\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)~d_y~d_x\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 II 类</p>
+</div>
+<blockquote>
+<p>f 是在第 II 类平面区域 D 上的连续函数，其中： <span class="arithmatex">\(D = \{(x,y)|c\le y\le d, h_1(y)\le x\le h_2(y)\}\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \int_c^d\int_{h_1(y)}^{h_2(y)} f(x,y)~d_x~d_y\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>可以观察到，在计算最内层积分时，可以将除了该层中的积分变量以外的所有变量及其函数作为常量（即便是积分上下界也是如此）</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<ul>
+<li>注意区分 直接计算积分 和 计算体积 问题（后者要对 f 取绝对值）</li>
+<li>D 为两个曲线的封闭区域，但是曲线不一定是函数，此时 D 可能划分为多个第 I/II 类区域</li>
+<li>内层积分较难积分时，可以考虑区域转换</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">性质</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\iint\limits_D [f(x,y)+g(x,y)]~d_A = \iint\limits_D f(x,y)~d_A + \iint\limits_D g(x,y)~d_A\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_D cf(x,y)~d_A = c\iint\limits_D f(x,y)~d_A\)</span></li>
+<li>如果 <span class="arithmatex">\(f(x,y)\ge g(x,y)\)</span> 对所有 <span class="arithmatex">\((x,y)\in D\)</span> 成立，那么 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A \ge \iint\limits_D g(x,y)~d_A\)</span></li>
+<li>若 <span class="arithmatex">\(D_1 \cup D_2 = D, D_1 \cap D_2 = \emptyset\)</span>，那么 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \iint\limits_{D_1} f(x,y)~d_A + \iint\limits_{D_2} f(x,y)~d_A\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_D 1~d_A = A(D)\)</span></li>
+<li>若 <span class="arithmatex">\(m \le f(x,y) \le M\)</span>（<span class="arithmatex">\((x,y)\in D\)</span>），则 <span class="arithmatex">\(mA(D) \le \iint\limits_D f(x,y)~d_A \le MA(D)\)</span></li>
+</ol>
+</blockquote>
 <h3 id="4">4.极坐标下的二重积分</h3>
+<p>定义 极矩形 为：<span class="arithmatex">\(R = \{(r,\theta) | a\le r\le b, \alpha\le \theta\le \beta\}\)</span></p>
+<p>将区间 <span class="arithmatex">\([a,b]\)</span> 划分为 n 个子区间 <span class="arithmatex">\([r_{i-1},r_i]\)</span>，<span class="arithmatex">\(\Delta r=r_i-r_{i-1}=\frac {b-a}n\)</span></p>
+<p>将区间 <span class="arithmatex">\([\alpha,\beta]\)</span> 划分为 m 个子区间 <span class="arithmatex">\([\theta_{i-1},\theta_i]\)</span>，<span class="arithmatex">\(\Delta \theta=\theta_i-\theta_{i-1}=\frac {\alpha-\beta}m\)</span></p>
+<p>子极矩形：<span class="arithmatex">\(R_{ij} = \{(r,\theta) | r_{i-1}\le r\le r_i, \theta_{j-1}\le \theta\le \theta_j\}\)</span></p>
+<p><span class="arithmatex">\(\Delta A_i = \frac 12r_i^2\Delta\theta - \frac 12r_{i-1}^2\Delta\theta = \frac 12(r_i^2 - r_{i-1}^2)\Delta\theta = \frac 12(r_i + r_{i-1})(r_i - r_{i-1})\Delta\theta = r_i^*\Delta r\Delta \theta\)</span></p>
+<p>得到黎曼和：<span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(r_i^*\cos {\theta_j^*}, r_i^*\sin {\theta_j^*})\Delta A_i\)</span></p>
+<p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(r_i^*\cos {\theta_j^*}, r_i^*\sin {\theta_j^*})\Delta A_i = \sum\limits_{i=1}^n\sum\limits_{j=1}^m f(r_i^*\cos {\theta_j^*}, r_i^*\sin {\theta_j^*})r_i^*\Delta r\Delta \theta\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_\alpha^\beta\int_a^bf(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">二重积分(极坐标)</p>
+</div>
+<blockquote>
+<p>f 是定义在极矩形 R 上的连续函数，而极矩形 R 由 <span class="arithmatex">\(0\le a\le r\le b, \alpha\le \theta\le \beta\)</span> 给出，且满足 <span class="arithmatex">\(0\le \beta - \alpha \le 2\pi\)</span>，则</p>
+<p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_\alpha^\beta\int_a^bf(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 I 类区域</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(D = \{(r,\theta) | \alpha\le\theta\le\beta, h_1(\theta)\le r\le h_2(\theta)\}\)</span></p>
+<p>则有 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}f(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span></p>
+<p>特别地，若 <span class="arithmatex">\(f(x,y)=1,h_1(\theta)=0,h_2(\theta)=h(\theta)\)</span>，</p>
+<p>那么 <span class="arithmatex">\(A(D) = \iint\limits_D 1~d_A = \int_\alpha^\beta \int_0^{h(\theta)}r~d_rd_\theta = \int_\alpha^\beta \frac 12[h(\theta)]^2~d_\theta\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 II 类区域</p>
+</div>
 <h3 id="5">5.二重积分的应用</h3>
 <h3 id="6">6.曲面积分</h3>
 <h3 id="7">7.三重积分</h3>
