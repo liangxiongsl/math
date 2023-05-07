@@ -8,11 +8,11 @@
 <link href="../15.%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/" rel="prev"/>
 <link href="../17.%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>16.向量积分 - 数学</title>
-<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -36,10 +36,13 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -95,13 +98,18 @@
                   </a>
 </li>
 <li class="md-select__item">
-<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
-                    copychar
+<a class="md-select__link" href="https://www.desmos.com/" hreflang="zh">
+                    desmos
                   </a>
 </li>
 <li class="md-select__item">
 <a class="md-select__link" href="https://mathnotepad.com/" hreflang="zh">
                     mathnotepad
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
+                    copychar
                   </a>
 </li>
 <li class="md-select__item">
@@ -146,7 +154,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -154,11 +162,16 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
+<div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
         概述
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        微积分
       </a>
 </li>
 <li class="md-tabs__item">
@@ -172,33 +185,18 @@
       </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        概率论及其应用
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">
         概率论&amp;数理统计
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">
-        高等数学(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">
-        线性代数(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">
-        概率论与数理统计(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
-        微积分
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../img/1/">
-        img
+        xx
       </a>
 </li>
 </ul>
@@ -220,12 +218,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="概述" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -254,392 +252,30 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="高数" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
-          高数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
-        函数 &amp; 极限 &amp; 连续
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        一元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        一元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        多元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        多元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        常微分方程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
-<label for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-          线性代数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5/">
-        矩阵
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F/">
-        向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
-        矩阵的特征值&amp;特征向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        二次型
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
-<label for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论&amp;数理统计" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-          概率论&amp;数理统计
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
-        随机事件&amp;概率
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        数理统计的基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">高等数学(同济)</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="高等数学(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-          高等数学(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%87%BD%E6%95%B0%26%E6%9E%81%E9%99%90/">
-        函数&amp;极限
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AF%BC%E6%95%B0%26%E5%BE%AE%E5%88%86/">
-        导数&amp;微分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%26%E5%AF%BC%E6%95%B0%E5%BA%94%E7%94%A8/">
-        微分中值定理&amp;导数应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        不定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        微分方程
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%99%84%E5%BD%95/">
-        附录
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E6%B3%95%26%26%E5%BA%94%E7%94%A8/">
-        多元函数微分法&amp;&amp;应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%87%8D%E7%A7%AF%E5%88%86/">
-        重积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%26%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/">
-        曲线积分&amp;曲面积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">线性代数(同济)</a>
-<label for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-          线性代数(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%26%26%E8%BF%90%E7%AE%97/">
-        矩阵&amp;&amp;运算
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%26%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        矩阵的初等变换&amp;线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7/">
-        向量组的线性相关性
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        相似矩阵&amp;二次型
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%26%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2/">
-        线性空间&amp;线性变换
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">概率论与数理统计(同济)</a>
-<label for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论与数理统计(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-          概率论与数理统计(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        概率论基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A0%B7%E6%9C%AC%26%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">
-        样本&amp;抽样分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%26%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">
-        方差分析&amp;回归分析
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/bootstrap%E6%96%B9%E6%B3%95/">
-        Bootstrap方法
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E4%B8%AD%E5%BA%94%E7%94%A8Excel/">
-        数理统计中应用Excel
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%26%26%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0/">
-        随机过程&amp;&amp;统计描述
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/">
-        马尔科夫链
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
-        平稳随机过程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../">微积分</a>
-<label for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="微积分" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           微积分
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E5%A4%8D%E4%B9%A0/">
+        复习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
         1.函数&amp;模型
@@ -716,10 +352,57 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          16.向量积分
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         16.向量积分
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.向量场
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.向量场的线积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.线积分的基本定理
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.格林定理
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.旋度 &amp; 散度
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.参数方程定义的曲面&amp;&amp;面积
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.曲面积分
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../17.%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
@@ -735,60 +418,291 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_9" tabindex="0">
-          img
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          高数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
+        函数 &amp; 极限 &amp; 连续
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        一元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        一元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
+        向量代数&amp;空间解析几何
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        多元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        多元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
+        无穷级数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        常微分方程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          线性代数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        线性方程组
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E4%BB%A3%E6%95%B0/">
+        矩阵代数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
+        行列式
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/">
+        向量空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+        特征值&amp;特征向量
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%80%E5%B0%8F%E6%80%A7%26%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">
+        最小性&amp;最小二乘法
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+        对称矩阵&amp;二次型
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%9A%84%E5%87%A0%E4%BD%95%E5%AD%A6/">
+        向量空间的几何学
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="img" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_9">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
-          img
+          概率论及其应用
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        1.样本空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/2.%E7%BB%84%E5%90%88%E5%88%86%E6%9E%90%E6%A6%82%E8%A6%81/">
+        2.组合分析概要
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/3.%E6%89%94%E7%A1%AC%E5%B8%81%E7%9A%84%E8%B5%B7%E4%BC%8F%E9%97%AE%E9%A2%98%E5%92%8C%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A/">
+        3.扔硬币的起伏问题和随机徘徊
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/4.%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%84%E5%90%88/">
+        4.事件的组合
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/5.%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%26%E9%9A%8F%E6%9C%BA%E7%8B%AC%E7%AB%8B%E6%80%A7/">
+        5.条件概率&amp;随机独立性
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/6.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%26%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/">
+        6.二项分布&amp;泊松分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/7.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E7%9A%84%E6%AD%A3%E6%80%81%E9%80%BC%E8%BF%91/">
+        7.二项分布的正态逼近
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/8.%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%AF%95%E9%AA%8C%E7%9A%84%E6%97%A0%E7%A9%B7%E5%BA%8F%E5%88%97/">
+        8.伯努利试验的无穷序列
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/9.%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%9C%9F%E6%9C%9B%E5%80%BC/">
+        9.随机变量&amp;期望值
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/10.%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B/">
+        10.大数定律
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/11.%E5%8F%96%E6%95%B4%E6%95%B0%E5%80%BC%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%AF%8D%E5%87%BD%E6%95%B0/">
+        11.取整数值的随机变量&amp;母函数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/12.%E5%A4%8D%E5%90%88%E5%88%86%E5%B8%83%26%E5%88%86%E6%94%AF%E8%BF%87%E7%A8%8B/">
+        12.复合分布&amp;分支过程
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/13.%E5%BE%AA%E7%8E%AF%E4%BA%8B%E4%BB%B6%26%E6%9B%B4%E6%96%B0%E7%90%86%E8%AE%BA/">
+        13.循环事件&amp;更新理论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/14.%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A%E4%B8%8E%E7%A0%B4%E4%BA%A7%E9%97%AE%E9%A2%98/">
+        14.随机徘徊与破产问题
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/15.%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE/">
+        15.马尔可夫链
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/16.%E6%9C%89%E9%99%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%9A%84%E4%BB%A3%E6%95%B0%E5%A4%84%E7%90%86/">
+        16.有限马尔可夫链的代数处理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/17.%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%9D%E6%97%B6%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
+        17.最简单的依时的随机过程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          概率论&amp;数理统计
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
+        随机事件&amp;概率
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        多维随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
+        随机变量的数字特征
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
+        大数定律&amp;中心极限定理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+        数理统计的基本概念
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
+        参数估计
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
+        假设检验
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          xx
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          xx
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/1/">
         1
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/2/">
-        2
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/3/">
-        3
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/4/">
-        4
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/5/">
-        5
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/6/">
-        6
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/7/">
-        7
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/8/">
-        8
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/9/">
-        9
       </a>
 </li>
 <li class="md-nav__item">
@@ -842,6 +756,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../img/2/">
+        2
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../img/20/">
         20
       </a>
@@ -849,6 +768,41 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/21/">
         21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/3/">
+        3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/4/">
+        4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/5/">
+        5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/6/">
+        6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/7/">
+        7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/8/">
+        8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/9/">
+        9
       </a>
 </li>
 </ul>
@@ -863,19 +817,582 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.向量场
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.向量场的线积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.线积分的基本定理
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.格林定理
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.旋度 &amp; 散度
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.参数方程定义的曲面&amp;&amp;面积
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.曲面积分
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<h1>16.向量积分</h1>
+<p>本章我们将研究向量场的积分（这些向量场是将空间中每个店都映成一个想了的函数）</p>
+<p>特别地，我们定义 曲线积分 可以用来表示一个移动物体在一个力场中沿着曲线运动所做的功</p>
+<p>然后，我们定义 曲面积分可以表示液体流过一个表面的流量</p>
+<p>这些新型积分和我们见过的 <strong>一重</strong>，<strong>二重</strong>，<strong>三重积分</strong> 的关系式通过基本积分定理的高维形式给出的：<strong>格林定理</strong>，<strong>斯托克斯定理</strong>，<strong>散度定理</strong></p>
+<h3 id="1">1.向量场</h3>
+<p>通常情况下，向量场是一个定义域是 <span class="arithmatex">\(\mathbb R^2\)</span>（或 <span class="arithmatex">\(\mathbb R^3\)</span>）中的点集，值域是 <span class="arithmatex">\(V_2\)</span> （或 <span class="arithmatex">\(V_3\)</span>）中的向量集合的函数</p>
+<div class="admonition note">
+<p class="admonition-title">二维向量场</p>
+</div>
+<blockquote>
+<p>设 D 是 <span class="arithmatex">\(\mathbb R^2\)</span> 中的集合(一个平面区域)，<span class="arithmatex">\(\mathbb R^2\)</span> 上的向量场是一个函数，这个函数为 D 上的每一个点 (x,y) 指定了一个二维向量 <span class="arithmatex">\(\mathbf F(x,y)\)</span></p>
+<p>引入标量函数，向量场可以表示为：<span class="arithmatex">\(\mathbf F(x,y) = P(x,y)\mathbf i + Q(x,y)\mathbf j = \langle P(x,y), Q(x,y)\rangle\)</span></p>
+<p>可以缩写为：<span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">三维向量场</p>
+</div>
+<blockquote>
+<p>设 E 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的子集，<span class="arithmatex">\(\mathbb R^3\)</span> 上的向量场是一个函数，这个函数将 E 中的每个点 (x,y,z) 映射到一个三维向量 <span class="arithmatex">\(\mathbf F(x,y,z)\)</span></p>
+<p>引入标量函数，向量场可以表示为 <span class="arithmatex">\(\mathbf F(x,y,z) = P(x,y,z)\mathbf i + Q(x,y,z)\mathbf j + R(x,y,z)\mathbf k\)</span></p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>向量场的定义域是 <span class="arithmatex">\(\mathbb R^2\)</span> 或 <span class="arithmatex">\(\mathbb R^3\)</span> 上的 二维区域(面，而不仅仅是曲线) 或 三维区域(三维空间体，而不仅仅是曲面)</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>有时候可以将点 (x,y,z) 和 它的位置向量 <span class="arithmatex">\(\mathbf x=\langle x,y,z\rangle\)</span> 视作相同，且将 <span class="arithmatex">\(\mathbf F(x,y,z)\)</span> 写作 <span class="arithmatex">\(\mathbf F(\mathbf x)\)</span></li>
+<li>因此 <span class="arithmatex">\(\mathbf F\)</span> 就成了一个将向量 <span class="arithmatex">\(\mathbf x\)</span> 映射到向量 <span class="arithmatex">\(\mathbf F(\mathbf x)\)</span> 的函数</li>
+<li>注：向量函数是将 实数 映射到 位置向量，而向量场是将 位置向量 映射到 方向向量</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>向量场的例子：<span class="arithmatex">\(-y\mathbf i + x\mathbf j\)</span>，<span class="arithmatex">\(z\mathbf k\)</span>，<span class="arithmatex">\(y\mathbf i + z\mathbf j + x\mathbf k\)</span>，<span class="arithmatex">\(y\mathbf i-2\mathbf j + x\mathbf k\)</span>，<span class="arithmatex">\(\frac yx\mathbf i - \frac yz\mathbf j + \frac z4\mathbf k\)</span></li>
+<li>两质量为 m 和 M 的物体间的万有引力 <span class="arithmatex">\(|\mathbf F| = \frac {mMG}{r^2}\)</span>，则 <span class="arithmatex">\(\mathbf x=\langle x,y,z\rangle\)</span> 处的引力为 <span class="arithmatex">\(\mathbf F(\mathbf x) = -\frac {mMG}{\displaystyle |\mathbf x|^3}\mathbf x = -\frac {mMG}{\displaystyle |x^2+y^2+z^2|^{3/2}}\mathbf x\)</span></li>
+<li>电荷 Q 固定域原点，位置向量为 <span class="arithmatex">\(\mathbf x\)</span> 处的电荷 q 上的静电力为（库仑定律） <span class="arithmatex">\(\mathbf F(\mathbf x) = \frac {\displaystyle \epsilon qQ}{\displaystyle |\mathbf x|^3}\mathbf x\)</span>；<span class="arithmatex">\(\mathbf x\)</span> 处的电场为 <span class="arithmatex">\(\mathbf x=\frac {\mathbf F(\mathbf x)}{q} = \frac {\displaystyle \epsilon Q}{\displaystyle |\mathbf x|^3}\mathbf x\)</span></li>
+</ul>
+</div>
+<div class="admonition 梯度场">
+<p class="admonition-title">梯度场</p>
+</div>
+<blockquote>
+<p>设 f 为两个变量的标量函数，其梯度也是向量场，称为 <span class="arithmatex">\(\mathbb R^2\)</span> 上的梯度向量场，即：</p>
+<p><span class="arithmatex">\(\nabla f(x,y) = f_x\mathbf i + f_y\mathbf j\)</span></p>
+<p>设 f 为三个变量的标量函数，其梯度也是向量场，称为 <span class="arithmatex">\(\mathbb R^3\)</span> 上的梯度向量场，即：</p>
+<p><span class="arithmatex">\(\nabla f(x,y,z) = f_x\mathbf i + f_y\mathbf j + f_z\mathbf k\)</span></p>
+<p>注：实际上是将定义域推广到了空间中较大的子集上（因为向量场可以是多值函数）</p>
+</blockquote>
+<div class="admonition 梯度向量场的性质">
+<p class="admonition-title">梯度向量场的性质</p>
+<ul>
+<li>在 f 等高线图上画出梯度向量场<ul>
+<li>梯度向量 和 等高线 正交</li>
+<li>梯度向量在等高线密的地方较长，在等高线稀疏的地方较短</li>
+<li>梯度向量的长度是 f 的方向导数的值</li>
+</ul>
+</li>
+<li>一个向量场 <span class="arithmatex">\(\mathbf F\)</span> 称为一个保守向量场，如果它是某个标量函数的梯度（即 存在一个函数 f 满足 <span class="arithmatex">\(\mathbf F = \nabla f\)</span>），此时 f 称为 <span class="arithmatex">\(\mathbf F\)</span> 的一个势函数</li>
+</ul>
+</div>
+<h3 id="2">2.向量场的线积分</h3>
+<p>一元函数定积分 是定义在区间 [a,b] 上的，与其不同的是，线积分是定义在 [a,b] 对应的一条曲线 C 上的（与 曲线积分 不同！）</p>
+<p>线积分是在 19 世纪为了解决 流体，力，电，磁 等问题而提出的</p>
+<p>假定有一条二维曲线 <span class="arithmatex">\(x=x(t),y=y(t), a\le t\le b\)</span> 光滑（即 <span class="arithmatex">\(\mathbf r'\)</span> 连续，且 <span class="arithmatex">\(\mathbf r'(t)\ne 0\)</span>，参见 13.2）</p>
+<p>将 [a,b] 划分为 n 段，每一段区间对应的子弧长度为 <span class="arithmatex">\(\Delta s_i\)</span>，</p>
+<p>若 f 是定义在曲线 C 上的二元函数（f 同样可以由 t 间接映射而来），</p>
+<p>得到 Riemman 和（黎曼和）：<span class="arithmatex">\(\sum\limits_{i=1}^n f(x_i^*,y_i^*)\Delta s_i\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">线积分</p>
+</div>
+<blockquote>
+<p>如果 f 定义在一条光滑曲线 C 上，曲线由 x=x(t), y=y(t), <span class="arithmatex">\(a\le t\le b\)</span> 给出，那么 f 沿着 C 的曲线积分定义为： </p>
+<p><span class="arithmatex">\(\int_C f(x,y)~d_s = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta s_i\)</span>
+如果这个极限存在的话(并且 t 从 a 变化到 b 时曲线上的点恰好走过一次)：<span class="arithmatex">\(\int_C f(x,y)~d_s = \int_a^b f(x(t), y(t))\sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2}~d_t\)</span> （参见 10.2）</p>
+<p>特例（降维）：若 <span class="arithmatex">\(x=t,y=0,a\le t\le b\)</span>，则退化为一般的定积分：<span class="arithmatex">\(\int_C f(x,y)~d_s = \int_a^b f(x,0)~d_x\)</span></p>
+<p>几何意义：若 t 从 a 变化到 b 时曲线上的点恰好走过一次，并且 <span class="arithmatex">\(f(x,y)\ge 0\)</span>，则 <span class="arithmatex">\(\int_C f(x,y)~d_s\)</span> 表示 xOy 上的曲线 C 为底，以 f(x,y) 为任意一点处的高 所构成的 “门帘” 或 “围栏”（即 竖直曲面）的面积</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>若 C 分段光滑，那么 <span class="arithmatex">\(\int_C f(x,y)~d_s = \sum\limits_{i=1}^n \int_{C_i} f(x,y)~d_s\)</span></li>
+<li>物理意义：<ul>
+<li>f 为曲线的线密度时， 曲线质量 <span class="arithmatex">\(m = \int_C f(x,y)~d_s\)</span>，质心 <span class="arithmatex">\((\overline x, \overline y) = (\frac 1m\int_C xf(x,y)~d_s, \frac 1m\int_C yf(x,y)~d_s)\)</span>，力矩</li>
+</ul>
+</li>
+<li><strong>沿 C 关于 x 的 f 的线积分</strong> <span class="arithmatex">\(\int_Cf(x,y)~d_x = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta x_i = \int_a^b f(x(t),y(t))x'(t)~d_t\)</span></li>
+<li><strong>沿 C 关于 y 的 f 的线积分</strong> <span class="arithmatex">\(\int_Cf(x,y)~d_y = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta y_i = \int_a^b f(x(t),y(t))y'(t)~d_t\)</span></li>
+<li>计算同一条曲线 C 的线积分，若关于 x 和 y 的限积分同时出现，可以简写：<span class="arithmatex">\(\int_C P(x,y)~d_x + \int_C Q(x,y)~d_y = \int_C P(x,y)~d_x + Q(x,y)~d_y\)</span></li>
+<li>为了区分出“沿 C 关于 x 或 y 的 f 的线积分” 与 <span class="arithmatex">\(\int_C f(x,y)~d_s\)</span>，我们称后者为 <strong>沿 C 关于弧长的 f 的线积分</strong></li>
+<li>假设曲线 <span class="arithmatex">\(C_i\)</span> 是从 <span class="arithmatex">\(\mathbf r_0\)</span> 到 <span class="arithmatex">\(\mathbf r_1\)</span> 的路径，那么 <span class="arithmatex">\(\int_{C_i} f(x,y)~d_s = \int_{C_j} f(x,y)~d_s\)</span> 在满足某些情况下成立 (其中 <span class="arithmatex">\(i\ne j\)</span>)</li>
+<li>我们一般<strong>约定</strong>：一个给定的参数 <span class="arithmatex">\(x=x(t), y=y(t), a\le t\le b\)</span> 确定了曲线 C 的一个方向，其正方向和参数 t 的增长方向一致<ul>
+<li>与 C 反向并且经过相同的点的曲线记为 <code>-C</code>，而且 <span class="arithmatex">\(\int_{-C} f(x,y)~d_x = -\int_C f(x,y)~d_x, \int_{-C} f(x,y)~d_y = -\int_C f(x,y)~d_y\)</span>，但是 <span class="arithmatex">\(\int_{-C} f(x,y)~d_s = \int_C f(x,y)~d_s\)</span>（因为 <span class="arithmatex">\(\Delta s_i\)</span> 总是正的，而 <span class="arithmatex">\(\Delta x_i\)</span> 和 <span class="arithmatex">\(\Delta y_i\)</span> 反向计算时会变号）</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">tricks</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf r(t) = (1-t)\mathbf r_0 + t\mathbf r_1, 0\le t\le 1\)</span> 给出了以 <span class="arithmatex">\(\mathbf r_0\)</span> 为起点， <span class="arithmatex">\(\mathbf r_1\)</span> 为终点的向量的向量函数<ul>
+<li>拆分为分量的形式就是：<span class="arithmatex">\(x(t) = (1-t)x_0 + tx_1, y(t) = (1-t)y_0 + ty_1\)</span>（其中 <span class="arithmatex">\(0\le t\le 1\)</span>）</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">三维线积分</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\int_C f(x,y,z)~d_s = \int_a^b f(x(t),y(t),z(t))\sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2 + (\frac {d_z}{d_t})^2}~d_t\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">空间中的线积分</p>
+</div>
+<blockquote>
+<p>若用向量函数 <span class="arithmatex">\(\mathbf r(t)\)</span> 来描述多维空间中的曲线 C 的轨迹，那么沿着 C 关于弧长的 f 的线积分为：</p>
+<p><span class="arithmatex">\(\int_C f(\mathbf r(t))~d_s = \int_C f(\mathbf r(t))\mathbf |\mathbf r'(t)|~d_t\)</span></p>
+<p>简写：<span class="arithmatex">\(\int_C P(x,y,z)~d_x + \int_C Q(x,y,z)~d_y + \int_C R(x,y,z)~d_z = \int_C P(x,y,z)~d_x + Q(x,y,z)~d_y + R(x,y,z)~d_z\)</span></p>
+<p>上式称为：标量场的线积分？</p>
+</blockquote>
+<p>一个常值力 F 对物体从点 P 移动到点 Q 所做的功的定义为 <span class="arithmatex">\(W = \mathbf F \cdot \mathbf D\)</span>（注：<span class="arithmatex">\(\mathbf F\)</span> 和 <span class="arithmatex">\(\mathbf D\)</span> 均为向量）</p>
+<p>考虑如何<strong>将该式子(标量形式)推广到 F 和 D 在路径中连续变化的形式</strong></p>
+<p>将参数区间 [a,b] 分成 n 等分；<span class="arithmatex">\(\Delta s_i\)</span> 表示 <span class="arithmatex">\([t_{i-1},t_i]\)</span> 之间的弧长，<span class="arithmatex">\(\mathbf T_i=\frac {\mathbf r'(t)}{|\mathbf r'(t)|}\)</span> 为 <span class="arithmatex">\(P_{i-1}\)</span> 到 <span class="arithmatex">\(P_i\)</span> 的单位切向量</p>
+<p>F 在 <span class="arithmatex">\(P_{i-1}\)</span> 到 <span class="arithmatex">\(P_i\)</span> 做的功为 <span class="arithmatex">\(\mathbf F(x_i^*,y_i^*,z_i^*)\cdot [\Delta s_i\mathbf T(t_i^*)] = [\mathbf F(x_i^*,y_i^*,z_i^*)\cdot \mathbf T(t_i^*)]\Delta s_i\)</span></p>
+<p><span class="arithmatex">\(W = \int_C \mathbf F(x,y,z)\cdot \mathbf T(x,y,z)~d_s = \int_C \mathbf F\cdot \mathbf T~d_s\)</span></p>
+<p>注意到，<span class="arithmatex">\(\mathbf T_i=\frac {\mathbf r'(t)}{|\mathbf r'(t)|}\)</span>，<span class="arithmatex">\(d_s = |\mathbf r'(t)|~d_t\)</span></p>
+<p>所以 <span class="arithmatex">\(W = \int_a^b \mathbf F(x,y,z)\cdot \left[\frac {\mathbf r'(t)}{|\mathbf r'(t)|}\right]|\mathbf r'(t)|~d_t = \int_a^b \mathbf F(\mathbf r(t))\cdot \mathbf r'(t)~d_t\)</span>，</p>
+<p>该公式经常简记为：<span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">向量场的线积分</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(\mathbf F\)</span> 是定义在光滑曲线 C 上的连续向量场，由向量函数给出，<span class="arithmatex">\(a\le t\le b\)</span>，</p>
+<p>那么 <span class="arithmatex">\(\mathbf F\)</span> 沿着 C 的线积分为：</p>
+<p><span class="arithmatex">\(\int_C \mathbf F\cdot d_{\mathbf r} = \int_a^b\mathbf F(\mathbf r(t))\cdot \mathbf r'(t)~d_t=\int_C\mathbf F\cdot\mathbf T~d_s\)</span></p>
+<p>性质：<span class="arithmatex">\(\int_{-C}\mathbf F\cdot d_{\mathbf r} = -\int_C\mathbf F\cdot d_{\mathbf r}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">标量场的线积分 与 向量场的线积分 的关系</p>
+<ul>
+<li>记 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span></li>
+<li>
+<p><span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_a^b\mathbf F(\mathbf r(t))\cdot \mathbf r'(t)~d_t = \int_a^b (P\mathbf i + Q\mathbf j + R\mathbf k)\cdot (x'(t)\mathbf i + y'(t)\mathbf j + z'(t)\mathbf k)~d_t = \int_a^b [Px'(t) + Qy'(t) + Rz'(t)]~d_t\)</span></p>
+</li>
+<li>
+<p>注意到 <span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_C P~d_x + Q~d_y + R~d_z\)</span></p>
+</li>
+</ul>
+</div>
+<h3 id="3">3.线积分的基本定理</h3>
+<p>回顾微积分基本定理有：<span class="arithmatex">\(\int_a^b F'(x)~d_x=F(b)-F(a)\)</span> （参见 5.3）</p>
+<div class="admonition note">
+<p class="admonition-title">线积分基本定理</p>
+</div>
+<blockquote>
+<p>设 C 为由向量函数 <span class="arithmatex">\(\mathbf r(t),a\le t\le b\)</span> 给出的光滑曲线</p>
+<p>设 f 为二元 或 三元可微函数，其梯度向量 <span class="arithmatex">\(\nabla f\)</span> 在 C 上连续，那么 </p>
+<p><span class="arithmatex">\(\int_C \nabla f\cdot d_{\mathbf r} = f(\mathbf r(b)) - f(\mathbf r(a))\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">与路径无关</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\int_C \mathbf F\cdot d_\mathbf r\)</span> 在 D 上是与路径无关的 当且仅当 <span class="arithmatex">\(\int_C\mathbf F\cdot d_\mathbf r=0\)</span> 对 D 上的任意封闭路径 C 成立</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">概念(拓扑学)</p>
+<ul>
+<li>领域：<span class="arithmatex">\(\mathbb R^n\)</span> 中的某个点 <span class="arithmatex">\(\mathbf x=(x_1,x_2,\dots,x_n)\)</span>，广义半径为 r 的邻域为 <span class="arithmatex">\(N(\mathbf x, r)\{\mathbf y=(y_1,y_2,\dots,y_n) | \sqrt {\sum\limits_{i=1}^n (y_i-x_i)} \le r\}\)</span> （不一定是开集，也可以是闭集）</li>
+<li>开集：集合 A 中的任意一点 a，都存在一个领域 <span class="arithmatex">\(N(a,r)\subset A\)</span>；任意多个开集的交集或并集都是开集</li>
+<li>闭集：若某个集合的补集是开集，那么它是一个闭集</li>
+<li>连通集：一个非空集合，若满足该集合中的任意两个点都可以通过该拓扑空间下的一系列路径相互连通，称其为连通集</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">保守向量场(充分条件1)</p>
+</div>
+<blockquote>
+<p>假定 <span class="arithmatex">\(\mathbf F\)</span> 是在一个<strong>连通开区域</strong>上<strong>连续</strong>的向量场，如果 <span class="arithmatex">\(\int_C \mathbf F\cdot d_\mathbf r\)</span> 在 D 上是与<strong>路径无关</strong>的，</p>
+<p>那么 <span class="arithmatex">\(\mathbf F\)</span> 是 D 上的一个保守向量场，也就是说，存在一个函数 f，满足 <span class="arithmatex">\(\nabla f = \mathbf F\)</span>（f 相当于 F 的原函数）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(\mathbf F(x,y) =P(x,y)\mathbf i + Q(x,y)\mathbf j\)</span> 是一个保守向量场，其中 P 和 Q 在区域 D 上有连续的一阶偏导数，</p>
+<p>那么在整个 D 上有 <span class="arithmatex">\(\frac {\partial P}{\partial y} = \frac {\partial Q}{\partial x}\)</span></p>
+<p>证明详见：P394</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">概念</p>
+<ul>
+<li>途径 <code>walk</code>：一条连续的线</li>
+<li>迹 <code>trail</code>：一条途径，满足任意两条子途径都不相等</li>
+<li>(简单)路径 <code>path</code>：一条迹，满足任意两个点不相等；又称 <strong>简单曲线</strong></li>
+<li>回路 <code>circuit</code>：一条迹，满足首尾两点相等；又称 <strong>非简单闭曲线</strong></li>
+<li>(简单)环/圈 <code>cycle</code>：一条回路，仅有首尾两点相等（即任取两点，只要其中一点不是端点，那么这两个点就不相等）；又称 <strong>简单闭曲线</strong></li>
+<li>连通区域：</li>
+<li>单连通区域：一个连通区域 D，其中任意包含于 D 的 简单闭曲线 所包围的点都在 D 中（这意味着 连通区域 不包含 “洞” 且 不能由两个分块的部分组成）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">保守向量场(充分条件2)</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(\mathbf F=P\mathbf i + Q\mathbf j\)</span> 是一个在单连通开区域 D 上的向量场</p>
+<p>假定 P 和 Q 有连续的一阶导数且 <span class="arithmatex">\(\frac {\partial P}{\partial y} = \frac {\partial Q}{\partial x}\)</span> 在整个 D 上成立，</p>
+<p>那么 <span class="arithmatex">\(\mathbf F\)</span> 是保守的</p>
+<p>证明详见：P401</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">非保守场的必要性(观察图像)</p>
+<ul>
+<li>若沿着闭曲线走，向量场始终同向(夹角始终不大于90°)，那么该向量场不是保守场，并且线积分不小于0</li>
+<li>若沿着闭曲线走，向量场始终同向(夹角始终不小于90°)，那么该向量场不是保守场，并且线积分不大于0</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">已知二维向量场 <span class="arithmatex">\(\mathbf F\)</span>，求势函数 f，满足 <span class="arithmatex">\(\nabla f=\mathbf F\)</span></p>
+<ul>
+<li>令 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j\)</span>，由 14.6 可知 <span class="arithmatex">\(\frac {\partial f}{\partial x} = P, \frac {\partial f}{\partial y} = Q\)</span>，进而 <span class="arithmatex">\(f = \int P~d_x = \int Q~d_y\)</span></li>
+<li>那么主要通过 <span class="arithmatex">\(\frac {\partial}{\partial y} (\int P~d_x) = Q\)</span> 即可求出 f（注意内层积分会引出一个变量 <span class="arithmatex">\(h(y)\)</span>） </li>
+<li>另外 <span class="arithmatex">\(\frac {\partial}{\partial x} (\int Q~d_y) = P\)</span> 也可以类似地计算</li>
+<li>详见：P396例4</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">已知二维保守场 <span class="arithmatex">\(\mathbf F\)</span>，曲线 C，计算 <span class="arithmatex">\(\int_C \nabla f\cdot~d_\mathbf r\)</span></p>
+<ul>
+<li>计算出 f 满足 <span class="arithmatex">\(\nabla f=\mathbf F\)</span> 后，再使用线积分基本定理 <span class="arithmatex">\(\int_C \nabla f\cdot d_{\mathbf r} = f(\mathbf r(b)) - f(\mathbf r(a))\)</span> 即可</li>
+<li>方法二：通过 16.2 的方法直接计算</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">已知三维向量场 <span class="arithmatex">\(\mathbf F\)</span>，求势函数 f，满足 <span class="arithmatex">\(\nabla f=\mathbf F\)</span></p>
+<ul>
+<li>令 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span>，由 14.6 可知 <span class="arithmatex">\(\frac {\partial f}{\partial x} = P, \frac {\partial f}{\partial y} = Q, \frac {\partial f}{\partial z} = R\)</span>，进而 <span class="arithmatex">\(f = \int P~d_x = \int Q~d_y = \int R~d_z\)</span></li>
+<li>那么通过 <span class="arithmatex">\(\begin{cases} \frac {\partial}{\partial y} (\int P~d_x)=Q \\ \frac {\partial}{\partial z} (\int P~d_x) = R\end{cases}\)</span> 可以引导出关于 <span class="arithmatex">\(h_y, h_z\)</span> 的方程组（其中 <span class="arithmatex">\(h(x,y)\)</span> 由内层积分得来），此时问题转化为了二维的情况了</li>
+<li>另外 <span class="arithmatex">\(\begin{cases} \frac {\partial}{\partial x} (\int Q~d_y)=P \\ \frac {\partial}{\partial z} (\int Q~d_y) = R\end{cases}\)</span> 或 <span class="arithmatex">\(\begin{cases} \frac {\partial}{\partial x} (\int R~d_z)=P \\ \frac {\partial}{\partial y} (\int R~d_z) = Q\end{cases}\)</span> 也可以类似的计算</li>
+<li>详见：P397</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">物理学定义</p>
+<ul>
+<li>牛顿第二定律：<span class="arithmatex">\(\mathbf F(\mathbf r(t)) = m\mathbf r^"(t)\)</span> （<span class="arithmatex">\(\mathbf a=\mathbf r^"(t)\)</span>）</li>
+<li>力场对物体的做功：<span class="arithmatex">\(W = \int_c \mathbf F\cdot d_\mathbf r = \int_a^b \mathbf F(\mathbf r(t))\cdot r'(t)~d_t = \int_a^b m\mathbf r^"(t)\cdot \mathbf r'(t)~d_t = \dots = \frac 12m|\mathbf v(b)|^2 - \frac 12m|\mathbf v(a)|^2\)</span>（<span class="arithmatex">\(\mathbf v=\mathbf r'\)</span>）</li>
+<li>记 <span class="arithmatex">\(K(A) = \frac 12m|\mathbf v(a)|^2\)</span> 有：<span class="arithmatex">\(W = K(B)-K(A)\)</span></li>
+<li>势能：<span class="arithmatex">\(P(A) = -f(A)\)</span></li>
+<li>假定 <span class="arithmatex">\(\mathbf F\)</span> 是保守场，由 <span class="arithmatex">\(\mathbf F = -\nabla P\)</span>，进而 <span class="arithmatex">\(W = \int_C\mathbf F\cdot d_\mathbf r = -\int_C\nabla P\cdot d_\mathbf r = -[P(\mathbf r(b)) - P(\mathbf r(a))] = P(A) - P(B)\)</span>，从而 <span class="arithmatex">\(W = K(B)-K(A) = P(A) - P(B) \implies P(A)+K(A) = P(B)+K(B)\)</span></li>
+<li>能量守恒定律：假定 <span class="arithmatex">\(\mathbf F\)</span> 是保守场，那么 <span class="arithmatex">\(P(A)+K(A) = P(B)+K(B)\)</span></li>
+</ul>
+</div>
+<h3 id="4">4.格林定理</h3>
+<p>格林定理给出了 <strong>简单闭曲线</strong> C 的线积分 和 <strong>由 C 围成的区域</strong> D 的二重积分的关系</p>
+<p>格林定理约定简单闭曲线 C 的<strong>正方向</strong>为沿着 C 的<strong>逆时针反向</strong>（区域 D 总是在 <span class="arithmatex">\(\mathbf r(t)\)</span> 沿 C 运动反向的左侧）</p>
+<div class="admonition note">
+<p class="admonition-title">格林定理</p>
+</div>
+<blockquote>
+<p>假定 C 是平面上<strong>沿正方向</strong>的，分段光滑的<strong>简单闭曲线</strong>，D 是 C 限定的区域，</p>
+<p>若干个 P 和 Q 在一个包含 D 的开区域上<strong>有连续的偏导数</strong>，那么：</p>
+<p><span class="arithmatex">\(\int_C P~d_x + Q~d_y = \iint\limits_D (\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A\)</span></p>
+<p>注：<span class="arithmatex">\(\int_C P~d_x + Q~d_y = \int_C\mathbf F\cdot d_\mathbf r\)</span></p>
+<p>证明参见：P401（看困了）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">沿正方向的简单闭曲线 C 构成区域 D 的记法</p>
+<ul>
+<li><span class="arithmatex">\(\int_C P~d_x + Q~d_y = \oint_C P~d_x + Q~d_y = \int_{\partial D} P~d_x + Q~d_y\)</span></li>
+<li>格林定理可以表示为：<ul>
+<li><span class="arithmatex">\(\oint_C P~d_x + Q~d_y = \iint\limits_D (\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_D (\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A = \int_{\partial D} P~d_x + Q~d_y\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">格林定理的应用</p>
+<ul>
+<li>格林定理可以作为 分段简单闭曲线 的线积分计算的优化</li>
+<li>如果闭曲线<strong>分段</strong>，或者 <strong>向量场复杂</strong>但求偏导后能简化大量运算，那么建议使用格林公式</li>
+<li>构造 P 和 Q 满足 <span class="arithmatex">\(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y}=1\)</span><ul>
+<li>使得闭区域 D 的面积 <span class="arithmatex">\(A = \iint\limits_D 1~d_A = \iint\limits_D \frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y}~d_A = \oint_C P~d_x + Q~d_y\)</span></li>
+<li>可以构造很多合法的方案：<span class="arithmatex">\(P=0,Q=x\)</span>，<span class="arithmatex">\(P=-y, Q=0\)</span>，<span class="arithmatex">\(P=-\frac 12y,Q=\frac 12x\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">引论/格林定理推论1</p>
+<ul>
+<li><span class="arithmatex">\((\int_{C_1} P~d_x+Q~d_y) + (\int_{C_2} P~d_x+Q~d_y) = \int_{C_1\cup C_2} P~d_x+Q~d_y\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_{D_1} f~d_A + \iint\limits_{D_2} f~d_A = \iint\limits_{D_1\cup D_2} f~d_A\)</span></li>
+<li>若 <span class="arithmatex">\(C_1\cup C_2\)</span> 是简单闭曲线，并且其内部为区域 D，由格林定理得到：</li>
+<li>关于 <span class="arithmatex">\(D=D_1\cap D_2\)</span> 的格林定理：<span class="arithmatex">\(\int_{C_1\cup C_2} P~d_x+Q~d_y = \iint\limits_{D} \frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y}~d_A\)</span></li>
+</ul>
+</div>
+<p>证明引论3：</p>
+<p>若 <span class="arithmatex">\(C_1\cup C_2\)</span> 是简单闭曲线，并且其内部为区域 D，假设 <span class="arithmatex">\(D_1\cup D_2=D, D_1\cap D_2=C_3\)</span> </p>
+<p>应用格林定理：</p>
+<p><span class="arithmatex">\(\int_{C_1\cup C_3} P~d_x+Q~d_y = \iint\limits_{D_1}(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A\)</span></p>
+<p><span class="arithmatex">\(\int_{C_2\cup -C_3} P~d_x+Q~d_y = \iint\limits_{D_2}(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A\)</span></p>
+<p>两式相加：<span class="arithmatex">\(\int_{(C_1\cup C_3)\cup (C_2\cup -C_3)} P~d_x+Q~d_y = \int_{C_1\cup C_2} P~d_x+Q~d_y = \iint\limits_{D_1\cup D_2}(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A = \iint\limits_{D}(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A\)</span></p>
+<p>因而：<span class="arithmatex">\(\int_{C_1\cup C_2} P~d_x+Q~d_y = \iint\limits_{D}(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">格林定理推论2</p>
+<ul>
+<li>假设 <span class="arithmatex">\(C_1\)</span> 和 <span class="arithmatex">\(C_2\)</span> 为以<strong>逆时针</strong>为正方向的简单闭曲线，并且 <span class="arithmatex">\(C_2\)</span> 在 <span class="arithmatex">\(C_1\)</span> 的内部</li>
+<li>设 D 为 <span class="arithmatex">\(C_1\)</span> 和 <span class="arithmatex">\(C_2\)</span> 之间的区域，那么：</li>
+<li>关于区域 D 的格林定理： <span class="arithmatex">\(\iint\limits_{D}(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A = (\int_{C_1}P~d_x + Q~d_y) + (\int_{-C_2}P~d_x + Q~d_y) = \int_{C}P~d_x + Q~d_y\)</span></li>
+<li>注：C 指的是区域 D 的边界，即 <span class="arithmatex">\(C=C_1\cup -C_2\)</span></li>
+<li>更深层推论：<ul>
+<li>若 <span class="arithmatex">\(\frac {\partial Q}{\partial x} = \frac {\partial P}{\partial y}\)</span>，从而 <span class="arithmatex">\(\int_C \mathbf F\cdot d_\mathbf r = \iint\limits_{D}(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A=(\int_{C_1}P~d_x + Q~d_y) + (\int_{-C_2}P~d_x + Q~d_y) = 0\)</span> （或者等于一个常数 K）</li>
+<li>那么 <span class="arithmatex">\(\int_{C_1}P~d_x + Q~d_y = \int_{C_2}P~d_x + Q~d_y\)</span></li>
+<li>应用1：若 <span class="arithmatex">\(C_1\)</span> 较为复杂，并且 <span class="arithmatex">\(C_2\)</span> 容易构造（例如：<span class="arithmatex">\(C_1\)</span> 包含顶点 P，由于 <span class="arithmatex">\(C_1\)</span> 是开集，那么 P 存在某个领域 <span class="arithmatex">\(N(p,r)\)</span>(二维中表示一个圆) 包含于 <span class="arithmatex">\(C_1\)</span>，构造邻域的边界即为 <span class="arithmatex">\(C_2\)</span>，显然满足 <span class="arithmatex">\(C_2\)</span> 包含于 <span class="arithmatex">\(C_1\)</span>），<span class="arithmatex">\(C_1\)</span> 的线积分就能通过 <span class="arithmatex">\(C_2\)</span> 来求得</li>
+<li>应用2：若 <span class="arithmatex">\(C_1\)</span> 内部有不可偏导的点，构造出性质较好的简单闭曲线 <span class="arithmatex">\(C_2\)</span>，其中 <span class="arithmatex">\(C_2\)</span> 包含所有不可偏导的点，用 <span class="arithmatex">\(C_2\)</span> 的线积分反推出 <span class="arithmatex">\(C_1\)</span> 的线积分</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例题</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf F(x,y) = \frac {-y\mathbf i + x\mathbf j}{x^2+y^2}\)</span>，简单闭曲线 C 包含零点，计算 C 的线积分 <span class="arithmatex">\(\oint_C \mathbf F\cdot d_\mathbf r\)</span></li>
+<li>构造处原点 (0,0) 的一个邻域，其边界记为 <span class="arithmatex">\(C_1\)</span>，发现 <span class="arithmatex">\(C_1\)</span> 必然包含不可偏导的点(0,0)，又因为 <span class="arithmatex">\(\frac {\partial Q}{\partial x} = \frac {\partial P}{\partial y}\)</span> 根据 <span class="arithmatex">\(C_1\)</span> 的线积分就能反推出答案</li>
+</ul>
+</div>
+<h3 id="5">5.旋度 &amp; 散度</h3>
+<p>我们将介绍两个向量场上的算子，其在 流体，电磁 领域得到广泛应用</p>
+<p>其中 旋度 作用与向量场，而 散度 应用于标量场</p>
+<p>最后介绍拉普拉斯算子</p>
+<div class="admonition 定义">
+<p class="admonition-title">定义</p>
+<ul>
+<li>定义 <span class="arithmatex">\(\nabla = \mathbf i\frac {\partial }{\partial x} + \mathbf j\frac {\partial }{\partial y} + \mathbf k\frac {\partial }{\partial z}\)</span>，其中 <span class="arithmatex">\(\nabla\)</span> 读作 <code>del</code></li>
+<li>故有梯度 <span class="arithmatex">\(\nabla f = \mathbf i\frac {\partial f}{\partial x} + \mathbf j\frac {\partial f}{\partial y} + \mathbf k\frac {\partial f}{\partial z}\)</span></li>
+</ul>
+</div>
+<div class="admonition 旋度">
+<p class="admonition-title">旋度</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 上的向量场，且 P,Q,R 的偏导数都存在，那么 <span class="arithmatex">\(\mathbf F\)</span> 的旋度是 <span class="arithmatex">\(\mathbb R^3\)</span> 上的向量场，定义为：</p>
+<p><span class="arithmatex">\(\mathbf {curl~F} = (\frac {\partial R}{\partial y} - \frac {\partial Q}{\partial z})\mathbf i + (\frac {\partial P}{\partial z} - \frac {\partial R}{\partial x})\mathbf j + (\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})\mathbf k\)</span></p>
+<p>叉积形式：<span class="arithmatex">\(\mathbf {curl~F} = \nabla \times \mathbf F = \begin{vmatrix} \mathbf i &amp; \mathbf j &amp; \mathbf k \\ \frac {\partial }{\partial x} &amp; \frac {\partial }{\partial y} &amp; \frac {\partial }{\partial z} \\ P &amp; Q &amp; R\end{vmatrix}\)</span></p>
+</blockquote>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若 f 是三元函数，且具有一阶连续偏导数，那么：<span class="arithmatex">\(\mathbf {curl}(\nabla f) = \mathbf 0\)</span></p>
+<p>注：借助 克莱罗定理 和 旋度的定义 即可证明；逆定理不一定成立，但如果定义域是单连通的（即没有洞）则逆定理成立</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">保守向量场(充分条件；三维)</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(\mathbf F\)</span> 是一个在 <span class="arithmatex">\(\mathbb R^3\)</span> 上都有定义的向量场，它的分类函数有连续的偏导数，且 <span class="arithmatex">\(\mathbf {curl~F} = \mathbf 0\)</span>，</p>
+<p>那么 <span class="arithmatex">\(\mathbf F\)</span> 是一个保守向量场</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">旋度 与 “旋转” 的两种关联(P411)</p>
+<ol>
+<li>详见 16.1 例 3</li>
+<li>详见习题 35</li>
+<li>？？？</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">散度(divergence)</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 上的向量场，且 P,Q,R 的偏导数都存在，那么 <span class="arithmatex">\(\mathbf F\)</span> 的散度是一个三元函数，定义如下：</p>
+<p><span class="arithmatex">\(\text {div}\mathbf F = \frac {\partial P}{\partial x} + \frac {\partial Q}{\partial y} + \frac {\partial R}{\partial z}\)</span></p>
+<p>点积形式：<span class="arithmatex">\(\text{div}\mathbf F = \nabla \cdot \mathbf F\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>旋度 <span class="arithmatex">\(\mathbf {curl~F}\)</span> 是向量场（向量 -&gt; 向量）</li>
+<li>散度 <span class="arithmatex">\(\text{div}\mathbf F\)</span> 是标量场（向量 -&gt; 实数）</li>
+</ul>
+</div>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 上的向量场，且 P,Q,R 的<strong>二阶</strong>偏导数都存在，</p>
+<p>那么 <span class="arithmatex">\(\text {div}~\mathbf {curl~F} = 0\)</span></p>
+<p>注：<span class="arithmatex">\(\mathbf {curl}~\text{div}~\mathbf F\)</span> 不存在，因为 <span class="arithmatex">\(\text{div}~\mathbf F\)</span> 是标量，而 <span class="arithmatex">\(\mathbf {curl}\)</span> 是定义在向量上的</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例题</p>
+<ul>
+<li>证明：<span class="arithmatex">\(\mathbf F=xz\mathbf i + xyz\mathbf j - y^2\mathbf k\)</span>，<span class="arithmatex">\(\mathbf F\)</span> 不能表示成任何一个向量场的旋度，即 <span class="arithmatex">\(\mathbf F \ne \mathbf {curl}~G\)</span><ul>
+<li>使用反证法：否定结论，即假设 <span class="arithmatex">\(\mathbf F = \mathbf {curl}~G\)</span>，推导出与 公理/定理/事实 矛盾的地方</li>
+<li>借助上述定理即可证明</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">对散度的解释</p>
+<ul>
+<li>若 <span class="arithmatex">\(\mathbf F\)</span> 是液体或气体的速度，那么 <span class="arithmatex">\(\text{div}~\mathbf F\)</span> 表示 (x,y,z) 处单位体积上液体或其他流出的质量的增长率的改变量</li>
+<li>换句话说，<span class="arithmatex">\(\text{div}~\mathbf F\)</span> 描述了流图从 (x,y,z) 流出的趋势</li>
+<li>若 <span class="arithmatex">\(\text{div}~\mathbf F=0\)</span>，那么称 <span class="arithmatex">\(\mathbf F\)</span> 是不可压缩的</li>
+</ul>
+</div>
+<div class="admonition 拉普拉斯算子">
+<p class="admonition-title">拉普拉斯算子</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\text{div}(\nabla f) = \nabla\cdot (\nabla f) = \frac {\partial ^2f}{\partial x^2} + \frac {\partial ^2f}{\partial y^2} + \frac {\partial ^2f}{\partial z^2}\)</span></p>
+<p>定义拉普拉斯算子：<span class="arithmatex">\(\nabla ^2 = \nabla\cdot \nabla\)</span>，则 <span class="arithmatex">\(\nabla^2 f = \frac {\partial ^2f}{\partial x^2} + \frac {\partial ^2f}{\partial y^2} + \frac {\partial ^2f}{\partial z^2}\)</span></p>
+<p>其命名源自拉普拉斯方程：<span class="arithmatex">\(\frac {\partial ^2f}{\partial x^2} + \frac {\partial ^2f}{\partial y^2} + \frac {\partial ^2f}{\partial z^2} = 0\)</span></p>
+<p>应用到向量场：设 <span class="arithmatex">\(\mathbf F=P\mathbf i + Q\mathbf j + R\mathbf k\)</span>，那么<span class="arithmatex">\(\nabla^2\mathbf F=\nabla^2\mathbf P\mathbf i + \nabla^2\mathbf Q\mathbf j + \nabla^2\mathbf R\mathbf k\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">格林公式(向量形式)</p>
+</div>
+<blockquote>
+<p>假定平面区域 D，它的边界曲线是 C，且函数 P 和 Q 都满足格林公式的前提条件，考虑向量场 <span class="arithmatex">\(\mathbf F=P\mathbf i + Q\mathbf j + 0\mathbf k\)</span></p>
+<ol>
+<li><span class="arithmatex">\(\oint_C\mathbf F\cdot d_\mathbf r = \iint\limits_D(\mathbf {curl~F})\cdot k~d_A\)</span></li>
+<li><span class="arithmatex">\(\oint_C\mathbf F\cdot \mathbf n~d_s = \iint\limits_D\text{div}~\mathbf F~d_A\)</span>（此等式描述了法线方向的线积分；证明详见 P413）</li>
+</ol>
+<p>（<span class="arithmatex">\(\mathbf r=x(t)\mathbf i + y(t)\mathbf j\)</span>，单位切向量 <span class="arithmatex">\(\mathbf T(t) = \frac {x'(t)}{|\mathbf r'(t)|}\mathbf i + \frac {y'(t)}{|\mathbf r'(t)|}\mathbf j\)</span>，单位法向量 <span class="arithmatex">\(\mathbf n(t) = \frac {y'(t)}{|\mathbf r'(t)|}\mathbf i - \frac {x'(t)}{|\mathbf r'(t)|}\mathbf j\)</span>）</p>
+</blockquote>
+<h3 id="6">6.参数方程定义的曲面&amp;&amp;面积</h3>
+<p>我们在 8.2 求出了旋转面的面积，15.6 求出了曲面的面积，</p>
+<p>接下来讨论更一般的称为<strong>参数曲面</strong>的曲面，并计算它的面积</p>
+<p>我们可以用 <span class="arithmatex">\(\mathbf r(t)\)</span> 表示空间曲线，而 <span class="arithmatex">\(\mathbf r(u,v)\)</span> 可以表示空间曲面</p>
+<div class="admonition 参数曲面">
+<p class="admonition-title">参数曲面</p>
+</div>
+<blockquote>
+<p>我们用两个参数 u 和 v 的向量函数表示一个曲面：</p>
+<p><span class="arithmatex">\(\mathbf r(u,v) = x(u,v)\mathbf i + y(u,v)\mathbf j + z(u,v)\mathbf k\)</span>，<span class="arithmatex">\((u,v)\in D\)</span></p>
+<p>参数方程为：<span class="arithmatex">\(x=x(u,v), y=y(u,v), z=z(u,v)\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>笛卡尔坐标上的曲面可以很方便地转换为参数方程，方法有很多，面对具体问题时还是应该选取合适的参数</li>
+<li>给定曲面 <span class="arithmatex">\(f(x,y,z)=0\)</span>  =&gt;  可以任取两个变量作为参数 u 和 v 构成参数曲面（前提是第三个变量可以被两个参数表示(二元单射)）</li>
+<li><span class="arithmatex">\(2\cos u\mathbf i + v\mathbf j + 2\sin u\mathbf k\)</span> =&gt; 圆柱体</li>
+<li><span class="arithmatex">\((2+\sin v)\cos u\mathbf i + (2+\sin v)\sin u\mathbf j + (u+\cos v)\mathbf k\)</span> =&gt; 螺旋线管子</li>
+<li>以 <span class="arithmatex">\(P_0\)</span> 为起点，包含两个不平行向量 <span class="arithmatex">\(\mathbf a, \mathbf b\)</span> 的平面  =&gt;  <span class="arithmatex">\(\mathbf r(u,v) = \mathbf r_0 + u\mathbf a + v\mathbf b\)</span></li>
+<li><span class="arithmatex">\(x^2+y^2+z^2=a^2\)</span>  =&gt;  <span class="arithmatex">\(a\sin u\cos v\mathbf i + a\sin u\sin v\mathbf j + a\cos u\mathbf k\)</span>（<span class="arithmatex">\(D=[0,\pi]\times[0,2\pi]\)</span>）</li>
+</ul>
+</div>
+<div class="admonition 参数曲面的应用">
+<p class="admonition-title">参数曲面的应用</p>
+<ul>
+<li>计算机绘图</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">常见参数曲面</p>
+<ul>
+<li>旋转面：例如：假设 y=f(x) <span class="arithmatex">\((f(x)\ge 0)\)</span> 绕 x 轴旋转  <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(x=x, y=f(x)\cos\theta, z=f(x)\sin\theta\)</span></li>
+<li>平面：表示出的参数有点“丑”<ul>
+<li>平面 <span class="arithmatex">\(S_1\)</span> 在点 <span class="arithmatex">\(P_0\)</span> 处的<strong>切平面</strong> <span class="arithmatex">\(S_2\)</span>：假设 <span class="arithmatex">\(\mathbf r(u,v)\)</span> 为 <span class="arithmatex">\(S_1\)</span> 的参数曲面，P 为切平面 <span class="arithmatex">\(S_2\)</span> 的任意一点，又因为 <span class="arithmatex">\(P_0\)</span> 处的法向量 <span class="arithmatex">\(\mathbf n = \mathbf r_u(u_0,v_0)\times \mathbf r_v(u_0,v_0)\)</span>，那么 <span class="arithmatex">\(S_2\)</span> 由 <span class="arithmatex">\(\overrightarrow {P_0P}\cdot \mathbf n = \overrightarrow {P_0P}\cdot(\mathbf r_u(u_0,v_0)\times \mathbf r_v(u_0,v_0))\)</span> 决定</li>
+<li>若对任意 <span class="arithmatex">\(P_0\)</span>， <span class="arithmatex">\(\mathbf n\ne \mathbf 0\)</span>，则去米娜 S 陈伟光滑的(没有“拐角”)</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>考虑矩形区域 R 上的曲面面积：考虑某个区域 <span class="arithmatex">\(R_{i,j}=[u_i,\Delta u]\times [v_j,\Delta v]\)</span>，使用平面四边形（由 <span class="arithmatex">\(\Delta u\mathbf r_u^*\)</span> 和 <span class="arithmatex">\(\Delta v\mathbf r_v^*\)</span> 构成） 近似 <span class="arithmatex">\(S_{i,j}\)</span>，其面积为 <span class="arithmatex">\(\left| (\Delta u\mathbf r_u^*)\times (\Delta v\mathbf r_v^*) \right| = \left| \mathbf r_u^* \times \mathbf r_v^* \right|\Delta u\Delta v\)</span></p>
+<div class="admonition 曲面面积">
+<p class="admonition-title">曲面面积</p>
+</div>
+<blockquote>
+<p>如果一个光滑的参数曲面 S 由 <span class="arithmatex">\(\mathbf r(u,v) = x(u,v)\mathbf i + y(u,v)\mathbf j + z(u,v)\mathbf k\)</span>（<span class="arithmatex">\((u,v)\in D\)</span>）</p>
+<p>且当 <span class="arithmatex">\((u,v)\)</span> 在整个参数域 D 上变化的时候，S 值覆盖依次，那么 S 的曲面面积为：</p>
+<p><span class="arithmatex">\(A(S) = \iint\limits_D \left| \mathbf r_u\times \mathbf r_v \right|~d_A\)</span></p>
+<p>其中，<span class="arithmatex">\(\mathbf r_u = \frac {\partial x}{\partial u}\mathbf i + \frac {\partial y}{\partial u}\mathbf j + \frac {\partial z}{\partial u}\mathbf k, \mathbf r_v = \frac {\partial x}{\partial v}\mathbf i + \frac {\partial y}{\partial v}\mathbf j + \frac {\partial z}{\partial v}\mathbf k\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">曲面面积推论</p>
+<ul>
+<li>若曲面由 <span class="arithmatex">\(z=(x,y)\)</span> 决定，将 x 和 y 作为曲面参数：得到<span class="arithmatex">\(\mathbf r_x = \mathbf i+\frac {\partial f}{\partial x}\mathbf k, \mathbf r_y = \mathbf j+\frac {\partial f}{\partial y}\mathbf k\)</span>，那么 <span class="arithmatex">\(\mathbf r_x\times \mathbf r_y=-\frac {\partial f}{\partial x}\mathbf i - \frac {\partial f}{\partial y}\mathbf j + \mathbf k\)</span>，故 <span class="arithmatex">\(\left| \mathbf r_x\times \mathbf r_y \right| = \sqrt {1 + f_x^2 + f_y^2}\)</span></li>
+<li>旋转曲面：假定曲面由参数 <span class="arithmatex">\(x=x,y=f(x)\cos\theta, z=f(x)\sin\theta\)</span>（<span class="arithmatex">\(a\le x\le b, 0\le \theta\le2\pi\)</span>，<span class="arithmatex">\(f(x)\ge 0\)</span>）<ul>
+<li>同样可以通过得到与 8.2公式4 相同的公式：<span class="arithmatex">\(A(S) = \iint\limits_D|\mathbf r_x\times \mathbf r_y|~d_A = 2\pi \int_a^b f(x)\sqrt {1 + [f'(x)]^2}~d_x\)</span>（请自行证明！）</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="7">7.曲面积分</h3>
+<p>曲面积分与曲面面积放关系 类似于 线积分与弧长的关系</p>
+<p>假定 f 是一个三个变元的函数，定义域为曲面 S</p>
+<p>将定义域 S 分成小片面积 <span class="arithmatex">\(S_{i,j}\)</span>，其面积为 <span class="arithmatex">\(\Delta S_{i,j}\)</span>，在 <span class="arithmatex">\(S_{i,j}\)</span> 上取样本 <span class="arithmatex">\(P_{i,j}^*\)</span>，记贡献为 <span class="arithmatex">\(f(P_{i,j}^*)\Delta S_{i,j}\)</span>（假定 S 是矩形？）</p>
+<div class="admonition 曲面积分">
+<p class="admonition-title">曲面积分</p>
+</div>
+<blockquote>
+<p>定义 f 在曲面 S 上的曲面积分为： <span class="arithmatex">\(\iint\limits_S f(x,y,z)~d_S = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(P_{ij}^*)\Delta S_{ij}\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>与曲面积分特别像的积分：</li>
+<li>二维曲线积分：<span class="arithmatex">\(\int_C f(x,y)~d_s = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)\Delta s_i\)</span>（参见 16.2）</li>
+<li>二重积分：<span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A\)</span>（参见 15.1）</li>
+</ul>
+</div>
+<p>如果曲面 S 是形如 <span class="arithmatex">\(z=g(x,y)\)</span>（<span class="arithmatex">\((x,y)\in D\)</span>） 的图像，假定 D 是矩形，每个小矩形 <span class="arithmatex">\(R_{ij}\)</span> 对应 S 上的 <span class="arithmatex">\(S_{ij}\)</span>，设其且近似的平面为 <span class="arithmatex">\(T_{ij}\)</span>，根据 15.6 讨论的曲面面积有 <span class="arithmatex">\(\Delta S_{ij} \approx \Delta T_{ij} = \sqrt {[g_x(x_i,y_j)]^2 + [g_y(x_i,y_j)]^2 + 1}~\Delta A\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">曲面积分2</p>
+</div>
+<blockquote>
+<p>如果曲面 S 形如 <span class="arithmatex">\(z=g(x,y)\)</span>（<span class="arithmatex">\((x,y)\in D\)</span>），那么它的曲面积分为：</p>
+<p><span class="arithmatex">\(\iint\limits_S f(x,y,z)~d_S = \iint\limits_D f(x,y,g(x,y))\sqrt {(\frac {\partial z}{\partial x})^2 + (\frac {\partial z}{\partial y})^2 + 1}~d_A\)</span></p>
+</blockquote>
 </article>
 </div>
 </div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </a>
+          </button>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -884,20 +1401,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  上一页
-                </span>
+                上一页
+              </span>
+<div class="md-ellipsis">
                 15.多重积分
               </div>
 </div>
 </a>
 <a aria-label="下一页: 17.二阶微分方程" class="md-footer__link md-footer__link--next" href="../17.%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" rel="next">
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  下一页
-                </span>
+                下一页
+              </span>
+<div class="md-ellipsis">
                 17.二阶微分方程
               </div>
 </div>
@@ -915,10 +1432,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -928,8 +1445,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

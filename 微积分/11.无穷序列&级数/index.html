@@ -8,11 +8,11 @@
 <link href="../10.%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%26%E6%9E%81%E5%9D%90%E6%A0%87/" rel="prev"/>
 <link href="../12.%E5%90%91%E9%87%8F%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>11.无穷序列&amp;级数 - 数学</title>
-<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -36,10 +36,13 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -95,13 +98,18 @@
                   </a>
 </li>
 <li class="md-select__item">
-<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
-                    copychar
+<a class="md-select__link" href="https://www.desmos.com/" hreflang="zh">
+                    desmos
                   </a>
 </li>
 <li class="md-select__item">
 <a class="md-select__link" href="https://mathnotepad.com/" hreflang="zh">
                     mathnotepad
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
+                    copychar
                   </a>
 </li>
 <li class="md-select__item">
@@ -146,7 +154,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -154,11 +162,16 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
+<div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
         概述
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        微积分
       </a>
 </li>
 <li class="md-tabs__item">
@@ -172,33 +185,18 @@
       </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        概率论及其应用
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">
         概率论&amp;数理统计
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">
-        高等数学(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">
-        线性代数(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">
-        概率论与数理统计(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
-        微积分
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../img/1/">
-        img
+        xx
       </a>
 </li>
 </ul>
@@ -220,12 +218,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="概述" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -254,392 +252,30 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="高数" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
-          高数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
-        函数 &amp; 极限 &amp; 连续
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        一元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        一元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        多元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        多元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        常微分方程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
-<label for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-          线性代数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5/">
-        矩阵
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F/">
-        向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
-        矩阵的特征值&amp;特征向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        二次型
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
-<label for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论&amp;数理统计" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-          概率论&amp;数理统计
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
-        随机事件&amp;概率
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        数理统计的基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">高等数学(同济)</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="高等数学(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-          高等数学(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%87%BD%E6%95%B0%26%E6%9E%81%E9%99%90/">
-        函数&amp;极限
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AF%BC%E6%95%B0%26%E5%BE%AE%E5%88%86/">
-        导数&amp;微分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%26%E5%AF%BC%E6%95%B0%E5%BA%94%E7%94%A8/">
-        微分中值定理&amp;导数应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        不定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        微分方程
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%99%84%E5%BD%95/">
-        附录
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E6%B3%95%26%26%E5%BA%94%E7%94%A8/">
-        多元函数微分法&amp;&amp;应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%87%8D%E7%A7%AF%E5%88%86/">
-        重积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%26%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/">
-        曲线积分&amp;曲面积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">线性代数(同济)</a>
-<label for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-          线性代数(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%26%26%E8%BF%90%E7%AE%97/">
-        矩阵&amp;&amp;运算
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%26%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        矩阵的初等变换&amp;线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7/">
-        向量组的线性相关性
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        相似矩阵&amp;二次型
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%26%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2/">
-        线性空间&amp;线性变换
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">概率论与数理统计(同济)</a>
-<label for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论与数理统计(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-          概率论与数理统计(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        概率论基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A0%B7%E6%9C%AC%26%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">
-        样本&amp;抽样分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%26%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">
-        方差分析&amp;回归分析
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/bootstrap%E6%96%B9%E6%B3%95/">
-        Bootstrap方法
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E4%B8%AD%E5%BA%94%E7%94%A8Excel/">
-        数理统计中应用Excel
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%26%26%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0/">
-        随机过程&amp;&amp;统计描述
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/">
-        马尔科夫链
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
-        平稳随机过程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../">微积分</a>
-<label for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="微积分" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           微积分
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E5%A4%8D%E4%B9%A0/">
+        复习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
         1.函数&amp;模型
@@ -691,10 +327,82 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          11.无穷序列&amp;级数
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         11.无穷序列&amp;级数
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.序列
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.和式的积分判别法 &amp; 估计
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.比较判别法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.交错级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.绝对收敛 &amp; 比值 / 根值 判别法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.判别级数收敛的策略
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.幂级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9.函数的幂级数展开
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10.泰勒级数 &amp; 麦克劳林级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    11.二项级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    12.泰勒级数的应用
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../12.%E5%90%91%E9%87%8F%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
@@ -735,60 +443,291 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_9" tabindex="0">
-          img
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          高数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
+        函数 &amp; 极限 &amp; 连续
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        一元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        一元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
+        向量代数&amp;空间解析几何
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        多元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        多元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
+        无穷级数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        常微分方程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          线性代数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        线性方程组
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E4%BB%A3%E6%95%B0/">
+        矩阵代数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
+        行列式
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/">
+        向量空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+        特征值&amp;特征向量
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%80%E5%B0%8F%E6%80%A7%26%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">
+        最小性&amp;最小二乘法
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+        对称矩阵&amp;二次型
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%9A%84%E5%87%A0%E4%BD%95%E5%AD%A6/">
+        向量空间的几何学
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="img" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_9">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
-          img
+          概率论及其应用
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        1.样本空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/2.%E7%BB%84%E5%90%88%E5%88%86%E6%9E%90%E6%A6%82%E8%A6%81/">
+        2.组合分析概要
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/3.%E6%89%94%E7%A1%AC%E5%B8%81%E7%9A%84%E8%B5%B7%E4%BC%8F%E9%97%AE%E9%A2%98%E5%92%8C%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A/">
+        3.扔硬币的起伏问题和随机徘徊
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/4.%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%84%E5%90%88/">
+        4.事件的组合
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/5.%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%26%E9%9A%8F%E6%9C%BA%E7%8B%AC%E7%AB%8B%E6%80%A7/">
+        5.条件概率&amp;随机独立性
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/6.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%26%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/">
+        6.二项分布&amp;泊松分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/7.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E7%9A%84%E6%AD%A3%E6%80%81%E9%80%BC%E8%BF%91/">
+        7.二项分布的正态逼近
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/8.%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%AF%95%E9%AA%8C%E7%9A%84%E6%97%A0%E7%A9%B7%E5%BA%8F%E5%88%97/">
+        8.伯努利试验的无穷序列
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/9.%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%9C%9F%E6%9C%9B%E5%80%BC/">
+        9.随机变量&amp;期望值
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/10.%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B/">
+        10.大数定律
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/11.%E5%8F%96%E6%95%B4%E6%95%B0%E5%80%BC%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%AF%8D%E5%87%BD%E6%95%B0/">
+        11.取整数值的随机变量&amp;母函数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/12.%E5%A4%8D%E5%90%88%E5%88%86%E5%B8%83%26%E5%88%86%E6%94%AF%E8%BF%87%E7%A8%8B/">
+        12.复合分布&amp;分支过程
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/13.%E5%BE%AA%E7%8E%AF%E4%BA%8B%E4%BB%B6%26%E6%9B%B4%E6%96%B0%E7%90%86%E8%AE%BA/">
+        13.循环事件&amp;更新理论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/14.%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A%E4%B8%8E%E7%A0%B4%E4%BA%A7%E9%97%AE%E9%A2%98/">
+        14.随机徘徊与破产问题
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/15.%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE/">
+        15.马尔可夫链
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/16.%E6%9C%89%E9%99%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%9A%84%E4%BB%A3%E6%95%B0%E5%A4%84%E7%90%86/">
+        16.有限马尔可夫链的代数处理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/17.%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%9D%E6%97%B6%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
+        17.最简单的依时的随机过程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          概率论&amp;数理统计
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
+        随机事件&amp;概率
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        多维随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
+        随机变量的数字特征
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
+        大数定律&amp;中心极限定理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+        数理统计的基本概念
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
+        参数估计
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
+        假设检验
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          xx
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          xx
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/1/">
         1
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/2/">
-        2
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/3/">
-        3
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/4/">
-        4
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/5/">
-        5
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/6/">
-        6
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/7/">
-        7
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/8/">
-        8
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/9/">
-        9
       </a>
 </li>
 <li class="md-nav__item">
@@ -842,6 +781,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../img/2/">
+        2
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../img/20/">
         20
       </a>
@@ -849,6 +793,41 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/21/">
         21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/3/">
+        3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/4/">
+        4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/5/">
+        5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/6/">
+        6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/7/">
+        7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/8/">
+        8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/9/">
+        9
       </a>
 </li>
 </ul>
@@ -863,19 +842,822 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.序列
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.和式的积分判别法 &amp; 估计
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.比较判别法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.交错级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.绝对收敛 &amp; 比值 / 根值 判别法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.判别级数收敛的策略
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.幂级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9.函数的幂级数展开
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10.泰勒级数 &amp; 麦克劳林级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    11.二项级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    12.泰勒级数的应用
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<h1>11.无穷序列&amp;级数</h1>
+<h3 id="1">1.序列</h3>
+<div class="admonition 序列">
+<p class="admonition-title">序列</p>
+<ul>
+<li>序列是有一定顺序的一列数，并且是定义在 正整数集 上的函数，写作 <span class="arithmatex">\(a_n\)</span></li>
+<li>序列 <span class="arithmatex">\(\{ a_1, a_2, a_3, ... \}\)</span> 也记作 <span class="arithmatex">\(\{ a_n \}\)</span> 或 <span class="arithmatex">\(\{ a_n \}_{n=1}^∞\)</span></li>
+<li>如： <span class="arithmatex">\(a_n \iff \{ a_n = \frac {n}{n+1} \} \iff \{ \frac 12, \frac 23, \cdots, \frac n{n+1}, \cdots \}\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">“隐式序列”</p>
+<ul>
+<li>这些序列往往不能以简单的等式定义</li>
+<li>如：Fibonacci序列 (<span class="arithmatex">\(f_1 = f_2 = 1, f_n = f_{n-1} + f_{n-2}, n\ge 3\)</span>)</li>
+<li>又如：<span class="arithmatex">\(\{ a_n \}\)</span> 为常数 e 在第 n 位小数上的数字，即 <span class="arithmatex">\(\{ 7, 1, 8, 2, 8, \cdots \}\)</span></li>
+<li>再如：<span class="arithmatex">\(\{ P_n \}\)</span> 表示年份 n 的一月世界人口数</li>
+</ul>
+</div>
+<div class="admonition 几何表示">
+<p class="admonition-title">几何表示</p>
+<ul>
+<li>一维数轴上的离散的点：<span class="arithmatex">\((1, a_1), (2, a_2), (3, a_3), \cdots\)</span></li>
+<li>二维笛卡尔坐标系中的离散点</li>
+</ul>
+</div>
+<div class="admonition 序列极限">
+<p class="admonition-title">序列极限</p>
+</div>
+<blockquote>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 具有极限 L 且记作 <span class="arithmatex">\(\lim\limits_{n\to \infty} = L\)</span></p>
+<p>或 <span class="arithmatex">\(a_n \to L\)</span> 当 <span class="arithmatex">\(n\to \infty\)</span></p>
+<p>若通过取充分大的 n 我们可以使项 <span class="arithmatex">\(a_n\)</span> 任意接近 L，</p>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 存在，我们称此序列 收敛 (或 是收敛的)，否则称此发散 (或 是发散的)</p>
+</blockquote>
+<div class="admonition 序列极限的精确描述">
+<p class="admonition-title">序列极限的精确描述</p>
+</div>
+<blockquote>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 具有极限 L 且记作 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = L\)</span> 或 <span class="arithmatex">\(a_n \to L\)</span> 当 <span class="arithmatex">\(n\to \infty\)</span></p>
+<p>若对任意小的 <span class="arithmatex">\(\epsilon &gt; 0\)</span> 存在相应的整数 N，只要 <span class="arithmatex">\(n &gt; N\)</span>，就有 <span class="arithmatex">\(|a_n - L| &lt; \epsilon\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">如何理解？</p>
+<ol>
+<li><span class="arithmatex">\(\{ a_n \}\)</span> 在一维数轴上，无论区间 <span class="arithmatex">\((L -\epsilon, L + \epsilon)\)</span> 取得多小，都存在一个 N，使得序列中 <span class="arithmatex">\(a_{N+1}\)</span> 往后的所有项都落在这个区间里
+    <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://pic.peo.pw/a/2023/03/23/641c532ddee29.png"><img alt="" src="https://pic.peo.pw/a/2023/03/23/641c532ddee29.png"/></a></li>
+<li><span class="arithmatex">\(\{ a_n \}\)</span> 在二维笛卡尔坐标系上，当 n &gt; N 时 <span class="arithmatex">\(\{ a_n \}\)</span> 的图像必然位于水平线 <span class="arithmatex">\(y = L + \epsilon\)</span> 和 <span class="arithmatex">\(y = L - \epsilon\)</span> 之间，无论对多小的 <span class="arithmatex">\(\epsilon\)</span>，这个图像都是对的，但越小的 <span class="arithmatex">\(\epsilon\)</span> 就对应越大的 N
+    <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://pic.peo.pw/a/2023/03/23/641c5368d147f.png"><img alt="" src="https://pic.peo.pw/a/2023/03/23/641c5368d147f.png"/></a></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理(连续函数极限 <span class="arithmatex">\(\to\)</span> 序列极限)</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\lim\limits_{x\to ∞}f(x) = L\)</span> 且 当 n 为整数时有 <span class="arithmatex">\(f(n) = a_n\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞}a_n = L\)</span></p>
+</blockquote>
+<div class="admonition 无穷大极限">
+<p class="admonition-title">无穷大极限</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = ∞\)</span> 意味着对任意正数 M，存在整数 N，对任意的 n &gt; N 使得 <span class="arithmatex">\(a_n &gt; M\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">序列的极限定律</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\{ a_n \}\)</span> 和 <span class="arithmatex">\(\{ b_n \}\)</span> 为收敛序列，c 为常数，则：</p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞}(a_n + b_n) = \lim\limits_{n\to ∞}a_n + \lim\limits_{n\to ∞}b_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}(a_n - b_n) = \lim\limits_{n\to ∞}a_n - \lim\limits_{n\to ∞}b_n\)</span></p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞}c\cdot a_n = c\cdot \lim\limits_{n\to ∞} a_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}c = c\)</span></p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞}a_n\cdot b_n = \lim\limits_{n\to ∞} a_n \cdot \lim\limits_{n\to ∞} b_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}\frac {a_n}{b_n} = \frac {\lim\limits_{n\to ∞} a_n}{\lim\limits_{n\to ∞} b_n}\)</span>  &amp;  <span class="arithmatex">\(\lim\limits_{n\to ∞} b_n\ne 0\)</span></p>
+<p><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n^p = (\lim\limits_{n\to ∞} a_n)^p\)</span>  &amp; <span class="arithmatex">\(p &gt; 0, a_n &gt; 0\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">夹逼定理</p>
+</div>
+<blockquote>
+<p>若对 <span class="arithmatex">\(n\ge n_0\)</span> 有 <span class="arithmatex">\(a_n\le b_n \le c_n\)</span> 且 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = \lim\limits_{n\to ∞} c_n = L\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} b_n = L\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">\lim\limits_{n\to ∞} \frac {n!}{n^n}</p>
+<ul>
+<li>n! 在非整数域上没有定义，所以不能用 洛必达法则 或 泰勒展开</li>
+<li>可以考虑 夹逼定理</li>
+</ul>
+</div>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} |a_n| = 0\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span></p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>周期函数 或 周期序列 在无穷远处都是 振荡的？（发散）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(\{ r^n \}\)</span> 的敛散性</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} r^n = \begin{cases} 0 &amp; |r|&lt;1 \\ 1 &amp; r=1 \\ ∞ &amp; |r|&gt;1 \\ -1\to 1振荡 &amp; r=-1 \end{cases}\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">单调性</p>
+</div>
+<blockquote>
+<p>若对所有 <span class="arithmatex">\(n\ge 1\)</span> 都有 <span class="arithmatex">\(a_n &lt; a_{n+1}\)</span>，则 <span class="arithmatex">\(\{ a_n \}\)</span> 称为递增的</p>
+<p>若对所有 <span class="arithmatex">\(n\ge 1\)</span> 都有 <span class="arithmatex">\(a_n &gt; a_{n+1}\)</span>，则 <span class="arithmatex">\(\{ a_n \}\)</span> 称为递减的</p>
+<p>递增 或 递减 都被称为单调</p>
+<p>tip：还可以利用连续函数的导函数判断 序列单调性</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">有界性</p>
+</div>
+<blockquote>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 有上界，若存在数 M 使得 <span class="arithmatex">\(a_n \le M\)</span> 对所有 <span class="arithmatex">\(n\ge 1\)</span></p>
+<p>序列 <span class="arithmatex">\(\{ a_n \}\)</span> 有下界，若存在数 m 使得 <span class="arithmatex">\(a_n \ge m\)</span> 对所有 <span class="arithmatex">\(n\ge 1\)</span></p>
+<p>若它既有 上界 又有 下界，则 <span class="arithmatex">\(\{ a_n \}\)</span> 是有界序列</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">单调序列定理(证明：p15)</p>
+</div>
+<blockquote>
+<p>任何 <mark class="critic">有界</mark>，<mark class="critic">单调</mark> 的序列都是收敛的（递增，有上界 或 递减，有下界）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>此定理基于 完备性定理：若 S 为非空实数集并由上界 M（对所有 x 属于 S 有 <span class="arithmatex">\(x\le M\)</span>），则 S 有一个最小上界 b</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>研究递归序列时经常用到数学归纳法，如证明 单调性 或 有界性</li>
+<li>在数学归纳之前往往要打表找规律</li>
+<li>证明序列 单调 并 有界 后，此时就能通过方程 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_{n+1} = f(L), \lim\limits_{n\to ∞} a_n = L\)</span> 求解极限了</li>
+</ul>
+</div>
+<h3 id="2">2.级数</h3>
+<div class="admonition 无穷级数">
+<p class="admonition-title">无穷级数</p>
+<ul>
+<li>我们尝试将无穷序列 <span class="arithmatex">\(\{ a_n \}_{n=1}^∞\)</span> 的各项加起来，得到 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 或 <span class="arithmatex">\(\sum a_n\)</span></li>
+</ul>
+</div>
+<div class="admonition 无穷级数">
+<p class="admonition-title">无穷级数</p>
+</div>
+<blockquote>
+<p>已知级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞\)</span>，令 <span class="arithmatex">\(s_n\)</span> 为其第 n 个部分和(前缀和)： <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n a_i\)</span></p>
+<p>若序列 <span class="arithmatex">\(\{ s_n \}\)</span> 收敛且 <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n = s\)</span> 作为实数存在，则级数 <span class="arithmatex">\(\sum a_n\)</span> 称为收敛的，</p>
+<p>且我们即 <span class="arithmatex">\(a_1 + a_2 + \cdots + a_n + \cdots = s\)</span> 或 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n = s\)</span>数 s 称为级数的和；否则，级数被称为发散的</p>
+<p>注意： <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n a_i\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>无穷级数 类似于 函数在无穷处的反常积分，如 <span class="arithmatex">\(\int_a^∞ f(x)~d_x = \lim\limits_{t\to ∞}\int_a^t f(x)~d_x\)</span></li>
+<li>为了求无穷级数，我们先从 1..n 求和，再令 <span class="arithmatex">\(n\to ∞\)</span>；为了求反常积分，我们先从 a 积到 t，然后令 <span class="arithmatex">\(t\to ∞\)</span></li>
+<li>无穷级数的三种表示：<span class="arithmatex">\(\lim\limits_{n\to ∞} \sum\limits_{i=1}^n a_i\)</span>，<span class="arithmatex">\(\sum\limits_{i=1}^∞ a_i\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞} s_n\)</span></li>
+</ul>
+</div>
+<div class="admonition 几何级数">
+<p class="admonition-title">几何级数</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://pic.peo.pw/a/2023/03/24/641d2989cc150.png"><img align="right" alt="" src="https://pic.peo.pw/a/2023/03/24/641d2989cc150.png"/></a></p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ a\cdot r^{n-1}, a\ne 0\)</span></li>
+<li>若 r=1，则 <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n a = n\cdot a \to ±∞\)</span>，因为 <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n\)</span> 不存在，这种情况下几何级数发散</li>
+<li>若 <span class="arithmatex">\(r\ne 1\)</span>，由 <span class="arithmatex">\(s_n = \sum\limits_{i=0}^{n-1}a\cdot r^i\)</span>，<span class="arithmatex">\(r\cdot s_n = \sum\limits_{i=1}^{n}a\cdot r^i\)</span>，可得 <span class="arithmatex">\(s_n = a\cdot \frac {1-r^n}{1-r}\)</span><ul>
+<li>若 <span class="arithmatex">\(|r| &lt; 1\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to∞} s_n = \lim\limits_{n\to ∞} s_n = a\cdot \frac {1-r^n}{1-r} = \frac {a}{1-r}\)</span>，此时几何级数收敛 且和为 <span class="arithmatex">\(\frac a{1-r}\)</span></li>
+<li>若 <span class="arithmatex">\(r \le -1\)</span> 或 <span class="arithmatex">\(r &gt; 1\)</span>，此时几何级数发散</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition 几何级数">
+<p class="admonition-title">几何级数</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\sum\limits_{n=1}^∞ a r^{n-1}\)</span> 是收敛的，若 |r| &lt; 1，它的和为 <span class="arithmatex">\(\sum\limits_{n=1}^∞ ar^{n-1} = \frac a{1-r}, |r| &lt; 1\)</span></p>
+<p>若 <span class="arithmatex">\(|r| \ge 1\)</span>，几何级数发散</p>
+<p>即： <span class="arithmatex">\(\sum\limits_{n=1}^∞ a r^{n-1} = \begin{cases} \frac {a}{1-r} &amp; |r|&lt;1 \\ ∞ &amp; r=1 或 |r|&gt;1 \\ -a \to 0 振荡 &amp; r=-1 \end{cases}\)</span></p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 发散 <span class="arithmatex">\(\to\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} \sum\limits_{i=1}^n a_i\)</span> 发散？</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ 2^{2i}3^{1-n}\)</span>，<span class="arithmatex">\(2.3\overline{17}=2.3171717\cdots\)</span> 均可转化为几何级数</li>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ (f_{i+1} - f_{i})\)</span> 收敛，仅当 <span class="arithmatex">\(\lim\limits_{n\to ∞}f_{n+1}-f_1\)</span> 存在</li>
+</ul>
+</div>
+<div class="admonition 调和级数">
+<p class="admonition-title">调和级数</p>
+<ul>
+<li>证明调和级数 <span class="arithmatex">\(\sum\limits_{i=1}^∞ \frac 1i\)</span> 发散：</li>
+<li>令 <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n \frac 1i\)</span>，有 <span class="arithmatex">\(s_{2^n} = \sum\limits_{i=1}^{2^n} \frac 1i\)</span></li>
+<li>其中 <span class="arithmatex">\(\displaystyle s_{\displaystyle 2^n} = \sum\limits_{i=1}^{2^n} \frac 1i = 1 + \sum\limits_{i=1}^n \sum\limits_{j=2^{i-1}+1}^{2^i} \frac 1j \ge 1 + \sum\limits_{i=1}^n(2^i-(2^{i-1}+1)-1) \frac {1}{2^i} = 1  + \sum\limits_{i=1}^n\frac {2^{i-1}}{2^i} = 1 + \frac n2\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} 1+\frac n2\)</span> 发散 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} s_{\displaystyle 2^n}\)</span> 发散 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n\)</span> 发散</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理(收敛推论)</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span></p>
+<p>逆命题不成立</p>
+</blockquote>
+<div class="admonition 发散的判别法">
+<p class="admonition-title">发散的判别法</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 不存在 或 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n \ne 0\)</span>，则级数 <span class="arithmatex">\(\lim\limits_{n\to ∞} \sum\limits_{i=1}^n a_i\)</span> 发散</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 不存在 或 不为0 <span class="arithmatex">\(\implies\)</span> 级数发散</li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span>，级数可能 发散 或 收敛</li>
+</ul>
+</div>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 为收敛级数，则级数 <span class="arithmatex">\(\sum c\cdot a_n\)</span> (c 为常数)，<span class="arithmatex">\(\sum (a_n + b_n)\)</span>，<span class="arithmatex">\(\sum (a_n - b_n)\)</span> 也收敛，且</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ c\cdot a_n = c\sum\limits_{n=1}^∞ a_n\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ (a_n + b_n) = \sum\limits_{n=1}^∞ a_n + \sum\limits_{n=1}^∞ b_n\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ (a_n - b_n) = \sum\limits_{n=1}^∞ a_n - \sum\limits_{n=1}^∞ b_n\)</span></li>
+</ul>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>级数的有限项不影响它的 收敛性 或 发散性：假设 <span class="arithmatex">\(\sum\limits_{n=N+1}^∞ a_n\)</span> 是收敛的 (<span class="arithmatex">\(N \ge 0\)</span>)，那么 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 也是收敛的</li>
+</ul>
+</div>
+<h3 id="3">3.和式的积分判别法 &amp; 估计</h3>
+<p>接下来介绍的判别法使得我们 <mark class="critic">不用求出级数具体的和</mark> 就能确定其是否收敛</p>
+<div class="admonition note">
+<p class="admonition-title">idea</p>
+<ul>
+<li>设 <span class="arithmatex">\(a_i\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 的生成数列，并且 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\([0, ∞)\)</span> 上的 <mark class="critic">连续递减的正值函数</mark></li>
+<li>那么 <span class="arithmatex">\(\int_{i}^{i+1} f(x)~d_x \le a_i \le \int_{i-1}^{i} f(x)~d_x\)</span></li>
+<li>同样的有： <span class="arithmatex">\(\sum\limits_{i=n}^∞\int_{i}^{i+1} f(x)~d_x \le \sum\limits_{i=n}^∞a_i \le \sum\limits_{i=n}^∞\int_{i-1}^{i} f(x)~d_x \iff \int_{n}^∞ f(x)~d_x \le \sum\limits_{i=n}^∞a_i \le \int_{n-1}^{∞} f(x)~d_x\)</span></li>
+<li>注意：上式中 n 应该取适当的值，以使不等式左右两边的积分都是有限值（否则意义不大，如： <span class="arithmatex">\(\int_0^∞ f_x d_x\)</span> 和 <span class="arithmatex">\(\int_1^∞ f_x d_x\)</span> 后者是有限值并且极限为 1）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{n^2} \approx \frac {\pi^2}{6}\)</span> （由 Euler 证明）</li>
+<li>上述证明相当困难，但是可以用积分证明 <span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{n^2} &lt; 2\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{\sqrt n}\)</span> 的敛散性也用类似的方法证明</li>
+</ul>
+</div>
+<div class="admonition 积分判别法">
+<p class="admonition-title">积分判别法</p>
+</div>
+<blockquote>
+<p>设 f 为 [0, +∞) 上的<mark class="critic">连续</mark>、取<mark class="critic">正值</mark>的<mark class="critic">(基本)递减</mark>函数</p>
+<p>令 <span class="arithmatex">\(a_n = f(n)\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛 <span class="arithmatex">\(\iff\)</span> 反常积分 <span class="arithmatex">\(\int_1^∞ f(x)~d_x\)</span> 收敛</p>
+<p>换句话说：</p>
+<ul>
+<li><span class="arithmatex">\(\int_1^∞ f(x)~d_x\)</span> 收敛，则 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛</li>
+<li><span class="arithmatex">\(\int_1^∞ f(x)~d_x\)</span> 发散，则 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 发散</li>
+</ul>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>基本递减：指的是 x &gt; N 时 f 递减</li>
+<li>积分判别法 <mark class="critic">未必要在1处开始积分</mark></li>
+<li>更通用的说法：<ul>
+<li><span class="arithmatex">\(\int_{h-1}^∞ f(x)~d_x\)</span> 收敛，则 <span class="arithmatex">\(\sum\limits_{n=h}^∞ a_n\)</span> 收敛</li>
+<li><span class="arithmatex">\(\int_h^∞ f(x)~d_x\)</span> 发散，则 <span class="arithmatex">\(\sum\limits_{n=h}^∞ a_n\)</span> 发散</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><mark class="critic">p级数</mark></p>
+<ul>
+<li><span class="arithmatex">\(\displaystyle \lim\limits_{n\to∞} \frac 1{n^p} = \begin{cases} +∞ &amp; p &lt; 0 \\ 1 &amp; p = 0 \\ 0 &amp; p&gt;0 \end{cases}\)</span></li>
+<li>但是 <span class="arithmatex">\(\displaystyle \sum\limits_{i=1}^∞ \frac 1{n^p} = \begin{cases} 收敛 &amp; p &gt; 1 \\ 发散 &amp; p \le 1 ​\end{cases}\)</span></li>
+</ul>
+</div>
+<div class="admonition 估计级数的和">
+<p class="admonition-title">估计级数的和</p>
+</div>
+<div class="admonition 积分判别法的余项估计">
+<p class="admonition-title">积分判别法的余项估计</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(f(k) = a_k\)</span>，其中 f 是在 <span class="arithmatex">\(x\ge n\)</span> 上连续，取正值的递减函数，<span class="arithmatex">\(\sum a_n\)</span> 收敛</p>
+<p>若 <span class="arithmatex">\(R_n = s - s_n = \sum\limits_{i=n+1}^{∞} a_i\)</span>，则 <span class="arithmatex">\(\int_{n+1}^{+∞}~d_x \le R_n \le \int_{n}^{+∞} f(x)~d_x\)</span></p>
+<p>因而：<span class="arithmatex">\(s_n + \int_{n+1}^{+∞}~d_x \le s_n + R_n = s \le s_n + \int_{n}^{+∞} f(x)~d_x\)</span></p>
+</blockquote>
+<div class="admonition 积分判别法的证明">
+<p class="admonition-title">积分判别法的证明</p>
+</div>
+<h3 id="4">4.比较判别法</h3>
+<p>将所给的级数 与 一个已知收敛或发散的计数进行比较</p>
+<div class="admonition 比较判别法">
+<p class="admonition-title">比较判别法</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\sum a_n\)</span>，<span class="arithmatex">\(\sum l_n\)</span>，<span class="arithmatex">\(\sum r_n\)</span> 是各项都为正的级数</p>
+<ol>
+<li>若 <span class="arithmatex">\(\sum r_n\)</span> 收敛且对所有的 n 都有 <span class="arithmatex">\(a_n \le r_n\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 也收敛</li>
+<li>若 <span class="arithmatex">\(\sum l_n\)</span> 发散且对所有的 n 都有 <span class="arithmatex">\(a_n \ge l_n\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 也发散</li>
+</ol>
+<p>证明详见 p38</p>
+<p>细节：仅需 <span class="arithmatex">\(n\ge \lceil N\rceil\)</span> 也能使结论成立（级数的收敛性不受有限项的影响）</p>
+</blockquote>
+<div class="admonition 例子">
+<p class="admonition-title">例子</p>
+<ul>
+<li>有理函数</li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac {\ln x}{x}\)</span></li>
+</ul>
+</div>
+<div class="admonition 极限的比较判别法">
+<p class="admonition-title">极限的比较判别法</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 是各项都为正的计数，</p>
+<p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}\frac {a_n}{b_n} = c\)</span> （c为有限数，且 <span class="arithmatex">\(c &gt; 0\)</span>），则两边都 收敛 或 发散</p>
+</blockquote>
+<div class="admonition 估计和">
+<p class="admonition-title">估计和</p>
+</div>
+<blockquote>
+<p>若对于所有的 n，<span class="arithmatex">\(a_n \le b_n\)</span>，我们有 <span class="arithmatex">\(R_n \le T_n\)</span></p>
+</blockquote>
+<h3 id="5">5.交错级数</h3>
+<p>目前位置我们讨论的级数都是为正数的，接下来介绍重要的技术：交错级数</p>
+<div class="admonition 交错级数收敛性的判别">
+<p class="admonition-title">交错级数收敛性的判别</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\sum\limits_{i=1}^∞ (-1)^{n-1}a_i\)</span> (<span class="arithmatex">\(a_i &gt; 0\)</span>)</p>
+<p>满足：</p>
+<ol>
+<li>对所有 n，<span class="arithmatex">\(a_{i} \ge a_{i+1}\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}a_n = 0\)</span></li>
+</ol>
+<p>则，此级数收敛</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">估计和(交错级数估计定理)</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(s = \sum (-1)^{n-1}b_n\)</span> 为交错级数，满足：</p>
+<ol>
+<li><span class="arithmatex">\(b_n\ge b_{n+1} \ge 0\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}b_n = 0\)</span></li>
+</ol>
+<p>则 <span class="arithmatex">\(|R_n| = |s - s_n| = \le b_{n+1}\)</span> （即 s 在 <span class="arithmatex">\(s_n\)</span> 两侧“波动”，误差为 <span class="arithmatex">\(b_{n+1}\)</span>）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>任何收敛级数的 部分和<span class="arithmatex">\(s_n\)</span> 都可以用作 总和<span class="arithmatex">\(s\)</span> 的一个近似，但如果不能估计其精确值就没有多少意义了</li>
+<li>当问及 “精确到 m 位小数” 时，选取合适的 n，使得 <span class="arithmatex">\([(s_n + b_{n+1}) \cdot 10^m] = [(s_n - b_{n+1}) \cdot 10^m]\)</span></li>
+</ul>
+</div>
+<h3 id="6">6.绝对收敛 &amp; 比值 / 根值 判别法</h3>
+<div class="admonition 绝对收敛">
+<p class="admonition-title">绝对收敛</p>
+</div>
+<blockquote>
+<p>级数 <span class="arithmatex">\(\sum a_n\)</span> 称为绝对收敛的，若其绝对值级数 <span class="arithmatex">\(\sum |a_n|\)</span> 收敛</p>
+</blockquote>
+<div class="admonition 条件收敛">
+<p class="admonition-title">条件收敛</p>
+</div>
+<blockquote>
+<p>级数 <span class="arithmatex">\(\sum a_n\)</span> 称为条件收敛的，若它收敛但非绝对收敛的</p>
+</blockquote>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若级数 <span class="arithmatex">\(\sum a_n\)</span> 是绝对收敛的，则它一定是收敛的</p>
+</blockquote>
+<pre class="mermaid"><code>graph
+收敛 --&gt; 绝对收敛</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{i=1}^∞ \frac {\cos i}{i^2}\)</span> 不能直接用 比较判别法，因为不能保证对于所有 n 有 <span class="arithmatex">\(\cos i \ge 0\)</span>，应当间接地取绝对值证明其收敛性，再推出原级数收敛</li>
+</ul>
+</div>
+<div class="admonition 比值判别法">
+<p class="admonition-title">比值判别法</p>
+</div>
+<blockquote>
+<ol>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = L &lt; 1\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 绝对收敛（从而收敛）</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = L &gt; 1\)</span> 或 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = +∞\)</span> ，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 发散</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = 1\)</span>，比值判别法<mark class="critic">无法确定</mark>收敛性（即得不到有关 <span class="arithmatex">\(\sum a_n\)</span> 的收敛性 或 发散性的结论）</li>
+</ol>
+<p>相关证明：p48</p>
+</blockquote>
+<div class="admonition 根值判别法">
+<p class="admonition-title">根值判别法</p>
+</div>
+<blockquote>
+<ol>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}\sqrt[n] {|a_n|} = L &lt; 1\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 绝对收敛（从而收敛）</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}\sqrt[n] {|a_n|} = L &gt; 1\)</span> 或 <span class="arithmatex">\(\lim\limits_{n\to ∞}\sqrt[n] {|a_n|} = L = ∞\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 发散</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} \sqrt[n]{|a_n|} = 1\)</span>，根值判别法<mark class="critic">失效</mark></li>
+</ol>
+</blockquote>
+<div class="admonition 重排">
+<p class="admonition-title">重排</p>
+</div>
+<blockquote>
+<p>一个已知 收敛级数 “是 绝对收敛 还是 条件收敛” 与 “无限项和 是否与 有限项和 行为相同” 的两个命题之间有一种联系</p>
+<p>结论：</p>
+<ol>
+<li>若 <span class="arithmatex">\(\sum a_n\)</span> 绝对收敛 且和为 s，则 <span class="arithmatex">\(\sum a_n\)</span> 的任意重排的和 <span class="arithmatex">\(\sum a_{p_n}\)</span> 为 s</li>
+<li>若 <span class="arithmatex">\(\sum a_n\)</span> 为条件收敛级数，r 为任意实数，则总存在 <span class="arithmatex">\(\sum a_n\)</span> 的一个重排使得重排后级数的和为 r （由黎曼证明）</li>
+</ol>
+<p>详见p51</p>
+</blockquote>
+<h3 id="7">7.判别级数收敛的策略</h3>
+<p>判别级数的收敛性 与 函数的积分 类似，并没有确定的，快速的准则来确定已知级数用什么方法判别，但任可以优化判别收敛性的效率</p>
+<div class="admonition 级数判别策略">
+<p class="admonition-title">级数判别策略</p>
+</div>
+<blockquote>
+<ol>
+<li>若级数形如 <mark class="critic"><span class="arithmatex">\(\sum \frac {1}{n^p}\)</span></mark> (p—级数)，则 <mark class="critic">p &gt; 1 时收敛</mark>， <span class="arithmatex">\(p\le 1\)</span> 时发散</li>
+<li>若级数形如 <mark class="critic"><span class="arithmatex">\(\sum a\cdot r^{n-1}\)</span> 或 <span class="arithmatex">\(\sum a\cdot r^{n}\)</span></mark> (几何级数)，则 <mark class="critic">|r| &lt; 1 时收敛</mark>， <span class="arithmatex">\(|r|\ge 1\)</span> 时发散，将级数转化成这种形式可能需要一些初等代数的方法</li>
+<li>
+<p>若级数具有 p—级数 或 几何级数 类似的形式，应考虑 <mark class="critic">比较判别法</mark></p>
+<ul>
+<li>特别地，若 <span class="arithmatex">\(a_n\)</span> 是 n 的 有理函数 或 代数函数（包含多项式根），则应该与 p—级数 比较（只保留分子和分母中 n 的最高次）</li>
+<li>比较判别法 适用于正项级数，若 <span class="arithmatex">\(\sum a_n\)</span> 含有负项，我们可以对 <span class="arithmatex">\(\sum |a_n|\)</span> 使用 比较判别法，判别绝对收敛性 (见 11.4 练习)</li>
+</ul>
+</li>
+<li>
+<p>若发现 <span class="arithmatex">\(\lim\limits_{n\to ∞} \ne 0\)</span>，那么就应该用 <mark class="critic">发散判别</mark></p>
+</li>
+<li>若级数有如 <span class="arithmatex">\(\sum (-1)^{n-1} a_n\)</span> 或 <span class="arithmatex">\(\sum (-1)^n b_n\)</span> 的形式，那显然 <mark class="critic">交错级数收敛性判别法</mark> 有用</li>
+<li>
+<p>包含 阶乘 或 其他乘积（包含一个到第 n 次幂的不变的增长）用 <mark class="critic">比值判别法</mark> 经常比较方便</p>
+<ul>
+<li>注意：对所有 p—级数 都有：<span class="arithmatex">\(n\to ∞\)</span> 时 <span class="arithmatex">\(|\frac {a_{n+1}}{a_{n}}| \to 1\)</span>，因此所有是 n 的 有理函数 或 代数函数 的级数都是这样；也就是说，比值判别法 对此类函数都不适用</li>
+</ul>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(a_n\)</span> 是 <span class="arithmatex">\((b_n)^n\)</span> 的形式，则 <mark class="critic">根值判别法</mark> 可能有用</p>
+</li>
+<li>若 <span class="arithmatex">\(a_n = f(n)\)</span>，其中 <span class="arithmatex">\(\int_1^{+∞} f(x)~d_x\)</span> 易于计算，则 <mark class="critic">积分判别法</mark> 会有效</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>注意 比值判别法 和 根值判别法 有时无法确定收敛性</li>
+</ul>
+</div>
+<h3 id="8">8.幂级数</h3>
+<div class="admonition 幂级数">
+<p class="admonition-title">幂级数</p>
+</div>
+<blockquote>
+<p>幂级数形如：<span class="arithmatex">\(\sum\limits_{n=0}^∞ c_n\cdot x^n = c_0 + c_1\cdot x + c_2\cdot x^2 + \cdots\)</span></p>
+<p>该级数的和是一个函数 <span class="arithmatex">\(f(x) = c_0 + c_1\cdot x + \cdots + c_n\cdot x^n + \cdots\)</span>，定义域为 使级数收敛的 x 的集合（类似于一个多项式，唯一的区别就是 f 有无穷多项）</p>
+<p><span class="arithmatex">\(c_n = 常数\)</span> 时，幂级数 就变成了 几何级数，仅当 <span class="arithmatex">\(|x| &lt; 1\)</span> 时收敛</p>
+<p>幂级数一般形式：<span class="arithmatex">\(\sum\limits_{n=0}^∞ c_n(x-a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots\)</span> （此形式是书写惯例，即使 x = a；x = a 时，对所有 <span class="arithmatex">\(n\ge 1\)</span> 的各项都是 0，即 x=a 时该级数总收敛；该形式称为 (x-a) 处的幂级数 或 以 a 为中心的幂级数 或 关于 a 的幂级数）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>经常会讨论幂级数与其他级数组合时，x 的取值范围（特别注意 比值判别法 或 根值判别法 有时不能确定敛散性，这时需要代入特殊点再判断）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>幂级数主要用于表示 数学、物理、化学 中出现的一些最重要的函数</li>
+<li>比如 Bessel 贝塞尔函数</li>
+</ul>
+</div>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>对已知幂级数 <span class="arithmatex">\(\sum\limits_{n=0}^∞ c_n(x-a)^n\)</span> 只有三种可能性：</p>
+<ol>
+<li>级数只有当 x=a 时收敛</li>
+<li>级数对所有的 x 收敛</li>
+<li>存在一个正数 R 使得级数当 |x-a| &lt; R 时收敛，当 |x-a| &gt; R 时发散 （端点处也可能 收敛！）</li>
+</ol>
+<p>其中 R 称为收敛半径（1, 2 情况分别对应 R=0 和 R=+∞）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">级数</th>
+<th align="center">收敛半径</th>
+<th align="center">收敛区间</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><span class="arithmatex">\(\sum\limits_{n=0}^∞ x^n\)</span></td>
+<td align="center">R=1</td>
+<td align="center">(-1, 1)</td>
+<td align="center">几何级数</td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\sum\limits_{n=0}^∞ n!\cdot x^n\)</span></td>
+<td align="center">R=0</td>
+<td align="center">{0}</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac {(x-3)^n}{n}\)</span></td>
+<td align="center">R=1</td>
+<td align="center">[2, 4)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\displaystyle J_0 = \sum\limits_{n=0}^∞ \frac {(-1)^nx^{2n}}{2^{2n}(n!)^2}\)</span></td>
+<td align="center">R=∞</td>
+<td align="center">(-∞, +∞)</td>
+<td align="center">0次贝塞尔级数</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>一般地，比值判别法 或 根值判别法 一个被用来确定收敛半径 R</li>
+<li>当 x 是收敛区间的端点时，比值判别法 和 根值判别法 总是会失效，此时就必须用其他判别法来判断</li>
+</ul>
+</div>
+<h3 id="9">9.函数的幂级数展开</h3>
+<p>将已知函数表示成无穷项的和，对 不是初等函数的不定积分，求解微分方程，用多项式近似函数 都很有用</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\frac {1}{1-x}\)</span>，<span class="arithmatex">\(\frac {1}{x+2}\)</span>，<span class="arithmatex">\(\frac {x^3}{x+2}\)</span> 均能通过代换得到幂级数收敛的模式，从而得到幂级数展开式</li>
+<li>幂级数展开的模式指：<span class="arithmatex">\(\frac {a}{1-f_x}g_x\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">幂级数的 微分 &amp; 积分</p>
+</div>
+<blockquote>
+<p>若幂级数 <span class="arithmatex">\(\sum c_n(x-a)^n\)</span> 具有收敛半径 R &gt; 0，则若下定义的函数 f</p>
+<p><span class="arithmatex">\(f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots = \sum\limits_{n=0}^∞ c_n(x-a)^n\)</span></p>
+<p>在区间 (a-R, a+R) 上是可微的(从而连续)，且</p>
+<ol>
+<li><span class="arithmatex">\(f'(x) = \sum\limits_{n=1}^∞ nc_n(x-a)^{n-1}\)</span></li>
+<li><span class="arithmatex">\(\int f(x)~d_x = C + c_0(x-a) + c_1\frac {(x-a)^2}{2} + \cdots = C + \sum\limits_{n=0}^∞ c_n\frac {(x-a)^{n+1}}{n+1}\)</span>  (<span class="arithmatex">\(C = C_1 + ac_0\)</span>)</li>
+</ol>
+<p>收敛半径均是 R</p>
+<p>上述两式可以写成如下形式：</p>
+<ol>
+<li><span class="arithmatex">\(\frac {d}{d_x}[\sum\limits_{n=0}^∞ c_n(x-a)^n] = \sum\limits_{n=0}^∞ \frac {d}{d_x}[c_n(x-a)^n]\)</span></li>
+<li><span class="arithmatex">\(\int[\sum\limits_{n=0}^∞ c_n(x-a)^n]~d_x = \sum\limits_{n=0}^∞\int c_n(x-a)^n~d_x\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol>
+<li>对于有限项和，和的导数就是导数的和，和的积分就是积分的和；而对于幂级数（有无限项），和的导数就是导数的和，和的积分就是积分的和，仍然成立</li>
+<li>幂级数被微分或积分后 收敛半径 不变，并不意味着收敛区间不变</li>
+<li>幂级数逐项积分的思想是解微分方程的一个有力基础</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>求一个函数 f(x) 的幂级数表示，可以使用两种方法，先假设 f(x) = g(x)<ul>
+<li>对两边积分，将积分后的 f(x) 变换为幂级数形式，再微分：<span class="arithmatex">\(g(x) = \frac {d}{d_x} [\int f(x)~d_x]\)</span></li>
+<li>对两边微分，将微分后的 f(x) 变换为幂级数形式，再积分：<span class="arithmatex">\(g(x) = \int [\frac {d}{d_x} f(x)]~d_x\)</span> （注意讨论常数 C 的值）</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><span class="arithmatex">\(\tan^{-1} x = \int \frac 1{a+x^2}~d_x = \int \sum\limits_{n=0}^∞ (-x^2)^n ~d_x = C + \sum\limits_{n=0}^∞ (-1)^n\frac {x^{2n+1}}{2n+1} = \sum\limits_{n=0}^∞ (-1)^n\frac {x^{2n+1}}{2n+1}\)</span> （著名的 Gregory 格里高力级数，收敛区间为 [-1, 1]）</li>
+<li>x = 1时有 <span class="arithmatex">\(\frac {\pi}{4} = \sum\limits_{n=0}^∞ (-1)^n\frac {1}{2n+1}\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\pi = 4\sum\limits_{n=0}^∞ (-1)^n\frac {1}{2n+1}\)</span></li>
+</ul>
+</div>
+<h3 id="10">10.泰勒级数 &amp; 麦克劳林级数</h3>
+<p>我们假设 f 为任意可以用幂级数表示的函数 <span class="arithmatex">\(f(x) = \sum\limits_{n=0}^∞ c_n(x-a)^n\)</span>，|x-a| &lt; R</p>
+<p><span class="arithmatex">\(f(x) = C_0 + \sum\limits_{i=1}^∞ c_i(x-a)^i\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(f(a) = c_0\)</span></p>
+<p><span class="arithmatex">\(f'(x) = C_1 + \sum\limits_{i=2}^∞ c_i\cdot i\cdot (x-a)^{i-1}\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(f'(a) = c_1\)</span></p>
+<p><span class="arithmatex">\(f^"(x) = C_2\cdot 2 + \sum\limits_{i=3}^∞ c_i\cdot i(i-1)\cdot (x-a)^{i-2}\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(f^"(a) = c_2\cdot 2\)</span></p>
+<p><span class="arithmatex">\(\vdots\)</span></p>
+<p><span class="arithmatex">\(f^{(n)}(x) = c_n\cdot n! + \sum\limits_{i=n+1}^{∞} c_i  \frac{i!}{(i-n)!}(x-a)^{i-n}\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(f^{(n)}(a) = c_n\cdot n!\)</span></p>
+<p>因此，我们得到系数 <span class="arithmatex">\(c_n = \frac {f^{(n)}(a)}{n!}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Taylor 级数</p>
+</div>
+<blockquote>
+<p>若 f 在 a 点有幂级数表示(展开)，即，若 <span class="arithmatex">\(f(x) = \sum\limits_{n=0}^∞ c_n(x-a)^n\)</span>，|x-a| &lt; R</p>
+<p>则其系数由下面的公式给出：<span class="arithmatex">\(c_n = \frac {f^{(n)}(a)}{n!}\)</span></p>
+<p>即 <span class="arithmatex">\(f(x) = \sum\limits_{n=0}^∞ \frac {f^{(n)}(a)}{n!} (x-a)^n\)</span></p>
+<p>f 在点 a 的第 n 次 Taylor 多项式：<span class="arithmatex">\(T_n(x) = \sum\limits_{i=0}^n \frac {f^{(i)}(a)}{i!} (x-a)^i\)</span></p>
+<p>f 在点 a 的第 n 次 Taylor 余项：<span class="arithmatex">\(R_n(x) = f(x) - T_n = f(x) - \sum\limits_{i=0}^n \frac {f^{(i)}(a)}{i!} (x-a)^i\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>（如果存在）<span class="arithmatex">\(f_x\)</span> 在 x=a 处的一阶泰勒多项式为 <span class="arithmatex">\(f_x\)</span> 在 x=a 处的切线方程</li>
+<li>那么二阶多项式有什么含义？</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Maclaurin 级数</p>
+</div>
+<blockquote>
+<p>对 a = 0 的 Taylor级数，有： <span class="arithmatex">\(f(x) = \sum\limits_{n=0}^∞ \frac {f^{(n)}(0)}{n!} x^n\)</span></p>
+<p>注：由于这种情形出现得多，所以给它一个单独的名字</p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>什么时候 <span class="arithmatex">\(f_x\)</span> 可以用泰勒级数表示？（或 <span class="arithmatex">\(f_x\)</span> 何时能表示成幂级数的形式？）<ul>
+<li>设 <span class="arithmatex">\(R_n(x)\)</span> 为泰勒级数 <span class="arithmatex">\(\lim\limits_{n\to ∞} T_n(x)\)</span> 的余项，其中 <span class="arithmatex">\(T_n(x)\)</span> 为泰勒多项式</li>
+<li>若可以证明 <span class="arithmatex">\(\lim\limits_{n\to ∞} = 0\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} T_n(x) = \lim\limits_{n\to ∞} [f(x)-R_n(x)] = f(x) - \lim\limits_{n\to ∞} R_n(x) = f(x)\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(f(x) = T_n(x) + R_n(x)\)</span>，其中 <span class="arithmatex">\(T_n(x)\)</span> 是 f 在 a 点的第 n 次泰勒多项式，且 <span class="arithmatex">\(\lim\limits_{n\to ∞} R_n(x)=0\)</span></p>
+<p>对 <span class="arithmatex">\(|x-a|&lt;R\)</span>，则 f 在区间 <span class="arithmatex">\(|x-a|&lt;R\)</span> 上等于它的泰勒级数的和</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Taylor 不等式</p>
+</div>
+<blockquote>
+<p>为了证明 <span class="arithmatex">\(\lim\limits_{n\to ∞} R_n(x)=0\)</span>，有如下结论：</p>
+<p>若 <span class="arithmatex">\(|f^{(n+1)}(x)| \le M\)</span>，对 <span class="arithmatex">\(|x-a|\le d\)</span>，</p>
+<p>则泰勒级数的余项 <span class="arithmatex">\(R_n(x)\)</span> 满足不等式 <span class="arithmatex">\(|R_n(x)| \le \frac {M}{(n+1)!}|x-a|^{n+1}\)</span>，对 <span class="arithmatex">\(|x-a|\le d\)</span></p>
+<p>证明：详见 p70</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>应用 Taylor 不等式证明 <span class="arithmatex">\(\lim\limits_{n\to ∞} R_n(x)=0\)</span> 时，该结论很有帮助：<span class="arithmatex">\(\lim\limits_{n\to ∞}\frac {x^n}{n!}=0,\forall x\in R\)</span></li>
+<li>Taylor 不等式中的 M 也可以是“半径” d 的函数</li>
+<li>Taylor 不等式是通过“夹逼”来证明 <span class="arithmatex">\(f_x\)</span> 能用幂级数表示的</li>
+<li>Taylor 不等式 也可以用于<mark class="critic">计算函数的近似误差</mark>，误差为 <span class="arithmatex">\(|R_n(x)| \le \frac {M}{(n+1)!}|x-a|^{n+1} \le M\frac {d^{n+1}}{(n+1)!}\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">常见 maclaurin 级数</p>
+<ul>
+<li><span class="arithmatex">\(\frac 1{1-x} = \sum\limits_{i=0}^∞ x^i, |x|&lt;1\)</span></li>
+<li><span class="arithmatex">\(e^x = \sum\limits_{i=0}^∞ \frac {x^n}{n!}, |x|&lt;+∞\)</span></li>
+<li><span class="arithmatex">\(\sin x = \sum\limits_{i=0}^∞ (-1)^n \frac {x^{2i+1}}{(2i+1)!}, |x|&lt;+∞\)</span></li>
+<li><span class="arithmatex">\(\cos x = \sum\limits_{i=0}^∞ (-1)^n \frac {x^{2i}}{(2i)!}, |x|&lt;+∞\)</span></li>
+<li><span class="arithmatex">\(\tan x = \sum\limits_{i=0}^∞ (-1)^n \frac {x^{2i+1}}{2i+1}, |x|\le 1\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Taylor 级数的应用</p>
+<ol>
+<li>近似计算函数积分</li>
+<li>求函数极限</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">幂级数的乘法和除法</p>
+<ul>
+<li>类似于 多项式的乘法和除法，通常用来计算幂级数的前 n 个非零项</li>
+<li><span class="arithmatex">\(\frac {\sin x}{\cos x}\)</span> 的幂级数除法似乎与公式表中的形式不太一样？</li>
+</ul>
+</div>
+<h3 id="11">11.二项级数</h3>
+<div class="admonition 二项式定理">
+<p class="admonition-title">二项式定理</p>
+<ul>
+<li><span class="arithmatex">\((a+b)^n = \sum\limits_{i=0}^n \left( \begin{matrix} n\\i \end{matrix} \right) a^{n-i}b^i\)</span><ul>
+<li>其中 <span class="arithmatex">\(\left( \begin{matrix} n\\i \end{matrix} \right) = \frac {\prod\limits_{j=0}^{i-1} (n-j) }{i!}, i\in[1,n], i\in N^+\)</span>，<span class="arithmatex">\(\left( \begin{matrix} n\\0 \end{matrix} \right) = 1\)</span></li>
+</ul>
+</li>
+<li>令 a=1, b=x 有 <span class="arithmatex">\((1+x)^n = \sum\limits_{i=0}^n \left( \begin{matrix} n\\i \end{matrix} \right) x^i\)</span></li>
+<li>而牛顿将 二项式定理 扩展到了 n 不再是正整数的情况！！！</li>
+</ul>
+</div>
+<p>计算 <span class="arithmatex">\((1+x)^k\)</span> 的 maclaurin 级数，得到 <span class="arithmatex">\((1+x)^k = \sum\limits_{i=0}^∞ \frac {\prod\limits_{j=0}^{i-1} (n-j)}{i!}\)</span></p>
+<p><span class="arithmatex">\(|\frac {a_{i+1}}{a_i}| = |\frac {\prod\limits_{j=0}^{i} (k-j) / \prod\limits_{j=0}^{i-1} (k-j)} {(i+1)! / i!}| = \frac {|k-i|}{i+1} |x| = \frac {|1-\frac ki|}{1+\frac 1i}|x| \to |x|\)</span>，当 <span class="arithmatex">\(i\to ∞\)</span></p>
+<p>由比值判别法，|x|&lt;1 时收敛，|x|&gt;1 时发散</p>
+<div class="admonition 二项级数">
+<p class="admonition-title">二项级数</p>
+</div>
+<blockquote>
+<p>若 k 为实数，且 |x| &lt; 1，则 <span class="arithmatex">\((1+x)^k = \sum\limits_{i=0}^∞ \left( \begin{matrix} k\\i \end{matrix} \right) x^i\)</span></p>
+<p>其中 <span class="arithmatex">\(\left( \begin{matrix} k\\i \end{matrix} \right) = \frac {\prod\limits_{j=0}^{i-1} (k-j) }{i!}, i\in[1,n], i\in N^+\)</span>，且 <span class="arithmatex">\(\left( \begin{matrix} k\\0 \end{matrix} \right) = 1\)</span></p>
+<p>收敛性：</p>
+<ul>
+<li>|x| &lt; 1 处永远收敛</li>
+<li>若 <span class="arithmatex">\(-1 &lt; k \le 0\)</span>， x = 1 处也收敛</li>
+</ul>
+<p>另外，<span class="arithmatex">\(k\in N^+\)</span> 时，若 <span class="arithmatex">\(i &gt; k\)</span>，则 <span class="arithmatex">\(\left( \begin{matrix} k\\i \end{matrix} \right) = 0\)</span>，这意味着 <span class="arithmatex">\(k\in N^+\)</span> 时二项式级数将退化为普通的二项级数（项数有限）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">二项级数的应用</p>
+<ul>
+<li><span class="arithmatex">\(\displaystyle \frac {1}{(1+x)^2} = \sum\limits_{i=0}^∞ \left( \begin{matrix} -2\\i \end{matrix} \right) x^i = \sum\limits_{i=0}^∞ (-1)^i(i+1)x^i\)</span>，<span class="arithmatex">\(|x|&lt;1\)</span></li>
+<li><span class="arithmatex">\(\displaystyle \frac {1}{\sqrt {4-x}} = \frac {1}{2\sqrt {1+(-\frac 14x)}} = \frac 12\sum\limits_{i=0}^∞ \left( \begin{matrix} -\frac 12\\i \end{matrix} \right) (-\frac 14x)^i\)</span>，<span class="arithmatex">\(|-\frac 14x|&lt;1 \implies |x|&lt;4\)</span> （注意：二项级数是以 x=0 为中心的，不能将原函数中 x+l 的形式直接替换为二项级数中的 x）</li>
+</ul>
+</div>
+<h3 id="12">12.泰勒级数的应用</h3>
+<div class="admonition 使用多项式近似函数">
+<p class="admonition-title">使用多项式近似函数</p>
+</div>
+<blockquote>
+<p>详见 p83</p>
+</blockquote>
+<div class="admonition 应用于物理">
+<p class="admonition-title">应用于物理</p>
+</div>
 </article>
 </div>
 </div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </a>
+          </button>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -884,20 +1666,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  上一页
-                </span>
+                上一页
+              </span>
+<div class="md-ellipsis">
                 10.参数方程&amp;极坐标
               </div>
 </div>
 </a>
 <a aria-label="下一页: 12.向量&amp;空间解析几何" class="md-footer__link md-footer__link--next" href="../12.%E5%90%91%E9%87%8F%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/" rel="next">
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  下一页
-                </span>
+                下一页
+              </span>
+<div class="md-ellipsis">
                 12.向量&amp;空间解析几何
               </div>
 </div>
@@ -915,10 +1697,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -928,8 +1710,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

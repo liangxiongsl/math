@@ -8,11 +8,11 @@
 <link href="../14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/" rel="prev"/>
 <link href="../16.%E5%90%91%E9%87%8F%E7%A7%AF%E5%88%86/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>15.多重积分 - 数学</title>
-<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -36,10 +36,13 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -95,13 +98,18 @@
                   </a>
 </li>
 <li class="md-select__item">
-<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
-                    copychar
+<a class="md-select__link" href="https://www.desmos.com/" hreflang="zh">
+                    desmos
                   </a>
 </li>
 <li class="md-select__item">
 <a class="md-select__link" href="https://mathnotepad.com/" hreflang="zh">
                     mathnotepad
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
+                    copychar
                   </a>
 </li>
 <li class="md-select__item">
@@ -146,7 +154,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -154,11 +162,16 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
+<div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
         概述
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        微积分
       </a>
 </li>
 <li class="md-tabs__item">
@@ -172,33 +185,18 @@
       </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        概率论及其应用
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">
         概率论&amp;数理统计
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">
-        高等数学(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">
-        线性代数(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">
-        概率论与数理统计(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
-        微积分
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../img/1/">
-        img
+        xx
       </a>
 </li>
 </ul>
@@ -220,12 +218,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="概述" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -254,392 +252,30 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="高数" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
-          高数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
-        函数 &amp; 极限 &amp; 连续
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        一元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        一元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        多元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        多元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        常微分方程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
-<label for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-          线性代数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5/">
-        矩阵
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F/">
-        向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
-        矩阵的特征值&amp;特征向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        二次型
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
-<label for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论&amp;数理统计" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-          概率论&amp;数理统计
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
-        随机事件&amp;概率
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        数理统计的基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">高等数学(同济)</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="高等数学(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-          高等数学(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%87%BD%E6%95%B0%26%E6%9E%81%E9%99%90/">
-        函数&amp;极限
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AF%BC%E6%95%B0%26%E5%BE%AE%E5%88%86/">
-        导数&amp;微分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%26%E5%AF%BC%E6%95%B0%E5%BA%94%E7%94%A8/">
-        微分中值定理&amp;导数应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        不定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        微分方程
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%99%84%E5%BD%95/">
-        附录
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E6%B3%95%26%26%E5%BA%94%E7%94%A8/">
-        多元函数微分法&amp;&amp;应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%87%8D%E7%A7%AF%E5%88%86/">
-        重积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%26%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/">
-        曲线积分&amp;曲面积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">线性代数(同济)</a>
-<label for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-          线性代数(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%26%26%E8%BF%90%E7%AE%97/">
-        矩阵&amp;&amp;运算
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%26%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        矩阵的初等变换&amp;线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7/">
-        向量组的线性相关性
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        相似矩阵&amp;二次型
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%26%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2/">
-        线性空间&amp;线性变换
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">概率论与数理统计(同济)</a>
-<label for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论与数理统计(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-          概率论与数理统计(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        概率论基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A0%B7%E6%9C%AC%26%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">
-        样本&amp;抽样分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%26%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">
-        方差分析&amp;回归分析
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/bootstrap%E6%96%B9%E6%B3%95/">
-        Bootstrap方法
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E4%B8%AD%E5%BA%94%E7%94%A8Excel/">
-        数理统计中应用Excel
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%26%26%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0/">
-        随机过程&amp;&amp;统计描述
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/">
-        马尔科夫链
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
-        平稳随机过程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../">微积分</a>
-<label for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="微积分" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           微积分
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E5%A4%8D%E4%B9%A0/">
+        复习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
         1.函数&amp;模型
@@ -711,10 +347,71 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          15.多重积分
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         15.多重积分
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.矩形区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.累次积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.一般区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.极坐标下的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.二重积分的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.曲面面积
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.三重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.柱面坐标系 &amp; 球坐标系下的三重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9.重积分的换元
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../16.%E5%90%91%E9%87%8F%E7%A7%AF%E5%88%86/">
@@ -735,60 +432,291 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_9" tabindex="0">
-          img
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          高数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
+        函数 &amp; 极限 &amp; 连续
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        一元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        一元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
+        向量代数&amp;空间解析几何
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        多元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        多元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
+        无穷级数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        常微分方程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          线性代数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        线性方程组
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E4%BB%A3%E6%95%B0/">
+        矩阵代数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
+        行列式
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/">
+        向量空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+        特征值&amp;特征向量
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%80%E5%B0%8F%E6%80%A7%26%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">
+        最小性&amp;最小二乘法
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+        对称矩阵&amp;二次型
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%9A%84%E5%87%A0%E4%BD%95%E5%AD%A6/">
+        向量空间的几何学
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="img" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_9">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
-          img
+          概率论及其应用
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        1.样本空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/2.%E7%BB%84%E5%90%88%E5%88%86%E6%9E%90%E6%A6%82%E8%A6%81/">
+        2.组合分析概要
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/3.%E6%89%94%E7%A1%AC%E5%B8%81%E7%9A%84%E8%B5%B7%E4%BC%8F%E9%97%AE%E9%A2%98%E5%92%8C%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A/">
+        3.扔硬币的起伏问题和随机徘徊
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/4.%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%84%E5%90%88/">
+        4.事件的组合
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/5.%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%26%E9%9A%8F%E6%9C%BA%E7%8B%AC%E7%AB%8B%E6%80%A7/">
+        5.条件概率&amp;随机独立性
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/6.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%26%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/">
+        6.二项分布&amp;泊松分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/7.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E7%9A%84%E6%AD%A3%E6%80%81%E9%80%BC%E8%BF%91/">
+        7.二项分布的正态逼近
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/8.%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%AF%95%E9%AA%8C%E7%9A%84%E6%97%A0%E7%A9%B7%E5%BA%8F%E5%88%97/">
+        8.伯努利试验的无穷序列
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/9.%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%9C%9F%E6%9C%9B%E5%80%BC/">
+        9.随机变量&amp;期望值
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/10.%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B/">
+        10.大数定律
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/11.%E5%8F%96%E6%95%B4%E6%95%B0%E5%80%BC%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%AF%8D%E5%87%BD%E6%95%B0/">
+        11.取整数值的随机变量&amp;母函数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/12.%E5%A4%8D%E5%90%88%E5%88%86%E5%B8%83%26%E5%88%86%E6%94%AF%E8%BF%87%E7%A8%8B/">
+        12.复合分布&amp;分支过程
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/13.%E5%BE%AA%E7%8E%AF%E4%BA%8B%E4%BB%B6%26%E6%9B%B4%E6%96%B0%E7%90%86%E8%AE%BA/">
+        13.循环事件&amp;更新理论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/14.%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A%E4%B8%8E%E7%A0%B4%E4%BA%A7%E9%97%AE%E9%A2%98/">
+        14.随机徘徊与破产问题
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/15.%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE/">
+        15.马尔可夫链
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/16.%E6%9C%89%E9%99%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%9A%84%E4%BB%A3%E6%95%B0%E5%A4%84%E7%90%86/">
+        16.有限马尔可夫链的代数处理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/17.%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%9D%E6%97%B6%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
+        17.最简单的依时的随机过程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          概率论&amp;数理统计
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
+        随机事件&amp;概率
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        多维随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
+        随机变量的数字特征
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
+        大数定律&amp;中心极限定理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+        数理统计的基本概念
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
+        参数估计
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
+        假设检验
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          xx
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          xx
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/1/">
         1
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/2/">
-        2
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/3/">
-        3
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/4/">
-        4
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/5/">
-        5
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/6/">
-        6
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/7/">
-        7
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/8/">
-        8
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/9/">
-        9
       </a>
 </li>
 <li class="md-nav__item">
@@ -842,6 +770,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../img/2/">
+        2
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../img/20/">
         20
       </a>
@@ -849,6 +782,41 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/21/">
         21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/3/">
+        3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/4/">
+        4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/5/">
+        5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/6/">
+        6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/7/">
+        7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/8/">
+        8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/9/">
+        9
       </a>
 </li>
 </ul>
@@ -863,19 +831,524 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.矩形区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2.累次积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.一般区域上的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.极坐标下的二重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.二重积分的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.曲面面积
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.三重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.柱面坐标系 &amp; 球坐标系下的三重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9.重积分的换元
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
+<h1>15.多重积分</h1>
+<p>这一章中我们将 定积分 扩展到 二重 和 三重积分上，其中被积函数有两个或三个变量</p>
+<p>这些想法被用于计算 体积、面积、质量、区域上的质心 等问题，这些区域比我们在第 6 章和第 8 章中提到的更加一般化</p>
+<p>我们还将用 二重积分 计算两个随机变量的概率问题</p>
+<h3 id="_1"></h3>
+<h3 id="1">1.矩形区域上的二重积分</h3>
+<div class="admonition note">
+<p class="admonition-title">回顾 定积分</p>
+<ul>
+<li>我们将区间 [a,b] 等分成 n 个区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span>（<span class="arithmatex">\(i=1..n\)</span>）,其中 <span class="arithmatex">\(\Delta x=x_i-x_{i-1}=\frac {b-a}n\)</span></li>
+<li>在每个区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span> 上取一个样本点，记为 <span class="arithmatex">\(x_i^*\)</span>，每一个区间“可负面积”为 <span class="arithmatex">\(f(x_i^*)\Delta x\)</span></li>
+<li>因而整个区间 [a,b] 的“可负面积”为黎曼和：<span class="arithmatex">\(\sum\limits_{i=1}^n f(x_i^*)\Delta x\)</span></li>
+<li>令 <span class="arithmatex">\(n\to ∞\)</span>，得到 f 从 a 到 b 的定积分：<span class="arithmatex">\(\int_a^b f(x)~d_x = \lim\limits_{n\to ∞} \sum\limits_{i=1}^n f(x_i^*)\Delta x\)</span></li>
+<li>注：<span class="arithmatex">\(f(x) \ge 0\)</span> 时，黎曼和 解释为 f 的近似矩形面积的和；积分解释为 f 之下，[a,b] 之上的图形的面积</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">二重积分</p>
+<ul>
+<li>定义闭矩形区域 <span class="arithmatex">\(R=[a,b]\times[c,d] = \{(x,y)|a\le x\le b,c\le y\le d,(x,y)\in \mathbb R^2\}\)</span> </li>
+<li>将区间 [a,b] 分成 n 个区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span>（<span class="arithmatex">\(i=1..n\)</span>）,其中 <span class="arithmatex">\(\Delta x=x_i-x_{i-1}=\frac {b-a}n\)</span></li>
+<li>将区间 [c,d] 分成 m 个区间 <span class="arithmatex">\([y_{i-1},y_i]\)</span>（<span class="arithmatex">\(i=1..m\)</span>）,其中 <span class="arithmatex">\(\Delta y=y_i-y_{i-1}=\frac {d-c}m\)</span></li>
+<li>每个子区域为 <span class="arithmatex">\(R=[x_{i-1},x_i]\times[y_{j-1},y_j] = \{(x,y)|x_{i-1}\le x\le x_i,y_{j-1}\le y\le y_j,(x,y)\in \mathbb R^2\}\)</span> ，对应的面积为 <span class="arithmatex">\(\Delta A = \Delta A_{ij} = (x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x\Delta y\)</span><ul>
+<li>在每个子区域上选取一个样本点，记为 <span class="arithmatex">\((x_{ij}^*, y_{ij}^*)\)</span></li>
+<li>在每个子区域“可负体积”为 <span class="arithmatex">\(f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></li>
+</ul>
+</li>
+<li>因而整个区域 R 的“可负体积”为 二重黎曼和：<span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></li>
+<li>令 <span class="arithmatex">\(n\to ∞, m\to ∞\)</span>，得到 f 在矩形区域 R 上的 二重积分：<span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></li>
+<li>注：<span class="arithmatex">\(f(x,y) \ge 0\)</span> 时，二重黎曼和 解释为 f 的近似立体体积的和；二重积分解释为 f 之下，区域 R 之上的立体的体积</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">二重积分 定义</p>
+</div>
+<blockquote>
+<p>在矩形区域 R 上的 f 的二重积分为： <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A\)</span></p>
+<p>如果上面的极限存在</p>
+<p>精确定义：对于任意的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，总存在正整数 N，对于所有 <span class="arithmatex">\(n,m &gt; N\)</span>，使得 <span class="arithmatex">\(R_{ij}\)</span> 中任取样本点 <span class="arithmatex">\((x_{ij}^*,y_{ij}^*)\)</span> 都有 <span class="arithmatex">\(|\iint\limits_R f(x,y)~d_A - \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{ij}^*, y_{ij}^*)\Delta A| &lt; \epsilon\)</span></p>
+<p>可以证明如果 f 是连续函数，上述定义的极限存在；而有些具有较好的性质但不连续的函数，上述定义的极限也是可能存在的</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>如果 <span class="arithmatex">\(f(x,y)\ge 0\)</span>，那么以矩形 R 为底，z=f(x,y) 形成的曲面为定的立体的体积 V 可以表示为： <span class="arithmatex">\(V = \iint f(x,y)~d_A\)</span></li>
+</ul>
+</div>
+<div class="admonition 二重样本点的选择">
+<p class="admonition-title">二重样本点的选择</p>
+</div>
+<blockquote>
+<ul>
+<li>选择右上角 <span class="arithmatex">\((x_{ij}^*,y_{ij}^*) = (x_i,y_j)\)</span></li>
+<li>中点法则：<span class="arithmatex">\((x_{ij}^*,y_{ij}^*) = (\overline x_i, \overline y_j) = (\frac {x_i+x_{i-1}}2, \frac {y_j+y_{j-1}}2)\)</span></li>
+<li>梯形法则：</li>
+<li>辛普森法则：</li>
+</ul>
+</blockquote>
+<div class="admonition 函数平均值">
+<p class="admonition-title">函数平均值</p>
+</div>
+<blockquote>
+<p>矩形区域 R 上的二元函数的平均值为：</p>
+<p><span class="arithmatex">\(f_{avg} = \frac 1{A(R)}\iint\limits_R f(x,y)~d_A\)</span></p>
+<p>A(R) 表示 R 的面积</p>
+<p>注：<span class="arithmatex">\(A(R)\cdot f_{avg} = \iint\limits_R f(x,y)~d_A\)</span> 表示以 R 为底 <span class="arithmatex">\(f_{avg}\)</span> 为高的盒子 和 f 图像下的立体有着相同的体积</p>
+</blockquote>
+<div class="admonition 二重积分的性质">
+<p class="admonition-title">二重积分的性质</p>
+</div>
+<blockquote>
+<ol>
+<li>
+<p><span class="arithmatex">\(\iint\limits_R [f(x,y) + g(x,y)]~d_A = \iint\limits_R f(x,y)~d_A + \iint\limits_R g(x,y)~d_A\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\iint\limits_R cf(x,y)~d_A = c\iint\limits_R f(x,y)~d_A\)</span> （c 为常数）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(f(x,y) \ge g(x,y)\)</span> 对于 R 中所有 (x,y) 都成立 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A \ge \iint\limits_R g(x,y)~d_A\)</span></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="2">2.累次积分</h3>
+<p>本节我们将看到 二重积分 可以表示成 累次积分 的形式，即二重积分通过两次一重积分得到</p>
+<div class="admonition note">
+<p class="admonition-title">部分积分 &amp; 累次积分</p>
+</div>
+<blockquote>
+<p>设二元函数 f 在矩形 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span> 上连续，我们用记号 <span class="arithmatex">\(\int_c^d f(x,y)~d_y\)</span> 表示 x 固定 y 从 y=c 到 y=d 的积分，该过程称做对变量 y 的 <strong>部分积分</strong></p>
+<p>因而，会得到依赖于 x 的函数 <span class="arithmatex">\(A(x) = \int_c^d f(x,y)~d_y\)</span></p>
+<p>然后，<span class="arithmatex">\(\int_a^b A(x)~d_x = \int_a^b[\int_c^d f(x,y)~d_y]~d_x\)</span>，称之为 <strong>累次积分</strong></p>
+<p>性质：<span class="arithmatex">\(\int_a^b[\int_c^d f(x,y)~d_y]~d_x = \int_a^b\int_c^d f(x,y)~d_y~d_x\)</span>，<span class="arithmatex">\(\int_c^d[\int_a^b f(x,y)~d_x]~d_y = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Fubini 傅比尼定理</p>
+</div>
+<blockquote>
+<p>如果 f 是定义子在 <span class="arithmatex">\(R = \{(x,y)|a\le x\le b, c\le y\le d\}\)</span> 上的连续函数，则：</p>
+<p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_a^b\int_c^d f(x,y)~d_y~d_x = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span></p>
+<p>更一般地：当 f 时 R 上的旨在优先多条光滑曲线上不连续的有界函数，且对 f 的累次积分存在时，上述定理任然成立</p>
+<p>证明：过于困难</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>累计积分的顺序（即先对什么变量进行积分）可以简化计算</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">累次积分的 性质</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\int\limits_R f(x)g(y)~d_A = \int_a^b f(x)~d_x\int_c^d g(y)~d_y\)</span>，当 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span></p>
+<p>注：但是遇到 x 和 y 耦合的情况如何解决？</p>
+</blockquote>
+<h3 id="3">3.一般区域上的二重积分</h3>
+<p>我们考虑在更一般的区域 D 上的积分，其中 D 可能不是一个矩形</p>
+<div class="admonition note">
+<p class="admonition-title">第 I 类平面区域 D 上的二重积分</p>
+</div>
+<blockquote>
+<p>f 是在第 I 类平面区域 D 上的连续函数，其中： <span class="arithmatex">\(D = \{(x,y)|a\le x\le b, g_1(x)\le y\le g_2(x)\}\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)~d_y~d_x\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 II 类</p>
+</div>
+<blockquote>
+<p>f 是在第 II 类平面区域 D 上的连续函数，其中： <span class="arithmatex">\(D = \{(x,y)|c\le y\le d, h_1(y)\le x\le h_2(y)\}\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \int_c^d\int_{h_1(y)}^{h_2(y)} f(x,y)~d_x~d_y\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>可以观察到，在计算最内层积分时，可以将除了该层中的积分变量以外的所有变量及其函数作为常量（即便是积分上下界也是如此）</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<ul>
+<li>注意区分 直接计算积分 和 计算体积 问题（后者要对 f 取绝对值）</li>
+<li>D 为两个曲线的封闭区域，但是曲线不一定是函数，此时 D 可能划分为多个第 I/II 类区域</li>
+<li>内层积分较难积分时，可以考虑区域转换</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">性质</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\iint\limits_D [f(x,y)+g(x,y)]~d_A = \iint\limits_D f(x,y)~d_A + \iint\limits_D g(x,y)~d_A\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_D cf(x,y)~d_A = c\iint\limits_D f(x,y)~d_A\)</span></li>
+<li>如果 <span class="arithmatex">\(f(x,y)\ge g(x,y)\)</span> 对所有 <span class="arithmatex">\((x,y)\in D\)</span> 成立，那么 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A \ge \iint\limits_D g(x,y)~d_A\)</span></li>
+<li>若 <span class="arithmatex">\(D_1 \cup D_2 = D, D_1 \cap D_2 = \emptyset\)</span>，那么 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \iint\limits_{D_1} f(x,y)~d_A + \iint\limits_{D_2} f(x,y)~d_A\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_D 1~d_A = A(D)\)</span></li>
+<li>若 <span class="arithmatex">\(m \le f(x,y) \le M\)</span>（<span class="arithmatex">\((x,y)\in D\)</span>），则 <span class="arithmatex">\(mA(D) \le \iint\limits_D f(x,y)~d_A \le MA(D)\)</span></li>
+</ol>
+</blockquote>
+<h3 id="4">4.极坐标下的二重积分</h3>
+<p>定义 极矩形 为：<span class="arithmatex">\(R = \{(r,\theta) | a\le r\le b, \alpha\le \theta\le \beta\}\)</span></p>
+<p>将区间 <span class="arithmatex">\([a,b]\)</span> 划分为 n 个子区间 <span class="arithmatex">\([r_{i-1},r_i]\)</span>，<span class="arithmatex">\(\Delta r=r_i-r_{i-1}=\frac {b-a}n\)</span></p>
+<p>将区间 <span class="arithmatex">\([\alpha,\beta]\)</span> 划分为 m 个子区间 <span class="arithmatex">\([\theta_{i-1},\theta_i]\)</span>，<span class="arithmatex">\(\Delta \theta=\theta_i-\theta_{i-1}=\frac {\alpha-\beta}m\)</span></p>
+<p>子极矩形：<span class="arithmatex">\(R_{ij} = \{(r,\theta) | r_{i-1}\le r\le r_i, \theta_{j-1}\le \theta\le \theta_j\}\)</span></p>
+<p><span class="arithmatex">\(\Delta A_i = \frac 12r_i^2\Delta\theta - \frac 12r_{i-1}^2\Delta\theta = \frac 12(r_i^2 - r_{i-1}^2)\Delta\theta = \frac 12(r_i + r_{i-1})(r_i - r_{i-1})\Delta\theta = r_i^*\Delta r\Delta \theta\)</span></p>
+<p>得到黎曼和：<span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(r_i^*\cos {\theta_j^*}, r_i^*\sin {\theta_j^*})\Delta A_i\)</span></p>
+<p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(r_i^*\cos {\theta_j^*}, r_i^*\sin {\theta_j^*})\Delta A_i = \sum\limits_{i=1}^n\sum\limits_{j=1}^m f(r_i^*\cos {\theta_j^*}, r_i^*\sin {\theta_j^*})r_i^*\Delta r\Delta \theta\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_\alpha^\beta\int_a^bf(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">二重积分(极坐标)</p>
+</div>
+<blockquote>
+<p>f 是定义在极矩形 R 上的连续函数，而极矩形 R 由 <span class="arithmatex">\(0\le a\le r\le b, \alpha\le \theta\le \beta\)</span> 给出，且满足 <span class="arithmatex">\(0\le \beta - \alpha \le 2\pi\)</span>，则</p>
+<p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_\alpha^\beta\int_a^bf(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 I 类区域</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(D = \{(r,\theta) | \alpha\le\theta\le\beta, h_1(\theta)\le r\le h_2(\theta)\}\)</span></p>
+<p>则有 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}f(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span></p>
+<p>特别地，若 <span class="arithmatex">\(f(x,y)=1,h_1(\theta)=0,h_2(\theta)=h(\theta)\)</span>，</p>
+<p>那么 <span class="arithmatex">\(A(D) = \iint\limits_D 1~d_A = \int_\alpha^\beta \int_0^{h(\theta)}r~d_rd_\theta = \int_\alpha^\beta \frac 12[h(\theta)]^2~d_\theta\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 II 类区域</p>
+</div>
+<h3 id="5">5.二重积分的应用</h3>
+<p>从上几节可以观察到，二重积分的用途可以是计算 体积，接下来将讨论如何计算物理量 质量，电荷量，质心，惯性矩</p>
+<div class="admonition note">
+<p class="admonition-title">二维密度 &amp; 质量</p>
+</div>
+<blockquote>
+<p>二维密度指的是由两个变量决定的密度，如：薄片单位面积上的质量密度，区域上单位面积的电荷密度</p>
+<p>这里的质量指的是广义上的质量，如：带电量可以由电荷密度得到</p>
+<p>将区域细分为若干个 <span class="arithmatex">\(R_{ij}\)</span> 区域，其质量为 <span class="arithmatex">\(m \approx \rho(x_{ij}^*, y_{ij}^*)\Delta A\)</span></p>
+<p><span class="arithmatex">\(m = \lim\limits_{k,l\to ∞}\sum\limits_{i=1}^k\sum\limits_{j=1}^l\rho(x_{ij}^*, y_{ij}^*)\Delta A = \iint\limits_D \rho(x,y)~d_A\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">力矩 &amp; 质心</p>
+</div>
+<blockquote>
+<p>力矩：将质量与其到一条轴的距离的乘积，称为力矩；即 <span class="arithmatex">\(M_d = m r_d\)</span>（d 指某个坐标轴）</p>
+<p>将区域细分为若干个 <span class="arithmatex">\(R_{ij}\)</span> 区域，质量为 <span class="arithmatex">\(m \approx \rho(x_{ij}^*, y_{ij}^*)\Delta A\)</span>，因而对 d 轴的力矩为 <span class="arithmatex">\(M_d = m r_d \approx (\rho(x_{ij}^*, y_{ij}^*)\Delta A)r_d\)</span>（<span class="arithmatex">\(r_d = x_{ij}^*\)</span> 或 <span class="arithmatex">\(r_d = y_{ij}^*\)</span>）</p>
+<p>得到两个轴的力矩： <span class="arithmatex">\(M_x = \iint\limits_D y\rho(x,y)~d_A\)</span>,<span class="arithmatex">\(M_y = \iint\limits_D x\rho(x,y)~d_A\)</span></p>
+<p>质心：质心 <span class="arithmatex">\((\overline x, \overline y)\)</span> 满足 <span class="arithmatex">\(m\overline x = M_y, m\overline y = M_x\)</span></p>
+<p>得到质心公式：<span class="arithmatex">\(\overline x = \frac {M_y}{m} = \frac 1m\iint\limits_D x\rho(x,y)~d_A, \overline y = \frac {M_x}{m} = \frac 1m\iint\limits_D y\rho(x,y)~d_A\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">惯性矩 &amp; 旋转半径</p>
+</div>
+<blockquote>
+<p>惯性矩：又称二阶矩，定义为 <span class="arithmatex">\(I_d = m r_d^2\)</span>（<span class="arithmatex">\(r_d\)</span> 为到轴 d 的距离）</p>
+<p>可以得到：<span class="arithmatex">\(I_x = \iint\limits_D y^2\rho(x,y)~d_A, I_y = \iint\limits_D x^2\rho(x,y)~d_A\)</span></p>
+<p>还可以得到关于原点的惯性矩：<span class="arithmatex">\(I_O = \iint\limits_D x^2+y^2\rho(x,y)~d_A\)</span>（因为质点(x,y)到原点的距离为 <span class="arithmatex">\(\sqrt {x^2+y^2}\)</span>）</p>
+<p>注意到：<span class="arithmatex">\(I_O = I_x + I_y\)</span></p>
+<p>旋转半径：薄片对一条轴的旋转半径满足 <span class="arithmatex">\(m R_d^2 = I_d\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">概率</p>
+</div>
+<h3 id="6">6.曲面面积</h3>
+<p>假设二元函数 f (<span class="arithmatex">\(f\ge 0\)</span>)，构成曲面 S，将 S 划分为若干个 <span class="arithmatex">\(R_{ij}\)</span>，记该处的面积为 <span class="arithmatex">\(S_{ij}\)</span>，近似的切平面面积为 <span class="arithmatex">\(T_{ij}\)</span></p>
+<p>注意到 <span class="arithmatex">\(T_{ij}\)</span> 由 <span class="arithmatex">\((x_i^*,y_j^*)\)</span> 处沿着 x 轴 和 y 轴的切向量 <span class="arithmatex">\(\mathbf a, \mathbf b\)</span> 决定</p>
+<p>将 <span class="arithmatex">\(\mathbf a\)</span> 投影于 xoz，可以得到关系 <span class="arithmatex">\(\Delta z = \Delta x f_x\)</span> （<span class="arithmatex">\(f_x\)</span> 为 f 在 x 轴的偏导数），得到三维向量 <span class="arithmatex">\(\mathbf a = \langle \Delta x, 0, \Delta x f_x\rangle\)</span></p>
+<p>同理 <span class="arithmatex">\(\mathbf b = \langle 0, \Delta y, \Delta y f_y\rangle\)</span></p>
+<p><span class="arithmatex">\(|\mathbf a \times \mathbf b|\)</span> 恰好是这两个向量构成的平行四边形的面积，即 <span class="arithmatex">\(T_{ij} = |\mathbf a \times \mathbf b|\)</span></p>
+<p><span class="arithmatex">\(\mathbf a \times \mathbf b = \left|\begin{array}{c c c}{\mathbf i}&amp;{\mathbf j}&amp;{\mathbf k}\\ {\Delta x}&amp;{0}&amp;{f_{x}(x_{i},y_{j})}\Delta x\\ {0}&amp;{\Delta y}&amp;{f_{y}(x_{i},y_{j})\Delta y}\\ \end{array}\right|\)</span></p>
+<p><span class="arithmatex">\(= -f_x(x_i,y_j)\Delta x\Delta y \mathbf i - f_y(x_i,y_j)\Delta x\Delta y \mathbf j + \Delta x\Delta y \mathbf k\)</span></p>
+<p><span class="arithmatex">\(= (-f_x(x_i,y_j) \mathbf i - f_y(x_i,y_j) \mathbf j + \mathbf k)\Delta A\)</span></p>
+<p><span class="arithmatex">\(A(S) = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^∞\sum\limits_{j=1}^∞\Delta T_{ij} = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^∞\sum\limits_{j=1}^∞\sqrt {([f_x(x_i,y_j)]^2 + [f_y(x_i,y_j)]^2 + 1)}\Delta A\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">曲面面积</p>
+</div>
+<blockquote>
+<p>由方程 z=f(x,y), <span class="arithmatex">\((x,y)\in D\)</span> 定义的曲面的面积可以表示为：</p>
+<p><span class="arithmatex">\(A(S) = \iint\limits_D \sqrt {([f_x(x_i,y_j)]^2 + [f_y(x_i,y_j)]^2 + 1)}\Delta A\)</span></p>
+<p>Leibniz 记号：<span class="arithmatex">\(A(S) = \iint\limits_D \sqrt {1 + (\frac {\partial z}{\partial x})^2 + (\frac {\partial z}{\partial y})^2}~d_A\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>二维函数对应三维空间中的曲面 S 的面积 类似于 一维函数对于二维空间中曲线 C 的弧长</li>
+<li>曲面面积积分对第 I 类区域比较友好；转化为极坐标一般更好计算曲面面积</li>
+</ul>
+</div>
+<h3 id="7">7.三重积分</h3>
+<p>三元函数 f 定义在盒子 <span class="arithmatex">\(B = \{(x,y,z) | a\le x\le b, c\le y\le d, r\le z\le s\}\)</span> 中</p>
+<p>将 [a,b]，[c,d]，[r,s] 分别分成等宽的小区间 <span class="arithmatex">\([x_{i-1},x_i], [y_{j-1},y_j], [z_{k-1},z_k]\)</span></p>
+<p>其中，<span class="arithmatex">\(\Delta x = x_{i}-x_{i-1}, \Delta y = y_{j}-y_{j-1}, \Delta z = z_{k}-z_{k-1}\)</span>，<span class="arithmatex">\(i=1..n, j=1..m, k=1..o\)</span></p>
+<p>盒子被分成 <span class="arithmatex">\(nmo\)</span> 个小盒子 <span class="arithmatex">\(B_{ijk} = [x_{i-1},x_i]\times [y_{j-1},y_j]\times [z_{k-1}, z_k]\)</span>，其中 <span class="arithmatex">\(\Delta V=\Delta x\Delta y\Delta z\)</span></p>
+<p>得到三重黎曼和：<span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)\Delta V\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">三重积分</p>
+</div>
+<blockquote>
+<p>f 在 B 上的三重积分为：</p>
+<p><span class="arithmatex">\(\iiint\limits_B f(x,y,z)~d_V = \lim\limits_{n,m,o\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)\Delta V\)</span></p>
+<p>如果极限存在，则有：</p>
+<p><span class="arithmatex">\(\iiint\limits_B f(x,y,z)~d_V = \lim\limits_{n,m,o\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(x_{i}, y_{j}, z_{k})\Delta V\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">fubini 定理(三重积分)</p>
+</div>
+<blockquote>
+<p>如果 f 是一个长方体 <span class="arithmatex">\(B = [a,b]\times [c,d]\times [r,s]\)</span> 上的连续函数，那么：</p>
+<p><span class="arithmatex">\(\iiint\limits_B f(x,y,z)~d_V = \int\limits_r^s\int\limits_c^d\int\limits_a^b f(x,y,z)~d_xd_yd_z\)</span></p>
+<p>调换 x, y, z 的积分顺序总共有 <span class="arithmatex">\(3!=6\)</span> 种等值的公式</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 I 类区域</p>
+</div>
+<blockquote>
+<p>假设<strong>有界区域</strong>(几乎处处光滑) <span class="arithmatex">\(E \subset B\)</span>，而且 f 是连续的，那么 <span class="arithmatex">\(E = \{(x,y,z) | (x,y)\in D, u_1(x,y)\le z\le u_2(x,y)\}\)</span> （其中假定 <span class="arithmatex">\(u_1,u_2\)</span> 是能描述 E 的上下边界的曲面；D 由 x 和 y 共同描述），并且 E 是一个简单区域(能被一个三重积分描述)</p>
+<p>若 D 是第 I 类平面区域，则 <span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \int_{a}^{b}\int_{g_1(x)}^{g_2(x)}\int_{u_1(x,y)}^{u_2(x,y)} f(x,y,z)~d_zd_yd_x\)</span></p>
+<p>若 D 是第 II 类平面区域，则 <span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \int_{c}^{d}\int_{h_1(y)}^{h_2(y)}\int_{u_1(x,y)}^{u_2(x,y)} f(x,y,z)~d_zd_xd_y\)</span></p>
+<p>第 II 类，第 III 类区域类似（参见 P341）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>计算三重积分建议画两个图：区域 E 的三维图，区域 D 的二维图</li>
+<li>假设 E 是一个简单区域，根据区域的划分类型的不同，可以得到 <span class="arithmatex">\(C_3^1 C_2^1 = 6\)</span> 种等值的三重积分</li>
+<li>计算三重积分的难点是：画图，划分积分区域</li>
+<li>易知，三重积分可以转化为二重积分（进而能引用二重积分的性质，如极坐标）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">n 重积分之间的比较</p>
+<ul>
+<li>假设 <span class="arithmatex">\(f\le 0\)</span></li>
+<li><span class="arithmatex">\(\int_a^b f(x)~d_x\)</span> 表示曲线 <span class="arithmatex">\(y=f(x)\)</span> 从 a 到 b 下方区域的面积</li>
+<li><span class="arithmatex">\(\iint\limits_D f(x,y)~d_A\)</span> 表示曲面 <span class="arithmatex">\(z=f(x,y)\)</span> 为顶面的立体的体积</li>
+<li><span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V\)</span> 难以直观地描述，因为它表示四维空间中物体的超体积</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">性质</p>
+<ul>
+<li><span class="arithmatex">\(V(E) = \iiint\limits_E d_V\)</span> （计算体积并非一定要使用三重积分）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">应用</p>
+<ol>
+<li>给定广义三维密度函数 <span class="arithmatex">\(\rho(x,y,z)\)</span>，则物体的广义质量 <span class="arithmatex">\(m=\iiint\limits_E \rho(x,y,z)~d_V\)</span></li>
+<li>物体关于桑坐标平面的动量为 <span class="arithmatex">\(\displaystyle M_{y2}=\iiint\limits_E x\rho(x,y,z)~d_V, M_{x2}=\iiint\limits_E y\rho(x,y,z)~d_V, M_{xy}=\iiint\limits_E z\rho(x,y,z)~d_V\)</span></li>
+<li>物体质心为 <span class="arithmatex">\((\overline x, \overline y, \overline z)\)</span>，其中 <span class="arithmatex">\(\displaystyle \overline x=\frac {M_{y2}}{m}\)</span>，<span class="arithmatex">\(\displaystyle \overline y=\frac {M_{x2}}{m}\)</span>，<span class="arithmatex">\(\displaystyle \overline z=\frac {M_{xy}}{m}\)</span> （如果 f 是常数，那么立体的质量质心称为 区域 E 的<strong>立体形心</strong>）</li>
+<li>关于三个坐标轴的转动惯量：<span class="arithmatex">\(\displaystyle I_x = \iiint\limits_E (y^2+z^2)\rho(x,y,z)~d_V\)</span>，<span class="arithmatex">\(\displaystyle I_y = \iiint\limits_E (x^2+z^2)\rho(x,y,z)~d_V\)</span>，<span class="arithmatex">\(\displaystyle I_z = \iiint\limits_E (x^2+y^2)\rho(x,y,z)~d_V\)</span></li>
+<li>给定区域 E 的电荷密度 <span class="arithmatex">\(\sigma(x,y,z)\)</span>，区域内电子总电荷数为 <span class="arithmatex">\(Q = \iiint\limits_E \sigma(x,y,z)~d_V\)</span></li>
+<li>三个连续的随机变量 X, Y, Z 的联合密度为三元函数，在区域 E 上的概率为 <span class="arithmatex">\(P((X,Y,Z)\in E) = \iiint\limits_E f(x,y,z)~d_V\)</span>（联合密度函数满足 <span class="arithmatex">\(f(x,y,e)\ge 0\)</span>，<span class="arithmatex">\(\int\limits_{-∞}^{+∞}\int\limits_{-∞}^{+∞} \int\limits_{-∞}^{+∞} f(x,y,z)~d_zd_yd_x = 1\)</span>）<ol>
+<li>特别地，<span class="arithmatex">\(P((a\le X\le b, c\le Y\le d, r\le Z\le s)\in E) = \int\limits_{a}^{b}\int\limits_{c}^{d}\int\limits_{r}^{s} f(x,y,z)~d_zd_yd_x\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="8">8.柱面坐标系 &amp; 球坐标系下的三重积分</h3>
+<div class="admonition note">
+<p class="admonition-title">柱坐标</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\((x,y,z) \to (x\cos\theta, y\sin\theta, z)\)</span>，<span class="arithmatex">\(d_V = rd_zd_rd_\theta\)</span></p>
+<p><span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1(r\cos\theta, r\sin\theta)}^{u_2(r\cos\theta, r\sin\theta)} f(r\cos\theta, r\sin\theta, z)~rd_zd_rd_\theta\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>注：三维空间转换为极坐标有三种形式，分别对应于 对三个坐标平面 xoy，xoz，yoz 进行转换，而相对的轴不变</li>
+<li>二维简单区域转化为极坐标形式，并不能从 D 的笛卡尔坐标系的表达式中直接用代数代换？而只能是结合图形来判断？</li>
+<li>若广义的密度函数是类似 <span class="arithmatex">\(F(x^2+y^2, z)\)</span> 的形式，那么推荐使用极坐标，以简化积分运算</li>
+</ul>
+</div>
+<p>三维笛卡尔坐标 转化为 球坐标有公式：<span class="arithmatex">\(x=\rho\sin\phi\cos\theta, y=\rho\sin\phi\cos\theta, z=\rho\cos\phi\)</span></p>
+<p>（<span class="arithmatex">\(\rho\)</span> 是三维空间上距离原点的距离，而 <span class="arithmatex">\(r=\rho\sin\phi\)</span> 是在某个坐标平面上的投影距离原点的距离）</p>
+<p>在球坐标系下，与长方形盒子类似的是 球形楔 <span class="arithmatex">\(E = \{(\rho,\theta,\phi) | a\le\rho\le b, \alpha\le\theta\le\beta, c\le\phi\le d\}\)</span></p>
+<p>其中，<span class="arithmatex">\(a\ge 0, \beta-\alpha\le 2\pi, d-c\le \pi\)</span></p>
+<p>将 <span class="arithmatex">\([\rho_{i-1},\rho_i], [\theta_{j-1},\theta_j], [\phi_{k-1},\phi_k]\)</span> 分割成 n,m,o 段，</p>
+<p>得到 <span class="arithmatex">\(E_{ijk} = \{(\rho,\theta,\phi) | \rho_{i-1}\le\rho\le \rho_i, \theta_{j-1}\le\theta\le\theta_j, \phi_{k-1}\le\phi\le \phi_k\}\)</span>，</p>
+<p>将 <span class="arithmatex">\(E_{ijk}\)</span> 近似为边长分别为 <span class="arithmatex">\(\Delta \rho\)</span>，<span class="arithmatex">\(\rho_i\sin{\phi_k}\Delta\theta\)</span>，<span class="arithmatex">\(\rho_i\Delta \phi\)</span>，</p>
+<p>因而 <span class="arithmatex">\(\Delta V_{ijk} \approx \rho_i^2 \sin{\phi_k} \Delta\rho \Delta\theta \Delta\phi\)</span></p>
+<p>利用均值定理 <span class="arithmatex">\(\Delta V_{ijk} = \widetilde \rho_i^2 \sin{\widetilde\phi_k} \Delta\rho \Delta\theta \Delta\phi\)</span> （均值定理参见练习 39）</p>
+<p><span class="arithmatex">\(\iint\limits_E f(x,y,z)~d_V = \lim\limits_{n,m,o\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(\widetilde\rho_i\sin{\widetilde\phi_k}\cos{\widetilde \theta_j, \widetilde\rho_i\sin{\widetilde\phi_k}\sin{\widetilde\theta_j}, \widetilde\rho_i\cos{\widetilde\phi_k}})\widetilde \rho_i^2 \sin{\widetilde\phi_k} \Delta\rho \Delta\theta \Delta\phi\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">球坐标</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \int_c^d\int_\alpha^\beta\int_a^b f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi)\rho^2\sin\phi~d_\rho d_\theta d_\phi\)</span></p>
+<p>E 是所给 球楔 <span class="arithmatex">\(E = \{(\rho,\theta,\phi) | a\le\rho\le b, \alpha\le\theta\le\beta, c\le\phi\le d\}\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li><strong>球坐标同样可以扩展到跟一般的三维区域上</strong>，如： <span class="arithmatex">\(E = \{(\rho,\theta,\phi) | a\le\rho\le b, \alpha\le\theta\le\beta, g_1(\phi,\theta)\le\phi\le g_2(\phi,\theta)\}\)</span></li>
+<li>如何确定参数？<ul>
+<li>如果区域 E 关于某个轴对称，假设这个轴为 z</li>
+<li>想象 <span class="arithmatex">\(\rho\)</span> 从 0 开始递增，可以得到一个半径渐增的球型，求出 <span class="arithmatex">\(\rho\)</span> 的最大下界 和 最小上界（如果一次就能被精确表示，则称区域 E 是简单区域）</li>
+<li>想象 <span class="arithmatex">\(\phi\)</span> 从 0 开始递增，可以得到锥角(<span class="arithmatex">\(=2\phi\)</span>)渐增的广义圆锥（其中 <span class="arithmatex">\(\phi\le \pi\)</span>），求出 <span class="arithmatex">\(\phi\)</span> 的最大下界 和 最小上界</li>
+<li>选取适当非对称轴，这里记为 x 轴，想象 <span class="arithmatex">\(\theta\)</span> 从 0 开始递增，得到与 <span class="arithmatex">\(xoy\)</span> 夹角为 <span class="arithmatex">\(\theta\)</span> 的渐增的三维半平面，求出 <span class="arithmatex">\(\theta\)</span> 的最大下界 和 最小上界</li>
+</ul>
+</li>
+<li>调换上述定理区域 E 的迭代顺序，理论上可以得到 <span class="arithmatex">\(3!=6\)</span> 种等值公式</li>
+</ul>
+</div>
+<h3 id="9">9.重积分的换元</h3>
+<p>一元函数的换元方法可以用来简化积分计算，有公式：<span class="arithmatex">\(\int_a^b f(x)~d_x = \int_c^d f(g(u))g'(u)~d_u\)</span></p>
+<p>其中 x=g(u), a=g(c), b=g(d)；公式的另一种写法是： <span class="arithmatex">\(\int_a^b f(x)~d_x = \int_c^d f(x(u))\frac {d_x}{d_u}~d_u\)</span></p>
+<p>注：这里的公式有两种用法：x 直接替换为 g(u) 或 凑出 g(u)，将其替换为 x</p>
+<p>而我们从计算黎曼和出发也得出了 二重积分的极坐标变换 等等积分变换</p>
+<div class="admonition note">
+<p class="admonition-title">变换(二维)</p>
+</div>
+<blockquote>
+<p>我们定义<strong>变换</strong> T 是从 <span class="arithmatex">\(uOv\)</span> 平面到 <span class="arithmatex">\(xOy\)</span> 平面的换元： <span class="arithmatex">\(T(u,v) = (x,y)\)</span></p>
+<p>或者，写成 <span class="arithmatex">\(x=g(u,v), y=h(u,v)\)</span>；有时记为 <span class="arithmatex">\(x=x(u,v), y=y(u,v)\)</span></p>
+<p>我们通常假设 T 是 <span class="arithmatex">\(C^1\)</span> 变换（即 g 和 h 有一阶连续偏导数），而 T 通常是定义在 <span class="arithmatex">\(\mathbb R^2\)</span> 子集上的函数</p>
+<p>如果 <span class="arithmatex">\(T(u_1,v_1) = (x_1,y_1)\)</span>，那么 <span class="arithmatex">\((x_1,y_1)\)</span> 称为点 <span class="arithmatex">\((u_1,v_1)\)</span> 的<strong>象</strong></p>
+<p>如果每个点的象各不相同，则 T 称为 <strong>一一变换</strong></p>
+<p>如果 T 是一一变换，那么有<span class="arithmatex">\(xOy\)</span> 平面到 <span class="arithmatex">\(uOv\)</span> 平面的逆变换 <span class="arithmatex">\(T^{-1}(x,y)=(u,v)\)</span>，其中 <span class="arithmatex">\(u=G(x,y), v=H(x,y)\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>我们考虑一个变换 <span class="arithmatex">\(T(x,y)=(u,v)\)</span>（即 u 和 v 能用 x 和 y 表示），给定 <span class="arithmatex">\(xOy\)</span> 上的区域 R，如何求出 R 的象（即 <span class="arithmatex">\(uOv\)</span> 上的区域 S）？<ul>
+<li>一个可能的方法是沿着区域 R 的边界移动，从而通过 T 得到的若干个形如 <span class="arithmatex">\(F(u,v)=0\)</span> 的曲线来计算 S 的边界，从而得到 S 区域</li>
+</ul>
+</li>
+<li>利用 (1) 的结论，若已知变换 <span class="arithmatex">\(T(u,v)=(x,y)\)</span>，而且 T 是一一变换，即 <span class="arithmatex">\(T^{-1}(x,y)=(u,v)\)</span>，从而我们可以得到 S 的区域（计算二重积分的必要条件之一）</li>
+<li>为了方便，我们通常把需要计算二重积分的平面定义为 <span class="arithmatex">\(xOy\)</span> 平面，对应于区域 R</li>
+</ol>
+</div>
+<p>我们假定 <span class="arithmatex">\(uOv\)</span> 平面上的区域 S 是一个矩形，左下角的顶点记为 <span class="arithmatex">\((u_0,v_0)\)</span>，边长为 <span class="arithmatex">\(\Delta u, \Delta v\)</span></p>
+<p>S 的象是 <span class="arithmatex">\(xOy\)</span> 平面上的区域 R，对应的边界点是 <span class="arithmatex">\(T(u_0,v_0)=(x_0,y_0)\)</span></p>
+<p>定义 (u,v) 的象 (x,y) 的位置向量 <span class="arithmatex">\(\mathbf r(u,v) = g(u,v)\mathbf i + h(u,v)\mathbf j\)</span></p>
+<p>那么 S 的下边界(<span class="arithmatex">\(v=v_0\)</span>) 和左边界(<span class="arithmatex">\(u=u_0\)</span>) 的象的曲线在 <span class="arithmatex">\((x_0,y_0)\)</span> 处的切向量分别为： </p>
+<p><span class="arithmatex">\(\mathbf r_u = g_u(u_0,v_0)\mathbf i + h_u(u_0,v_0)\mathbf j = \frac {\partial x}{\partial u}\mathbf i + \frac {\partial y}{\partial u}\mathbf j\)</span>，<span class="arithmatex">\(\mathbf r_v = g_v(u_0,v_0)\mathbf i + h_v(u_0,v_0)\mathbf j = \frac {\partial x}{\partial v}\mathbf i + \frac {\partial y}{\partial v}\mathbf j\)</span></p>
+<p>我们记 <span class="arithmatex">\(\mathbf a = \Delta\mathbf  r_u = \mathbf r(u_0+\Delta u, v_0) - \mathbf r(u_0,v_0)\)</span>，<span class="arithmatex">\(\mathbf b = \Delta\mathbf  r_u = \mathbf r(u_0, v_0+\Delta v) - \mathbf r(u_0,v_0)\)</span></p>
+<p>又因为 <span class="arithmatex">\(\mathbf r_u = \lim\limits_{\Delta u\to 0}\frac {\mathbf r(u_0+\Delta u, v_0) - \mathbf r(u_0, v_0)}{\Delta u}\)</span></p>
+<p>因此 <span class="arithmatex">\(\mathbf r(u_0+\Delta u, v_0) - \mathbf r(u_0, v_0) \approx \Delta u\mathbf r_u\)</span>，同理 <span class="arithmatex">\(\mathbf r(u_0, v_0+\Delta v) - \mathbf r(u_0, v_0) \approx \Delta v\mathbf r_v\)</span></p>
+<p>又因为 <span class="arithmatex">\(\mathbf a\)</span> 和 <span class="arithmatex">\(\mathbf b\)</span> 能近似区域 R=T(S)，我们考虑计算器面积：</p>
+<p><span class="arithmatex">\(|(\Delta u\mathbf r_u)\times (\Delta v\mathbf r_v)| = |\mathbf r_u\times \mathbf r_v|\Delta u\Delta v\)</span></p>
+<p>其中 <span class="arithmatex">\(\mathbf r_u\times \mathbf r_v = \left|\begin{array}{c c c}{\mathbf i}&amp;{\mathbf j}&amp;{\mathbf k}\\ {\frac{\partial x}{\partial u}}&amp;{\frac{\partial y}{\partial u}}&amp;{0}\\ {\frac{\partial x}{\partial v}}&amp;{\frac{\partial y}{\partial v}}&amp;{0}\\ \end{array}\right| = \left|\begin{matrix}\frac{\partial x}{\partial u}&amp;\frac{\partial y}{\partial u}\\ \frac{\partial x}{\partial v}&amp;\frac{\partial y}{\partial v}\end{matrix}\right|\textbf{k}\)</span></p>
+<p>因而容易得到对应的黎曼和及其积分形式，具体细节参见 P359-361</p>
+<div class="admonition 雅可比行列式">
+<p class="admonition-title">雅可比行列式</p>
+</div>
+<blockquote>
+<p>由 <span class="arithmatex">\(x=g(u,v), y=h(u,v)\)</span> 决定的变换 T 的雅可比行列式为：</p>
+<p><span class="arithmatex">\(\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\dfrac{\partial x}{\partial u}&amp;\dfrac{\partial x}{\partial v}\\ \dfrac{\partial\dot y}{\partial u}&amp;\dfrac{\partial y}{\partial v}\end{vmatrix}=\dfrac{\partial x\partial y}{\partial u\partial v}-\dfrac{\partial x\partial y}{\partial v\partial u}\)</span></p>
+</blockquote>
+<div class="admonition 二重积分换元法">
+<p class="admonition-title">二重积分换元法</p>
+</div>
+<blockquote>
+<p>假设 T 是一个 <span class="arithmatex">\(C^1\)</span> 变换，它的雅可比行列式非零，T 把<span class="arithmatex">\(uOv\)</span> 平面上的区域 S 映射成 <span class="arithmatex">\(xOy\)</span> 平面和是哪个的区域 R</p>
+<p>设 f 在 R上是连续并且 S、R 是第 I 类或第 II 类平面区域</p>
+<p>设 T 时一个一一映射，在 S 的边界上可以不是，那么：</p>
+<p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \iint\limits_S f(x(u,v), y(u,v))~|\frac {\partial (x,y)}{\partial (u,v)}|~d_ud_v\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>上述定理可以证明笛卡尔下的二重积分变换到极坐标下的二重积分的正确性</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">二重积分换元法的 应用</p>
+<ul>
+<li>若 <span class="arithmatex">\(xOy\)</span> 上的区域 R 难以表示，可以考虑构造一个变换 <span class="arithmatex">\(T(u,v)=(x,y)\)</span>，使得 <span class="arithmatex">\(S=T^{-1}(R)\)</span> 是一个矩形区域</li>
+<li>若 被积函数 f 难以被积分，可以考虑构造变换 <span class="arithmatex">\(T(x,y)=(u,v)\)</span>，使得被积函数容易积分</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">雅可比行列式(3维)</p>
+</div>
+<blockquote>
+<p>由 <span class="arithmatex">\(T(u,v,\omega)=(x,y,z)\)</span> 决定的雅可比行列式为：</p>
+<p><span class="arithmatex">\(\frac {\partial (x,y,z)}{\partial (u,v,\omega)} = \left|\begin{array}{}  \frac {\partial x}{\partial u} &amp; \frac {\partial x}{\partial v} &amp; \frac {\partial x}{\partial \omega} \\ \frac {\partial y}{\partial u} &amp; \frac {\partial y}{\partial v} &amp; \frac {\partial y}{\partial \omega}  \\ \frac {\partial z}{\partial u} &amp; \frac {\partial z}{\partial v} &amp; \frac {\partial z}{\partial \omega} \end{array}\right|\)</span></p>
+</blockquote>
+<div class="admonition 三重积分换元法">
+<p class="admonition-title">三重积分换元法</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\iiint\limits_R f(x,y,z)~d_V = \iiint\limits_S f(x(u,v,\omega), y(u,v,\omega), z(u,v,\omega))|\frac {\partial (x,y,z)}{\partial (u,v,\omega)}|~d_ud_vd_{\omega}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>该定理可以用于证明球坐标下的三重积分公式</li>
+</ul>
+</div>
 </article>
 </div>
 </div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </a>
+          </button>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -884,20 +1357,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  上一页
-                </span>
+                上一页
+              </span>
+<div class="md-ellipsis">
                 14.多元函数的偏导数
               </div>
 </div>
 </a>
 <a aria-label="下一页: 16.向量积分" class="md-footer__link md-footer__link--next" href="../16.%E5%90%91%E9%87%8F%E7%A7%AF%E5%88%86/" rel="next">
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  下一页
-                </span>
+                下一页
+              </span>
+<div class="md-ellipsis">
                 16.向量积分
               </div>
 </div>
@@ -915,10 +1388,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -928,8 +1401,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

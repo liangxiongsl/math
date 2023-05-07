@@ -8,11 +8,11 @@
 <link href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/" rel="prev"/>
 <link href="../3.%E6%B1%82%E5%AF%BC%E6%B3%95%E5%88%99/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.3" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>2.极限&amp;导数 - 数学</title>
-<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -42,7 +42,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -98,13 +98,18 @@
                   </a>
 </li>
 <li class="md-select__item">
-<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
-                    copychar
+<a class="md-select__link" href="https://www.desmos.com/" hreflang="zh">
+                    desmos
                   </a>
 </li>
 <li class="md-select__item">
 <a class="md-select__link" href="https://mathnotepad.com/" hreflang="zh">
                     mathnotepad
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://copychar.cc/math/" hreflang="zh">
+                    copychar
                   </a>
 </li>
 <li class="md-select__item">
@@ -149,7 +154,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -157,11 +162,16 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
+<div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
         概述
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        微积分
       </a>
 </li>
 <li class="md-tabs__item">
@@ -175,33 +185,18 @@
       </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        概率论及其应用
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">
         概率论&amp;数理统计
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">
-        高等数学(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">
-        线性代数(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">
-        概率论与数理统计(同济)
-      </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
-        微积分
-      </a>
-</li>
-<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../img/1/">
-        img
+        xx
       </a>
 </li>
 </ul>
@@ -223,12 +218,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="概述" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -257,399 +252,37 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="高数" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
-          高数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
-        函数 &amp; 极限 &amp; 连续
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        一元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        一元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
-        多元函数微分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
-        多元函数积分学
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        常微分方程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
-<label for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-          线性代数
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5/">
-        矩阵
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F/">
-        向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
-        矩阵的特征值&amp;特征向量
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        二次型
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
-<label for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论&amp;数理统计" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-          概率论&amp;数理统计
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
-        随机事件&amp;概率
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        数理统计的基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/">高等数学(同济)</a>
-<label for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="高等数学(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-          高等数学(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%87%BD%E6%95%B0%26%E6%9E%81%E9%99%90/">
-        函数&amp;极限
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AF%BC%E6%95%B0%26%E5%BE%AE%E5%88%86/">
-        导数&amp;微分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%26%E5%AF%BC%E6%95%B0%E5%BA%94%E7%94%A8/">
-        微分中值定理&amp;导数应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        不定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%AE%9A%E7%A7%AF%E5%88%86/">
-        定积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-        微分方程
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%99%84%E5%BD%95/">
-        附录
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
-        向量代数&amp;空间解析几何
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E6%B3%95%26%26%E5%BA%94%E7%94%A8/">
-        多元函数微分法&amp;&amp;应用
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E9%87%8D%E7%A7%AF%E5%88%86/">
-        重积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%26%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/">
-        曲线积分&amp;曲面积分
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%28%E5%90%8C%E6%B5%8E%29/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
-        无穷级数
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/">线性代数(同济)</a>
-<label for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="线性代数(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-          线性代数(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E8%A1%8C%E5%88%97%E5%BC%8F/">
-        行列式
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%26%26%E8%BF%90%E7%AE%97/">
-        矩阵&amp;&amp;运算
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%26%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
-        矩阵的初等变换&amp;线性方程组
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7/">
-        向量组的线性相关性
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
-        相似矩阵&amp;二次型
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%28%E5%90%8C%E6%B5%8E%29/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%26%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2/">
-        线性空间&amp;线性变换
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/">概率论与数理统计(同济)</a>
-<label for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="概率论与数理统计(同济)" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
-          概率论与数理统计(同济)
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        概率论基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%A0%B7%E6%9C%AC%26%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">
-        样本&amp;抽样分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%26%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">
-        方差分析&amp;回归分析
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/bootstrap%E6%96%B9%E6%B3%95/">
-        Bootstrap方法
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E4%B8%AD%E5%BA%94%E7%94%A8Excel/">
-        数理统计中应用Excel
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%26%26%E7%BB%9F%E8%AE%A1%E6%8F%8F%E8%BF%B0/">
-        随机过程&amp;&amp;统计描述
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/">
-        马尔科夫链
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%28%E5%90%8C%E6%B5%8E%29/%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
-        平稳随机过程
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../">微积分</a>
-<label for="__nav_8">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-label="微积分" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           微积分
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E5%A4%8D%E4%B9%A0/">
+        复习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E5%87%BD%E6%95%B0%26%E6%A8%A1%E5%9E%8B/">
         1.函数&amp;模型
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           2.极限&amp;导数
           <span class="md-nav__icon md-icon"></span>
@@ -694,7 +327,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#6">
-    6.无穷远的极限及水平渐近线
+    6.无穷远的极限 &amp; 水平渐近线
   </a>
 </li>
 <li class="md-nav__item">
@@ -799,60 +432,291 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
-<label aria-expanded="false" class="md-nav__link" for="__nav_9" tabindex="0">
-          img
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E9%AB%98%E6%95%B0/">高数</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          高数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%87%BD%E6%95%B0%20%26%20%E6%9E%81%E9%99%90%20%26%20%E8%BF%9E%E7%BB%AD/">
+        函数 &amp; 极限 &amp; 连续
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        一元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        一元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/">
+        向量代数&amp;空间解析几何
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+        多元函数微分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6/">
+        多元函数积分学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0/">
+        无穷级数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E9%AB%98%E6%95%B0/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+        常微分方程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          线性代数
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+        线性方程组
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9F%A9%E9%98%B5%E4%BB%A3%E6%95%B0/">
+        矩阵代数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E8%A1%8C%E5%88%97%E5%BC%8F/">
+        行列式
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/">
+        向量空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%89%B9%E5%BE%81%E5%80%BC%26%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
+        特征值&amp;特征向量
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%80%E5%B0%8F%E6%80%A7%26%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/">
+        最小性&amp;最小二乘法
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%26%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+        对称矩阵&amp;二次型
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%9A%84%E5%87%A0%E4%BD%95%E5%AD%A6/">
+        向量空间的几何学
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="img" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_9">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
-          img
+          概率论及其应用
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+        1.样本空间
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/2.%E7%BB%84%E5%90%88%E5%88%86%E6%9E%90%E6%A6%82%E8%A6%81/">
+        2.组合分析概要
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/3.%E6%89%94%E7%A1%AC%E5%B8%81%E7%9A%84%E8%B5%B7%E4%BC%8F%E9%97%AE%E9%A2%98%E5%92%8C%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A/">
+        3.扔硬币的起伏问题和随机徘徊
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/4.%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%84%E5%90%88/">
+        4.事件的组合
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/5.%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%26%E9%9A%8F%E6%9C%BA%E7%8B%AC%E7%AB%8B%E6%80%A7/">
+        5.条件概率&amp;随机独立性
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/6.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%26%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83/">
+        6.二项分布&amp;泊松分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/7.%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E7%9A%84%E6%AD%A3%E6%80%81%E9%80%BC%E8%BF%91/">
+        7.二项分布的正态逼近
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/8.%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%AF%95%E9%AA%8C%E7%9A%84%E6%97%A0%E7%A9%B7%E5%BA%8F%E5%88%97/">
+        8.伯努利试验的无穷序列
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/9.%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%9C%9F%E6%9C%9B%E5%80%BC/">
+        9.随机变量&amp;期望值
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/10.%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B/">
+        10.大数定律
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/11.%E5%8F%96%E6%95%B4%E6%95%B0%E5%80%BC%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%E6%AF%8D%E5%87%BD%E6%95%B0/">
+        11.取整数值的随机变量&amp;母函数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/12.%E5%A4%8D%E5%90%88%E5%88%86%E5%B8%83%26%E5%88%86%E6%94%AF%E8%BF%87%E7%A8%8B/">
+        12.复合分布&amp;分支过程
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/13.%E5%BE%AA%E7%8E%AF%E4%BA%8B%E4%BB%B6%26%E6%9B%B4%E6%96%B0%E7%90%86%E8%AE%BA/">
+        13.循环事件&amp;更新理论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/14.%E9%9A%8F%E6%9C%BA%E5%BE%98%E5%BE%8A%E4%B8%8E%E7%A0%B4%E4%BA%A7%E9%97%AE%E9%A2%98/">
+        14.随机徘徊与破产问题
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/15.%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE/">
+        15.马尔可夫链
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/16.%E6%9C%89%E9%99%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E7%9A%84%E4%BB%A3%E6%95%B0%E5%A4%84%E7%90%86/">
+        16.有限马尔可夫链的代数处理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/17.%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%9D%E6%97%B6%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/">
+        17.最简单的依时的随机过程
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论&amp;数理统计</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          概率论&amp;数理统计
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
+        随机事件&amp;概率
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
+        多维随机变量&amp;&amp;分布
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
+        随机变量的数字特征
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
+        大数定律&amp;中心极限定理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+        数理统计的基本概念
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
+        参数估计
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%26%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
+        假设检验
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          xx
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          xx
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/1/">
         1
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/2/">
-        2
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/3/">
-        3
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/4/">
-        4
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/5/">
-        5
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/6/">
-        6
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/7/">
-        7
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/8/">
-        8
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../img/9/">
-        9
       </a>
 </li>
 <li class="md-nav__item">
@@ -906,6 +770,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../img/2/">
+        2
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../img/20/">
         20
       </a>
@@ -913,6 +782,41 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../img/21/">
         21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/3/">
+        3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/4/">
+        4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/5/">
+        5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/6/">
+        6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/7/">
+        7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/8/">
+        8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../img/9/">
+        9
       </a>
 </li>
 </ul>
@@ -963,7 +867,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#6">
-    6.无穷远的极限及水平渐近线
+    6.无穷远的极限 &amp; 水平渐近线
   </a>
 </li>
 <li class="md-nav__item">
@@ -992,17 +896,19 @@
 <h3 id="_1"></h3>
 <h3 id="1">1.切线和速度问题</h3>
 <h3 id="2">2.函数的极限</h3>
-<div class="highlight"><span class="filename">极限 定义</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>\lim_{x \to a} f(x) = L
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>当 x 趋于 a 时，函数 f(x) 的极限等于 L
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>如果我们可以通过让 x 充分地接近 a (在 a 的两边均可)，但不等于a (x!=a)，
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>使得到f(x)的值任意地接近 L
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>另一种表达：x \to a, f(x) \to L
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">极限 定义</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = L\)</span></p>
+<p>当 x 趋于 a 时，函数 f(x) 的极限等于 L</p>
+<p>如果我们可以通过让 x 充分地接近 a (在 a 的两边均可)，但不等于a (<span class="arithmatex">\(x \ne a\)</span>)，使得到f(x)的值任意地接近 L</p>
+<p>另一种表达：<span class="arithmatex">\(x \to a\)</span>, <span class="arithmatex">\(f(x) \to L\)</span></p>
+</blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
-<li>f(x) 无需在 x=a处有定义，我们只需关注 x=a 附近f(x)是如何定义的<ul>
+<li>f(x) 无需在 x=a 处有定义，我们只需关注 x=a 附近f(x)是如何定义的<ul>
 <li>也就是说，求极限时可以先清楚3个事情： x=a左侧，x=a右侧，x=a(无需考虑)</li>
 <li>无论 f(x) 在 x=a 处取何值，都与其在此处的极限无关</li>
 </ul>
@@ -1011,68 +917,99 @@
 <li>若两侧极限取不同值时，极限不存在</li>
 </ul>
 </div>
-<div class="highlight"><span class="filename">单侧极限</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>如果 x 充分接近 a 且 x 小于 a 时，则称当 x 趋近于 a 时f(x)的左极限等于 L, 
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    记为 \lim_{x \to a^-}f(x) = L
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>如果 x 充分接近 a 且 x 大于 a 时，则称当 x 趋近于 a 时f(x)的右极限等于 L, 
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>    记为 \lim_{x \to a^+}f(x) = L
-</code></pre></div>
-<div class="highlight"><span class="filename">单侧极限 &amp; 两侧极限</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>\lim_{x \to a}f(x) = L  \iff  \lim_{x \to a^-}f(x) = L &amp; \lim_{x \to a^+}f(x) = L
-</code></pre></div>
-<div class="highlight"><span class="filename">无穷大极限</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>设 f 是一个函数它在 a 的两边都有定义(a点本身可能除外)，那么 \lim_{x \to a} f(x) = +∞
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>表示当 x 充分地靠近但不等于 a 时，f(x) 的值可以任意的大
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>另一种表示方法： f(x) \to +∞， 当 x \to a
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">单侧极限</p>
+</div>
+<blockquote>
+<p>如果 x 充分接近 a 且 x 小于 a 时，则称当 x 趋近于 a 时f(x)的左极限等于 L, 记为 <span class="arithmatex">\(\lim\limits_{x \to a^-}f(x) = L\)</span></p>
+<p>如果 x 充分接近 a 且 x 大于 a 时，则称当 x 趋近于 a 时f(x)的右极限等于 L, 记为 <span class="arithmatex">\(\lim\limits_{x \to a^+}f(x) = L\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">单侧极限 &amp; 两侧极限</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L  \iff  \lim\limits_{x \to a^-}f(x) = L\)</span> &amp; <span class="arithmatex">\(\lim\limits_{x \to a^+}f(x) = L\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">无穷大极限</p>
+</div>
+<blockquote>
+<p>设 f 是一个函数，它在 a 的两边都有定义(a点本身可能除外)，那么 <span class="arithmatex">\(\lim\limits_{x \to a} f(x) = +∞\)</span> 表示当 x 充分地靠近但不等于 a 时，f(x) 的值可以任意的大</p>
+<p>另一种表示方法： <span class="arithmatex">\(f(x) \to +∞\)</span>， 当 <span class="arithmatex">\(x \to a\)</span></p>
+</blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
-<li>∞既不表示一个数，也不表示极限存在，<mark class="critic">它只是极限不存在的一种特殊表示</mark></li>
+<li>∞ 既不表示一个数，也不表示极限存在，<mark class="critic">它只是极限不存在的一种特殊表示</mark></li>
 <li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = +∞\)</span> 读作"当x趋近于a时，f(x)的极限是/变得无穷大" 或 "当x趋近于a时，f(x)无界地增长"</li>
 </ul>
 </div>
-<div class="highlight"><span class="filename">无穷大极限</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>设 f 是一个函数它在 a 的两边都有定义(a点本身可能除外)，那么 \lim_{x \to a} f(x) = -∞
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>表示当 x 充分地靠近但不等于 a 时，f(x) 的值是绝对值任意大的负数
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>另一种表示方法： f(x) \to -∞， 当 x \to a
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">无穷大极限</p>
+</div>
+<blockquote>
+<p>设 f 是一个函数它在 a 的两边都有定义(a点本身可能除外)，那么 <span class="arithmatex">\(\lim\limits_{x \to a} f(x) = -∞\)</span> 表示当 x 充分地靠近但不等于 a 时，f(x) 的值是绝对值任意大的负数</p>
+<p>另一种表示方法： <span class="arithmatex">\(f(x) \to -∞\)</span>， 当 <span class="arithmatex">\(x \to a\)</span></p>
+</blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
 <li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = -∞\)</span> 读作"当x趋近于a时，f(x)的极限是/变得负无穷大" 或 "当x趋近于a时，f(x)无界地减少"</li>
 </ul>
 </div>
-<div class="highlight"><span class="filename">垂直渐近线</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>直线 x = a 称为曲线 y = f(x) 的垂直渐近线，如果下面的条件至少满足一个：
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    - \lim_{x \to a} f(x) = +∞, \lim_{x \to a^-} f(x) = +∞, \lim_{x \to a^+} f(x) = +∞
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>    - \lim_{x \to a} f(x) = -∞, \lim_{x \to a^-} f(x) = -∞, \lim_{x \to a^+} f(x) = -∞
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">垂直渐近线</p>
+</div>
+<blockquote>
+<p>直线 x = a 称为曲线 y = f(x) 的垂直渐近线，如果下面的条件至少满足一个：</p>
+<ul>
+<li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = +∞\)</span>, <span class="arithmatex">\(\lim\limits_{x \to a^-} f(x) = +∞\)</span>, <span class="arithmatex">\(\lim_{x \to a^+} f(x) = +∞\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a} f(x) = -∞\)</span>, <span class="arithmatex">\(\lim\limits_{x \to a^-} f(x) = -∞\)</span>, <span class="arithmatex">\(\lim_{x \to a^+} f(x) = -∞\)</span></li>
+</ul>
+</blockquote>
 <h3 id="3">3.利用极限运算法则求极限</h3>
 <p>正确函数极限函数值不见得总是能通过猜测来得到，如下给出极限的一些性质，称为 极限法则，来计算极限</p>
-<div class="highlight"><span class="filename"><mark class="critic">极限法则</mark></span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>假设 c 是一个常数，极限 \lim_{x \to a}f(x) 和 \lim_{x \to a}g(x) 存在，那么：
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>    1.  \lim_{x \to a}[f(x) + g(x)] = \lim_{x \to a}f(x) + \lim_{x \to a}g(x)
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>    2.  \lim_{x \to a}[f(x) - g(x)] = \lim_{x \to a}f(x) - \lim_{x \to a}g(x)
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>    3.  \lim_{x \to a}[f(x) * g(x)] = \lim_{x \to a}f(x) * \lim_{x \to a}g(x)
-<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>    4.  \lim_{x \to a}[f(x) / g(x)] = \lim_{x \to a}f(x) / \lim_{x \to a}g(x) &amp; \lim_{x \to a}g(x) != 0
-<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>    5.  \lim_{x \to a}[c * f(x)] = c * \lim_{x \to a}f(x)
-<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>
-<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>// 分别称为 和/差/乘/商/常数乘积 法则
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><mark class="critic">极限法则</mark></p>
+</div>
+<blockquote>
+<p>假设 c 是一个常数，极限 <mark class="critic"><span class="arithmatex">\(\lim\limits_{x \to a}f(x)\)</span></mark> 和 <mark class="critic"><span class="arithmatex">\(\lim\limits_{x \to a}g(x)\)</span> 存在</mark>，那么：</p>
+<ol>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) + g(x)] = \lim\limits_{x \to a}f(x) + \lim\limits_{x \to a}g(x)\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) - g(x)] = \lim\limits_{x \to a}f(x) - \lim\limits_{x \to a}g(x)\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) * g(x)] = \lim\limits_{x \to a}f(x) * \lim\limits_{x \to a}g(x)\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}[f(x) / g(x)] = \lim\limits_{x \to a}f(x) / \lim\limits_{x \to a}g(x)\)</span> &amp; <span class="arithmatex">\(\lim\limits_{x \to a}g(x) != 0\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}[c * f(x)] = c * \lim\limits_{x \to a}f(x)\)</span></li>
+</ol>
+<p>// 分别称为 和/差/乘/商/常数乘积 法则</p>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>极限法则 可以通过 极限的严格定义 证明</p>
 </div>
-<div class="highlight"><span class="filename"><mark class="critic">其他极限法则</mark></span><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>6.  \lim_{x \to a}f(x)^n = [\lim_{x \to a}f(x)]^n  &amp;  n 是正整数
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>7.  \lim_{x \to a}c = c
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>8.  \lim_{x \to a}x = a
-<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>9.  \lim_{x \to a}x^n = a^n
-<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>10. \lim_{x \to a}\sqrt[n]{x} = \sqrt[n]{a}  &amp;  n是正整数(如果n是偶数，我们假设 a&gt;0)
-<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>11. \lim_{x \to a}\sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a}f(x)}
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><mark class="critic">其他极限法则</mark></p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}c = c\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}x = a\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}x^n = a^n\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}f(x)^n = [\lim_{x \to a}f(x)]^n\)</span>  &amp;  n 是正整数</li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}\sqrt[n]{x} = \sqrt[n]{a}\)</span>  &amp;  n是正整数(如果n是偶数，我们假设 a&gt;0)</li>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}\sqrt[n]{f(x)} = \sqrt[n]{\lim\limits_{x \to a}f(x)}\)</span></li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>上述6个法则均与超越函数无关</p>
 </div>
-<div class="highlight"><span class="filename">直接替换性质</span><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>如果 f 是一个 多项式 或 有理函数，a 在 f 的定义域里，那么 \lim_{x \to a} f(x) = f(a)
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">直接替换性质</p>
+</div>
+<blockquote>
+<p>如果 f 是一个 多项式 或 有理函数，<mark class="critic">a 在 f 的定义域里</mark>，那么 <span class="arithmatex">\(\lim\limits_{x \to a} f(x) = f(a)\)</span></p>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -1085,13 +1022,17 @@
 <li>p199 - 关于牛顿的经历</li>
 </ul>
 </div>
-<div class="highlight"><span class="filename">定理</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>1.  \lim_{x \to a}f(x) = L  \iff  \lim_{x \to a^-}f(x) = L = \lim_{x \to a^+}f(x)
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>2.  如果 x 在 a 附近时(除了在a处) f(x) \le g(x)，并且 x趋于 f 和 g 时的极限都存在，
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>    那么 \lim_{x \to a}f(x) \le \lim_{x \to a}g(x)
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>3.  夹逼原理 - 如果 x 在 a 附近时(除了在a处) f(x) \le g(x) \le h(x)，
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>    并且 \lim_{x \to a}f(x) = \lim_{x \to a}g(x) = L，那么
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>    \lim_{x \to a}g(x) = L
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L  \iff  \lim\limits_{x \to a^-}f(x) = L = \lim\limits_{x \to a^+}f(x)\)</span></li>
+<li>如果 x 在 a 附近时(除了在a处) <span class="arithmatex">\(f(x) \le g(x)\)</span>，并且 x 趋于 f 和 g 时的极限都存在，那么 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) \le \lim\limits_{x \to a}g(x)\)</span></li>
+<li><mark class="critic">夹逼原理</mark> - 如果 x 在 a 附近时(除了在a处) <span class="arithmatex">\(f(x) \le g(x) \le h(x)\)</span>，
+  并且 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = \lim\limits_{x \to a}g(x) = L\)</span>，那么 <span class="arithmatex">\(\lim\limits_{x \to a}g(x) = L\)</span></li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -1110,42 +1051,44 @@
 <p class="admonition-title">Waring</p>
 <p>以下含有高难度定义，不要崩溃</p>
 </div>
-<div class="highlight"><span class="filename">极限的严格定义</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>设 f 为定义在某个包含a的开区间上的函数（在 a 处可能没有定义），
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>如果对于任意 \epsilon &gt; 0，都存在一个 \delta &gt; 0，
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>只要 0 &lt; |x-a| &lt; \delta 都有：  |f(x) - L| &lt; \epsilon，
-<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>那么我们说 x 趋于 a 时 f(x) 的极限是 L，记为：\lim_{x \to a}f(x) = L
-<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a>
-<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>自然语言定义：
-<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a>\lim_{x \to a}f(x) = L 表示通过将 x 与 a 之间的距离变得充分小（但不为0），
-<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a>可以使 f(x) 与 L 之间的距离变得任意小
-<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a>
-<a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a>或者：
-<a href="#__codelineno-10-11" id="__codelineno-10-11" name="__codelineno-10-11"></a>\lim_{x \to a}f(x) = L 表示通过使 x 与 a 足够地靠近（但不等于 a），
-<a href="#__codelineno-10-12" id="__codelineno-10-12" name="__codelineno-10-12"></a>可以使 f(x) 与 L 之间的距离任意地靠近
-<a href="#__codelineno-10-13" id="__codelineno-10-13" name="__codelineno-10-13"></a>
-<a href="#__codelineno-10-14" id="__codelineno-10-14" name="__codelineno-10-14"></a>集合的解释：
-<a href="#__codelineno-10-15" id="__codelineno-10-15" name="__codelineno-10-15"></a>给定 \epsilon &gt; 0, 能够找出足够小的 \delta &gt; 0，使得
-<a href="#__codelineno-10-16" id="__codelineno-10-16" name="__codelineno-10-16"></a>{x | 0&lt;|x-a|&lt;\delta} 能够全部映射到 {f(x) | |f(x)-L|&lt;\epsilon} 之内
-<a href="#__codelineno-10-17" id="__codelineno-10-17" name="__codelineno-10-17"></a>
-<a href="#__codelineno-10-18" id="__codelineno-10-18" name="__codelineno-10-18"></a>// 几何方面的描述。。。
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">极限的严格定义</p>
+</div>
+<blockquote>
+<p>设 f 为定义在某个包含a的开区间上的函数（在 a 处可能没有定义），</p>
+<p>如果对于任意 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，都存在一个 <span class="arithmatex">\(\delta &gt; 0\)</span>，只要 <span class="arithmatex">\(0 &lt; |x-a| &lt; \delta\)</span> 都有：  <span class="arithmatex">\(|f(x) - L| &lt; \epsilon\)</span>，那么我们说 x 趋于 a 时 f(x) 的极限是 L，记为：<span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L\)</span></p>
+<p>自然语言定义：<span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L\)</span> 表示通过将 x 与 a 之间的距离变得充分小（但不为0），可以使 f(x) 与 L 之间的距离变得任意小</p>
+<p>或者：<span class="arithmatex">\(\lim\limits_{x \to a}f(x) = L\)</span> 表示通过使 x 与 a 足够地靠近（但不等于 a），可以使 f(x) 与 L 之间的距离任意地靠近</p>
+<p>集合的解释：给定 <span class="arithmatex">\(\epsilon &gt; 0\)</span>, 能够找出足够小的 <span class="arithmatex">\(\delta &gt; 0\)</span>，使得 <span class="arithmatex">\(\{x | 0&lt;|x-a|&lt;\delta\}\)</span> 能够全部映射到 <span class="arithmatex">\(\{f(x) |~~|f(x)-L|&lt;\epsilon\}\)</span> 之内</p>
+<p>// 几何方面的描述。。。</p>
+</blockquote>
 <details class="如何理解">
 <summary>如何理解</summary>
-<p>在证明极限时，将极限定义看成是一场对抗，可能会是有益的．首先 <span class="arithmatex">\(\epsilon\)</span> 向你挑战，你必须能够拿出一个适合的 <span class="arithmatex">\(\delta\)</span> 与之抗衡，你必须能够对付每一个 \epsilon &gt; 0，而不只是某个特殊的 \epsilon</p>
+<p>在证明极限时，将极限定义看成是一场对抗，可能会是有益的．首先 <span class="arithmatex">\(\epsilon\)</span> 向你挑战，你必须能够拿出一个适合的 <span class="arithmatex">\(\delta\)</span> 与之抗衡，你必须能够对付每一个 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，而不只是某个特殊的 <span class="arithmatex">\(\epsilon\)</span></p>
 </details>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>关于极限的严格定义的更多内容，参考p128</p>
 </div>
-<div class="highlight"><span class="filename">无穷大极限</span><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>无穷大极限:
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>    - 设 f 是定义在某个包含 a 的开区间（可能不包含a本身）上的一个函数。那么 \lim_{x \to a}f(x) = +∞
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>        表示对于每个正数M，存在一个正数 \delta，使得当 0 &lt; |x-a| &lt; \epsilon 时，有 f(x) &gt; M
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>    - 设 f 是定义在某个包含 a 的开区间（可能不包含a本身）上的一个函数。那么 \lim_{x \to a}f(x) = -∞
-<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>        表示对于每个负数N，存在一个正数 \delta，使得当 0 &lt; |x-a| &lt; \epsilon 时，有 f(x) &lt; N
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">无穷大极限</p>
+</div>
+<blockquote>
+<p>无穷大极限:</p>
+<ul>
+<li>设 f 是定义在某个包含 a 的开区间（可能不包含a本身）上的一个函数。那么 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = +∞\)</span>
+      表示对于每个正数M，存在一个正数 <span class="arithmatex">\(\delta\)</span>，使得当 <span class="arithmatex">\(0 &lt; |x-a| &lt; \epsilon 时，有 f(x) &gt; M\)</span></li>
+<li>设 f 是定义在某个包含 a 的开区间（可能不包含a本身）上的一个函数。那么 <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = -∞\)</span>
+      表示对于每个负数N，存在一个正数 <span class="arithmatex">\(\delta\)</span>，使得当 <span class="arithmatex">\(0 &lt; |x-a| &lt; \epsilon 时，有 f(x) &lt; N\)</span></li>
+</ul>
+</blockquote>
 <h3 id="5">5.函数的连续性</h3>
-<div class="highlight"><span class="filename">函数的 连续性</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>函数 f 在 a 点连续，如果  \lim_{x \to a}f(x) = f(a)
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">函数的 连续性</p>
+</div>
+<blockquote>
+<p>函数 f 在 a 点连续，如果  <span class="arithmatex">\(\lim\limits_{x \to a}f(x) = f(a)\)</span></p>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">该定义隐含了三件事情</p>
 <ol>
@@ -1154,38 +1097,73 @@
 <li><span class="arithmatex">\(\lim\limits_{x\to a}f(x) = f(a)\)</span></li>
 </ol>
 </div>
-<div class="highlight"><span class="filename">函数的 左右连续性</span><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>函数 f 在 a 点左连续，如果 \lim_{x \to a^-}f(x) = f(a)
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>函数 f 在 a 点右连续，如果 \lim_{x \to a^+}f(x) = f(a)
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>函数 f 在一个区间上是连续的，如果它在区间内没一点都连续
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>(在端点连续表示 右连续或是左连续)
-</code></pre></div>
-<div class="highlight"><span class="filename">定理(p140)</span><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>如果函数 f 和 g 在a点连续，且 c 是一个常数，那么下列函数在a点也连续：
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>    - f + g, f - g, c * f, f * g, f / g &amp; g(a) != 0
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>// 即任意个连续函数的线性组合都能构成连续函数（而 除法 可能损失 定义域）
-</code></pre></div>
-<div class="highlight"><span class="filename">定理</span><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>1.  多项式 在每一点处都连续，即它在 R = (-∞, +∞) 上连续
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>2.  有理函数 在每一个有定义的点都连续，即它在自己的定义域上连续
-</code></pre></div>
-<div class="highlight"><span class="filename">定理(默认连续函数)</span><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>以下函数在定义域内处处连续：
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>    - 有理函数（多项式，平方根函数）
-<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>    - 常见的超越函数：三角函数，反三角函数，指数函数，对数函数
-</code></pre></div>
-<div class="highlight"><span class="filename">定理(极限符号互换？)</span><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>如果 f 在 b 点连续，并且 \lim_{x \to a}g(x) = b，那么
-<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>    \lim_{x \to a}f(g(x)) = f(b)
-<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>即   \lim_{x \to a}f(g(x)) = f(\lim_{x \to a}g(x))
-</code></pre></div>
-<div class="highlight"><span class="filename">定理(“连续函数的连续函数也是连续函数”)</span><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>如果 g 在 a 连续 &amp; f 在 g(a) 连续，那么 f o g 也在 a 连续
-<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>
-<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>// 对此定理做一个连续的“迭代”即可扩展到区间上的问题
-</code></pre></div>
-<div class="highlight"><span class="filename">介值定理</span><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>假设 <mark class="critic">f 在 [a, b] 上连续</mark>， N \in [f(a), f(b)] （其中 f(a) != f(b), 可说明 a != b），
-<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>那么，存在 c \in (a, b)，使得 f(c) = N
+<div class="admonition note">
+<p class="admonition-title">函数的 左右连续性</p>
+</div>
+<blockquote>
+<p>函数 f 在 a 点左连续，如果 <span class="arithmatex">\(\lim\limits_{x \to a^-}f(x) = f(a)\)</span>
+函数 f 在 a 点右连续，如果 <span class="arithmatex">\(\lim\limits_{x \to a^+}f(x) = f(a)\)</span></p>
+</blockquote>
+<pre class="mermaid"><code>graph
+a(f 在 a 处 左 &amp; 右极限 存在 而且 相等) --&gt; c("左右极限 = f(a)")
+b(f 在 a 处有定义) --&gt; c
+c --&gt; d(f 连续)</code></pre>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>函数 f 在一个区间上是连续的，如果它在区间内每一点都连续
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>(在端点连续表示 右连续或是左连续)
 </code></pre></div>
 <div class="admonition note">
+<p class="admonition-title">定理(连续函数线性组合 <span class="arithmatex">\(\implies\)</span> 连续函数)</p>
+</div>
+<blockquote>
+<p>如果函数 f 和 g 在a点连续，且 c 是一个常数，那么下列函数在a点也连续：</p>
+<ul>
+<li><span class="arithmatex">\(f + g\)</span>, <span class="arithmatex">\(f - g\)</span>, <span class="arithmatex">\(c \cdot f\)</span>, <span class="arithmatex">\(f \cdot g\)</span>, <span class="arithmatex">\(f / g\)</span> &amp; <span class="arithmatex">\(g(a) \ne 0\)</span></li>
+</ul>
+<p>// 即任意个连续函数的线性组合都能构成连续函数（而 除法 可能损失 定义域）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<ol>
+<li>多项式 在每一点处都连续，即它在 R = (-∞, +∞) 上连续</li>
+<li>有理函数 在每一个有定义的点都连续，即它在自己的定义域上连续</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理(默认连续函数)</p>
+</div>
+<blockquote>
+<p>以下函数在定义域内处处连续：</p>
+<ul>
+<li>有理函数（多项式，平方根函数）</li>
+<li>常见的超越函数：三角函数，反三角函数，指数函数，对数函数</li>
+</ul>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理(复合 的极限定理？)</p>
+</div>
+<blockquote>
+<p>如果 f 在 b 点连续，并且 <span class="arithmatex">\(\lim\limits_{x \to a}g(x) = b\)</span>，那么<span class="arithmatex">\(\lim\limits_{x \to a}f(g(x)) = f(b)\)</span></p>
+<p>即  <span class="arithmatex">\(\lim\limits_{x \to a}f(g(x)) = f(\lim\limits_{x \to a}g(x))\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理(“连续函数的连续函数也是连续函数”)</p>
+</div>
+<blockquote>
+<p>如果 g 在 a 连续 &amp; f 在 g(a) 连续，那么 f o g 也在 a 连续</p>
+<p>// 对此定理做一个连续的“迭代”即可扩展到区间上的问题</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">介值定理</p>
+</div>
+<blockquote>
+<p>假设 <mark class="critic">f 在 [a, b] 上连续</mark>， <span class="arithmatex">\(N \in [f(a), f(b)]\)</span> （其中 <span class="arithmatex">\(f(a) \ne f(b)\)</span>, 可说明 <span class="arithmatex">\(a \ne b\)</span>），</p>
+<p>那么，存在 <span class="arithmatex">\(c \in (a, b)\)</span>，使得 f(c) = N</p>
+</blockquote>
+<div class="admonition note">
 <p class="admonition-title">我的理解</p>
-<p>f 在 [a, b] 连续，那么，对于满足 <span class="arithmatex">\(y\in[f(a), f(b)]\)</span> 局部值域的每一点y，都能映射到满足<span class="arithmatex">\(x\in[a, b]\)</span>多个定义域上的点x</p>
+<p>f 在 [a, b] 连续，那么，对于满足 <span class="arithmatex">\(y\in[f(a), f(b)]\)</span> 局部值域的每一点y，都能映射到满足 <span class="arithmatex">\(x\in[a, b]\)</span> 多个定义域上的点x</p>
 </div>
 <pre class="mermaid"><code>graph LR
 a("f 在[a, b]连续") --&gt; b("c ∈ (a, b), f(c) ∈ [f(a), f(b)]")</code></pre>
@@ -1196,30 +1174,41 @@ a("f 在[a, b]连续") --&gt; b("c ∈ (a, b), f(c) ∈ [f(a), f(b)]")</code></p
 <li>如果能确定某些连续区间内可能有零点，那么可以用算法(比如：二分)来求精确解</li>
 </ul>
 </div>
-<h3 id="6">6.无穷远的极限及水平渐近线</h3>
-<div class="highlight"><span class="filename">无穷远处的极限</span><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>- 设 f 是一个定义在 (a, ∞) 上的函数，
-<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>那么 \lim_{x \to +∞}f(x) = L 表示通过让 x 足够的大，可以使 f(x) 的值任意的接近 L
-<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>
-<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a>- 设 f 是一个定义在 (-∞, a) 上的函数，
-<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a>那么 \lim_{x \to -∞}f(x) = L 表示通过让 x 从负方向足够的大，可以使 f(x) 的值任意的接近 L
-</code></pre></div>
-<div class="highlight"><span class="filename">水平渐近线</span><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>指向 y = L 称为曲线 y = f(x) 的水平渐近线，如果 \lim_{x \to +∞}f(x) = L 或 \lim_{x \to -∞}f(x) = L
-</code></pre></div>
+<h3 id="6">6.无穷远的极限 &amp; 水平渐近线</h3>
+<div class="admonition note">
+<p class="admonition-title">无穷远处的极限</p>
+</div>
+<blockquote>
+<ul>
+<li>
+<p>设 f 是一个定义在 (a, ∞) 上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}f(x) = L\)</span> 表示通过让 x 足够的大，可以使 f(x) 的值任意的接近 L</p>
+</li>
+<li>
+<p>设 f 是一个定义在 (-∞, a) 上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to -∞}f(x) = L\)</span> 表示通过让 x 从负方向足够的大，可以使 f(x) 的值任意的接近 L</p>
+</li>
+</ul>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">水平渐近线</p>
+</div>
+<blockquote>
+<p>指向 y = L 称为曲线 y = f(x) 的水平渐近线，如果 <span class="arithmatex">\(\lim\limits_{x \to +∞}f(x) = L\)</span> 或 <span class="arithmatex">\(\lim\limits_{x \to -∞}f(x) = L\)</span></p>
+</blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><span class="arithmatex">\(\lim\limits_{x\to-\infty}tan^{-1}{x} = -\frac{\pi}{2}\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x\to~-\infty}tan^{-1}{x} = -\frac{\pi}{2}\)</span></li>
 <li><span class="arithmatex">\(\lim\limits_{x\to+\infty}tan^{-1}{x} = \frac{\pi}{2}\)</span></li>
 <li><span class="arithmatex">\(\lim\limits_{x\to-\infty}e^x = 0\)</span></li>
 </ul>
 </div>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>如果 r &gt; 0 是一个有理数，那么 \lim_{x \to +∞}\frac{1}{x^r} = 0
-<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a>
-<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a>如果 r &gt; 0 是一个 使 x^r 对所有x都有定义的有理数，那么 \lim_{x \to -∞}\frac{1}{x^r} = 0
-</code></pre></div>
-a*(x-2)/(x^2-b)</p>
-<div class="admonition waring">
-<p class="admonition-title">Waring</p>
+<div class="admonition note">
+<p>如果 r &gt; 0 是一个有理数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}\frac{1}{x^r} = 0\)</span></p>
+<p>如果 r &gt; 0 是一个 使 <span class="arithmatex">\(x^r\)</span> 对所有x都有定义的有理数，那么 <span class="arithmatex">\(\lim\limits_{x \to -∞}\frac{1}{x^r} = 0\)</span></p>
+</div>
+<p>a*(x-2)/(x^2-b)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <ul>
 <li>不要用某些定式思维解某些极限问题，比如有理函数中的多项式切勿直接代入无穷来求极限，而要把分母每一项的次数不大于0</li>
 </ul>
@@ -1229,7 +1218,7 @@ a*(x-2)/(x^2-b)</p>
 <ul>
 <li>计算有理函数无穷远处的极限，通常将分子和分母同时除以分母最高次项</li>
 <li>计算两个单项式相减，可以考虑分子和分母同时乘以共轭根式</li>
-<li><span class="arithmatex">\(\sqrt[n]{x^n}=|x|~~\&amp;~~2\mid n\)</span></li>
+<li><span class="arithmatex">\(\sqrt[n]{x^n}=|x|\)</span>  &amp;  <span class="arithmatex">\(2\mid n\)</span></li>
 <li>无理函数(通常指 正整数的倒数次方的幂函数)可以通过引入中间变量化简(但是必须注意原变量取极限时，中间变量取何值)</li>
 </ul>
 </div>
@@ -1240,21 +1229,27 @@ a*(x-2)/(x^2-b)</p>
 <li>对多个无穷大做运算是没有意义的(而乘积或加法除外？)，但是极限的结果可以用无穷大表示</li>
 </ul>
 </div>
-<div class="highlight"><span class="filename">无穷远处的极限 - 严格的定义</span><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>设 f 是一个定义在某个区间 (a, +∞)上的函数，那么 \lim_{x \to +∞}f(x) = L
-<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a>表示对于任意的 \epsilon &gt; 0，总存在一个数 N，使得 x &gt; N 时，有 |f(x) - L| &lt; \epsilon
-<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a>
-<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a>设 f 是一个定义在某个区间 (-∞, a)上的函数，那么 \lim_{x \to -∞}f(x) = L
-<a href="#__codelineno-24-5" id="__codelineno-24-5" name="__codelineno-24-5"></a>表示对于任意的 \epsilon &gt; 0，总存在一个数 N，使得 x &lt; N 时，有 |f(x) - L| &lt; \epsilon
-</code></pre></div>
-<div class="highlight"><span class="filename">无穷远处的无穷大极限</span><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>设 f 是一个定义在某个区间 (a, +∞)上的函数，那么 \lim_{x \to +∞}
-<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a>表示对于任意正数 M，相应的总存在一个正数 N，使得 当 x &gt; N 时，f(x) &gt; M
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">无穷远处的极限 - 严格的定义</p>
+</div>
+<blockquote>
+<p>设 f 是一个定义在某个区间 (a, +∞)上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}f(x) = L\)</span>
+表示对于任意的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，总存在一个数 N，使得 x &gt; N 时，有 <span class="arithmatex">\(|f(x) - L| &lt; \epsilon\)</span></p>
+<p>设 f 是一个定义在某个区间 (-∞, a)上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to -∞}f(x) = L\)</span>
+表示对于任意的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，总存在一个数 N，使得 x &lt; N 时，有 <span class="arithmatex">\(|f(x) - L| &lt; \epsilon\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">无穷远处的无穷大极限</p>
+</div>
+<blockquote>
+<p>设 f 是一个定义在某个区间 (a, +∞)上的函数，那么 <span class="arithmatex">\(\lim\limits_{x \to +∞}\)</span>
+表示对于任意正数 M，相应的总存在一个正数 N，使得 当 x &gt; N 时，f(x) &gt; M</p>
+</blockquote>
 <h3 id="7">7.切线、速度&amp;其他变化率</h3>
 <div class="admonition 切线斜率">
 <p class="admonition-title">切线斜率</p>
 <ul>
-<li>曲线 y=f(x) 在点 P(a, f(a)) 处的切线是一条过点 P 且斜率为 
-<span class="arithmatex">\(m=\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}\)</span> 的直线，如果上式极限存在</li>
+<li>曲线 y=f(x) 在点 P(a, f(a)) 处的切线是一条过点 P 且斜率为 <span class="arithmatex">\(m=\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}\)</span> 的直线，如果上式极限存在</li>
 <li>切线斜率另一种表示： <span class="arithmatex">\(m=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}\)</span>  (在x=a处的斜率)</li>
 </ul>
 </div>
@@ -1315,22 +1310,28 @@ a*(x-2)/(x^2-b)</p>
 <li>曲线在 x=a 有垂直切线，则 f 在 a 点连续，且 <span class="arithmatex">\(\lim\limits_{x\to a}|f'(x)|=∞\)</span></li>
 </ol>
 </blockquote>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>垂直切线 = 垂直渐近线 ？</li>
+<li><span class="arithmatex">\(num(f'(x) = 0) \ge num(水平切线) \ge num(水平渐近线)\)</span> ？</li>
+</ul>
+</div>
 <div class="admonition 函数性质关系树">
 <p class="admonition-title">函数性质关系树</p>
 </div>
 <pre class="mermaid"><code>graph
-连续 --&gt; 有垂直切线
+a(可积) --&gt; b(连续)
+b --&gt; c(可导 = 可微)
 
-可积 --&gt; 连续
-连续 --&gt; 可导
-可导 --&gt; 可微</code></pre>
+b --&gt; 有垂直切线</code></pre>
 </article>
 </div>
 </div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </a>
+          </button>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -1339,20 +1340,20 @@ a*(x-2)/(x^2-b)</p>
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  上一页
-                </span>
+                上一页
+              </span>
+<div class="md-ellipsis">
                 1.函数&amp;模型
               </div>
 </div>
 </a>
 <a aria-label="下一页: 3.求导法则" class="md-footer__link md-footer__link--next" href="../3.%E6%B1%82%E5%AF%BC%E6%B3%95%E5%88%99/" rel="next">
 <div class="md-footer__title">
-<div class="md-ellipsis">
 <span class="md-footer__direction">
-                  下一页
-                </span>
+                下一页
+              </span>
+<div class="md-ellipsis">
                 3.求导法则
               </div>
 </div>
@@ -1370,10 +1371,10 @@ a*(x-2)/(x^2-b)</p>
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -1383,8 +1384,8 @@ a*(x-2)/(x^2-b)</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
