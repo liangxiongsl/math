@@ -849,7 +849,7 @@
 <div class="admonition 向量的分量">
 <p class="admonition-title">向量的分量</p>
 <ul>
-<li>向量分量：将向量 <strong>a</strong> 的起点放在矩形坐标系的源点，那么根据我们所用的坐标系是二维或者三维的，<strong>a</strong> 的终点坐标为 <span class="arithmatex">\((a_1, a_2)\)</span> 或者 <span class="arithmatex">\((a_1, a_2, a_3)\)</span>，这些坐标称为向量 <strong>a</strong> 的分量，记为 <span class="arithmatex">\(\overrightarrow a = \langle a_{1}, a_{2}\rangle\)</span> 或 <span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3\rangle\)</span></li>
+<li>向量分量：将向量 <strong>a</strong> 的起点放在矩形坐标系的原点，那么根据我们所用的坐标系是二维或者三维的，<strong>a</strong> 的终点坐标为 <span class="arithmatex">\((a_1, a_2)\)</span> 或者 <span class="arithmatex">\((a_1, a_2, a_3)\)</span>，这些坐标称为向量 <strong>a</strong> 的分量，记为 <span class="arithmatex">\(\overrightarrow a = \langle a_{1}, a_{2}\rangle\)</span> 或 <span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3\rangle\)</span></li>
 <li>位置向量：如从原点到点 P(x, y) 的向量 <span class="arithmatex">\(\langle x, y \rangle\)</span></li>
 <li>给出点 <span class="arithmatex">\(A(x_1, y_1, z_1)\)</span> 和 <span class="arithmatex">\(B(x_2, y_2, z_2)\)</span>，则表示 <span class="arithmatex">\(\overrightarrow {AB}\)</span> 的向量 <strong>a</strong> 为 <span class="arithmatex">\(\overrightarrow a = \langle x_2-x_1, y_2-y_1, z_2-z_1 \rangle\)</span></li>
 <li>向量长度<ul>
@@ -1047,13 +1047,13 @@
 </blockquote>
 <p>三维空间中的一个平面可以由 一个点 <span class="arithmatex">\(P_0(x_0, y_0, z_0)\)</span> 和 一个垂直于平面的向量 <strong>n</strong> （称为 法向量）来确定</p>
 <p>令 <span class="arithmatex">\(P(x, y, z)\)</span> 为平面上的任意一点，<strong>r0, r</strong> 为 <span class="arithmatex">\(P_0, P\)</span> 的位置向量，那么 <span class="arithmatex">\(\overrightarrow {P_0P} = \overrightarrow r - \overrightarrow r_0\)</span>，</p>
-<p>由 <strong>n</strong> 垂直于 <span class="arithmatex">\(\overrightarrow {P_0P}\)</span> 有：<span class="arithmatex">\(\overrightarrow n \cdot (\overrightarrow r - \overrightarrow r_0) = 0\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\overrightarrow n \cdot \overrightarrow r = \overrightarrow n \cot \overrightarrow r_0\)</span></p>
+<p>由 <strong>n</strong> 垂直于 <span class="arithmatex">\(\overrightarrow {P_0P}\)</span> 有：<span class="arithmatex">\(\overrightarrow n \cdot (\overrightarrow r - \overrightarrow r_0) = 0\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\overrightarrow n \cdot \overrightarrow r = \overrightarrow n \cdot \overrightarrow r_0\)</span></p>
 <div class="admonition 三维平面方程">
 <p class="admonition-title">三维平面方程</p>
 </div>
 <blockquote>
 <p><span class="arithmatex">\(\overrightarrow n \cdot (\overrightarrow r - \overrightarrow r_0) = 0\)</span></p>
-<p><span class="arithmatex">\(\overrightarrow n \cdot \overrightarrow r = \overrightarrow n \cot \overrightarrow r_0\)</span></p>
+<p><span class="arithmatex">\(\overrightarrow n \cdot \overrightarrow r = \overrightarrow n \cdot \overrightarrow r_0\)</span></p>
 <p>令 <span class="arithmatex">\(\overrightarrow n = \langle a, b, c \rangle, \overrightarrow r - \overrightarrow r_0 = \langle x-x_0, y-y_0, z-z_0 \rangle\)</span> （a，b，c 不全为 0，否则表示整个三维空间？）</p>
 <p>有：<span class="arithmatex">\(a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\)</span> 或 <span class="arithmatex">\(ax + by + cz = ax_0 + by_0 + cy_0\)</span></p>
 </blockquote>
@@ -1201,7 +1201,7 @@
 <p class="admonition-title">坐标系之间的切换</p>
 <ul>
 <li>设 <span class="arithmatex">\(P_1(x, y, z), P_2(r, \theta, z), P_3(\rho, \theta, \phi)\)</span> 分别为点 P 在 直角坐标，柱面坐标，球坐标 中的表示方法</li>
-<li><span class="arithmatex">\(P_1(x, y, z) =&gt; P_2(\sqrt {x^2 + y^2}, \tan^{-1}yx, z)\)</span></li>
+<li><span class="arithmatex">\(P_1(x, y, z) =&gt; P_2(\sqrt {x^2 + y^2}, \tan^{-1}\frac yx, z)\)</span></li>
 <li><span class="arithmatex">\(P_1(x, y, z) =&gt; P_3(\sqrt {x^2 + y^2 + z^2}, \sin^{-1} \frac y{\rho\sin\phi}, \cos^{-1}\frac z\rho)\)</span> （注意这里的计算顺序应该是：<span class="arithmatex">\(\rho =&gt; \phi =&gt; \theta\)</span>）<ul>
 <li>又因为 <span class="arithmatex">\(\rho\sin\phi = \rho\sqrt{1-\frac {z^2}{\rho^2}} = \sqrt{\rho^2-z^2} = \sqrt{x^2+y^2}\)</span></li>
 <li>故 <span class="arithmatex">\(P_1(x, y, z) =&gt; P_3(\sqrt {x^2 + y^2 + z^2}, \sin^{-1} \frac y{\sqrt{x^2+y^2}}, \cos^{-1}\frac z\rho)\)</span></li>

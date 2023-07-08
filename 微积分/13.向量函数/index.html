@@ -758,7 +758,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>13.向量函数</h1>
-<p>本证将介绍向量函数，使得空间中的 曲线 和 曲面 能更方便的描述</p>
+<p>本章将介绍向量函数，使得空间中的 曲线 和 曲面 能更方便的描述</p>
 <h3 id="1">1.向量函数 &amp; 空间曲线</h3>
 <p>向量值函数 或 向量函数 是定义域为 实数 且值域为 向量集合 的函数</p>
 <p>我们对取值为三维向量的向量函数 <strong>r</strong> 最感兴趣；定义域中每个数 t，对应着 <span class="arithmatex">\(V_3\)</span> 中的唯一的向量 <strong>r</strong>(t)</p>
@@ -882,7 +882,7 @@
 <blockquote>
 <p><span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = \overrightarrow R(t)]_a^b = \overrightarrow R(b) - \overrightarrow R(b)\)</span></p>
 <p>这里 <strong>R</strong> 是 <strong>r</strong> 的一个原函数，即 <strong>R</strong>'(t) = <strong>r</strong>(t)</p>
-<p><span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t\)</span> 表示不定积分</p>
+<p><span class="arithmatex">\(\int \overrightarrow r(t)~d_t\)</span> 表示不定积分</p>
 </blockquote>
 <h3 id="3">3.弧长 &amp; 曲率</h3>
 <p>参考平面参数方程 x=f(t), y=g(t), <span class="arithmatex">\(a\le t\le b\)</span> 的曲线长度为它的内接多边形长度的极限，如果 f', g' 连续，那么有 <span class="arithmatex">\(L = \int_a^b \sqrt {[f'(t)]^2 + [g'(t)]^2}~d_t = \int_a^b \sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2} d_t\)</span>，空间上的曲线长度可以得到类似的结论</p>
@@ -921,8 +921,8 @@
 <p class="admonition-title">单位切向量</p>
 </div>
 <blockquote>
-<p>C 是一条有向量方程 <strong>r</strong> 所确定的光滑曲线，而且 <strong>r</strong>'(t)<span class="arithmatex">\(\ne\)</span><strong>0</strong>（没有尖点），</p>
-<p>由于 <strong>r</strong>(t) 表示曲线 C 的切向量，我们定义：</p>
+<p>C 是一条由向量方程 <strong>r</strong> 所确定的光滑曲线，而且 <strong>r</strong>'(t)<span class="arithmatex">\(\ne\)</span><strong>0</strong>（没有尖点），</p>
+<p>由于 <strong>r'</strong>(t) 表示曲线 C 的切向量，我们定义：</p>
 <p>单位切向量 <strong>T</strong>(t) 为 <span class="arithmatex">\(\overrightarrow T(t) = \frac {\overrightarrow r'(t)}{|\overrightarrow r'(t)|}\)</span></p>
 <p>可以观察到 <strong>T</strong>(t) 在曲线 C 比较直的时候方向变化较慢，而在弯度较大的地方变化较快</p>
 </blockquote>
@@ -968,14 +968,14 @@
 <p>给定平面曲线 y = f(x)，以 x 为参数有 <span class="arithmatex">\(\mathbf r(x) = x\mathbf i + f(x)\mathbf j\)</span></p>
 <p>对两边分别求 1 次 和 2 次导数，有 <span class="arithmatex">\(\mathbf r'(x) = \mathbf i + f'(x)\mathbf j\)</span>，<span class="arithmatex">\(\mathbf r^{"}(x) = f^{"}(x)\mathbf j\)</span>，</p>
 <p>那么，<span class="arithmatex">\(\mathbf r'(x)\times \mathbf r^{"}(x) = f^{"}(x)\mathbf i\times \mathbf j + f'(x)f^{"}(x)\mathbf j\times \mathbf j = f^{"}(x)\mathbf i\times \mathbf j = f^{"}(x) k\)</span></p>
-<p>由曲率定理有 <span class="arithmatex">\(\displaystyle  K(x) = \frac {|\mathbf r'(x)\times \mathbf r^{"}(x)|}{|\mathbf r'(x)|^3} = \frac {|f^{"}(x) K|}{|\mathbf i + f'(x)\mathbf j|^3} = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
-<p>因此，二维曲线的斜率为：<span class="arithmatex">\(\displaystyle K(x) = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
+<p>由曲率定理有 <span class="arithmatex">\(\displaystyle  K(x) = \frac {|\mathbf r'(x)\times \mathbf r^{"}(x)|}{|\mathbf r'(x)|^3} = \frac {|f^{"}(x) \mathbf k|}{|\mathbf i + f'(x)\mathbf j|^3} = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
+<p>因此，二维曲线的斜率为：<span class="arithmatex">\(\displaystyle K(x) = \frac {|f^{"}(x)|}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
 </blockquote>
 <div class="admonition 单位法向量">
 <p class="admonition-title">单位法向量</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(\mathbf N(t) = \frac {\mathbf T'(t)}{\mathbf T'(t)}\)</span></p>
+<p><span class="arithmatex">\(\mathbf N(t) = \frac {\mathbf T'(t)}{|\mathbf T'(t)|}\)</span></p>
 </blockquote>
 <div class="admonition 副法线向量">
 <p class="admonition-title">副法线向量</p>
@@ -1053,7 +1053,7 @@
 <p class="admonition-title">加速度的 切线方向分量 &amp; 法线方向分量</p>
 </div>
 <blockquote>
-<p>根据单位切向量定义 和 <span class="arithmatex">\(v = |\mathbf v|\)</span> 有：<span class="arithmatex">\(\mathbf T(t) = \frac {\mathbf r'(t)}{|\mathbf r'(t)|} = \frac {\mathbf v(t)}{\mathbf v(t)} = \frac {\mathbf v}{v}\)</span>，进而 <span class="arithmatex">\(\mathbf v = v\mathbf T\)</span></p>
+<p>根据单位切向量定义 和 <span class="arithmatex">\(v = |\mathbf v|\)</span> 有：<span class="arithmatex">\(\mathbf T(t) = \frac {\mathbf r'(t)}{|\mathbf r'(t)|} = \frac {\mathbf v(t)}{|\mathbf v(t)|} = \frac {\mathbf v}{v}\)</span>，进而 <span class="arithmatex">\(\mathbf v = v\mathbf T\)</span></p>
 <p>两边对 t 求导，有：<span class="arithmatex">\(\mathbf a = \mathbf v' = v'\mathbf T + v\mathbf T'\)</span> (1)</p>
 <p>由曲率定义 <span class="arithmatex">\(K = \frac {|\mathbf T'|}{|\mathbf r'|} = \frac {|\mathbf T'|}{v}\)</span>，于是 <span class="arithmatex">\(|\mathbf T'| = Kv\)</span></p>
 <p>又由单位法向量定义 <span class="arithmatex">\(\mathbf N = \frac {\mathbf T'}{|\mathbf T'|}\)</span>，得到 <span class="arithmatex">\(\mathbf T' = N|\mathbf T'| = \mathbf N Kv\)</span> (2)</p>

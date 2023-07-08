@@ -325,6 +325,41 @@
     7. 积分方法
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-2">
+    8. 定积分的应用2
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9. 微分方程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10. 参数方程&amp;极坐标
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    11. 无穷序列 &amp; 级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    12. 向量 &amp; 空间解析几何
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    13. 向量函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    14. 多元函数的偏导数
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -788,6 +823,41 @@
     7. 积分方法
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-2">
+    8. 定积分的应用2
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9. 微分方程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10. 参数方程&amp;极坐标
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+    11. 无穷序列 &amp; 级数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12">
+    12. 向量 &amp; 空间解析几何
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13">
+    13. 向量函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14">
+    14. 多元函数的偏导数
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1006,7 +1076,7 @@
 </li>
 </ol>
 </div>
-<p><code>可微 -&gt; 可导 -&gt; 连续 -&gt; 极限存在 -&gt; 有定义</code></p>
+<p><code>可微 -&gt; 可导(各轴可偏导) -&gt; 连续 -&gt; 极限存在 -&gt; 有定义</code></p>
 <h3 id="3">3. 求导法则</h3>
 <div class="admonition note">
 <p class="admonition-title">3. 求导法则</p>
@@ -1315,7 +1385,7 @@
 <li>
 <p>微积分“恒等式”：<span class="arithmatex">\(f(x) = \int_a^x f'(t) d_t\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(f^{(-1)}(x) = \int_a^x f(t) d_t\)</span></p>
 </li>
-<li>微积分基本定理1 (FTC1)：f 在 <span class="arithmatex">\([a,b]\)</span> 上连续，定义函数 g 为：<span class="arithmatex">\(g(x) = \int_a^x f(t) d_t\)</span>（<span class="arithmatex">\(x\in[a,b]\)</span>），那么 g 在 <span class="arithmatex">\([a,b]\)</span> 上连续，在 <span class="arithmatex">\((a,b)\)</span> 上可导，并且 <span class="arithmatex">\(g'(x)=f(x)\)</span><ul>
+<li>微积分基本定理1 (FTC1)：f 在 <span class="arithmatex">\([a,b]\)</span> 上连续，定义积分上限函数 g 为：<span class="arithmatex">\(g(x) = \int_a^x f(t) d_t\)</span>（<span class="arithmatex">\(x\in[a,b]\)</span>），那么 g 在 <span class="arithmatex">\([a,b]\)</span> 上连续，在 <span class="arithmatex">\((a,b)\)</span> 上可导，并且 <span class="arithmatex">\(g'(x)=f(x)\)</span><ul>
 <li>注：其证明用到了 最值定理，定积分的比较性质3，极限相关定理</li>
 <li>由莱布尼茨符号，可以改写成：<span class="arithmatex">\(\frac d{d_x}\int_a^x f(t) d_t = f(x)\)</span></li>
 </ul>
@@ -1622,6 +1692,437 @@
 </li>
 </ol>
 </div>
+<h3 id="8-2">8. 定积分的应用2</h3>
+<p>定积分 4 大几何应用：函数围成面积(矩形面积模型)，函数旋转体积(圆柱体积模型)，函数弧长(三角形斜边长模型)，函数旋转表面积(圆锥侧面积模型)</p>
+<p>注：省略 8.4</p>
+<div class="admonition note">
+<p class="admonition-title">8. 定积分的应用2</p>
+<ol>
+<li>弧长公式：<span class="arithmatex">\(y=f(x)\)</span> 的弧长为 <span class="arithmatex">\(L = \lim\limits_{n\to∞}\sum\limits_{i=1}^n|P_{i-1}P_i| = \lim\limits_{n\to∞}\sum\limits_{i=1}^n\sqrt{\Delta x^2+\Delta y^2} = \int \sqrt {d_x^2 + d_y^2}\)</span><ol>
+<li><span class="arithmatex">\(f'\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上连续：<span class="arithmatex">\(\displaystyle L = \int_a^b \sqrt {1 + \frac {d_y^2}{d_x^2}}~d_x = \int_a^b \sqrt {1 + f'(x)}~d_x\)</span></li>
+<li><span class="arithmatex">\((f^{-1})'\)</span> 在 <span class="arithmatex">\(y\in[f(a),f(b)]\)</span> 上连续：<span class="arithmatex">\(\displaystyle L = \int_{f(a)}^{f(b)} \sqrt {1 + \frac {d_x^2}{d_y^2}}~d_y = \int_{f(a)}^{f(b)} \sqrt {1 + (f^{-1})'(y)}~d_y\)</span> （f 单射）</li>
+</ol>
+</li>
+<li>
+<p>弧长函数：曲线 C 从起点 <span class="arithmatex">\(P_0(a,f(a))\)</span> 到终点 <span class="arithmatex">\(Q(x, f(x))\)</span> 之间的距离，用积分上限函数表示：<span class="arithmatex">\(s(x) = \int_a^x \sqrt {1+[f'(t)]^2}~d_t\)</span></p>
+</li>
+<li>
+<p>旋转曲面面积：</p>
+<ul>
+<li>推导(<span class="arithmatex">\(y=f(x)\)</span> 绕 x 轴旋转)：<span class="arithmatex">\(S_i=\pi[(l+\Delta l)(r+\Delta r)-lr]=\pi[l\Delta r+r\Delta l+\Delta l\Delta r]=\pi(2r\Delta l+\Delta l\Delta r)=2\pi\Delta l(r+\frac12\Delta r)\approx 2\pi r\Delta l\approx 2\pi r\sqrt{\Delta x^2+\Delta y^2}\)</span> <ul>
+<li>式中使用了圆锥侧面积公式 <span class="arithmatex">\(S=\pi rl\)</span>(r 为半径，l 为母线长度或竖直切面的外侧线长)</li>
+<li>根据相似三角形有：<span class="arithmatex">\(\frac{l}{l+\Delta l}=\frac {r}{r+\Delta r} \implies l\Delta r=r\Delta l\)</span></li>
+<li>式中使用了近似：<span class="arithmatex">\(r\approx r+\frac 12\Delta r\)</span>(中点值)，<span class="arithmatex">\(\Delta l\approx \Delta s=\sqrt{\Delta x^2+\Delta y^2}\)</span>）</li>
+<li>注：推导过程中若替换 <span class="arithmatex">\(\pi[l\Delta r+r\Delta l+\Delta l\Delta r]=\pi(2l\Delta r+\Delta l\Delta r)\)</span> 而非 <span class="arithmatex">\(\pi[l\Delta r+r\Delta l+\Delta l\Delta r]=\pi(2r\Delta l+\Delta l\Delta r)\)</span>，公式会变得难以推导</li>
+</ul>
+</li>
+<li>进而 <span class="arithmatex">\(S=\lim\limits_{n\to∞}\sum\limits_{i=1}^nS_i = \lim\limits_{n\to∞}\sum\limits_{i=1}^n2\pi r\sqrt{\Delta x^2+\Delta y^2}=\int2\pi r\sqrt{d_x^2+d_y^2} = \int2\pi r d_s\)</span> （S 与 s 表示不同含义：前者是常量，后者是变量(用于迭代)）</li>
+<li><span class="arithmatex">\(y=f(x)\)</span> 绕 x 轴旋转：<span class="arithmatex">\(S = \int_a^b2\pi f(x)\sqrt{1+[f'(x)]^2}d_x\)</span></li>
+<li><span class="arithmatex">\(y=f(x)\)</span> 绕 y 轴旋转：<span class="arithmatex">\(S = \int_a^b2\pi x\sqrt{1+[f'(x)]^2}d_x\)</span></li>
+<li><span class="arithmatex">\(x=f^{-1}(y)\)</span> 绕 x 轴旋转：<span class="arithmatex">\(S = \int_a^b2\pi f(x)\sqrt{1+[(f^{-1})'(y)]^2}d_y\)</span></li>
+<li><span class="arithmatex">\(x=f^{-1}(y)\)</span> 绕 y 轴旋转：<span class="arithmatex">\(S = \int_a^b2\pi x\sqrt{1+[(f^{-1})'(y)]^2}d_y\)</span></li>
+<li>注：可以对“绕 <span class="arithmatex">\(y=k\)</span> 或 <span class="arithmatex">\(x=k\)</span> 旋转”的情况做类似的推广；根据 r 的意义可以限制其非负，即 <span class="arithmatex">\(r\ge 0\)</span></li>
+</ul>
+</li>
+<li>
+<p>二维平面图形在垂直液体中的静压力：</p>
+<ol>
+<li>公式：液体深度为 h 处的面积为 A 朝着同一反向的总压力 <span class="arithmatex">\(F=mg=\rho hA\cdot g\)</span>，液体深度为 h 处沿着任意反向的压强 <span class="arithmatex">\(P=\frac FA=\rho gh\)</span></li>
+<li>迭代 <span class="arithmatex">\(x=h\)</span> 处的压力，然后用积分求和即可</li>
+</ol>
+</li>
+<li>物体的力矩和质心：记 <span class="arithmatex">\(m=\sum\limits_{i=1}^nm_i\)</span><ol>
+<li>一维空间：n 个物体的质心：<span class="arithmatex">\(\overline x=\frac {\sum\limits_{i=1}^nm_ix_i}{\sum\limits_{i=1}^nm_i}\)</span>（第 i 个物体的力矩：<span class="arithmatex">\(M_i=x_im_i\)</span>，总力矩：<span class="arithmatex">\(M=\sum\limits_{i=1}^nM_i=\sum\limits_{i=1}^nx_im_i\)</span>）</li>
+<li>二维空间：<ol>
+<li>关于 y 轴总力矩为 <span class="arithmatex">\(M_y=\sum\limits_{i=1}^nm_ix_i\)</span>，关于 x 轴总力矩为 <span class="arithmatex">\(M_x=\sum\limits_{i=1}^nm_iy_i\)</span>；质心为 <span class="arithmatex">\((\overline x,\overline y)=(\frac {M_y}m, \frac {M_x}m)\)</span></li>
+<li><span class="arithmatex">\(y=f(x)\)</span> 下所围物体薄片：<ul>
+<li>各轴力矩：<span class="arithmatex">\(M_{y,i}=x_im_i=x\cdot \rho s_i=x\cdot \rho\Delta xy, M_y=\int M_{y,i}=\rho\int xf(x)~d_x\)</span>；<span class="arithmatex">\(M_{x,i}=y_im_i=x\cdot \rho s_i=\frac12y\cdot \rho\Delta xy, M_y=\int M_{x,i}=\rho\int \frac12f(x)^2~d_x\)</span></li>
+<li>总质量：<span class="arithmatex">\(m_i=\rho\Delta x y, m=\int m_i=\rho\int f(x)~d_x\)</span></li>
+<li>质心：<span class="arithmatex">\(\displaystyle (\overline x,\overline y)=(\frac {M_y}m, \frac {M_x}m)=(\frac {\int xf(x)~d_x}{\int f(x)~d_x}, \frac {\frac12\int f(x)^2~d_x}{\int f(x)~d_x})\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Pappus 定理：区域 E 完全位于直线 l 的一侧，E 绕 l 旋转所得旋转体的体积等于 E 的面积 A 和 E 的形心旋转经过的距离 d 的乘积，即 <span class="arithmatex">\(V=A\cdot d = A\cdot 2\pi R\)</span></p>
+</li>
+<li>
+<p>概率：<span class="arithmatex">\(P(a\le X\le b)\)</span></p>
+</li>
+<li>概率密度函数 f：满足 <span class="arithmatex">\(P(a \le X \le b) = \int_a^b f(x)~d_x\)</span>，<span class="arithmatex">\(\int_{-∞}^{+∞}f(x)~d_x=1\)</span></li>
+<li>f 的均值（即期望）：<span class="arithmatex">\(\mu =\int_{-∞}^{+∞}xf(x)~d_x\)</span><ul>
+<li><span class="arithmatex">\(\overline x=\frac{\int_{-∞}^{+∞}xf(x)~d_x}{\int_{-∞}^{+∞}f(x)~d_x}=\int_{-∞}^{+∞}xf(x)~d_x=\mu\)</span></li>
+</ul>
+</li>
+<li>正态分布：<span class="arithmatex">\(\displaystyle f(x) = \frac 1{\delta\sqrt {2\pi}} e^{\displaystyle-\frac {(x-\mu)^2}{2\delta ^2}}\)</span></li>
+</ol>
+</div>
+<h3 id="9">9. 微分方程</h3>
+<p>注：略去 9.4 大部分内容；省略 9.7</p>
+<div class="admonition note">
+<p class="admonition-title">9. 微分方程</p>
+<ol>
+<li>微分方程模型：包含一个 未知函数 及其 多个导数 的等式<ul>
+<li>阶：微分方程中导数的最高阶</li>
+<li>注：微分方程通常有多组解</li>
+</ul>
+</li>
+<li>
+<p>微分方程举例</p>
+<ul>
+<li>种群增长模型1：<span class="arithmatex">\(\frac {d_P}{d_t}=kP(t)\)</span>，一个解为 <span class="arithmatex">\(P(t)=Ce^{kt}\)</span>（<span class="arithmatex">\(C&gt;0\)</span>；<span class="arithmatex">\(P(t)&gt;0\)</span>）</li>
+<li>种群增长模型2（Logistic 逻辑斯蒂方程）：<span class="arithmatex">\(\frac {d_P}{d_t}=kP(1-\frac PK)\)</span></li>
+<li>弹簧振动模型：<span class="arithmatex">\(m\frac {d^2_x}{d_{t^2}} = -kx\)</span>（即 <span class="arithmatex">\(\frac {d^2_x}{d_{t^2}} = -\frac {kx}m\)</span>）</li>
+</ul>
+</li>
+<li>
+<p>微分方程的描述：通常没有明确的公式可以解微分方程，但还是可以利用图像或数值方式描述微分方程；详见 (4)-(5)</p>
+</li>
+<li>方向场(斜率场)：形如 <span class="arithmatex">\(y'=F(x,y)\)</span> 的一阶微分方程可以画出微分方程的函数族在任意点 <span class="arithmatex">\((x,y)\)</span> 上延伸的方向和快慢</li>
+<li>
+<p>欧拉方法：用于求解从已知点 <span class="arithmatex">\((x_0,y_0)\)</span> 为初值的微分方程的近似特解</p>
+<ul>
+<li>假设步长为 h，初始点为 <span class="arithmatex">\((x_0,y_0)\)</span>，那么递推式为 <span class="arithmatex">\(y_{i+1} = y_{i} + h \cdot F(x_{i}, y_{i})\)</span>（<span class="arithmatex">\(i\ge 0\)</span>）</li>
+</ul>
+</li>
+<li>
+<p>分离变量法：对于微分方程 <span class="arithmatex">\(\frac {d_y}{d_x} = g(x)f(y)\)</span>，可以变换为 <span class="arithmatex">\(\int \frac 1{f(y)}d_y = \int g(x)d_x\)</span> 关于 y 的隐函数形式</p>
+</li>
+<li>正交轨线：与曲线族中每条都相交的曲线（即 <span class="arithmatex">\(y_1'=-\frac 1{y_2'}\)</span> 恒成立），称为该曲线族的正交轨线</li>
+<li>(二维)曲线族：<span class="arithmatex">\(F(x,y,k)=0\)</span>，其中 k 用于迭代曲线族中的曲线</li>
+<li>
+<p>正交轨线的求法：</p>
+<ol>
+<li>对函数族 <span class="arithmatex">\(F(x,y,k)=0\)</span> 的隐函数形式两边对 x 求导得到 <span class="arithmatex">\(y'=h(x,y,k)\)</span></li>
+<li>联立 <span class="arithmatex">\(F(x,y,k)=0\)</span> 消去 k 得到 <span class="arithmatex">\(y'=f(x,y)\)</span></li>
+<li>求解正交轨线的微分方程模型 <span class="arithmatex">\(y'=-\frac 1{f(x,y)}\)</span></li>
+</ol>
+</li>
+<li>
+<p>初值问题：<span class="arithmatex">\(\frac {d_y}{d_x} = ky\)</span>，<span class="arithmatex">\(y(0) = y_0\)</span> 的解为 <span class="arithmatex">\(y(t) = y_0 e^{kx}\)</span></p>
+<ul>
+<li>应用：（生物）种群增长模型，（物理）放射性物质的质量衰变比例和质量成正比，（化学）单分子一阶反应速度和物质浓度成正比，（金融学）复利存款账户的金额增长率和金额成正比</li>
+</ul>
+</li>
+<li>
+<p>逻辑斯蒂模型：<span class="arithmatex">\(\displaystyle \frac {d_P}{d_t} = kP(1-\frac PK)\)</span>（k 为种群增长率，K 为种群承载能力，P为种群数量），其解析解为：<span class="arithmatex">\(\displaystyle P = \frac {K}{1+Ae^{-kt}}\)</span>（<span class="arithmatex">\(A = ±e^C = \frac {K-P_0}{P_0}\)</span>，<span class="arithmatex">\(C = C_2-C_1\)</span>）</p>
+</li>
+<li>
+<p>线性微分方程：<span class="arithmatex">\(\frac {d_y}{d_x} + P(x)y = Q(x)\)</span></p>
+<ul>
+<li>通解为：<span class="arithmatex">\(y = \frac {\int R(x)Q(x) d_x + B}{R(x)}\)</span>，其中 <span class="arithmatex">\(R(x) = Ae^{\int P(x)d_x}\)</span>（<span class="arithmatex">\(A=e^{-C_1}, B=C_2\)</span>）</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="10">10. 参数方程&amp;极坐标</h3>
+<p>注：10.5，10.6 关于圆锥曲线的部分不考虑</p>
+<div class="admonition note">
+<p class="admonition-title">10. 参数方程&amp;极坐标</p>
+<ol>
+<li>
+<p>参数方程：引入变量 t 使得 曲线运动轨迹 或 向量方程 可以被其统一描述，如：<span class="arithmatex">\(\begin{cases} x=f(t)\\y=f(t) \end{cases}~~[a \le t \le b]\)</span></p>
+</li>
+<li>
+<p>切线斜率：<span class="arithmatex">\(x=f(t),y=g(t)\)</span> 有 <span class="arithmatex">\(y=F(x)\)</span>，即 <span class="arithmatex">\(g(t)=F(f(t))\)</span></p>
+<ul>
+<li>若 f，g，F 可微，那么 <span class="arithmatex">\(g'(t) = F'(f(t)) \cdot f'(t) = F'(x) \cdot f'(t)\)</span></li>
+<li>若 <span class="arithmatex">\(f'(t)\ne 0\)</span> 则有 <span class="arithmatex">\(F'(x) = \frac {g'(t)}{f'(t)}\)</span>，即 <span class="arithmatex">\(\displaystyle \frac {d_y}{d_x} = \frac {\frac {d_y}{d_t}}{\frac {d_x}{d_t}}\)</span>（仅当 <span class="arithmatex">\(\frac {d_x}{d_t} \ne 0\)</span>）</li>
+</ul>
+</li>
+<li>切线类型：<ol>
+<li><span class="arithmatex">\(\frac {d_y}{d_t} = 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_t} \ne 0\)</span> (<span class="arithmatex">\(\frac01\)</span>)：水平切线</li>
+<li><span class="arithmatex">\(\frac {d_y}{d_t} \ne 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_t} = 0\)</span> (<span class="arithmatex">\(\frac10\)</span>)：垂直切线</li>
+<li><span class="arithmatex">\(\frac {d_y}{d_t} \ne 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_t} \ne 0\)</span> (<span class="arithmatex">\(\frac11\)</span>)：普通切线</li>
+<li><span class="arithmatex">\(\frac {d_y}{d_t} = 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_t} = 0\)</span> (<span class="arithmatex">\(\frac00\)</span>)：计算极限，根据极限值为 <span class="arithmatex">\(0\)</span>，<span class="arithmatex">\(\pm∞\)</span>，<span class="arithmatex">\(k(\ne0)\)</span> 分别对应 水平切线，垂直切线，普通切线</li>
+</ol>
+</li>
+<li>二阶导数：<span class="arithmatex">\(\displaystyle \frac {d^2_y}{d_{x^2}} = \frac d{d_x}(\frac {d_y}{d_x}) = \frac {\frac d{d_t} (\frac {d_y}{d_x})}{\frac {d_x}{d_t}}\)</span><ul>
+<li>注：<span class="arithmatex">\(\displaystyle \frac {d^2_y}{d_{x^2}} \ne \frac {d^2_y/d_{t^2}}{d^2_x/d_{t^2}}\)</span></li>
+</ul>
+</li>
+<li>凹性：<span class="arithmatex">\(\frac {d^2_y}{d_{x^2}}]_{t=k}&gt;0\)</span> 时在 <span class="arithmatex">\(t=k\)</span> 处上凹， <span class="arithmatex">\(\frac {d^2_y}{d_{x^2}}]_{t=k}&lt;0\)</span> 时在 <span class="arithmatex">\(t=k\)</span> 处下凹</li>
+<li>函数下的面积：有曲线方程 <span class="arithmatex">\(x = f(t), y = g(t)\)</span>，且 t 从 <span class="arithmatex">\(\alpha\)</span> 增大到 <span class="arithmatex">\(\beta\)</span> 只经过一次，则有 <span class="arithmatex">\(A = \int_a^b y~d_x = \int_\alpha^\beta g(t)f'(t)~d_t\)</span>（仅当 <span class="arithmatex">\(f(\alpha)=a,f(\beta)=b\)</span>）</li>
+<li>函数弧长：有曲线方程 <span class="arithmatex">\(x = f(t), y = g(t)\)</span>，f 单射，<span class="arithmatex">\(f'(t)&gt;0\)</span>（当 t 从 <span class="arithmatex">\(\alpha\)</span> 增大到 <span class="arithmatex">\(\beta\)</span> 且 <span class="arithmatex">\(f(\alpha) = a, f(\beta) = b\)</span>，从左到右只经过 C 一次）<ul>
+<li><span class="arithmatex">\(L = \int_a^b \sqrt {1 + (\frac {d_y}{d_x})^2}~d_x = \int_{\alpha}^{\beta}\sqrt {1 + (\frac {d_y/d_t}{d_x/d_t})^2}\frac {d_x}{x_t}~d_t = \int_{\alpha}^{\beta}\sqrt {(\frac {d_x}{x_t})^2 + (\frac {d_y}{x_t})^2}~d_t\)</span></li>
+<li>注：公式是否成立与 C 能否表示成 <span class="arithmatex">\(y=F(x)\)</span> 无关</li>
+</ul>
+</li>
+<li>
+<p>函数旋转表面积：有曲线方程 <span class="arithmatex">\(x = f(t), y = g(t)\)</span></p>
+<ul>
+<li>参数方程绕 x 轴旋转所得表面积：<span class="arithmatex">\(S = \int 2\pi y~d_s = \int 2\pi y \sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2}~d_t\)</span>（<span class="arithmatex">\(y\ge 0\)</span>）</li>
+</ul>
+</li>
+<li>
+<p>极坐标系：在平面上选择点 O（极点 或 原点），然后从 O 出发画一条射线 (半直线)，称作 极轴</p>
+<ol>
+<li>若点 P 是平面中任意另一点，令 r 为 P 到 O 的距离 (r 可负)，<span class="arithmatex">\(\theta\)</span> 为 极轴 与 射线OP 直线的夹角 (通常以弧度为单位)，则 P 以有序对 <span class="arithmatex">\((r, \theta)\)</span> 表示，称之为 极坐标 （<span class="arithmatex">\(\theta\)</span> 从极轴开始逆时针旋转时为 正，反之为 负）</li>
+<li><span class="arithmatex">\((0, \theta)\)</span>  &amp;  <span class="arithmatex">\(\theta \in R\)</span> 表示原点 O</li>
+<li><span class="arithmatex">\((r, \theta + 2n\pi)\)</span> 和 <span class="arithmatex">\((-r, \theta + (2n+1)\pi)\)</span> 均表示同一个点 （<span class="arithmatex">\(\theta \in [0, 2\pi), n \in Z\)</span>）</li>
+</ol>
+</li>
+<li>极坐标系 与 笛卡尔坐标系 的映射<ul>
+<li><span class="arithmatex">\(r^2 = x^2 + y^2, \tan \theta = \frac yx\)</span></li>
+<li>极坐标 <span class="arithmatex">\(\implies\)</span> 笛卡尔： <span class="arithmatex">\(x = r\cos \theta, y = r\sin \theta\)</span></li>
+<li>笛卡尔 <span class="arithmatex">\(\implies\)</span> 极坐标： <span class="arithmatex">\(r = ±\sqrt {x^2 + y^2}\)</span>，<span class="arithmatex">\(\tan \theta = \frac yx\)</span>（或者根据 <span class="arithmatex">\(\theta\)</span> 确定的三角形得到 <span class="arithmatex">\(\cos, \sin, \tan, \cot, \sec, \csc\)</span>）</li>
+</ul>
+</li>
+<li>极坐标曲线：可以表达为 <span class="arithmatex">\(r = f(\theta)\)</span> 或 一般形式 <span class="arithmatex">\(F(r, \theta) = 0\)</span><ul>
+<li>如：<span class="arithmatex">\(r = 2\cos (\theta)\)</span>(圆)，<span class="arithmatex">\(r = 1 + \sin \theta\)</span>(心形线)，<span class="arithmatex">\(r = \cos (2\theta)\)</span>(四叶玫瑰线)，<span class="arithmatex">\(r = \sin\theta + (\sin(\frac {5\theta}{2}))^3\)</span>(荷花)，<span class="arithmatex">\(r = \sin (\frac {8\theta}{5})\)</span>(莲花)，<span class="arithmatex">\(r = 1 + c\sin \theta\)</span>(蚶线)</li>
+</ul>
+</li>
+<li>曲线近似方法：<ol>
+<li>迭代常见的 <span class="arithmatex">\(\theta\)</span> 求解 r 得到数对 <span class="arithmatex">\((\theta, r)\)</span></li>
+<li>若 <span class="arithmatex">\(r=f(\theta)\)</span>，则迭代 <span class="arithmatex">\(\theta\)</span> 得到数对 <span class="arithmatex">\((\theta, f(\theta))\)</span></li>
+</ol>
+</li>
+<li>对称性<ul>
+<li>若参数方程将 <span class="arithmatex">\(\theta\)</span> 替换为 <span class="arithmatex">\(-\theta\)</span> 后，与原方程相同，则曲线关于 极轴 对称</li>
+<li>若参数方程将 <span class="arithmatex">\(r\)</span> 替换为 <span class="arithmatex">\(-r\)</span> 或 <span class="arithmatex">\(\theta\)</span> 替换为 <span class="arithmatex">\(\theta + \pi\)</span> 后，与原方程相同，则曲线关于 极点 对称（曲线旋转 180° 后不变）</li>
+<li>若参数方程将 <span class="arithmatex">\(\theta\)</span> 替换为 <span class="arithmatex">\(\pi - \theta\)</span> 后，与原方程相同，则曲线关于直线 <span class="arithmatex">\(\theta = \frac \pi2\)</span> 对称</li>
+</ul>
+</li>
+<li>切线斜率：有极坐标方程 <span class="arithmatex">\(r = f(\theta)\)</span>，那么 <span class="arithmatex">\(x = r\cos \theta = f(\theta)\cos \theta, y = r\sin \theta = f(\theta)\sin \theta\)</span><ul>
+<li>进而 <span class="arithmatex">\(\displaystyle \frac {d_y}{d_x} = \frac {d_y/d_\theta}{d_x/d_\theta} = \frac {\frac {d_f}{d_\theta}\sin \theta + r\cos \theta}{\frac {d_f}{d_\theta}\cos \theta - r\sin \theta}\)</span></li>
+</ul>
+</li>
+<li>
+<p>切线类型：</p>
+<ol>
+<li><span class="arithmatex">\(\frac {d_y}{d_{\theta}} = 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_{\theta}} \ne 0\)</span> (<span class="arithmatex">\(\frac01\)</span>)：水平切线</li>
+<li><span class="arithmatex">\(\frac {d_y}{d_{\theta}} \ne 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_{\theta}} = 0\)</span> (<span class="arithmatex">\(\frac10\)</span>)：垂直切线</li>
+<li><span class="arithmatex">\(\frac {d_y}{d_{\theta}} \ne 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_{\theta}} \ne 0\)</span> (<span class="arithmatex">\(\frac11\)</span>)：普通切线</li>
+<li><span class="arithmatex">\(\frac {d_y}{d_{\theta}} = 0\)</span>，<span class="arithmatex">\(\frac {d_x}{d_{\theta}} = 0\)</span> (<span class="arithmatex">\(\frac00\)</span>)：计算极限，根据极限值为 <span class="arithmatex">\(0\)</span>，<span class="arithmatex">\(\pm∞\)</span>，<span class="arithmatex">\(k(\ne0)\)</span> 分别对应 水平切线，垂直切线，普通切线</li>
+</ol>
+</li>
+<li>
+<p>扇形面积：有极坐标方程 <span class="arithmatex">\(r=r(\theta)\)</span>，根据扇形面积公式(<span class="arithmatex">\(S = \frac {\theta}{2\pi}\pi r^2 = \frac 12 r^2\theta\)</span>)有 <span class="arithmatex">\(A=\lim\limits_{n\to +∞} \sum\limits_{i=1}^n \frac 12 [r(\theta_i^*)]^2\Delta\theta = \int_a^b\frac 12[r(\theta)]^2~d_\theta\)</span></p>
+</li>
+<li>弧长：有极坐标方程 <span class="arithmatex">\(r=r(\theta)\)</span>，<ul>
+<li><span class="arithmatex">\(L = \int_{a_0}^{b_0} \sqrt {1 + (\frac {d_x}{d_y})^2}~d_x = \int \sqrt {(d_x)^2 + (d_y)^2} = \int_{a}^{b} \sqrt {(\frac {d_x}{d_\theta})^2 + (\frac {d_y}{d_\theta})^2}~d_\theta\)</span></li>
+<li><span class="arithmatex">\(= \int_{a}^{b} \sqrt{( \frac {d_r}{d_\theta}\sin \theta + r\cos \theta)^2 + (\frac {d_r}{d_\theta}\cos \theta - r\sin \theta)^2}~d_\theta = \int_{a}^{b} \sqrt{(\frac {d_r}{d_\theta})^2+r^2}~d_\theta\)</span></li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="11">11. 无穷序列 &amp; 级数</h3>
+<p>问：周期函数 或 周期序列 在无穷远处都是 振荡的？（发散）</p>
+<div class="admonition note">
+<p class="admonition-title">11. 无穷序列 &amp; 级数</p>
+<ol>
+<li>序列：有一定顺序的一列数，并且是定义在 正整数集 上的函数，记作 <span class="arithmatex">\(a_n\)</span>，<span class="arithmatex">\(\{a_n\}\)</span>，<span class="arithmatex">\(\{ a_n \}_{n=1}^∞\)</span></li>
+<li>隐式序列：以 递归，集合，自然语言等描述的序列</li>
+<li>序列的几何表示：一维数轴上的离散点 <span class="arithmatex">\(a_1,a_2,\dots\)</span> 或 二维笛卡尔坐标系中的离散点 <span class="arithmatex">\((1, a_1), (2, a_2), (3, a_3), \cdots\)</span></li>
+<li>序列极限：<span class="arithmatex">\(\{a_n\}\)</span> 具有极限 L，记作 <span class="arithmatex">\(\lim\limits_{n\to \infty} = L\)</span> 或 “<span class="arithmatex">\(a_n\to L\)</span> 当 <span class="arithmatex">\(n\to∞\)</span>” 或 若通过取充分大的 n 我们可以使项 <span class="arithmatex">\(a_n\)</span> 任意接近 L<ul>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 存在，称此序列 收敛</li>
+</ul>
+</li>
+<li>序列极限[2]：序列 <span class="arithmatex">\(\{ a_n \}\)</span> 具有极限 L 且记作 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = L\)</span> 或 <span class="arithmatex">\(a_n \to L\)</span> 当 <span class="arithmatex">\(n\to∞\)</span><ul>
+<li>对于所有 <span class="arithmatex">\(\epsilon&gt;0\)</span>，都存在 <span class="arithmatex">\(N&gt;0\)</span> 使得任意 <span class="arithmatex">\(n&gt;N\)</span> 都有 <span class="arithmatex">\(|a_n-L|&lt;\epsilon\)</span></li>
+</ul>
+</li>
+<li>无穷大极限：<span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = ∞\)</span> 意味着对任意正数 M，存在整数 N，对任意的 n &gt; N 使得 <span class="arithmatex">\(a_n &gt; M\)</span></li>
+<li>序列极限法则：<span class="arithmatex">\(\{ a_n \}\)</span> 和 <span class="arithmatex">\(\{ b_n \}\)</span> 收敛，c 为常数<ol>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}(a_n \pm b_n) = \lim\limits_{n\to ∞}a_n \pm \lim\limits_{n\to ∞}b_n\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}c\cdot a_n = c\cdot \lim\limits_{n\to ∞} a_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}c = c\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}a_n\cdot b_n = \lim\limits_{n\to ∞} a_n \cdot \lim\limits_{n\to ∞} b_n\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}\frac {a_n}{b_n} = \frac {\lim\limits_{n\to ∞} a_n}{\lim\limits_{n\to ∞} b_n}\)</span>（<span class="arithmatex">\(\lim\limits_{n\to ∞} b_n\ne 0\)</span>）</li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} a_n^p = (\lim\limits_{n\to ∞} a_n)^p\)</span> （<span class="arithmatex">\(p&gt;0,a_n&gt;0\)</span>）</li>
+</ol>
+</li>
+<li>夹逼原理：对于所有 <span class="arithmatex">\(n\ge N\)</span> 都有 <span class="arithmatex">\(a_n\le b_n \le c_n\)</span> 且 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = \lim\limits_{n\to ∞} c_n = L\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} b_n = L\)</span></li>
+<li>定理：若 <span class="arithmatex">\(\lim\limits_{n\to ∞} |a_n| = 0\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞} r^n\)</span>： <span class="arithmatex">\(\lim\limits_{n\to ∞} r^n = \begin{cases} 0 &amp; |r|&lt;1 \\ 1 &amp; r=1 \\ ∞ &amp; |r|&gt;1 \\ -1\to 1振荡 &amp; r=-1 \end{cases}\)</span></li>
+<li>单调性：<ol>
+<li>递增：<span class="arithmatex">\(\{a_n\}\)</span>递增，当且仅当对于所有 <span class="arithmatex">\(n\ge 1\)</span> 都有 <span class="arithmatex">\(a_n&lt;a_{n+1}\)</span></li>
+<li>递减：<span class="arithmatex">\(\{a_n\}\)</span>递减，当且仅当对于所有 <span class="arithmatex">\(n\ge 1\)</span> 都有 <span class="arithmatex">\(a_n&gt;a_{n+1}\)</span></li>
+<li><span class="arithmatex">\(\{a_n\}\)</span> 对应的连续函数的导函数的正负可以确定其单调性</li>
+</ol>
+</li>
+<li>有界性：<ol>
+<li>上界：<span class="arithmatex">\(\{a_n\}\)</span> 有上界，当且仅当 对于所有 <span class="arithmatex">\(n\ge 1\)</span> 存在 M 使得 <span class="arithmatex">\(a_n\le M\)</span></li>
+<li>下界：<span class="arithmatex">\(\{a_n\}\)</span> 有下界，当且仅当 对于所有 <span class="arithmatex">\(n\ge 1\)</span> 存在 m 使得 <span class="arithmatex">\(a_n\ge m\)</span></li>
+<li>有界：<span class="arithmatex">\(\{a_n\}\)</span> 有界，当且仅当 <span class="arithmatex">\(\{a_n\}\)</span> 既有上界又有下界</li>
+</ol>
+</li>
+<li>
+<p>单调序列定理：<span class="arithmatex">\(\{a_n\}\)</span> 有界 并且 单调，那么 <span class="arithmatex">\(\{a_n\}\)</span> 收敛</p>
+<ul>
+<li>推广：<span class="arithmatex">\(\{a_n\}\)</span> 递增并且有上界 或 递减并且有下界，则该数列收敛</li>
+</ul>
+</li>
+<li>
+<p>无穷级数：将无穷序列 <span class="arithmatex">\(\{ a_n \}_{n=1}^∞\)</span> 的各项加起来，记作 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 或 <span class="arithmatex">\(\sum a_n\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\sum a_i = \sum\limits_{i=1}^∞ a_i = \lim\limits_{n\to∞}\sum\limits_{i=1}^n a_i\)</span></li>
+</ul>
+</li>
+<li>部分和(前缀和)序列：记 <span class="arithmatex">\(s_n=\sum\limits_{i=1}^na_i\)</span></li>
+<li>无穷级数[2]：序列 <span class="arithmatex">\(\{s_n\}\)</span> 收敛，当且仅当 <span class="arithmatex">\(\lim\limits_{n\to ∞}s_n=s\)</span>（其中 <span class="arithmatex">\(s=\sum a_i\)</span>）</li>
+<li>几何级数：<span class="arithmatex">\(\sum\limits_{n=1}^∞ a\cdot r^{n-1}, a\ne 0\)</span><ul>
+<li><span class="arithmatex">\(|r|&lt;1\)</span> 时，级数收敛，<span class="arithmatex">\(\sum\limits_{n=1}^∞ a\cdot r^{n-1}=\lim\limits_{n\to∞}\frac {a(1-r^n)}{1-r}=\frac a{1-r}\)</span></li>
+<li><span class="arithmatex">\(|r|\ge 1\)</span> 时，级数发散；<span class="arithmatex">\(|r|&gt;1\)</span> 或 <span class="arithmatex">\(r=1\)</span> 时，<span class="arithmatex">\(\sum a_n=∞\)</span>；<span class="arithmatex">\(r=-1\)</span> 时，<span class="arithmatex">\(\sum a_n=∞\)</span> 在 a 和 0 之间振荡</li>
+<li>应用：用于表示无穷循环小数</li>
+</ul>
+</li>
+<li>调和级数：<span class="arithmatex">\(\sum\limits_{i=1}^∞ \frac 1i\)</span> 发散</li>
+<li>级数收敛的必要性：若 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = 0\)</span></li>
+<li>级数发散的充分性：若 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\)</span> 不存在 或 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n \ne 0\)</span>，则级数 <span class="arithmatex">\(\lim\limits_{n\to ∞} \sum\limits_{i=1}^n a_i\)</span> 发散</li>
+<li>级数收敛法则：<span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 收敛，则：<ol>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ c\cdot a_n = c\sum\limits_{n=1}^∞ a_n\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{n=1}^∞ (a_n \pm b_n) = \sum\limits_{n=1}^∞ a_n \pm \sum\limits_{n=1}^∞ b_n\)</span></li>
+</ol>
+</li>
+<li>
+<p>级数收敛的充分性：</p>
+<ol>
+<li><span class="arithmatex">\(\sum\limits_{n=N+1}^∞ a_n\)</span> 收敛，那么 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛（<span class="arithmatex">\(N\ge0\)</span>）</li>
+<li><span class="arithmatex">\(\lim\limits_{n\to∞}\sum\limits_{n=1}^{2^n} a_n\)</span> 收敛，那么 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 收敛</li>
+</ol>
+</li>
+<li>
+<p>级数不等式：设<span class="arithmatex">\(\{a_n\}\)</span> 为 <span class="arithmatex">\(f(x)\)</span> 的生成序列（即 <span class="arithmatex">\(f(n)=a_n\)</span> 并且 f(x) 在任意处连续）</p>
+<ol>
+<li>f 是在 <span class="arithmatex">\([0,∞]\)</span> 上连续递减的正值函数，则 <span class="arithmatex">\(\int_{i}^{i+1} f(x)~d_x \le a_i \le \int_{i-1}^{i} f(x)~d_x\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\sum\limits_{i=n}^∞\int_{i}^{i+1} f(x)~d_x \le \sum\limits_{i=n}^∞a_i \le \sum\limits_{i=n}^∞\int_{i-1}^{i} f(x)~d_x\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\int_{n}^∞ f(x)~d_x \le \sum\limits_{i=n}^∞a_i \le \int_{n-1}^{∞} f(x)~d_x\)</span></li>
+</ol>
+</li>
+<li>积分判别法：设<span class="arithmatex">\(\{a_n\}\)</span> 为 <span class="arithmatex">\(f(x)\)</span> 的生成序列，f 是在 <span class="arithmatex">\([0,∞]\)</span> 上连续基本递减的正值函数<ol>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ a_i\)</span> 收敛，当且仅当 <span class="arithmatex">\(\int_1^∞ f(x)~d_x\)</span> 收敛</li>
+<li>推广：<span class="arithmatex">\(\sum\limits_{i=n}^∞ a_i\)</span> 收敛，当且仅当 <span class="arithmatex">\(\int_n^∞ f(x)~d_x\)</span> 收敛</li>
+</ol>
+</li>
+<li>f 基本递减：<span class="arithmatex">\(x&gt;N\)</span> 时 f 递减</li>
+<li><span class="arithmatex">\(\lim\limits_{n\to∞} \frac 1{n^p}\)</span>：<span class="arithmatex">\(\displaystyle \lim\limits_{n\to∞} \frac 1{n^p} = \begin{cases} +∞ &amp; p &lt; 0 \\ 1 &amp; p = 0 \\ 0 &amp; p&gt;0 \end{cases}\)</span></li>
+<li>p 级数：<span class="arithmatex">\(\displaystyle \sum\limits_{i=1}^∞ \frac 1{n^p}\)</span> 收敛，当且仅当 <span class="arithmatex">\(p&gt;1\)</span></li>
+<li>余项：收敛级数 <span class="arithmatex">\(\sum a_n=s\)</span> 的余项为 <span class="arithmatex">\(R_n=s-s_n\)</span></li>
+<li>
+<p>积分判别法的余项估计：设<span class="arithmatex">\(\{a_n\}\)</span> 为 <span class="arithmatex">\(f(x)\)</span> 的生成序列，f 是在 <span class="arithmatex">\([N,+∞]\)</span> 上连续递减的正值函数，并且 <span class="arithmatex">\(\sum a_n\)</span> 收敛</p>
+<ul>
+<li>那么 <span class="arithmatex">\(\int_{n+1}^{+∞}~d_x \le R_n \le \int_{n}^{+∞} f(x)~d_x\)</span></li>
+<li>而 <span class="arithmatex">\(s_n + \int_{n+1}^{+∞}~d_x \le s_n + R_n = s \le s_n + \int_{n}^{+∞} f(x)~d_x\)</span></li>
+<li>实际上 <span class="arithmatex">\(\int_{n}^∞ f(x)~d_x \le s \le \int_{n-1}^{∞} f(x)~d_x\)</span></li>
+</ul>
+</li>
+<li>
+<p>比较判别法：对于所有 <span class="arithmatex">\(n\ge N\)</span>，有 <span class="arithmatex">\(0\le l_n \le a_n \le r_n\)</span></p>
+<ol>
+<li><span class="arithmatex">\(\sum l_n\)</span> 发散，则 <span class="arithmatex">\(\sum a_n\)</span> 也发散</li>
+<li><span class="arithmatex">\(\sum r_n\)</span> 收敛，则 <span class="arithmatex">\(\sum a_n\)</span> 也收敛</li>
+</ol>
+</li>
+<li>极限的比较判别法：<span class="arithmatex">\(a_i,b_i\ge 0\)</span>，若 <span class="arithmatex">\(\lim\limits_{n\to∞}\frac {a_n}{b_n}=c\)</span>（c 为有限数，且 <span class="arithmatex">\(c&gt;0\)</span>），则 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 同时 收敛 或 发散</li>
+<li>
+<p>估计和：对于所有 n，<span class="arithmatex">\(a_n \le b_n\)</span>，则 <span class="arithmatex">\(R_n \le T_n\)</span></p>
+</li>
+<li>
+<p>交错级数：形如 <span class="arithmatex">\(\sum\limits_{i=1}^∞ (-1)^{i-1}a_i\)</span> (<span class="arithmatex">\(a_i &gt; 0\)</span>) 的级数</p>
+</li>
+<li>交错级数的收敛性：交错级数 <span class="arithmatex">\(\sum\limits_{i=1}^∞ (-1)^{i-1}a_i\)</span> 收敛，当且仅当 对于所有 n 有 <span class="arithmatex">\(a_n\ge a_{n+1}\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}a_n = 0\)</span></li>
+<li>
+<p>交错级数估计定理(交错级数估计和)：交错级数 <span class="arithmatex">\(\sum\limits_{i=1}^∞ (-1)^{i-1}a_i\)</span> 满足 <span class="arithmatex">\(a_n\ge a_{n+1}\ge 0\)</span>，<span class="arithmatex">\(\lim\limits_{n\to ∞}a_n = 0\)</span>，那么 <span class="arithmatex">\(|R_n| = |s - s_n| \le a_{n+1}\)</span>（即 s 在 <span class="arithmatex">\(s_n\)</span> 两侧“波动”，误差为 <span class="arithmatex">\(a_{n+1}\)</span>）</p>
+</li>
+<li>
+<p>绝对收敛：<span class="arithmatex">\(\sum a_n\)</span> 绝对收敛，当且仅当 <span class="arithmatex">\(\sum|a_n|\)</span> 收敛</p>
+<ul>
+<li><span class="arithmatex">\(\sum a_n\)</span> 绝对收敛，那么 <span class="arithmatex">\(\sum a_n\)</span> 收敛</li>
+</ul>
+</li>
+<li>条件收敛：<span class="arithmatex">\(\sum a_n\)</span> 条件收敛，当且仅当 <span class="arithmatex">\(\sum a_n\)</span> 但非绝对收敛</li>
+<li>比值判别法：<ol>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = L &lt; 1\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 绝对收敛</li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = L &gt; 1\)</span> 或 <span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = +∞\)</span>，则 <span class="arithmatex">\(\sum a_n\)</span> 发散</li>
+<li><span class="arithmatex">\(\lim\limits_{n\to ∞}|\frac {a_{n+1}}{a_n}| = 1\)</span> 判别法失效</li>
+</ol>
+</li>
+<li>根值判别法：<ol>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}\sqrt[n] {|a_n|} = L &lt; 1\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 绝对收敛</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}\sqrt[n] {|a_n|} = L &gt; 1\)</span> 或 <span class="arithmatex">\(\lim\limits_{n\to ∞}\sqrt[n] {|a_n|} = L = ∞\)</span>，则级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n\)</span> 发散</li>
+<li>若 <span class="arithmatex">\(\lim\limits_{n\to ∞} \sqrt[n]{|a_n|} = 1\)</span>，根值判别法失效</li>
+</ol>
+</li>
+<li>
+<p>重排级数：</p>
+<ol>
+<li>若 <span class="arithmatex">\(\sum a_n=s\)</span> 绝对收敛，则 <span class="arithmatex">\(\sum a_n\)</span> 的任意重排的和 <span class="arithmatex">\(\sum a_{p_n}=s\)</span></li>
+<li>若 <span class="arithmatex">\(\sum a_n\)</span> 条件收敛，则对于所有 <span class="arithmatex">\(r\in R\)</span> 都存在 <span class="arithmatex">\(\sum a_n\)</span> 的一个重排使得 <span class="arithmatex">\(\sum a_{p_n}=r\)</span>（由黎曼证明）</li>
+</ol>
+</li>
+<li>
+<p>级数收敛性判别策略</p>
+<ol>
+<li>发散判别：若 <span class="arithmatex">\(\lim\limits_{n\to∞}a_n\ne0\)</span>，则发散</li>
+<li>将级数化为 p——级数 <span class="arithmatex">\(\sum\frac 1{n^p}\)</span>（<span class="arithmatex">\(p&gt;1\)</span> 时收敛）或 几何级数 <span class="arithmatex">\(\sum a\cdot r^{n-1}\)</span>（<span class="arithmatex">\(|r|&lt;1\)</span> 时收敛）</li>
+<li>比较判别：<span class="arithmatex">\(a_n\)</span> 是 n 的 有理函数 或 代数函数，则用 <span class="arithmatex">\(\sum|a_n|\)</span> 与 p——级数 比较</li>
+<li>比值判别：包含阶乘，几何级数类似形式，其他乘积</li>
+<li>根值判别：<span class="arithmatex">\(a_n=(b_n)^n\)</span> 的形式</li>
+<li>积分判别：仅当积分容易计算</li>
+<li>对数判别：</li>
+<li>交错判别：</li>
+</ol>
+</li>
+<li>
+<p>幂级数：<span class="arithmatex">\(\sum\limits_{n=0}^∞ c_n(x-a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots\)</span>（此形式是书写惯例，即使 x = a；x = a 时，对所有 <span class="arithmatex">\(n\ge 1\)</span> 的各项都是 0，即 x=a 时该级数总收敛；该形式称为 (x-a) 处的幂级数 或 以 a 为中心的幂级数 或 关于 a 的幂级数）</p>
+</li>
+<li>幂级数收敛性的三种可能：<ol>
+<li>级数只有当 x=a 时收敛</li>
+<li>级数对所有的 x 收敛</li>
+<li>存在一个正数 R 使得级数当 |x-a| &lt; R 时收敛，当 |x-a| &gt; R 时发散（注：端点处也可能 收敛！）</li>
+</ol>
+</li>
+<li>
+<p>幂级数的收敛半径：通过 比值，根值，对数 等判别法对收敛半径进行判断，并且对临界点处也需要特判</p>
+<ul>
+<li>注：其他大部分判别法都是间接推理的手段判断收敛性的，因而不具有计算收敛半径的能力</li>
+</ul>
+</li>
+<li>
+<p>函数的幂级数展开：<span class="arithmatex">\(f(x) = \sum\limits_{n=0}^∞ c_n(x-a)^n\)</span>，<span class="arithmatex">\(|x-a|&lt;R\)</span></p>
+</li>
+<li>
+<p>幂级数相关法则：</p>
+<ol>
+<li><span class="arithmatex">\(f(x) = \frac {d}{d_x} [\int f(x)~d_x]\)</span></li>
+<li><span class="arithmatex">\(f(x) = \int [\frac {d}{d_x} f(x)]~d_x\)</span></li>
+</ol>
+</li>
+<li>
+<p>泰勒级数(<code>Taylor</code>)：</p>
+<ol>
+<li>f 在 a 点有幂级数展开，当且仅当 <span class="arithmatex">\(f(x) = \sum\limits_{i=0}^∞ \frac {f^{(i)}(a)}{ii!} (x-a)^i\)</span></li>
+<li>f 在点 a 的第 n 次 Taylor 多项式：<span class="arithmatex">\(T_n(x) = \sum\limits_{i=0}^n \frac {f^{(i)}(a)}{i!} (x-a)^i\)</span></li>
+<li>f 在点 a 的第 n 次 Taylor 余项：<span class="arithmatex">\(R_n(x) = f(x) - T_n = f(x) - \sum\limits_{i=0}^n \frac {f^{(i)}(a)}{i!} (x-a)^i\)</span></li>
+</ol>
+</li>
+<li>麦克劳林级数(<code>Maclaurin</code>)：f 在 a=0 处的 Taylor 级数：<span class="arithmatex">\(f(x) = \sum\limits_{n=0}^∞ \frac {f^{(n)}(0)}{n!} x^n\)</span></li>
+<li>定理：若 <span class="arithmatex">\(f(x) = T_n(x) + R_n(x)\)</span>，其中 <span class="arithmatex">\(T_n(x)\)</span> 是 f 在 a 点的第 n 次泰勒多项式，且 <span class="arithmatex">\(\lim\limits_{n\to ∞} R_n(x)=0\)</span>；那么，对 <span class="arithmatex">\(|x-a|&lt;R\)</span>，则 f 在区间 <span class="arithmatex">\(|x-a|&lt;R\)</span> 上等于它的泰勒级数的和</li>
+<li>Taylor 不等式：对所有 <span class="arithmatex">\(|x-a|\le d\)</span> 有 <span class="arithmatex">\(|f^{(n+1)}(x)| \le M\)</span>；则泰勒级数的余项 <span class="arithmatex">\(R_n(x)\)</span> 满足不等式 <span class="arithmatex">\(|R_n(x)| \le \frac {M}{(n+1)!}|x-a|^{n+1}\)</span> （对所有 <span class="arithmatex">\(|x-a|\le d\)</span>）</li>
+<li>
+<p>常见 maclaurin 级数：</p>
+<ol>
+<li><span class="arithmatex">\(\frac 1{\Box}\)</span>算子：<span class="arithmatex">\(\frac 1{1-x} = \sum\limits_{i=0}^∞ x^i\)</span>（<span class="arithmatex">\(|x|&lt;1\)</span>）</li>
+<li><span class="arithmatex">\(e^{\Box}\)</span>算子：<span class="arithmatex">\(e^x = \sum\limits_{i=0}^∞ \frac {x^n}{n!}\)</span>（<span class="arithmatex">\(|x|&lt;+∞\)</span>）</li>
+<li><span class="arithmatex">\(\ln(1+\Box)\)</span>算子：<span class="arithmatex">\(\ln(1+x)=\sum\limits_{i=1}^∞ \frac {(-1)^{i-1}}{i}x^i\)</span>（<span class="arithmatex">\(-1&lt;x\le1\)</span>）</li>
+<li><span class="arithmatex">\(\sin x = \sum\limits_{i=0}^∞ (-1)^n \frac {x^{2i+1}}{(2i+1)!}\)</span>（<span class="arithmatex">\(|x|&lt;+∞\)</span>）</li>
+<li><span class="arithmatex">\(\cos x = \sum\limits_{i=0}^∞ (-1)^n \frac {x^{2i}}{(2i)!}\)</span>（<span class="arithmatex">\(|x|&lt;+∞\)</span>）</li>
+<li><span class="arithmatex">\(\tan x = \sum\limits_{i=0}^∞ (-1)^n \frac {x^{2i+1}}{2i+1}\)</span>（<span class="arithmatex">\(|x|\le 1\)</span>）</li>
+<li><span class="arithmatex">\(\Box^k\)</span>算子：<span class="arithmatex">\((1+x)^k = \sum\limits_{i=0}^∞ \left( \begin{matrix} k\\i \end{matrix} \right) x^i\)</span>（<span class="arithmatex">\(|x|&lt;1\)</span>；若 <span class="arithmatex">\(-1&lt;k\le0\)</span>，则 <span class="arithmatex">\(x=1\)</span> 处也收敛）</li>
+</ol>
+</li>
+<li>
+<p>二项式定理：<span class="arithmatex">\((a+b)^n = \sum\limits_{i=0}^n \left( \begin{matrix} n\\i \end{matrix} \right) a^{n-i}b^i\)</span></p>
+</li>
+<li>二项级数：<span class="arithmatex">\((1+x)^k = \sum\limits_{i=0}^∞ \left( \begin{matrix} k\\i \end{matrix} \right) x^i\)</span>（<span class="arithmatex">\(|x|&lt;1\)</span>）<ul>
+<li><span class="arithmatex">\(|x|&lt;1\)</span> 处收敛；若 <span class="arithmatex">\(-1&lt;k\le0\)</span>，则 <span class="arithmatex">\(x=1\)</span> 处也收敛</li>
+<li>另外，<span class="arithmatex">\(k\in N^+\)</span> 时，若 <span class="arithmatex">\(i &gt; k\)</span>，则 <span class="arithmatex">\(\left( \begin{matrix} k\\i \end{matrix} \right) = 0\)</span>，这意味着 <span class="arithmatex">\(k\in N^+\)</span> 时二项式级数将退化为普通的二项级数（项数有限）</li>
+</ul>
+</li>
+</ol>
+</div>
+<p>收敛性：正项级数(比较(减法,比值)，比值，根式，积分，拉贝(对数))，交错级数-莱布尼茨判别法，重排</p>
+<p>d'Alembert判别法，Cauchy根式判别法，Raabe判别法，对数判别法</p>
+<p>序列极限：stolz定理</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <ul>
@@ -1630,6 +2131,515 @@
 <li><span class="arithmatex">\(\int x^n\sin x~d_x = \sum\limits_{i=0}^∞\frac {(-1)^i}{(2i+1)!(2i+n+2)}x^{2i+n+2}\)</span></li>
 <li><span class="arithmatex">\(\int x^n\cos x~d_x = \sum\limits_{i=0}^∞\frac {(-1)^i}{(2i)!(2i+n+1)}x^{2i+n+1}\)</span></li>
 </ul>
+</div>
+<h3 id="12">12. 向量 &amp; 空间解析几何</h3>
+<div class="admonition note">
+<p class="admonition-title">12. 向量 &amp; 空间解析几何</p>
+<ol>
+<li>笛卡尔乘积：<span class="arithmatex">\(\mathbb{R}\times \mathbb{R}\times \mathbb{R} = \{ (x,y,z) | x,y,z\in \mathbb{R} \}\)</span> 定义 <span class="arithmatex">\(\mathbb R^3\)</span> 中所有有序三元实数组</li>
+<li>三维坐标系：定义了空间中的点 P 和 <span class="arithmatex">\(\mathbb R^3\)</span> 中所有有序三元实数组 <span class="arithmatex">\((a,b,c)\)</span> 的一一对应关系</li>
+<li>三维坐标平面：<code>x=0</code>/<code>y=0</code>/<code>z=0</code> 分别代表坐标平面 <code>yoz</code>/<code>xoz</code>/<code>xoy</code></li>
+<li>曲面方程(三维)：<span class="arithmatex">\(F(x,y,z)=0\)</span></li>
+<li>两点距离(三维)：三维空间上的两点 <span class="arithmatex">\(P_1(x_1,y_1,z_1)\)</span> 和 <span class="arithmatex">\(P_2(x_2,y_2,z_2)\)</span> 的距离 <span class="arithmatex">\(|P_1 P_2| = \sqrt {(x_2-x_1)^2 + (y_2-y_1)^2 + (z_1-z_2)^2}\)</span></li>
+<li>
+<p>球面方程(三维)：<span class="arithmatex">\((h, k, l)\)</span>，半径为 r 的球面方程为 <span class="arithmatex">\((x-h)^2 + (y-k)^2 + (z-l) = r^2\)</span></p>
+</li>
+<li>
+<p>向量：具有 大小 和 方向 的量</p>
+<ul>
+<li>几何表示：箭头 或 有向的线段；箭头的长度代表向量的相对大小</li>
+<li>记号：<strong>v</strong>，<span class="arithmatex">\(\overrightarrow{v}\)</span>，<span class="arithmatex">\(\overrightarrow{AB}\)</span>（起点 A 称为 尾部，终点 B 称为头部）</li>
+<li>向量相等：<span class="arithmatex">\(\overrightarrow{u} = \overrightarrow{v}\)</span> <span class="arithmatex">\(\iff\)</span> <strong>u</strong> 和 <strong>v</strong> 长度 和 方向 均相等</li>
+<li>零向量：<strong>0</strong>，长度为 0，并且是唯一没有明确方向的向量</li>
+</ul>
+</li>
+<li>三角形法则(向量加法)：若向量 <strong>v</strong> 的起点 和 向量 <strong>u</strong> 的终点相连，那么这两个向量的和 <strong>v+u</strong> 是一个从 <strong>u</strong> 的起点到 <strong>v</strong> 的终点的一个向量</li>
+<li>平行四边形法则(加法交换律)：<strong>u+v = v+u</strong></li>
+<li>向量的数乘：向量的数乘：若 c 为标量，<strong>v</strong> 为向量，那么数乘向量 c<strong>v</strong> 表示长度为 <strong>v</strong> 的 |c| 倍的向量<ul>
+<li>若 c &gt; 0，则它的方向与 <strong>v</strong> 相同；若 c &lt; 0，则它的方向与 <strong>v</strong> 相反</li>
+<li>当 c = 0 或 <strong>v</strong> = 0，则 c<strong>v</strong>=<strong>0</strong></li>
+<li>负向量：-<strong>v</strong> = (-1)<strong>v</strong> 和 <strong>v</strong> 具有相同长度，但方向相反</li>
+</ul>
+</li>
+<li>向量分量：将向量 <strong>a</strong> 的起点放在矩形坐标系的原点，那么根据我们所用的坐标系是二维或者三维的，<strong>a</strong> 的终点坐标为 <span class="arithmatex">\((a_1, a_2)\)</span> 或者 <span class="arithmatex">\((a_1, a_2, a_3)\)</span>，这些坐标称为向量 <strong>a</strong> 的分量，记为 <span class="arithmatex">\(\overrightarrow a = \langle a_{1}, a_{2}\rangle\)</span> 或 <span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3\rangle\)</span></li>
+<li>位置向量：如从原点到点 P(x, y) 的向量 <span class="arithmatex">\(\langle x, y \rangle\)</span></li>
+<li>向量减法：给出点 <span class="arithmatex">\(A(x_1, y_1, z_1)\)</span> 和 <span class="arithmatex">\(B(x_2, y_2, z_2)\)</span>，则表示 <span class="arithmatex">\(\overrightarrow {AB}\)</span> 的向量 <strong>a</strong> 为 <span class="arithmatex">\(\overrightarrow a = \langle x_2-x_1, y_2-y_1, z_2-z_1 \rangle\)</span></li>
+<li>向量长度<ul>
+<li>二维空间中的向量 <span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2 \rangle\)</span> 的长度为 <span class="arithmatex">\(|\overrightarrow a| = \parallel \overrightarrow a \parallel = \sqrt {a_1^2 + a_2^2}\)</span></li>
+<li>三维空间中的向量 <span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3 \rangle\)</span> 的长度为 <span class="arithmatex">\(|\overrightarrow a| = \parallel \overrightarrow a \parallel = \sqrt {a_1^2 + a_2^2 + a_3^2}\)</span></li>
+</ul>
+</li>
+<li>向量加法，数乘(代数定义 或 代数运算)：<ul>
+<li>二维空间中：<span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2 \rangle, \overrightarrow b = \langle b_1, b_2 \rangle\)</span>，那么 <span class="arithmatex">\(\overrightarrow{a}+\overrightarrow{b} = \langle a_1+b_1,a_2+b_2 \rangle\)</span>，<span class="arithmatex">\(\overrightarrow{a}-\overrightarrow{b} = \langle a_1-b_1,a_2-b_2 \rangle\)</span>，<span class="arithmatex">\(c\overrightarrow{a} = \langle c\cdot a_1, c\cdot a_2 \rangle\)</span></li>
+<li>三维空间中：<span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3 \rangle, \overrightarrow b = \langle b_1, b_2, b_3 \rangle\)</span>，那么 <span class="arithmatex">\(\overrightarrow{a}+\overrightarrow{b} = \langle a_1+b_1+b_3,a_2+b_2+b_3 \rangle\)</span>，<span class="arithmatex">\(\overrightarrow{a}-\overrightarrow{b} = \langle a_1-b_1,a_2-b_2,a_3-b_3 \rangle\)</span>，<span class="arithmatex">\(c\overrightarrow{a} = \langle c\cdot a_1, c\cdot a_2, c\cdot a_3 \rangle\)</span></li>
+</ul>
+</li>
+<li>向量“空间”：所有 n 维向量的集合为 <span class="arithmatex">\(V_n\)</span>，一个 n 维向量是一个有序的 n 元数组：<span class="arithmatex">\(\overrightarrow a = \langle a_1,a_2,\dots, a_n \rangle\)</span>；<span class="arithmatex">\(a_i \in R\)</span>，称为 <strong>a</strong> 的分量；如同 n=2，n=3 时的情况一样，我们可以为其定义向量 加法 和 数乘</li>
+<li>向量的性质：假设<strong>a, b, c</strong> 是 <span class="arithmatex">\(V_n\)</span> 中的向量，c 和 d 是常数，那么<ul>
+<li><strong>a + b = b + a</strong>，<strong>a + (b + c) = (a + b) + c</strong>，<strong>a + 0 = a</strong>，<strong>a + (-a) = 0</strong></li>
+<li>c<strong>(a + b) = </strong> c<strong>a</strong> + c<strong>b</strong>，(c + d)<strong>a</strong> = c<strong>a</strong> + d<strong>a</strong>，(cd)<strong>a</strong> = c(d<strong>a</strong>)，1<strong>a = a</strong></li>
+<li>加法(交换，结合，单位元，逆元)，加法&amp;数乘(分配)，数乘(结合律，单位元)</li>
+</ul>
+</li>
+<li>标准向量基：<ul>
+<li>二维空间中，<strong>i, j</strong> 为长度为 1，指向 x / y 轴正方向的向量 <span class="arithmatex">\(\langle 1, 0 \rangle\)</span>，<span class="arithmatex">\(\langle 0, 1 \rangle\)</span>；<span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2 \rangle\)</span> 可以表示为 <span class="arithmatex">\(\overrightarrow a = a_1\overrightarrow i + a_2\overrightarrow j\)</span></li>
+<li>三维空间中，<strong>i, j, k</strong> 为长度为 1，指向 x / y / z 轴正方向的向量 <span class="arithmatex">\(\langle 1, 0, 0 \rangle\)</span>，<span class="arithmatex">\(\langle 0, 1, 0 \rangle\)</span>，<span class="arithmatex">\(\langle 0, 0, 1 \rangle\)</span>；<span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3 \rangle\)</span> 可以表示为 <span class="arithmatex">\(\overrightarrow a = a_1\overrightarrow i + a_2\overrightarrow j + a_3\overrightarrow k\)</span></li>
+</ul>
+</li>
+<li>
+<p>单位向量：长度为 1 的向量</p>
+<ul>
+<li>对于任意非零向量 <strong>a</strong>，都有与其方向相同的单位向量 <span class="arithmatex">\(\overrightarrow u = \frac {\overrightarrow a}{|a|}\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>向量点积</strong>：<span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow b = a_1b_1 + a_2b_2\)</span>(二维)，<span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow b = a_1b_1 + a_2b_2 + a_3b_3\)</span>(三维) （注：点积将两个向量映射到 <strong>实数域</strong> 上）</p>
+</li>
+<li>向量点积的性质：<span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow a = |\overrightarrow a|^2\)</span>，<span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow b = \overrightarrow b \cdot \overrightarrow a\)</span>，<span class="arithmatex">\(\overrightarrow a \cdot (\overrightarrow b + \overrightarrow c) = \overrightarrow a \cdot \overrightarrow b + \overrightarrow a \cdot \overrightarrow c\)</span>，<span class="arithmatex">\((c\overrightarrow a) \cdot \overrightarrow b = c(\overrightarrow a \cdot \overrightarrow b) = \overrightarrow a \cdot (c\overrightarrow b)\)</span>，<span class="arithmatex">\(\overrightarrow 0\cdot \overrightarrow a = 0\)</span></li>
+<li>向量点积的物理意义：向量 <strong>a</strong>, <strong>b</strong> 的夹角为 <span class="arithmatex">\(\theta\)</span>，那么 <span class="arithmatex">\(\overrightarrow a\cdot \overrightarrow b = |a||b|\cos \theta\)</span><ul>
+<li><span class="arithmatex">\(\cos \theta = \frac {\overrightarrow a\cdot \overrightarrow b}{|\overrightarrow a||\overrightarrow b|}\)</span></li>
+<li><span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow b = 0\)</span> <span class="arithmatex">\(\iff\)</span> 向量 <strong>a, b</strong> 正交</li>
+<li><span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow b = |\overrightarrow a||\overrightarrow b|\)</span> <span class="arithmatex">\(\iff\)</span>  向量 <strong>a, b</strong> 完全同向</li>
+<li><span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow b = -|\overrightarrow a||\overrightarrow b|\)</span> <span class="arithmatex">\(\iff\)</span>  向量 <strong>a, b</strong> 完全反向</li>
+</ul>
+</li>
+<li>向量的方向角：非零向量与各坐标轴正方向的夹角；与 x，y，z 轴的方向角分别记为 <span class="arithmatex">\(\alpha,\beta,\gamma\)</span></li>
+<li>向量的方向余弦：非零向量与 x，y，z 轴的方向余弦分别记为 <span class="arithmatex">\(\cos \alpha, \cos \beta, \cos \gamma\)</span><ul>
+<li>假设 <span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3 \rangle\)</span></li>
+<li>性质：<span class="arithmatex">\(\cos \alpha = \frac {a_1}{|\overrightarrow a|}\)</span>，<span class="arithmatex">\(\cos \beta = \frac {a_2}{|\overrightarrow a|}\)</span>，<span class="arithmatex">\(\cos \gamma = \frac {a_3}{|\overrightarrow a|}\)</span>（注：<span class="arithmatex">\(\overrightarrow a\)</span> 与各个轴所在的公共平面中，<span class="arithmatex">\(\overrightarrow a\)</span> 在轴上的投影大小为 <span class="arithmatex">\(a_i\)</span>，与该轴的夹角为相应的方向角）</li>
+<li><span class="arithmatex">\((\cos\alpha)^2 + (\cos\beta)^2 + (\cos\gamma)^2 = 1\)</span></li>
+<li><span class="arithmatex">\(\overrightarrow a = \langle a_1, a_2, a_3 \rangle = |\overrightarrow a|\langle \cos\alpha, \cos\beta, \cos\gamma \rangle\)</span></li>
+<li><span class="arithmatex">\(e_{\overrightarrow a} = \frac {\overrightarrow a}{|\overrightarrow a|} = \langle \cos\alpha, \cos\beta, \cos\gamma \rangle\)</span></li>
+</ul>
+</li>
+<li>
+<p>投影：<span class="arithmatex">\(\overrightarrow a\)</span> 和 <span class="arithmatex">\(\overrightarrow b\)</span> 具有共起点，记 <span class="arithmatex">\(\displaystyle proj_{\overrightarrow a} \overrightarrow b\)</span> 为 <span class="arithmatex">\(\overrightarrow b\)</span> 在 <span class="arithmatex">\(\overrightarrow a\)</span> 上的投影</p>
+<ul>
+<li><span class="arithmatex">\(\overrightarrow b\)</span> 在 <span class="arithmatex">\(\overrightarrow a\)</span> 上的投影大小，记作 <span class="arithmatex">\(\displaystyle comp_{\overrightarrow a} \overrightarrow b\)</span></li>
+<li><span class="arithmatex">\(\displaystyle comp_{\overrightarrow a} \overrightarrow b = \frac {\overrightarrow a\cdot \overrightarrow b}{|\overrightarrow a|}\)</span>，<span class="arithmatex">\(\displaystyle proj_{\overrightarrow a} \overrightarrow b = (\frac {\overrightarrow a\cdot \overrightarrow b}{|\overrightarrow a|}) \frac {\overrightarrow a}{|\overrightarrow a|} = (\frac {\overrightarrow a\cdot \overrightarrow b}{|\overrightarrow a|^2})\overrightarrow a\)</span> （括号不可去掉，否则公式不正确）</li>
+<li>注：其中 <span class="arithmatex">\(\overrightarrow a\)</span> 可以任意缩放其大小而等式成立</li>
+</ul>
+</li>
+<li>
+<p>向量的叉积：<span class="arithmatex">\(\overrightarrow{a}\times\overrightarrow{b} = \langle a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1 \rangle = \left|\begin{array}{ccc}\overrightarrow{i}&amp;\overrightarrow{j}&amp;\overrightarrow{k}\\ \\ a_1&amp;a_2&amp;a_3\\ \\ b_1&amp;b_2&amp;b_3\end{array}\right| = \left|\begin{array}{c c c}{a_{2}}&amp;{a_{3}}\\ {b_{2}}&amp;{b_{3}}\\ \end{array}\right|\overrightarrow{i}-\left|\begin{array}{c c}{a_{1}}&amp;{a_{3}}\\ {b_{1}}&amp;{b_{3}}\\ \end{array}\right|\overrightarrow{j}+\left|\begin{array}{c c}{a_{1}}&amp;{a_{2}}\\ {b_{1}}&amp;{b_{2}}\\ \end{array}\right|\overrightarrow{k}\)</span></p>
+</li>
+<li>向量叉积的性质1：<ol>
+<li>向量 <span class="arithmatex">\(\overrightarrow a\times \overrightarrow b\)</span> 与 <strong>a, b</strong> 都正交</li>
+<li>方向：右手从 <strong>a</strong> 到 <strong>b</strong> 的方向握住 <span class="arithmatex">\(\overrightarrow a \times \overrightarrow b\)</span>，拇指所指方向即为 <span class="arithmatex">\(\overrightarrow a \times \overrightarrow b\)</span> 的方向（右手法则）</li>
+<li>长度：<span class="arithmatex">\(|\overrightarrow a \times \overrightarrow b| = |\overrightarrow a||\overrightarrow b|\sin \theta\)</span>（<span class="arithmatex">\(\theta \in [0, \pi]\)</span>，证明详见 P126）；数值上等于 由<strong>a, b</strong> 所确定的平行四边形的面积</li>
+<li><strong>a, b</strong> 平行(同向 或 反向) <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\overrightarrow a \times \overrightarrow b=\overrightarrow 0\)</span></li>
+<li>反交换律：<span class="arithmatex">\(\overrightarrow a \times \overrightarrow b \ne \overrightarrow b \times \overrightarrow a\)</span>；反结合律：<span class="arithmatex">\((\overrightarrow a \times \overrightarrow b)\times \overrightarrow c \ne \overrightarrow a \times (\overrightarrow b \times \overrightarrow c)\)</span></li>
+</ol>
+</li>
+<li>向量叉积的性质2：<ol>
+<li>反交换律：<span class="arithmatex">\(\overrightarrow a \times \overrightarrow b = -\overrightarrow b \times \overrightarrow a\)</span></li>
+<li><span class="arithmatex">\((c\overrightarrow a) \times \overrightarrow b = c(\overrightarrow a \times \overrightarrow b) = \overrightarrow a \times (c\overrightarrow b)\)</span></li>
+<li>叉积与加法分配律：<span class="arithmatex">\(\overrightarrow a \times (\overrightarrow b + \overrightarrow c) = \overrightarrow a \times \overrightarrow b + \overrightarrow a \times \overrightarrow c\)</span>，<span class="arithmatex">\((\overrightarrow a + \overrightarrow b)\times \overrightarrow c = \overrightarrow a \times \overrightarrow c + \overrightarrow b \times \overrightarrow c\)</span></li>
+<li>混合积：<span class="arithmatex">\(\overrightarrow a \cdot (\overrightarrow b \times \overrightarrow c) = (\overrightarrow a \times b)\cdot \overrightarrow c = \left|\begin{array}{l l l}{a_{1}}&amp;{a_{2}}&amp;{a_{3}}\\ {b_{1}}&amp;{b_{2}}&amp;{b_{3}}\\ {c_{1}}&amp;{c_{2}}&amp;{c_{3}}\end{array}\right|\)</span></li>
+<li><span class="arithmatex">\(\overrightarrow a \times (\overrightarrow b \times \overrightarrow c) = (\overrightarrow a \cdot \overrightarrow c)\overrightarrow b - (\overrightarrow a \cdot \overrightarrow b)\overrightarrow c\)</span></li>
+</ol>
+</li>
+<li>
+<p>混合积：<span class="arithmatex">\(\overrightarrow a \cdot (\overrightarrow b \times \overrightarrow c)\)</span> 称为向量 <strong>a, b, c</strong> 的混合积</p>
+<ul>
+<li>混合积的绝对值数值上等于 <strong>a, b, c</strong> 所确定的平行六面体的体积：<span class="arithmatex">\(V = |\overrightarrow a \cdot (\overrightarrow b \times \overrightarrow c)|\)</span></li>
+<li><span class="arithmatex">\(\overrightarrow a \cdot (\overrightarrow b \times \overrightarrow c) = 0\)</span> <span class="arithmatex">\(\iff\)</span> <strong>a, b, c</strong> 共面</li>
+</ul>
+</li>
+<li>
+<p>三维直线方程：设 <span class="arithmatex">\(\overrightarrow r = \langle x, y, z \rangle\)</span>，<span class="arithmatex">\(\overrightarrow r_0 = \langle x_0, y_0, z_0 \rangle\)</span>，<span class="arithmatex">\(\overrightarrow v = \langle a, b, c \rangle\)</span>（分别表示 直线上任意一点的位置向量，直线上已知点的位置向量，直线任意一点的方向向量）</p>
+<ol>
+<li><strong>向量方程</strong>：<span class="arithmatex">\(\overrightarrow r = \overrightarrow r_0 + t \overrightarrow v\)</span>（<span class="arithmatex">\(t\in R\)</span>）</li>
+<li>参数方程：<span class="arithmatex">\(x = x_0+at, y = y_0+bt, z = z_0+ct\)</span></li>
+<li>对称方程：<span class="arithmatex">\(\frac {x-x_0}a = \frac {y-y_0}b = \frac {z-z_0}c, a, b, c \ne 0\)</span> 或 <span class="arithmatex">\(x=x_0, \frac {y-y_0}b = \frac {z-z_0}c, b,c\ne 0\)</span> 或 <span class="arithmatex">\(y=y_0, \frac {x-x_0}a = \frac {z-z_0}c, a,c\ne 0\)</span>，<span class="arithmatex">\(\dots\)</span> （总共 <span class="arithmatex">\(2^3-1=8-1\)</span> 种表示对称方程；<strong>v = 0</strong> 时仅表示空间上的点 <span class="arithmatex">\(P_0\)</span>）</li>
+</ol>
+</li>
+<li>线段方程：有位置向量 <span class="arithmatex">\(\overrightarrow r_0, \overrightarrow r_1\)</span>，<span class="arithmatex">\(\overrightarrow r_0\)</span> 到 <span class="arithmatex">\(\overrightarrow r_1\)</span> 的位置向量方程(线段方程)为：<span class="arithmatex">\(\overrightarrow r(t) = \overrightarrow {r_0} + t(\overrightarrow {r_1}-\overrightarrow {r_0}) = (1-t)\overrightarrow {r_0} + t \overrightarrow {r_1}\)</span>（<span class="arithmatex">\(t\in[0, 1]\)</span>）</li>
+<li>相错直线：两条直线相错 <span class="arithmatex">\(\iff\)</span> 这两个直线既 不相交 也 不平行（因而它们不在同一个平面） <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\overrightarrow {v_1}\ne k\overrightarrow {v_2}, k\in R\)</span> 并且 <span class="arithmatex">\(\overrightarrow r_1(t) = \overrightarrow r_2(t)\)</span> 无解</li>
+<li>三维平面方程：<span class="arithmatex">\(P(x, y, z)\)</span>（即 <span class="arithmatex">\(\overrightarrow r\)</span>）为平面上任意一点，<span class="arithmatex">\(P_0(x_0, y_0, z_0)\)</span> （即 <span class="arithmatex">\(\overrightarrow r_0\)</span>）为平面上已知点，<span class="arithmatex">\(\overrightarrow n = \langle a, b, c \rangle\)</span> 为相当于平面的任一法向量(垂直于平面)<ol>
+<li><strong>向量方程</strong>：由 n 垂直于 <span class="arithmatex">\(\overrightarrow {P_0P}\)</span> 有：<span class="arithmatex">\(\overrightarrow n \cdot (\overrightarrow r - \overrightarrow r_0) = 0\)</span> 或 <span class="arithmatex">\(\overrightarrow n \cdot \overrightarrow r = \overrightarrow n \cdot \overrightarrow r_0\)</span></li>
+<li>数量方程：<span class="arithmatex">\(a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\)</span> 或 <span class="arithmatex">\(ax + by + cz = ax_0 + by_0 + cy_0\)</span></li>
+</ol>
+</li>
+<li>三维平面的截距：三个轴的截距分别为 <span class="arithmatex">\(t_x,t_y,t_z\)</span><ul>
+<li>a，b，c 分别为 0 时，三个轴的截距分别为 0</li>
+<li>a，b，c 均不为 0：<span class="arithmatex">\(t_x=\frac {ax_0+by_0+cz_0}{a}, \frac {ax_0+by_0+cz_0}{b}, \frac {ax_0+by_0+cz_0}{c}\)</span>，<span class="arithmatex">\(t_y=\frac {ax_0+by_0+cz_0}{a}, \frac {ax_0+by_0+cz_0}{b}, \frac {ax_0+by_0+cz_0}{c}\)</span>，<span class="arithmatex">\(t_z=\frac {ax_0+by_0+cz_0}{a}, \frac {ax_0+by_0+cz_0}{b}, \frac {ax_0+by_0+cz_0}{c}\)</span></li>
+</ul>
+</li>
+<li>三维平面方程的应用：<ol>
+<li>p，Q，R 三点(位置向量分别为 <strong>r1, r2, r3</strong>) 能确定一个平面，当且仅当 <span class="arithmatex">\([(\overrightarrow r_1-\overrightarrow r_2)\times (\overrightarrow r_1-\overrightarrow r_3)]\cdot (\overrightarrow r_1-\overrightarrow r_2)=0\)</span>（该形式不唯一）</li>
+</ol>
+</li>
+<li>空间解析几何的定理：<ol>
+<li>两个平面平行 <span class="arithmatex">\(\iff\)</span> 这两个平面的法向量平行</li>
+<li>两个平面不平行 <span class="arithmatex">\(\iff\)</span> 这两个平面相交于一条直线，两平面的夹角等于两法向量之间所成的锐角 <span class="arithmatex">\(\theta\)</span>（<span class="arithmatex">\(0 &lt; \theta &lt; 90°\)</span>）（可以通过 点积 或 叉积 得到） （可以找到两个相交的法线）</li>
+<li>两平面的交线表达式 为 两平面表达式构成的方程组</li>
+<li>求两平面交线：<ol>
+<li>法1：在两平面表达式构成的方程组中，任取 x 或 y 或 z = k 求得直线上的一点 <span class="arithmatex">\((x_0,y_0,z_0)\)</span>；通过 <span class="arithmatex">\(\overrightarrow v = \overrightarrow n_1 \times \overrightarrow n_2\)</span> 得到直线的方向向量</li>
+<li>法2：在两平面表达式构成的方程组中，分别两次消去一个变量，得到新的方程组，稍加“拼接”即可得到直线的对称方程</li>
+</ol>
+</li>
+<li>点在平面上的投影点：<span class="arithmatex">\(\overrightarrow {r_1}=Q(x_1,y_1,z_1)\)</span> 在 <span class="arithmatex">\(\overrightarrow n\cdot (\overrightarrow r-\overrightarrow {r_2})=0\)</span> 的投影点为 <span class="arithmatex">\(\overrightarrow {r_1}+\overrightarrow n t\)</span>（<span class="arithmatex">\(t=\frac{(\overrightarrow {r_1}-\overrightarrow {r_2})\overrightarrow n}{|\overrightarrow n|^2}\)</span>）<ul>
+<li>包含法线并经过 Q 的直线为：<span class="arithmatex">\(\overrightarrow r(t) = \overrightarrow {r_1}+\overrightarrow n t\)</span>，该直线与上述平面的交点即为 Q 在该平面上的投影点，解得此时 <span class="arithmatex">\(t=\frac{(\overrightarrow {r_1}-\overrightarrow {r_2})\overrightarrow n}{|\overrightarrow n|^2}\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>重要的算子<ol>
+<li>投影：<span class="arithmatex">\(\overrightarrow a\)</span> 在 <span class="arithmatex">\(\overrightarrow b\)</span> 上的投影长为 <span class="arithmatex">\(\text{comp}_{\overrightarrow b}\overrightarrow a=\frac{\overrightarrow b\cdot \overrightarrow a}{|\overrightarrow b|}\)</span></li>
+<li>垂线长：<span class="arithmatex">\(\overrightarrow a\)</span> 在 <span class="arithmatex">\(\overrightarrow b\)</span> 上的垂线长为 <span class="arithmatex">\(\text{camp}_{\overrightarrow b}\overrightarrow a=\frac{|\overrightarrow b\times \overrightarrow a|}{|\overrightarrow b|}\)</span></li>
+<li>恒等式：<span class="arithmatex">\(|\overrightarrow a|^2=(\text{comp}_{\overrightarrow b}\overrightarrow a)^2+(\text{camp}_{\overrightarrow b}\overrightarrow a)^2\)</span></li>
+</ol>
+</li>
+<li>
+<p>距离问题</p>
+<ol>
+<li>两点距离：<span class="arithmatex">\(|\overrightarrow {r_2}-\overrightarrow {r_1}|\)</span></li>
+<li>点线距离：<span class="arithmatex">\(\overrightarrow {r_1}\)</span>  到直线 <span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_2}+t\overrightarrow {v_2}\)</span> 之间的距离为 d；<span class="arithmatex">\(\overrightarrow {r_1}\)</span> 到直线 <span class="arithmatex">\(\overrightarrow r(t)\)</span> 的垂足为 <span class="arithmatex">\(\overrightarrow {r_3}\)</span><ol>
+<li><span class="arithmatex">\(d=\sqrt{|\overrightarrow {r_1r_2}|^2-(\text{comp}_{\overrightarrow v}{\overrightarrow {r_1r_2}})^2}=\sqrt{|\overrightarrow {r_1r_2}|^2-(\frac{\overrightarrow {r_1r_2}\cdot \overrightarrow v}{\overrightarrow v})^2}\)</span></li>
+<li><span class="arithmatex">\(d=\frac {|\overrightarrow {r_1r_2}\times \overrightarrow v|}{|\overrightarrow v|} = |\text{camp}_{\overrightarrow v}\overrightarrow {r_1r_2}|\)</span></li>
+<li><span class="arithmatex">\(\begin{cases}\overrightarrow {r_1r_3}\cdot \overrightarrow {v_2}=0\\\overrightarrow  {r_1r_3}=\overrightarrow {r_3}-\overrightarrow {r_1}=(\overrightarrow {r_2}+t\overrightarrow {v_2})-\overrightarrow {r_1}\end{cases}\)</span> 消去 t 后有 <span class="arithmatex">\(d=|\overrightarrow {r_1r_3}|=|\overrightarrow {r_1r_2}-(\frac{\overrightarrow {r_1r_2}\cdot \overrightarrow {v_2}}{|\overrightarrow {v_2}|^2})\overrightarrow {v_2}|\)</span></li>
+</ol>
+</li>
+<li>两线距离：<span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_1}+t\overrightarrow {v_1}\)</span> 到 <span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_2}+t\overrightarrow {v_2}\)</span> 的距离为 <span class="arithmatex">\(|\frac {(\overrightarrow {v_1}\times \overrightarrow {v_2})\cdot \overrightarrow {r_1r_2}}{|\overrightarrow {v_1}\times \overrightarrow {v_2}|}|=|\text{comp}_{\overrightarrow {v_1}\times \overrightarrow {v_2}}\overrightarrow {r_1r_2}|\)</span> （仅当 <span class="arithmatex">\(\overrightarrow {v_1}\times \overrightarrow {v_2}=0\)</span>）</li>
+<li>点面距离：点 <span class="arithmatex">\(\overrightarrow {r_1}\)</span> 到 <span class="arithmatex">\(\overrightarrow {n_2}(\overrightarrow r-\overrightarrow {r_2})=0\)</span> 的距离为 <span class="arithmatex">\(|\frac {ax_1+by_1+cz_1+d}{\sqrt {a^2+b^2+c^2}}| = |\text{comp}_{\overrightarrow {n_2}}\overrightarrow {r_1r_2}|\)</span></li>
+<li>线面距离：直线 <span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_1}+t\overrightarrow {v_1}\)</span> 到 <span class="arithmatex">\(\overrightarrow {n_2}(\overrightarrow r-\overrightarrow {r_2})=0\)</span> 的距离为 <span class="arithmatex">\(|\frac {ax_1+by_1+cz_1+d}{\sqrt {a^2+b^2+c^2}}| = |\text{comp}_{\overrightarrow {n_2}}\overrightarrow {r_1r_2}|\)</span> （仅当 <span class="arithmatex">\(\overrightarrow {v_1}\cdot \overrightarrow {n_2}=0\)</span>）</li>
+<li>面面距离：平面 <span class="arithmatex">\(\overrightarrow {n_1}(\overrightarrow r-\overrightarrow {r_1})=0\)</span> 到平面 <span class="arithmatex">\(\overrightarrow {n_2}(\overrightarrow r-\overrightarrow {r_2})=0\)</span> 的距离为 <span class="arithmatex">\(|\frac {ax_1+by_1+cz_1+d}{\sqrt {a^2+b^2+c^2}}| = |\text{comp}_{\overrightarrow {n_2}}\overrightarrow {r_1r_2}|\)</span> （仅当 <span class="arithmatex">\(\overrightarrow {n_1}\times \overrightarrow {n_2}=0\)</span>）</li>
+</ol>
+</li>
+<li>
+<p>柱面(三维)：直线(母线)沿着定曲线移动所得到的曲面；如：<span class="arithmatex">\(f(x,y)=0, f(x,z)=0,f(y,z)=0\)</span></p>
+</li>
+<li>二次曲面(三维)：关于变量 <span class="arithmatex">\(x,y,z\)</span> 的二次方程的图形，记作 <span class="arithmatex">\(Ax^2+By^2+Cz^2+Dxy+Eyz+Fxz+Gx+Hy+Iz+J=0\)</span><ul>
+<li>通过变换和旋转，可以变为两种标准形式之一：<span class="arithmatex">\(Ax^2+By^2+Cz^2+J=0\)</span> 或 <span class="arithmatex">\(Ax^2+By^2+Iz=0\)</span></li>
+</ul>
+</li>
+<li>
+<p>二次曲面分类：</p>
+<ol>
+<li><span class="arithmatex">\(Ax^2+By^2+Cz^2+J=0\)</span>（<span class="arithmatex">\(A,B,C,J\ne 0\)</span>）<ol>
+<li>椭球：<span class="arithmatex">\(A,B,C\)</span> 全部与 <span class="arithmatex">\(J\)</span> 异号</li>
+<li>单叶双曲面：<span class="arithmatex">\(A,B,C\)</span> 其二与 <span class="arithmatex">\(J\)</span> 异号</li>
+<li>双叶双曲面：<span class="arithmatex">\(A,B,C\)</span> 其一与 <span class="arithmatex">\(J\)</span> 异号</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(Ax^2+By^2+Cz^2\)</span>（<span class="arithmatex">\(A,B,C\ne 0\)</span>）<ol>
+<li>锥面：<span class="arithmatex">\(A,B,C\)</span> 至少有一个异号</li>
+<li>原点：<span class="arithmatex">\(A,B,C\)</span> 全部同号</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(Ax^2+By^2+Iz=0\)</span>（<span class="arithmatex">\(A,B,I\ne 0\)</span>）<ol>
+<li>椭圆抛物面：<span class="arithmatex">\(A,B\)</span> 全部与 <span class="arithmatex">\(I\)</span> 异号</li>
+<li>双曲抛物面：<span class="arithmatex">\(A,B\)</span> 其一与 <span class="arithmatex">\(I\)</span> 异号</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(Ax^2+By^2=0\)</span>（<span class="arithmatex">\(A,B\ne 0\)</span>）：z 轴</li>
+</ol>
+</li>
+<li>
+<p>柱面坐标系：三维空间中的点 P 用有序三元组 <span class="arithmatex">\((r, \theta, z)\)</span> 来表示</p>
+<ul>
+<li>柱面坐标 <span class="arithmatex">\(\implies\)</span> 直角坐标：<span class="arithmatex">\(x = r\cos \theta, y = r\sin \theta, z = z\)</span></li>
+<li>直角坐标 <span class="arithmatex">\(\implies\)</span> 柱面坐标：<span class="arithmatex">\(r^2 = x^2 + y^2, \tan \theta = \frac yx, z = z\)</span></li>
+</ul>
+</li>
+<li>球坐标系：三维空间中的点 P 用有序三元组 <span class="arithmatex">\((\rho, \theta, \phi)\)</span> 表示（<span class="arithmatex">\(\rho \ge 0, 0\le \phi \le \pi\)</span>）<ul>
+<li><span class="arithmatex">\(\rho=|OP|\)</span> 为点 P 到原点的距离，<span class="arithmatex">\(\theta\)</span> 和柱面坐标表示同样的角度，<span class="arithmatex">\(\phi\)</span> 是线段和 z 轴正方向的夹角</li>
+<li>方程 r=c 表示半径为 r 的球面，方程 <span class="arithmatex">\(\theta=c\)</span> 表示一个竖直的半平面，方程 <span class="arithmatex">\(\phi=c\)</span> 表示一个以 z 轴为对称轴的半圆锥</li>
+<li>球坐标 <span class="arithmatex">\(\implies\)</span> 直角坐标：<span class="arithmatex">\(x=\rho\sin\phi\cos\theta, y=\rho\sin\phi\sin\theta, z=\rho\cos\phi\)</span></li>
+<li>直角坐标 <span class="arithmatex">\(\implies\)</span> 球坐标：<span class="arithmatex">\(\rho^2=x^2+y^2+z^2\)</span></li>
+</ul>
+</li>
+<li>三维坐标系之间的切换：<span class="arithmatex">\(P_1(x, y, z), P_2(r, \theta, z), P_3(\rho, \theta, \phi)\)</span> 分别为点 P 在 直角坐标，柱面坐标，球坐标 中的表示方法<ol>
+<li><span class="arithmatex">\(P_1(x, y, z) =&gt; P_2(\sqrt {x^2 + y^2}, \tan^{-1}\frac yx=\cos^{-1}\frac x\rho=\sin^{-1}\frac y\rho, z)\)</span></li>
+<li><span class="arithmatex">\(P_1(x, y, z) =&gt; P_3(\sqrt {x^2 + y^2 + z^2}, \sin^{-1} \frac y{\rho\sin\phi}=\cos^{-1}\frac x{\rho\sin\phi}=\tan^{-1}\frac yx, \cos^{-1}\frac z\rho)\)</span><ul>
+<li>注：<span class="arithmatex">\(\rho\sin\phi=\sqrt{x^2+y^2}\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="13">13. 向量函数</h3>
+<div class="admonition note">
+<p class="admonition-title">13. 向量函数</p>
+<ol>
+<li>向量函数(三维)：<span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle = f(t)\overrightarrow i + g(t)\overrightarrow j + h(t)\overrightarrow k\)</span><ul>
+<li><span class="arithmatex">\(r:~\mathbb R \to \mathbb R^3\)</span></li>
+<li>f，g，h 分别为 <strong>r</strong> 的分量函数</li>
+</ul>
+</li>
+<li>向量函数的定义域：由分量函数的 定义域的交集 决定，如三维的情况：<span class="arithmatex">\(D_f\cap D_g\cap D_h\)</span></li>
+<li>极限：<span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle = f(t)\overrightarrow i + g(t)\overrightarrow j + h(t)\overrightarrow k\)</span>，那么 <span class="arithmatex">\(\lim\limits_{t\to a}\overrightarrow r(t) = \langle \lim\limits_{t\to a}f(t), \lim\limits_{t\to a}g(t), \lim\limits_{t\to a}h(t) \rangle\)</span>（仅当分量函数的极限都存在）</li>
+<li>运算法则：和差商积，数乘</li>
+<li>连续性：向量函数在 <strong>r</strong> 处连续，当且仅当 <span class="arithmatex">\(\lim\limits_{t\to a}\overrightarrow r(t) = \overrightarrow r(a)\)</span></li>
+<li>
+<p>连续向量函数 与 空间曲线：假设 <span class="arithmatex">\(f,g,h\)</span> 是在区间 l 上连续的实值函数，那么 t 在区间 l 变化，满足 <span class="arithmatex">\(x=f(t), y=g(t), z=h(t)\)</span> 的所有点 <span class="arithmatex">\((x, y, z)\)</span> 的集合 C 叫做一条 空间曲线；该方程为 C 的 参数方程，t 称为 参数</p>
+<ul>
+<li>如果向量函数为 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle\)</span>，那么 <strong>r</strong>(t) 是点 P(f(t), g(t), h(t)) 在 C 上的位置向量</li>
+<li>因此，任意的向量函数 r 定义了一条空间曲线 C，它是以坐标原点 O 为起点的向量 r(t) 末端的运动轨迹</li>
+</ul>
+</li>
+<li>
+<p>向量函数的导数：<span class="arithmatex">\(\frac {d_{\overrightarrow r}}{d_t} = \overrightarrow r'(t) = \lim\limits_{h\to 0}\frac {\overrightarrow r(t+h)-\overrightarrow r(t)}{h}\)</span> （仅当极限存在）</p>
+<ul>
+<li>割线向量 <span class="arithmatex">\(\overrightarrow r(t+h)-\overrightarrow r(t)\)</span>，切向量 <span class="arithmatex">\(\lim\limits_{h\to 0}\frac {\overrightarrow r(t+h)-\overrightarrow r(t)}{h}\)</span>，单位切向量 <span class="arithmatex">\(\overrightarrow \tau(t) = \frac {\overrightarrow r'(t)}{|\overrightarrow r'(t)|}\)</span></li>
+</ul>
+</li>
+<li>光滑：如果 <span class="arithmatex">\(\overrightarrow r'(t)\)</span> 在区间 I 上满足 <strong>r'</strong> 连续，<span class="arithmatex">\(\overrightarrow r'(t)\ne 0\)</span>（除了端点之外），我们称 <strong>r</strong>(t) 在区间 I 上是光滑的</li>
+<li>分段光滑：向量函数由有限多的光滑片段构成</li>
+<li>尖点：存在 <span class="arithmatex">\(t=a\)</span>，使得 <span class="arithmatex">\(\overrightarrow r'(a)=0\)</span></li>
+<li>求导法则：<ol>
+<li><span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(t) + \overrightarrow v(t)] = \overrightarrow u'(t) + \overrightarrow v'(t)\)</span>，<span class="arithmatex">\(\frac d{d_t}[c\overrightarrow u(t)] = c\overrightarrow u'(t)\)</span></li>
+<li><span class="arithmatex">\(\frac d{d_t}[f(t)\overrightarrow u(t)] = f'(t)\overrightarrow u(t) + f(t)\overrightarrow u'(t)\)</span>，<span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(t)\cdot \overrightarrow v(t)] = \overrightarrow u'(t)\cdot \overrightarrow v(t) + \overrightarrow u(t)\cdot \overrightarrow v'(t)\)</span>，<span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(t)\times \overrightarrow v(t)] = \overrightarrow u'(t)\times \overrightarrow v(t) + \overrightarrow u(t)\times \overrightarrow v'(t)\)</span></li>
+<li><span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(f(t))] = f'(t) \overrightarrow u'(f(t))\)</span></li>
+</ol>
+</li>
+<li>法则：如果 <span class="arithmatex">\(|\mathbf r(t)|=c\)</span> (一个常数)，那么对于所有的 t，<span class="arithmatex">\(\mathbf r'(t)\)</span> 和 <span class="arithmatex">\(\mathbf r(t)\)</span> 相垂直</li>
+<li>积分：<span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n \overrightarrow r(t_i^*) \Delta t = \lim\limits_{n\to ∞} [(\sum\limits_{i=1}^n f(t_i^*)\Delta t)\overrightarrow i, (\sum\limits_{i=1}^n g(t_i^*)\Delta t)\overrightarrow j, (\sum\limits_{i=1}^n h(t_i^*)\Delta t)\overrightarrow k]\)</span><ul>
+<li>于是，<span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = (\int_a^b f(t)~d_t)\overrightarrow i + (\int_a^b g(t)~d_t)\overrightarrow j + (\int_a^b h(t)~d_t)\overrightarrow k\)</span></li>
+</ul>
+</li>
+<li>
+<p>微积分基本定理(扩展)：<span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = \overrightarrow R(t)]_a^b = \overrightarrow R(b) - \overrightarrow R(b)\)</span></p>
+<ul>
+<li>这里 <strong>R</strong> 是 <strong>r</strong> 的一个原函数，即 <strong>R</strong>'(t) = <strong>r</strong>(t)</li>
+<li><span class="arithmatex">\(\int \overrightarrow r(t)~d_t\)</span> 表示不定积分</li>
+</ul>
+</li>
+<li>
+<p>空间曲线长度：<span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle, a\le t\le b\)</span> 或者 用参数方程表示为 x=f(t), y=g(t), z=h(t)，这里 f', g', h' 连续；如果变量 t 由 a 增加到 b，正好通过曲线一次，那么我们得到曲线的长度为 <span class="arithmatex">\(L = \int_a^b \sqrt {[f'(t)]^2 + [g'(t)]^2 + [h'(t)]^2}~d_t = \int_a^b \sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2 + (\frac {d_z}{d_t})^2}~d_t\)</span></p>
+<ul>
+<li>对于 n 维向量函数：<span class="arithmatex">\(L = \int_a^b |\overrightarrow r'(t)|~d_t\)</span></li>
+</ul>
+</li>
+<li>弧长函数：假设 C 是由向量方程 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle, a\le t\le b\)</span> 所给出的分段光滑的曲线，当变量 t <mark class="critic">从 a 增加到 b</mark>，正好经过曲线一次<ul>
+<li>弧长函数：<span class="arithmatex">\(s(t) = \int_a^t |\overrightarrow r'(u)|~d_u = \int_a^t \sqrt {(\frac {d_x}{d_u})^2 + (\frac{d_y}{d_u})^2 + (\frac{d_z}{d_u})^2}~d_u\)</span></li>
+<li>使用微积分基本定理有：<span class="arithmatex">\(\frac {d_s}{d_t} = |\overrightarrow r(t)|\)</span></li>
+</ul>
+</li>
+<li>向量函数换元：<span class="arithmatex">\(t=t(s)\)</span>（仅当 <span class="arithmatex">\(s=s(t)\)</span> 是单射）</li>
+<li>单位切向量：<span class="arithmatex">\(\mathbf T(t) = \frac {\mathbf r'(t)}{|\mathbf r'(t)|}\)</span></li>
+<li>曲率：<span class="arithmatex">\(K(t) = |\frac {d_{\mathbf T}}{d_s}| = |\frac {d_{\mathbf T}/d_t}{d_s/d_t}| = \frac {|\mathbf T'(t)|}{|\mathbf r'(t)|}\)</span>，用以描述曲线在这一个点方向变化快慢程度<ul>
+<li><span class="arithmatex">\(\displaystyle  K(t) = \frac {|\mathbf r'(r)\times \mathbf r^{"}(t)|}{|\mathbf r'(t)|^3}\)</span></li>
+<li>二维曲线曲率(切线斜率)：<span class="arithmatex">\(\displaystyle  K(x) = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span> （曲线为 <span class="arithmatex">\(y=f(x)\)</span>）</li>
+</ul>
+</li>
+<li>单位法向量：<span class="arithmatex">\(\mathbf N(t) = \frac {\mathbf T'(t)}{|\mathbf T'(t)|} = \frac {\mathbf T'(t)}{K|\mathbf r'(t)|}\)</span></li>
+<li>副法线向量：<span class="arithmatex">\(\mathbf B(t) = \mathbf T(t) \times \mathbf N(t)\)</span></li>
+<li>
+<p>法平面，密切面，密切圆，从切面：P 为曲线 C 上任意一点</p>
+<ol>
+<li>法平面：点 P 的单位法向量 <span class="arithmatex">\(\mathbf N\)</span> 和 副法线向量 <span class="arithmatex">\(\mathbf B\)</span> 所确定的平面</li>
+<li>密切面：点 P 的单位切向量 <span class="arithmatex">\(\mathbf T\)</span> 和 单位法向量 <span class="arithmatex">\(\mathbf N\)</span> 所确定的平面（“密切面”来自于拉丁语 osculum，“接吻”的意思；这是最接近包含这条曲线，点 P 附近部分的平面）</li>
+<li>密切圆：点 P 的密切面上存在一个圆，其圆心位于曲线 C 的凹面部分（<span class="arithmatex">\(\mathbf N\)</span> 指向其圆心），其半径为 <span class="arithmatex">\(\rho = \frac 1K\)</span></li>
+<li>从切面：点 P 的单位切向量 <span class="arithmatex">\(\mathbf T\)</span> 和 副法线向量 <span class="arithmatex">\(\mathbf B\)</span> 所确定的平面</li>
+</ol>
+</li>
+<li>
+<p>速度：速度向量等于切向量，<span class="arithmatex">\(\mathbf v(t) = \lim\limits_{h\to 0}\frac {\mathbf r(t+h) - \mathbf r(t)}{h} = \mathbf r'(t)\)</span></p>
+<ul>
+<li><span class="arithmatex">\(|\mathbf v(t)| = |\mathbf r'(t)| = \frac {d_s}{d_t}\)</span> = 相应距离关于时间的变化率</li>
+<li><span class="arithmatex">\(\mathbf r(t) = \mathbf r(t_0) + \int_{t_0}^t \mathbf v(u)~d_u\)</span></li>
+</ul>
+</li>
+<li>加速度：<span class="arithmatex">\(\mathbf a(t) = \mathbf v'(t) = \mathbf r^{"}(t)\)</span><ul>
+<li><span class="arithmatex">\(\mathbf v(t) = \mathbf v(t_0) + \int_{t_0}^t \mathbf a(u)~d_u\)</span></li>
+</ul>
+</li>
+<li>牛顿第二定律：在任意时刻 t，一个力 <span class="arithmatex">\(\mathbf F(t)\)</span> 作用于一个质量为 m 的物体上产生的加速度为 <span class="arithmatex">\(\mathbf a(t)\)</span>，那么 <span class="arithmatex">\(\mathbf F(t) = m\mathbf a(t)\)</span></li>
+<li>加速度的分量：<span class="arithmatex">\(a_T, a_N\)</span> 分别为 <span class="arithmatex">\(\mathbf a(t)\)</span> 在 切线方向 和 法线方向 的分量<ul>
+<li><span class="arithmatex">\(\mathbf a = a_T\mathbf T + a_N\mathbf N\)</span></li>
+<li><span class="arithmatex">\(a_T = v' = \frac {\mathbf v\cdot \mathbf a}{v} = \frac {\mathbf r'(t)\cdot \mathbf r^{"}(t)}{|\mathbf r'(t)|}\)</span>，<span class="arithmatex">\(a_N = Kv^2 = \frac {|\mathbf r'(t)\times \mathbf r^{"}(t)|}{|\mathbf r'(t)|^3}|\mathbf r'(t)|^2 = \frac {|\mathbf r'(t)\times \mathbf r^{"}(t)|}{|\mathbf r'(t)|}\)</span> （证明详见 13.4）</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="14">14. 多元函数的偏导数</h3>
+<div class="admonition note">
+<p class="admonition-title">14. 多元函数的偏导数</p>
+<ol>
+<li>多元函数的描述方法：语言描述（文字），数值描述（数值表格），代数刻画（显式的公式），直观刻画（曲面或等值线图）</li>
+<li>二元函数：二元函数 f 是指在集合 D 中的每个有序实数对 (x, y) 都有唯一的实数 f(x, y) 与前者对应<ul>
+<li>D 为定义域，f 的值域指 f 能取到的值（<span class="arithmatex">\(\{ f(x, y) | (x, y) \in D \}\)</span>）</li>
+<li><span class="arithmatex">\(f:~\mathbb R^2\to \mathbb R\)</span></li>
+<li>注：<span class="arithmatex">\(\{ (x,y) | y\ge F(x) \}\)</span> 表示 <span class="arithmatex">\(y=f(x)\)</span> 及其上半部分，<span class="arithmatex">\(\{ (x,y) | x\ge F(y) \}\)</span> 表示 <span class="arithmatex">\(x=g(y)\)</span> 及其右半部分</li>
+</ul>
+</li>
+<li>二元函数[2]：二元函数 f 满足： 二维平面 <span class="arithmatex">\(\mathbb R^2\)</span> 的子集（即定义域）的每一个点能通过 f 唯一映射到一个一维数轴 <span class="arithmatex">\(\mathbb R\)</span> 上的点（这些点构成集合——值域）</li>
+<li>二元函数的图像：二元函数 <span class="arithmatex">\(z=f(x,y)\)</span> 的图像是 <span class="arithmatex">\(\mathbb R^3\)</span> 中的所有在定义中的点 <span class="arithmatex">\((x,y,z)\)</span><ul>
+<li>连续二元函数的图像是曲面（连续一元函数的图像在 <span class="arithmatex">\(\mathbb R^2\)</span> 上是曲线）</li>
+</ul>
+</li>
+<li>平面画图：截线（令 <span class="arithmatex">\(x=0, y=0, z=0\)</span> 分别得到 f 在 <span class="arithmatex">\(yoz,zox,xoy\)</span> 上的截线），截距（令 <span class="arithmatex">\(y=z=0,z=y=0,x=y=0\)</span> 分别得到 f 在 <span class="arithmatex">\(x,y,z\)</span> 轴的截距），等高方法(见 (6))</li>
+<li>等高方法：<ul>
+<li>等高线法：迭代 <span class="arithmatex">\(k_i=f(x,y)\)</span> 得到一系列平行于 <span class="arithmatex">\(xoy\)</span> 的曲线(等高线)，将这些曲线映射到 <span class="arithmatex">\(xoy\)</span> 上，并在其周围标上对应的值 <span class="arithmatex">\(k_i\)</span>（应用：地形图，温度带）</li>
+<li>等高点法：迭代 <span class="arithmatex">\(k_i=f(x)\)</span> 得到一系列点(等高点)，将这些点映射到 <span class="arithmatex">\(x\)</span> 轴上，并在其周围标上对应的值 <span class="arithmatex">\(k_i\)</span></li>
+<li>等高面法：迭代 <span class="arithmatex">\(k_i=f(x,y,z)\)</span> 得到一系列曲面(等高面)，将这些曲面映射到一个(或多个，方便观察) <span class="arithmatex">\(\mathbb R^3\)</span> 直角坐标系上，并在其周围标上对应的值 <span class="arithmatex">\(k_i\)</span></li>
+</ul>
+</li>
+<li>三元函数：三元函数 f 对于定义域 <span class="arithmatex">\(D\subset \mathbb R^3\)</span> 内的每个三元组 <span class="arithmatex">\((x, y, z)\)</span> 都有唯一的实数 <span class="arithmatex">\(f(x, y, z)\)</span> 与其对应，即 <span class="arithmatex">\(f:~\mathbb R^3 \to \mathbb R\)</span></li>
+<li>多元函数：n 元函数是一个数组 <span class="arithmatex">\((x_1, x_2, \dots, x_n)\)</span> 到一个数 <span class="arithmatex">\(z=f(x_1,x_2,\dots, x_n)\)</span> 的一个对应，即 <span class="arithmatex">\(f:~\mathbb R^n \to \mathbb R\)</span></li>
+<li>
+<p>多元函数的原像：有三种看待方式：</p>
+<ol>
+<li>n 个实变量 <span class="arithmatex">\(x_1,x_2,\dots,x_n\)</span> 的函数</li>
+<li>一个点变量 <span class="arithmatex">\((x_1,x_2,\dots,x_n)\)</span> 的函数</li>
+<li>一个向量 <span class="arithmatex">\(\mathbf x = \langle x_1,x_2,\dots,x_n \rangle\)</span> 的函数；f 可表示为 <span class="arithmatex">\(f(\mathbf x)\)</span></li>
+</ol>
+</li>
+<li>
+<p>二元函数极限：<span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} f(x, y) = L\)</span> 表示在 f 的定义域点 (x, y) 沿着任何路径趋近于 (a, b) 时，f(x, y) 趋近于一个数 L</p>
+<ul>
+<li>其他表示法：<span class="arithmatex">\(\lim\limits_{\begin{smallmatrix}x\to a\\ y\to b\end{smallmatrix}} f(x,y)=L\)</span>；<span class="arithmatex">\(f(x,y)\to L\)</span> 当 <span class="arithmatex">\((x,y)\to (a,b)\)</span></li>
+<li>几何解释：由二元函数的几何定义有 f 在 <span class="arithmatex">\(D\subset \mathbb R^2\)</span> 上的每个点都能唯一映射到一维数轴上(设为 z)；如果给定 z 上的任意小区间 <span class="arithmatex">\((L-\epsilon, L+\epsilon)\)</span>，我们可以在 D 上找到一个以点 (a,b) 为中心，<span class="arithmatex">\(\delta &gt; 0\)</span> 为半径的圆盘 <span class="arithmatex">\(D_{\delta}\)</span>，使得 f 可以把所有圆盘 <span class="arithmatex">\(D_{\delta}\)</span> 上的点映射带区间 <span class="arithmatex">\((L-\epsilon, L+\epsilon)\)</span></li>
+</ul>
+</li>
+<li>二元函数极限[2]：对于任意 <span class="arithmatex">\(\epsilon&gt;0\)</span>，都存在 <span class="arithmatex">\(\delta&gt;0\)</span> 使得任意 <span class="arithmatex">\((x,y)\in\{(x,y)~|~\sqrt{(x-a)^2+(y-b)^2}&lt;\delta\}\)</span> 都满足 <span class="arithmatex">\(|f(x,y)-L|&lt;\epsilon\)</span>；记作 <span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} f(x, y) = L\)</span></li>
+<li>二元函数极限存在的矛盾条件：如果从路径 <span class="arithmatex">\(C_1:(x,y)\to(a,b)\)</span> 使 <span class="arithmatex">\(f(x,y)\to L_1\)</span>，而沿路径 <span class="arithmatex">\(C_2:(x,y)\to(a,b)\)</span> 使 <span class="arithmatex">\(f(x,y)\to L_2\)</span>，而 <span class="arithmatex">\(L_1\ne L_2\)</span>，那么 <span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} f(x, y) = L\)</span> 不存在</li>
+<li>二元函数极限计算策略：<ol>
+<li>法则：<span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} x = a, \lim\limits_{(x,y)\to (a,b)} y = b, \lim\limits_{(x,y)\to (a,b)} c = c\)</span></li>
+<li>分别沿着 <span class="arithmatex">\(y=m(x-a)+b\)</span> 和 <span class="arithmatex">\(x=a\)</span> 方向接近 <span class="arithmatex">\((a,b)\)</span>：将 <span class="arithmatex">\(y=m(x-a)+b\)</span> 或 <span class="arithmatex">\(y=b\)</span> 代入 <span class="arithmatex">\(f(x,y)\)</span>；得到 <span class="arithmatex">\(L_1=\lim\limits_{x\to a}f(x,m(x-a)+b)\)</span>，<span class="arithmatex">\(L_2=\lim\limits_{y\to b}f(a,y)\)</span>；参数 m 保留 或者 两类极限不相等，则极限不存在</li>
+<li>沿着曲线 <span class="arithmatex">\(g(x,y)=0\)</span> 接近（<span class="arithmatex">\(z=g(x,y)\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 有定义）；若存在沿着某个不同路径使得极限不相同，则极限不存在</li>
+<li>夹逼法则</li>
+<li>根据 <span class="arithmatex">\(\epsilon-\delta\)</span> 定义计算极限</li>
+</ol>
+</li>
+<li>二元函数的连续性：f 在点 <span class="arithmatex">\((a,b)\)</span> 处连续，当且仅当 <span class="arithmatex">\(\lim\limits_{(x,y)\to(a,b)} f(x,y) = f(a,b)\)</span>（曲面上没有断面 或 洞）</li>
+<li>连续性法则：<ol>
+<li>连续函数的 和差积商，导数 在定义域连续</li>
+<li>多项式 <span class="arithmatex">\(\sum c_ix_i^{a_i}y_i^{b_i}\)</span> 在任意处连续</li>
+<li>若 <span class="arithmatex">\(f(x,y)\)</span> 连续，<span class="arithmatex">\(g(x)\)</span> 在 f 的值域上连续，那么复合函数 <span class="arithmatex">\(h=g\circ f(x,y)\)</span> 也是连续函数</li>
+</ol>
+</li>
+<li>三元函数的极限：<span class="arithmatex">\(\lim\limits_{(x,y,z)\to(a,b,c)} f(x,y,z) = L\)</span> 表示在 f 的定义域内，当 <span class="arithmatex">\((x,y,z)\)</span> 以任意方式趋近 <span class="arithmatex">\((a,b,c)\)</span> 时，<span class="arithmatex">\(f(x,y,z)\)</span> 趋近于 L</li>
+<li>三元函数的极限[2]：对任意 <span class="arithmatex">\(\epsilon&gt;0\)</span>，都存在 <span class="arithmatex">\(\delta&gt;0\)</span> 对于任意 <span class="arithmatex">\((x,y,z)\in\{(x,y,z)~|~\sqrt{(x-a)^2+(y-b)^2+(z-c)^2}&lt;\delta\}\)</span> 使得 <span class="arithmatex">\(|f(x,y,z)-L|&lt;\epsilon\)</span></li>
+<li>三元函数的连续性：f 在 <span class="arithmatex">\((a,b,c)\)</span> 处连续，当且仅当 <span class="arithmatex">\(\lim\limits_{(x,y,z)\to(a,b,c)} f(x,y,z) = f(a,b,c)\)</span></li>
+<li>多元函数的极限：<span class="arithmatex">\(\lim\limits_{\mathbf x\to \mathbf a} f(\mathbf x) = L\)</span> 意味着对于任意 <span class="arithmatex">\(\epsilon&gt;0\)</span>，都存在 <span class="arithmatex">\(\delta&gt;0\)</span> 对于任意 <span class="arithmatex">\(\mathbf x\in\{\mathbf x~|~|\mathbf x-\mathbf a|&lt;\delta\}\)</span> 使得 <span class="arithmatex">\(|f(x,y,z)-L|&lt;\epsilon\)</span> （其中 f 定义在 <span class="arithmatex">\(D\subset \mathbb R^n\)</span> 上，<span class="arithmatex">\(\mathbf x = \langle x_1, x_2, \dots, x_n \rangle\)</span>，<span class="arithmatex">\(\mathbf a = \langle a_1, a_2, \dots, a_n\rangle\)</span>）</li>
+<li>
+<p>多元函数的连续性：f 在 <span class="arithmatex">\(\mathbf a\)</span> 处连续，当且仅当 <span class="arithmatex">\(\lim\limits_{\mathbf x \to \mathbf a} f(\mathbf x) = f(\mathbf a)\)</span></p>
+</li>
+<li>
+<p>二元函数的偏导数：f 对 x 和 y 偏导数分别为 <span class="arithmatex">\(f_x(x, y) = \lim\limits_{h\to 0}\frac {f(x+h, y)-f(x,y)}h\)</span>，<span class="arithmatex">\(f_y(x, y) = \lim\limits_{h\to 0}\frac {f(x, y+h)-f(x,y)}h\)</span></p>
+<ul>
+<li><span class="arithmatex">\(f_x(x,y)=f_x=\frac {\partial f}{\partial x}=\frac {\partial}{\partial x}f(x,y) = \frac {\partial z}{\partial x} = f_1 = D_1f = D_xf\)</span></li>
+<li><span class="arithmatex">\(f_y(x,y)=f_y=\frac {\partial f}{\partial y}=\frac {\partial}{\partial y}f(x,y) = \frac {\partial z}{\partial y} = f_2 = D_2f = D_2f\)</span></li>
+</ul>
+</li>
+<li>偏导数求导法则：对 <span class="arithmatex">\(x_i\)</span> 轴求偏导数时，仅将 <span class="arithmatex">\(x_i\)</span> 当作变量，其他轴的量当作常数</li>
+<li>二元偏导数的几何意义：<ol>
+<li><span class="arithmatex">\(f_x(a,b)\)</span> 表示曲线 <span class="arithmatex">\(z=f(x,y), y=b\)</span>（即 <span class="arithmatex">\(F(x,b,z)=0\)</span>） 的斜率</li>
+<li><span class="arithmatex">\(f_y(a,b)\)</span> 表示曲线 <span class="arithmatex">\(z=f(x,y), x=a\)</span>（即 <span class="arithmatex">\(F(a,y,z)=0\)</span>） 的斜率</li>
+</ol>
+</li>
+<li>三元偏导数：<span class="arithmatex">\(f_x(x,y,z) = \lim\limits_{h\to 0}\frac {f(x+h,y,z)-f(x,y,z)}h\)</span>，<span class="arithmatex">\(f_y(x,y,z) = \lim\limits_{h\to 0}\frac {f(x,y+h,z)-f(x,y,z)}h\)</span>，<span class="arithmatex">\(f_z(x,y,z) = \lim\limits_{h\to 0}\frac {f(x,y,z+h)-f(x,y,z)}h\)</span></li>
+<li>多元偏导数：<span class="arithmatex">\(f_i = \frac {\partial u}{\partial x_i} = \lim\limits_{h\to 0} \frac {f(x_1,\dots,x_{i-1},x_i+h,x_{i+1},\dots, x_n) - f(x_1,\dots,x_i,\dots, x_n)}h\)</span> （<span class="arithmatex">\(u = f(x_1,x_2,\dots, x_n)\)</span>）</li>
+<li>高阶导数：以 <span class="arithmatex">\(f(x,y)\)</span> 为例<ul>
+<li><span class="arithmatex">\((f_x)_x = f_{xx} = f_{11} = \frac {\partial }{\partial x}(\frac {\partial f}{\partial x}) = \frac {\partial ^2f}{\partial x^2} = \frac {\partial ^2z}{\partial x^2}\)</span></li>
+<li><span class="arithmatex">\((f_x)_y = f_{xy} = f_{12} = \frac {\partial }{\partial y}(\frac {\partial f}{\partial x}) = \frac {\partial ^2f}{\partial y\partial x} = \frac {\partial ^2z}{\partial y\partial x}\)</span></li>
+<li><span class="arithmatex">\((f_y)_x = f_{yx} = f_{21} = \frac {\partial }{\partial x}(\frac {\partial f}{\partial y}) = \frac {\partial ^2f}{\partial x\partial y} = \frac {\partial ^2z}{\partial x\partial y}\)</span></li>
+<li><span class="arithmatex">\((f_y)_y = f_{yy} = f_{22} = \frac {\partial }{\partial y}(\frac {\partial f}{\partial y}) = \frac {\partial ^2f}{\partial y^2} = \frac {\partial ^2z}{\partial y^2}\)</span></li>
+</ul>
+</li>
+<li>克莱罗定理：如果 <span class="arithmatex">\(f_{xy}, f_{yx}\)</span> 都在 <span class="arithmatex">\((a,b)\)</span> 的邻域内连续，那么 <span class="arithmatex">\(f_{xy}(a,b)=f_{yx}(a,b)\)</span><ul>
+<li>推广1：<span class="arithmatex">\(f_{xy},f_{yx}\)</span> 在定义域内连续，那么<span class="arithmatex">\(f_{xy}=f_{yx}\)</span></li>
+<li>推广2：f 是多元函数，<span class="arithmatex">\(f_1=f_{x_{a_1}x_{a_2}\dots}, f_2=f_{x_{b_1}x_{b_2}\dots}\)</span> 的高阶导数，它们在定义域连续，并且对于所有 <span class="arithmatex">\(x_j\)</span> 出现的次数相同；那么 <span class="arithmatex">\(f_1=f_2\)</span></li>
+</ul>
+</li>
+<li>
+<p>偏微分方程：如 拉普拉斯方程（<span class="arithmatex">\(\frac {\partial ^2u}{\partial x^2} + \frac {\partial ^2u}{\partial y^2} = 0\)</span>，<span class="arithmatex">\(e^x\sin y\)</span>），波动方程（<span class="arithmatex">\(\frac {\partial ^2u}{\partial t^2} = a^2 \frac {\partial ^2u}{\partial x^2}\)</span>，<span class="arithmatex">\(\sin (x-at)\)</span>），考伯-当拉斯产出方程</p>
+</li>
+<li>
+<p>曲面的切平面：<span class="arithmatex">\(f(x,y)\)</span> 有连续的偏导数，<span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\(P(x_0,y_0,z_0)\)</span> 处的切平面方程为 <span class="arithmatex">\(z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)\)</span>（法线：<span class="arithmatex">\(\mathbf n=\langle -f_1,-f_2,1\rangle\)</span>）</p>
+</li>
+<li>超几何体的“切体”：<span class="arithmatex">\(f:~\mathbb R^n\to \mathbb R\)</span> 有连续偏导数，<span class="arithmatex">\(u=f(\mathbf x)\)</span> 在 <span class="arithmatex">\(P(\mathbf x_0, u_0)\)</span> 处的切体方程为 <span class="arithmatex">\(\Delta u=f(\mathbf x)-f(\mathbf x_0) = \sum\limits_{i=1}^nf_i(\mathbf x_0)\cdot \Delta x_i\)</span> （其中 <span class="arithmatex">\(\mathbf x,\mathbf x_0\in\mathbb R^n\)</span>）</li>
+<li>二元函数的线性近似：f 在点 <span class="arithmatex">\((a,b)\)</span> 处的线性化为：<span class="arithmatex">\(L(x, y) = f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-b)\)</span>，称 f 在点 <span class="arithmatex">\((a,b)\)</span> 的 线性近似 或 切平面近似 为：<span class="arithmatex">\(f(x,y) \approx f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-b)\)</span></li>
+<li>n 元函数的线性近似：<span class="arithmatex">\(f:~\mathbb R^n\to \mathbb R\)</span> 在 <span class="arithmatex">\(\mathbf x_0\)</span> 处的线性近似为 <span class="arithmatex">\(f(\mathbf x) \approx f(\mathbf x_0) + \sum\limits_{i=1}^nf_i(\mathbf x_0)\cdot \Delta x_i\)</span><ul>
+<li>精确表达：<span class="arithmatex">\(f(\mathbf x) = f(\mathbf x_0) + \sum\limits_{i=1}^n(f_i(\mathbf x_0)+\epsilon_i)\cdot \Delta x_i\)</span></li>
+<li><span class="arithmatex">\(\epsilon_i\to0\)</span>时，<span class="arithmatex">\(\Delta \mathbf x\to\mathbf 0\)</span></li>
+</ul>
+</li>
+<li>可微的充分条件(二元函数)：<span class="arithmatex">\(f_x,f_y\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 存在并连续，则 f 在点 <span class="arithmatex">\((a,b)\)</span> 处可微</li>
+<li>二元函数全微分：可微函数 <span class="arithmatex">\(z=f(x,y)\)</span> 的全微分为 <span class="arithmatex">\(d_z = f_x(x,y)d_x + f_y(x,y)d_y = \frac {\partial z}{\partial x}d_x + \frac {\partial z}{\partial y}d_y\)</span></li>
+<li>
+<p>n 元函数全微分：可微函数 <span class="arithmatex">\(u=f(\mathbf x)\)</span> 的全微分为 <span class="arithmatex">\(d_u=\sum\limits_{i=1}^nf_i\cdot d_{x_i}\)</span></p>
+</li>
+<li>
+<p>链式法则：u 对 t 的偏导数为 <span class="arithmatex">\(\displaystyle \frac {\partial u}{\partial_{t}}=\sum\limits_{i=1}^nf_i\prod\limits_{j=2}^{k_i}\frac{\partial x_{i,j-1}}{\partial x_{i,j}}=\sum\limits_{i=1}^n\frac{\partial u}{\partial_{x_i}}\prod\limits_{j=2}^{k_i}\frac{\partial x_{i,j-1}}{\partial x_{i,j}}\)</span></p>
+<ul>
+<li>在“偏导图”中，对于第 i 条从变量 <span class="arithmatex">\(x_i\)</span> 出发以变量 t 为叶子结点的路径，<span class="arithmatex">\(k_i\)</span> 为路径上结点(变量)的数量，<span class="arithmatex">\(x_{i,j}\)</span> 为第 i 条路径的第 j 个变量；<span class="arithmatex">\(\displaystyle\frac{\partial x_{i,k_i-1}}{\partial x_{i,k_i}}=\frac{d_{x_{i,j-1}}}{d_{x_{i,j}}}\)</span>；<span class="arithmatex">\(x_{i,1}=x_i,x_{i,k_i}=t\)</span></li>
+<li>注：“偏导图”不一定是 <code>DAG</code>；“偏导图”没有重边</li>
+<li>如果所有路径的叶子结点都是 t，那么 <span class="arithmatex">\(\frac {\partial u}{\partial_{t}} = \frac {d_u}{d_t}\)</span></li>
+</ul>
+</li>
+<li>链式法则(推广)：<span class="arithmatex">\(\displaystyle \frac {\partial f_{a_1a_2\dots a_s}}{\partial_{t}}=\sum\limits_{i=1}^nf_{a_1a_2\dots a_is~i}\prod\limits_{j=2}^{k_i}\frac{\partial x_{i,j-1}}{\partial x_{i,j}}\)</span></li>
+<li>隐函数导数(一元)：有方程 <span class="arithmatex">\(F(x,y)\)</span> 使得 <span class="arithmatex">\(F(a,b)=0\)</span>；在点 <span class="arithmatex">\((a,b)\)</span> 处的邻域内（圆盘），<span class="arithmatex">\(F_x,F_y\)</span> 连续，<span class="arithmatex">\(y=f(x)\)</span> 可微；那么导数 <span class="arithmatex">\(\frac {d_y}{d_x}=-\frac {F_x}{F_y}\)</span> （<span class="arithmatex">\(F_y(a,b)\ne0\)</span>）</li>
+<li>
+<p>隐函数导数(二元)：有方程 <span class="arithmatex">\(F(x,y,z)\)</span> 使得 <span class="arithmatex">\(F(a,b,c)=0\)</span>；在点 <span class="arithmatex">\((a,b,c)\)</span> 处的邻域内（球体），<span class="arithmatex">\(F_x,F_y,F_z\)</span> 连续，<span class="arithmatex">\(z=f(x,y)\)</span> 可微；那么偏导数 <span class="arithmatex">\(\frac {\partial z}{\partial x}=-\frac {F_x}{F_z}\)</span>，<span class="arithmatex">\(\frac {\partial z}{\partial y}=-\frac {F_y}{F_z}\)</span></p>
+</li>
+<li>
+<p>方向导数(二元)：f 在 <span class="arithmatex">\((x_0,y_0)\)</span> 处关于向量 <span class="arithmatex">\(\mathbf u = \langle a,b\rangle\)</span> 的方向导数为：<span class="arithmatex">\(D_\mathbf u f(x_0,y_0)=\lim\limits_{h\to0}\frac{f(x_0+ha,y_0+hb)-f(x_0,y_0)}h\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\displaystyle D_{\mathbf i} f = f_x(x_0,y_0) = \lim\limits_{h\to 0}\frac {f(x_0+h,y_0)-f(x_0,y_0)}h\)</span>（<span class="arithmatex">\(\mathbf i = \langle 1,0 \rangle\)</span>）</li>
+<li><span class="arithmatex">\(\displaystyle D_{\mathbf j} f = f_y(x_0,y_0) = \lim\limits_{h\to 0}\frac {f(x_0,y_0+h)-f(x_0,y_0)}h\)</span>（<span class="arithmatex">\(\mathbf j = \langle 0,1 \rangle\)</span>）</li>
+<li>定理：<span class="arithmatex">\(D_{\mathbf u}f(x,y) = f_x(x,y)a + f_y(x,y)b\)</span></li>
+<li>令 <span class="arithmatex">\(a^2+b^2=1\)</span>，<span class="arithmatex">\(a=\cos \theta, b=\sin \theta\)</span> 有 <span class="arithmatex">\(D_{\mathbf u}f(x,y) = f_x(x,y)\cos\theta + f_y(x,y)\sin\theta\)</span></li>
+</ul>
+</li>
+<li>方向导数(n元)：<span class="arithmatex">\(f:~\mathbb R^n\to\mathbb R\)</span> 在 <span class="arithmatex">\(\mathbf x_0\)</span> 处关于向量 <span class="arithmatex">\(\mathbf u\)</span> 的方向导数为：<span class="arithmatex">\(D_\mathbf u f(x_0,y_0)=\lim\limits_{h\to0}\frac{f(\mathbf x_0+h\mathbf u)-f(\mathbf x_0)}h\)</span><ul>
+<li>定理：<span class="arithmatex">\(D_{\mathbf u}f(\mathbf x_0) = \sum\limits_{i=1}^nf_i(\mathbf x_0)\cdot u_i = \nabla f(\mathbf x_0)\cdot \mathbf u\)</span></li>
+</ul>
+</li>
+<li>梯度向量：<span class="arithmatex">\(f:~\mathbb R^n\to\mathbb R\)</span> 的梯度向量为 <span class="arithmatex">\(\mathbf {grad} f(\mathbf x) = \nabla f(\mathbf x) = \langle f_1(\mathbf x), f_2(\mathbf x), \dots, f_n(\mathbf x)\rangle\)</span></li>
+<li>方向导数的最大值：f 沿着单位向量 <span class="arithmatex">\(\mathbf u\)</span> 的方向导数 <span class="arithmatex">\(D_{\mathbf u}f(\mathbf x)\)</span> 取最大值，当且仅当 <span class="arithmatex">\(\mathbf u\)</span> 与 <span class="arithmatex">\(\nabla f\)</span> 同向；此时 <span class="arithmatex">\(\max\{D_{\mathbf u}f(\mathbf x)\} = |\nabla f(\mathbf x)|\)</span></li>
+<li>定理：对两边求导方程 <span class="arithmatex">\(F(\mathbf x) = F(\mathbf r(t)) = k\)</span> 有 <span class="arithmatex">\(\sum\limits_{i=1}^nF_i(\mathbf x)\frac {\partial x_i}{\partial t}=\nabla F(\mathbf x)\cdot \mathbf r'(t)=0\)</span></li>
+<li>
+<p>广义曲面的切平面 &amp; 法向量：有方程 <span class="arithmatex">\(F(x,y,z)=k\)</span></p>
+<ol>
+<li>切平面方程(三维)：<span class="arithmatex">\(\nabla F(\mathbf x_0)\cdot (\mathbf x-\mathbf x_0)=0\)</span></li>
+<li>法线方程(三维)：<span class="arithmatex">\(\frac {x-x_0}{F_x(\mathbf x_0)} = \frac {y-y_0}{F_y(\mathbf x_0)} = \frac {z-z_0}{F_z(\mathbf x_0)}\)</span></li>
+</ol>
+</li>
+<li>
+<p>极值(二维)：</p>
+<ol>
+<li>极大值：<span class="arithmatex">\(f(a,b)\)</span> 为一个极大值，当且仅当对于所有 <span class="arithmatex">\((a,b)\)</span> 临近的 <span class="arithmatex">\((x,y)\)</span> 均有 <span class="arithmatex">\(f(x,y)\le f(a,b)\)</span></li>
+<li>极小值：<span class="arithmatex">\(f(a,b)\)</span> 为一个极小值，当且仅当对于所有 <span class="arithmatex">\((a,b)\)</span> 临近的 <span class="arithmatex">\((x,y)\)</span> 均有 <span class="arithmatex">\(f(x,y)\ge f(a,b)\)</span></li>
+</ol>
+</li>
+<li>极值的必要条件(费马定理推广)：如果 f 在点 <span class="arithmatex">\((a,b)\)</span> 处取极值，则该点处 f 的一阶偏导数存在，且有 <span class="arithmatex">\(f_x(x,y)=f_y(x,y)=0\)</span></li>
+<li>临界点(驻点)：<span class="arithmatex">\((a,b)\)</span> 为临界点，当且仅当 <span class="arithmatex">\(f_x(a,b)=f_y(a,b)=0\)</span> 或者其中之一不存在</li>
+<li>鞍点：不是极值点和临界点</li>
+<li>二阶导数判别极值：f 的二阶导数在 <span class="arithmatex">\((a,b)\)</span> 的领域内连续，并且 <span class="arithmatex">\(f_x(a,b)=f_y(a,b)=0\)</span>；令 <span class="arithmatex">\(D = D(a,b) = f_{xx}(a,b)f_{yy}(a,b) - [f_{xy}(a,b)]^2 = \left|\begin{matrix}{f_{xx}}&amp;{f_{xy}}\\ {f_{yx}}&amp;{f_{yy}}\\ \end{matrix}\right|\)</span><ol>
+<li><span class="arithmatex">\(D&gt;0\)</span><ol>
+<li><span class="arithmatex">\(f_{xx}(a,b)&gt;0\)</span>：<span class="arithmatex">\(f(a,b)\)</span> 是极小值</li>
+<li><span class="arithmatex">\(f_{xx}(a,b)&lt;0\)</span>：<span class="arithmatex">\(f(a,b)\)</span> 是极大值</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(D&lt;0\)</span>：<span class="arithmatex">\(f(a,b)\)</span> 不是极值</li>
+<li><span class="arithmatex">\(D=0\)</span>：判别法无效</li>
+</ol>
+</li>
+<li>集合相关定义：<ol>
+<li>闭集：该集合与其所有边界点的并集</li>
+<li>开集：该集合与其边界的差集</li>
+<li>有界集：能被某个圆包含在其中的集合</li>
+</ol>
+</li>
+<li>极值定理(二维)：若 f 在有界闭集 D 上连续，则 f 在 D 中存在最大值以及最小值</li>
+<li>
+<p>计算最值：D 为有界集合</p>
+<ol>
+<li>求 f 在 D 上临界点处的函数值</li>
+<li>求 f 在 D 的边界点上的极值</li>
+<li>步骤 1 和 2 的最大的值为最大值，最小的则是最小值</li>
+</ol>
+</li>
+<li>
+<p>条件最值：</p>
+</li>
+<li>lagrange 乘子算法：</li>
+</ol>
 </div>
 </article>
 </div>

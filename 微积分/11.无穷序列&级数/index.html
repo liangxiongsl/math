@@ -917,7 +917,7 @@
 <p>若对 <span class="arithmatex">\(n\ge n_0\)</span> 有 <span class="arithmatex">\(a_n\le b_n \le c_n\)</span> 且 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n = \lim\limits_{n\to ∞} c_n = L\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} b_n = L\)</span></p>
 </blockquote>
 <div class="admonition note">
-<p class="admonition-title">\lim\limits_{n\to ∞} \frac {n!}{n^n}</p>
+<p class="admonition-title"><span class="arithmatex">\(\lim\limits_{n\to ∞} \frac {n!}{n^n}\)</span></p>
 <ul>
 <li>n! 在非整数域上没有定义，所以不能用 洛必达法则 或 泰勒展开</li>
 <li>可以考虑 夹逼定理</li>
@@ -987,9 +987,9 @@
 <p class="admonition-title">无穷级数</p>
 </div>
 <blockquote>
-<p>已知级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞\)</span>，令 <span class="arithmatex">\(s_n\)</span> 为其第 n 个部分和(前缀和)： <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n a_i\)</span></p>
+<p>已知级数 <span class="arithmatex">\(\sum\limits_{n=1}^∞a_n\)</span>，令 <span class="arithmatex">\(s_n\)</span> 为其第 n 个部分和(前缀和)： <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n a_i\)</span></p>
 <p>若序列 <span class="arithmatex">\(\{ s_n \}\)</span> 收敛且 <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n = s\)</span> 作为实数存在，则级数 <span class="arithmatex">\(\sum a_n\)</span> 称为收敛的，</p>
-<p>且我们即 <span class="arithmatex">\(a_1 + a_2 + \cdots + a_n + \cdots = s\)</span> 或 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n = s\)</span>数 s 称为级数的和；否则，级数被称为发散的</p>
+<p>且我们记 <span class="arithmatex">\(a_1 + a_2 + \cdots + a_n + \cdots = s\)</span> 或 <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n = s\)</span>数 s 称为级数的和；否则，级数被称为发散的</p>
 <p>注意： <span class="arithmatex">\(\sum\limits_{n=1}^∞ a_n = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n a_i\)</span></p>
 </blockquote>
 <div class="admonition tip">
@@ -1030,7 +1030,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ 2^{2i}3^{1-n}\)</span>，<span class="arithmatex">\(2.3\overline{17}=2.3171717\cdots\)</span> 均可转化为几何级数</li>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ 2^{2i}3^{1-i}\)</span>，<span class="arithmatex">\(2.3\overline{17}=2.3171717\cdots\)</span> 均可转化为几何级数</li>
 <li><span class="arithmatex">\(\sum\limits_{i=1}^∞ (f_{i+1} - f_{i})\)</span> 收敛，仅当 <span class="arithmatex">\(\lim\limits_{n\to ∞}f_{n+1}-f_1\)</span> 存在</li>
 </ul>
 </div>
@@ -1039,7 +1039,7 @@
 <ul>
 <li>证明调和级数 <span class="arithmatex">\(\sum\limits_{i=1}^∞ \frac 1i\)</span> 发散：</li>
 <li>令 <span class="arithmatex">\(s_n = \sum\limits_{i=1}^n \frac 1i\)</span>，有 <span class="arithmatex">\(s_{2^n} = \sum\limits_{i=1}^{2^n} \frac 1i\)</span></li>
-<li>其中 <span class="arithmatex">\(\displaystyle s_{\displaystyle 2^n} = \sum\limits_{i=1}^{2^n} \frac 1i = 1 + \sum\limits_{i=1}^n \sum\limits_{j=2^{i-1}+1}^{2^i} \frac 1j \ge 1 + \sum\limits_{i=1}^n(2^i-(2^{i-1}+1)-1) \frac {1}{2^i} = 1  + \sum\limits_{i=1}^n\frac {2^{i-1}}{2^i} = 1 + \frac n2\)</span></li>
+<li>其中 <span class="arithmatex">\(\displaystyle s_{\displaystyle 2^n} = \sum\limits_{i=1}^{2^n} \frac 1i = 1 + \sum\limits_{i=1}^n \sum\limits_{j=2^{i-1}+1}^{2^i} \frac 1j \ge 1 + \sum\limits_{i=1}^n(2^i-(2^{i-1}+1)+1) \frac {1}{2^i} = 1  + \sum\limits_{i=1}^n\frac {2^{i-1}}{2^i} = 1 + \frac n2\)</span></li>
 <li><span class="arithmatex">\(\lim\limits_{n\to ∞} 1+\frac n2\)</span> 发散 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} s_{\displaystyle 2^n}\)</span> 发散 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\lim\limits_{n\to ∞} s_n\)</span> 发散</li>
 </ul>
 </div>
@@ -1095,7 +1095,7 @@
 <p class="admonition-title">Note</p>
 <ul>
 <li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{n^2} \approx \frac {\pi^2}{6}\)</span> （由 Euler 证明）</li>
-<li>上述证明相当困难，但是可以用积分证明 <span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{n^2} &lt; 2\)</span></li>
+<li>上述证明相当困难，但是可以用积分证明 <span class="arithmatex">\(\frac32\le \sum\limits_{n=1}^∞ \frac 1{n^2} \le 2\)</span></li>
 <li><span class="arithmatex">\(\sum\limits_{n=1}^∞ \frac 1{\sqrt n}\)</span> 的敛散性也用类似的方法证明</li>
 </ul>
 </div>
@@ -1169,7 +1169,7 @@
 <p class="admonition-title">极限的比较判别法</p>
 </div>
 <blockquote>
-<p>假设 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 是各项都为正的计数，</p>
+<p>假设 <span class="arithmatex">\(\sum a_n\)</span> 和 <span class="arithmatex">\(\sum b_n\)</span> 是各项都为正的级数，</p>
 <p>若 <span class="arithmatex">\(\lim\limits_{n\to ∞}\frac {a_n}{b_n} = c\)</span> （c为有限数，且 <span class="arithmatex">\(c &gt; 0\)</span>），则两边都 收敛 或 发散</p>
 </blockquote>
 <div class="admonition 估计和">
@@ -1184,10 +1184,10 @@
 <p class="admonition-title">交错级数收敛性的判别</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(\sum\limits_{i=1}^∞ (-1)^{n-1}a_i\)</span> (<span class="arithmatex">\(a_i &gt; 0\)</span>)</p>
+<p><span class="arithmatex">\(\sum\limits_{i=1}^∞ (-1)^{i-1}a_i\)</span> (<span class="arithmatex">\(a_i &gt; 0\)</span>)</p>
 <p>满足：</p>
 <ol>
-<li>对所有 n，<span class="arithmatex">\(a_{i} \ge a_{i+1}\)</span></li>
+<li>对所有 n，<span class="arithmatex">\(a_{n} \ge a_{n+1}\)</span></li>
 <li><span class="arithmatex">\(\lim\limits_{n\to ∞}a_n = 0\)</span></li>
 </ol>
 <p>则，此级数收敛</p>
@@ -1201,7 +1201,7 @@
 <li><span class="arithmatex">\(b_n\ge b_{n+1} \ge 0\)</span></li>
 <li><span class="arithmatex">\(\lim\limits_{n\to ∞}b_n = 0\)</span></li>
 </ol>
-<p>则 <span class="arithmatex">\(|R_n| = |s - s_n| = \le b_{n+1}\)</span> （即 s 在 <span class="arithmatex">\(s_n\)</span> 两侧“波动”，误差为 <span class="arithmatex">\(b_{n+1}\)</span>）</p>
+<p>则 <span class="arithmatex">\(|R_n| = |s - s_n| \le b_{n+1}\)</span> （即 s 在 <span class="arithmatex">\(s_n\)</span> 两侧“波动”，误差为 <span class="arithmatex">\(b_{n+1}\)</span>）</p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1234,7 +1234,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
-<li><span class="arithmatex">\(\lim\limits_{i=1}^∞ \frac {\cos i}{i^2}\)</span> 不能直接用 比较判别法，因为不能保证对于所有 n 有 <span class="arithmatex">\(\cos i \ge 0\)</span>，应当间接地取绝对值证明其收敛性，再推出原级数收敛</li>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^∞ \frac {\cos i}{i^2}\)</span> 不能直接用 比较判别法，因为不能保证对于所有 n 有 <span class="arithmatex">\(\cos n \ge 0\)</span>，应当间接地取绝对值证明其收敛性，再推出原级数收敛</li>
 </ul>
 </div>
 <div class="admonition 比值判别法">
@@ -1271,7 +1271,7 @@
 <p>详见p51</p>
 </blockquote>
 <h3 id="7">7.判别级数收敛的策略</h3>
-<p>判别级数的收敛性 与 函数的积分 类似，并没有确定的，快速的准则来确定已知级数用什么方法判别，但任可以优化判别收敛性的效率</p>
+<p>判别级数的收敛性 与 函数的积分 类似，并没有确定的，快速的准则来确定已知级数用什么方法判别，但仍然可以优化判别收敛性的效率</p>
 <div class="admonition 级数判别策略">
 <p class="admonition-title">级数判别策略</p>
 </div>
@@ -1287,7 +1287,7 @@
 </ul>
 </li>
 <li>
-<p>若发现 <span class="arithmatex">\(\lim\limits_{n\to ∞} \ne 0\)</span>，那么就应该用 <mark class="critic">发散判别</mark></p>
+<p>若发现 <span class="arithmatex">\(\lim\limits_{n\to ∞} a_n\ne 0\)</span>，那么就应该用 <mark class="critic">发散判别</mark></p>
 </li>
 <li>若级数有如 <span class="arithmatex">\(\sum (-1)^{n-1} a_n\)</span> 或 <span class="arithmatex">\(\sum (-1)^n b_n\)</span> 的形式，那显然 <mark class="critic">交错级数收敛性判别法</mark> 有用</li>
 <li>
@@ -1434,7 +1434,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><span class="arithmatex">\(\tan^{-1} x = \int \frac 1{a+x^2}~d_x = \int \sum\limits_{n=0}^∞ (-x^2)^n ~d_x = C + \sum\limits_{n=0}^∞ (-1)^n\frac {x^{2n+1}}{2n+1} = \sum\limits_{n=0}^∞ (-1)^n\frac {x^{2n+1}}{2n+1}\)</span> （著名的 Gregory 格里高力级数，收敛区间为 [-1, 1]）</li>
+<li><span class="arithmatex">\(\tan^{-1} x = \int \frac 1{1+x^2}~d_x = \int \sum\limits_{n=0}^∞ (-x^2)^n ~d_x = C + \sum\limits_{n=0}^∞ (-1)^n\frac {x^{2n+1}}{2n+1} = \sum\limits_{n=0}^∞ (-1)^n\frac {x^{2n+1}}{2n+1}\)</span> （著名的 Gregory 格里高力级数，收敛区间为 [-1, 1]）</li>
 <li>x = 1时有 <span class="arithmatex">\(\frac {\pi}{4} = \sum\limits_{n=0}^∞ (-1)^n\frac {1}{2n+1}\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\pi = 4\sum\limits_{n=0}^∞ (-1)^n\frac {1}{2n+1}\)</span></li>
 </ul>
 </div>
@@ -1475,7 +1475,7 @@
 <ul>
 <li>什么时候 <span class="arithmatex">\(f_x\)</span> 可以用泰勒级数表示？（或 <span class="arithmatex">\(f_x\)</span> 何时能表示成幂级数的形式？）<ul>
 <li>设 <span class="arithmatex">\(R_n(x)\)</span> 为泰勒级数 <span class="arithmatex">\(\lim\limits_{n\to ∞} T_n(x)\)</span> 的余项，其中 <span class="arithmatex">\(T_n(x)\)</span> 为泰勒多项式</li>
-<li>若可以证明 <span class="arithmatex">\(\lim\limits_{n\to ∞} = 0\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} T_n(x) = \lim\limits_{n\to ∞} [f(x)-R_n(x)] = f(x) - \lim\limits_{n\to ∞} R_n(x) = f(x)\)</span></li>
+<li>若可以证明 <span class="arithmatex">\(\lim\limits_{n\to ∞}R_n = 0\)</span>，则 <span class="arithmatex">\(\lim\limits_{n\to ∞} T_n(x) = \lim\limits_{n\to ∞} [f(x)-R_n(x)] = f(x) - \lim\limits_{n\to ∞} R_n(x) = f(x)\)</span></li>
 </ul>
 </li>
 </ul>
@@ -1520,6 +1520,7 @@
 <ol>
 <li>近似计算函数积分</li>
 <li>求函数极限</li>
+<li>解微分方程</li>
 </ol>
 </div>
 <div class="admonition note">
@@ -1541,7 +1542,7 @@
 <li>而牛顿将 二项式定理 扩展到了 n 不再是正整数的情况！！！</li>
 </ul>
 </div>
-<p>计算 <span class="arithmatex">\((1+x)^k\)</span> 的 maclaurin 级数，得到 <span class="arithmatex">\((1+x)^k = \sum\limits_{i=0}^∞ \frac {\prod\limits_{j=0}^{i-1} (n-j)}{i!}\)</span></p>
+<p>计算 <span class="arithmatex">\((1+x)^k\)</span> 的 maclaurin 级数，得到 <span class="arithmatex">\((1+x)^k = \sum\limits_{i=0}^∞ \frac {\prod\limits_{j=0}^{i-1} (n-j)}{i!}x^i\)</span></p>
 <p><span class="arithmatex">\(|\frac {a_{i+1}}{a_i}| = |\frac {\prod\limits_{j=0}^{i} (k-j) / \prod\limits_{j=0}^{i-1} (k-j)} {(i+1)! / i!}| = \frac {|k-i|}{i+1} |x| = \frac {|1-\frac ki|}{1+\frac 1i}|x| \to |x|\)</span>，当 <span class="arithmatex">\(i\to ∞\)</span></p>
 <p>由比值判别法，|x|&lt;1 时收敛，|x|&gt;1 时发散</p>
 <div class="admonition 二项级数">

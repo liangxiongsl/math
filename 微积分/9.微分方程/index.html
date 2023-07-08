@@ -799,8 +799,8 @@
 <blockquote>
 <p>假设1：理想状态下，种群增长量 和 种群数量 成正比</p>
 <p>定义变量：<span class="arithmatex">\(t = 时间\)</span> (自变量)，<span class="arithmatex">\(P = 种群中的个体数量\)</span> (因变量)</p>
-<p>模型：<span class="arithmatex">\(\frac {d_P}{d_x} = kP\)</span>，P(t) &gt; 0</p>
-<p>可以得到它的一个解： <span class="arithmatex">\(P(y) = Ce^{kt}\)</span>，C &gt; 0</p>
+<p>模型：<span class="arithmatex">\(\frac {d_P}{d_t} = kP\)</span>，P(t) &gt; 0</p>
+<p>可以得到它的一个解： <span class="arithmatex">\(P(t) = Ce^{kt}\)</span>，C &gt; 0</p>
 <p>假设2： <span class="arithmatex">\(\frac {d_P}{d_t} \approx kP\)</span>，当 P 很小时；<span class="arithmatex">\(\frac {d_P}{d_t} &lt; 0\)</span>，当 P &gt; K 时</p>
 <p>模型（Logistic 逻辑斯蒂方程）：<span class="arithmatex">\(\frac {d_P}{d_t} = kP(1 - \frac PK)\)</span></p>
 </blockquote>
@@ -854,15 +854,17 @@
 <blockquote>
 <p>定义：曲线族的 正交轨线 是指和曲线族中的每条曲线都正交（夹角为直角）的曲线</p>
 <p>如：坐标为零点的圆 与 经过原点的直线 互为正交轨线；再如：某些限制下，椭圆 与 双曲线 正交</p>
-<p>一个正交轨线的获取方法：
-      1.  给定 原函数<span class="arithmatex">\(y_1\)</span>的隐函数，对两边求导，
-      2.  若匹配 分离变量法 的模式，则令正交轨线 <span class="arithmatex">\(\frac {d_{y_2}}{d_x} = -\frac 1{\frac {d_{y_1}}{d_x}}\)</span>
-      3.  将两边求积分得到关于 <span class="arithmatex">\(y_2\)</span> 的隐函数 （如果在此之前将 原函数曲线族依赖的常数 k 代换进 "2" 中，将得到不依赖于原函数曲线族的正交轨线）</p>
+<p>一个正交轨线的获取方法：</p>
+<ol>
+<li>给定 原函数<span class="arithmatex">\(y_1\)</span>的隐函数，对两边求导，</li>
+<li>若匹配 分离变量法 的模式，则令正交轨线 <span class="arithmatex">\(\frac {d_{y_2}}{d_x} = -\frac 1{\frac {d_{y_1}}{d_x}}\)</span></li>
+<li>将两边求积分得到关于 <span class="arithmatex">\(y_2\)</span> 的隐函数 （如果在此之前将 原函数曲线族依赖的常数 k 代换进 "2" 中，将得到不依赖于原函数曲线族的正交轨线）</li>
+</ol>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>对于任意曲线族，正交轨线可能不唯一，如 <span class="arithmatex">\(x=kx^2\)</span> 的正交轨线 可以是 <span class="arithmatex">\(e^{-2kx+C} = Ae^{-2kx}\)</span> 或 <span class="arithmatex">\(x^2 + \frac {y^2}{2} = C\)</span></li>
+<li>对于任意曲线族，正交轨线可能不唯一，如 <span class="arithmatex">\(x=ky^2\)</span> 的正交轨线 可以是 <span class="arithmatex">\(e^{-2kx+C} = Ae^{-2kx}\)</span> 或 <span class="arithmatex">\(x^2 + \frac {y^2}{2} = C\)</span></li>
 </ul>
 </div>
 <div class="admonition 混合问题">
@@ -870,10 +872,10 @@
 </div>
 <h3 id="4">4.指数增长和衰变</h3>
 <div class="admonition note">
-<p class="admonition-title">初值问题?</p>
+<p class="admonition-title">初值问题</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(\frac {d_y}{d_x} = ky\)</span>，<span class="arithmatex">\(y(0) = y_0\)</span> 的解为 <span class="arithmatex">\(y(t) = y_0 e^{kt&gt; }\)</span></p>
+<p><span class="arithmatex">\(\frac {d_y}{d_x} = ky\)</span>，<span class="arithmatex">\(y(0) = y_0\)</span> 的解为 <span class="arithmatex">\(y(t) = y_0 e^{kx}\)</span></p>
 </blockquote>
 <div class="admonition 应用">
 <p class="admonition-title">应用</p>

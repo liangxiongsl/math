@@ -769,7 +769,7 @@
 <article class="md-content__inner md-typeset">
 <h1>8.定积分的进一步应用</h1>
 <p>第 6 章介绍了积分的一些应用，如：面积，体积，功，平均值</p>
-<p>本章将讨论几何方面的应用————曲面长度，表面面积，物理/工程/生物/经济/统计 方面的应用（星球重心，水对大坝的压力，人体心脏向外输出血液的流量，打电话的平均等待时间等）</p>
+<p>本章将讨论几何方面的应用————曲线长度，表面面积，物理/工程/生物/经济/统计 方面的应用（星球重心，水对大坝的压力，人体心脏向外输出血液的流量，打电话的平均等待时间等）</p>
 <h3 id="1">1.弧长的计算</h3>
 <p>策略：将曲线 C 按 x 细分成无数小段，每一段的弧长近似为 <mark class="critic">直线长度</mark> <span class="arithmatex">\(|P_{i-1}P_{i}|\)</span>，那么曲线全长为 <span class="arithmatex">\(L = \lim\limits_{n\to +∞} \sum\limits_{i=1}^n |P_{i-1}P_i|\)</span></p>
 <p>1) 其中 <span class="arithmatex">\(|P_{i-1}P_i|\)</span> 部分必须要有一个 <span class="arithmatex">\(\Delta x\)</span>，因而我们将其通分得到 <span class="arithmatex">\(\frac {|P_{i-1}P_i| \Delta x}{\Delta x}\)</span> (根据定义 <span class="arithmatex">\(\Delta x = x_{i} - x_{i-1}\)</span>)</p>
@@ -805,7 +805,7 @@
 </ul>
 </div>
 <p>策略：将旋转曲面沿着 x 轴细分为无数小段，将每段区域的面积近似为 <mark class="critic">圆锥上某两段截面所切面积</mark></p>
-<p>想象 [<span class="arithmatex">\(x_{i-1}\)</span>, <span class="arithmatex">\(x_i\)</span>] 之间是某个圆锥被截断的区域，设 <span class="arithmatex">\(l_{i-1}, l_i=l_{i}+\Delta l\)</span> 分别为 <span class="arithmatex">\(x_{i-1}, x_i\)</span> 对应的底高（其中 <span class="arithmatex">\(\Delta l\)</span> 有两个含义：底高的变化量 或 近似的弧长），通过近似三角形得到： <span class="arithmatex">\(\displaystyle \frac {l_{i-1}}{y_{i-1}}  = \frac {l_{i-1}+\Delta l}{y_i} \implies (y_i - y_{i-1}) \cdot l_{i-1} = \Delta l \cdot y_{i-1}\)</span></p>
+<p>想象 [<span class="arithmatex">\(x_{i-1}\)</span>, <span class="arithmatex">\(x_i\)</span>] 之间是某个圆锥被截断的区域，设 <span class="arithmatex">\(l_{i-1}, l_i=l_{i-1}+\Delta l\)</span> 分别为 <span class="arithmatex">\(x_{i-1}, x_i\)</span> 对应的底高（其中 <span class="arithmatex">\(\Delta l\)</span> 有两个含义：底高的变化量 或 近似的弧长），通过近似三角形得到： <span class="arithmatex">\(\displaystyle \frac {l_{i-1}}{y_{i-1}}  = \frac {l_{i-1}+\Delta l}{y_i} \implies (y_i - y_{i-1}) \cdot l_{i-1} = \Delta l \cdot y_{i-1}\)</span></p>
 <p>再根据圆锥侧面积公式 <span class="arithmatex">\(s = \pi r l\)</span>，</p>
 <p>有： <span class="arithmatex">\(\Delta S = \pi [(l_{i-1}+\Delta l) \cdot y_i - l_{i-1} \cdot y_{i-1}] = \pi[l_{i-1} \cdot (y_i - y_{i-1}) + \Delta l \cdot y_i] = \pi[\Delta l \cdot y_{i-1} + \Delta l \cdot y_i] = \pi\Delta l\Delta y\)</span></p>
 <p>根据上一节弧长的结论： <span class="arithmatex">\(\Delta S = \pi\Delta (l\cdot y) = \pi \cdot \sqrt {1-(\frac {\Delta y}{\Delta x})^2} \Delta x \cdot (y_{i-1}+y_{i}) = 2\pi \sqrt {1+(\frac {\Delta y}{\Delta x})^2} \Delta x \cdot \frac {y_{i-1}+y_{i}}2\)</span></p>
@@ -851,7 +851,7 @@
 <li>概率密度函数 f：<span class="arithmatex">\(P(a \le X \le b) = \int_a^b f(x)~d_x\)</span></li>
 <li>f 的均值：<span class="arithmatex">\(\mu = \int_{-∞}^{+∞} xf(x)~d_x\)</span> （可以解释为 随机变量 X 的平均值 或 概率密度函数集中性的度量）</li>
 <li><span class="arithmatex">\(\overline x = \frac {\int_{-∞}^{+∞} xf(x)~d_x}{\int_{-∞}^{+∞} f(x)~d_x} = \int_{-∞}^{+∞} xf(x)~d_x = \mu\)</span></li>
-<li>正态分布： <span class="arithmatex">\(f(x) = \frac 1{\delta\sqrt {2\pi}} e^{-\frac {(x-\mu)^2}{2\delta ^2}}\)</span> （可证明该函数的均值为 <span class="arithmatex">\(\mu\)</span>，标准差为 <span class="arithmatex">\(\delta\)</span> (X的分散程度)）</li>
+<li>正态分布： <span class="arithmatex">\(\displaystyle f(x) = \frac 1{\delta\sqrt {2\pi}} e^{\displaystyle-\frac {(x-\mu)^2}{2\delta ^2}}\)</span> （可证明该函数的均值为 <span class="arithmatex">\(\mu\)</span>，标准差为 <span class="arithmatex">\(\delta\)</span> (X的分散程度)）</li>
 </ul>
 </div>
 </article>

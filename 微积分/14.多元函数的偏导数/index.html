@@ -810,7 +810,7 @@
 <p class="admonition-title">二元函数</p>
 </div>
 <blockquote>
-<p>二元函数 f 是指在集合 D 中的每个有序实数对 (x, y) 都有<strong>唯一</strong>的实数 f(x, y) 与前者对于</p>
+<p>二元函数 f 是指在集合 D 中的每个有序实数对 (x, y) 都有<strong>唯一</strong>的实数 f(x, y) 与前者对应</p>
 <p>这里 D 是函数的 <strong>定义域</strong>，f 能取到的值叫做 <strong>值域</strong>，记作 <span class="arithmatex">\(\{ f(x, y) | (x, y) \in D \}\)</span></p>
 <p>几何解释：二元函数 f 满足： 二维平面 <span class="arithmatex">\(\mathbb R^2\)</span> 的子集（即定义域）的每一个点能通过 f 唯一映射到一个一维数轴 <span class="arithmatex">\(\mathbb R\)</span> 上的点（这些点构成集合——值域）</p>
 </blockquote>
@@ -929,7 +929,7 @@
 </li>
 <li>
 <p>严格定义：令 f 是一个二元函数，定义域是 D，其中的点 (x,y) 任意趋近于 (a,b)，那么我们称当 (x,y) 趋近 (a,b) 时，f(x,y) 的极限是 L，记作： <span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} f(x, y) = L\)</span></p>
-<p>如果对于任意的数 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，有一个相应的 <span class="arithmatex">\(\delta &gt; 0\)</span> 使得 <span class="arithmatex">\(|f(x,y)-L|&lt;\epsilon\)</span>，这里 <span class="arithmatex">\((x,y)\in D\)</span> &amp; <span class="arithmatex">\(0&lt;\sqrt {(x-a)+(y-b)^2} &lt; \epsilon\)</span></p>
+<p>如果对于任意的数 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，有一个相应的 <span class="arithmatex">\(\delta &gt; 0\)</span> 使得 <span class="arithmatex">\(|f(x,y)-L|&lt;\epsilon\)</span>，这里 <span class="arithmatex">\((x,y)\in D\)</span> &amp; <span class="arithmatex">\(0&lt;\sqrt {(x-a)+(y-b)^2} &lt; \delta\)</span></p>
 </li>
 <li>
 <p>二元函数极限也可以表示为 <span class="arithmatex">\(\lim\limits_{\begin{smallmatrix}x\to a\\ y\to b\end{smallmatrix}} f(x,y)=L\)</span> 或 <span class="arithmatex">\(f(x,y)\to L\)</span> 当 <span class="arithmatex">\((x,y)\to (a,b)\)</span></p>
@@ -960,9 +960,9 @@
 <p class="admonition-title"><mark class="critic">二元函数极限策略</mark></p>
 <ol>
 <li>结论：<span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} x = a, \lim\limits_{(x,y)\to (a,b)} y = b, \lim\limits_{(x,y)\to (a,b)} c = c\)</span></li>
-<li>沿着数轴接近 (a,b)：<ul>
-<li>令 y=0(沿着 x 轴接近)，<span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} f(x, y) = L_1\)</span></li>
-<li>令 x=0(沿着 y 轴接近)，<span class="arithmatex">\(\lim\limits_{(x,y)\to (a,b)} f(x, y) = L_2\)</span></li>
+<li>沿着 <span class="arithmatex">\(x=a\)</span> 或 <span class="arithmatex">\(y=b\)</span> 接近 (a,b)：<ul>
+<li><span class="arithmatex">\(\lim\limits_{y\to b} f(a, y) = L_1\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x\to a} f(x, b) = L_2\)</span></li>
 <li>若 <span class="arithmatex">\(L_1\ne L_2\)</span>，则极限不存在，否则转到步骤 (3)</li>
 </ul>
 </li>
@@ -974,11 +974,11 @@
 <li>若存在 i 使得 <span class="arithmatex">\(L_4 \ne L_i\)</span> (<span class="arithmatex">\(i=1,2,3\)</span>)，则极限不存在，否则转到步骤 (5)</li>
 </ul>
 </li>
-<li>找到某个数 <span class="arithmatex">\(\epsilon&gt;0\)</span> 使得 <span class="arithmatex">\(|f(x,y) - L| &lt; \epsilon\)</span>，<span class="arithmatex">\(\epsilon = g_{\delta}\)</span>，并且 <span class="arithmatex">\(0 &lt; \sqrt {(x-a)^2 + (y-b)^2}&lt; \delta\)</span><ul>
+<li>找到某个数 <span class="arithmatex">\(\epsilon&gt;0\)</span> 使得 <span class="arithmatex">\(|f(x,y) - L| &lt; \epsilon\)</span>，<span class="arithmatex">\(\epsilon = g（\delta）\)</span>，并且 <span class="arithmatex">\(0 &lt; \sqrt {(x-a)^2 + (y-b)^2}&lt; \delta\)</span><ul>
 <li>我们记 <span class="arithmatex">\(F(x,y) = |f(x,y)-L|\)</span>（简记 <span class="arithmatex">\(F\)</span>），<span class="arithmatex">\(h(x,y) = \sqrt {(x-a)^2 + (y-b)^2}\)</span>（简记 <span class="arithmatex">\(h\)</span>）</li>
 <li>有 <span class="arithmatex">\(F(x,y) &lt; \epsilon\)</span>，<span class="arithmatex">\(h(x,y) &lt; \delta\)</span></li>
 <li>我们先找到 <span class="arithmatex">\(F &lt; \epsilon = F' \circ h\)</span>  （注：<span class="arithmatex">\(F \le \epsilon = F' \circ h\)</span> 的情况当然也成立）</li>
-<li>若找到了 <span class="arithmatex">\(\epsilon\)</span>，则对于 <span class="arithmatex">\(\epsilon = g_{\delta} &gt; 0\)</span>，有一个相应的 <span class="arithmatex">\(\delta = g^{-1}(\epsilon) &gt; 0\)</span> 使得 <span class="arithmatex">\(F(x,y) = |f(x,y)-L| &lt; \epsilon\)</span>，这里 <span class="arithmatex">\((x,y)\in D\)</span>，<span class="arithmatex">\(0 &lt; h(x,y) = \sqrt {(x-a)^2 + (y-b)^2} &lt; \epsilon\)</span></li>
+<li>若找到了 <span class="arithmatex">\(\epsilon\)</span>，则对于 <span class="arithmatex">\(\epsilon = g(\delta) &gt; 0\)</span>，有一个相应的 <span class="arithmatex">\(\delta = g^{-1}(\epsilon) &gt; 0\)</span> 使得 <span class="arithmatex">\(F(x,y) = |f(x,y)-L| &lt; \epsilon\)</span>，这里 <span class="arithmatex">\((x,y)\in D\)</span>，<span class="arithmatex">\(0 &lt; h(x,y) = \sqrt {(x-a)^2 + (y-b)^2} &lt; \epsilon\)</span></li>
 <li>如果上述命题能被满足，那么极限存在且为 L</li>
 </ul>
 </li>
@@ -1019,7 +1019,7 @@
 </div>
 <blockquote>
 <p><span class="arithmatex">\(\lim\limits_{(x,y,z)\to(a,b,c)} f(x,y,z) = L\)</span></p>
-<p>在 f 的定义域内，但 (x,y,z) 以任意方式趋近 (a,b,c) 时，f(x,y,z) 趋近于 L</p>
+<p>在 f 的定义域内，当 (x,y,z) 以任意方式趋近 (a,b,c) 时，f(x,y,z) 趋近于 L</p>
 <p>精确定义：对<strong>任意</strong> <span class="arithmatex">\(\epsilon &gt; 0\)</span>，则<strong>存在</strong> <span class="arithmatex">\(\delta &gt; 0\)</span>，使得 <span class="arithmatex">\(|f(x,y,z) - L| &lt; \epsilon\)</span>，这里 <span class="arithmatex">\(0 &lt; \sqrt {(x-a)^2 + (y-b)^2 + (z-c)^2} &lt; \delta\)</span>，(x,y,z) 在定义域内</p>
 </blockquote>
 <div class="admonition note">
@@ -1071,8 +1071,8 @@
 </div>
 <blockquote>
 <p>若 z=f(x,y)</p>
-<p><span class="arithmatex">\(f_x(a,b)\)</span> 表示曲线 f(x,y), y=b（即 F(x,z)=0） 的斜率</p>
-<p><span class="arithmatex">\(f_y(a,b)\)</span> 表示曲线 f(x,y), x=a（即 F(y,z)=0） 的斜率</p>
+<p><span class="arithmatex">\(f_x(a,b)\)</span> 表示曲线 <span class="arithmatex">\(z=f(x,y), y=b\)</span>（即 <span class="arithmatex">\(F(x,b,z)=0\)</span>） 的斜率</p>
+<p><span class="arithmatex">\(f_y(a,b)\)</span> 表示曲线 <span class="arithmatex">\(z=f(x,y), x=a\)</span>（即 <span class="arithmatex">\(F(a,y,z)=0\)</span>） 的斜率</p>
 </blockquote>
 <div class="admonition 三元偏导数">
 <p class="admonition-title">三元偏导数</p>
@@ -1111,12 +1111,12 @@
 <p class="admonition-title">克莱罗定理</p>
 </div>
 <blockquote>
-<p>在 f 的定义域 D 内含有点 (a,b)，如果 <span class="arithmatex">\(f_{xy} = f_{yx}\)</span> 都在 D 内连续，那么 <span class="arithmatex">\(f_{xy}(a,b) = f_{yx}(a,b)\)</span></p>
+<p>在 f 的定义域 D 内含有点 (a,b)，如果 <span class="arithmatex">\(f_{xy}, f_{yx}\)</span> 都在 D 内连续，那么 <span class="arithmatex">\(f_{xy}(a,b) = f_{yx}(a,b)\)</span></p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>如果对每个 元 最多导一次，那么 n 元函数至少有 <span class="arithmatex">\(2^n\)</span> 种本质相同偏导数，<span class="arithmatex">\(C_n^i\)</span> 个 i 阶导数</li>
+<li>如果对每个 元 最多导一次，那么 n 元函数至少有 <span class="arithmatex">\(2^n\)</span> 种本质不同偏导数，<span class="arithmatex">\(C_n^i\)</span> 个 i 阶导数</li>
 </ul>
 </div>
 <div class="admonition 偏微分方程举例">
@@ -1143,7 +1143,7 @@
 <p>一元微积分中，我们将函数曲线的一段小区间用它的切线近似</p>
 <p>而二元微积分中，我们将函数曲面的一段小区域用它的切面来近似</p>
 <p>多元可微函数同样也可以使用类似的近似方法</p>
-<p>令 z=f(x,y) 的曲面 C 分别与 <span class="arithmatex">\(y=y_0\)</span>，<span class="arithmatex">\(x=x_0\)</span> 相交于曲线 <span class="arithmatex">\(c_1,C_2\)</span>；点 <span class="arithmatex">\(P(x_0,y_0,z_0)\)</span> 位于切平面 G 与曲线 C 的交点</p>
+<p>令 z=f(x,y) 的曲面 C 分别与 <span class="arithmatex">\(y=y_0\)</span>，<span class="arithmatex">\(x=x_0\)</span> 相交于曲线 <span class="arithmatex">\(C_1,C_2\)</span>；点 <span class="arithmatex">\(P(x_0,y_0,z_0)\)</span> 位于切平面 G 与曲面 C 的交点</p>
 <p>由平面方程(12.5)有： <span class="arithmatex">\(G:~~A(x-x_0)+B(y-y_0)+C(z-z_0)=0\)</span> <span class="arithmatex">\(\implies z-z_0=a(x-x_0)+b(y-y_0)\)</span></p>
 <p>（<span class="arithmatex">\(a=-\frac AC,b=-\frac BC, C\ne0\)</span>）</p>
 <p>记 <span class="arithmatex">\(T_1,T_2\)</span> 分别为 <span class="arithmatex">\(C_1,C_2\)</span> 在点 P 处的切线</p>
@@ -1389,8 +1389,8 @@
 <p class="admonition-title">定义</p>
 </div>
 <blockquote>
-<p>如果对所有与 (a,b) 邻近的 (x,y) 均有 <span class="arithmatex">\(f(x,y)\le(a,b)\)</span>，则称 (a,b) 是二元函数 f 的极大值点 （或以 (a,b) 为圆心的某一圆周之内的所有点 (x,y)，均有 <span class="arithmatex">\(f(x,y)\le f(a,b)\)</span>），f(a,b) 为一个极大值</p>
-<p>如果对所有与 (a,b) 邻近的 (x,y) 均有 <span class="arithmatex">\(f(x,y)\ge(a,b)\)</span>，则称 (a,b) 是二元函数 f 的极小值点 （或以 (a,b) 为圆心的某一圆周之内的所有点 (x,y)，均有 <span class="arithmatex">\(f(x,y)\ge f(a,b)\)</span>），f(a,b) 为一个极小值</p>
+<p>如果对所有与 (a,b) 邻近的 (x,y) 均有 <span class="arithmatex">\(f(x,y)\le f(a,b)\)</span>，则称 (a,b) 是二元函数 f 的极大值点 （或以 (a,b) 为圆心的某一圆周之内的所有点 (x,y)，均有 <span class="arithmatex">\(f(x,y)\le f(a,b)\)</span>），f(a,b) 为一个极大值</p>
+<p>如果对所有与 (a,b) 邻近的 (x,y) 均有 <span class="arithmatex">\(f(x,y)\ge f(a,b)\)</span>，则称 (a,b) 是二元函数 f 的极小值点 （或以 (a,b) 为圆心的某一圆周之内的所有点 (x,y)，均有 <span class="arithmatex">\(f(x,y)\ge f(a,b)\)</span>），f(a,b) 为一个极小值</p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">定理(极值的必要条件)</p>
@@ -1403,7 +1403,7 @@
 <p class="admonition-title">临界点 或 驻点，鞍点</p>
 </div>
 <blockquote>
-<p>如果有 <span class="arithmatex">\(f_x(a,b)=0\)</span> 和 <span class="arithmatex">\(f_y(x,y)=0\)</span> 或其中之一不存在，</p>
+<p>如果有 <span class="arithmatex">\(f_x(a,b)=0\)</span> 和 <span class="arithmatex">\(f_y(a,b)=0\)</span> 或其中之一不存在，</p>
 <p>则称 (a,b) 为 f 的 <strong>临界点</strong> 或 <strong>驻点</strong></p>
 <p>如果一个 临界点 不是极值点，那么称为 <strong>鞍点</strong></p>
 </blockquote>
@@ -1439,7 +1439,7 @@
 <p class="admonition-title">两个变量的函数的 极值定理</p>
 </div>
 <blockquote>
-<p>若 f 在 <span class="arithmatex">\(\mathbb R^2\)</span> 中的有解闭集 D 上连续，则 f 在 D 中的某两个点 <span class="arithmatex">\((x_1,y_1)\)</span> 和 <span class="arithmatex">\((x_2,y_2)\)</span> 处取到最大值 <span class="arithmatex">\(f(x_1,y_1)\)</span> 和最小值 <span class="arithmatex">\(f(x_2,y_2)\)</span></p>
+<p>若 f 在 <span class="arithmatex">\(\mathbb R^2\)</span> 中的有界闭集 D 上连续，则 f 在 D 中的某两个点 <span class="arithmatex">\((x_1,y_1)\)</span> 和 <span class="arithmatex">\((x_2,y_2)\)</span> 处取到最大值 <span class="arithmatex">\(f(x_1,y_1)\)</span> 和最小值 <span class="arithmatex">\(f(x_2,y_2)\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">连续函数 f 在有界集合 D 上的最值</p>
