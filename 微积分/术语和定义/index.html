@@ -360,6 +360,16 @@
     14. 多元函数的偏导数
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#15">
+    15. 多重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#16">
+    16. 向量积分
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -856,6 +866,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#14">
     14. 多元函数的偏导数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#15">
+    15. 多重积分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#16">
+    16. 向量积分
   </a>
 </li>
 </ul>
@@ -1657,7 +1677,7 @@
 <li>右值：<span class="arithmatex">\(\displaystyle \int f(x)~d_x \approx R_n = \sum\limits_{i=1}^n \Delta x f(x_{i})\)</span></li>
 <li>中点方法：<span class="arithmatex">\(\displaystyle \int f(x)~d_x \approx M_n = \sum\limits_{i=1}^n \Delta x f(\overline x_{i})\)</span>，<span class="arithmatex">\(\overline x_i = \frac {x_{i-1}+x_i}2 = [x_{i-1}, x_i] 的中点\)</span></li>
 <li>梯形方法：<span class="arithmatex">\(\displaystyle \int f(x)~d_x \approx T_n = \sum\limits_{i=1}^n \Delta x \frac {f(x_{i-1})+f(x_i)}2\)</span></li>
-<li>辛普森法则：<span class="arithmatex">\(\displaystyle \int_a^b f(x)~d_x \approx S_n = \frac {\Delta x}3 \sum\limits_{i=1}^{\frac n2} (f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i}))\)</span></li>
+<li>辛普森法则：<span class="arithmatex">\(\displaystyle \int_a^b f(x)~d_x \approx S_n = \sum\limits_{i=1}^{\frac n2} \frac{f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i})}3\Delta x\)</span></li>
 </ol>
 </li>
 <li>
@@ -2524,6 +2544,7 @@
 <ul>
 <li><span class="arithmatex">\(f_x(x,y)=f_x=\frac {\partial f}{\partial x}=\frac {\partial}{\partial x}f(x,y) = \frac {\partial z}{\partial x} = f_1 = D_1f = D_xf\)</span></li>
 <li><span class="arithmatex">\(f_y(x,y)=f_y=\frac {\partial f}{\partial y}=\frac {\partial}{\partial y}f(x,y) = \frac {\partial z}{\partial y} = f_2 = D_2f = D_2f\)</span></li>
+<li>注：偏导数表示某个自变量发生微小变化时，因变量发生变化的快慢</li>
 </ul>
 </li>
 <li>偏导数求导法则：对 <span class="arithmatex">\(x_i\)</span> 轴求偏导数时，仅将 <span class="arithmatex">\(x_i\)</span> 当作变量，其他轴的量当作常数</li>
@@ -2590,7 +2611,7 @@
 <li>定理：<span class="arithmatex">\(D_{\mathbf u}f(\mathbf x_0) = \sum\limits_{i=1}^nf_i(\mathbf x_0)\cdot u_i = \nabla f(\mathbf x_0)\cdot \mathbf u\)</span></li>
 </ul>
 </li>
-<li>梯度向量：<span class="arithmatex">\(f:~\mathbb R^n\to\mathbb R\)</span> 的梯度向量为 <span class="arithmatex">\(\mathbf {grad} f(\mathbf x) = \nabla f(\mathbf x) = \langle f_1(\mathbf x), f_2(\mathbf x), \dots, f_n(\mathbf x)\rangle\)</span></li>
+<li>梯度向量：<span class="arithmatex">\(f:~\mathbb R^n\to\mathbb R\)</span> 的梯度向量为 <span class="arithmatex">\(\mathbf {grad} f(\mathbf x) = \nabla f(\mathbf x) = \langle f_1(\mathbf x), f_2(\mathbf x), \dots, f_n(\mathbf x)\rangle\)</span> （<span class="arithmatex">\(\nabla f~:~\mathbb R^n\to \mathbb R^n\)</span>）</li>
 <li>方向导数的最大值：f 沿着单位向量 <span class="arithmatex">\(\mathbf u\)</span> 的方向导数 <span class="arithmatex">\(D_{\mathbf u}f(\mathbf x)\)</span> 取最大值，当且仅当 <span class="arithmatex">\(\mathbf u\)</span> 与 <span class="arithmatex">\(\nabla f\)</span> 同向；此时 <span class="arithmatex">\(\max\{D_{\mathbf u}f(\mathbf x)\} = |\nabla f(\mathbf x)|\)</span></li>
 <li>定理：对两边求导方程 <span class="arithmatex">\(F(\mathbf x) = F(\mathbf r(t)) = k\)</span> 有 <span class="arithmatex">\(\sum\limits_{i=1}^nF_i(\mathbf x)\frac {\partial x_i}{\partial t}=\nabla F(\mathbf x)\cdot \mathbf r'(t)=0\)</span></li>
 <li>
@@ -2636,9 +2657,232 @@
 </ol>
 </li>
 <li>
-<p>条件最值：</p>
+<p>条件最值：在满足 <span class="arithmatex">\(g_i(\mathbf x)=k_i\)</span> 的条件下，计算 <span class="arithmatex">\(f(\mathbf x)\)</span> 的最值 （<span class="arithmatex">\(f:~\mathbb R^n\to \mathbb R\)</span>，<span class="arithmatex">\(i\le n\)</span>）</p>
+<ul>
+<li>限制条件也可能是不等式</li>
+</ul>
 </li>
-<li>lagrange 乘子算法：</li>
+<li>lagrange 乘子算法：<span class="arithmatex">\(\begin{cases}g_i(\mathbf x)=k_i\\\nabla f(\mathbf x)=\sum\limits_{i=1}^m\lambda_i\nabla g_i(\mathbf x)\end{cases}\)</span><ul>
+<li><span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\begin{cases}g_1(\mathbf x)=k_1\\g_2(\mathbf x)=k_2\\\vdots\\g_m(\mathbf x)=k_m\\f_1'(\mathbf x)=\sum\limits_{i=1}^m\lambda_i g_{i,1}'(\mathbf x)\\f_1'(\mathbf x)=\sum\limits_{i=2}^m\lambda_i g_{i,2}'(\mathbf x)\\\vdots\\f_n'(\mathbf x)=\sum\limits_{i=1}^m\lambda_i g_{i,n}'(\mathbf x)\end{cases}\)</span></li>
+<li>上述方程解出的关于 <span class="arithmatex">\(\mathbf x\)</span> 的解集 <span class="arithmatex">\(S_\mathbf x\)</span> 中，<span class="arithmatex">\(f(\mathbf x)\)</span> 取最小的值为最小值，反之为最大值</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="15">15. 多重积分</h3>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>有切线，有切面，为什么没有切体？</li>
+<li>有曲线积分，有曲面积分，为什么没有曲体积分？</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">15. 多重积分</p>
+<ol>
+<li>二重积分(体积)：<span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{i}^*, y_{j}^*)\Delta A\)</span> <ul>
+<li>其中 <span class="arithmatex">\(R=[a,b]\times[c,d],\Delta x=\frac{b-a}n,\Delta y=\frac{d-c}m,\Delta A=\Delta x\Delta y\)</span>；<span class="arithmatex">\(x_i=a+i\Delta x,y_j=c+j\Delta y\)</span>，<span class="arithmatex">\(x_i^*\in[x_{i-1},x_i], y_j^*\in[y_{j-1},y_j]\)</span></li>
+<li>上述极限是 <span class="arithmatex">\(z=f(x,y)\)</span> 在区域 <span class="arithmatex">\(R\)</span> 上的体积，仅当 <span class="arithmatex">\(f(x,y)&gt;0\)</span> 在 <span class="arithmatex">\(R\)</span> 上恒成立</li>
+</ul>
+</li>
+<li>二重积分[2]：对于任意 <span class="arithmatex">\(\epsilon&gt;0\)</span>，总存在 <span class="arithmatex">\(N&gt;0\)</span> 使得任意 <span class="arithmatex">\(n,m&gt;N\)</span> 都有 <span class="arithmatex">\(|\iint\limits_R f(x,y)~d_A - \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(x_{i}^*, y_{j}^*)\Delta A|&lt;\epsilon\)</span> （仅当 f 是连续函数 或 极值良好的非连续函数；其中 <span class="arithmatex">\((x_i^*,y_j^*)\)</span> 是 <span class="arithmatex">\(R_{ij}\)</span> 中的样本点）</li>
+<li>二重积分样本点：<ol>
+<li>右上角：<span class="arithmatex">\((x_i^*,y_j^*)=(x_i,y_j)\)</span></li>
+<li>中点：<span class="arithmatex">\((x_i^*,y_j^*)=(\overline x_i,\overline y_j)=(x_{i-1}+\frac12\Delta x,y_{j-1}+\frac12\Delta y)\)</span></li>
+<li>梯形法则：<span class="arithmatex">\(f(x_i^*,y_j^*)=\overline z_{ij}=\frac{f(x_{i-1},y_{j-1})+f(x_i,y_j)}2\)</span></li>
+<li>辛普森法则：<span class="arithmatex">\(\displaystyle S_{n,m}=\sum\limits_{i=1}^{\frac n2}\sum\limits_{j=1}^{\frac m2} \frac{[f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i})]\cdot[f(y_{2i-2}) + 4f(y_{2i-1}]}9\Delta A\)</span></li>
+</ol>
+</li>
+<li>函数的平均值：<span class="arithmatex">\(\overline f=\frac{\iint\limits_Rf(x,y)~d_A}{A(R)}\)</span></li>
+<li>
+<p>二重积分的性质：</p>
+<ol>
+<li><span class="arithmatex">\(\iint\limits_R [f(x,y) + g(x,y)]~d_A = \iint\limits_R f(x,y)~d_A + \iint\limits_R g(x,y)~d_A\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_R cf(x,y)~d_A = c\iint\limits_R f(x,y)~d_A\)</span></li>
+<li>对于所有 <span class="arithmatex">\((x,y)\in R\)</span> 都有 <span class="arithmatex">\(f(x,y) \ge g(x,y)\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A \ge \iint\limits_R g(x,y)~d_A\)</span></li>
+</ol>
+</li>
+<li>
+<p>二重积分1(累次积分 / 部分积分)：二元函数 f 在 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span> 上的累次积分，如：</p>
+<ol>
+<li>对 f 从 <span class="arithmatex">\(y=c\)</span> 到 <span class="arithmatex">\(y=d\)</span> 部分积分得到<span class="arithmatex">\(A(x)\)</span>：<span class="arithmatex">\(\int_c^d f(x,y)~d_y=A(x)\)</span></li>
+<li>对 A(x) 从 <span class="arithmatex">\(x=a\)</span> 到 <span class="arithmatex">\(x=b\)</span> 积分得到 <span class="arithmatex">\(\int_a^b A(x)~d_x = \int_a^b[\int_c^d f(x,y)~d_y]~d_x\)</span></li>
+<li>性质：<span class="arithmatex">\(\int_a^b[\int_c^d f(x,y)~d_y]~d_x = \int_a^b\int_c^d f(x,y)~d_y~d_x\)</span>，<span class="arithmatex">\(\int_c^d[\int_a^b f(x,y)~d_x]~d_y = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span></li>
+</ol>
+</li>
+<li>Fubini 傅比尼定理：如果 f 是定义在 <span class="arithmatex">\(R = \{(x,y)|a\le x\le b, c\le y\le d\}\)</span> 上的连续函数，则 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_a^b\int_c^d f(x,y)~d_y~d_x = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span><ul>
+<li>推广：当 f 是 R 上的只在有限多条光滑曲线上不连续的有界函数，且对 f 的累次积分存在时，上述定理仍然成立</li>
+</ul>
+</li>
+<li>
+<p>类似积分的性质：<span class="arithmatex">\(\int\limits_R f(x)g(y)~d_A = \int_a^b f(x)~d_x\int_c^d g(y)~d_y\)</span></p>
+</li>
+<li>
+<p>一般区域上的积分：详见 (10)-(12)</p>
+</li>
+<li>二重积分2.1(第 I 类平面区域)：f 在 <span class="arithmatex">\(D = \{(x,y)|a\le x\le b, g_1(x)\le y\le g_2(x)\}\)</span> 上连续，则 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \int_a^b\int_{g_1(x)}^{g_2(x)} f(x,y)~d_y~d_x\)</span></li>
+<li>二重积分2.2(第 II 类平面区域)：f 在 <span class="arithmatex">\(D = \{(x,y)|c\le y\le d, h_1(y)\le x\le h_2(y)\}\)</span> 上连续，则 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \int_c^d\int_{h_1(y)}^{h_2(y)} f(x,y)~d_x~d_y\)</span></li>
+<li>
+<p>一般区域上积分的性质：</p>
+<ol>
+<li><span class="arithmatex">\(\iint\limits_D [f(x,y)+g(x,y)]~d_A = \iint\limits_D f(x,y)~d_A + \iint\limits_D g(x,y)~d_A\)</span>，<span class="arithmatex">\(\iint\limits_D cf(x,y)~d_A = c\iint\limits_D f(x,y)~d_A\)</span></li>
+<li>对于所有 <span class="arithmatex">\((x,y)\in D\)</span> 都有 <span class="arithmatex">\(f(x,y)\ge g(x,y)\)</span>，那么 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A \ge \iint\limits_D g(x,y)~d_A\)</span></li>
+<li><span class="arithmatex">\(D_1,D_2\)</span> 是 D 的一个划分（<span class="arithmatex">\(D_1 \cup D_2 = D, D_1 \cap D_2 = \emptyset\)</span>），那么 <span class="arithmatex">\(\iint\limits_D f(x,y)~d_A = \iint\limits_{D_1} f(x,y)~d_A + \iint\limits_{D_2} f(x,y)~d_A\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_D 1~d_A = A(D)\)</span></li>
+<li>对于所有 <span class="arithmatex">\((x,y)\in D\)</span> 都有 <span class="arithmatex">\(m \le f(x,y) \le M\)</span>，那么 <span class="arithmatex">\(mA(D) \le \iint\limits_D f(x,y)~d_A \le MA(D)\)</span></li>
+</ol>
+</li>
+<li>
+<p>二重积分3（极坐标; 体积）：f 在极矩形 <span class="arithmatex">\(R=\{(\theta,r)~|~\alpha\le \theta\le \beta, 0\le a\le r\le b\}\)</span> 上的积分为 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(r_i^*\cos {\theta_j^*}, r_i^*\sin {\theta_j^*})\Delta A_{ij} = \int_\alpha^\beta\int_a^bf(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span></p>
+<ul>
+<li>几何证明：<span class="arithmatex">\(\Delta A_{ij}\)</span> 为差分的扇形区域，近似矩形的长宽分别为 <span class="arithmatex">\(\Delta r\)</span>，<span class="arithmatex">\(r\Delta\theta\)</span>，故而 <span class="arithmatex">\(\Delta A_{ij}\approx r\Delta r\Delta\theta\)</span></li>
+<li>代数证明：<span class="arithmatex">\(\Delta A_{ij}=\frac12[(\theta+\Delta\theta)(r+\Delta r)^2+\theta r^2-\theta(r+\Delta r)^2-(\theta+\Delta\theta)r^2]=\frac12\Delta\theta[(r+\Delta r)^2-r^2]=\frac12\Delta\theta(2r\Delta r+\Delta r^2)=\Delta\theta\Delta r(r+\frac12\Delta r)\approx r\Delta r\Delta\theta\)</span></li>
+<li>注1：<span class="arithmatex">\(0\le \beta - \alpha \le 2\pi\)</span></li>
+<li>注2：实际上第一层循环应该迭代 <span class="arithmatex">\(\theta\)</span>？最内层循环中 <span class="arithmatex">\(\theta\)</span> 是常量，而 r 是变量？</li>
+</ul>
+</li>
+<li>二重积分4.1（第 I 类极矩形区域）：f 在 <span class="arithmatex">\(D = \{(r,\theta) | \alpha\le\theta\le\beta, h_1(\theta)\le r\le h_2(\theta)\}\)</span> 内的积分为 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}f(r\cos\theta, r\sin\theta)r~d_rd_\theta\)</span><ul>
+<li><span class="arithmatex">\(A(D) = \iint\limits_D 1~d_A = \int_\alpha^\beta \int_0^{h(\theta)}r~d_rd_\theta = \int_\alpha^\beta \frac 12[h(\theta)]^2~d_\theta\)</span></li>
+<li>注：相关内容参见 10.9-10.17</li>
+</ul>
+</li>
+<li>
+<p>二重积分4.2（第 II 类极矩形区域？）：f 在 <span class="arithmatex">\(D=\{(r,\theta)~|~a\le r\le b,g_1(r)\le\theta\le g_2(r)\}\)</span> 内的积分为 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_a^b\int_{g_1(r)}^{g_2(r)}f(r\cos\theta, r\sin\theta)r~d_\theta d_r\)</span></p>
+<ul>
+<li>正确性不确定</li>
+</ul>
+</li>
+<li>
+<p>二重积分的应用：体积(f 为高)，质量(f 为密度)，电荷量(f 为电荷密度)，质心，惯性矩</p>
+</li>
+<li>二维密度 &amp; 质量<ul>
+<li>二维密度：由两个变量决定的密度，如：薄片单位面积上的质量密度，区域上单位面积的电荷密度</li>
+<li>广义质量：如 二维带电量 由 电荷密度 积分得到，二维质量 由 二维密度 积分得到</li>
+<li><span class="arithmatex">\(m = \lim\limits_{k,l\to ∞}\sum\limits_{i=1}^k\sum\limits_{j=1}^l\rho(x_{ij}^*, y_{ij}^*)\Delta A = \iint\limits_D \rho(x,y)~d_A\)</span></li>
+</ul>
+</li>
+<li>力矩 &amp; 质心<ul>
+<li>力矩：质点的质量与其到某条轴的距离的乘积，记为 <span class="arithmatex">\(M_d = m r_d\)</span></li>
+<li>由 <span class="arithmatex">\(M_d=\lim\limits_{n,m\to∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\rho(x_i^*,y_j^*)\Delta A_{ij}\cdot r_d = \iint\limits_D r_d\rho(x,y)d_A\)</span> 有 <span class="arithmatex">\(M_y = \iint\limits_D x\rho(x,y)~d_A\)</span></li>
+<li>质心：<span class="arithmatex">\((\overline x, \overline y) = (\frac{M_y}m, \frac{M_x}m) = (\frac 1m\iint\limits_D x\rho(x,y)~d_A, \frac 1m\iint\limits_D y\rho(x,y)~d_A)\)</span></li>
+</ul>
+</li>
+<li>
+<p>惯性矩 &amp; 旋转半径：</p>
+<ul>
+<li>惯性矩(二阶矩)：质点的惯性矩定义为 <span class="arithmatex">\(I_d = m r_d^2\)</span>（<span class="arithmatex">\(r_d\)</span> 为质点到 坐标轴 d 或 点 d 的距离）</li>
+<li>关于轴的惯性矩：<span class="arithmatex">\(I_x = \iint\limits_D y^2\rho(x,y)~d_A, I_y = \iint\limits_D x^2\rho(x,y)~d_A\)</span></li>
+<li>关于原点的惯性矩：<span class="arithmatex">\(I_O = \iint\limits_D x^2+y^2\rho(x,y)~d_A\)</span>（<span class="arithmatex">\(I_O = I_x + I_y\)</span>）</li>
+<li>旋转半径：薄片对一条轴的旋转半径满足 <span class="arithmatex">\(m R_d^2 = I_d\)</span></li>
+</ul>
+</li>
+<li>
+<p>曲面积分：<span class="arithmatex">\(\Delta T_{ij}\)</span> 是 <span class="arithmatex">\(\Delta A_{ij}\)</span> 映射到 <span class="arithmatex">\(z=f(x,y)\)</span> 上对应的近似曲面面积；<span class="arithmatex">\(\mathbf a = \langle \Delta x, 0, \Delta x f_x\rangle\)</span>，<span class="arithmatex">\(\mathbf b = \langle 0, \Delta y, \Delta y f_y\rangle\)</span> 是决定 <span class="arithmatex">\(\Delta T_{ij}\)</span> 边界的向量</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf a \times \mathbf b = \left|\begin{array}{c c c}{\mathbf i}&amp;{\mathbf j}&amp;{\mathbf k}\\ {\Delta x}&amp;{0}&amp;f_{x}'\Delta x\\ {0}&amp;{\Delta y}&amp;f_{y}'\Delta y\\ \end{array}\right|= -f_x'\Delta x\Delta y \mathbf i - f_y'\Delta x\Delta y \mathbf j + \Delta x\Delta y \mathbf k= (-f_x' \mathbf i - f_y' \mathbf j + \mathbf k)\Delta A_{ij}\)</span></li>
+<li><span class="arithmatex">\(\Delta T_{ij}=|a\times b|=\sqrt{f_x'^2+f_y'^2+1}\Delta A_{ij}\)</span></li>
+<li><span class="arithmatex">\(A(S) = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^∞\sum\limits_{j=1}^∞\Delta T_{ij} = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^∞\sum\limits_{j=1}^∞\sqrt {([f_x(x_i,y_j)]^2 + [f_y(x_i,y_j)]^2 + 1)}\Delta A_{ij}\)</span></li>
+<li>因而 <span class="arithmatex">\(z=f(x,y)\)</span> 在 D 内的曲面面积为 <span class="arithmatex">\(A(S) = \iint\limits_D \sqrt {([f_x(x_i,y_j)]^2 + [f_y(x_i,y_j)]^2 + 1)}\Delta A = \iint\limits_D \sqrt {1 + (\frac {\partial z}{\partial x})^2 + (\frac {\partial z}{\partial y})^2}~d_A\)</span></li>
+</ul>
+</li>
+<li>
+<p>三重积分：<span class="arithmatex">\(\iiint\limits_B f(x,y,z)~d_V = \lim\limits_{n,m,o\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(x_i^*, y_j^*, z_k^*)\Delta V\)</span></p>
+<ul>
+<li>其中 <span class="arithmatex">\(B=[a,b]\times[c,d]\times[r,s],\Delta x=\frac{b-a}n,\Delta y=\frac{d-c}m,\Delta z=\frac{s-r}o,\Delta V=\Delta x\Delta y\Delta z\)</span>；<span class="arithmatex">\(x_i=a+i\Delta x,y_j=c+j\Delta y,z_k=r+k\Delta z\)</span>，<span class="arithmatex">\(x_i^*\in[x_{i-1},x_i], y_j^*\in[y_{j-1},y_j], z_k^*\in[z_{k-1},z_k]\)</span></li>
+<li>上述极限是 <span class="arithmatex">\(u=f(x,y,z)\)</span> 在区域 <span class="arithmatex">\(V\)</span> 上的积分，根据 f 的含义该积分的值表现出不同含义</li>
+</ul>
+</li>
+<li>fubini 定理(三重积分)：<span class="arithmatex">\(\iiint\limits_B f(x,y,z)~d_V = \int_r^s\int_c^d\int_a^b f(x,y,z)~d_xd_yd_z\)</span><ul>
+<li>注：调换 x, y, z 的积分顺序总共有 <span class="arithmatex">\(3!=6\)</span> 种等值的公式</li>
+</ul>
+</li>
+<li>三重积分2.1(第 I 类立方体区域)：假设<strong>有界区域</strong>(几乎处处光滑) <span class="arithmatex">\(E \subset B\)</span>，而且 f 是连续的，那么 <span class="arithmatex">\(E = \{(x,y,z) | (x,y)\in D, u_1(x,y)\le z\le u_2(x,y)\}\)</span> （其中假定 <span class="arithmatex">\(u_1,u_2\)</span> 是能描述 E 的上下边界的曲面；D 由 x 和 y 共同描述），并且 E 是一个简单区域(能被一个三重积分描述)<ul>
+<li>若 D 是第 I 类平面区域，则 <span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \int_{a}^{b}\int_{g_1(x)}^{g_2(x)}\int_{u_1(x,y)}^{u_2(x,y)} f(x,y,z)~d_zd_yd_x\)</span></li>
+</ul>
+</li>
+<li>
+<p>应用</p>
+<ol>
+<li>区域体积：<span class="arithmatex">\(V(E) = \iiint\limits_E d_V\)</span></li>
+<li>物体的广义质量：<span class="arithmatex">\(m=\iiint\limits_E \rho(x,y,z)~d_V\)</span> （<span class="arithmatex">\(\rho(x,y,z)\)</span> 为广义三维密度函数）</li>
+<li>物体关于三个坐标平面的动量为：<span class="arithmatex">\(\displaystyle M_{yz}=\iiint\limits_E x\rho(x,y,z)~d_V, M_{xz}=\iiint\limits_E y\rho(x,y,z)~d_V, M_{xy}=\iiint\limits_E z\rho(x,y,z)~d_V\)</span></li>
+<li>物体质心为 <span class="arithmatex">\((\overline x, \overline y, \overline z) = (\displaystyle \frac {M_{yz}}{m}, \frac {M_{xz}}{m}, \frac {M_{xy}}{m})\)</span>（如果 f 是常数，那么立体的质量质心称为 区域 E 的立体形心）</li>
+<li>关于三个坐标轴的转动惯量：<span class="arithmatex">\(\displaystyle I_x = \iiint\limits_E (y^2+z^2)\rho(x,y,z)~d_V\)</span>，<span class="arithmatex">\(\displaystyle I_y = \iiint\limits_E (x^2+z^2)\rho(x,y,z)~d_V\)</span>，<span class="arithmatex">\(\displaystyle I_z = \iiint\limits_E (x^2+y^2)\rho(x,y,z)~d_V\)</span></li>
+<li>给定区域 E 的电荷密度 <span class="arithmatex">\(\sigma(x,y,z)\)</span>，区域内电子总电荷数为 <span class="arithmatex">\(Q = \iiint\limits_E \sigma(x,y,z)~d_V\)</span></li>
+<li>三个连续的随机变量 X, Y, Z 的联合密度为三元函数，在区域 E 上的概率为 <span class="arithmatex">\(P((X,Y,Z)\in E) = \iiint\limits_E f(x,y,z)~d_V\)</span>（联合密度函数满足 <span class="arithmatex">\(f(x,y,z)\ge 0\)</span>，<span class="arithmatex">\(\int_{-∞}^{+∞}\int_{-∞}^{+∞} \int_{-∞}^{+∞} f(x,y,z)~d_zd_yd_x = 1\)</span>）<ul>
+<li>特别地，<span class="arithmatex">\(P((a\le X\le b, c\le Y\le d, r\le Z\le s)\in E) = \int_{a}^{b}\int_{c}^{d}\int_{r}^{s} f(x,y,z)~d_zd_yd_x\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>三重积分3(柱面坐标系)：以 <span class="arithmatex">\(xoy\to ro\theta\)</span> 为例：<span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1(r\cos\theta, r\sin\theta)}^{u_2(r\cos\theta, r\sin\theta)} f(r\cos\theta, r\sin\theta, z)~rd_zd_rd_\theta\)</span></p>
+<ul>
+<li>相关内容可以参见 12.42</li>
+</ul>
+</li>
+<li>
+<p>三重积分4(球坐标系)：f 在球形锲 <span class="arithmatex">\(E = \{(\rho,\theta,\phi) | a\le\rho\le b, \alpha\le\theta\le\beta, c\le\phi\le d\}\)</span> 内三重积分 <span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \lim\limits_{n,m,o\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(\rho_i^*\sin{\phi_k^*}\cos{\theta_j^*, \rho_i^*\sin{\phi_k^*}\sin{\theta_j^*}, \rho_i^*\cos{\phi_k^*}})(\rho_i^*)^2 \sin{\phi_k^*} \Delta\rho \Delta\theta \Delta\phi\)</span> <span class="arithmatex">\(= \int_c^d\int_\alpha^\beta\int_a^b f(\rho\sin\phi\cos\theta, \rho\sin\phi\sin\theta, \rho\cos\phi)\rho^2\sin\phi~d_\rho d_\theta d_\phi\)</span></p>
+<ul>
+<li>几何证明：球形锲 <span class="arithmatex">\(E_{ijk}\)</span> 的长宽高分别为 <span class="arithmatex">\(\rho\sin\phi\Delta\theta\)</span>，<span class="arithmatex">\(\Delta \rho\)</span>，<span class="arithmatex">\(\rho\Delta \phi\)</span>，因而 <span class="arithmatex">\(E_{ijk}\approx \rho\sin\phi\Delta\theta\cdot \Delta \rho\cdot \rho\Delta \phi = \rho^2\sin\phi\Delta\rho\Delta\theta\Delta\phi\)</span></li>
+<li>代数证明：利用模型 <span class="arithmatex">\(V=\frac13\rho^3\theta(1-\cos\phi)\)</span>，然后进行容斥和近似</li>
+</ul>
+</li>
+<li>
+<p>重积分的换元：</p>
+</li>
+<li>一维变换(逆变换)：<span class="arithmatex">\(x=g(t)\)</span><ul>
+<li><span class="arithmatex">\(f(x) = (f\circ g)(t)\)</span></li>
+<li>若 g 是单射，那么 <span class="arithmatex">\(g(\alpha)=a \implies \alpha=g^{-1}(a)\)</span></li>
+</ul>
+</li>
+<li>二维变换：从 <span class="arithmatex">\(uOv\)</span> 平面到 <span class="arithmatex">\(xOy\)</span> 平面的换元(变换)为 <span class="arithmatex">\(T(u,v) = (x,y) = (g(u,v), h(u,v))\)</span><ul>
+<li><span class="arithmatex">\(f(x,y) = (f\circ T)(u,v)\)</span>；<span class="arithmatex">\((u,v)\)</span> 称为原像，<span class="arithmatex">\((x,y)\)</span> 称为像；<span class="arithmatex">\(\mathbf r(u,v)=x\mathbf i+y\mathbf j=g(u,v)\mathbf i+h(u,v)\mathbf j\)</span></li>
+<li>若 T 为一一变换（每个点的象各不相同），则有 <span class="arithmatex">\(T^{-1}(x,y)=(u,v)=(G(x,y), H(x,y))\)</span></li>
+<li>我们通常假设 T 是 <span class="arithmatex">\(C^1\)</span> 变换（即 g 和 h 有一阶连续偏导数），而 T 通常是定义在 <span class="arithmatex">\(\mathbb R^2\)</span> 子集上的函数</li>
+</ul>
+</li>
+<li>雅可比行列式(2维)：<span class="arithmatex">\((x,y)=T(u,v) = (g(u,v), h(u,v))\)</span> 决定的变换 T 的也可以行列式为 <span class="arithmatex">\(\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\dfrac{\partial x}{\partial u}&amp;\dfrac{\partial x}{\partial v}\\ \dfrac{\partial\dot y}{\partial u}&amp;\dfrac{\partial y}{\partial v}\end{vmatrix}=\dfrac{\partial x\partial y}{\partial u\partial v}-\dfrac{\partial x\partial y}{\partial v\partial u}\)</span></li>
+<li>二重积分换元法：T 是一个 <span class="arithmatex">\(C^1\)</span> 变换，它的雅可比行列式非零，T 把<span class="arithmatex">\(uOv\)</span> 平面上的区域 S 映射成 <span class="arithmatex">\(xOy\)</span> 平面上的区域 R；那么 <span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \iint\limits_S f(x(u,v), y(u,v))~|\mathbf r_u'\times \mathbf r_v'|~d_ud_v = \iint\limits_S f(x(u,v), y(u,v))~|\frac {\partial (x,y)}{\partial (u,v)}|~d_ud_v\)</span><ul>
+<li>注1：通过 <span class="arithmatex">\(uov\)</span> 上近似平行四边形的面积近似 <span class="arithmatex">\(xoy\)</span> 上的矩形有 <span class="arithmatex">\(\Delta x\Delta y\approx |(\Delta u \mathbf r_u)\times (\Delta v \mathbf r_v)|=|\mathbf r_u\times \mathbf r_v|\Delta u\Delta v\)</span></li>
+<li>注2：设 T 时一个一一映射，在 S 的边界上可以不是</li>
+</ul>
+</li>
+<li>雅可比行列式(3维)：由 <span class="arithmatex">\(T(u,v,\omega)=(x,y,z)\)</span> 决定的雅可比行列式为 <span class="arithmatex">\(\frac {\partial (x,y,z)}{\partial (u,v,\omega)} = \left|\begin{array}{}  \frac {\partial x}{\partial u} &amp; \frac {\partial x}{\partial v} &amp; \frac {\partial x}{\partial \omega} \\ \frac {\partial y}{\partial u} &amp; \frac {\partial y}{\partial v} &amp; \frac {\partial y}{\partial \omega}  \\ \frac {\partial z}{\partial u} &amp; \frac {\partial z}{\partial v} &amp; \frac {\partial z}{\partial \omega} \end{array}\right|\)</span></li>
+<li>三重积分换元法：<span class="arithmatex">\(\iiint\limits_R f(x,y,z)~d_V = \iiint\limits_S f(x(u,v,\omega), y(u,v,\omega), z(u,v,\omega))|\frac {\partial (x,y,z)}{\partial (u,v,\omega)}|~d_ud_vd_{\omega}\)</span></li>
+</ol>
+</div>
+<p><span class="arithmatex">\(C^1\)</span> 变换</p>
+<h3 id="16">16. 向量积分</h3>
+<div class="admonition note">
+<p class="admonition-title">16. 向量积分</p>
+<ol>
+<li>向量场：满足 <span class="arithmatex">\(f~:~\mathbb R^n\to V_n\)</span> 或 <span class="arithmatex">\(f~:~\mathbb R^n\to \mathbb R^n\)</span> 的函数</li>
+<li>二维向量场：<span class="arithmatex">\(\mathbf F(x,y) = P(x,y)\mathbf i + Q(x,y)\mathbf j = \langle P(x,y), Q(x,y)\rangle\)</span>（<span class="arithmatex">\((x,y)\in D\subset\mathbb R^2\)</span>），简记为 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j\)</span></li>
+<li>三维向量场：<span class="arithmatex">\(\mathbf F(x,y,z) = P(x,y,z)\mathbf i + Q(x,y,z)\mathbf j + R(x,y,z)\mathbf k\)</span>（<span class="arithmatex">\((x,y,z)\in D\subset\mathbb R^3\)</span>），简记为 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span></li>
+<li>梯度向量场(梯度场)：<span class="arithmatex">\(\nabla f(x,y) = f_x\mathbf i + f_y\mathbf j\)</span>，<span class="arithmatex">\(\nabla f(x,y,z) = f_x\mathbf i + f_y\mathbf j + f_z\mathbf k\)</span> （对于一般的定义详见 14.42）</li>
+<li>梯度向量场的性质：<ol>
+<li>梯度向量 和 等高线 正交（<span class="arithmatex">\(f~:~\mathbb R^2\to \mathbb R\)</span>）</li>
+<li>梯度向量在等高线密的地方较长，在等高线稀疏的地方较短</li>
+<li>梯度向量的长度是 f 的方向导数的值</li>
+</ol>
+</li>
+<li>
+<p>保守向量场：向量场 <span class="arithmatex">\(\mathbf F\)</span> 称为一个保守向量场，当且仅当 它是某个标量函数的梯度（即 存在一个函数 f 满足 <span class="arithmatex">\(\mathbf F = \nabla f\)</span>）；f 称为 <span class="arithmatex">\(\mathbf F\)</span> 的一个势函数</p>
+<ul>
+<li>向量场 <span class="arithmatex">\(\mathbf F\)</span> 是保守向量场，当且仅当 <span class="arithmatex">\(\mathbf F\)</span> 有势函数 f</li>
+</ul>
+</li>
+<li>
+<p>线积分：曲线 <span class="arithmatex">\(C~:~\mathbf r(t)=x(t)\mathbf i+y(t)\mathbf j\)</span> 的曲线积分为 <span class="arithmatex">\(\int_C f(x,y)~d_s = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta s_i\)</span>（t 从 a 变化到 b 时曲线上的点恰好走过一次）</p>
+<ol>
+<li><span class="arithmatex">\(\int_C f(x,y)~d_s = \int_a^b f(\mathbf r(t))\sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2}~d_t\)</span></li>
+<li><span class="arithmatex">\(\int_C f(x,y)~d_s = \int_c^df(x,g(x))\sqrt{(\frac{d_y}{d_x})^2+1}~d_x\)</span></li>
+<li>性质：<span class="arithmatex">\(\int_C f(x,y)~d_s = \sum\limits_{i=1}^n \int_{C_i} f(x,y)~d_s\)</span>（C 分段光滑）</li>
+<li>注：若 t 从 a 变化到 b 时曲线上的点恰好走过一次，并且 <span class="arithmatex">\(f(x,y)\ge 0\)</span>，则 <span class="arithmatex">\(\int_C f(x,y)~d_s\)</span> 表示 xOy 上的曲线 C 为底，以 f(x,y) 为任意一点处的高 所构成的 “门帘” 或 “围栏”（即 竖直曲面）的面积（仅对 (a) 而言？）</li>
+</ol>
+</li>
+<li></li>
 </ol>
 </div>
 </article>

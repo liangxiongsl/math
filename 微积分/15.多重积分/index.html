@@ -869,8 +869,8 @@
 <ul>
 <li>选择右上角 <span class="arithmatex">\((x_{ij}^*,y_{ij}^*) = (x_i,y_j)\)</span></li>
 <li>中点法则：<span class="arithmatex">\((x_{ij}^*,y_{ij}^*) = (\overline x_i, \overline y_j) = (\frac {x_i+x_{i-1}}2, \frac {y_j+y_{j-1}}2)\)</span></li>
-<li>梯形法则：</li>
-<li>辛普森法则：</li>
+<li>梯形法则：<span class="arithmatex">\(f(x_i^*,y_j^*)=\overline z_{ij}=\frac{f(x_{i-1},y_{j-1})+f(x_i,y_j)}2\)</span></li>
+<li>辛普森法则：<span class="arithmatex">\(S_{n,m}=\sum\limits_{i=1}^{\frac n2}\sum\limits_{j=1}^{\frac m2} \frac{[f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i})]\cdot[f(y_{2i-2}) + 4f(y_{2i-1}]}9\Delta A\)</span></li>
 </ul>
 </blockquote>
 <div class="admonition 函数平均值">
@@ -913,9 +913,9 @@
 <p class="admonition-title">Fubini 傅比尼定理</p>
 </div>
 <blockquote>
-<p>如果 f 是定义子在 <span class="arithmatex">\(R = \{(x,y)|a\le x\le b, c\le y\le d\}\)</span> 上的连续函数，则：</p>
+<p>如果 f 是定义在 <span class="arithmatex">\(R = \{(x,y)|a\le x\le b, c\le y\le d\}\)</span> 上的连续函数，则：</p>
 <p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \int_a^b\int_c^d f(x,y)~d_y~d_x = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span></p>
-<p>更一般地：当 f 时 R 上的旨在优先多条光滑曲线上不连续的有界函数，且对 f 的累次积分存在时，上述定理任然成立</p>
+<p>更一般地：当 f 是 R 上的只在有限多条光滑曲线上不连续的有界函数，且对 f 的累次积分存在时，上述定理仍然成立</p>
 <p>证明：过于困难</p>
 </blockquote>
 <div class="admonition tip">
@@ -1081,7 +1081,7 @@
 </div>
 <blockquote>
 <p>如果 f 是一个长方体 <span class="arithmatex">\(B = [a,b]\times [c,d]\times [r,s]\)</span> 上的连续函数，那么：</p>
-<p><span class="arithmatex">\(\iiint\limits_B f(x,y,z)~d_V = \int\limits_r^s\int\limits_c^d\int\limits_a^b f(x,y,z)~d_xd_yd_z\)</span></p>
+<p><span class="arithmatex">\(\iiint\limits_B f(x,y,z)~d_V = \int_r^s\int_c^d\int_a^b f(x,y,z)~d_xd_yd_z\)</span></p>
 <p>调换 x, y, z 的积分顺序总共有 <span class="arithmatex">\(3!=6\)</span> 种等值的公式</p>
 </blockquote>
 <div class="admonition note">
@@ -1121,12 +1121,12 @@
 <p class="admonition-title">应用</p>
 <ol>
 <li>给定广义三维密度函数 <span class="arithmatex">\(\rho(x,y,z)\)</span>，则物体的广义质量 <span class="arithmatex">\(m=\iiint\limits_E \rho(x,y,z)~d_V\)</span></li>
-<li>物体关于桑坐标平面的动量为 <span class="arithmatex">\(\displaystyle M_{y2}=\iiint\limits_E x\rho(x,y,z)~d_V, M_{x2}=\iiint\limits_E y\rho(x,y,z)~d_V, M_{xy}=\iiint\limits_E z\rho(x,y,z)~d_V\)</span></li>
-<li>物体质心为 <span class="arithmatex">\((\overline x, \overline y, \overline z)\)</span>，其中 <span class="arithmatex">\(\displaystyle \overline x=\frac {M_{y2}}{m}\)</span>，<span class="arithmatex">\(\displaystyle \overline y=\frac {M_{x2}}{m}\)</span>，<span class="arithmatex">\(\displaystyle \overline z=\frac {M_{xy}}{m}\)</span> （如果 f 是常数，那么立体的质量质心称为 区域 E 的<strong>立体形心</strong>）</li>
+<li>物体关于三个坐标平面的动量为 <span class="arithmatex">\(\displaystyle M_{yz}=\iiint\limits_E x\rho(x,y,z)~d_V, M_{xz}=\iiint\limits_E y\rho(x,y,z)~d_V, M_{xy}=\iiint\limits_E z\rho(x,y,z)~d_V\)</span></li>
+<li>物体质心为 <span class="arithmatex">\((\overline x, \overline y, \overline z)\)</span>，其中 <span class="arithmatex">\(\displaystyle \overline x=\frac {M_{yz}}{m}\)</span>，<span class="arithmatex">\(\displaystyle \overline y=\frac {M_{xz}}{m}\)</span>，<span class="arithmatex">\(\displaystyle \overline z=\frac {M_{xy}}{m}\)</span> （如果 f 是常数，那么立体的质量质心称为 区域 E 的<strong>立体形心</strong>）</li>
 <li>关于三个坐标轴的转动惯量：<span class="arithmatex">\(\displaystyle I_x = \iiint\limits_E (y^2+z^2)\rho(x,y,z)~d_V\)</span>，<span class="arithmatex">\(\displaystyle I_y = \iiint\limits_E (x^2+z^2)\rho(x,y,z)~d_V\)</span>，<span class="arithmatex">\(\displaystyle I_z = \iiint\limits_E (x^2+y^2)\rho(x,y,z)~d_V\)</span></li>
 <li>给定区域 E 的电荷密度 <span class="arithmatex">\(\sigma(x,y,z)\)</span>，区域内电子总电荷数为 <span class="arithmatex">\(Q = \iiint\limits_E \sigma(x,y,z)~d_V\)</span></li>
-<li>三个连续的随机变量 X, Y, Z 的联合密度为三元函数，在区域 E 上的概率为 <span class="arithmatex">\(P((X,Y,Z)\in E) = \iiint\limits_E f(x,y,z)~d_V\)</span>（联合密度函数满足 <span class="arithmatex">\(f(x,y,e)\ge 0\)</span>，<span class="arithmatex">\(\int\limits_{-∞}^{+∞}\int\limits_{-∞}^{+∞} \int\limits_{-∞}^{+∞} f(x,y,z)~d_zd_yd_x = 1\)</span>）<ol>
-<li>特别地，<span class="arithmatex">\(P((a\le X\le b, c\le Y\le d, r\le Z\le s)\in E) = \int\limits_{a}^{b}\int\limits_{c}^{d}\int\limits_{r}^{s} f(x,y,z)~d_zd_yd_x\)</span></li>
+<li>三个连续的随机变量 X, Y, Z 的联合密度为三元函数，在区域 E 上的概率为 <span class="arithmatex">\(P((X,Y,Z)\in E) = \iiint\limits_E f(x,y,z)~d_V\)</span>（联合密度函数满足 <span class="arithmatex">\(f(x,y,z)\ge 0\)</span>，<span class="arithmatex">\(\int_{-∞}^{+∞}\int_{-∞}^{+∞} \int_{-∞}^{+∞} f(x,y,z)~d_zd_yd_x = 1\)</span>）<ol>
+<li>特别地，<span class="arithmatex">\(P((a\le X\le b, c\le Y\le d, r\le Z\le s)\in E) = \int_{a}^{b}\int_{c}^{d}\int_{r}^{s} f(x,y,z)~d_zd_yd_x\)</span></li>
 </ol>
 </li>
 </ol>
@@ -1136,7 +1136,7 @@
 <p class="admonition-title">柱坐标</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\((x,y,z) \to (x\cos\theta, y\sin\theta, z)\)</span>，<span class="arithmatex">\(d_V = rd_zd_rd_\theta\)</span></p>
+<p><span class="arithmatex">\((x,y,z) \to (r\cos\theta, r\sin\theta, z)\)</span>，<span class="arithmatex">\(d_V = rd_zd_rd_\theta\)</span></p>
 <p><span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1(r\cos\theta, r\sin\theta)}^{u_2(r\cos\theta, r\sin\theta)} f(r\cos\theta, r\sin\theta, z)~rd_zd_rd_\theta\)</span></p>
 </blockquote>
 <div class="admonition note">
@@ -1156,7 +1156,7 @@
 <p>将 <span class="arithmatex">\(E_{ijk}\)</span> 近似为边长分别为 <span class="arithmatex">\(\Delta \rho\)</span>，<span class="arithmatex">\(\rho_i\sin{\phi_k}\Delta\theta\)</span>，<span class="arithmatex">\(\rho_i\Delta \phi\)</span>，</p>
 <p>因而 <span class="arithmatex">\(\Delta V_{ijk} \approx \rho_i^2 \sin{\phi_k} \Delta\rho \Delta\theta \Delta\phi\)</span></p>
 <p>利用均值定理 <span class="arithmatex">\(\Delta V_{ijk} = \widetilde \rho_i^2 \sin{\widetilde\phi_k} \Delta\rho \Delta\theta \Delta\phi\)</span> （均值定理参见练习 39）</p>
-<p><span class="arithmatex">\(\iint\limits_E f(x,y,z)~d_V = \lim\limits_{n,m,o\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(\widetilde\rho_i\sin{\widetilde\phi_k}\cos{\widetilde \theta_j, \widetilde\rho_i\sin{\widetilde\phi_k}\sin{\widetilde\theta_j}, \widetilde\rho_i\cos{\widetilde\phi_k}})\widetilde \rho_i^2 \sin{\widetilde\phi_k} \Delta\rho \Delta\theta \Delta\phi\)</span></p>
+<p><span class="arithmatex">\(\iiint\limits_E f(x,y,z)~d_V = \lim\limits_{n,m,o\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^o f(\widetilde\rho_i\sin{\widetilde\phi_k}\cos{\widetilde \theta_j, \widetilde\rho_i\sin{\widetilde\phi_k}\sin{\widetilde\theta_j}, \widetilde\rho_i\cos{\widetilde\phi_k}})\widetilde \rho_i^2 \sin{\widetilde\phi_k} \Delta\rho \Delta\theta \Delta\phi\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">球坐标</p>
 </div>
@@ -1228,7 +1228,7 @@
 <p class="admonition-title">二重积分换元法</p>
 </div>
 <blockquote>
-<p>假设 T 是一个 <span class="arithmatex">\(C^1\)</span> 变换，它的雅可比行列式非零，T 把<span class="arithmatex">\(uOv\)</span> 平面上的区域 S 映射成 <span class="arithmatex">\(xOy\)</span> 平面和是哪个的区域 R</p>
+<p>假设 T 是一个 <span class="arithmatex">\(C^1\)</span> 变换，它的雅可比行列式非零，T 把<span class="arithmatex">\(uOv\)</span> 平面上的区域 S 映射成 <span class="arithmatex">\(xOy\)</span> 平面上的区域 R</p>
 <p>设 f 在 R上是连续并且 S、R 是第 I 类或第 II 类平面区域</p>
 <p>设 T 时一个一一映射，在 S 的边界上可以不是，那么：</p>
 <p><span class="arithmatex">\(\iint\limits_R f(x,y)~d_A = \iint\limits_S f(x(u,v), y(u,v))~|\frac {\partial (x,y)}{\partial (u,v)}|~d_ud_v\)</span></p>
