@@ -175,7 +175,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         线性代数
       </a>
 </li>
@@ -370,6 +370,11 @@
     16. 向量积分
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#17">
+    17. 二阶微分方程
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -488,6 +493,11 @@
           线性代数
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
+        术语和定义
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
@@ -878,6 +888,11 @@
     16. 向量积分
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#17">
+    17. 二阶微分方程
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1066,11 +1081,10 @@
 <p>导数：f 在 a 处有导数 <span class="arithmatex">\(f'(a)=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}\)</span>，当且仅当 f 在 a 处存在切线斜率 <span class="arithmatex">\(m = \lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}\)</span></p>
 <ul>
 <li>导数也是 f 在 a 处的瞬时变化率 <span class="arithmatex">\(\lim\limits_{\Delta x\to 0}\frac{\Delta{y}}{\Delta{x}} = \lim\limits_{x2\to x1}\frac{f(x2)-f(x1)}{x2 - x1}\)</span></li>
+<li>可导：f 在 a 处可导，当且仅当 a 处的左导数等于右导数</li>
 </ul>
 </li>
-<li>
-<p>导函数：<span class="arithmatex">\(f'(x)=\lim\limits_{h\to0}\frac {f(x+h)-f(x)}h\)</span>，<span class="arithmatex">\(D_{f'}=D_f\cap \{x~|~f'(x) 存在\}\)</span></p>
-</li>
+<li>导函数：<span class="arithmatex">\(f'(x)=\lim\limits_{h\to0}\frac {f(x+h)-f(x)}h\)</span>，<span class="arithmatex">\(D_{f'}=D_f\cap \{x~|~f'(x) 存在\}\)</span></li>
 <li>导数符号：<ul>
 <li>通用记号：<span class="arithmatex">\(f'(x)=y'=\frac {d_y}{d_x}=\frac {d_f}{d_x}=\frac d{d_x}f(x)=D~f(x)=D_x~f(x)\)</span></li>
 <li>莱布尼茨公式：<span class="arithmatex">\(\frac {d_y}{d_x}=\lim\limits_{\Delta x\to 0}\frac {\Delta x}{\Delta y}\)</span></li>
@@ -2445,7 +2459,10 @@
 <li>二维曲线曲率(切线斜率)：<span class="arithmatex">\(\displaystyle  K(x) = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span> （曲线为 <span class="arithmatex">\(y=f(x)\)</span>）</li>
 </ul>
 </li>
-<li>单位法向量：<span class="arithmatex">\(\mathbf N(t) = \frac {\mathbf T'(t)}{|\mathbf T'(t)|} = \frac {\mathbf T'(t)}{K|\mathbf r'(t)|}\)</span></li>
+<li>单位法向量：<span class="arithmatex">\(\mathbf N(t) = \frac {\mathbf T'(t)}{|\mathbf T'(t)|} = \frac {\mathbf T'(t)}{K|\mathbf r'(t)|}\)</span><ul>
+<li><span class="arithmatex">\(u=f(\mathbf x)\)</span> 的单位法向量为 <span class="arithmatex">\(\mathbf N = \frac{\nabla f}{|\nabla f|}\)</span></li>
+</ul>
+</li>
 <li>副法线向量：<span class="arithmatex">\(\mathbf B(t) = \mathbf T(t) \times \mathbf N(t)\)</span></li>
 <li>
 <p>法平面，密切面，密切圆，从切面：P 为曲线 C 上任意一点</p>
@@ -2871,18 +2888,260 @@
 <p>保守向量场：向量场 <span class="arithmatex">\(\mathbf F\)</span> 称为一个保守向量场，当且仅当 它是某个标量函数的梯度（即 存在一个函数 f 满足 <span class="arithmatex">\(\mathbf F = \nabla f\)</span>）；f 称为 <span class="arithmatex">\(\mathbf F\)</span> 的一个势函数</p>
 <ul>
 <li>向量场 <span class="arithmatex">\(\mathbf F\)</span> 是保守向量场，当且仅当 <span class="arithmatex">\(\mathbf F\)</span> 有势函数 f</li>
+<li>向量场 <span class="arithmatex">\(\mathbf F\)</span> 是保守向量场，当且仅当 <span class="arithmatex">\(\mathbf {curl~F}=\mathbf 0\)</span></li>
 </ul>
 </li>
 <li>
-<p>线积分：曲线 <span class="arithmatex">\(C~:~\mathbf r(t)=x(t)\mathbf i+y(t)\mathbf j\)</span> 的曲线积分为 <span class="arithmatex">\(\int_C f(x,y)~d_s = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta s_i\)</span>（t 从 a 变化到 b 时曲线上的点恰好走过一次）</p>
+<p>线积分(二维)：曲线 <span class="arithmatex">\(C~:~\mathbf r(t)=x(t)\mathbf i+y(t)\mathbf j\)</span> 的曲线积分为 <span class="arithmatex">\(\int_C f(x,y)~d_s = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta s_i\)</span>（t 从 a 变化到 b 时曲线上的点恰好走过一次）</p>
 <ol>
 <li><span class="arithmatex">\(\int_C f(x,y)~d_s = \int_a^b f(\mathbf r(t))\sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2}~d_t\)</span></li>
 <li><span class="arithmatex">\(\int_C f(x,y)~d_s = \int_c^df(x,g(x))\sqrt{(\frac{d_y}{d_x})^2+1}~d_x\)</span></li>
 <li>性质：<span class="arithmatex">\(\int_C f(x,y)~d_s = \sum\limits_{i=1}^n \int_{C_i} f(x,y)~d_s\)</span>（C 分段光滑）</li>
 <li>注：若 t 从 a 变化到 b 时曲线上的点恰好走过一次，并且 <span class="arithmatex">\(f(x,y)\ge 0\)</span>，则 <span class="arithmatex">\(\int_C f(x,y)~d_s\)</span> 表示 xOy 上的曲线 C 为底，以 f(x,y) 为任意一点处的高 所构成的 “门帘” 或 “围栏”（即 竖直曲面）的面积（仅对 (a) 而言？）</li>
+<li>简写：<span class="arithmatex">\(\int_C P(x,y)~d_x + \int_C Q(x,y)~d_y = \int_C P(x,y)~d_x + Q(x,y)~d_y\)</span></li>
+<li>约定：一个给定的参数 <span class="arithmatex">\(x=x(t), y=y(t), a\le t\le b\)</span> 确定了曲线 C 的一个方向，其正方向和参数 t 的增长方向一致；与 C 反向并且经过相同的点的曲线记为 <code>-C</code>，而且 <span class="arithmatex">\(\int_{-C} f(x,y)~d_x = -\int_C f(x,y)~d_x, \int_{-C} f(x,y)~d_y = -\int_C f(x,y)~d_y\)</span>，但是 <span class="arithmatex">\(\int_{-C} f(x,y)~d_s = \int_C f(x,y)~d_s\)</span>（因为 <span class="arithmatex">\(\Delta s_i\)</span> 总是正的，而 <span class="arithmatex">\(\Delta x_i\)</span> 和 <span class="arithmatex">\(\Delta y_i\)</span> 反向计算时会变号）</li>
 </ol>
 </li>
-<li></li>
+<li>线积分“降维”：<ol>
+<li>沿 C 关于 x 的 f 的线积分：<span class="arithmatex">\(\int_Cf(x,y)~d_x = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta x_i = \int_a^b f(x(t),y(t))x'(t)~d_t\)</span></li>
+<li>沿 C 关于 y 的 f 的线积分：<span class="arithmatex">\(\int_Cf(x,y)~d_y = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n f(x_i^*,y_i^*)~\Delta y_i = \int_a^b f(x(t),y(t))y'(t)~d_t\)</span></li>
+</ol>
+</li>
+<li>二维线积分应用：<ol>
+<li>曲线质量：<span class="arithmatex">\(m = \int_C f(x,y)~d_s\)</span> （f 为曲线的线密度）</li>
+<li>曲线质心：<span class="arithmatex">\((\overline x, \overline y) = (\frac 1m\int_C xf(x,y)~d_s, \frac 1m\int_C yf(x,y)~d_s)\)</span></li>
+</ol>
+</li>
+<li>三维线积分：<span class="arithmatex">\(\int_C f(x,y,z)~d_s = \int_a^b f(x(t),y(t),z(t))\sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2 + (\frac {d_z}{d_t})^2}~d_t\)</span><ul>
+<li>简写：<span class="arithmatex">\(\int_C P(x,y,z)~d_x + \int_C Q(x,y,z)~d_y + \int_C R(x,y,z)~d_z = \int_C P(x,y,z)~d_x + Q(x,y,z)~d_y + R(x,y,z)~d_z\)</span></li>
+</ul>
+</li>
+<li>多维线积分：<span class="arithmatex">\(\int_C f(\mathbf r(t))~d_s = \int_C f(\mathbf r(t))\mathbf |\mathbf r'(t)|~d_t\)</span></li>
+<li>向量场的线积分：设 <span class="arithmatex">\(\mathbf F\)</span> 是定义在光滑曲线 C 上的连续向量场，由向量函数给出，<span class="arithmatex">\(a\le t\le b\)</span>，<span class="arithmatex">\(\mathbf F\)</span> 沿着 C 的线积分为：<span class="arithmatex">\(\int_C \mathbf F\cdot d_{\mathbf r} = \int_a^b\mathbf F(\mathbf r(t))\cdot \mathbf r'(t)~d_t=\int_C\mathbf F(\mathbf r(t))\cdot\mathbf T(\mathbf r(t))~d_s\)</span> （<span class="arithmatex">\(\mathbf T(\mathbf r(t))=\frac {\mathbf r'(t)}{|\mathbf r'(t)|}\)</span>）<ul>
+<li>性质：<span class="arithmatex">\(\int_{-C}\mathbf F\cdot d_{\mathbf r} = -\int_C\mathbf F\cdot d_{\mathbf r}\)</span></li>
+<li>意义：向量场沿着曲线向量做的贡献之和</li>
+</ul>
+</li>
+<li>
+<p>标量场的线积分 与 向量场的线积分 的关系：记 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_a^b\mathbf F(\mathbf r(t))\cdot \mathbf r'(t)~d_t = \int_a^b (P\mathbf i + Q\mathbf j + R\mathbf k)\cdot (x'(t)\mathbf i + y'(t)\mathbf j + z'(t)\mathbf k)~d_t = \int_a^b [Px'(t) + Qy'(t) + Rz'(t)]~d_t\)</span></li>
+<li>注意到 <span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_C P~d_x + Q~d_y + R~d_z\)</span></li>
+</ul>
+</li>
+<li>
+<p>线积分基本定理：C 为由向量函数 <span class="arithmatex">\(\mathbf r(t),a\le t\le b\)</span> 给出的光滑曲线；<span class="arithmatex">\(f~:~\mathbb R^n\to \mathbb R\)</span> 可微，其梯度向量 <span class="arithmatex">\(\nabla f\)</span> 在 C 上连续</p>
+<ul>
+<li>那么 <span class="arithmatex">\(\int_C \nabla f\cdot d_{\mathbf r} = f(\mathbf r(b)) - f(\mathbf r(a))\)</span></li>
+<li>或者 <span class="arithmatex">\(\int_C \mathbf F\cdot d_{\mathbf r} = f(\mathbf r(b)) - f(\mathbf r(a))\)</span> （仅当 <span class="arithmatex">\(\mathbf F=\nabla f\)</span>，即 <span class="arithmatex">\(\mathbf F\)</span> 是保守场）</li>
+</ul>
+</li>
+<li>与路径无关：<span class="arithmatex">\(\int_C \mathbf F\cdot d_\mathbf r\)</span> 在 D 上是与路径无关，当且仅当 <span class="arithmatex">\(\int_C\mathbf F\cdot d_\mathbf r=0\)</span> 对 D 上的<strong>任意</strong>封闭路径 C 成立</li>
+<li>拓扑学概念：<ol>
+<li>邻域：<span class="arithmatex">\(\mathbb R^n\)</span> 中的某个点 <span class="arithmatex">\(\mathbf x=(x_1,x_2,\dots,x_n)\)</span>，广义半径为 r 的邻域为 <span class="arithmatex">\(N(\mathbf x, r)=\{(y_1,y_2,\dots,y_n) | \sqrt {\sum\limits_{i=1}^n (y_i-x_i)} \le r\}\)</span> （不一定是开集，也可以是闭集）</li>
+<li>开集：集合 A 中的任意一点 a，都存在一个领域 <span class="arithmatex">\(N(a,r)\subset A\)</span>；任意多个开集的交集或并集都是开集</li>
+<li>闭集：若某个集合的补集是开集，那么它是一个闭集</li>
+<li>连通集：一个非空集合，若满足该集合中的任意两个点都可以通过该拓扑空间下的一系列路径相互连通，称其为连通集</li>
+</ol>
+</li>
+<li>图论概念：<ol>
+<li>途径 <code>walk</code>：一条连续的线</li>
+<li>迹 <code>trail</code>：一条途径，满足任意两条子途径都不相等</li>
+<li>(简单)路径 <code>path</code>：一条迹，满足任意两个点不相等；又称 <strong>简单曲线</strong></li>
+<li>回路 <code>circuit</code>：一条迹，满足首尾两点相等；又称 <strong>非简单闭曲线</strong></li>
+<li>(简单)环/圈 <code>cycle</code>：一条回路，仅有首尾两点相等（即任取两点，只要其中一点不是端点，那么这两个点就不相等）；又称 <strong>简单闭曲线</strong></li>
+<li>连通区域：</li>
+<li>单连通区域：一个连通区域 D，其中任意包含于 D 的 简单闭曲线 所包围的点都在 D 中（这意味着 连通区域 不包含 “洞” 且 不能由两个分块的部分组成）</li>
+</ol>
+</li>
+<li>保守向量场的充分条件：<span class="arithmatex">\(\int_C \mathbf F\cdot d_\mathbf r\)</span> 在 D 上路径无关</li>
+<li>保守向量场的必要条件：沿着闭曲线走，存在向量场与路径不同向</li>
+<li>
+<p>物理学概念</p>
+<ul>
+<li>牛顿第二定律：<span class="arithmatex">\(\mathbf F(\mathbf r(t)) = m\mathbf r^"(t)\)</span> （<span class="arithmatex">\(\mathbf a=\mathbf r^"(t)\)</span>）</li>
+<li>力场对物体的做功：<span class="arithmatex">\(W = \int_c \mathbf F\cdot d_\mathbf r = \int_a^b \mathbf F(\mathbf r(t))\cdot r'(t)~d_t = \int_a^b m\mathbf r^"(t)\cdot \mathbf r'(t)~d_t = \dots = \frac 12m|\mathbf v(b)|^2 - \frac 12m|\mathbf v(a)|^2\)</span>（<span class="arithmatex">\(\mathbf v=\mathbf r'\)</span>）</li>
+<li>记 <span class="arithmatex">\(K(A) = \frac 12m|\mathbf v(a)|^2\)</span> 有：<span class="arithmatex">\(W = K(B)-K(A)\)</span></li>
+<li>势能：<span class="arithmatex">\(P(A) = -f(A)\)</span></li>
+<li>假定 <span class="arithmatex">\(\mathbf F\)</span> 是保守场，由 <span class="arithmatex">\(\mathbf F = -\nabla P\)</span>，进而 <span class="arithmatex">\(W = \int_C\mathbf F\cdot d_\mathbf r = -\int_C\nabla P\cdot d_\mathbf r = -[P(\mathbf r(b)) - P(\mathbf r(a))] = P(A) - P(B)\)</span>，从而 <span class="arithmatex">\(W = K(B)-K(A) = P(A) - P(B) \implies P(A)+K(A) = P(B)+K(B)\)</span></li>
+<li>能量守恒定律：假定 <span class="arithmatex">\(\mathbf F\)</span> 是保守场，那么 <span class="arithmatex">\(P(A)+K(A) = P(B)+K(B)\)</span></li>
+</ul>
+</li>
+<li>
+<p>格林定理：C 是平面上沿正方向的，分段光滑的简单闭曲线，D 是 C 限定的区域，若干个 P 和 Q 在一个包含 D 的开区域上有连续的偏导数，那么：<span class="arithmatex">\(\int_C P~d_x + Q~d_y = \int_C\mathbf F\cdot d_\mathbf r = \iint\limits_D (\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})~d_A\)</span></p>
+<ul>
+<li>注：对于简单区域 D，沿着其边界正方向的曲线记为 <span class="arithmatex">\(C=\partial D\)</span>；沿着边界曲线的(对向量场的)线积分记为 <span class="arithmatex">\(\int_{\partial D}\mathbf F\cdot d_\mathbf r=\oint_{\partial D}\mathbf F\cdot d_\mathbf r\)</span></li>
+</ul>
+</li>
+<li>格林定理的应用：<ol>
+<li>计算的分段非环的曲线通过可以构造一个环来计算积分，然后减去间断部分曲线的积分（容斥原理）</li>
+<li>构造 P 和 Q 满足 <span class="arithmatex">\(\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y}=1\)</span>，以计算闭区域 D 的面积 <span class="arithmatex">\(A = \iint\limits_D 1~d_A = \iint\limits_D \frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y}~d_A = \oint_C P~d_x + Q~d_y\)</span></li>
+</ol>
+</li>
+<li>格林定理推广1：简单区域 <span class="arithmatex">\(D_1,D_2\)</span> 是 <span class="arithmatex">\(D\)</span> 的一个划分，那么 <span class="arithmatex">\(\oint_{\partial(D_1\cup D_2)}\mathbf F\cdot d_\mathbf r=(\oint_{\partial D_1}+\oint_{\partial D_2})\mathbf F\cdot d_\mathbf r\)</span></li>
+<li>
+<p>格林定理推广2：简单区域 <span class="arithmatex">\(D_1,D_2\)</span> 满足 <span class="arithmatex">\(D_1\subset D_2\)</span>，那么 <span class="arithmatex">\(\oint_{\partial(D_2\setminus D_1)}\mathbf F\cdot d_\mathbf r=(\oint_{\partial D_2}-\oint_{\partial D_1})\mathbf F\cdot d_\mathbf r\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\nabla\)</span> 算子：<span class="arithmatex">\(\nabla = \mathbf i\frac {\partial }{\partial x} + \mathbf j\frac {\partial }{\partial y} + \mathbf k\frac {\partial }{\partial z}\)</span>，<span class="arithmatex">\(\nabla\)</span> 读作 <code>del</code>；<span class="arithmatex">\(\nabla f = \mathbf i\frac {\partial f}{\partial x} + \mathbf j\frac {\partial f}{\partial y} + \mathbf k\frac {\partial f}{\partial z}\)</span></p>
+</li>
+<li>旋度：向量场 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span> 各分量的偏导数存在，其旋度向量场为 <span class="arithmatex">\(\mathbf {curl~F} = \nabla \times \mathbf F = \begin{vmatrix} \mathbf i &amp; \mathbf j &amp; \mathbf k \\ \frac {\partial }{\partial x} &amp; \frac {\partial }{\partial y} &amp; \frac {\partial }{\partial z} \\ P &amp; Q &amp; R\end{vmatrix} = (\frac {\partial R}{\partial y} - \frac {\partial Q}{\partial z})\mathbf i + (\frac {\partial P}{\partial z} - \frac {\partial R}{\partial x})\mathbf j + (\frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y})\mathbf k\)</span><ul>
+<li>补充：<span class="arithmatex">\(\mathbf{curl}(\nabla f)=\mathbf 0\)</span>；如果定义域是单连通的（即没有洞）则逆定理成立</li>
+</ul>
+</li>
+<li>保守向量场的充要条件：<span class="arithmatex">\(\mathbf {curl~F} = \mathbf 0\)</span></li>
+<li>散度(<code>divergence</code>)：向量场 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span> 各分量的偏导数存在，散度多元函数为 <span class="arithmatex">\(\text{div}\mathbf F = \nabla \cdot \mathbf F = \frac {\partial P}{\partial x} + \frac {\partial Q}{\partial y} + \frac {\partial R}{\partial z}\)</span><ul>
+<li>物理意义：若 <span class="arithmatex">\(\mathbf F\)</span> 是液体或气体的速度，那么 <span class="arithmatex">\(\text{div}~\mathbf F\)</span> 表示 (x,y,z) 处单位体积上液体或气体流出的质量的增长率的改变量；若 <span class="arithmatex">\(\text{div}~\mathbf F=0\)</span>，那么称 <span class="arithmatex">\(\mathbf F\)</span> 是不可压缩的</li>
+</ul>
+</li>
+<li>旋度和散度：向量场 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span> 各分量的二阶偏导数存在，那么 <span class="arithmatex">\(\text {div}~\mathbf {curl~F} = 0\)</span><ul>
+<li>推论：对于 <span class="arithmatex">\(\mathbf F\)</span> 存在 <span class="arithmatex">\(\mathbf G\)</span> 满足 <span class="arithmatex">\(\mathbf F=\mathbf{curl}~\mathbf G\)</span>；那么 <span class="arithmatex">\(\text{div} F=\mathbf 0\)</span></li>
+</ul>
+</li>
+<li>拉普拉斯算子：<span class="arithmatex">\(\nabla ^2 = \nabla\cdot \nabla\)</span><ol>
+<li><span class="arithmatex">\(\nabla^2 f  = \frac {\partial ^2f}{\partial x^2} + \frac {\partial ^2f}{\partial y^2} + \frac {\partial ^2f}{\partial z^2}\)</span>，而 <span class="arithmatex">\(\text{div}(\nabla f) = \nabla\cdot (\nabla f) = \frac {\partial ^2f}{\partial x^2} + \frac {\partial ^2f}{\partial y^2} + \frac {\partial ^2f}{\partial z^2}\)</span></li>
+<li>拉普拉斯方程：<span class="arithmatex">\(\frac {\partial ^2f}{\partial x^2} + \frac {\partial ^2f}{\partial y^2} + \frac {\partial ^2f}{\partial z^2} = 0\)</span></li>
+<li>向量场的拉普拉斯算子：<span class="arithmatex">\(\nabla^2\mathbf F=\nabla^2\mathbf P\mathbf i + \nabla^2\mathbf Q\mathbf j + \nabla^2\mathbf R\mathbf k\)</span></li>
+</ol>
+</li>
+<li>
+<p>格林公式[2]：平面区域 D 的边界曲线是 C，且函数 P 和 Q 都满足格林公式的前提条件，考虑向量场 <span class="arithmatex">\(\mathbf F=P\mathbf i + Q\mathbf j + 0\mathbf k\)</span></p>
+<ol>
+<li>切线方向的线积分：<span class="arithmatex">\(\oint_C\mathbf F\cdot d_\mathbf r = \oint_C\mathbf F\cdot \mathbf Td_\mathbf s = \iint\limits_D(\mathbf {curl~F})\cdot \mathbf k~d_A\)</span></li>
+<li>法线方向的线积分：<span class="arithmatex">\(\oint_C\mathbf F\cdot \mathbf T~d_s = \iint\limits_D\text{div}~\mathbf F~d_A\)</span></li>
+<li>注：二维单位切向量为 <span class="arithmatex">\(\mathbf T(t) = \frac {x'(t)}{|\mathbf r'(t)|}\mathbf i + \frac {y'(t)}{|\mathbf r'(t)|}\mathbf j\)</span>，单位法向量为 <span class="arithmatex">\(\mathbf N(t) = \frac {y'(t)}{|\mathbf r'(t)|}\mathbf i - \frac {x'(t)}{|\mathbf r'(t)|}\mathbf j\)</span></li>
+</ol>
+</li>
+<li>
+<p>参数曲面：我们用两个参数 u 和 v 的向量函数表示一个曲面：<span class="arithmatex">\(\mathbf r(u,v) = x(u,v)\mathbf i + y(u,v)\mathbf j + z(u,v)\mathbf k\)</span> （<span class="arithmatex">\((u,v)\in D\)</span>）</p>
+<ul>
+<li>平面方程：包含位置向量 <span class="arithmatex">\(\mathbf r_0\)</span>，由 <span class="arithmatex">\(\mathbf a,\mathbf b\)</span> 张成的平面为 <span class="arithmatex">\(\mathbf r(u,v) = \mathbf r_0 + u\mathbf a + v\mathbf b\)</span>（<span class="arithmatex">\(\mathbf a,\mathbf b\)</span> 线性无关）</li>
+<li>常见转换方法(笛卡尔方程<span class="arithmatex">\(\to\)</span>参数曲面)：用 <span class="arithmatex">\(u,v\)</span> 表示 <span class="arithmatex">\(x,y\)</span> 或 <span class="arithmatex">\(y,z\)</span> 或 <span class="arithmatex">\(z,x\)</span>，另一个变量的表示通过曲面的方程得到；可以参考 极坐标 或 球坐标系 的换元方法（但不一定可行）</li>
+<li>例如：<span class="arithmatex">\(\mathbf r(u,v) = a\sin u\cos v \mathbf i + a\sin u\sin v \mathbf i + a\cos u \mathbf k\)</span>；<span class="arithmatex">\(\mathbf r_u\times \mathbf r_v = a^2\sin^2 u\cos v\mathbf i + a^2\sin^2 u\sin v\mathbf i + a^2\sin u\cos v\mathbf k = a\sin u \mathbf r, |\mathbf r_u\times \mathbf r_v| = a^2\sin u, \mathbf n = \frac {\mathbf r_u\times \mathbf r_v}{|\mathbf r_u\times \mathbf r_v|} = \frac 1a\mathbf r\)</span></li>
+</ul>
+</li>
+<li>常见参数曲面：<ol>
+<li>旋转面：如 <span class="arithmatex">\(y=f(x)\)</span>（<span class="arithmatex">\(f(x)&gt;0\)</span>）绕 x 轴旋转：<span class="arithmatex">\(x=u,y=f(u)\cos v,z=f(u)\sin v\)</span>（<span class="arithmatex">\(v\in[0,2\pi]\)</span>）</li>
+<li>切平面：参数曲面 <span class="arithmatex">\(\mathbf R(u,v)\)</span> 在 <span class="arithmatex">\(\mathbf R_0=\mathbf R(u_0,v_0)\)</span> 处的切平面为 <span class="arithmatex">\([\mathbf R_{u0}\times\mathbf R_{v0}]\cdot (\mathbf r-\mathbf R_0)=0\)</span> （仅当 <span class="arithmatex">\(\mathbf R_{u0}\times\mathbf R_{v0}\ne0\)</span>，即 <span class="arithmatex">\(\mathbf R_0\)</span> 处没有拐角；<span class="arithmatex">\(\mathbf R_{u0}=\mathbf R_u(u_0,v_0),\mathbf R_{v0}=\mathbf R_v(u_0,v_0)\)</span>）</li>
+</ol>
+</li>
+<li>
+<p>曲面面积：光滑曲面 <span class="arithmatex">\(\mathbf r(u,v) = x(u,v)\mathbf i + y(u,v)\mathbf j + z(u,v)\mathbf k\)</span>，当 <span class="arithmatex">\((u,v)\)</span> 在整个参数域 D 上变化的时候，S 值覆盖一次；S 的面积为 <span class="arithmatex">\(A(S) = \iint\limits_D \left| \mathbf r_u'\times \mathbf r_v' \right|~d_A\)</span></p>
+<ul>
+<li>对于曲面 <span class="arithmatex">\(z=f(x,y)\)</span> 有参数曲面 <span class="arithmatex">\(\mathbf r(x,y) = x\mathbf i + y\mathbf j + f(x,y)\mathbf k\)</span>；则曲面面积为 <span class="arithmatex">\(A(S) = \iint\limits_D \left| \mathbf r_x'\times \mathbf r_y' \right|~d_A = \iint\limits_D \left| 1+f_x'^2+f_y'^2 \right|~d_A\)</span></li>
+<li>旋转曲面 <span class="arithmatex">\(x=x,y=f(x)\cos\theta, z=f(x)\sin\theta\)</span>，的曲面面积为 <span class="arithmatex">\(A(S) = \iint\limits_D|\mathbf r_x'\times \mathbf r_y'|~d_A = 2\pi \int_a^b f(x)\sqrt {1 + [f'(x)]^2}~d_x\)</span> （<span class="arithmatex">\(a\le x\le b, 0\le \theta\le2\pi\)</span>，<span class="arithmatex">\(f(x)\ge 0\)</span>）</li>
+</ul>
+</li>
+<li>
+<p>曲面积分：f 在曲面 S 上的曲面积分为 <span class="arithmatex">\(\iint\limits_S f(x,y,z)~d_S = \lim\limits_{n,m\to ∞}\sum\limits_{i=1}^n\sum\limits_{j=1}^m f(P_{ij}^*)\Delta S_{ij}\)</span></p>
+<ol>
+<li>曲面 <span class="arithmatex">\(S:~z=g(x,y)\)</span> 的曲面积分为 <span class="arithmatex">\(\iint\limits_S f(x,y,z)~d_S = \iint\limits_D f(x,y,g(x,y))\sqrt {(\frac {\partial z}{\partial x})^2 + (\frac {\partial z}{\partial y})^2 + 1}~d_A\)</span></li>
+<li>曲面 <span class="arithmatex">\(\mathbf r(u,v) = x(u,v)\mathbf i + y(u,v)\mathbf j + z(u,v)\mathbf k\)</span> 的曲面积分为 <span class="arithmatex">\(\iint\limits_S f(x,y,z)~d_S = \iint\limits_D f(\mathbf r(u,v))~|\mathbf r_u\times \mathbf r_v|~d_A\)</span> （<span class="arithmatex">\((u,v)\in D\)</span>）</li>
+</ol>
+</li>
+<li>向量场的曲面积分1：如果 <span class="arithmatex">\(\mathbf F\)</span> 是一个定义在单位法向量为 <span class="arithmatex">\(\mathbf n\)</span> 的有向曲面 S 上的连续向量场，那么 <span class="arithmatex">\(\mathbf F\)</span> 在 S 上的曲面积分为 <span class="arithmatex">\(\iint\limits_S\mathbf F\cdot ~d_\mathbf S = \iint\limits_S\mathbf F\cdot \mathbf n~d_S\)</span><ul>
+<li>又称 <span class="arithmatex">\(\mathbf F\)</span> 穿过 S 的<strong>通量积分</strong> 或 <span class="arithmatex">\(\mathbf F\)</span> 在 S 的法向分量上的曲面积分</li>
+</ul>
+</li>
+<li>向量场的曲面积分2：向量场 <span class="arithmatex">\(\mathbf F\)</span> 在由 <span class="arithmatex">\(z=g(x,y)\)</span> 曲面 S 上的曲面积分为 <span class="arithmatex">\(\iint\limits_S \mathbf F\cdot~d_\mathbf S = \iint\limits_D (-P\frac {\partial g}{\partial x} -Q\frac {\partial g}{\partial y} + R)~d_A\)</span> （<span class="arithmatex">\((x,y)\in D\)</span>）<ul>
+<li><span class="arithmatex">\(\iint\limits_S\mathbf F\cdot ~d_\mathbf S = \iint\limits_S\mathbf F\cdot \mathbf n~d_S = \iint\limits_S\mathbf F\cdot \frac {\nabla f(x,y,z)}{|\nabla f(x,y,z)|} ~d_S = \iint\limits_D (P\mathbf i + Q\mathbf j + R\mathbf k) \cdot \frac {-g_x\mathbf i - g_y\mathbf j + \mathbf k}{\sqrt {g_x^2 + g_y^2 + 1}} \sqrt {g_x^2 + g_y^2 + 1}~d_A = \iint\limits_D (-Pg_x -Qg_y + R)~d_A\)</span></li>
+</ul>
+</li>
+<li>向量场的曲面积分3：如果 S 由向量方程 <span class="arithmatex">\(\mathbf r(u,v)\)</span> 给定，那么向量场 <span class="arithmatex">\(\mathbf F\)</span> 在 S 上的曲面积分为 <span class="arithmatex">\(\iint\limits_S \mathbf F\cdot~d_\mathbf S = \iint\limits_D \mathbf F\cdot (\mathbf r_u\times \mathbf r_v)~d_A\)</span><ul>
+<li><span class="arithmatex">\(\iint\limits_S \mathbf F\cdot~d_\mathbf S = \iint\limits_S \mathbf F\cdot \mathbf n~d_S = \iint\limits_D \mathbf F\cdot \frac {\mathbf r_u\times \mathbf r_v}{|\mathbf r_u\times \mathbf r_v|}|\mathbf r_u\times \mathbf r_v|~d_A = \iint\limits_D \mathbf F\cdot (\mathbf r_u\times \mathbf r_v)~d_A\)</span></li>
+</ul>
+</li>
+<li>
+<p>应用</p>
+</li>
+<li>
+<p>斯托克斯定理：S 是一个定向的分片光滑的曲面，且由一个简单的，分段光滑，方向为正的闭边界曲线 C 界定；向量场 <span class="arithmatex">\(\mathbf F\)</span> 的分量函数在 <span class="arithmatex">\(\mathbb R^3\)</span> 上的一个包含 S 的开区域上有<strong>连续的偏导数</strong></p>
+<ul>
+<li>那么 <span class="arithmatex">\(\int_C \mathbf F\cdot d_\mathbf r = \iint\limits_S \mathbf {curl~F}\cdot d_\mathbf S\)</span>（即 <span class="arithmatex">\(\iint\limits_S \mathbf {curl~F}\cdot d_\mathbf S = \int\limits_{\partial S} \mathbf F\cdot d_\mathbf r\)</span>）</li>
+<li>注：S 的正方向 和 C 的正方向满足右手法则</li>
+<li>推论：若 <span class="arithmatex">\(S_1\)</span> 和 <span class="arithmatex">\(S_2\)</span> 是具有相同边界定向曲线 C 的定向曲面，且都满足斯托克斯的前提条件，那么 <span class="arithmatex">\(\iint\limits_{S_1} \mathbf {curl~F}\cdot d_\mathbf S = \int_C \mathbf F\cdot~d_\mathbf r = \iint\limits_{S_2} \mathbf {curl~F}\cdot d_\mathbf S\)</span></li>
+</ul>
+</li>
+<li>
+<p>(高斯)散度定理：E 是一个单连通区域，并设 S 是 E 的边界曲面，给定正方向（向外）；F 是一个向量场，其分量函数在一个包含 E 的开区域上有连续的偏导数</p>
+<ul>
+<li>那么 <span class="arithmatex">\(\iint\limits_S \mathbf F\cdot d_\mathbf S = \iiint\limits_E \text{div}~\mathbf F~d_V\)</span></li>
+<li>注：上述积分称为 向量场 <span class="arithmatex">\(\mathbf F\)</span> 在闭曲面 S 上的通量</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="17">17. 二阶微分方程</h3>
+<p>约定：“二阶线性微分方程”以下简称“方程”</p>
+<div class="admonition note">
+<p class="admonition-title">17. 二阶微分方程</p>
+<ol>
+<li>微分方程：包含 <span class="arithmatex">\(x,y,y',y'',\dots\)</span> 的方程（其中 <span class="arithmatex">\(y=f(x)\)</span>）<ul>
+<li>阶数：微分方程中 y 的导数的最高阶数</li>
+</ul>
+</li>
+<li>线性微分方程：形如 <span class="arithmatex">\(\sum\limits_{i=0}^n P_i(x)y^{(i)}(x)=Q(x)\)</span> 的微分方程<ol>
+<li>齐次性：线性微分方程齐次，当且仅当 <span class="arithmatex">\(Q(x)=0\)</span></li>
+<li>常系数性质：该线性微分方程是该系数的，当且仅当 对于所有 <span class="arithmatex">\(i\le n\)</span> 都有 <span class="arithmatex">\(P_i(x)=0\)</span></li>
+</ol>
+</li>
+<li>方程(2阶)：<span class="arithmatex">\(P(x)\frac {d^2y}{d_{x^2}} + Q(x)\frac {dy}{d_x} + R(x)y = G(x)\)</span></li>
+<li>齐次方程(2阶)：<span class="arithmatex">\(P(x)\frac {d^2y}{d_{x^2}} + Q(x)\frac {dy}{d_x} + R(x)y = 0\)</span><ul>
+<li>通解(一般解)：<span class="arithmatex">\(y(x)=c_1y_1(x) + c_2y_2(x)\)</span> 为通解，当且仅当 <span class="arithmatex">\(y_1(x)\)</span> 与 <span class="arithmatex">\(y_2(x)\)</span> 是线性无关解</li>
+</ul>
+</li>
+<li>齐次常系数方程(2阶)：<span class="arithmatex">\(ay^" + by' + cy = 0\)</span>（<span class="arithmatex">\(a,b,c\)</span> 为常数；<span class="arithmatex">\(a\ne0\)</span>）<ul>
+<li>性质：<span class="arithmatex">\(y=e^{rx}\)</span> 总匹配一个上述方程的特解，代入原方程可得到特征方程 <span class="arithmatex">\(ar^2 + br + c = 0\)</span>，记 <span class="arithmatex">\(\Delta = b^2-4ac\)</span></li>
+<li><span class="arithmatex">\(\Delta &gt; 0\)</span>：<span class="arithmatex">\(y=c_1e^{r_1x}+c_2e^{r_2x}\)</span>（<span class="arithmatex">\(r_1 = \frac {-b-\sqrt \Delta}{2a}, r_2=\frac {-b+\sqrt \Delta}{2a}\)</span>）为通解</li>
+<li><span class="arithmatex">\(\Delta = 0\)</span>：<span class="arithmatex">\(y=(c_1+c_2x)e^{rx}\)</span> （<span class="arithmatex">\(r=\frac{-b}{2a}\)</span>）为通解</li>
+<li><span class="arithmatex">\(\Delta &lt; 0\)</span>：<span class="arithmatex">\(y=e^{Ax}[k_1\cos(Bx)+k_2i\cos(Bx)]\)</span>（<span class="arithmatex">\(A=\frac{-b}{2a},B=\frac{\sqrt{-\Delta}}{2a}\)</span>；<span class="arithmatex">\(k_1=c_1+c_2,k_2=c_1-c_2\)</span>）为通解</li>
+</ul>
+</li>
+<li>初值问题：给定 二阶常系数齐次方程，<span class="arithmatex">\(y(x_0)=y_0, y'(x_0) = y_1\)</span>，该微分方程总存在唯一解</li>
+<li>
+<p>边值问题：给定 二阶常系数齐次方程，<span class="arithmatex">\(y(x_0)=y_0, y(x_1)=y_1\)</span>，该微分方程并不总是有解</p>
+</li>
+<li>
+<p>非齐次常系数方程(2次)：<span class="arithmatex">\(ay^" + by' + c = G(x)\)</span> （<span class="arithmatex">\(G(x)\ne0\)</span>）</p>
+<ul>
+<li><span class="arithmatex">\(y_p\)</span>：该方程的特解</li>
+<li><span class="arithmatex">\(y_c\)</span>：该方程对应的非齐次方程 <span class="arithmatex">\(ay^" + by' + c = 0\)</span> 的一般解</li>
+<li>性质：<span class="arithmatex">\(y=y_p+y_c\)</span> 为该方程的一般解</li>
+</ul>
+</li>
+<li>
+<p>非齐次常系数方程求<strong>特解</strong>方法</p>
+<ol>
+<li>待定系数法：通过观察 <span class="arithmatex">\(G(x)\)</span> 的模式构造特解（<span class="arithmatex">\(P,Q,R\)</span> 均为多项式），联立方程求解待定系数<ol>
+<li><span class="arithmatex">\(G(x)=e^{kx}R_n(x)\)</span>：构造 <span class="arithmatex">\(y_p=e^{kx}P_n(x)\)</span></li>
+<li><span class="arithmatex">\(G(x)=e^{kx}R_n(x)\cos(mx)\)</span> 或 <span class="arithmatex">\(G(x)=e^{kx}R_n(x)\sin(mx)\)</span>：构造 <span class="arithmatex">\(y_p=e^{kx}[P_n(x)\cos(mx) + Q_n(x)\sin(mx)]\)</span></li>
+<li><span class="arithmatex">\(G(x)\)</span> 为上述模式的合式：构造 <span class="arithmatex">\(y_p = \sum\limits_{i=1}^t y_{p_i}\)</span></li>
+<li>注：若构造的 <span class="arithmatex">\(y_{p0}\)</span> 与 <span class="arithmatex">\(y_c\)</span> 匹配，则构造 <span class="arithmatex">\(y_p=y_{p0}\cdot x\)</span> 或 <span class="arithmatex">\(y_p=y_{p0}\cdot x^2\)</span></li>
+</ol>
+</li>
+<li>参数变易法：该方程对应的齐次方程的通解为 <span class="arithmatex">\(y_c=c_1y_1+c_2y_2\)</span>，构造该方程的特解 <span class="arithmatex">\(y_p=u_1y_1+u_2y_2\)</span>（<span class="arithmatex">\(u_1=u_1(x),u_2=u_2(x)\)</span>）<ol>
+<li>联立方程组 <span class="arithmatex">\(\begin{cases} u_1'y_1 + u_2'y_2 = 0 \\ a(u_1'y_1' + u_2'y_2') = G(x) \end{cases}\)</span> 即可得到 <span class="arithmatex">\(u_1,u_2\)</span></li>
+<li><span class="arithmatex">\(y=y_c+y_p=(u_1+c_1)y_1+(u_2+c_2)y_2\)</span></li>
+<li>注：<span class="arithmatex">\(u_1,u_2\)</span> 可能是一族函数（这些函数都可以是通解），我们只需选择最简单形式</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>二阶微分方程的应用：弹簧运动（<span class="arithmatex">\(m\frac {d^2x}{d_t^2} + kx = 0\)</span>），阻尼振动（<span class="arithmatex">\(m\frac {d^2x}{d_t^2}+c\frac {dx}{d_t}+kx=0\)</span>），强迫振动（<span class="arithmatex">\(m\frac {d^2x}{d_{t^2}}+c\frac {dx}{d_t}+kx=F(t)\)</span>）；电路（<span class="arithmatex">\(L\frac {d^2Q}{d_{t^2}} + R\frac{dQ}{d_t} + \frac 1CQ = E(t)\)</span>）</p>
+</li>
+<li>
+<p>幂级数的 n 次导数：<span class="arithmatex">\(P(x) = \sum\limits_{i=0}^∞a_ix^i\)</span> 的 n 次导数为 <span class="arithmatex">\(P^{(n)}=\sum\limits_{i=0}^∞a_{i+n}\prod\limits_{j=1}^{n}(i+j)x^i\)</span></p>
+<ul>
+<li><span class="arithmatex">\(P^{(n)}=\sum\limits_{i=n}^∞a_i\prod\limits_{j=0}^{n-1}(i-j)x^{i-n}=\sum\limits_{i=0}^∞a_{i+n}\prod\limits_{j=0}^{n-1}(i+n-j)x^i = \sum\limits_{i=0}^∞a_{i+n}\prod\limits_{j=1}^{n}(i+j)x^i\)</span></li>
+</ul>
+</li>
+<li>微分方程的级数解：通常可以解决齐次方程 <span class="arithmatex">\(\sum\limits_{j=0}^n P_jy^{(j)}=0\)</span> 的通解<ol>
+<li>设 <span class="arithmatex">\(y=\sum\limits_{i=0}^∞a_ix^i\)</span>，代入方程有 <span class="arithmatex">\(\sum\limits_{j=0}^nP_j\sum\limits_{i=0}^∞a_{i+j}\frac{(i+j)!}{i!}x^i=0\)</span>，进而 <span class="arithmatex">\(\sum\limits_{i=0}^∞[\sum\limits_{j=0}^nP_j\frac{(i+j)!}{i!}a_{i+j}]x^i=0\)</span></li>
+<li>适当调整内层循环，消去 x 的次幂，可以得到有关 <span class="arithmatex">\(a_i,a_{i+1},\dots,a_{i+j}\)</span> 的线性方程</li>
+<li>若 (b) 中得到的线性方程为 <span class="arithmatex">\(a_{i+n}=f(i)\cdot a_i\)</span>，于是 <span class="arithmatex">\(a_{h+ni}=a_h\prod\limits_{j=0}^{i-1}f(h+nj)\)</span>；<span class="arithmatex">\(y=\sum\limits_{i=0}^∞a_ix^i=\sum\limits_{h=0}^{n-1}\sum\limits_{i=0}^{∞}a_{h+ni}x^{h+ni}=\sum\limits_{h=0}^{n-1}a_h\sum\limits_{i=0}^{∞}\prod\limits_{j=0}^{i-1}f(h+nj)x^{h+ni}\)</span></li>
+</ol>
+</li>
 </ol>
 </div>
 </article>

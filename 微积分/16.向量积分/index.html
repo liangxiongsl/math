@@ -175,7 +175,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         线性代数
       </a>
 </li>
@@ -449,6 +449,11 @@
           线性代数
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
+        术语和定义
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
@@ -954,12 +959,8 @@
 <p class="admonition-title">标量场的线积分 与 向量场的线积分 的关系</p>
 <ul>
 <li>记 <span class="arithmatex">\(\mathbf F = P\mathbf i + Q\mathbf j + R\mathbf k\)</span></li>
-<li>
-<p><span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_a^b\mathbf F(\mathbf r(t))\cdot \mathbf r'(t)~d_t = \int_a^b (P\mathbf i + Q\mathbf j + R\mathbf k)\cdot (x'(t)\mathbf i + y'(t)\mathbf j + z'(t)\mathbf k)~d_t = \int_a^b [Px'(t) + Qy'(t) + Rz'(t)]~d_t\)</span></p>
-</li>
-<li>
-<p>注意到 <span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_C P~d_x + Q~d_y + R~d_z\)</span></p>
-</li>
+<li><span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_a^b\mathbf F(\mathbf r(t))\cdot \mathbf r'(t)~d_t = \int_a^b (P\mathbf i + Q\mathbf j + R\mathbf k)\cdot (x'(t)\mathbf i + y'(t)\mathbf j + z'(t)\mathbf k)~d_t = \int_a^b [Px'(t) + Qy'(t) + Rz'(t)]~d_t\)</span></li>
+<li>注意到 <span class="arithmatex">\(\int_C\mathbf F\cdot d_{\mathbf r} = \int_C P~d_x + Q~d_y + R~d_z\)</span></li>
 </ul>
 </div>
 <h3 id="3">3.线积分的基本定理</h3>
@@ -981,7 +982,7 @@
 <div class="admonition note">
 <p class="admonition-title">概念(拓扑学)</p>
 <ul>
-<li>领域：<span class="arithmatex">\(\mathbb R^n\)</span> 中的某个点 <span class="arithmatex">\(\mathbf x=(x_1,x_2,\dots,x_n)\)</span>，广义半径为 r 的邻域为 <span class="arithmatex">\(N(\mathbf x, r)\{\mathbf y=(y_1,y_2,\dots,y_n) | \sqrt {\sum\limits_{i=1}^n (y_i-x_i)} \le r\}\)</span> （不一定是开集，也可以是闭集）</li>
+<li>邻域：<span class="arithmatex">\(\mathbb R^n\)</span> 中的某个点 <span class="arithmatex">\(\mathbf x=(x_1,x_2,\dots,x_n)\)</span>，广义半径为 r 的邻域为 <span class="arithmatex">\(N(\mathbf x, r)=\{(y_1,y_2,\dots,y_n) | \sqrt {\sum\limits_{i=1}^n (y_i-x_i)} \le r\}\)</span> （不一定是开集，也可以是闭集）</li>
 <li>开集：集合 A 中的任意一点 a，都存在一个领域 <span class="arithmatex">\(N(a,r)\subset A\)</span>；任意多个开集的交集或并集都是开集</li>
 <li>闭集：若某个集合的补集是开集，那么它是一个闭集</li>
 <li>连通集：一个非空集合，若满足该集合中的任意两个点都可以通过该拓扑空间下的一系列路径相互连通，称其为连通集</li>
@@ -1108,7 +1109,7 @@
 <li><span class="arithmatex">\((\int_{C_1} P~d_x+Q~d_y) + (\int_{C_2} P~d_x+Q~d_y) = \int_{C_1\cup C_2} P~d_x+Q~d_y\)</span></li>
 <li><span class="arithmatex">\(\iint\limits_{D_1} f~d_A + \iint\limits_{D_2} f~d_A = \iint\limits_{D_1\cup D_2} f~d_A\)</span></li>
 <li>若 <span class="arithmatex">\(C_1\cup C_2\)</span> 是简单闭曲线，并且其内部为区域 D，由格林定理得到：</li>
-<li>关于 <span class="arithmatex">\(D=D_1\cap D_2\)</span> 的格林定理：<span class="arithmatex">\(\int_{C_1\cup C_2} P~d_x+Q~d_y = \iint\limits_{D} \frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y}~d_A\)</span></li>
+<li>关于 <span class="arithmatex">\(D=D_1\cup D_2\)</span> 的格林定理：<span class="arithmatex">\(\int_{C_1\cup C_2} P~d_x+Q~d_y = \iint\limits_{D} \frac {\partial Q}{\partial x} - \frac {\partial P}{\partial y}~d_A\)</span></li>
 </ul>
 </div>
 <p>证明引论3：</p>
@@ -1183,7 +1184,7 @@
 <p class="admonition-title">保守向量场(充分条件3；三维)</p>
 </div>
 <blockquote>
-<p>如果 <span class="arithmatex">\(\mathbf F\)</span> 是一个在 <span class="arithmatex">\(\mathbb R^3\)</span> 上都有定义的向量场，它的分类函数有连续的偏导数，且 <span class="arithmatex">\(\mathbf {curl~F} = \mathbf 0\)</span>，</p>
+<p>如果 <span class="arithmatex">\(\mathbf F\)</span> 是一个在 <span class="arithmatex">\(\mathbb R^3\)</span> 上都有定义的向量场，它的分量函数有连续的偏导数，且 <span class="arithmatex">\(\mathbf {curl~F} = \mathbf 0\)</span>，</p>
 <p>那么 <span class="arithmatex">\(\mathbf F\)</span> 是一个保守向量场</p>
 <p>证明：直接由斯托克斯定理证明（见 16.8）</p>
 </blockquote>
@@ -1231,7 +1232,7 @@
 <div class="admonition note">
 <p class="admonition-title">对散度的解释</p>
 <ul>
-<li>若 <span class="arithmatex">\(\mathbf F\)</span> 是液体或气体的速度，那么 <span class="arithmatex">\(\text{div}~\mathbf F\)</span> 表示 (x,y,z) 处单位体积上液体或其他流出的质量的增长率的改变量</li>
+<li>若 <span class="arithmatex">\(\mathbf F\)</span> 是液体或气体的速度，那么 <span class="arithmatex">\(\text{div}~\mathbf F\)</span> 表示 (x,y,z) 处单位体积上液体或气体流出的质量的增长率的改变量</li>
 <li>换句话说，<span class="arithmatex">\(\text{div}~\mathbf F\)</span> 描述了流图从 (x,y,z) 流出的趋势</li>
 <li>若 <span class="arithmatex">\(\text{div}~\mathbf F=0\)</span>，那么称 <span class="arithmatex">\(\mathbf F\)</span> 是不可压缩的</li>
 </ul>
@@ -1296,11 +1297,7 @@
 <p class="admonition-title">常见参数曲面</p>
 <ul>
 <li>旋转面：例如：假设 y=f(x) <span class="arithmatex">\((f(x)\ge 0)\)</span> 绕 x 轴旋转  <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(x=x, y=f(x)\cos\theta, z=f(x)\sin\theta\)</span></li>
-<li>平面：表示出的参数有点“丑”<ul>
-<li>平面 <span class="arithmatex">\(S_1\)</span> 在点 <span class="arithmatex">\(P_0\)</span> 处的<strong>切平面</strong> <span class="arithmatex">\(S_2\)</span>：假设 <span class="arithmatex">\(\mathbf r(u,v)\)</span> 为 <span class="arithmatex">\(S_1\)</span> 的参数曲面，P 为切平面 <span class="arithmatex">\(S_2\)</span> 的任意一点，又因为 <span class="arithmatex">\(P_0\)</span> 处的法向量 <span class="arithmatex">\(\mathbf n = \mathbf r_u(u_0,v_0)\times \mathbf r_v(u_0,v_0)\)</span>，那么 <span class="arithmatex">\(S_2\)</span> 由 <span class="arithmatex">\(\overrightarrow {P_0P}\cdot \mathbf n = \overrightarrow {P_0P}\cdot(\mathbf r_u(u_0,v_0)\times \mathbf r_v(u_0,v_0))\)</span> 决定</li>
-<li>若对任意 <span class="arithmatex">\(P_0\)</span>， <span class="arithmatex">\(\mathbf n\ne \mathbf 0\)</span>，则去米娜 S 陈伟光滑的(没有“拐角”)</li>
-</ul>
-</li>
+<li>切平面：参数曲面 <span class="arithmatex">\(\mathbf R(u,v)\)</span> 在 <span class="arithmatex">\(\mathbf R_0=\mathbf R(u_0,v_0)\)</span> 处的切平面为 <span class="arithmatex">\([\mathbf R_{u0}\times\mathbf R_{v0}]\cdot (\mathbf r-\mathbf R_0)=0\)</span> （仅当 <span class="arithmatex">\(\mathbf R_{u0}\times\mathbf R_{v0}\ne0\)</span>，即 <span class="arithmatex">\(\mathbf R_0\)</span> 处没有拐角；<span class="arithmatex">\(\mathbf R_{u0}=\mathbf R_u(u_0,v_0),\mathbf R_{v0}=\mathbf R_v(u_0,v_0)\)</span>）</li>
 </ul>
 </div>
 <p>考虑矩形区域 R 上的曲面面积：考虑某个区域 <span class="arithmatex">\(R_{i,j}=[u_i,\Delta u]\times [v_j,\Delta v]\)</span>，使用平面四边形（由 <span class="arithmatex">\(\Delta u\mathbf r_u^*\)</span> 和 <span class="arithmatex">\(\Delta v\mathbf r_v^*\)</span> 构成） 近似 <span class="arithmatex">\(S_{i,j}\)</span>，其面积为 <span class="arithmatex">\(\left| (\Delta u\mathbf r_u^*)\times (\Delta v\mathbf r_v^*) \right| = \left| \mathbf r_u^* \times \mathbf r_v^* \right|\Delta u\Delta v\)</span></p>
@@ -1309,14 +1306,14 @@
 </div>
 <blockquote>
 <p>如果一个光滑的参数曲面 S 由 <span class="arithmatex">\(\mathbf r(u,v) = x(u,v)\mathbf i + y(u,v)\mathbf j + z(u,v)\mathbf k\)</span>（<span class="arithmatex">\((u,v)\in D\)</span>）</p>
-<p>且当 <span class="arithmatex">\((u,v)\)</span> 在整个参数域 D 上变化的时候，S 值覆盖依次，那么 S 的曲面面积为：</p>
+<p>且当 <span class="arithmatex">\((u,v)\)</span> 在整个参数域 D 上变化的时候，S 值覆盖一次，那么 S 的曲面面积为：</p>
 <p><span class="arithmatex">\(A(S) = \iint\limits_D \left| \mathbf r_u\times \mathbf r_v \right|~d_A\)</span></p>
 <p>其中，<span class="arithmatex">\(\mathbf r_u = \frac {\partial x}{\partial u}\mathbf i + \frac {\partial y}{\partial u}\mathbf j + \frac {\partial z}{\partial u}\mathbf k, \mathbf r_v = \frac {\partial x}{\partial v}\mathbf i + \frac {\partial y}{\partial v}\mathbf j + \frac {\partial z}{\partial v}\mathbf k\)</span></p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">曲面面积推论</p>
 <ul>
-<li>若曲面由 <span class="arithmatex">\(z=(x,y)\)</span> 决定，将 x 和 y 作为曲面参数：得到<span class="arithmatex">\(\mathbf r_x = \mathbf i+\frac {\partial f}{\partial x}\mathbf k, \mathbf r_y = \mathbf j+\frac {\partial f}{\partial y}\mathbf k\)</span>，那么 <span class="arithmatex">\(\mathbf r_x\times \mathbf r_y=-\frac {\partial f}{\partial x}\mathbf i - \frac {\partial f}{\partial y}\mathbf j + \mathbf k\)</span>，故 <span class="arithmatex">\(\left| \mathbf r_x\times \mathbf r_y \right| = \sqrt {1 + f_x^2 + f_y^2}\)</span></li>
+<li>若曲面由 <span class="arithmatex">\(z=f(x,y)\)</span> 决定，将 x 和 y 作为曲面参数：得到<span class="arithmatex">\(\mathbf r_x = \mathbf i+\frac {\partial f}{\partial x}\mathbf k, \mathbf r_y = \mathbf j+\frac {\partial f}{\partial y}\mathbf k\)</span>，那么 <span class="arithmatex">\(\mathbf r_x\times \mathbf r_y=-\frac {\partial f}{\partial x}\mathbf i - \frac {\partial f}{\partial y}\mathbf j + \mathbf k\)</span>，故 <span class="arithmatex">\(\left| \mathbf r_x\times \mathbf r_y \right| = \sqrt {1 + f_x^2 + f_y^2}\)</span></li>
 <li>旋转曲面：假定曲面由参数 <span class="arithmatex">\(x=x,y=f(x)\cos\theta, z=f(x)\sin\theta\)</span>（<span class="arithmatex">\(a\le x\le b, 0\le \theta\le2\pi\)</span>，<span class="arithmatex">\(f(x)\ge 0\)</span>）<ul>
 <li>同样可以通过得到与 8.2公式4 相同的公式：<span class="arithmatex">\(A(S) = \iint\limits_D|\mathbf r_x\times \mathbf r_y|~d_A = 2\pi \int_a^b f(x)\sqrt {1 + [f'(x)]^2}~d_x\)</span>（请自行证明！）</li>
 </ul>
@@ -1324,7 +1321,7 @@
 </ul>
 </div>
 <h3 id="7">7.曲面积分</h3>
-<p>曲面积分与曲面面积放关系 类似于 线积分与弧长的关系</p>
+<p>曲面积分与曲面面积的关系 类似于 线积分与弧长的关系</p>
 <p>假定 f 是一个三个变元的函数，定义域为曲面 S</p>
 <p>将定义域 S 分成小片面积 <span class="arithmatex">\(S_{i,j}\)</span>，其面积为 <span class="arithmatex">\(\Delta S_{i,j}\)</span>，在 <span class="arithmatex">\(S_{i,j}\)</span> 上取样本 <span class="arithmatex">\(P_{i,j}^*\)</span>，记贡献为 <span class="arithmatex">\(f(P_{i,j}^*)\Delta S_{i,j}\)</span>（假定 S 是矩形？）</p>
 <div class="admonition note">
@@ -1409,14 +1406,14 @@
 <p class="admonition-title">向量场的曲面积分1</p>
 </div>
 <blockquote>
-<p>若干个 <span class="arithmatex">\(\mathbf F\)</span> 是一个定义在单位法向量为 <span class="arithmatex">\(\mathbf n\)</span> 的有向曲面 S 上的连续向量场，</p>
+<p>如果 <span class="arithmatex">\(\mathbf F\)</span> 是一个定义在单位法向量为 <span class="arithmatex">\(\mathbf n\)</span> 的有向曲面 S 上的连续向量场，</p>
 <p>那么 <span class="arithmatex">\(\mathbf F\)</span> 在 S 上的曲面积分为 <span class="arithmatex">\(\iint\limits_S\mathbf F\cdot ~d_\mathbf S = \iint\limits_S\mathbf F\cdot \mathbf n~d_S\)</span></p>
 <p>该积分也被称为 <span class="arithmatex">\(\mathbf F\)</span> 穿过 S 的<strong>通量积分</strong></p>
 <p>注：该定义意味着向量场 <span class="arithmatex">\(\mathbf F\)</span> 在 S 上的曲面积分 等于 它在<strong>法向分量上的曲面积分</strong></p>
 </blockquote>
 <p>假定曲面由 z=g(x,y) 决定，设 <span class="arithmatex">\(f(x,y,z)=z-g(x,y)=0\)</span></p>
 <p>又因为 <strong>梯度向量 <span class="arithmatex">\(\nabla f(x,y,z)\)</span> 是这个曲面在 (x,y,z) 处的法向量</strong></p>
-<p>所以单位法向量 <span class="arithmatex">\(\displaystyle \mathbf n = \frac {\nabla f(x,y,z)}{|\nabla f(x,y,z)|} = \frac {-g_x\mathbf i - g_y\mathbf j + \mathbf k}{g_x^2 + g_y^2 + 1}\)</span></p>
+<p>所以单位法向量 <span class="arithmatex">\(\displaystyle \mathbf n = \frac {\nabla f(x,y,z)}{|\nabla f(x,y,z)|} = \frac {-g_x\mathbf i - g_y\mathbf j + \mathbf k}{\sqrt{g_x^2 + g_y^2 + 1}}\)</span></p>
 <p><span class="arithmatex">\(\iint\limits_S \mathbf F\cdot~d_\mathbf S = \iint\limits_S \mathbf F\cdot \mathbf n~d_S\)</span></p>
 <p><span class="arithmatex">\(=\iint\limits_D (P\mathbf i + Q\mathbf j + R\mathbf k) \cdot \frac {-g_x\mathbf i - g_y\mathbf j + \mathbf k}{\sqrt {g_x^2 + g_y^2 + 1}} \sqrt {g_x^2 + g_y^2 + 1}~d_A = \iint\limits_D (-Pg_x -Qg_y + R)~d_A\)</span></p>
 <div class="admonition note">
@@ -1537,7 +1534,7 @@
 </div>
 <blockquote>
 <p>设 E 是一个单连通区域，并设 S 是 E 的边界曲面，给定正方向（向外）</p>
-<p>设 F 是一个向量场，其分类函数在一个包含 E 的开区域上有连续的偏导数，那么：</p>
+<p>设 F 是一个向量场，其分量函数在一个包含 E 的开区域上有连续的偏导数，那么：</p>
 <p><span class="arithmatex">\(\iint\limits_S \mathbf F\cdot d_\mathbf S = \iiint\limits_E \text{div}~\mathbf F~d_V\)</span></p>
 <p>证明详见：P448</p>
 </blockquote>
