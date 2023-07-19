@@ -122,6 +122,11 @@
                     latex识别
                   </a>
 </li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.zhihu.com/question/36512716" hreflang="">
+                    书
+                  </a>
+</li>
 </ul>
 </div>
 </div>
@@ -185,7 +190,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
         概率论及其应用
       </a>
 </li>
@@ -440,6 +445,31 @@
     4.分块矩阵
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 矩阵因式分解
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 列昂惕夫投入产出模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 计算机图形学中的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-mathbb-rn">
+    8. \(\mathbb R^n\) 的子空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9. 维数和秩
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -555,6 +585,11 @@
           概率论及其应用
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
+        0.概述
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
         1.样本空间
@@ -763,6 +798,31 @@
     4.分块矩阵
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 矩阵因式分解
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 列昂惕夫投入产出模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 计算机图形学中的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-mathbb-rn">
+    8. \(\mathbb R^n\) 的子空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9. 维数和秩
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -896,7 +956,7 @@
 <p class="admonition-title">初等行变换</p>
 </div>
 <blockquote>
-<p>若对 <span class="arithmatex">\(m\times n\)</span> 矩阵进行初等行变换，所得矩阵可以表示成 <span class="arithmatex">\(EA\)</span></p>
+<p>若对 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 矩阵进行初等行变换，所得矩阵可以表示成 <span class="arithmatex">\(EA\)</span> </p>
 <p>其中 E 是 <span class="arithmatex">\(m\times m\)</span> 矩阵，它是由 <span class="arithmatex">\(I_m\)</span> 进行同一行变换所得</p>
 <p>另外，初等矩阵 E 是可逆的，E 的逆是一个同类型的初等矩阵，它把 E 变回 I</p>
 </blockquote>
@@ -954,7 +1014,162 @@
 <p>充分性：若 T 是一对一线性变换，那么 T 是可逆线性变换</p>
 </blockquote>
 <h3 id="4">4.分块矩阵</h3>
-<p>133</p>
+<div class="admonition note">
+<p class="admonition-title">分块矩阵</p>
+</div>
+<blockquote>
+<p>矩阵 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 可以写成具有 <span class="arithmatex">\(s(s\le m)\)</span> 行 <span class="arithmatex">\(t(t\le n)\)</span> 列的分块矩阵</p>
+<p>块 <span class="arithmatex">\((i,j)\)</span> 记作 <span class="arithmatex">\(A_{ij}\)</span>；第 i 块行记作 <span class="arithmatex">\(\text{row}_i(A)\)</span>，第 i 块列记作 <span class="arithmatex">\(\text{col}_i(A)\)</span></p>
+<p>加法：<span class="arithmatex">\(A + B\)</span> 的每一块恰好是 A 和 B 对应分块(的矩阵)的和（仅当 A 和 B 维数相同，并且分块方式相同）</p>
+<p>数乘：<span class="arithmatex">\(cA\)</span> 的每一块为 <span class="arithmatex">\((cA)_{ij}=cA_{ij}\)</span></p>
+<p>乘法：<span class="arithmatex">\(AB\)</span> 的每一块为 <span class="arithmatex">\((AB)_{ij} = \text{row}_{i}(A)\text{col}_j(B) = \sum\limits_{k=1}^nA_{ik}B_{kj}\)</span>；或者 <span class="arithmatex">\(AB = \sum\limits_{i=1}^n\text{col}_i(A)\text{row}_i(B)\)</span></p>
+<p>转置：<span class="arithmatex">\(AB\)</span> 的每一块为 <span class="arithmatex">\((A^T)_{ij} = A^T_{ji}\)</span></p>
+</blockquote>
+<p>对于 分块上三角矩阵 <span class="arithmatex">\(A = \begin{bmatrix}A_{11}&amp;A_{12}\\0&amp;A_{22}\end{bmatrix}\)</span>，假设其逆矩阵为 <span class="arithmatex">\(B = \begin{bmatrix}B_{11}&amp;B_{12}\\B_{21}&amp;B_{22}\end{bmatrix}\)</span>（<span class="arithmatex">\(A,B\in\mathbb R^{(p+q)\times (p+q)}\)</span>），</p>
+<p>因而 <span class="arithmatex">\(AB = \begin{bmatrix}A_{11}&amp;A_{12}\\0&amp;A_{22}\end{bmatrix}\begin{bmatrix}B_{11}&amp;B_{12}\\B_{21}&amp;B_{22}\end{bmatrix}=\begin{bmatrix}I_p&amp;0\\0&amp;I_q\end{bmatrix}\)</span></p>
+<p>所以 <span class="arithmatex">\(\begin{cases}A_{11}B_{11}+A_{12}B_{21}=\mathbf I_p\\A_{11}B_{12}+A_{12}B_{22}=0\\A_{22}B_{21}=0\\A_{22}B_{22}=\mathbf I_q\end{cases} \implies \begin{cases}B_{21}=A_{22}^{-1}0=0\\B_{22}=A_{22}^{-1}\mathbf I_q=A_{22}^{-1}\\B_{11}=A_{11}^{-1}(\mathbf I_p-A_{12}B_{21})=A_{11}^{-1}\\B_{12}=A_{11}^{-1}(-A_{12}B_{22})=-A_{11}^{-1}A_{12}A_{22}^{-1}\\\end{cases}\)</span> （仅当 <span class="arithmatex">\(A_{11}^{-1},A_{22}^{-1}\)</span> 存在）</p>
+<div class="admonition note">
+<p class="admonition-title">分块矩阵的逆</p>
+</div>
+<blockquote>
+<p>对于 分块上三角矩阵 <span class="arithmatex">\(A = \begin{bmatrix}A_{11}&amp;A_{12}\\0&amp;A_{22}\end{bmatrix}\)</span> 的逆矩阵为 <span class="arithmatex">\(A^{-1} = \begin{bmatrix}A_{11}&amp;A_{12}\\0&amp;A_{22}\end{bmatrix}^{-1}=\begin{bmatrix}A_{11}^{-1}&amp;-A_{11}^{-1}A_{12}A_{22}^{-1}\\0&amp;A_{22}^{-1}\end{bmatrix}\)</span></p>
+<p>仅当 <span class="arithmatex">\(A_{11}^{-1},A_{22}^{-1}\)</span> 存在；其中 <span class="arithmatex">\(A_{11}\in\mathbb R^{p\times p},A_{22}\in\mathbb R^{q\times q}\)</span></p>
+<p>另外 <span class="arithmatex">\(\begin{bmatrix}A_{11}&amp;0\\A_{21}&amp;A_{22}\end{bmatrix}^{-1}=\begin{bmatrix}A_{11}^{-1}&amp;0\\-A_{22}^{-1}A_{12}A_{11}^{-1}&amp;A_{22}^{-1}\end{bmatrix}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">分块对角矩阵的逆</p>
+</div>
+<blockquote>
+<p>分块对角矩阵：除了主对角线上各分块外，其余全是零分块，记为 <span class="arithmatex">\(A = \begin{bmatrix}\ddots\\&amp;A_{ii}\\&amp;&amp;\ddots\end{bmatrix}\)</span>（注：主对角线上的块均是非零矩阵）</p>
+<p>分块对角矩阵的逆：<span class="arithmatex">\(A^{-1} = \begin{bmatrix}\ddots\\&amp;A_{ii}^{-1}\\&amp;&amp;\ddots\end{bmatrix}\)</span></p>
+<p>注：A 的划分方法可以是用若干子矩形将对角线进行划分，其中子矩阵越小越好</p>
+</blockquote>
+<h3 id="5">5. 矩阵因式分解</h3>
+<p>设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 可以简化为阶梯形</p>
+<p>对 A <strong>只进行倍加变换的</strong>初等行变换以得到 U（如果可能）</p>
+<p>有 <span class="arithmatex">\(\begin{bmatrix}A&amp;I\end{bmatrix} \sim \begin{bmatrix}EA&amp;E\end{bmatrix}=\begin{bmatrix}U&amp;E\end{bmatrix}\)</span> （<span class="arithmatex">\(E=\prod\limits_{i=p}^1E_i\)</span>；E 可逆）</p>
+<p>记 <span class="arithmatex">\(U=EA, L=E^{-1}\)</span>，有 <span class="arithmatex">\(A=E^{-1}U=LU\)</span></p>
+<p>这里的 <span class="arithmatex">\(E^{-1}\)</span> 显然是下三角矩阵</p>
+<p>由于只进行了从上往下的倍加变换，因而 L 也是下三角矩阵，</p>
+<p>并且对于 <span class="arithmatex">\(i&gt;j\)</span> 有 <span class="arithmatex">\(L_{ij} = -E_{ij}\)</span>；<span class="arithmatex">\(L_{ii} = 1\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">LU 分解算法</p>
+</div>
+<blockquote>
+<p>对 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> <strong>只进行倍加变换的</strong>初等行变换以得到 U（如果可能）</p>
+<p>构造 L，满足：对于 <span class="arithmatex">\(i&gt;j\)</span> 有 <span class="arithmatex">\(L_{ij} = -E_{ij}\)</span>；<span class="arithmatex">\(L_{ii} = 1\)</span>；其他元素均为 0</p>
+<p>因而 <span class="arithmatex">\(A = LU\)</span> （如果 L 和 U 都存在）</p>
+<p>注：复杂度为 <span class="arithmatex">\(O(n^3)\)</span>；<span class="arithmatex">\(L\in\mathbb R^{m\times m}, U\in\mathbb R^{m\times n}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">LU 分解算法的应用</p>
+</div>
+<blockquote>
+<p>对于 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 和一系列向量 <span class="arithmatex">\(\mathbf b_i\)</span> 大量求解矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b_i\)</span></p>
+<p><span class="arithmatex">\(A\mathbf x=\mathbf b_i \iff \begin{cases}L\mathbf y=\mathbf b\\U\mathbf x=\mathbf y\end{cases}\)</span></p>
+<p>先求解 <span class="arithmatex">\(\mathbf y\)</span> 再求得 <span class="arithmatex">\(\mathbf x\)</span></p>
+<p>注：随机的矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的求解复杂度是 <span class="arithmatex">\(O(n^3)\)</span>；而三角或阶梯型矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的求解复杂度是 <span class="arithmatex">\(O(n^2)\)</span></p>
+</blockquote>
+<h3 id="6">6. 列昂惕夫投入产出模型</h3>
+<div class="admonition note">
+<p class="admonition-title">列昂惕夫投入产出模型(生产方程)</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\text{总产出} = \text{中间需求} + \text{最终需求}\)</span></p>
+<p><span class="arithmatex">\(\mathbf x = C\mathbf x+\mathbf d\)</span></p>
+<p>注：C 是消耗矩阵</p>
+</blockquote>
+<h3 id="7">7. 计算机图形学中的应用</h3>
+<h3 id="8-mathbb-rn">8. <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间</h3>
+<p>温馨提示：阅读过 2.8 和 2.9 后，可以跳过第 3/4 章大部分内容，而直接阅读第 5 章</p>
+<p><span class="arithmatex">\(\mathbb R^n\)</span> 的子空间是 <span class="arithmatex">\(\mathbb R^n\)</span> 中重要的向量子集，通常与某个矩阵 A 有关，并提供关于矩阵方程的有用信息</p>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(\mathbb R^n\)</span> 的子空间</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(H \subset \mathbb R^n\)</span> 为 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，当且仅当满足以下三个条件：</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf 0\in H\)</span></li>
+<li>对于任意 <span class="arithmatex">\(\mathbf u,\mathbf v\in H\)</span>，有 <span class="arithmatex">\(\mathbf u+\mathbf v\in H\)</span></li>
+<li>对于任意 <span class="arithmatex">\(\mathbf u\in H,c\in\mathbb R\)</span>，有 <span class="arithmatex">\(c\mathbf u\in H\)</span></li>
+</ol>
+<p>换句话说包含零向量 <span class="arithmatex">\(\mathbf 0\)</span> 的向量集合 H 对加法和标量乘法封闭，当且仅当 H 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间</p>
+<p>例子：<span class="arithmatex">\(\mathbf{Span}\{\mathbf v_1,\dots,\mathbf v_p\}\)</span>，<span class="arithmatex">\(\{\mathbf 0\}\)</span>(零子空间) 都是子空间</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">矩阵的列空间</p>
+</div>
+<blockquote>
+<p>矩阵 <span class="arithmatex">\(A\in \mathbb R^{m\times n}\)</span> 的列空间是 A 的各列的线性组合的集合，记作 <span class="arithmatex">\(\text{Col}A = \mathbf{Span}\{\mathbf a_1,\dots,\mathbf a_n\} \subset \mathbb R^m\)</span></p>
+<p>性质1：A 的列空间是 <span class="arithmatex">\(\mathbb R^m\)</span> 的子空间</p>
+<p>性质2：<span class="arithmatex">\(\text{Col} A\)</span> 的基为 A 的主元列的集合（A 的阶梯型 B 的主元列集合通常不在 <span class="arithmatex">\(\text{Col} A\)</span> 内；注意区分 A 的主元列与 B 的主元列）</p>
+<p>性质3：维数 <span class="arithmatex">\(\dim{\text{Col}A}=A 的基本变量或主元列的个数\)</span>（等于 <span class="arithmatex">\(\text{rank}A\)</span>）</p>
+<p>注1：A 的列空间是使方程组 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解的向量 <span class="arithmatex">\(\mathbf b\)</span> 的集合</p>
+<p>注2：<span class="arithmatex">\(\mathbf v\in\text{Col} A\)</span>，当且仅当 <span class="arithmatex">\(A\mathbf x=\mathbf v\)</span> 有解</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">矩阵的零空间</p>
+</div>
+<blockquote>
+<p>矩阵 <span class="arithmatex">\(A\in \mathbb R^{m\times n}\)</span> 的零空间是齐次方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 所有解的集合，记为 <span class="arithmatex">\(\text{Nul} A\)</span></p>
+<p>性质1：A 的零空间是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间</p>
+<p>性质2：<span class="arithmatex">\(\text{Nul}A\)</span> 的基为 <span class="arithmatex">\(A\mathbf v=\mathbf 0\)</span> 的解集的参数向量形式</p>
+<p>性质3：维数 <span class="arithmatex">\(\dim{\text{Nul}A}=A 的自由变量的个数\)</span></p>
+<p>注：<span class="arithmatex">\(\mathbf v\in\text{Nul} A\)</span>，当且仅当 <span class="arithmatex">\(A\mathbf v=\mathbf 0\)</span> 成立</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">子空间的基</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\mathbb R^n\)</span> 中的子空间 H 的一组基是线性无关集，它生成 H</p>
+<p><span class="arithmatex">\(\mathbb R^n\)</span> 的<strong>标准基</strong>：<span class="arithmatex">\(\{\mathbf e_1,\mathbf e_2,\dots,\mathbf e_n\}\)</span></p>
+<p>性质：子空间 H 的每个基包含的向量的个数恒为常数 p</p>
+</blockquote>
+<h3 id="9">9. 维数和秩</h3>
+<div class="admonition note">
+<p class="admonition-title">坐标系</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\text B=\{\mathbf b_1,\mathbf b_2,\dots,\mathbf b_p\}\)</span> 是子空间 H 的一组基</p>
+<p>权 <span class="arithmatex">\(c_1,\dots,c_p\)</span> 是 <span class="arithmatex">\(\mathbf x\in H\)</span> <strong>相对于基 <span class="arithmatex">\(\text B\)</span> 的坐标</strong>，当且仅当 <span class="arithmatex">\(\mathbf x=c_1\mathbf b_1+\dots+c_p\mathbf b_p\)</span></p>
+<p>称 <span class="arithmatex">\([\mathbf x]_\text B=\begin{bmatrix}c_1\\\vdots\\c_p\end{bmatrix}\)</span> 为 <span class="arithmatex">\(\mathbf x\)</span> 相对于基 <span class="arithmatex">\(\text B\)</span> 的坐标向量（或 <span class="arithmatex">\(\mathbf x\)</span> 的 <span class="arithmatex">\(\text B-\)</span>坐标向量）</p>
+<p>注：<span class="arithmatex">\(\mathbf x = \text B[\mathbf x]_\text B\)</span> （若 B 表示基依照顺序组合成的矩阵；<span class="arithmatex">\([\mathbf x]_\text B = {\text B}^{-1}\mathbf x\)</span>）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">同构</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(\text B = \{\mathbf b_1,\mathbf b_2,\dots,\mathbf b_p\}\)</span> 是 H 的基，则映射 <span class="arithmatex">\(x\mapsto[\mathbf x]_\text B\)</span> 是使 H 与 <span class="arithmatex">\(\mathbb R^p\)</span> 的形态一样的一一映射</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">子空间的维数</p>
+</div>
+<blockquote>
+<p>非零子空间 H 的维是它的任意一个基的向量个数，记作 <span class="arithmatex">\(\text{dim}H\)</span></p>
+<p>特别地，零子空间 <span class="arithmatex">\(\{\mathbf 0\}\)</span> 的维数为 0</p>
+<p>注1：<span class="arithmatex">\(\text{dim} \mathbb R^n = n\)</span>（<span class="arithmatex">\(\mathbb R^n\)</span> 是自己的子空间）</p>
+<p>注2：<span class="arithmatex">\(\mathbb R^n\)</span> 的子空间的维数不大于 n（若 H 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，那么 <span class="arithmatex">\(\text{dim}H\le n\)</span>）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">秩</p>
+</div>
+<blockquote>
+<p>矩阵 A 的秩定义为 A 的列空间的维数，记为 <span class="arithmatex">\(\text{rank}A\)</span></p>
+<p>秩定理：对于 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>，有 <span class="arithmatex">\(\dim\text{Col}A + \dim\text{Nul}A=n\)</span> 或 <span class="arithmatex">\(\text{rank}A + \dim\text{Nul}A=n\)</span></p>
+<p>（<span class="arithmatex">\(\dim(\text{Col}A) + \dim(\text{Nul}A)=n\)</span>）</p>
+<p>基定理：设 H 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的 p 维子空间，H 中的任何恰好由 p 个元素组成的线性无关集构成 H 的一个基，并且 H 中任何生成 H 的 p 个向量集也构成 H 的一个基（？？？）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">秩与可逆矩阵定理(续)</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span>，则“A 是可逆矩阵”与下列命题均等价：</p>
+<ol>
+<li>A 的列向量构成 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基</li>
+<li><span class="arithmatex">\(\text{Col}A=\mathbb R^n\)</span>，<span class="arithmatex">\(\text{rank}A=\dim\text{Col}A=n\)</span></li>
+<li><span class="arithmatex">\(\text{Nul}A=\{0\}\)</span>，<span class="arithmatex">\(\dim\text{Nul}A=0\)</span></li>
+</ol>
+</blockquote>
 </article>
 </div>
 </div>

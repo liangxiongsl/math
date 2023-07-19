@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -119,6 +122,11 @@
                     latex识别
                   </a>
 </li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.zhihu.com/question/36512716" hreflang="">
+                    书
+                  </a>
+</li>
 </ul>
 </div>
 </div>
@@ -182,7 +190,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
         概率论及其应用
       </a>
 </li>
@@ -405,9 +413,36 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          3.行列式
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         3.行列式
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 行列式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 行列式的性质
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 克拉默法则，体积，线性变换
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../4.%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/">
@@ -516,6 +551,11 @@
           概率论及其应用
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
+        0.概述
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
         1.样本空间
@@ -695,6 +735,27 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 行列式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 行列式的性质
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 克拉默法则，体积，线性变换
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -702,6 +763,112 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>3.行列式</h1>
+<p>3.1 引入行列式，3.2 介绍了方阵可逆性的充分条件，3.3 解释如何测度一个线性变换对图形面积的改变量（当局部地应用时，这一意义回答了两极附近的地图的扩张比例问题．这种思想以雅可比式在多元微积分）</p>
+<h3 id="1">1. 行列式</h3>
+<div class="admonition note">
+<p class="admonition-title">行列式</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(A\in \mathbb R^{n\times n}\)</span> 的行列式的递归定义为 <span class="arithmatex">\(\det A=\sum\limits_{i=1}^n(-1)^{i-1}a_{1i}\det A_{1i}\)</span>（仅当 <span class="arithmatex">\(n\ge 2\)</span>）</p>
+<p>特别地 <span class="arithmatex">\(n=1\)</span> 时，<span class="arithmatex">\(\det A=a_{11}\)</span></p>
+<p>注1：此处 <span class="arithmatex">\(\det A_{ij}\)</span> 为矩阵 A 删除第 i 行和第 j 列后得到的矩阵</p>
+<p>注2：<span class="arithmatex">\(T(n)\approx nT(n-1)+n-1 \implies T(n)=O(n!)\)</span></p>
+<p>记 <span class="arithmatex">\(C_{ij}=(-1)^{i+j}\det A_{ij}\)</span></p>
+<p>余因子：<span class="arithmatex">\(C_{ij}=(-1)^{i+j}\det A_{ij}\)</span></p>
+<p>第 i 行的余因子展开式：<span class="arithmatex">\(\det A=\sum\limits_{j=1}a_{ij}\cdot C_{ij}\)</span></p>
+<p>第 j 列的余因子展开式：<span class="arithmatex">\(\det A=\sum\limits_{i=1}a_{ij}\cdot C_{ij}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">行列式算法</p>
+</div>
+<blockquote>
+<p>原理：由于行列式可以用余因子展开，某列或某行的零较多时，行列式的计算次数会大大减少</p>
+<p>每次选择某 列/行（该 列/行 的零的个数最多）进行余因子展开，递归计算 <span class="arithmatex">\(\det A\)</span></p>
+<p>推论：若 A 为三角矩阵，那么 <span class="arithmatex">\(\det A = \prod\limits_{i=1}^na_{ii}\)</span></p>
+</blockquote>
+<h3 id="2">2. 行列式的性质</h3>
+<div class="admonition note">
+<p class="admonition-title">(行列式)行变换</p>
+</div>
+<blockquote>
+<p>若 A 是方阵</p>
+<ol>
+<li>A 进行倍加变换得到 B：<span class="arithmatex">\(\det B=\det A\)</span>（<span class="arithmatex">\(L_i \leftarrow L_i+kL_j\)</span>）</li>
+<li>A 进行对换变换得到 B：<span class="arithmatex">\(\det B=-\det A\)</span>（<span class="arithmatex">\(L_i \leftrightarrow L_j\)</span>）</li>
+<li>A 进行倍乘变换得到 B：<span class="arithmatex">\(\det B=k\cdot \det A\)</span>（<span class="arithmatex">\(L_i \leftarrow kL_i\)</span>）</li>
+</ol>
+<p>注1：一般倍加变换就够用了；倍乘变换可以用于提取公因子</p>
+<p>注2：列变换也具有相同效果</p>
+<p>行列式算法2：使用如上结论将 A 化简为阶梯型（复杂度：<span class="arithmatex">\(O(n^3)\)</span>）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">方阵可逆的充要条件</p>
+</div>
+<blockquote>
+<p>方阵 A 可逆，当且仅当 <span class="arithmatex">\(\det A\ne0\)</span></p>
+<p>推论1：A 的列线性相关，则 <span class="arithmatex">\(\det A=0\)</span></p>
+<p>推论2：A 的行线性相关，则 <span class="arithmatex">\(\det A=0\)</span>（因为 A 可逆，当且仅当 <span class="arithmatex">\(A^T\)</span> 可逆）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">行列式的性质</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(A,B\in\mathbb R^{n\times n}\)</span>，那么</p>
+<ol>
+<li>总是有 <span class="arithmatex">\(\det(A+B)\ne \det A+\det B\)</span></li>
+<li><span class="arithmatex">\(\det AB = (\det A)(\det B)\)</span></li>
+<li><span class="arithmatex">\(\det A^T=\det A\)</span></li>
+<li>线性性质：若 <span class="arithmatex">\(T(\mathbf x)=\det[\mathbf a_1\dots \mathbf x\dots \mathbf a_n]\)</span>，那么有 <span class="arithmatex">\(T(c\mathbf x)=cT(\mathbf x)\)</span>，<span class="arithmatex">\(T(\mathbf u+\mathbf v)=T(\mathbf u)+T(\mathbf v)\)</span></li>
+</ol>
+<p>注：部分证明详见 p188-189</p>
+</blockquote>
+<h3 id="3">3. 克拉默法则，体积，线性变换</h3>
+<p>设 <span class="arithmatex">\(A_i(\mathbf b) = [\mathbf a_1\dots\mathbf a_{i-1}~~\mathbf b~~\mathbf a_{i+1}\dots\mathbf a_n]\)</span>，易得 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(A\mathbf x)\)</span></p>
+<p>假设 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，有 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(\mathbf b)\)</span></p>
+<p>两边取 <span class="arithmatex">\(\det\)</span> 有 <span class="arithmatex">\(\det[A\cdot I_i(\mathbf x)]=\det  A_i(\mathbf b)\)</span>，即 <span class="arithmatex">\(\det[A]\cdot \det I_i(\mathbf x)=\det  A_i(\mathbf b)\)</span></p>
+<p>又 <span class="arithmatex">\(\det I_i(\mathbf x) = x_i\)</span> （其中 <span class="arithmatex">\(\mathbf x=(x_1,\dots,x_n)\)</span>），得到 <span class="arithmatex">\(x_i=\frac{\det  A_i(\mathbf b)}{\det A}\)</span> （仅当 <span class="arithmatex">\(\det A\ne 0\)</span>）</p>
+<div class="admonition note">
+<p class="admonition-title">克拉默法则</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> <strong>可逆</strong>，则 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的唯一解由下式给出：</p>
+<p><span class="arithmatex">\(x_i=\frac{\det A_i(\mathbf b)}{\det A}=\frac{\det[\mathbf a_1\dots\mathbf b\dots\mathbf a_n]}{\det[\mathbf a_1\dots\mathbf a_i\dots\mathbf a_n]}\)</span> （<span class="arithmatex">\(1\le i\le n\)</span>）</p>
+<p>其中 <span class="arithmatex">\(A_i(\mathbf b) = [\mathbf a_1\dots\mathbf a_{i-1}~~\mathbf b~~\mathbf a_{i+1}\dots\mathbf a_n]\)</span> （显然有 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(A\mathbf x)\)</span>）</p>
+<p>注：克拉默法则显式地给出了线性方程组的解，因而可以直接表达方程组的解（初等行变换算法通常无法求解）</p>
+<p>注2：克拉默法则可用于研究 <span class="arithmatex">\(\mathbf b\)</span> 或 A 变化时，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的解的变化</p>
+</blockquote>
+<p>若 A 可逆，那么 <span class="arithmatex">\(AA^{-1}=I\)</span>，由矩阵乘法的定义有 <span class="arithmatex">\(A(A^{-1})_j=\mathbf e_j\)</span> </p>
+<p>（<span class="arithmatex">\((A^{-1})_j\)</span> 指 A 的第 j 列；<span class="arithmatex">\(\mathbf e_j\)</span> 指 I 的第 j 列）</p>
+<p>由克拉默法则有 <span class="arithmatex">\((A^{-1})_{ij}=\frac{\det A_i(\mathbf e_j)}{\det A}\)</span> (0)</p>
+<p>由于 <span class="arithmatex">\(\det A_i(\mathbf e_j) = C_{ji}\)</span>，得到推论 <span class="arithmatex">\(A^{-1}=\frac1{\det A}\begin{bmatrix}C_{11}&amp;\dots&amp;C_{n1}\\\vdots&amp;&amp;\vdots\\C_{1n}&amp;\dots&amp;C_{nn}\end{bmatrix}=\frac{\text{adj} A}{\det A}\)</span> (1)</p>
+<p>（注：<span class="arithmatex">\(\text{adj}A\)</span> 为伴随矩阵）</p>
+<p>于是 <span class="arithmatex">\((\det A)A^{-1}=\text{adj} A\)</span> 或 <span class="arithmatex">\((\det A)A^{-1}A=(\text{adj} A)A\)</span>，即 <span class="arithmatex">\((\det A)I=(\text{adj} A)A\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">计算矩阵的逆</p>
+</div>
+<blockquote>
+<p>矩阵 <span class="arithmatex">\(A\in \mathbb R^{n\times n}\)</span> 的逆由下式给出：</p>
+<p><span class="arithmatex">\((A^{-1})_{ij}=\frac{\det A_i(\mathbf e_j)}{\det A}\)</span> （仅当 <span class="arithmatex">\(\det A\ne0\)</span>）</p>
+<p>注：复杂度为 <span class="arithmatex">\(O(n^5)\)</span></p>
+<p>推论1：<span class="arithmatex">\(A^{-1}=\frac1{\det A}\begin{bmatrix}C_{11}&amp;\dots&amp;C_{n1}\\\vdots&amp;&amp;\vdots\\C_{1n}&amp;\dots&amp;C_{nn}\end{bmatrix}=\frac{\text{adj} A}{\det A}\)</span>（记 <span class="arithmatex">\(\text{adj}A\)</span> 为伴随矩阵）</p>
+<p>推论2：<span class="arithmatex">\((\det A)I=(\text{adj} A)A\)</span> （复杂度为 <span class="arithmatex">\(O(n^2)\)</span> 仅当 A 和 <span class="arithmatex">\(\text{adj}A\)</span> 已知）</p>
+<p>题外话：p194 例 3，我笑拉：用 <span class="arithmatex">\(O(n^5)\)</span> 先求伴随矩阵，再用它以 <span class="arithmatex">\(O(n^2)\)</span> 求 <span class="arithmatex">\(\det A\)</span>；不如直接用初等行变换 <span class="arithmatex">\(O(n^3)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">面积，体积</p>
+</div>
+<blockquote>
+<p>由 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 的列确定的平行四边形的面积 或 平行六面体的体积等于 <span class="arithmatex">\(|\det A|\)</span> （<span class="arithmatex">\(n\le 3\)</span>）</p>
+<p>补充：对于 <span class="arithmatex">\(\mathbf a_1,\mathbf a_2\ne\mathbf 0\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span>；由 <span class="arithmatex">\(\mathbf a_1,\mathbf a_2\)</span> 确定的平行四边形面积等于由 <span class="arithmatex">\(\mathbf a_1,\mathbf a_2+c\mathbf a_1\)</span> 确定的平行四边形面积</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">线性变换</p>
+</div>
+<blockquote>
+<p>设 S 是线性变换 <span class="arithmatex">\(T~:~\mathbb R^n\to\mathbb R^n\)</span> 的定义域内的一个集合，<span class="arithmatex">\(T(S)\)</span> 表示 S 中的点的像集 （<span class="arithmatex">\(n\le3\)</span>）</p>
+<p>若 S 是 <span class="arithmatex">\(\mathbb R^2\)</span> 上的平行四边形，那么 <span class="arithmatex">\(T(S)的面积=|\det A|\cdot S的面积\)</span></p>
+<p>若 S 是 <span class="arithmatex">\(\mathbb R^2\)</span> 上的平行六面体，那么 <span class="arithmatex">\(T(S)的体积=|\det A|\cdot S的体积\)</span></p>
+</blockquote>
 </article>
 </div>
 </div>

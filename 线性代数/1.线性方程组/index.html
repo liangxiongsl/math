@@ -122,6 +122,11 @@
                     latex识别
                   </a>
 </li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.zhihu.com/question/36512716" hreflang="">
+                    书
+                  </a>
+</li>
 </ul>
 </div>
 </div>
@@ -185,7 +190,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
         概率论及其应用
       </a>
 </li>
@@ -586,6 +591,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
+        0.概述
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4/">
         1.样本空间
       </a>
@@ -895,11 +905,13 @@
 <li>对换变换：交换两行，即 <span class="arithmatex">\(L_i \leftrightarrow L_j\)</span></li>
 <li>倍乘变换：把某一行的所有元素乘以同一个非零数，即 <span class="arithmatex">\(L_i \leftarrow kL_i\)</span></li>
 </ol>
-<p>注：
-      - 经过行初等变换后的线性方程组，与原方程组是<strong>行等价的</strong>
-      - 上述三个操作时可逆的
-      - (1) 和 (3) 的结合： <span class="arithmatex">\(L_i \leftarrow pL_i + qL_j\)</span>
-      - 若两个线性方程组的增广矩阵是行等价的，则它们具有相同的解集</p>
+<p>注：</p>
+<ul>
+<li>经过行初等变换后的线性方程组，与原方程组是<strong>行等价的</strong></li>
+<li>上述三个操作时可逆的</li>
+<li>(1) 和 (3) 的结合： <span class="arithmatex">\(L_i \leftarrow pL_i + qL_j\)</span></li>
+<li>若两个线性方程组的增广矩阵是行等价的，则它们具有相同的解集</li>
+</ul>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">线性方程组的解法(待完善)</p>
@@ -913,7 +925,7 @@
 </ol>
 </li>
 <li>迭代行号 <span class="arithmatex">\(i=m..2\)</span><ol>
-<li>将 <span class="arithmatex">\(L_i\)</span> 倍加带 <span class="arithmatex">\(L_j(1 \le j &lt; i)\)</span> 上，参数 <span class="arithmatex">\(k=-a_{ji}\)</span></li>
+<li>将 <span class="arithmatex">\(L_i\)</span> 倍加到 <span class="arithmatex">\(L_j(1 \le j &lt; i)\)</span> 上，参数 <span class="arithmatex">\(k=-a_{ji}\)</span></li>
 </ol>
 </li>
 </ol>
@@ -940,7 +952,7 @@
 <p>若一个矩阵称为 <strong>阶梯型</strong>（或<strong>行阶梯型</strong>），它满足以下三个性质：</p>
 <ol>
 <li>任意非零行都在任意零行之上</li>
-<li>除了第一行外的非零行的先导元素严格位于上一个非零行的向导元素右下方</li>
+<li>除了第一行外的非零行的先导元素严格位于上一个非零行的先导元素右下方</li>
 <li>任意先导元素（所在列）的正下方的元素都是零（实则是性质 2 的推论）</li>
 </ol>
 <p>若阶梯型矩阵称为 <strong>简化阶梯型</strong>（或<strong>简化行阶梯型</strong>），它还满足以下两个性质：</p>
@@ -977,7 +989,7 @@
 <li>从左到右确定第一个非零列为 <strong>主元列</strong>，<strong>主元位置</strong> 为主元列最上方的位置</li>
 <li>从主元列中选择一个非零元素作为 主元；如有必要，将主元所在行与主元位置所在的行进行交换</li>
 <li>用倍加变换使主元下方的元素变为 0</li>
-<li>去除与主元相关联的 行 和 列，得到新矩阵，如果非空，则进行步骤三</li>
+<li>去除与主元相关联的 行 和 列，得到新矩阵，如果非空，则执行前三个步骤</li>
 <li>从最后一个主元开始迭代，使用倍加变换使每个主元上方的元素变为 0；若主元不为 1，则用倍乘变换使其变为 1</li>
 </ol>
 <p>注：前 4 个步骤可以得到 阶梯型；前 5 个步骤可以得到 简化阶梯型</p>
@@ -1002,7 +1014,7 @@
 <p class="admonition-title">存在与唯一性定理</p>
 </div>
 <blockquote>
-<p>线性方程组相容，当且仅当 其增广矩阵的最有列不是主元列（换句话说，增广矩阵的阶梯型没有形如 <span class="arithmatex">\([0~\dots~0~b],~b\ne 0\)</span> 的行）</p>
+<p>线性方程组相容，当且仅当 其增广矩阵的最右列不是主元列（换句话说，增广矩阵的阶梯型没有形如 <span class="arithmatex">\([0~\dots~0~b],~b\ne 0\)</span> 的行）</p>
 <p>假设线性方程组相容，若没有自由变量，则为<strong>唯一解</strong>，否则有<strong>无穷多解</strong></p>
 </blockquote>
 <div class="admonition 解线性方程组的步骤">
@@ -1054,7 +1066,7 @@
 <p>注：<span class="arithmatex">\(\mathbf b \in \text {Span}\{\mathbf v_1, \mathbf v_2, \dots, \mathbf v_p\}\)</span> <span class="arithmatex">\(\iff\)</span> 向量方程 <span class="arithmatex">\(x_1\mathbf v_1 + x_2\mathbf v_2 + \dots + x_p\mathbf v_p = \mathbf b\)</span> 有解 <span class="arithmatex">\(\iff\)</span>  增广矩阵为 <span class="arithmatex">\([\mathbf v_1~\mathbf v_2~\dots~\mathbf v_p~\mathbf b]\)</span> 的线性方程组有解</p>
 <p>特别地：</p>
 <ul>
-<li><span class="arithmatex">\(\text{Span}\{\mathbf u\}\)</span> 表示 <span class="arithmatex">\(\mathbf u\)</span> 的倍数的集合；在 <span class="arithmatex">\(\mathbb R^3\)</span> 上表示 <span class="arithmatex">\(\mathbb 0\)</span> 或 直线</li>
+<li><span class="arithmatex">\(\text{Span}\{\mathbf u\}\)</span> 表示 <span class="arithmatex">\(\mathbf u\)</span> 的倍数的集合；在 <span class="arithmatex">\(\mathbb R^3\)</span> 上表示 <span class="arithmatex">\(\mathbf 0\)</span> 或 直线</li>
 <li>假设 <span class="arithmatex">\(\mathbf u,\mathbf v \ne \mathbf 0\)</span>，且 <span class="arithmatex">\(\mathbf u \ne k\mathbf v\)</span>（k 为变量），那么 <span class="arithmatex">\(\mathbb R^3\)</span> 上 <span class="arithmatex">\(\text{Span}\{\mathbf u, \mathbf v\}\)</span> 表示一个平面</li>
 </ul>
 </blockquote>
@@ -1071,9 +1083,9 @@
 <p class="admonition-title">矩阵与向量的积</p>
 </div>
 <blockquote>
-<p>若 A 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，若 <span class="arithmatex">\(\mathbf x\in \mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf b\in \mathbb R^m\)</span>，</p>
+<p>若 A 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，若 <span class="arithmatex">\(\mathbf x\in \mathbb R^n\)</span>，</p>
 <p>则 A 与 <span class="arithmatex">\(\mathbf x\)</span> 的积为 A 的各列以 x 中对应元素为权的线性组合，即：</p>
-<p><span class="arithmatex">\(A\mathbf x = \begin{bmatrix}\mathbf a_1&amp;\mathbf a_2&amp;\dots&amp;\mathbf a_n\end{bmatrix} \begin{bmatrix}\mathbf x_1\\\mathbf x_2\\\vdots\\\mathbf x_n\end{bmatrix} = x_1\mathbf a_1 + x_2\mathbf a_2 + \dots + x_n\mathbf a_n\)</span></p>
+<p><span class="arithmatex">\(A\mathbf x = \begin{bmatrix}\mathbf a_1&amp;\mathbf a_2&amp;\dots&amp;\mathbf a_n\end{bmatrix} \begin{bmatrix}x_1\\ x_2\\\vdots\\ x_n\end{bmatrix} = x_1\mathbf a_1 + x_2\mathbf a_2 + \dots + x_n\mathbf a_n\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">矩阵方程</p>
@@ -1127,7 +1139,7 @@
 </div>
 <blockquote>
 <p>假设 <span class="arithmatex">\(n\times n\)</span> 矩阵的主对角线上均为 1，而其他元素为 0，则称该矩阵为 单位矩阵，记为 <span class="arithmatex">\(I=I_n\)</span></p>
-<p>性质：<span class="arithmatex">\(I_n\mathbf x = x\)</span>，仅当 <span class="arithmatex">\(\mathbf x\in \mathbb R^n\)</span></p>
+<p>性质：<span class="arithmatex">\(I_n\mathbf x = \mathbf x\)</span>，仅当 <span class="arithmatex">\(\mathbf x\in \mathbb R^n\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">定理3</p>
@@ -1214,8 +1226,8 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>仅含一个向量的向量组线性 <span class="arithmatex">\(\{\mathbf v\}\)</span> 无关 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\mathbf v\ne \mathbf 0\)</span></li>
-<li>仅含两个向量的向量组线性 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2\}\)</span> 无关 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\mathbf v_1\ne k\mathbf v_2\)</span>（<span class="arithmatex">\(k\in \mathbb R\)</span>）</li>
+<li>仅含一个向量的向量组 <span class="arithmatex">\(\{\mathbf v\}\)</span> 线性无关 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\mathbf v\ne \mathbf 0\)</span></li>
+<li>仅含两个向量的向量组 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2\}\)</span> 线性无关 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\mathbf v_1\ne k\mathbf v_2\)</span>（<span class="arithmatex">\(k\in \mathbb R\)</span>）</li>
 <li>注：命题成立，其逆反命题也成立（公理）</li>
 </ul>
 </div>
@@ -1224,8 +1236,8 @@
 </div>
 <blockquote>
 <p>多向量的集合 <span class="arithmatex">\(S=\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性相关（<span class="arithmatex">\(|S|\ge 2\)</span>），当且仅当 S 中存在一个向量，使得该向量是其他某些向量的线性组合</p>
-<p>等价命题：S 线性相关 <span class="arithmatex">\(\iff\)</span> 存在向量 <span class="arithmatex">\(\mathbf v_i\ne \mathbf 0\)</span> 是 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> 的线性组合（<span class="arithmatex">\(i\ge 2\)</span>）</p>
-<p>推论：S 线性相关，且 <span class="arithmatex">\(\mathbf v_1\ne \mathbf 0\)</span> <span class="arithmatex">\(\iff\)</span> 存在 <span class="arithmatex">\(\mathbf v_i\)</span> 是 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span>（<span class="arithmatex">\(i\ge 2\)</span>） 的线性组合 <span class="arithmatex">\(\iff\)</span> 存在 <span class="arithmatex">\(\mathbf v_i \in \text{Span} \{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> （参见 1.3）</p>
+<p>等价命题：S 线性相关 <span class="arithmatex">\(\iff\)</span> 存在向量 <span class="arithmatex">\(\mathbf v_i\)</span> 是 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> 的线性组合（<span class="arithmatex">\(i\ge 2\)</span>）</p>
+<p>推论：S 线性相关 <span class="arithmatex">\(\iff\)</span> 存在 <span class="arithmatex">\(\mathbf v_i\)</span> 是 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span>（<span class="arithmatex">\(i\ge 2\)</span>） 的线性组合 <span class="arithmatex">\(\iff\)</span> 存在 <span class="arithmatex">\(\mathbf v_i \in \text{Span} \{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> （参见 1.3）</p>
 <p>证明：参见 p75</p>
 </blockquote>
 <div class="admonition 线性相关的充分性">
@@ -1252,7 +1264,7 @@
 <p class="admonition-title">矩阵变换</p>
 </div>
 <blockquote>
-<p>若变换 <span class="arithmatex">\(T = A\mathbf x\)</span>，则称 T 为矩阵变换（其中 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(m\times n\)</span> 矩阵）</p>
+<p>若变换 <span class="arithmatex">\(T(\mathbf x) = A\mathbf x\)</span>，则称 T 为矩阵变换（其中 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(m\times n\)</span> 矩阵）</p>
 </blockquote>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
@@ -1269,7 +1281,7 @@
 <li>投影变换：当 A 由单位矩阵的某些列为空时对应的矩阵时，T 称为投影变换</li>
 <li>剪切变换：当 A 由单位矩阵的某些零元素上的替换为非零值时的矩阵时，T 为剪切变换</li>
 <li>压缩变换/拉伸变换：<span class="arithmatex">\(T(\mathbf x)=r\mathbf x\)</span></li>
-<li>旋转变换：</li>
+<li>旋转变换：<span class="arithmatex">\(\begin{bmatrix}\cos \phi &amp; -\sin\phi \\ \sin\phi &amp; \cos\phi \end{bmatrix}\)</span>（可以通过 <span class="arithmatex">\(\begin{bmatrix}a_{11}&amp;a_{12}\\a_{21}&amp;a_{22}\end{bmatrix}\begin{bmatrix}\cos\theta\\\sin\theta\end{bmatrix}=\begin{bmatrix}\cos(\theta+\phi)\\\sin(\theta+\phi)\end{bmatrix}\)</span> 证得；其中每个点移动的距离为 <span class="arithmatex">\(r\sqrt{(\cos(\theta+\phi)-\cos(\theta))^2+(\sin(\theta+\phi)-\sin(\theta))^2}=2r|\sin\frac\phi2|\)</span>）</li>
 </ul>
 </div>
 <div class="admonition 线性变换">
@@ -1278,8 +1290,8 @@
 <blockquote>
 <p>T 为线性变换，仅当 T 满足以下条件：</p>
 <ol>
-<li><span class="arithmatex">\(T(\mathbf u + \mathbf v) = T(\mathbf u) + T(\mathbf v)\)</span>）（<span class="arithmatex">\(\mathbf u,\mathbf v\in \mathbb R^n\)</span>）</li>
-<li><span class="arithmatex">\(T(c\mathbf u)=cT(\mathbf u)\)</span> （<span class="arithmatex">\(\mathbf u\in \mathbb R^n\)</span>，<span class="arithmatex">\(c\mathbb R\)</span>）</li>
+<li><span class="arithmatex">\(T(\mathbf u + \mathbf v) = T(\mathbf u) + T(\mathbf v)\)</span>（<span class="arithmatex">\(\mathbf u,\mathbf v\in \mathbb R^n\)</span>）</li>
+<li><span class="arithmatex">\(T(c\mathbf u)=cT(\mathbf u)\)</span> （<span class="arithmatex">\(\mathbf u\in \mathbb R^n\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span>）</li>
 </ol>
 <p>性质：</p>
 <ul>
@@ -1301,7 +1313,7 @@
 </div>
 <blockquote>
 <p>设 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^m\)</span> 为线性变换，则存在唯一的 <span class="arithmatex">\(m\times n\)</span> 矩阵 A，使得对 <span class="arithmatex">\(\mathbb R^n\)</span> 中的一切 <span class="arithmatex">\(\mathbf x\)</span>，<span class="arithmatex">\(T(\mathbf x) = A\mathbf x\)</span></p>
-<p>其中 <span class="arithmatex">\(A=[T(\mathbf e_1) \dots T(\mathbf e_n)]\)</span>（<span class="arithmatex">\(e_i\)</span> 是 m 阶单位矩阵 <span class="arithmatex">\(I_m\)</span> 的第 i 列）</p>
+<p>其中 <span class="arithmatex">\(A=[T(\mathbf e_1) \dots T(\mathbf e_n)]\)</span>（<span class="arithmatex">\(e_i\)</span> 是 n 阶单位矩阵 <span class="arithmatex">\(I_n\)</span> 的第 i 列）</p>
 <p>也就是说，$$</p>
 <p>注：A 称为线性变换 T 的<strong>标准矩阵</strong></p>
 </blockquote>
@@ -1328,11 +1340,11 @@
 </ul>
 </div>
 <div class="admonition note">
-<p class="admonition-title">满射 / <span class="arithmatex">\(\mathbb R^m\)</span> 上的映射</p>
+<p class="admonition-title">满射(<span class="arithmatex">\(\mathbb R^m\)</span> 上的映射)</p>
 </div>
 <blockquote>
 <p>假设映射 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^m\)</span></p>
-<p>若对于每个 <span class="arithmatex">\(\mathbf b\mathbb R^m\)</span>，至少有一个映射 T 下的原像 <span class="arithmatex">\(\mathbf x\)</span></p>
+<p>若对于每个 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，至少有一个映射 T 下的原像 <span class="arithmatex">\(\mathbf x\)</span></p>
 <p>则称 T 为 <strong>满射</strong> 或 <span class="arithmatex">\(\mathbb R^m\)</span> 上的映射</p>
 </blockquote>
 <div class="admonition tip">
@@ -1340,11 +1352,11 @@
 <p>存在性，唯一性 问题</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">单射 / 一对一映射</p>
+<p class="admonition-title">单射(一对一映射)</p>
 </div>
 <blockquote>
 <p>假设映射 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^m\)</span></p>
-<p>若对于每个 <span class="arithmatex">\(\mathbf b\mathbb R^m\)</span>，有且仅有一个映射 T 下的原像 <span class="arithmatex">\(\mathbf x\)</span></p>
+<p>若对于每个 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，有且仅有一个映射 T 下的原像 <span class="arithmatex">\(\mathbf x\)</span></p>
 <p>则称 T 为 <strong>单射</strong> 或 <strong>一对一映射</strong></p>
 </blockquote>
 <div class="admonition tip">
@@ -1356,7 +1368,7 @@
 </div>
 <blockquote>
 <p>假设 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^m\)</span></p>
-<p>T 为线性变换，当且仅当 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 仅有平方解</p>
+<p>T 为线性变换，当且仅当 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 仅有平凡解</p>
 </blockquote>
 <div class="admonition 定理">
 <p class="admonition-title">定理</p>
