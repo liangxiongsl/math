@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -430,9 +433,41 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          7.对称矩阵&amp;二次型
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         7.对称矩阵&amp;二次型
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 对称矩阵的对角化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 二次型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 条件优化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 奇异值分解
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../8.%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%9A%84%E5%87%A0%E4%BD%95%E5%AD%A6/">
@@ -705,6 +740,32 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 对称矩阵的对角化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 二次型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 条件优化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 奇异值分解
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -717,6 +778,257 @@
 <p>7.2，7.3 讨论二次型的基础</p>
 <p>7.4，7.5 讨论的奇异值分解和介绍性实例中所描述图像处理依赖于 7.3 的内容</p>
 <p>在本章中，所有向量和矩阵的元素均为实数</p>
+<p>主成分分析</p>
+<h3 id="1">1. 对称矩阵的对角化</h3>
+<div class="admonition note">
+<p class="admonition-title">对称矩阵</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(A\in\mathbf R^{n\times n}\)</span> 是对称矩阵，当且仅当 <span class="arithmatex">\(A^T=A\)</span>；当且仅当 对于所有 <span class="arithmatex">\(i,j\le n\)</span> 有 <span class="arithmatex">\(a_{ij}=a_{ji}\)</span></p>
+</blockquote>
+<p>A 是对称矩阵，设 <span class="arithmatex">\(\mathbf v_1,\mathbf v_2\)</span> 是分别对应于 <span class="arithmatex">\(\lambda_1,\lambda_2\)</span> 特征向量，并且 <span class="arithmatex">\(\lambda_1\ne\lambda_2\)</span></p>
+<p>由于 <span class="arithmatex">\(\lambda_1\mathbf v_1\cdot\mathbf v_2=(\lambda_1\mathbf v_1)^T\mathbf v_2=(A\mathbf v_1)^T\mathbf v_2=\mathbf v_1^TA^T\mathbf v_2=\mathbf v_1^T(A\mathbf v_2)=\mathbf v_1^T(\lambda_2\mathbf v_2)=\lambda_2(\mathbf v_1\cdot\mathbf v_2)\)</span></p>
+<p>那么 <span class="arithmatex">\(\lambda_1(\mathbf v_1\cdot\mathbf v_2)=\lambda_2(\mathbf v_1\cdot\mathbf v_2)\)</span>，由于 <span class="arithmatex">\(\lambda_1\ne\lambda_2\)</span>，所以 <span class="arithmatex">\(\mathbf v_1\cdot\mathbf v_2\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>假设 A 是对称矩阵，那么不同特征空间的任意两个特征向量是正交的（不同特征值对应的向量之间正交）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">正交对角化</p>
+</div>
+<blockquote>
+<p>方阵 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 可<strong>正交对角化</strong>，当且仅当 存在正交矩阵 P 和对角矩阵 D 使得 <span class="arithmatex">\(A=PDP^{-1}=PDP^T\)</span></p>
+<p>定理：A 可正交对角化，当且仅当 A 是对称矩阵</p>
+<p>正交对角化算法：</p>
+<ol>
+<li>对 A 应用 [对角化定理]，得到对角矩阵 D，以及矩阵 Q，使得 <span class="arithmatex">\(A=QDQ^{-1}\)</span>；若 A 具有 n 个不同的特征值，那么 <span class="arithmatex">\(A=QDQ^T\)</span>，算法结束</li>
+<li>对 Q 的列应用 [格拉姆-施密特方法]，得到正交矩阵 P，使得 <span class="arithmatex">\(A=PDP^T\)</span>（或者分别对重数不小于 2 的特征空间的基进行构造）</li>
+</ol>
+<p>（注：<span class="arithmatex">\(\mathbf p_i\)</span> 为单位特征向量）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">谱定理</p>
+</div>
+<blockquote>
+<p>谱：矩阵 A 的特征值的集合称为 A 的谱</p>
+<p>一个对称矩阵 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 具有如下性质（对称矩阵的谱定理）：</p>
+<ol>
+<li>A 具有 n 个实特征值，并且包含重复的特征值（存在某个特征值，重数不小于 2？）</li>
+<li>对于每一个特征值 <span class="arithmatex">\(\lambda\)</span>，对应的特征空间维数等于 <span class="arithmatex">\(\lambda\)</span> 作为特征方程的根的重数</li>
+<li>不同的特征空间两两相互正交</li>
+<li>A 可正交对角化</li>
+</ol>
+<p>注：(1)参考 5.5-24；(2)参考 7.1-31 或 (4)；(3)参考 7.1 “定理”；(4)参考 7.1-32 或 第6章补充习题 16</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">谱分解</p>
+</div>
+<blockquote>
+<p>对称矩阵 A 的正交对角化得到 <span class="arithmatex">\(A=PDP^T\)</span>，其中 <span class="arithmatex">\(P=[\mathbf u_1,\dots,\mathbf u_n]\)</span>，</p>
+<p>那么 <span class="arithmatex">\(A=PDP^T=[\mathbf u_1,\dots,\mathbf u_n]I\begin{bmatrix}\lambda_1\\\vdots\\\lambda_n\end{bmatrix}\begin{bmatrix}\mathbf u_1^T\\\vdots\\\mathbf u_n^T\end{bmatrix}^{TT}=[\mathbf u_1\lambda_1,\dots,\mathbf u_n\lambda_1]\begin{bmatrix}\mathbf u_1^T\\\vdots\\\mathbf u_n^T\end{bmatrix}=\sum\limits_{i=1}^n\lambda_i\mathbf u_i\mathbf u_i^T\)</span></p>
+<p><span class="arithmatex">\(A=\sum\limits_{i=1}^n\lambda_i\mathbf u_i\mathbf u_i^T\)</span> 称为 A 的谱分解</p>
+<p><span class="arithmatex">\(\mathbf u_i\mathbf u_i^T\)</span> 称为 投影矩阵，<span class="arithmatex">\(\text{rank}(\mathbf u_i\mathbf u_i^T)=1\)</span></p>
+<p><span class="arithmatex">\((\mathbf u_i\mathbf u_i^T)\mathbf x\)</span> 称为 <span class="arithmatex">\(\mathbf x\)</span> 在由 <span class="arithmatex">\(\mathbf u_i\)</span> 生成的子空间（<span class="arithmatex">\(\text{Span}\{\mathbf u_i\}\)</span>）上的正交投影</p>
+</blockquote>
+<h3 id="2">2. 二次型</h3>
+<p>本教材除了第 6 章计算 <span class="arithmatex">\(\mathbf x^T\mathbf x\)</span> 时所遇到的平方和外，我们所关注的主要是线性方程；这类平方和及其更一般的形式 表达式称为二次型，常应用在工程（设计标准和优化），信号处理（输出的噪声功率），物理学（势能，动能），微分几何（曲面的法曲率），经济学（效用函数），统计学（置信椭圆体）</p>
+<div class="admonition note">
+<p class="admonition-title">二次型</p>
+</div>
+<blockquote>
+<p>二次型 <span class="arithmatex">\(Q~:~\mathbb R^n\to\mathbb R\)</span> 定义为(多元)函数 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=\sum\limits_{i=1}^nx_i\text{row}_i(A)\mathbf x=\sum\limits_{i=1}^nx_i\mathbf A_i\cdot \mathbf x\)</span></p>
+<p>其中<strong>对称矩阵</strong> <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 称为<strong>关于二次型的矩阵</strong></p>
+<p>注：记 <span class="arithmatex">\(\mathbf A_i=\text{row}_i(A)^T\)</span> 为 A 的第 i 行构成的列向量（顺时针旋转 <span class="arithmatex">\(90^\circ\)</span>）</p>
+<p>另外，最简单的二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TI\mathbf x=\|\mathbf x\|^2\)</span></p>
+<p>二次型的展开形式：<span class="arithmatex">\(Q(\mathbf x)=\sum\limits_{i=1}^n\sum\limits_{j=i}^nc_{ij}x_ix_j\)</span> （其中 <span class="arithmatex">\(c_{ij}=2a_{ij}=2a_{ji}\)</span>）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">二次型的变量代换</p>
+</div>
+<blockquote>
+<p>根据 [谱定理]，对称矩阵 A 可正交对角化 <span class="arithmatex">\(A=PDP^T\)</span>，即 <span class="arithmatex">\(D=P^TAP\)</span></p>
+<p>定义(逆)变换 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span> 或 <span class="arithmatex">\(\mathbf y=P^{-1}\mathbf x\)</span>（正交矩阵 P 可逆）</p>
+<p>二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=(P\mathbf y)^TA(P\mathbf y)=\mathbf y^T(P^TAP)\mathbf y=\mathbf y^TD\mathbf y\)</span>，</p>
+<p>即 <span class="arithmatex">\(Q(\mathbf x)=\mathbf y^TD\mathbf y=\sum\limits_{i=1}^n\lambda_iy_i^2\)</span> （其中 <span class="arithmatex">\(\mathbf y=P^{-1}\mathbf x=P^T\mathbf x\)</span>）</p>
+<p>注：该变换间接把 A 转换为了对角矩阵 <span class="arithmatex">\(D=P^TAP\)</span></p>
+<p>性质：<span class="arithmatex">\(\|P\mathbf y\|=\|\mathbf y\|\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">主轴定理</p>
+</div>
+<blockquote>
+<p>对称矩阵 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 存在一个正交变量代换 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span>，它将二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 变换为不含交叉乘积项的二次型 <span class="arithmatex">\(\mathbf y^TD\mathbf y\)</span></p>
+<p>正交矩阵 P 的列称为二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 的<strong>主轴</strong></p>
+<p>向量 <span class="arithmatex">\(\mathbf y\)</span> 是向量 <span class="arithmatex">\(\mathbf x\)</span> 在这些主轴构造的 <span class="arithmatex">\(\mathbb R^n\)</span> 空间的单位正交基下的坐标向量</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">主轴的几何定义</p>
+</div>
+<blockquote>
+<p>设二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span>（A 对称），<span class="arithmatex">\(c\in\mathbb R\)</span></p>
+<p>若 <span class="arithmatex">\(A\in\mathbb R^2\)</span>，那么满足 <span class="arithmatex">\(Q(\mathbf x)=c\)</span> 的 <span class="arithmatex">\(\mathbf x\)</span> 对应一个 椭圆，双曲线，两条相交直线，单个点，空集 其中之一</p>
+<ul>
+<li>若 A 是对角矩阵，那么图像为标准的图像</li>
+<li>若 A 不是对角矩阵，那么图像是标准图像的旋转</li>
+</ul>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">二次型的分类</p>
+</div>
+<blockquote>
+<p>假设有二次型 Q，那么：</p>
+<ol>
+<li>Q 是正定的，当且仅当对于所有 <span class="arithmatex">\(\mathbf x\ne\mathbf 0\)</span>，都有 <span class="arithmatex">\(Q(\mathbf x)&gt;0\)</span></li>
+<li>Q 是负定的，当且仅当对于所有 <span class="arithmatex">\(\mathbf x\ne\mathbf 0\)</span>，都有 <span class="arithmatex">\(Q(\mathbf x)&lt;0\)</span></li>
+<li>Q 是不定的，<span class="arithmatex">\(Q(\mathbf x)\)</span> 既有正值又有负值</li>
+<li>Q 是半正定的，当且仅当对于所有 <span class="arithmatex">\(\mathbf x\)</span>，都有 <span class="arithmatex">\(Q(\mathbf x)\ge0\)</span></li>
+<li>Q 是半负定的，当且仅当对于所有 <span class="arithmatex">\(\mathbf x\)</span>，都有 <span class="arithmatex">\(Q(\mathbf x)\le0\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">二次型与特征值</p>
+</div>
+<blockquote>
+<p>设 A 是对称方阵，那么二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 是：</p>
+<ol>
+<li>正定的，当且仅当 A 的所有特征值都是正数（A 称为正定矩阵）</li>
+<li>负定的，当且仅当 A 的所有特征值都是负数（A 称为负定矩阵）</li>
+<li>不定的，当且仅当 A 既有正特征值，又有负特征值（A 称为不定矩阵）</li>
+</ol>
+</blockquote>
+<h3 id="3">3. 条件优化</h3>
+<p><strong>无交叉乘积</strong>的二次型在 <span class="arithmatex">\(\mathbf x^T\mathbf x=1\)</span> 的条件下很容易求得最大值和最小值，并且 <span class="arithmatex">\(\min\{\lambda_i\}\le Q(\mathbf x)\le\max\{\lambda_i\}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理1</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 是对称矩阵，而 <span class="arithmatex">\(m=\min\{\mathbf x^TA\mathbf x~:~\|\mathbf x\|=1\}, M=\max\{\mathbf x^TA\mathbf x~:~\|\mathbf x\|=1\}\)</span>，</p>
+<p>可证得 <span class="arithmatex">\(m=\lambda_n, M=\max\{\lambda_i\}=\lambda_1\)</span></p>
+<p>若 <span class="arithmatex">\(\mathbf u_n,\mathbf u_1\)</span> 是分别对应于 <span class="arithmatex">\(\lambda_n,\lambda_1\)</span> 的单位特征向量；那么 <span class="arithmatex">\(\mathbf u_n^TA\mathbf u_n=\lambda_n\)</span>，<span class="arithmatex">\(\mathbf u_1^TA\mathbf u_1=\lambda_1\)</span></p>
+<p>换句话说，<span class="arithmatex">\(\mathbf u_n^TA\mathbf u_n=\lambda_n\le\mathbf x^TA\mathbf x\le \lambda_1=\mathbf u_1^TA\mathbf u_1\)</span></p>
+<p>（注：对特征值进行降序排序，即小标越大对应的特征值越小；注意，对称矩阵具有 n 个实特征值）</p>
+<p>证明：详见p422</p>
+<p>注：计算最值时无需将 <span class="arithmatex">\(Q(\mathbf x)\)</span> 表达为只包含 <span class="arithmatex">\(\mathbf y\)</span> 的分量的形式；如求最大值时只需将 <span class="arithmatex">\(\mathbf x=\mathbf u_1\)</span> 代入 <span class="arithmatex">\(Q(\mathbf x)\)</span> 中即可</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理2</p>
+</div>
+<blockquote>
+<p>设 A，<span class="arithmatex">\(\lambda,\mathbf u\)</span> 的排列顺序如 [定理1] 所述</p>
+<p>1) 在限制条件 <span class="arithmatex">\(\mathbf x^T\mathbf x=1,\mathbf x^T\mathbf u_1=0\)</span> 下，</p>
+<p>有 <span class="arithmatex">\(\mathbf u_n^TA\mathbf u_n=\lambda_n\le\mathbf x^TA\mathbf x\le \lambda_2=\mathbf u_2^TA\mathbf u_2\)</span></p>
+<p>2) 给定限制条件：<span class="arithmatex">\(\mathbf x^T\mathbf x=1\)</span>；对于所有 <span class="arithmatex">\(i&lt;k\)</span> 都有 <span class="arithmatex">\(\mathbf x^T\mathbf u_i=0\)</span></p>
+<p>有 <span class="arithmatex">\(\mathbf u_n^TA\mathbf u_n=\lambda_n\le\mathbf x^TA\mathbf x\le \lambda_k=\mathbf u_k^TA\mathbf u_k\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ul>
+<li><span class="arithmatex">\(q(x,y)=6xy\)</span> 在 <span class="arithmatex">\(4x^2+9y^2=36\)</span> 下的最大值</li>
+</ul>
+</div>
+<h3 id="4">4. 奇异值分解</h3>
+<p>5.3 和 7.1 的对角化定理在很多应用中均很重要，但并非所有矩阵均可对角化</p>
+<p>但是对于所有矩阵 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>，都有奇异值分解 <span class="arithmatex">\(A=QDP^{-1}\)</span>，这是线性代数应用中最有用的矩阵分解</p>
+<div class="admonition note">
+<p class="admonition-title">问题引入</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">奇异值</p>
+</div>
+<blockquote>
+<p>令 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>，那么对称矩阵 <span class="arithmatex">\(A^TA\in\mathbb R^{n\times n}\)</span> 可对角化，</p>
+<p><span class="arithmatex">\(A^TA\)</span> 的特征值及其对应的单位特征向量分别为 <span class="arithmatex">\(\lambda_1,\dots,\lambda_n\)</span>，<span class="arithmatex">\(\mathbf v_1,\dots,\mathbf v_n\)</span>（有时按 <span class="arithmatex">\(\lambda_i\)</span> 的大小降序）</p>
+<p>那么对于所有 <span class="arithmatex">\(i\le n\)</span>，有 <span class="arithmatex">\(\|A\mathbf v_i\|^2=(A\mathbf v_i)^T(A\mathbf v_i)=\mathbf v_i^T(A^TA\mathbf v_i)=\mathbf v_i^T(\lambda_i\mathbf v_i)=\lambda_i\mathbf v_i^T\mathbf v_i=\lambda_i\)</span>，因而 <span class="arithmatex">\(\lambda_i\ge0\)</span></p>
+<p>定义 A 的第 i 个奇异值为 <span class="arithmatex">\(A^TA\)</span> 的第 i 个特征值的平方根，记为 <span class="arithmatex">\(\sigma_i=\|A\mathbf v_i\|\)</span>（对于所有 <span class="arithmatex">\(1\le i\le n\)</span>）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_n\}\)</span> 是包含 <span class="arithmatex">\(A^TA\)</span> 的特征向量的 <span class="arithmatex">\(\mathbb R^n\)</span> 上的单位正交基（<span class="arithmatex">\(\lambda_i\)</span> 降序排序）</p>
+<p>若 A 有 r 个非零奇异值，那么 <span class="arithmatex">\(\{A\mathbf v_1,\dots,A\mathbf v_r\}\)</span> 是 <span class="arithmatex">\(\text{Col}A\)</span> 的一个正交基，且 <span class="arithmatex">\(\text{rank}A=r\)</span></p>
+<p>证明参见 p429</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">A 的 <span class="arithmatex">\(\Sigma\)</span> 矩阵</p>
+</div>
+<blockquote>
+<p>秩为 r 的矩阵 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 的 <span class="arithmatex">\(\Sigma\in\mathbb R^{m\times n}\)</span> 矩阵形如</p>
+<p><span class="arithmatex">\(\Sigma=\begin{bmatrix}D&amp;0\\0&amp;0\end{bmatrix}\)</span>（<span class="arithmatex">\(0\in\mathbb R^{(m-r)\times(n-r)}\)</span>，<span class="arithmatex">\(r\le min\{m,n\}\)</span>）</p>
+<p>对角矩阵 <span class="arithmatex">\(D\in\mathbb R^{r\times r}\)</span> 的对角线元素是 A 的前 r 个奇异值，且 <span class="arithmatex">\(d_{ii}=\sigma_i\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">奇异值分解（SVD）</p>
+</div>
+<blockquote>
+<p>秩为 r 的矩阵 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 可以分解为 <span class="arithmatex">\(A=U\Sigma V^T\)</span></p>
+<p>其中 <span class="arithmatex">\(\Sigma\in\mathbb R^{m\times n}\)</span></p>
+<p>正交矩阵 <span class="arithmatex">\(U\in\mathbb R^{m\times m}\)</span>，<span class="arithmatex">\(V^T\in\mathbb R^{n\times n}\)</span> 分别称为 A 的 左奇异分量，右奇异分量（不由 A 唯一确定）</p>
+<p>满足上式的 V 和 U：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(V=[\mathbf v_1,\dots,\mathbf v_n]\)</span> 是 <span class="arithmatex">\(A^TA\)</span> 的特征向量构造的正交矩阵（<span class="arithmatex">\(\lambda_i\)</span> 有时降序）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(U=[\mathbf u_1,\dots,\mathbf u_m]\)</span>；对于 <span class="arithmatex">\(i\le r\)</span>，<span class="arithmatex">\(\mathbf u_i=\frac 1{\sigma_i}A\mathbf v_i\)</span></p>
+</li>
+</ol>
+<p>证明详见 p430</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">奇异值分解算法</p>
+</div>
+<blockquote>
+<ol>
+<li>将 <span class="arithmatex">\(A^TA\in\mathbb R^{n\times n}\)</span> 正交对角化，求得 <span class="arithmatex">\(A^TA\)</span> 的特征值(进而得到 奇异值)，及其对应的单位特征向量(或者说 单位正交基 或 正交矩阵 V)</li>
+<li><span class="arithmatex">\(A^TA\)</span> 的特征值特征值降序排列，正交矩阵 <span class="arithmatex">\(V\in\mathbb R^{n\times n}\)</span> 也作相应交换；用特征值的平方根(奇异值)构造 <span class="arithmatex">\(\Sigma\in\mathbb R^{m\times n}\)</span></li>
+<li>构造 <span class="arithmatex">\(U=[\mathbf u_1,\dots,\mathbf u_m]\)</span>，其中对于<span class="arithmatex">\(i\le \text{rank}(A^TA)=r\)</span> 有 <span class="arithmatex">\(\mathbf u_i=\frac 1{\sigma_i}A\mathbf v_i\)</span>；若 <span class="arithmatex">\(r&lt;m\)</span>，通过方程组 <span class="arithmatex">\(\begin{bmatrix}\mathbf u_1^T\\\vdots\\\mathbf u_r^T\end{bmatrix}\mathbf x=\mathbf 0\)</span>（<span class="arithmatex">\(x\in\mathbb R^m\)</span>）求解 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_r\}\)</span> 的正交补的基，再通过 [格拉姆-施密特] 以及标准化得到对应的标准正交基，该标准正交基的向量构成 U 剩余的向量</li>
+<li>最后得到 <span class="arithmatex">\(A=U\Sigma V^T\)</span></li>
+</ol>
+<p>练习：求 <span class="arithmatex">\(\begin{bmatrix}4&amp;11&amp;14\\8&amp;7&amp;-2\end{bmatrix}\)</span>，<span class="arithmatex">\(\begin{bmatrix}1&amp;-1\\-2&amp;2\\2&amp;-2\end{bmatrix}\)</span> 的奇异值分解</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">奇异值分解的应用</p>
+</div>
+<blockquote>
+<ol>
+<li>条件数 <span class="arithmatex">\(\frac{\sigma_1}{\sigma_n}\)</span></li>
+<li>基本子空间的基</li>
+<li>奇异值分解的简化和 A 的伪逆</li>
+<li>最小二乘解</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">可逆矩阵定理(最后补充)</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span>，A 可逆，等价于：</p>
+<ol>
+<li><span class="arithmatex">\((\text{Col}A^)\bot=\{\mathbf 0\}\)</span></li>
+<li><span class="arithmatex">\((\text{Nul}A^)\bot=\mathbb R^n\)</span></li>
+<li><span class="arithmatex">\(\text{Row}A=\mathbb R^n\)</span></li>
+<li>A 有 n 个非零的奇异值</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">奇异值分解的简化和 A 的伪逆</p>
+</div>
+<blockquote>
+<p>令 <span class="arithmatex">\(r=\text{rank}A\)</span>，</p>
+<p>对矩阵分块得 <span class="arithmatex">\(U=[U_r~~U_{m-r}]\)</span>，<span class="arithmatex">\(V=[V_r~~V_{n-r}]\)</span>（其中 <span class="arithmatex">\(U_r=[\mathbf u_1\dots\mathbf u_r], V_r=[\mathbf v_1\dots\mathbf v_r]\)</span>）</p>
+<p>有 <span class="arithmatex">\(A=U\Sigma V^T=[U_r~~U_{m-r}]\begin{bmatrix}D&amp;0\\0&amp;0\end{bmatrix}\begin{bmatrix}V_r^T\\V_{n-r}^T\end{bmatrix}=U_rDV_r^T\)</span></p>
+<p>A 的伪逆（缪尔-彭罗斯逆）记为 <span class="arithmatex">\(A^+=V_rD^{-1}U_r^T\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">最小二乘解</p>
+</div>
+<blockquote>
+<p>可证 <span class="arithmatex">\(\hat x=A^+\mathbf b=V_rD^{-1}U_r^T\mathbf b\)</span> 是 <span class="arithmatex">\(A\hat x=\hat b\)</span> 的解</p>
+<p>补充：根据 6.3，<span class="arithmatex">\(\hat b=U_rU_r^T\mathbf b\)</span></p>
+<p>证明参见 p434</p>
+</blockquote>
 </article>
 </div>
 </div>

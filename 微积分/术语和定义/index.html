@@ -920,6 +920,7 @@
 <li>直接从初始条件出发，或者 从初始条件的必要条件(即分解结果)出发</li>
 <li>从结果条件出发：将结束条件重新组合</li>
 <li>注：初始条件的任何元素，结束条件的限制条件，其他定理的引入 都可以作为推理的筹码</li>
+<li>证明一个东西时：如果限定条件不清楚，可以从一个较为“宽限”的条件出发，证明过程中若出现过于复杂的式子，可以限定某些条件以简化式子（证明完毕后将这些后来加上的条件附加到初始条件上）</li>
 </ul>
 </li>
 </ol>
@@ -2345,7 +2346,7 @@
 <li><span class="arithmatex">\(\begin{cases}\overrightarrow {r_1r_3}\cdot \overrightarrow {v_2}=0\\\overrightarrow  {r_1r_3}=\overrightarrow {r_3}-\overrightarrow {r_1}=(\overrightarrow {r_2}+t\overrightarrow {v_2})-\overrightarrow {r_1}\end{cases}\)</span> 消去 t 后有 <span class="arithmatex">\(d=|\overrightarrow {r_1r_3}|=|\overrightarrow {r_1r_2}-(\frac{\overrightarrow {r_1r_2}\cdot \overrightarrow {v_2}}{|\overrightarrow {v_2}|^2})\overrightarrow {v_2}|\)</span></li>
 </ol>
 </li>
-<li>两线距离：<span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_1}+t\overrightarrow {v_1}\)</span> 到 <span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_2}+t\overrightarrow {v_2}\)</span> 的距离为 <span class="arithmatex">\(|\frac {(\overrightarrow {v_1}\times \overrightarrow {v_2})\cdot \overrightarrow {r_1r_2}}{|\overrightarrow {v_1}\times \overrightarrow {v_2}|}|=|\text{comp}_{\overrightarrow {v_1}\times \overrightarrow {v_2}}\overrightarrow {r_1r_2}|\)</span> （仅当 <span class="arithmatex">\(\overrightarrow {v_1}\times \overrightarrow {v_2}=0\)</span>）</li>
+<li>两线距离：<span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_1}+t\overrightarrow {v_1}\)</span> 到 <span class="arithmatex">\(\frac {|\overrightarrow {v_1}\cdot \overrightarrow {r_1r_2}|}{|\overrightarrow {v_1}|}=|\text{comp}_{\overrightarrow {v_1}}\overrightarrow {r_1r_2}|\)</span> （仅当 <span class="arithmatex">\(\overrightarrow {v_1}\times \overrightarrow {v_2}=0\)</span>）</li>
 <li>点面距离：点 <span class="arithmatex">\(\overrightarrow {r_1}\)</span> 到 <span class="arithmatex">\(\overrightarrow {n_2}(\overrightarrow r-\overrightarrow {r_2})=0\)</span> 的距离为 <span class="arithmatex">\(|\frac {ax_1+by_1+cz_1+d}{\sqrt {a^2+b^2+c^2}}| = |\text{comp}_{\overrightarrow {n_2}}\overrightarrow {r_1r_2}|\)</span></li>
 <li>线面距离：直线 <span class="arithmatex">\(\overrightarrow r(t)=\overrightarrow {r_1}+t\overrightarrow {v_1}\)</span> 到 <span class="arithmatex">\(\overrightarrow {n_2}(\overrightarrow r-\overrightarrow {r_2})=0\)</span> 的距离为 <span class="arithmatex">\(|\frac {ax_1+by_1+cz_1+d}{\sqrt {a^2+b^2+c^2}}| = |\text{comp}_{\overrightarrow {n_2}}\overrightarrow {r_1r_2}|\)</span> （仅当 <span class="arithmatex">\(\overrightarrow {v_1}\cdot \overrightarrow {n_2}=0\)</span>）</li>
 <li>面面距离：平面 <span class="arithmatex">\(\overrightarrow {n_1}(\overrightarrow r-\overrightarrow {r_1})=0\)</span> 到平面 <span class="arithmatex">\(\overrightarrow {n_2}(\overrightarrow r-\overrightarrow {r_2})=0\)</span> 的距离为 <span class="arithmatex">\(|\frac {ax_1+by_1+cz_1+d}{\sqrt {a^2+b^2+c^2}}| = |\text{comp}_{\overrightarrow {n_2}}\overrightarrow {r_1r_2}|\)</span> （仅当 <span class="arithmatex">\(\overrightarrow {n_1}\times \overrightarrow {n_2}=0\)</span>）</li>

@@ -913,6 +913,15 @@
 <li>计算机上计算 AB 的效率取决于存储矩阵的方式；高性能算法一般按列计算 AB（如 LAPACk）</li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}\mathbf a_1^T\\\vdots\\\mathbf a_n^T\end{bmatrix}^T\)</span></li>
+<li><span class="arithmatex">\(AB^T=[\mathbf a_1\dots\mathbf a_n]\begin{bmatrix}\mathbf b_1^T\\\vdots\\\mathbf b_n^T\end{bmatrix}^{TT}=[\mathbf a_1\dots\mathbf a_n]\begin{bmatrix}\mathbf b_1^T\\\vdots\\\mathbf b_n^T\end{bmatrix}=\sum\limits_{i=1}^n\mathbf a_i\mathbf b_i^T\)</span></li>
+</ol>
+</blockquote>
 <h3 id="2">2.矩阵的逆</h3>
 <div class="admonition 可逆">
 <p class="admonition-title">可逆</p>

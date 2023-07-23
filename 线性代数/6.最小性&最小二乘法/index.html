@@ -446,6 +446,41 @@
     1. 内积，长度，正交性
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 正交集
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 正交投影
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-">
+    4. 格拉姆-施密特方法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 最小二乘问题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 线性模型中的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 内积空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 内积空间的应用
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -735,6 +770,41 @@
     1. 内积，长度，正交性
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 正交集
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 正交投影
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-">
+    4. 格拉姆-施密特方法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 最小二乘问题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 线性模型中的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 内积空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 内积空间的应用
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -749,6 +819,333 @@
 <p>6.4 再次介绍正交投影的作用，导出了一个广泛应用于数值线性代数中的矩阵因式分解的方法</p>
 <p>本章其余节的内容是检验实际应用中产生的一部分最小二乘问题，有些涉及比 <span class="arithmatex">\(\mathbb R^n\)</span> 空间更一般的向量空间</p>
 <h3 id="1">1. 内积，长度，正交性</h3>
+<div class="admonition note">
+<p class="admonition-title">内积</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span>，</p>
+<p>那么称 <span class="arithmatex">\(\mathbf u^T\mathbf v\in\mathbb R\)</span> 为 <span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 的 内积 或 点积，记为 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\mathbf u^T\mathbf v=\sum\limits_{i=1}^nu_iv_i\)</span></p>
+<p>性质：设 <span class="arithmatex">\(\mathbf u,\mathbf v,\mathbf w\in\mathbb R^n\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span></p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u\)</span></li>
+<li><span class="arithmatex">\((\mathbf u+\mathbf v)\cdot\mathbf w=\mathbf u\cdot\mathbf w+\mathbf v\mathbf w\)</span></li>
+<li><span class="arithmatex">\((c\mathbf u)\cdot\mathbf v=c(\mathbf u\cdot\mathbf v)=\mathbf u\cdot(c\mathbf v)\)</span></li>
+<li><span class="arithmatex">\(\mathbf u\cdot\mathbf u\ge0\)</span>（<span class="arithmatex">\(\mathbf u\cdot\mathbf u=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf u=\mathbf 0\)</span>）</li>
+<li>注：满足 交换律；点积-加法，点积-数乘 的分配率</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">向量长度</p>
+</div>
+<blockquote>
+<p>向量 <span class="arithmatex">\(\mathbf v\in\mathbb R^n\)</span> 的长度(或 范数)为 <span class="arithmatex">\(\|\mathbf v\|=\sqrt{\mathbf v\cdot\mathbf v}=\sqrt{\sum\limits_{i=1}^nv_i}\)</span>（显然 <span class="arithmatex">\(\|\mathbf v\|=\mathbf v\cdot\mathbf v\)</span>）</p>
+<p>性质1：<span class="arithmatex">\(\|c\mathbf v\|=|c|~\|\mathbf v\|\)</span></p>
+<p>性质2：<span class="arithmatex">\(\mathbf v\)</span> 的单位向量为 <span class="arithmatex">\(\mathbf u=\frac {\mathbf v}{\|\mathbf v\|}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">距离</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span> 之间的距离定义为 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\|\mathbf u-\mathbf v\|\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">正交向量</p>
+</div>
+<blockquote>
+<p>两向量 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span> 正交，当且仅当 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\text{dist}(\mathbf u,-\mathbf v)\)</span>，</p>
+<p>当且仅当 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\mathbf0\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">毕达哥拉斯(勾股)定理</p>
+</div>
+<blockquote>
+<p>两向量 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span> 正交，当且仅当 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">正交补</p>
+</div>
+<blockquote>
+<p>向量与向量空间的正交：向量 <span class="arithmatex">\(\mathscr z\)</span> 与 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W 中的所有向量都正交，称 <span class="arithmatex">\(\mathscr z\)</span> 正交于 W</p>
+<p>正交补：与子空间 W 正交的向量 <span class="arithmatex">\(\mathscr z\)</span> 构成的集合，称为 W 的正交补，记作 <span class="arithmatex">\(W^\bot\)</span></p>
+<p>性质1：向量 <span class="arithmatex">\(\mathbf x\in W^\bot\)</span>，当且仅当 <span class="arithmatex">\(\mathbf x\)</span> 与 W 的任意向量都正交（<span class="arithmatex">\((W^\bot)^\bot=W\)</span> ？）</p>
+<p>性质2：<span class="arithmatex">\(W,W^\bot\)</span> 同时是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间</p>
+<p>性质3：<span class="arithmatex">\(W,W^\bot\subset\mathbb R^n\)</span>，那么 <span class="arithmatex">\(\dim W+\dim W^\bot=n\)</span>（证明用到了秩定理）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>，那么 A 的行空间的正交补是 A 的零空间，且 A 的列空间的正交补是 <span class="arithmatex">\(A^T\)</span> 的零空间，即：</p>
+<p><span class="arithmatex">\((\text{Row}A)^\bot=\text{Nul}A\)</span>，<span class="arithmatex">\((\text{Col}A)^\bot=\text{Nul}A^T\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">角度</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span> 之间的角度由下式决定：</p>
+<p><span class="arithmatex">\(\mathbf u\cdot\mathbf v=\|\mathbf u\|~\|\mathbf v\|\cos\mathfrak g\)</span></p>
+<p>注：对于 <span class="arithmatex">\(n\ge 4\)</span>，<span class="arithmatex">\(\cos\mathfrak g\)</span> 被统计学家称为相关系数</p>
+</blockquote>
+<h3 id="2">2. 正交集</h3>
+<div class="admonition note">
+<p class="admonition-title">正交集，线性无关集，正交基</p>
+</div>
+<blockquote>
+<p>正交集：<span class="arithmatex">\(\mathbb R^n\)</span> 中的向量集合 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 称为正交集，当且仅当集合中任意两个向量都正交（对于所有 <span class="arithmatex">\(i\ne j\)</span>，<span class="arithmatex">\(\mathbf u_i\cdot\mathbf u_j=0\)</span>）</p>
+<p>线性无关集：<span class="arithmatex">\(S=\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中非零向量构成的正交集，那么 S 是线性无关集（因此 S 是一组基）</p>
+<p>正交基：定义为 <span class="arithmatex">\(\mathbb R^n\)</span> 中的子空间 W 的一个正交集</p>
+<p>正交基的性质1：<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中子空间 W 的正交基；对于所有 <span class="arithmatex">\(\mathbf y\in W\)</span>，线性组合 <span class="arithmatex">\(\mathbf y=\sum\limits_{i=1}^pc_i\mathbf u_i\)</span> 中的权可以由 <span class="arithmatex">\(c_i=\frac{\mathbf y\cdot\mathbf u_i}{\mathbf u_i\cdot\mathbf u_i}\)</span> 计算</p>
+<p>正交基的性质2：<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中子空间 W 的正交基；对于所有 <span class="arithmatex">\(\mathbf y\in W\)</span>，<span class="arithmatex">\(\mathbf y=\sum\limits_{i=1}^p\text{Proj}_{L_i}\mathbf y\)</span>（其中 <span class="arithmatex">\(L_i=\text{Span}\{\mathbf u_i\}\)</span>；参见“正交投影”的概念）</p>
+</blockquote>
+<p>考虑对 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 的一个分解 <span class="arithmatex">\(\mathbf y=\hat y+\mathscr z\alpha=\alpha\mathbf u+\mathscr z\)</span></p>
+<p>其中 <span class="arithmatex">\(\mathbf u\)</span> 与 <span class="arithmatex">\(\mathscr z\)</span> 正交，即 <span class="arithmatex">\(\mathbf u\cdot\mathscr z=0\)</span>，因而 <span class="arithmatex">\(\mathbf u\cdot(\mathbf y-\alpha\mathbf u)=0\)</span>，所以 <span class="arithmatex">\(\alpha=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">正交投影</p>
+</div>
+<blockquote>
+<p>给定非零向量 <span class="arithmatex">\(\mathbf u\in\mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 可以分解为两正交向量之和：<span class="arithmatex">\(\mathbf y=\hat y+\mathscr z=\alpha\mathbf u+\mathscr z=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u+\mathscr z\)</span></p>
+<p>正交投影：<span class="arithmatex">\(\hat y=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u\)</span> 称为 <span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(\mathbf u\)</span> 上的正交投影，记为 <span class="arithmatex">\(\hat y=\text{Proj}_L\mathbf y=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u\)</span>（L 为 <span class="arithmatex">\(\mathbf u\)</span> 生成的子空间，即 <span class="arithmatex">\(L=\text{Span}\{\mathbf u\}\)</span>）</p>
+<p><span class="arithmatex">\(\mathbf y\)</span> 与 <span class="arithmatex">\(\mathbf u\)</span> 正交的分量：<span class="arithmatex">\(\mathscr z=\mathbf y-\hat y\)</span></p>
+<p>性质：<span class="arithmatex">\(\hat y\)</span> 与 <span class="arithmatex">\(\mathbf z\)</span> 构成正交集 <span class="arithmatex">\(\{\hat y,\mathbf y-\hat y\}\)</span></p>
+<p>注：对于 <span class="arithmatex">\(\mathbb R^2\)</span>，<span class="arithmatex">\(\hat y\)</span> 对应的点距离 <span class="arithmatex">\(\mathbf y\)</span> 对应的点最近，距离为 <span class="arithmatex">\(\|\mathscr z\|\)</span></p>
+</blockquote>
+<p>应用：一个力分解为力的分量</p>
+<div class="admonition note">
+<p class="admonition-title">单位正交集(基)，正交矩阵</p>
+</div>
+<blockquote>
+<p>单位正交集：集合 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是单位正交集，当且仅当 它是有单位向量构成的正交集</p>
+<p>单位正交基：W 是一个由单位正交集合生成的子空间，那么 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 W 的单位正交基</p>
+<p>性质1：矩阵 <span class="arithmatex">\(U\in\mathbb R^{m\times n}\)</span> 具有单位正交列向量，当且仅当 <span class="arithmatex">\(U^TU=I\)</span>（<span class="arithmatex">\(\det U=\pm1\)</span>）</p>
+<p>性质2：矩阵 <span class="arithmatex">\(U\in\mathbb R^{m\times n}\)</span> 具有单位正交列向量，<span class="arithmatex">\(\mathbf x,\mathbf y\in\mathbb R^n\)</span>，那么：（证明详见习题 25）</p>
+<ol>
+<li><span class="arithmatex">\(\|U\mathbf x\|=\|\mathbf x\|\)</span></li>
+<li><span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=\mathbf x\cdot\mathbf y\)</span></li>
+<li><span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf x\cdot\mathbf y=0\)</span></li>
+</ol>
+<p>正交矩阵：满足 <span class="arithmatex">\(U^{-1}=U^T\)</span> 的可逆方阵 <span class="arithmatex">\(U\in\mathbb R^{n\times n}\)</span>（具有单位正交列的方阵是正交矩阵，此类矩阵同样具有单位正交行）</p>
+<p>应用：对称方阵 A 进行对角化(“对角分解”) <span class="arithmatex">\(A=PDP^{-1}\)</span>，使得 P 为正交矩阵（即具有单位正交列；对称矩阵应用对角化定理得到的 P 的各列不旦线性无关，而且是正交的，详见 7.1），则 <span class="arithmatex">\(A=PDP^T\)</span>
+应用：若对称矩阵 <span class="arithmatex">\(A\in\mathbb R^n\)</span> 具有 n 个本质不同的特征值，那么对 A 的对角化(“对角分解”)使得 <span class="arithmatex">\(A=PDP^{-1}=PDP^T\)</span>（仅当 P 为单位矩阵）成立 （其中 P 的各列正交；详见 5.3 和 7.1）</p>
+</blockquote>
+<h3 id="3">3. 正交投影</h3>
+<p>对给定向量 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 和 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W，存在 <span class="arithmatex">\(\hat y\in W\)</span>，满足：</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf y-\hat y\)</span> 与 W 正交</li>
+<li><span class="arithmatex">\(\hat y\)</span> 是 W 中唯一最接近 <span class="arithmatex">\(\mathbf y\)</span> 的向量</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">正交分解定理</p>
+</div>
+<blockquote>
+<p>若 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，那么对于所有 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span>  都可以唯一表示为 <span class="arithmatex">\(\mathbf y=\hat y+\mathscr z\)</span>（其中 <span class="arithmatex">\(\hat y\in W,\mathscr z\in W^\bot\)</span>）</p>
+<p>若 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 W 的任意正交基，那么 <span class="arithmatex">\(\mathbf y=\hat y+\mathscr z=\sum\limits_{i=1}^p\text{Proj}_{L_i}\mathbf y+\sum\limits_{i=p+1}^n\text{Proj}_{L_i}\mathbf y\)</span></p>
+<p>（其中 <span class="arithmatex">\(\hat y\)</span> 称为 <span class="arithmatex">\(\mathbf y\)</span> <strong>在 W 上的正交投影</strong>，记作 <span class="arithmatex">\(\text{proj}_W\mathbf y\)</span>）</p>
+<p>证明详见 p361</p>
+<p>补充：<span class="arithmatex">\(\mathbf z=\mathbf y-\text{proj}_W\mathbf y\)</span>，那么 <span class="arithmatex">\(\mathbf z\)</span> 与 W 正交</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">向量在向量空间上的<strong>正交投影</strong></p>
+</div>
+<blockquote>
+<p>W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，<span class="arithmatex">\(\mathbf x,\mathbf y\in\mathbb R^n\)</span></p>
+<p><span class="arithmatex">\(\mathbf x\)</span> 在 W 上的正交投影：记为 <span class="arithmatex">\(\text{proj}_W\mathbf x=\sum\limits_{i=1}^p\text{Proj}_{L_i}\mathbf x\)</span>（<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 W 的一组正交基，<span class="arithmatex">\(L_i=\text{span}\{\mathbf u_i\}\)</span>）</p>
+<p>性质：<span class="arithmatex">\(\text{proj}_W(\mathbf x+\mathbf y)=\text{proj}_W\mathbf x+\text{proj}_W\mathbf y\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">正交投影的几何解释</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">最佳逼近定理</p>
+</div>
+<blockquote>
+<p>假设 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，<span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span>，<span class="arithmatex">\(\hat y\)</span> 是 <span class="arithmatex">\(\mathbf y\)</span> 在 W 上的正交投影（即 <span class="arithmatex">\(\hat y=\text{proj}_W\mathbf y\)</span>），那么 <span class="arithmatex">\(\hat y\)</span> 是 W 中最接近 <span class="arithmatex">\(\mathbf y\)</span> 的点</p>
+<p>也就是说，对于所有 <span class="arithmatex">\(\mathbf v\in W,\mathbf v\ne\hat y\)</span> 都有 <span class="arithmatex">\(\|\mathbf y-\hat y\|&lt;\|\mathbf y-\mathbf v\|\)</span></p>
+<p>其中 <span class="arithmatex">\(\hat y\)</span> 称为 W 中元素对 <span class="arithmatex">\(\mathbf y\)</span> 的最佳逼近</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span>  是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W 的单位正交基，那么 <span class="arithmatex">\(\text{proj}_W\mathbf y=\sum\limits_{i=1}^p(\mathbf y\cdot\mathbf u_i)\mathbf u_i\)</span></p>
+<p>若 <span class="arithmatex">\(U=[\mathbf u_1~~\dots~~\mathbf u_p]\)</span>（<span class="arithmatex">\(U\in\mathbb R^{n\times p}\)</span>），则对于所有 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 都有 <span class="arithmatex">\(\text{proj}_W\mathbf y = UU^T\mathbf y\)</span></p>
+<p>（注意：<span class="arithmatex">\(U^TU\mathbf x=I_p\mathbf x=\mathbf x\)</span>，<span class="arithmatex">\(UU^T\mathbf y=\text{proj}_W\mathbf y\)</span>）</p>
+<p>另外，当 <span class="arithmatex">\(U\in\mathbb R^{n\times n}\)</span> 时，<span class="arithmatex">\(\mathbf y=UU^T\mathbf y=\text{proj}_W\mathbf y\)</span></p>
+</blockquote>
+<h3 id="4-">4. 格拉姆-施密特方法</h3>
+<p>格拉姆-施密特方法是对 <span class="arithmatex">\(\mathbb R^n\)</span> 中任意非零子空间构造 正交基 或 标准正交基 的简单算法（换句话说，就是从基 <span class="arithmatex">\(\{\mathbf x_1,\dots,\mathbf x_p\}\)</span> 中构造出正交基 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span>）</p>
+<p><span class="arithmatex">\(\text{dim} W=2\)</span> 时，W 的基 <span class="arithmatex">\(\{\mathbf x_1,\mathbf x_2\}\)</span> 可以构造出正交基 <span class="arithmatex">\(\{\mathbf x_1,\mathbf x_2-\text{proj}_{L_1}\mathbf x_2\}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">格拉姆-施密特方法</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W 的一个基 <span class="arithmatex">\(\{\mathbf x_1,\dots,\mathbf x_p\}\)</span>，那么</p>
+<p>对于所有 <span class="arithmatex">\(i\le p\)</span>，有 <span class="arithmatex">\(\mathbf v_i=\mathbf x_{i}-\sum\limits_{j=1}^{i-1}\frac{\mathbf x_i\cdot\mathbf v_j}{\mathbf v_j\cdot\mathbf v_j}\mathbf v_j=\mathbf x_i-\text{proj}_{W_{i-1}}\mathbf x_i\)</span></p>
+<p>（注：<span class="arithmatex">\(W_i=\text{Span}\{\mathbf v_1,\dots,\mathbf v_i\}\)</span>，<span class="arithmatex">\(\text{proj}_{W_k}\mathbf x_i=\sum\limits_{j=1}^k\frac{\mathbf x_i\cdot\mathbf v_j}{\mathbf v_j\cdot\mathbf v_j}\mathbf v_j\)</span>）</p>
+<p>那么 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 是 W 的一个正交基</p>
+<p>并且对于所有 <span class="arithmatex">\(i\le p\)</span>，有 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_i\}=\text{Span}\{\mathbf x_1,\dots,\mathbf x_i\}\)</span></p>
+<p>注：计算所得的 <span class="arithmatex">\(\mathbf v_i\)</span> 可能有分母，手算时允许进行倍乘消去分母</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">标准正交基</p>
+</div>
+<blockquote>
+<p>由单位向量构成的正交基</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">矩阵的 QR 分解</p>
+</div>
+<blockquote>
+<p>如果 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 的列线性无关，那么 A 可以分解为 <span class="arithmatex">\(A=QR\)</span>，</p>
+<p>而 Q 可以是“格拉姆-施密特” 得到的标准正交基，<span class="arithmatex">\(R=Q^TQR=Q^T(QR)=Q^TA\)</span></p>
+<p>其中 <span class="arithmatex">\(Q\in\mathbb R^{m\times n}\)</span>，其列形成 <span class="arithmatex">\(\text{Col}A\)</span> 的一个标准正交基；<span class="arithmatex">\(R\in\mathbb R^{n\times n}\)</span> 为上三角可逆矩阵并且对角线上的元素为正数</p>
+<p>应用：<span class="arithmatex">\(A^TA=(QR)^T(QR)=R^TQ^TQR=R^TR\)</span></p>
+</blockquote>
+<h3 id="5">5. 最小二乘问题</h3>
+<p>解一个矩形方程组 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，方程组无解时，最好的方法是寻找 <span class="arithmatex">\(\mathbf x\)</span> 使得 <span class="arithmatex">\(A\mathbf x\)</span> 尽可能接近 <span class="arithmatex">\(\mathbf b\)</span></p>
+<p>考虑 <span class="arithmatex">\(A\mathbf x\)</span> 为 <span class="arithmatex">\(\mathbf b\)</span> 的一个近似，而<strong>一般的最小二乘问题</strong>就是找出使 <span class="arithmatex">\(\|\mathbf b-A\mathbf x\|\)</span> 尽可能小的 <span class="arithmatex">\(\mathbf x\)</span></p>
+<p>“最小二乘”来源于这样的事实，即 <span class="arithmatex">\(\|\mathbf b-A\mathbf x\|\)</span> 是平方和的平方根</p>
+<div class="admonition note">
+<p class="admonition-title">线性方程组的最小二乘解</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}, \mathbf b\in\mathbb R^m\)</span>，则 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解是 <span class="arithmatex">\(\hat x\in\mathbb R^n\)</span>，使得：</p>
+<p>对于所有 <span class="arithmatex">\(\mathbf x\in\mathbb R^n\)</span>，都有 <span class="arithmatex">\(\|\mathbf b-A\hat x\|\le\|\mathbf b-A\mathbf x\|\)</span></p>
+</blockquote>
+<p>根据[最佳逼近定理]，存在 <span class="arithmatex">\(\hat b=\text{proj}_{\text{Col}~A}~\mathbf b\)</span> 使其距离“最接近” <span class="arithmatex">\(\mathbf b\)</span>（<span class="arithmatex">\(\hat b\in\text{Col}A\)</span>）</p>
+<p>又 <span class="arithmatex">\(A\mathbf x\in\text{Col}A\)</span>，所以 <span class="arithmatex">\(A\mathbf x=\hat b\)</span> 是相容的（其解为 <span class="arithmatex">\(\mathbf x=\hat x\)</span>，称为 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解）</p>
+<p>根据[正交分解定理]，<span class="arithmatex">\(\mathbf b-\hat b\)</span> 正交于 <span class="arithmatex">\(\text{Col}A\)</span>，进而正交于 A 的各列，</p>
+<p>即对于所有 <span class="arithmatex">\(i\le n\)</span>，<span class="arithmatex">\(a_i\cdot (\mathbf b-\hat b)=0\)</span>，即 <span class="arithmatex">\(a_i^T(\mathbf b-\hat b)=0\)</span>，</p>
+<p>那么 <span class="arithmatex">\(A^T(\mathbf b-\hat b)=\mathbf 0\)</span>，整理得 <span class="arithmatex">\(A^T\mathbf b=A^T\hat b=A^TA\mathbf x\)</span>（称为 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的法方程）</p>
+<div class="admonition note">
+<p class="admonition-title">一般的最小二乘问题的解</p>
+</div>
+<blockquote>
+<p>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解集 等于：</p>
+<p>其 <strong>法方程</strong> <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span> 的非空解集</p>
+<p>问：等价于 <span class="arithmatex">\(A\mathbf x=\hat b=\text{proj}_{\text{Col}~A}~\mathbf b\)</span> ？</p>
+<p>注：最小二乘解可以解释为满足 <span class="arithmatex">\(\mathbf b=\hat b+(\mathbf b-\hat b)\approx\hat b=A\hat x\)</span> 的最优近似解 <span class="arithmatex">\(\mathbf x=\hat x\)</span>；<span class="arithmatex">\(\|\mathbf b-\hat b\|\)</span> 称为 最小二乘误差</p>
+<p>注2：不仅 A 可能不可逆，而且 <span class="arithmatex">\(A^TA\)</span> 也可能不可逆（可能无穷多解）</p>
+<p>注3：最小二乘解问题的法方程可能是病态的，即 <span class="arithmatex">\(A^TA\)</span> 的计算过程中出现的误差有时会导致 <span class="arithmatex">\(\hat x\)</span> 的误差变大</p>
+<p>优化：<span class="arithmatex">\((A^TB)_{ij}=a_i\cdot b_j\)</span>（对称矩阵）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>，那么下面的条件等价：</p>
+<ol>
+<li>对于所有 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有唯一最小二乘解</li>
+<li>A 的列线性无关</li>
+<li>矩阵 <span class="arithmatex">\(A^TA\)</span> 可逆</li>
+</ol>
+</blockquote>
+<p>下面讨论 A 的列向量正交时，如何求出 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解；这类矩阵通常出现在线性回归问题中</p>
+<p>对于 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的法方程 <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span></p>
+<p>若通过对 A 进行 QR 分解有 <span class="arithmatex">\(A=QR\)</span>，</p>
+<p>那么 <span class="arithmatex">\((QR)^T(QR)\mathbf x=(QR)^T\mathbf b\)</span>，即 <span class="arithmatex">\(R^TQ^TQR\mathbf x=R^TQ^T\mathbf b\)</span>，进而 <span class="arithmatex">\(\mathbf x=R^{-1}Q^T\mathbf b\)</span></p>
+<p>（注：Q 的列组合成单位正交基，所以 <span class="arithmatex">\(Q^TQ=I\)</span>；R 是可逆的，所以 <span class="arithmatex">\(R^T\)</span> 满足消去律）</p>
+<div class="admonition note">
+<p class="admonition-title">最小二乘问题的解(QR 分解)</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 具有线性无关的列，对 A 进行 QR 分解，</p>
+<p>那么对于 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有唯一的最小二乘解，即 <span class="arithmatex">\(\mathbf x=R^{-1}Q^T\mathbf b\)</span></p>
+<p>等价于求解线性方程组 <span class="arithmatex">\(\mathbf x=R^{-1}Q^T\mathbf b\)</span></p>
+<p>注：若 <span class="arithmatex">\(\mathbf b\)</span> 与 <span class="arithmatex">\(\text{Col}A\)</span> 正交，那么上述方程等价于 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span></p>
+</blockquote>
+<h3 id="6">6. 线性模型中的应用</h3>
+<p>以下讨论使用在工程中常见的统计分析记号，即用 <span class="arithmatex">\(X\mathbf \beta=\mathbf y\)</span>，称 X 为设计矩阵，<span class="arithmatex">\(\beta\)</span> 为参数向量，<span class="arithmatex">\(\mathbf y\)</span> 为观测向量</p>
+<div class="admonition note">
+<p class="admonition-title">最小二乘直线</p>
+</div>
+<blockquote>
+<p>对于实验数据给出的数据点集 <span class="arithmatex">\((x_1,y_1),\dots,(x_n,y_n)\)</span>，构造出尽可能“接近”实验数据的直线 <span class="arithmatex">\(\hat y=\beta_0+\beta_1x\)</span>，使得比如 <span class="arithmatex">\(y_i-\hat y_i\)</span> 的平方和 <span class="arithmatex">\(\sum\limits_{i=1}^n(y_i-\hat y_i)^2\)</span> 最小</p>
+<p>（注：<span class="arithmatex">\(\hat y=\beta_0+\beta_1x\)</span> 称为 <strong>y 对 x 的回归直线</strong>，<span class="arithmatex">\(\beta_0,\beta_1\)</span> 称为<strong>回归系数</strong>；<span class="arithmatex">\(y_i\)</span> 称为<strong>观测值</strong>，<span class="arithmatex">\(\hat y_i=\beta_0+\beta_1x_i\)</span> 称为<strong>预测值</strong>，<span class="arithmatex">\(y_i-\hat y_i\)</span> 称为<strong>余差</strong>）</p>
+<p>假设预测值与观测值均相等，那么可以得到方程组 <span class="arithmatex">\(X\beta=\mathbf y\)</span>，即 <span class="arithmatex">\(\begin{bmatrix}1&amp;x_1\\\vdots&amp;\vdots\\1&amp;x_n\end{bmatrix}\begin{bmatrix}\beta_0\\\beta_1\end{bmatrix}=\begin{bmatrix}y_1\\\vdots\\y_n\end{bmatrix}\)</span></p>
+<p>若选择 平方和 作为“距离”的衡量标准，由于 <span class="arithmatex">\(\|\mathbf y-\hat y\|^2=\sum\limits_{i=1}^n(y_i-\hat y_i)^2\)</span>，那么方程的最优拟合直线由 最小二乘算法 给出，即 <span class="arithmatex">\(X^TX\hat\beta=X^T\mathbf y\)</span>；此时 <span class="arithmatex">\(\hat y=\beta_0+\beta_1x\)</span> 称为<strong>最小二乘直线</strong></p>
+</blockquote>
+<p>平均偏差形式</p>
+<div class="admonition note">
+<p class="admonition-title">一般线性模型</p>
+</div>
+<blockquote>
+<p>引入 余差向量 <span class="arithmatex">\(\epsilon\)</span>（<span class="arithmatex">\(\epsilon=\mathbf y-X\beta\)</span>）得到方程 <span class="arithmatex">\(\mathbf y=X\beta+\epsilon\)</span>，该方程称为 线性模型</p>
+<p>一旦 X 和 <span class="arithmatex">\(\mathbf y\)</span> 被确定，使 <span class="arithmatex">\(\epsilon\)</span> 最小化相当于找出 <span class="arithmatex">\(X\beta=\mathbf y\)</span> 的最小二乘解，该解由 <span class="arithmatex">\(X^TX\beta=X^T\mathbf y\)</span> 给出</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">一般的最小二乘拟合</p>
+</div>
+<blockquote>
+<p>如果数据点集 <span class="arithmatex">\((x_1,y_1),\dots,(x_m,y_m)\)</span> 的拟合模型为 <span class="arithmatex">\(y=\sum\limits_{j=1}^nf_j(x)\beta_j\)</span></p>
+<p>由于 <span class="arithmatex">\(y=\sum\limits_{j=1}^nf_j(x)\beta_j=\mathbf f(x)\cdot \beta=\mathbf f^T(x)\beta\)</span>，那么 <span class="arithmatex">\(y_i=\mathbf f^T(x_i)\beta\)</span>，构造 <span class="arithmatex">\(X_{ij}=\mathbf f_j^T(x_i)\)</span></p>
+<p>假设观测值等于 预测值与余差之和，则有 <span class="arithmatex">\(X\beta=\mathbf y+\mathbf\epsilon\)</span></p>
+<p>（注：<span class="arithmatex">\(\mathbf f(x)=(f_1(x),\dots,f_n(x))\)</span>，参数向量 <span class="arithmatex">\(\beta=(\beta_1,\dots,\beta_n)\)</span>，观测向量 <span class="arithmatex">\(\mathbf y=(y_1,\dots,y_k)\)</span>，余差向量 <span class="arithmatex">\(\mathbf\epsilon=(\epsilon_1,\dots,\epsilon_n)\)</span>；X 为设计矩阵）</p>
+<p>若以 <span class="arithmatex">\(y_i-\hat y_i\)</span> 的平方和 <span class="arithmatex">\(\sum\limits_{i=1}^m(y_i-\hat y_i)^2\)</span> 作为“距离”的模型，那么 <span class="arithmatex">\(X\beta=\mathbf y\)</span> 最小二乘解 <span class="arithmatex">\(\hat\beta\)</span> 为该模型下的最优拟合</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">多重回归</p>
+</div>
+<blockquote>
+<p>给定数据点集 <span class="arithmatex">\((\mathbf x_1,y_1),\dots,(\mathbf x_m,y_m)\)</span>，其拟合模型为 <span class="arithmatex">\(y=\sum\limits_{j=1}^nf_j(\mathbf x)\beta_j\)</span>（其中 <span class="arithmatex">\(\mathbf x_i=(x_{ik},\dots,x_{ik})\in\mathbb R^k\)</span>）</p>
+<p>假设观测值等于 预测值与余差之和，则有 <span class="arithmatex">\(X\beta=\mathbf y+\mathbf\epsilon\)</span></p>
+<p>（其中 <span class="arithmatex">\(X_{ij}=\mathbf f_j^T(\mathbf x_i)\)</span>）</p>
+<p>若以 <span class="arithmatex">\(y_i-\hat y_i\)</span> 的平方和 <span class="arithmatex">\(\sum\limits_{i=1}^m(y_i-\hat y_i)^2\)</span> 作为“距离”的模型，那么 <span class="arithmatex">\(X\beta=\mathbf y\)</span> 最小二乘解 <span class="arithmatex">\(\hat\beta\)</span> 为该模型下的最优拟合</p>
+</blockquote>
+<h3 id="7">7. 内积空间</h3>
+<div class="admonition note">
+<p class="admonition-title">内积</p>
+</div>
+<blockquote>
+<p>对于所有 <span class="arithmatex">\(\mathbf u,\mathbf v,\mathbf w\in V\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span>，存在一个实函数 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle\)</span> 满足如下公理：</p>
+<ol>
+<li><span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=\langle\mathbf v,\mathbf u\rangle\)</span></li>
+<li><span class="arithmatex">\(\langle\mathbf u+\mathbf v,\mathbf w\rangle=\langle\mathbf u,\mathbf w\rangle+\langle\mathbf v,\mathbf w\rangle\)</span></li>
+<li><span class="arithmatex">\(c\langle\mathbf u,\mathbf v\rangle=\langle c\mathbf u,\mathbf v\rangle\)</span></li>
+<li><span class="arithmatex">\(\langle\mathbf u,\mathbf u\rangle\ge0\)</span>；<span class="arithmatex">\(\langle\mathbf u,\mathbf u\rangle=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf u=\mathbf 0\)</span></li>
+</ol>
+<p>一个赋予上面内积的向量空间称为向量空间</p>
+<p>例1：<span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=\sum\limits_{i=1}^nc_iu_iv_i\)</span>（<span class="arithmatex">\(c_i\ge0\)</span>；c 不全为 0）定义了一个内积</p>
+<p>例2：对于 <span class="arithmatex">\(p,q\in\mathbb P_n\)</span>(多项式空间)，<span class="arithmatex">\(\langle p,q\rangle=\sum\limits_{i=0}^np(c_i)q(c_i)\)</span>也满足内积公理</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">长度，距离，正交性</p>
+</div>
+<blockquote>
+<p>V 是一个内积空间，其内积记为 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle\)</span></p>
+<p>长度(范数)：<span class="arithmatex">\(\mathbf v\)</span> 的长度为 <span class="arithmatex">\(\|\mathbf v\|=\sqrt{\langle\mathbf u,\mathbf u\rangle}\)</span></p>
+<p>单位向量：<span class="arithmatex">\(\mathbf v\)</span> 是单位向量，当且仅当 <span class="arithmatex">\(\|\mathbf v\|=1\)</span></p>
+<p>距离：<span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 之间的距离为 <span class="arithmatex">\(\|\mathbf u-\mathbf v\|\)</span></p>
+<p>正交：<span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 正交，当且仅当 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=0\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">格拉姆-施密特方法</p>
+</div>
+<blockquote>
+<p>练习：构造 <span class="arithmatex">\(\mathbb P_2\)</span> 的正交基</p>
+</blockquote>
+<p>在 V 的特定子空间 W 中选取函数 g 来逼近 V 中的函数 f；其逼近程度依赖于 <span class="arithmatex">\(\|f-g\|\)</span> 定义的方式</p>
+<div class="admonition note">
+<p class="admonition-title">最佳逼近</p>
+</div>
+<blockquote></blockquote>
+<p>给定内积空间 V 中的向量 <span class="arithmatex">\(\mathbf v\)</span> 和有限维子空间 W，</p>
+<p>应用勾股定理和 <span class="arithmatex">\(\mathbf v\)</span> 关于 W 的正交分解，有 <span class="arithmatex">\(\|\mathbf v\|^2=\|\text{proj}_W\mathbf v\|^2+\|\mathbf v-\text{proj}_W\mathbf v\|^2\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">柯西-施瓦茨不等式</p>
+</div>
+<blockquote>
+<p>对于所有 <span class="arithmatex">\(\mathbf u,\mathbf v\in V\)</span>，有 <span class="arithmatex">\(|\langle\mathbf u,\mathbf v\rangle|\le\|\mathbf u\|\|\mathbf v\|\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">三角形不等式</p>
+</div>
+<blockquote>
+<p>对于所有 <span class="arithmatex">\(\mathbf u,\mathbf v\in V\)</span>，有 <span class="arithmatex">\(\|\mathbf u+\mathbf v\| \le \|\mathbf u\|+\|\mathbf v\|\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">C[a,b] 上的内积</p>
+</div>
+<h3 id="8">8. 内积空间的应用</h3>
 </article>
 </div>
 </div>

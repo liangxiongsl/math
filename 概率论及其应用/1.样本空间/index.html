@@ -545,7 +545,22 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
-    1. 样本空间
+    1. 经验背景
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 例子
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 样本空间，事件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 事件之间的关系
   </a>
 </li>
 </ul>
@@ -732,7 +747,22 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#1">
-    1. 样本空间
+    1. 经验背景
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 例子
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 样本空间，事件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 事件之间的关系
   </a>
 </li>
 </ul>
@@ -743,7 +773,72 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>1.样本空间</h1>
-<h3 id="1">1. 样本空间</h3>
+<h3 id="1">1. 经验背景</h3>
+<p>概率论的数学理论，与许多实际的和理想的实验相联系，或结合一些生活现象，便获得了实用的价值和直观的意义</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>这里所谓实际的和理想的实验，例如有：扔 1 次硬币；扔 100 次硬币；掷3颗骰子；理一副纸牌；用两副纸牌对点1；玩轮盘赌；
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>观察放射性原子的寿命或观察人的寿命；以人为随机样本而观察其中左撇子的人数；将两种作物杂交而观察它们后代的遗传型．
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>所谓生活现象，例如有：初生儿的性别；电话交换中被占用的通话线路的数目；电话的来电次数；在电讯系统里面的随机噪声；
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>生产过程的例行质量控制；意外事故的频率；天空某一区域内双星的个数；在扩散过程中一个质点的位置
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>上列各项描述是含糊了一点，要使概率论有意义，我们还必须一同明确所探讨的实验或观察的可能结果究竟是指什么，
+</code></pre></div>
+<p>任何理论都必然含有理想化，对于我们来说，第一个理想化是关于“实验”或“观察”的可能结果．如果我们要为实验制作一个抽象模型，我们必须一开始就作出决定：这（理想的）实验的可能结果是由哪些东西构成的</p>
+<div class="admonition note">
+<p class="admonition-title">事件</p>
+</div>
+<blockquote>
+<p>事件：实验或观察的结果</p>
+<ol>
+<li>复合事件：可以被分解的事件，如：“两次掷骰子，骰子点数总和为6”，“两次掷骰子，有两个奇数点”，“此人60多岁”</li>
+<li>简单事件(样本点 / 点)：不可被分解的事件，如：“两次掷骰子，结果是(3,3)”，“此人65岁”</li>
+</ol>
+<p>注：简单事件代表可以想象的结果，我们用它们来定义理想的实验（换句话说，这种简单事件是不定义的，犹如几何中的点和线是不定义的一样）</p>
+<p>样本空间：所有的样本点的集合</p>
+</blockquote>
+<h3 id="2">2. 例子</h3>
+<ol>
+<li>3 个球在 3 个盒中的分布</li>
+<li>r 个球在 n 个盒中的分布（16 种等价的案例详见 p13）</li>
+<li>r 个球在 n 个盒中的分布，r 个球不可辨别（或者球不可辨别更方便处理）；或者盒子也是不可辨别的</li>
+<li>抽样，如：以 100 个人作为样本，我们只关注抽烟者的人数 x（<span class="arithmatex">\(x=0..100\)</span>，总共 101 个“点”）</li>
+<li>抽样，如：以 100 个人作为样本，我们关注号抽烟者的人数和性别，那么每个样本点可以用四元组 <span class="arithmatex">\((M_s,F_s,M_n,F_n)\)</span>（<span class="arithmatex">\(M_s+F_s+M_n+F_n=100\)</span>）来描述</li>
+<li>扔硬币：扔 3 次硬币</li>
+<li>夫妇的年龄：每次考察可以得到一个数对 <span class="arithmatex">\((x,y)\)</span>，分别表示丈夫和妻子的年龄</li>
+<li>相空间：统计力学例的每个可能的“状态”称为“相空间中的一个点”；其实相空间就是样本空间，它的点也就是样本点</li>
+</ol>
+<h3 id="3">3. 样本空间，事件</h3>
+<p>事件等同于样本点的一个集合</p>
+<p>事件包含某些点（或由某些点构成），等同于 这些点在理想实验中能使 A 发生</p>
+<p>事件，样本点分别等价于 点集，点</p>
+<h3 id="4">4. 事件之间的关系</h3>
+<div class="admonition note">
+<p class="admonition-title">概念</p>
+</div>
+<blockquote>
+<p>样本空间，记作 <span class="arithmatex">\(\mathfrak S\)</span></p>
+<p>事件：样本点的集合，以大写字母表示，如 <span class="arithmatex">\(A,B\)</span></p>
+<p>样本点：以小写字母表示，如 <span class="arithmatex">\(x\)</span></p>
+<p><span class="arithmatex">\(x\in A\)</span>：点 x 包含在时间 A 中</p>
+<p><span class="arithmatex">\(A=B\)</span>：事件 A 和 B 均由相同的点构成</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定义</p>
+</div>
+<ol>
+<li>事件 A 不包含任何样本点（即是不可能事件），记作 <span class="arithmatex">\(A=0\)</span>（<span class="arithmatex">\(0\notin\mathbb R\)</span>）</li>
+<li>补事件（事件的非）：样本空间中一切不属于事件 A 的点所构成的事件称为 A 的补（或 A 的非）事件，记作 <span class="arithmatex">\(A'\)</span>（特别地，<span class="arithmatex">\(\mathfrak S'=0\)</span>）</li>
+<li><span class="arithmatex">\(AB\)</span>：事件 A 和 B 同时发生<ul>
+<li><span class="arithmatex">\(\bigcap\limits_{i=1}^nA_i=A_1\cap\dots\cap A_n=A_1\dots A_n\)</span>：该事件属于全部给定的集合中的样本点的全体所组成，称之为 <span class="arithmatex">\(A_1\dots A_n\)</span> 之交</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(A\cup B\)</span>：事件 A 或 B 发生，或同时发生；也即 A 和 B 至少有一个发生；它包含既不属于 A 又不属于 B 的点之外的所有样本点<ul>
+<li><span class="arithmatex">\(\bigcup\limits_{i=1}^nA_i=A_1\cup\dots\cup A_n\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(AB=0\)</span>：事件 A 和 B 相互排斥，因而 AB 是不可能事件，读作“A 和 B 互不相容”</li>
+<li></li>
+</ol>
 </article>
 </div>
 </div>
