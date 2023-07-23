@@ -563,6 +563,21 @@
     4. 事件之间的关系
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 离散样本空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 离散样本空间中概率的预备知识
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 基本定义和规则
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -765,6 +780,21 @@
     4. 事件之间的关系
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 离散样本空间
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 离散样本空间中概率的预备知识
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 基本定义和规则
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -773,6 +803,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>1.样本空间</h1>
+<p>注意：第一卷只涉及“离散样本空间”，而第二卷才讲“连续样本空间”</p>
 <h3 id="1">1. 经验背景</h3>
 <p>概率论的数学理论，与许多实际的和理想的实验相联系，或结合一些生活现象，便获得了实用的价值和直观的意义</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>这里所谓实际的和理想的实验，例如有：扔 1 次硬币；扔 100 次硬币；掷3颗骰子；理一副纸牌；用两副纸牌对点1；玩轮盘赌；
@@ -800,7 +831,7 @@
 <ol>
 <li>3 个球在 3 个盒中的分布</li>
 <li>r 个球在 n 个盒中的分布（16 种等价的案例详见 p13）</li>
-<li>r 个球在 n 个盒中的分布，r 个球不可辨别（或者球不可辨别更方便处理）；或者盒子也是不可辨别的</li>
+<li>r 个球在 n 个盒中的分布，r 个球不可辨别（或者球不可辨别更方便处理；“波斯-爱因斯坦统计”）；或者盒子也是不可辨别的</li>
 <li>抽样，如：以 100 个人作为样本，我们只关注抽烟者的人数 x（<span class="arithmatex">\(x=0..100\)</span>，总共 101 个“点”）</li>
 <li>抽样，如：以 100 个人作为样本，我们关注号抽烟者的人数和性别，那么每个样本点可以用四元组 <span class="arithmatex">\((M_s,F_s,M_n,F_n)\)</span>（<span class="arithmatex">\(M_s+F_s+M_n+F_n=100\)</span>）来描述</li>
 <li>扔硬币：扔 3 次硬币</li>
@@ -825,20 +856,71 @@
 <div class="admonition note">
 <p class="admonition-title">定义</p>
 </div>
+<blockquote>
 <ol>
 <li>事件 A 不包含任何样本点（即是不可能事件），记作 <span class="arithmatex">\(A=0\)</span>（<span class="arithmatex">\(0\notin\mathbb R\)</span>）</li>
 <li>补事件（事件的非）：样本空间中一切不属于事件 A 的点所构成的事件称为 A 的补（或 A 的非）事件，记作 <span class="arithmatex">\(A'\)</span>（特别地，<span class="arithmatex">\(\mathfrak S'=0\)</span>）</li>
 <li><span class="arithmatex">\(AB\)</span>：事件 A 和 B 同时发生<ul>
-<li><span class="arithmatex">\(\bigcap\limits_{i=1}^nA_i=A_1\cap\dots\cap A_n=A_1\dots A_n\)</span>：该事件属于全部给定的集合中的样本点的全体所组成，称之为 <span class="arithmatex">\(A_1\dots A_n\)</span> 之交</li>
+<li><span class="arithmatex">\(\bigcap\limits_{i=1}^nA_i=A_1\cap\dots\cap A_n=A_1\dots A_n\)</span>：该事件属于全部给定的集合中的样本点的全体所组成，称之为 <span class="arithmatex">\(A_1\dots A_n\)</span> 之交（同时实现）</li>
+<li><span class="arithmatex">\(AB=0\)</span>：事件 A 和 B 相互排斥，因而 AB 是不可能事件，读作“A 和 B 互不相容”</li>
+<li>两两互斥：对于所有 <span class="arithmatex">\(i\ne j\)</span>，<span class="arithmatex">\(A_iA_j=0\)</span></li>
 </ul>
 </li>
 <li><span class="arithmatex">\(A\cup B\)</span>：事件 A 或 B 发生，或同时发生；也即 A 和 B 至少有一个发生；它包含既不属于 A 又不属于 B 的点之外的所有样本点<ul>
-<li><span class="arithmatex">\(\bigcup\limits_{i=1}^nA_i=A_1\cup\dots\cup A_n\)</span></li>
+<li><span class="arithmatex">\(\bigcup\limits_{i=1}^nA_i=A_1\cup\dots\cup A_n\)</span>：称之为给定的各集合之并（至少有一个实现）</li>
 </ul>
 </li>
-<li><span class="arithmatex">\(AB=0\)</span>：事件 A 和 B 相互排斥，因而 AB 是不可能事件，读作“A 和 B 互不相容”</li>
-<li></li>
+<li><span class="arithmatex">\(A\subset B\)</span> 或 <span class="arithmatex">\(B\supset A\)</span>：A 的每一个点都包含在 B 中，读作“A 蕴涵 B” 或 “B 被 A 蕴涵”<ul>
+<li><span class="arithmatex">\(B-A\)</span> 或 <span class="arithmatex">\(BA'\)</span>：“B 发生而 A 不发生”（仅当 <span class="arithmatex">\(A\subset B\)</span>）</li>
+<li>性质1：<span class="arithmatex">\(A'=\mathfrak S-A\)</span>，<span class="arithmatex">\(A-A=0\)</span></li>
+<li>性质2：A 和 B 互不相容，当且仅当 A 发生蕴含着 B 不发生；换句话说 <span class="arithmatex">\(AB=0\)</span>，当且仅当 <span class="arithmatex">\(A\subset B'\)</span> 或 <span class="arithmatex">\(B\subset A'\)</span></li>
+<li>性质3：<span class="arithmatex">\(A-AB\)</span> 表示 A 发生而非 A 和 B 同时发生，即 <span class="arithmatex">\(A-AB=AB'\)</span></li>
+</ul>
+</li>
 </ol>
+</blockquote>
+<h3 id="5">5. 离散样本空间</h3>
+<div class="admonition note">
+<p class="admonition-title">离散样本空间</p>
+</div>
+<blockquote>
+<p>如果一个样本空间只包含有限多个点，或者虽有无穷多个点，而这些点可以排成一个简单的序列 <span class="arithmatex">\(E_1,E_2,\dots\)</span> 的话，我们就说这个样本空间是离散的</p>
+</blockquote>
+<p>在这本书里，我们只考虑离散的样本空间</p>
+<h3 id="6">6. 离散样本空间中概率的预备知识</h3>
+<p>各种事件的概率都是一些数值，这些数值的性质犹如几何学中的距离、力学中的质量，概率论假定概率的数值是给定的，但是关于它们的实在数值等于什么，怎样测量出来，却用不着作任何的假定</p>
+<p>相同的样本空间中可以有不同的赋概法</p>
+<h3 id="7">7. 基本定义和规则</h3>
+<div class="admonition note">
+<p class="admonition-title">基本约定</p>
+</div>
+<blockquote>
+<p>给定一个含有样本点 <span class="arithmatex">\(E_1,E_2,\dots\)</span> 的离散样本空间 <span class="arithmatex">\(\mathfrak S\)</span>，我们假定对每一个点 <span class="arithmatex">\(E_i\)</span> 都赋予一个数，这个数称为 <span class="arithmatex">\(E_i\)</span> 的概率，记为 <span class="arithmatex">\(P\{E_i\}\)</span></p>
+<p>满足 <span class="arithmatex">\(P\{E_i\}\ge0\)</span>，并且 <span class="arithmatex">\(\sum P\{E_i\}=P\{E_1\}+P\{E_2\}+\dots=1\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">概率</p>
+</div>
+<blockquote>
+<p>任何一个事件 A 的概率 <span class="arithmatex">\(P(A)\)</span> 是 A 中所包含的样本点的概率的总和，并且 <span class="arithmatex">\(0\le P\{A\}\le 1\)</span></p>
+<p>注：<span class="arithmatex">\(P\{\mathfrak S\}=1\)</span></p>
+<p>性质：<span class="arithmatex">\(P\{A_1\cup A_2\}=P\{A_1\}+P\{A_2\}-P\{A_1A_2\}\)</span>（<span class="arithmatex">\(A_1\)</span> 发生，或 <span class="arithmatex">\(A_2\)</span> 发生，或 <span class="arithmatex">\(A_1,A_2\)</span> 都发生的概率）</p>
+<ul>
+<li><span class="arithmatex">\(P\{A_1\cup A_2\}\le P\{A_1\}+P\{A_2\}\)</span></li>
+<li><span class="arithmatex">\(P\{A_1\cup A_2\}=P\{A_1\}+P\{A_2\}\)</span>，仅当 <span class="arithmatex">\(A_1A_2=0\)</span>（<span class="arithmatex">\(A_1A_2\)</span> 互斥）</li>
+<li><span class="arithmatex">\(P\{\bigcup A_i\}=P\{A_1\cup A_2\cup\dots\}\le P\{A_1\}+P\{A_2\}+\dots\)</span>（Boole 不等式）</li>
+<li><span class="arithmatex">\(P\{\bigcup A_i\}=P\{A_1\cup A_2\cup\dots\}+ P\{A_1\}+P\{A_2\}+\dots\)</span>，仅当 <span class="arithmatex">\(A_1,A_2,\dots\)</span> 互斥</li>
+</ul>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<blockquote>
+<p>在早期文献中，样本空间叫作“情形”，A 中的点叫作 “有利情形”（有利于 A），如果全部样本点的概率应用，则时间 A 的概率等于有利情形除以一切可能情形</p>
+<p>不幸的是，这种叙述经常被滥用来作为概率的“定义”，即人们常常认为每一个有限的样本空间中的全部样本点的概率都是一样的；但是事实并非如此</p>
+<p>譬如，一个不均匀硬币的样本空间只有两个点，但是它们可以具有任意的概率 p 和 q，使得 <span class="arithmatex">\(p+q=1\)</span>；一个新生儿可能是男孩，也可能是女孩，但是实际上它们的概率可以不一样</p>
+<p>全部样本点的概率都一样的样本空间的用处几乎局限于研究 机会游戏 和 组合分析</p>
+</blockquote>
 </article>
 </div>
 </div>
