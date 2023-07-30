@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/" rel="prev"/>
-<link href="../%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" rel="next"/>
+<link href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/10.%E8%BF%B9%26%E8%A1%8C%E5%88%97%E5%BC%8F/" rel="prev"/>
+<link href="../2.%E7%A6%BB%E6%95%A3%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
-<title>多维随机变量&amp;&amp;分布 - 数学</title>
+<title>1.样本空间&amp;概率 - 数学</title>
 <link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -57,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              多维随机变量&amp;&amp;分布
+              1.样本空间&amp;概率
             
           </span>
 </div>
@@ -177,7 +180,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
+<a class="md-tabs__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BB%83%E4%B9%A0/">
         线性代数
       </a>
 </li>
@@ -187,13 +190,13 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
-        概率论及其应用
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        概率导论
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
-        概率论&amp;数理统计
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/0.%E6%A6%82%E8%BF%B0/">
+        概率论及其应用
       </a>
 </li>
 <li class="md-tabs__item">
@@ -269,6 +272,21 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86/%E9%97%AE%E9%A2%98/">
+        问题
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86/%E7%AB%9E%E8%B5%9B%E9%A2%981/">
+        竞赛题1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86/%E7%AB%9E%E8%B5%9B%E9%A2%982/">
+        竞赛题2
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86/comp/">
         Comp
       </a>
@@ -276,6 +294,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         术语和定义
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%BE%AE%E7%A7%AF%E5%88%86/%E5%AE%9A%E7%90%86%E5%BA%94%E7%94%A8/">
+        定理应用
       </a>
 </li>
 <li class="md-nav__item">
@@ -394,8 +417,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         术语和定义
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89%28%E7%B2%BE%E7%BB%86%E5%8C%96%29/">
+        术语和定义(精细化)
       </a>
 </li>
 <li class="md-nav__item">
@@ -508,14 +541,122 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          概率导论
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          概率导论
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          1.样本空间&amp;概率
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        1.样本空间&amp;概率
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 集合
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 概率模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 条件概率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 全概率定理，贝叶斯公式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 独立性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 计数法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 小节和讨论
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.%E7%A6%BB%E6%95%A3%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F/">
+        2.离散随机变量
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3.%E4%B8%80%E8%88%AC%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F/">
+        3.一般随机变量
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4.%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%B7%B1%E5%85%A5%E5%86%85%E5%AE%B9/">
+        4.随机变量的深入内容
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5.%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
+        5.极限定理
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6.%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%BF%87%E7%A8%8B%26%E6%B3%8A%E6%9D%BE%E8%BF%87%E7%A8%8B/">
+        6.伯努利过程&amp;泊松过程
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7.%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/">
+        7.马尔科夫链
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8.%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BB%9F%E8%AE%A1%E6%8E%A8%E6%96%AD/">
+        8.贝叶斯统计推断
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9.%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E6%8E%A8%E6%96%AD/">
+        9.经典统计推断
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           概率论及其应用
         </label>
@@ -613,64 +754,6 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../">概率论&amp;数理统计</a>
-<label for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-          概率论&amp;数理统计
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%26%E6%A6%82%E7%8E%87/">
-        随机事件&amp;概率
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/">
-        随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
-        多维随机变量&amp;&amp;分布
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">
-        随机变量的数字特征
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%26%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
-        大数定律&amp;中心极限定理
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
-        数理统计的基本概念
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">
-        参数估计
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-        假设检验
-      </a>
-</li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -705,13 +788,408 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 集合
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 概率模型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 条件概率
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 全概率定理，贝叶斯公式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 独立性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 计数法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 小节和讨论
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>多维随机变量&amp;&amp;分布</h1>
+<h1>1.样本空间&amp;概率</h1>
+<div class="admonition tip">
+<p class="admonition-title">约定</p>
+<ol>
+<li>表示事件的花括号 <span class="arithmatex">\(\{\}\)</span> 在表示为概率的原像的时候可以省略，即 <span class="arithmatex">\(P(事件)=P(\{事件\})\)</span></li>
+</ol>
+</div>
+<h3 id="1">1. 集合</h3>
+<div class="admonition note">
+<p class="admonition-title">集合</p>
+</div>
+<blockquote>
+<p>元素：形成集合的对象，即集合由元素构成</p>
+<p><span class="arithmatex">\(x\in S\)</span>：x 是集合 S 的元素；与之相反的是 <span class="arithmatex">\(x\notin S\)</span></p>
+<p>空集：记作 <span class="arithmatex">\(\emptyset\)</span></p>
+<p>集合的表示：<span class="arithmatex">\(S=\{x~|~x 满足性质 P\}\)</span>；<span class="arithmatex">\(S=\{x_1,x_2,\dots\}\)</span></p>
+<p>可数无限集：由无限多个元素构成的集合</p>
+<p>子集，超集：S 是 T 的子集，当且仅当 T 是 S 的超集；记作 <span class="arithmatex">\(S\subset T\)</span> 或 <span class="arithmatex">\(T\supset S\)</span></p>
+<p>相等集合：<span class="arithmatex">\(S=T\)</span>，当且仅当 <span class="arithmatex">\(S\subset T\)</span> 并且 <span class="arithmatex">\(T\subset S\)</span></p>
+<p>空间：将我们感兴趣的所有元素放在一起，形成的集合，记作 <span class="arithmatex">\(\Omega\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">集合运算</p>
+</div>
+<blockquote>
+<p>补集：S 相对于 <span class="arithmatex">\(\Omega\)</span> 的补集，记作 <span class="arithmatex">\(S^c=\{x\in\Omega~|~x\notin S\}\)</span>；特别地 <span class="arithmatex">\(\Omega^c=\emptyset\)</span></p>
+<p>并集：<span class="arithmatex">\(S\cup T = \{x~|~x\in S\vee x\in T\}\)</span>；<span class="arithmatex">\(\bigcup\limits_{i=1}^nS_i=\{x~|~存在 i, 有x\in S_i\}\)</span></p>
+<p>交集：<span class="arithmatex">\(S\cap T = \{x~|~x\in S\wedge x\in T\}\)</span>；<span class="arithmatex">\(\bigcap\limits_{i=1}^nS_i=\{x~|~对于所有 i, 有x\in S_i\}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">集合代数</p>
+</div>
+<blockquote>
+<p>交换律 <span class="arithmatex">\(S\cup T=T\cup S\)</span>，结合律 <span class="arithmatex">\(S\cup(T\cup U)=(S\cup T)\cup U\)</span></p>
+<p>分配率：<span class="arithmatex">\(S\cap(T\cup U)=(S\cap T)\cup(S\cap U)\)</span>，<span class="arithmatex">\(S\cup(T\cap U)=(S\cup T)\cap(S\cup U)\)</span></p>
+<p><span class="arithmatex">\((S^c)^c=S\)</span>，<span class="arithmatex">\(S\cap S^c=\emptyset\)</span>，<span class="arithmatex">\(S\cup\Omega=\Omega\)</span>，<span class="arithmatex">\(S\cap\Omega=S\)</span></p>
+<p>德摩根定律：<span class="arithmatex">\((\bigcup\limits_{i=1}^nS_i)^c=\bigcap\limits_{i=1}^nS_i^c\)</span>，<span class="arithmatex">\((\bigcap\limits_{i=1}^nS_i)^c=\bigcup\limits_{i=1}^nS_i^c\)</span></p>
+<p>部分证明：<span class="arithmatex">\((\bigcap\limits_{i=1}^nS_i)^c=\{x~|~x\notin \bigcap\limits_{i=1}^nS_i\}=\{x~|~(\forall i,x\in S_i)'\}=\{x~|~\exists i,x\notin S_i\}=\{x~|~\exists i,x\in S_i^c\}\)</span></p>
+</blockquote>
+<h3 id="2">2. 概率模型</h3>
+<p>概率模型 是对不确定现象的数学描述</p>
+<div class="admonition note">
+<p class="admonition-title">概率模型的基本构成</p>
+</div>
+<blockquote>
+<p><strong>样本空间</strong>：一个<strong>试验</strong>的所有可能结果的集合，记为 <span class="arithmatex">\(\Omega\)</span></p>
+<p>概论律：概率律为试验结果的集合 A (称为<strong>事件</strong>)确定一个<strong>非负数</strong> <span class="arithmatex">\(P(A)\)</span>(称为事件 A 的<strong>概率</strong>)；而这个非负数刻画了我们对事件 A 的认识或所产生的信念的程度（参见 p21 图 1.2）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">样本空间，事件</p>
+</div>
+<blockquote>
+<p>每一个概率模型都关联着一个<strong>试验</strong>，这个试验将产生试验<strong>结果</strong>（样本点？），这些所有可能的结果形成<strong>样本空间</strong>（记作 <span class="arithmatex">\(\Omega\)</span>）</p>
+<p>样本空间可由若干实验结果组成，也可由无限多个试验结果组成</p>
+<p>注：不同实验结果（样本点）之间相互排斥</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>样本空间：<span class="arithmatex">\(\Omega\)</span></li>
+<li>样本点：<span class="arithmatex">\(a\in\Omega\)</span></li>
+<li>事件：<span class="arithmatex">\(A\in2^\Omega\)</span> （<span class="arithmatex">\(2^\Omega\)</span> 为 <span class="arithmatex">\(\Omega\)</span> 的幂集）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">序贯模型</p>
+</div>
+<blockquote>
+<p>序贯树形图 用以表示所有实验结果的组成（每条从根到叶子的路径确定每个实验结果的“广义向量”）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">概论律</p>
+</div>
+<blockquote>
+<p>概论律：在直观上，它确定了任何结果或任何结果的集合（称为事件）的似然程度；更精确的说，它给每一个事件 A，确定一个数 <span class="arithmatex">\(P(A)\)</span>，称为事件 A 的概率，它满足概率公理</p>
+<p>概率公理：</p>
+<ol>
+<li>非负性：对于所有事件 A，都有 <span class="arithmatex">\(P(A)\ge0\)</span></li>
+<li>可加性：对于任意两个互不相交的集合 A 和 B（称 A 和 B 互不相容），都有 <span class="arithmatex">\(P(A\cup B)=P(A)+P(B)\)</span>；更一般地，<span class="arithmatex">\(A_1,A_2,\dots\)</span> 互不相容，则有 <span class="arithmatex">\(P(\bigcup A_i)=P(A_1\cup A_2\cup\dots)=P(A_1)+P(A_2)+\dots=\sum P(A_i)\)</span></li>
+<li>归一化：整个样本空间 <span class="arithmatex">\(\Omega\)</span>（称为 必然事件）的概率为 1，即 <span class="arithmatex">\(P(\Omega)=1\)</span></li>
+</ol>
+<p>概率对频率的解释：<span class="arithmatex">\(P=P(A)\)</span> 意味着在大量重复试验中事件 A 出现的频率约为 <span class="arithmatex">\(P\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">离散模型</p>
+</div>
+<blockquote>
+<p>离散概论律：设样本空间由有限个可能的结果组成，则事件的概率可由组成这个事件的试验结果决定；事件 <span class="arithmatex">\(\{s_1,s_2,\dots,s_n\}\)</span> 的概率是 <span class="arithmatex">\(P(s_i)\)</span> 之和，即 <span class="arithmatex">\(P(\{s_1,s_2,\dots,s_n\})=\sum\limits_{i=1}^nP(s_i)\)</span></p>
+<p>（注：<span class="arithmatex">\(P(\{s_i\})\)</span> 表示事件 <span class="arithmatex">\(\{s_i\}\)</span> 的概率，简记为 <span class="arithmatex">\(P(s_i)\)</span>）</p>
+<p>离散均匀概论律（古典概型）：设样本空间为 <span class="arithmatex">\(\Omega=\{s_1,s_2,\dots,s_n\}\)</span>，并且每个实验结果（样本点）都是等概率的，由归一化公理有 <span class="arithmatex">\(P(s_i)=\frac1n\)</span>（<span class="arithmatex">\(i=1..n\)</span>）；事件 <span class="arithmatex">\(A=\{s_{a_1},s_{a_2},\dots,s_{a_k}\}\)</span> 的概率为 <span class="arithmatex">\(P(A)=\frac kn\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">连续模型</p>
+</div>
+<blockquote>
+<p>例子：</p>
+<ol>
+<li>试验的样本空间是区间 <span class="arithmatex">\(\Omega=[0,1]\)</span>，那么其子区间(事件) <span class="arithmatex">\([a,b]\)</span> 的概率是 <span class="arithmatex">\(b-a\)</span></li>
+<li>“会面-等待”的例子，两人成功见面的概率是 <span class="arithmatex">\(两人都在等待时间之内构成的面积/样本空间的面积\)</span></li>
+</ol>
+<p>注：其他满足概率公理的连续模型都是合理的模型</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">概率律的性质</p>
+</div>
+<blockquote>
+<ol>
+<li>若 <span class="arithmatex">\(A\subset B\)</span>，则 <span class="arithmatex">\(P(A)\le P(B)\)</span></li>
+<li><span class="arithmatex">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)=P(A)+P(A^c\cap B)\)</span></li>
+<li><span class="arithmatex">\(P(A\cup B)\le P(A)+P(B)\)</span>；<span class="arithmatex">\(P(\bigcup\limits_{i=1}^nA_i)\le\sum\limits_{i=1}^nP(A_i)\)</span></li>
+<li><span class="arithmatex">\(P(A\cup B\cup C)=P(A)+P(A^c\cap B)+P(A^c\cap B^c\cap C)\)</span> （由于 <span class="arithmatex">\(P(A)=P(A\cap B)+P(A\cap B^c)\)</span>）</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">模型与现实</p>
+</div>
+<blockquote>
+<p>概率理论可以同来分析显示世界的许多不确定现象，这个过程通常分为两个阶段</p>
+<ol>
+<li>在一个适当的样本空间给出概论律，从而建立概率模型（建立现实世界与数学的练习）</li>
+<li>在完全严格的概率模型之下进行推导，精算某些时间的概率或推导出一些十分有趣的性质（严格限制概率公理之下的逻辑推理）</li>
+</ol>
+<p>其他：内特朗悖论（参见 p 30）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">概率论发展简史</p>
+</div>
+<blockquote>
+<ol>
+<li>公元前.在古希腊和古罗马时期,机会游戏十分盛行.但是这个时期关于游戏的理论还没有发展起来</li>
+<li>16世纪.卡尔达诺,一个光彩夺目同时富有争议的意大利数学家出版了第一本关于机会游戏的书,书中给出了掷骰子和扑克游戏中随机事件的概率的正确计算方法</li>
+<li>17世纪.费马和帕斯卡之间的通信中提及几个十分有趣的概率问题,推动了这个领域的研究热潮</li>
+<li>18世纪.雅各布·伯努利研究了重复投币试验序列并引入了第一条大数定律.这条大数定律为联系理论概率与经验事实打下了基础.后面的数学家,诸如丹尼尔·伯努利、莱布尼茨、贝叶斯、拉格朗日等人对理论概率论的发展和实际应用也作出了巨大贡献.棣莫弗引入了正态分布并证明了第一个中心极限定理</li>
+<li>19世纪.拉普拉斯在他的一本很有影响的书中确立了概率论在定量研究领域中的重要地位.同时他本人对概率论作出了许多原创性的贡献,包括推导了更一般形式的中心极限定理.勒让德和高斯将概率论应用到天文预测,并且应用了最小二乘法,他们的工作大大地拓展了概率论的应用领域.泊松出版了一本很有影响的书,其中包括了很多原创性的成果,以他的姓名命名的泊松分布也在其中.切比雪夫和他的学生马尔可夫、李雅普诺夫等研究了极限定理,在这个领域内提高了数学的严格性的标准.在此时期,概率论被认为是自然科学的一部分,它的主要任务是解释物理现象.在这种思想的主导之下,概率被解释为重复试验中相对频率的极限</li>
+<li>20世纪.现在已经不再以相对频率作为概率论的基础概念.代之以由科尔莫戈罗夫引入的普遍适用的概率论公理系统.与数学的其他分支一样,在公理系统的基础上发展起来的概率论只依赖于逻辑的正确性,而与实际物理现象的联系无关.然而,由于概率论能够描述和解释现实世界中绝大部分的不确定性现象,因而在科学和工程中,概率论得到广泛应用</li>
+</ol>
+</blockquote>
+<h3 id="3">3. 条件概率</h3>
+<div class="admonition note">
+<p class="admonition-title">条件概率</p>
+</div>
+<blockquote>
+<p>条件概率是给定部分信息的基础上对试验结果的一种推断</p>
+<p>假设我们已经知道给定的事件 B 发生了，而希望知道另一个给定的事件 A 发生的可能性；因此，我们构造一个新的概论律，它顾及了事件 B 硬件发生的信息，求出任何事件 A 发生的概率</p>
+<p>条件概率：给定事件 B 发生之下事件 A 发生的条件概率，记作 <span class="arithmatex">\(P(A|B)\)</span></p>
+<p>对于等概率模型，条件概率如此定义是合适的：<span class="arithmatex">\(P(A|B)=\frac{事件 A\cap B 的试验结果数}{事件 B 的试验结果数}\)</span></p>
+<p>条件概率的推广定义：<span class="arithmatex">\(P(A|B)=\frac{P(A\cap B)}{P(B)}\)</span>（仅当 <span class="arithmatex">\(P(B)&gt;0\)</span>）</p>
+</blockquote>
+<p>归一化：<span class="arithmatex">\(P(\Omega|B)=\frac{P(\Omega\cap B)}{P(B)}=\frac{P(B)}{P(B)}=1\)</span></p>
+<p>可加性：假设 <span class="arithmatex">\(A_1\)</span> 与 <span class="arithmatex">\(A_2\)</span> 是任意不相容的事件，有 <span class="arithmatex">\(P(A_1\cup A_2|B)=\frac{P((A_1\cup A_2)\cap B)}{P(B)}=\frac{P((A_1\cap B)\cup(A_2\cap B))}{P(B)}=\frac{P(A_1\cap B)+P(A_2\cap B)}{P(B)}=\frac{P(A_1\cap B)}{P(B)}+\frac{P(A_2\cap B)}{P(B)}=P(A_1|B)+P(A_2|B)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">条件概率的性质</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(P(A|B)=\frac{P(A\cap B)}{P(B)}\)</span>（仅当 <span class="arithmatex">\(P(B)&gt;0\)</span>）</li>
+<li>满足概论律：<span class="arithmatex">\(P(A|B)\ge0\)</span>，<span class="arithmatex">\(P(A_1\cup A_2|B)=P(A_1|B)+P(A_2|B)\)</span>，<span class="arithmatex">\(P(\Omega|B)=1\)</span></li>
+<li><span class="arithmatex">\(P(A|B)=\frac{事件 A\cap B 的试验结果数}{事件 B 的试验结果数}\)</span></li>
+<li><span class="arithmatex">\(P(A|\Omega)=\frac{P(A\cap\Omega)}{P(\Omega)}=P(A)\)</span></li>
+<li><span class="arithmatex">\(P(\bigcap\limits_{i=1}^nA_i)=\prod\limits_{i=1}^nP(A_i|\bigcap\limits_{i=1}^{j-1}A_j)\)</span></li>
+</ol>
+<p>注1：某个概率模型满足 概论律，意味着该模型拥有所有关于概论律的性质</p>
+<p>注2：条件概率可以看成是样本空间 B 上的概论律，即 B 是全空间或必然事件（因而 条件概率是 <span class="arithmatex">\(\Omega\)</span> 的子集上的概论律）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">利用条件概率定义概率模型</p>
+</div>
+<blockquote>
+<ol>
+<li>注意我们所关注的问题的样本空间是 <span class="arithmatex">\(\Omega\)</span> 还是某些假设（<span class="arithmatex">\(\Omega\)</span> 的子集）上；样本空间一般比较隐晦而不易发现</li>
+<li>序贯树形图：从树上每条边赋予一个概率，其值为父节点的事件发生的条件下子节点代表的事件发生的概率；从根结点到某个结点上边权的连乘积为路径上经过结点的事件同时发生的概率，即 <span class="arithmatex">\(P(\bigcap\limits_{i=1}^nA_i)=\prod\limits_{i=1}^nP(A_i|\bigcap\limits_{i=1}^{j-1}A_j)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(P(B|A)=0.99,P(B|A^c)=0.1,P(A)=0.05\)</span>，求 <span class="arithmatex">\(P(A^cB),P(AB^c)\)</span>（参见p36）</li>
+<li>52张扑克中不返回的选取三张，计算 3 张牌都没有红桃的概率</li>
+<li>有 4 个研究生，12 个研究生；将他们分成 <span class="arithmatex">\(4\times 4\)</span> 组，计算 4 个研究生都不在同一组的概率</li>
+<li>蒙提·霍尔问题(三门问题)</li>
+</ol>
+</div>
+<h3 id="4">4. 全概率定理，贝叶斯公式</h3>
+<div class="admonition note">
+<p class="admonition-title">全概率定理</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(A_1,A_2,\dots,A_n\)</span> 是一组互不相容的事件，形成样本空间的一个分割（有 <span class="arithmatex">\(\Omega\subset\bigcap\limits_{i=1}^nA_i\)</span>），那么：</p>
+<p>对于所有事件 B 有 <span class="arithmatex">\(P(B)=\sum\limits_{i=1}^nP(A_i\cap B)=\sum\limits_{i=1}^nP(B|A_i)P(A_i)\)</span>（<span class="arithmatex">\(P(A_i)&gt;0\)</span>）</p>
+<p>注：全概率定理可以建立在一棵以事件 B 为根（样本空间）的序贯树形图</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例题</p>
+<ol>
+<li>掷一个 4 面的骰子 1 次，若结果为 1 或 2，则可以再抛掷一次；计算总点数不小于 4 的概率</li>
+<li>第一周爱丽丝能跟上课程的概率分别是 0.8；若上一周跟得上则本周能跟得上的概率是 0.8，若上一周跟不上则本周能跟得上的概率是 0.4；计算第三周跟得上课程的概率（回溯法）</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">推理和贝叶斯准则</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(A_1,A_2,\dots,A_n\)</span> 是一组互不相容的事件，形成样本空间的一个分割，那么：</p>
+<p>对于所有事件 B 有 <span class="arithmatex">\(P(A_i|B)=\frac{P(A_i)P(B|A_i)}{P(B)}=\frac{P(A_i)P(B|A_i)}{\sum\limits_{j=1}^nP(A_j)P(B|A_j)}\)</span></p>
+<p>应用：贝叶斯准则可以用来进行<strong>因果推理</strong>，计算造成结果 B 的可能原因 <span class="arithmatex">\(A_i\)</span> 的概率</p>
+<p>注：<span class="arithmatex">\(P(A_i|B)\)</span> 称为后验概率，<span class="arithmatex">\(P(A_i)\)</span> 称为先验概率</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ul>
+<li>参见 p47-48</li>
+</ul>
+</div>
+<h3 id="5">5. 独立性</h3>
+<div class="admonition note">
+<p class="admonition-title">独立性</p>
+</div>
+<blockquote>
+<p>事件 A 独立于事件 B，当且仅当 <span class="arithmatex">\(P(A|B)=P(A)\)</span> （<span class="arithmatex">\(P(B)=0\)</span> 时 <span class="arithmatex">\(P(A|B)\)</span> 无定义）</p>
+<p>我们称 A 和 B 是相互独立的事件（A 独立于 B 蕴含着 B 独立于 A）；换句话说，B 的发生，不会对 A 的发生与否提供任何信息，反之亦然</p>
+<p>等价条件：<span class="arithmatex">\(P(A\cap B)=P(A)P(B)\)</span>（<span class="arithmatex">\(P(A),P(B)&gt;0\)</span>）</p>
+<p>注：<span class="arithmatex">\(P(A),P(B)&gt;0\)</span>，A 和 B 互不相容（<span class="arithmatex">\(A\cap B=\emptyset\)</span>），蕴含着 A 和 B 非独立（除非 <span class="arithmatex">\(P(A)=0\)</span> 或 <span class="arithmatex">\(P(A)=1\)</span>）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例题</p>
+<ol>
+<li>参见 p49</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">条件独立</p>
+</div>
+<blockquote>
+<p>条件独立：A 和 B 在给定 C 之下条件独立，当且仅当 <span class="arithmatex">\(P(A\cap B)=P(A|C)P(B|C)\)</span> （由于条件概率满足概论律）</p>
+<p>又由 <span class="arithmatex">\(P(A\cap B|C)=\frac{P(A\cap B\cap C)}{P(C)}=\frac{P(C)P(B|C)P(A|B\cap C)}{P(C)}=P(B|C)P(A|B\cap C)\)</span>，</p>
+<p>有 <span class="arithmatex">\(P(A|C)=P(A|B\cap C)\)</span>（仅当 <span class="arithmatex">\(P(B|C)\ne0\)</span>），该式为条件独立的等价式</p>
+<p>注：A 和 B 两个事件相互独立并不包含条件独立，反过来也是如此？</p>
+<p>补充：A 和 B 相互独立而且 C 满足 <span class="arithmatex">\(P(C),P(A|C),P(B|C)&gt;0,A\cap B\cap C=\emptyset\)</span>，从而 <span class="arithmatex">\(P(A\cap B|C)=0,P(A|C)P(B|C)&gt;0\)</span>，那么 A 和 B 不是条件独立的（给定 C）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">独立性（总结）</p>
+</div>
+<blockquote>
+<ol>
+<li>两个事件 A 和 B 称为相互独立的，如果它们满足 <span class="arithmatex">\(P(A\cap B)=P(A)P(B)\)</span><ol>
+<li>若 B 还满足 <span class="arithmatex">\(P(B)&gt;0\)</span>，则独立性等价于 <span class="arithmatex">\(P(A|B)=P(A)\)</span></li>
+</ol>
+</li>
+<li>若 A 与 B 相互独立，则 A 与 <span class="arithmatex">\(B^c\)</span> 也相互独立</li>
+<li>两个事件 A 和 B 称为给定事件 C 的条件下条件独立，如果 <span class="arithmatex">\(P(A\cap B|C)=P(A|C)P(B|C)\)</span>（仅当 <span class="arithmatex">\(P(C)&gt;0\)</span>）<ol>
+<li>若还满足 <span class="arithmatex">\(P(B\cap C)&gt;0\)</span>，则 A 和 B 在给定 C 的条件下的条件独立性与该条件等价：<span class="arithmatex">\(P(A|B\cap C)=P(A|C)\)</span></li>
+</ol>
+</li>
+<li>独立性 不蕴涵 条件独立性，反之亦然</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">一组事件的独立性</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(A_1,\dots,A_n\)</span> 是相互独立的事件，当且仅当 对于所有 I 的子集 <span class="arithmatex">\(S\subset2^I\)</span>（<span class="arithmatex">\(I=\{1,\dots,n\}\)</span>），都有 <span class="arithmatex">\(P(\bigcap\limits_{i\in S}A_i)=\prod\limits_{i\in S}P(A_i)\)</span></p>
+<p>注：n 个事件<strong>相互独立</strong>，蕴涵 它们<strong>两两独立</strong>；反之不总是成立</p>
+<p>推论：若 <span class="arithmatex">\(S,T\in2^I,S\cap T=\emptyset\)</span>，那么 <span class="arithmatex">\(P(\bigcup\limits_{i\in S}A_i|\bigcap\limits_{i\in T}A_i)=P(\bigcup\limits_{i\in S}A_i)\)</span> ？</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">可靠性</p>
+</div>
+<blockquote>
+<p>在由多个元件组合成的一个复杂系统中,通常假定各个元件的表现是相互独立的；做了这样的假定以后,计算和分析将变得十分简单</p>
+<p>？</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">独立试验，二项概率</p>
+</div>
+<blockquote>
+<p>独立试验序列：由一系列<strong>独立</strong>并且相同的小试验组成的试验</p>
+<p>伯努利试验序列：每个阶段的小试验只有两种可能结果的试验（如：抛硬币）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">伯努利试验序列，二项概率</p>
+</div>
+<blockquote>
+<p>以抛硬币为例，在长度为 n 的独立伯努利试验序列中，设 <span class="arithmatex">\(P(i)=P(n 次抛掷中有 i 次出现正面)\)</span>，</p>
+<p>若硬币朝上的概率为 p，那么 <span class="arithmatex">\(P(i)=\binom nip^i(1-p)^{n-i}\)</span> （<span class="arithmatex">\(i=0..n\)</span>）</p>
+<p>满足 <span class="arithmatex">\(\sum\limits_{i=0}^nP(i)=\sum\limits_{i=0}^n\binom nip^i(1-p)^{n-i}=1\)</span></p>
+<p>例子：参见 p58</p>
+</blockquote>
+<h3 id="6">6. 计数法</h3>
+<div class="admonition note">
+<p class="admonition-title">计数法</p>
+</div>
+<blockquote>
+<p>计算在计算概率的时候,通常需要数清楚有关事件中的试验结果数(或基本事件数)；我们已经遇到两种情况，需要这样的计数法</p>
+<ol>
+<li>若样本空间 <span class="arithmatex">\(\Omega\)</span> 只有有限个等可能的试验结果（等概率模型），那么事件 A 的概率为 <span class="arithmatex">\(P(A)=\frac{A 中元素的数目}{\Omega 中元素的数目}\)</span></li>
+<li>若 A 中每一个试验结果具有相同的概率 p 时，那么 <span class="arithmatex">\(P(A)=p\cdot (A 中元素的数目)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">计数准则（俗称“乘法准则”）</p>
+</div>
+<blockquote>
+<p>有 r 个阶段组成的试验，如果满足如下两个条件：</p>
+<ol>
+<li>第一个阶段有 <span class="arithmatex">\(n_1\)</span> 种可能的结果</li>
+<li>第 <span class="arithmatex">\(i-1\)</span> 个阶段的任何一个结果，在第 i 阶段有 <span class="arithmatex">\(n_i\)</span> 个结果</li>
+</ol>
+<p>那么 r 个阶段的试验中一个有 <span class="arithmatex">\(\prod\limits_{i=1}^rn_i\)</span> 个试验结果</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">n 选 k 排列</p>
+</div>
+<blockquote>
+<p>n 选 k 排列：从 n 个不同对象所组成的集合中，<strong>按顺序</strong>选取 k 个对象的方法数为 <span class="arithmatex">\((n)_k=\prod\limits_{i=n-k+1}^ni=n(n-1)\dots(n-k+1)=\frac{n!}{(n-k)!}\)</span> （<span class="arithmatex">\((n)_k=0\)</span>，仅当 <span class="arithmatex">\(k&gt;n\)</span>）</p>
+<p>特别地：<span class="arithmatex">\((n)_k=n!\)</span>，称之为 <strong>排列</strong></p>
+<p>注：符号 <span class="arithmatex">\((n)_k\)</span> 似乎并不通用</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">组合</p>
+</div>
+<blockquote>
+<p>n 选 k 的排列集合中将每个排列归并到对应的组合中，其中每个组合对应 <span class="arithmatex">\(k!\)</span> 种不同的排列</p>
+<p>因此，从 n 个元素的集合中选 k 个元素的组合数为 <span class="arithmatex">\(\frac{(n)_r}{k!}=\frac {n!/(n-k)!}{k!}\)</span>，记为 <span class="arithmatex">\(\binom nk\)</span></p>
+<p>例1：由于 <span class="arithmatex">\(\sum\limits_{i=0}^n\binom nip^i(1-p)^{n-i}=1\)</span>；若 <span class="arithmatex">\(p=\frac12\)</span>，则 <span class="arithmatex">\(\sum\limits_{i=0}^n\binom ni=2^n\)</span></p>
+<p>例2：有 n 个人，从中选取 k 个人组成俱乐部，其中 1 人为主任，其余 <span class="arithmatex">\(k-1\)</span> 个成员互不区分，计算组合数；有两种方式：(1)先选主任，再选成员，方案数为 <span class="arithmatex">\(n\sum\limits_{i=0}^{n-1}\binom ni=n2^{n-1}\)</span>；(2) 先把所有 k 个人选上，再挑选主任，方案数为 <span class="arithmatex">\(\sum\limits_{i=1}^n\binom nii\)</span>；因此 <span class="arithmatex">\(n2^{n-1}=\sum\limits_{i=1}^n\binom nii\)</span></p>
+<p>推论：<span class="arithmatex">\(\sum\limits_{i=0}^ni^2\binom ni=n(n+1)2^{n-2}\)</span>；猜想：<span class="arithmatex">\(\sum\limits_{i=0}^ni^k\binom ni\ge n^k2^{n-k}\)</span></p>
+<p>注：组合等价于 从 n 元素集合中选出元素个数为 k 的子集</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">分割</p>
+</div>
+<blockquote>
+<p>组合可看做 从 n 元素集合中选出元素个数为 k 的子集；每个组合可以看成将集合分为两个子集的一个分划，其中一个子集元素个数为 k，另一个子集的为其补集，其元素个数为 <span class="arithmatex">\(n-k\)</span></p>
+<p>推广组合的定义：给定元素个数为 n 的集合，将其分解为 r 个互不相交的子集（第 i 个子集个数为 <span class="arithmatex">\(n_i\)</span> (<span class="arithmatex">\(n_i\ge0\)</span>)；满足 <span class="arithmatex">\(\sum\limits_{i=1}^rn_i=n\)</span>），此方案数定义为分割数，或 <strong>多项式系数</strong></p>
+<p>分解过程分为 <span class="arithmatex">\(r-1\)</span> 个阶段（分为 r 个阶段亦可），每个阶段都有一个“主集合”，当前阶段需要从“主集合”中选出 <span class="arithmatex">\(n_i\)</span> 个元素，并将它们从“主集合”中排除，因而每个阶段的方案数为 <span class="arithmatex">\(\binom{n-s_{i-1}}{n_i}\)</span>（其中 <span class="arithmatex">\(s_i=\sum\limits_{j=1}^{i}n_j\)</span>）；因而总方案数为 <span class="arithmatex">\(\prod\limits_{i=1}^{r-1}\binom{n-s_{i-1}}{n_i}=\prod\limits_{i=1}^{r-1}\frac{(n-s_{i-1})!/(n-s_i)!}{n_i!}=\frac{(n-s_0)!/(n-s_{r-1}!)}{\prod\limits_{i=1}^{r-1}n_i!}=\frac{n!}{\prod\limits_{i=1}^rn_i!}\)</span></p>
+<p>所以，记多项式系数为 <span class="arithmatex">\(\binom n{n_1,\dots,n_r}=\frac{n!}{\prod\limits_{i=1}^rn_i!}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">例题</p>
+<ol>
+<li>详见 p65</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">计数法汇总</p>
+</div>
+<blockquote>
+<ol>
+<li>n 个对象的<strong>排列数</strong>：<span class="arithmatex">\(n!\)</span></li>
+<li>n 个对象中取 k 个对象的<strong>排列数</strong>：<span class="arithmatex">\((n)_k=\frac {n!}{(n-k)!}\)</span></li>
+<li>n 个对象中取 k 个对象的<strong>组合数</strong>：<span class="arithmatex">\(\binom nk=\frac{n!/(n-k)!}{k!}\)</span></li>
+<li>将 n 个对象分成 r 个组的<strong>分割数</strong>：<span class="arithmatex">\(\binom n{n_1,\dots,n_r}=\frac{n!}{\prod\limits_{i=1}^rn_i!}\)</span> （其中第 i 组有 <span class="arithmatex">\(n_i\)</span> 个对象）</li>
+</ol>
+</blockquote>
+<h3 id="7">7. 小节和讨论</h3>
 </article>
 </div>
 </div>
@@ -722,7 +1200,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: 随机变量&amp;&amp;分布" class="md-footer__link md-footer__link--prev" href="../%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%26%26%E5%88%86%E5%B8%83/" rel="prev">
+<a aria-label="上一页: 10.迹&amp;行列式" class="md-footer__link md-footer__link--prev" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/10.%E8%BF%B9%26%E8%A1%8C%E5%88%97%E5%BC%8F/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -731,17 +1209,17 @@
                 上一页
               </span>
 <div class="md-ellipsis">
-                随机变量&amp;&amp;分布
+                10.迹&amp;行列式
               </div>
 </div>
 </a>
-<a aria-label="下一页: 随机变量的数字特征" class="md-footer__link md-footer__link--next" href="../%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" rel="next">
+<a aria-label="下一页: 2.离散随机变量" class="md-footer__link md-footer__link--next" href="../2.%E7%A6%BB%E6%95%A3%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F/" rel="next">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 下一页
               </span>
 <div class="md-ellipsis">
-                随机变量的数字特征
+                2.离散随机变量
               </div>
 </div>
 <div class="md-footer__button md-icon">
