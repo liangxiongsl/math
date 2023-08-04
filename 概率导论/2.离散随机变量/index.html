@@ -190,7 +190,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
+<a class="md-tabs__link md-tabs__link--active" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         概率导论
       </a>
 </li>
@@ -554,6 +554,16 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
+        术语和定义
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
         1.样本空间&amp;概率
       </a>
@@ -601,6 +611,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#6">
     6. 条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 独立性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 小节和讨论
   </a>
 </li>
 </ul>
@@ -818,6 +838,16 @@
     6. 条件
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 独立性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 小节和讨论
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -838,7 +868,7 @@
 --&gt;|E| 4(R)
 2--&gt;|g| 5(R)
 1--&gt;|Y| 5
-1--&gt;|"E[X]"| 4
+2--&gt;|"E[X]"| 4
 
 4--&gt;|var| 6(R)
 4--&gt;|σ| 7(R)
@@ -883,17 +913,26 @@
 <li>离散随机变量的函数也是一个离散随机变量，它的分布列可以从原随机变量的分布列得到</li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>试验结果空间是样本空间的划分</li>
+<li>离散随机变量空间也是样本空间的一个划分</li>
+<li>完备事件集（事件之间互不相容，其并集为样本空间）同样也是样本空间的一个划分</li>
+<li>因而，样本空间有三类划分：试验结果空间，完备事件集，离散随机变量空间</li>
+</ol>
+</div>
 <h3 id="2">2. 分布列</h3>
 <div class="admonition note">
-<p class="admonition-title">分布列</p>
+<p class="admonition-title">分布列(PMF，probability mass function)</p>
 </div>
 <blockquote>
-<p>离散随机变量的分布列提供该随机变量的取值概率的信息（随机变量的最重要特征），记 <span class="arithmatex">\(\text{px}\)</span> 为随机变量 X 的分布列</p>
-<p>若 x 为随机变量 X 的取值，则 X 取值为 x 的概率定义为事件 <span class="arithmatex">\(\{X=x\}\)</span> 的概率（即所有与 x 对应的试验结果所组成的事件的概率），记为 <span class="arithmatex">\(\text{px}(x)=P(\{X=x\})\)</span>（或 <span class="arithmatex">\(\text{px}(x)=P(X=x)\)</span>）</p>
-<p>也即 <span class="arithmatex">\(\text{px}~:~x\to\mathbb p\)</span>（不规范的记号；类似于“权值函数”）</p>
-<p>性质1：<span class="arithmatex">\(\sum\limits_{x\in D_{\text{px}}}\text{px}(x)=1\)</span>（由于概论律的 可加性 和 归一化公理）</p>
-<p>性质2：对于所有 <span class="arithmatex">\(x_1\ne x_2\)</span>，<span class="arithmatex">\(\{X=x_1\}\)</span> 与 <span class="arithmatex">\(\{X=x_2\}\)</span> 互不相容；<span class="arithmatex">\(\{\{X=x\}~|~x\in D_{\text{px}}\}\)</span> 形成了样本空间的分割</p>
-<p>性质3：<span class="arithmatex">\(P(X\in S) = \sum\limits_{x\in S}\text{px}(x)\)</span></p>
+<p>离散随机变量的分布列提供该随机变量的取值概率的信息（随机变量的最重要特征），记 <span class="arithmatex">\(p_X\)</span> 为随机变量 X 的分布列</p>
+<p>若 x 为随机变量 X 的取值，则 X 取值为 x 的概率定义为事件 <span class="arithmatex">\(\{X=x\}\)</span> 的概率（即所有与 x 对应的试验结果所组成的事件的概率），记为 <span class="arithmatex">\(p_X(x)=P(\{X=x\})\)</span>（或 <span class="arithmatex">\(p_X(x)=P(X=x)\)</span>）</p>
+<p>也即 <span class="arithmatex">\(p_X~:~x\to\mathbb p\)</span>（不规范的记号；类似于“权值函数”）</p>
+<p>性质1：<span class="arithmatex">\(\sum\limits_{x\in D_{p_X}}p_X(x)=1\)</span>（由于概论律的 可加性 和 归一化公理）</p>
+<p>性质2：对于所有 <span class="arithmatex">\(x_1\ne x_2\)</span>，<span class="arithmatex">\(\{X=x_1\}\)</span> 与 <span class="arithmatex">\(\{X=x_2\}\)</span> 互不相容；<span class="arithmatex">\(\{\{X=x\}~|~x\in D_{p_X}\}\)</span> 形成了样本空间的分割</p>
+<p>性质3：<span class="arithmatex">\(P(X\in S) = \sum\limits_{x\in S}p_X(x)\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">随机变量 X 的分布列的计算</p>
@@ -902,7 +941,7 @@
 <p>对于所有随机变量 X 的值 x</p>
 <ol>
 <li>找出与事件 <span class="arithmatex">\(\{X=x\}\)</span> 相对应的所有试验结果</li>
-<li>将相应的试验结果的概率相加得到 <span class="arithmatex">\(\text{px}(x)\)</span></li>
+<li>将相应的试验结果的概率相加得到 <span class="arithmatex">\(p_X(x)\)</span></li>
 </ol>
 </blockquote>
 <div class="admonition note">
@@ -911,7 +950,7 @@
 <blockquote>
 <p>考虑一场试验，该试验具有两种试验结果 A 或 B；设 A 的概率为 p，而 B 的概率为 <span class="arithmatex">\(1-p\)</span></p>
 <p>伯努利随机变量 X 在试验结果为 A 时取值为 1，试验结果为 B 时取值为 0，即 <span class="arithmatex">\(X=\begin{cases}1&amp;试验结果为A\\0&amp;试验结果为B\end{cases}\)</span></p>
-<p>它的分布列为：<span class="arithmatex">\(\text{px}(k)=\begin{cases}p&amp;k=1\\1-p&amp;k=0\end{cases}\)</span></p>
+<p>它的分布列为：<span class="arithmatex">\(p_X(k)=\begin{cases}p&amp;k=1\\1-p&amp;k=0\end{cases}\)</span></p>
 <p>例：抛硬币；一个人的健康或不健康状态；任意时刻，一台电话机的待机状态或使用状态</p>
 <p>注：二项随机变量是多次独立伯努利随机变量（即伯努利随机变量的推广）</p>
 </blockquote>
@@ -922,7 +961,7 @@
 <p>考虑 n 场相互独立的试验，每次试验具有两种试验结果 A 或 B；设 A 的概率为 p，而 B 的概率为 <span class="arithmatex">\(1-p\)</span></p>
 <p><strong>n 场试验结束后，整个试验才结束</strong></p>
 <p>二项随机变量 X 定义为 n 次试验出现试验结果 A 的次数（注：由于用自然语言描述 X 比使用分段函数符号表示更方便，所以此处略去对后者的表达）</p>
-<p>那么 X 的分布列为 <span class="arithmatex">\(\text{px}(k)=P(X=k)=\binom nkp^k(1-p)^{n-k}\)</span> （<span class="arithmatex">\(k=0..n\)</span>）</p>
+<p>那么 X 的分布列为 <span class="arithmatex">\(p_X(k)=P(X=k)=\binom nkp^k(1-p)^{n-k}\)</span> （<span class="arithmatex">\(k=0..n\)</span>）</p>
 <p>性质1：满足归一化公理 <span class="arithmatex">\(\sum\limits_{i=0}^n\binom nip^i(1-p)^{n-i}=1\)</span></p>
 <p>性质2：<span class="arithmatex">\(p=\frac12\)</span> 时，分布列关于 <span class="arithmatex">\(k=\frac n2\)</span> 对称；<span class="arithmatex">\(p&lt;\frac12\)</span> 时，分布偏向 <span class="arithmatex">\(k=0\)</span>；<span class="arithmatex">\(p&gt;\frac12\)</span> 时，分布偏向 <span class="arithmatex">\(k=n\)</span></p>
 <p>性质3：二项分布列总是先增后减的</p>
@@ -934,20 +973,21 @@
 <p>考虑<strong>无穷多场</strong>相互独立的试验，每次试验具有两种试验结果 A 或 B；设 A 的概率为 p，而 B 的概率为 <span class="arithmatex">\(1-p\)</span></p>
 <p>整个试验在第 k 场结束，当且仅当 前 <span class="arithmatex">\(k-1\)</span> 场试验结果为 B，第 k 场试验结果为 A</p>
 <p>几何随机变量 X 定义为试验结束所需的子试验场数（即第 1 次出现试验结果 B 所需的试验场数）</p>
-<p>那么 X 的分布列为 <span class="arithmatex">\(\text{px}(k)=p(1-p)^{k-1}\)</span> （<span class="arithmatex">\(k=1,2..\)</span>）</p>
-<p>性质：满足归一化公理：<span class="arithmatex">\(\sum\limits_{i=1}^∞\text{px}(i)=\sum\limits_{i=1}^∞p(1-p)^{i-1}=p\sum\limits_{i=0}^∞(1-p)^i=p\frac1{1-(1-p)}=1\)</span></p>
+<p>那么 X 的分布列为 <span class="arithmatex">\(p_X(k)=p(1-p)^{k-1}\)</span> （<span class="arithmatex">\(k=1,2..\)</span>）</p>
+<p>性质：满足归一化公理：<span class="arithmatex">\(\sum\limits_{i=1}^∞p_X(i)=\sum\limits_{i=1}^∞p(1-p)^{i-1}=p\sum\limits_{i=0}^∞(1-p)^i=p\frac1{1-(1-p)}=1\)</span></p>
 <p>注：该试验可以解释为 独立试验序列中的一次试验“成功”</p>
+<p>注2：该试验属于 伯努利试验序列</p>
 <p>例：连续抛硬币直到出现正面；在多次测试后通过考试</p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">泊松随机变量</p>
 </div>
 <blockquote>
-<p>泊松随机变量 X 的分布列定义为 <span class="arithmatex">\(\text{px}(k)=e^{-\lambda}\frac{\lambda^k}{k!}\)</span>（<span class="arithmatex">\(k=0,1,2..\)</span>；对于任意 <span class="arithmatex">\(\lambda\)</span>）</p>
-<p>性质1：满足归一化公理 <span class="arithmatex">\(\sum\limits_{i=0}^∞\text{px}(i)=\sum\limits_{i=0}^∞e^{-\lambda}\frac{\lambda^i}{i!}=e^{-\lambda}\sum\limits_{i=0}^∞\frac{\lambda^i}{i!}=e^{-\lambda}e^{\lambda}=1\)</span></p>
+<p>泊松随机变量 X 的分布列定义为 <span class="arithmatex">\(p_X(k)=e^{-\lambda}\frac{\lambda^k}{k!}\)</span>（<span class="arithmatex">\(k=0,1,2..\)</span>；对于任意 <span class="arithmatex">\(\lambda\)</span>）</p>
+<p>性质1：满足归一化公理 <span class="arithmatex">\(\sum\limits_{i=0}^∞p_X(i)=\sum\limits_{i=0}^∞e^{-\lambda}\frac{\lambda^i}{i!}=e^{-\lambda}\sum\limits_{i=0}^∞\frac{\lambda^i}{i!}=e^{-\lambda}e^{\lambda}=1\)</span></p>
 <p>性质2：<span class="arithmatex">\(\lambda\le1\)</span> 时，分布列单调递减；<span class="arithmatex">\(\lambda&gt;1\)</span> 时，分布列先增后减</p>
-<p>性质3：若记 <span class="arithmatex">\(\lambda=np\)</span>，n 很大，而 p 很小；泊松随机变量的分布列能很好的逼近二项随机变量的分布列：<span class="arithmatex">\(e^{-\lambda}\frac{\lambda^k}{k!}\approx\binom nkp^k(1-p)^{n-k}\)</span>（<span class="arithmatex">\(k=0..n\)</span>）</p>
-<p>问：分布列 <span class="arithmatex">\(\text{px}(k)=\frac{(-1)^{k-1}x^k}{\ln(1+\lambda)k}\)</span>（其中 <span class="arithmatex">\(|\lambda|&lt;1\)</span> 或 <span class="arithmatex">\(\lambda=1\)</span>）是否有定义</p>
+<p>性质3：若记 <span class="arithmatex">\(\lambda=np\)</span>，n 很大，而 p 很小（<span class="arithmatex">\(n\to+∞, p\to0\)</span>）；泊松随机变量的分布列能很好的逼近二项随机变量的分布列：<span class="arithmatex">\(e^{-\lambda}\frac{\lambda^k}{k!}\approx\binom nkp^k(1-p)^{n-k}\)</span>（<span class="arithmatex">\(k=0..n\)</span>）</p>
+<p>问：分布列 <span class="arithmatex">\(p_X(k)=\frac{(-1)^{k-1}x^k}{\ln(1+\lambda)k}\)</span>（其中 <span class="arithmatex">\(|\lambda|&lt;1\)</span> 或 <span class="arithmatex">\(\lambda=1\)</span>）是否有定义</p>
 </blockquote>
 <h3 id="3">3. 随机变量的函数</h3>
 <div class="admonition note">
@@ -956,6 +996,8 @@
 <blockquote>
 <p>设 X 是随机变量，对 X 施行变换 <span class="arithmatex">\(Y=g\circ X=g(X)\)</span>（其中 <span class="arithmatex">\(g\circ X~:~\Omega\to\mathbb R\to\mathbb R\)</span>）</p>
 <p>若 X，Y 的分布列分别为 <span class="arithmatex">\(p_X,p_Y\)</span>，那么 <span class="arithmatex">\(p_Y(y)=\sum\limits_{x\in\{x|g(x)=y\}}p_X(x)\)</span></p>
+<p>再根据归一化定理有 <span class="arithmatex">\(\sum\limits_{y\in D_{p_Y}}p_Y(y)=\sum\limits_{x\in\{x|g(x)\in D_{p_Y}\}}p_X(x)=1\)</span>，<span class="arithmatex">\(\sum\limits_{x\in D_{p_X}}p_X(x)=1\)</span></p>
+<p>因而 <span class="arithmatex">\(\{x|g(x)\in D_{p_Y}\}=D_{p_X}\)</span></p>
 </blockquote>
 <h3 id="4">4. 期望，均值，方差</h3>
 <div class="admonition note">
@@ -982,6 +1024,7 @@
 </div>
 <blockquote>
 <p>方差：随机变量 X 的方差定义为 <span class="arithmatex">\(\text{var}(X)=E[(X-E[X])^2]\)</span>；方差提供了 X 在期望周围分散程度的一个<strong>测度</strong>（<span class="arithmatex">\(\text{var}(X)\ge0\)</span>）</p>
+<p>记 <span class="arithmatex">\(\tilde X=X-E[X]\)</span>，有 <span class="arithmatex">\(\text{var}(X)=E[\tilde X^2]\)</span></p>
 <p>标准差：<span class="arithmatex">\(\sigma_X=\sqrt{\text{var}(X)}\)</span></p>
 <p>性质：<span class="arithmatex">\(\text{var}(X)=0\)</span>，当且仅当 对于所有 <span class="arithmatex">\(p_X(x)&gt;0\)</span> 的 x 都有 <span class="arithmatex">\(x=E[X]\)</span>；换句话说 <span class="arithmatex">\(p_X(E[X])=1\)</span></p>
 </blockquote>
@@ -1002,6 +1045,7 @@
 <li>方差 <span class="arithmatex">\(\text{var}(X)=E[(X-E[X])^2]=E[X^2]-E[X]^2\)</span></li>
 <li><span class="arithmatex">\(g(X)=aX+b\)</span> 的期望 <span class="arithmatex">\(E[aX+b]=aE[X]+b\)</span></li>
 <li><span class="arithmatex">\(g(X)=aX+b\)</span> 的方差 <span class="arithmatex">\(\text{var}(aX+b)=a^2\text{var}(X)\)</span></li>
+<li>记 <span class="arithmatex">\(\tilde X=X-E[X]\)</span>，则有 <span class="arithmatex">\(\text{var}(\tilde X)=\text{var}(X)\)</span></li>
 </ol>
 <p>注：<span class="arithmatex">\(E[g(X)]=g(E[X])\)</span> 不总是成立（除非 g 是线性函数）</p>
 </blockquote>
@@ -1020,7 +1064,7 @@
 <ol>
 <li>伯努利随机变量的分布列为 <span class="arithmatex">\(p_X(k)=\begin{cases}p&amp;k=1\\1-p&amp;k=0\end{cases}\)</span>，那么 <span class="arithmatex">\(E[X]=p\)</span>，<span class="arithmatex">\(E[X^2]=p\)</span>，<span class="arithmatex">\(\text{var}(X)=E[X^2]-(E[X])^2=p(1-p)\)</span></li>
 <li>离散均匀随机变量 X 的分布列为 <span class="arithmatex">\(p_X(k)=\begin{cases}\frac1{b-a+1}&amp;k=a..b\\0&amp;其他\end{cases}\)</span>，那么 <span class="arithmatex">\(E[X]=\frac{a+b}2\)</span>，<span class="arithmatex">\(E[X^2]=\frac{2(a^2+ab+b^2)+(b-a)}6\)</span>，<span class="arithmatex">\(\text{var}(X)=\frac{(b-a)(b-a+2)}6=\frac{(b-a+1)^2-1}6\)</span></li>
-<li>泊松随机变量 X 的分布列为 <span class="arithmatex">\(\text{px}(k)=e^{-\lambda}\frac{\lambda^k}{k!}\)</span>（<span class="arithmatex">\(\lambda&gt;0\)</span>），那么 <span class="arithmatex">\(E[X]=\lambda\)</span></li>
+<li>泊松随机变量 X 的分布列为 <span class="arithmatex">\(p_X(k)=e^{-\lambda}\frac{\lambda^k}{k!}\)</span>（<span class="arithmatex">\(\lambda&gt;0\)</span>），那么 <span class="arithmatex">\(E[X]=\lambda\)</span></li>
 </ol>
 </blockquote>
 <div class="admonition note">
@@ -1031,6 +1075,59 @@
 <p>以期望值作为参考，两种决策的均值分别为 <span class="arithmatex">\(E[X_1]=(1-p_1)\cdot0+p_1(1-p_2)\cdot v_1+p_1p_2(v_1+v_2)=p_1(v_1+p_2v_2)\)</span>，<span class="arithmatex">\(E[X_2]=(1-p_2)\cdot0+p_2(1-p_1)\cdot v_2+p_2p_1(v_1+v_2)=p_2(v_2+p_1v_1)\)</span></p>
 <p>假设第一种决策更优，那么 <span class="arithmatex">\(E[X_1]\ge E[X_2]\)</span>，当且仅当 <span class="arithmatex">\(p_1(v_1+p_2v_2)\ge p_2(v_2+p_1v_1)\)</span>，化简得 <span class="arithmatex">\(\frac{p_1v_1}{1-p_1}\ge \frac{p_2v_2}{1-p_2}\)</span></p>
 </blockquote>
+<p>各种离散随机变量的各种参数值：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数\随机变量</th>
+<th align="center">伯努利</th>
+<th align="center">二项</th>
+<th align="center">泊松</th>
+<th align="center">几何</th>
+<th align="center">离散均匀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><span class="arithmatex">\(E[X]\)</span></td>
+<td align="center"><span class="arithmatex">\(p\)</span></td>
+<td align="center"><span class="arithmatex">\(np\)</span></td>
+<td align="center"><span class="arithmatex">\(\lambda\)</span></td>
+<td align="center"><span class="arithmatex">\(\frac1p\)</span></td>
+<td align="center"><span class="arithmatex">\(\frac{a+b}2\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(E[X^2]\)</span></td>
+<td align="center"><span class="arithmatex">\(p\)</span></td>
+<td align="center"><span class="arithmatex">\(np(1-p+np)\)</span></td>
+<td align="center"><span class="arithmatex">\(\lambda^2+\lambda\)</span></td>
+<td align="center"><span class="arithmatex">\(\frac{2-p}{p^2}\)</span></td>
+<td align="center"><span class="arithmatex">\(\frac{2(a^2+ab+b^2)+(b-a)}6\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\text{var}(X)\)</span></td>
+<td align="center"><span class="arithmatex">\(p(1-p)\)</span></td>
+<td align="center"><span class="arithmatex">\(np(1-p)\)</span></td>
+<td align="center"><span class="arithmatex">\(\lambda\)</span></td>
+<td align="center"><span class="arithmatex">\(\frac{1-p}{p^2}\)</span></td>
+<td align="center"><span class="arithmatex">\(\frac{(b-a+1)^2-1}6\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title"><span class="arithmatex">\(\tilde X\)</span>记号</p>
+<ul>
+<li>若 <span class="arithmatex">\(\tilde X=X-E[X]\)</span>，那么：</li>
+<li><span class="arithmatex">\(E[\tilde X]=E[X-E[X]]=E[X]-E[X]=0\)</span></li>
+<li><span class="arithmatex">\(\text{var}(X)=E[\tilde X^2]\)</span></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>期望值或方差值可以通过多种方法证明，如：级数，全期望定理，独立性</li>
+</ul>
+</div>
 <h3 id="5">5. 多个随机变量的联合分布列</h3>
 <p>在一个试验中经常涉及几个随机变量；例如, 在医疗诊断中，通常涉及几个试验指标，或者在网络中我们常常对几个网关的负荷感兴趣</p>
 <p>所谓多个随机变量是指在<strong>同一试验结果下</strong>产生的多个随机变量；这些随机变量的取值由试验结果确定，因此它们的取值相互联系</p>
@@ -1053,9 +1150,10 @@
 </div>
 <blockquote>
 <p>若 X 和 Y 为随机变量，设 <span class="arithmatex">\(Z=g(X,Y)\)</span>，那么该随机变量的分布列为 <span class="arithmatex">\(p_Z(z)=\sum\limits_{(x,y)\in\{(x,y)|g(x,y)=z\}}p_{X,Y}(x,y)\)</span></p>
-<p>Z 的期望可以推广为：<span class="arithmatex">\(E[g(X,Y)]=\sum\limits_{x\in D_{p_X}}\sum\limits_{y\in D_{p_Y}}g(x,y)p_{X,Y}(x,y)\)</span></p>
+<p>Z 的期望可以推广为：<span class="arithmatex">\(E[g(X,Y)]=\sum\limits_{x\in D_{p_X}}\sum\limits_{y\in D_{p_Y}}g(x,y)p_{X,Y}(x,y)=\sum\limits_{(x,y)\in (D_{p_X}\times D_{p_Y})}g(x,y)p_{X,Y}(x,y)\)</span></p>
+<p>（推广到 n 维：<span class="arithmatex">\(E[g(\mathbf X)]=\sum\limits_{\mathbf x\in D_{p_\mathbf X}}g(\mathbf x)p_\mathbf X(\mathbf x)\)</span>）</p>
 <p>推论：<span class="arithmatex">\(E[aX+bY+c]=aE[X]+bE[Y]+c\)</span></p>
-<p>注：多个随机变量元组没有定义期望等“特征值”，如 <span class="arithmatex">\(E[(X,Y)]\)</span> 是没有定义的</p>
+<p>注：多个随机变量元组 <span class="arithmatex">\(\mathbf X\)</span> 没有定义期望等“特征值”，如 <span class="arithmatex">\(E[\mathbf X]\)</span> 是没有定义的</p>
 </blockquote>
 <p><span class="arithmatex">\(E[g(X,Y)]=E[Z]=\sum\limits_{z\in D_{p_Z}}zp_Z(z)=\sum\limits_{z\in D_{p_Z}}g(x,y)\sum\limits_{(x,y)\in\{(x,y)|g(x,y)=z\}}p_{X,Y}(x,y)\)</span></p>
 <p><span class="arithmatex">\(=\sum\limits_{(x,y)\in\{(x,y)|g(x,y)\in D_{p_Z}\}}g(x,y)p_{X,Y}(x,y)=\sum\limits_{x\in D_{p_X}}\sum\limits_{y\in D_{p_Y}}g(x,y)p_{X,Y}(x,y)\)</span></p>
@@ -1109,7 +1207,7 @@
 </div>
 <blockquote>
 <p>随机变量 X 在另一随机变量 Y 的某个取值条件下的条件分布列定义为 <span class="arithmatex">\(p_{X|Y}(x,y)=P(X=x|Y=y)\)</span> （仅当 <span class="arithmatex">\(p_Y(y)&gt;0\)</span>）</p>
-<p>根据条件概率的定义，有 <span class="arithmatex">\(p_{X|Y}(x|y)=\frac{P(X=x,Y=y)}{P(Y=y)}=\frac{P_{X,Y}(x,y)}{P_Y(y)}\)</span></p>
+<p>根据条件概率的定义，有 <span class="arithmatex">\(p_{X|Y}(x|y)=P(X=x|Y=y)=\frac{P(X=x,Y=y)}{P(Y=y)}=\frac{P_{X,Y}(x,y)}{P_Y(y)}\)</span></p>
 <p>性质：<span class="arithmatex">\(\sum\limits_{x\in D_{p_X}}p_{X|Y}(x|y)=1\)</span></p>
 <p>推论：<span class="arithmatex">\(p_{X,Y}(x,y)=p_Y(y)p_{X|Y}(x|y)=p_X(x)p_{Y|X}(y|x)\)</span></p>
 <p>根据全概率公式，有 <span class="arithmatex">\(p_X(x)=\sum\limits_{y\in D_{p_Y}}p_{X,Y}(x,y)=\sum\limits_{y\in D_{p_Y}}p_Y(y)p_{X|Y}(x|y)\)</span>，<span class="arithmatex">\(p_Y(y)=\sum\limits_{x\in D_{p_X}}p_{X,Y}(x,y)=\sum\limits_{x\in D_{p_X}}p_X(x)p_{Y|X}(y|x)\)</span></p>
@@ -1134,6 +1232,91 @@
 </ol>
 <p>注：(3),(4) 中的三个等式本质上相互等价，称之为 <strong>全期望定理</strong></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">总结</p>
+<ol>
+<li>设 <span class="arithmatex">\(\mathbf X,\mathbf Y\)</span> 是多元随机变量</li>
+<li>A 发生的条件下<ol>
+<li><span class="arithmatex">\(\mathbf X\)</span> 的分布列：<span class="arithmatex">\(p_{\mathbf X|A}(\mathbf x|A)=P(\mathbf X=\mathbf x|A)=\frac{P(\{\mathbf X=\mathbf x\}\cap A)}{P(A)}\)</span></li>
+<li>全概率公式：<span class="arithmatex">\(p_{\mathbf X}(\mathbf x)=\sum\limits_{i=1}^nP(A_i)p_{\mathbf X|A_i}(\mathbf x)\)</span></li>
+<li><span class="arithmatex">\(\mathbf X\)</span> 的期望：<span class="arithmatex">\(E[\mathbf X|A]=\sum\limits_{\mathbf x\in D_{p_\mathbf X}}\mathbf xp_{\mathbf X|A}(\mathbf x), E[\mathbf g(X)|A]=\sum\limits_{\mathbf x\in D_{p_\mathbf X}}g(\mathbf x)p_{\mathbf X|A}(\mathbf x)\)</span></li>
+<li>全期望定理：<span class="arithmatex">\(E[\mathbf X]=\sum\limits_{i=1}^nP(A_i)E[\mathbf X|A_i]\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\mathbf Y=\mathbf y\)</span> 发生的条件下<ol>
+<li><span class="arithmatex">\(\mathbf X\)</span> 的分布列：<span class="arithmatex">\(p_{\mathbf X|\mathbf Y}(\mathbf x,\mathbf y)=P(\mathbf X=\mathbf x|\mathbf Y=\mathbf y)=\frac{P(\mathbf X=\mathbf x,\mathbf Y=\mathbf y)}{P(\mathbf Y=\mathbf y)}=\frac{P_{\mathbf X,\mathbf Y}(\mathbf x,\mathbf y)}{p_{\mathbf Y(\mathbf y)}}\)</span></li>
+<li>全概率公式：<span class="arithmatex">\(p_{\mathbf X}(\mathbf x)=\sum\limits_{\mathbf y\in D_{p_\mathbf Y}}P_{\mathbf X,\mathbf Y}(\mathbf x,\mathbf y)=\sum\limits_{\mathbf y\in D_{p_\mathbf Y}}P_{\mathbf Y}(\mathbf y)P_{\mathbf X|\mathbf Y}(\mathbf x|\mathbf y)\)</span></li>
+<li><span class="arithmatex">\(\mathbf X\)</span> 的期望：<span class="arithmatex">\(E[\mathbf X|\mathbf Y=\mathbf y]=\sum\limits_{\mathbf x\in D_{p_\mathbf X}}\mathbf xp_{\mathbf X|\mathbf Y}(\mathbf x|\mathbf y)\)</span></li>
+<li>全期望定理：<span class="arithmatex">\(E[\mathbf X]=\sum\limits_{\mathbf y\in D_{p_\mathbf Y}}p_\mathbf Y(\mathbf y)E[\mathbf X|\mathbf Y=\mathbf y]\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">习题</p>
+<ol>
+<li>几何随机变量的均值和方差（通过条件期望来计算）（提示：<span class="arithmatex">\(E[X|X=1]=1,E[X|X&gt;1]=1+E[X]\)</span>；<span class="arithmatex">\(E[X^2|X=1]=1,E[X^2|X&gt;1]=E[(X+1)^2]=E[X^2]+2E[X]+1\)</span>）</li>
+<li>两个信封的悖论</li>
+</ol>
+</div>
+<h3 id="7">7. 独立性</h3>
+<div class="admonition note">
+<p class="admonition-title">随机变量与事件的相互独立性</p>
+</div>
+<blockquote>
+<p>与两个事件的相互独立性相同</p>
+<p>随机变量 X 独立于事件 A，当且仅当 对于所有 x，有 <span class="arithmatex">\(P(X=x且A)=P(X=x)P(A)=p_X(x)P(A)\)</span></p>
+<p>若 <span class="arithmatex">\(P(A)&gt;0\)</span>，上式等价于 <span class="arithmatex">\(p_{X|A}(x)=p_X(x)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">随机变量之间的相互独立性</p>
+</div>
+<blockquote>
+<p>随机变量 X 和 Y 称为<strong>相互独立</strong>的随机变量，当且仅当 对于所有 <span class="arithmatex">\(x,y\)</span>，有 <span class="arithmatex">\(P_{X,Y}(x,y)=P_X(x)p_Y(y)\)</span></p>
+<p>若对于所有 y 有 <span class="arithmatex">\(p_Y(y)&gt;0\)</span>，X 和 Y 的相互独立性等价于 对于所有 x，都有 <span class="arithmatex">\(p_{X|Y}(x,y)=p_X(x)\)</span></p>
+<p>注：Y 和 X 的独立性意味着 Y 的取值不会提供 X 取值的信息</p>
+<p>X 和 Y 在给定事件 A （<span class="arithmatex">\(P(A)&gt;0\)</span>）的条件下是<strong>条件独立</strong>的，如果它们满足：对于 x 和 y 有 <span class="arithmatex">\(P(X=x,Y=y|A)=P(X=x|A)P(Y=y|A)\)</span>；记为 <span class="arithmatex">\(p_{X,Y|A}(x|y)=p_{X|A}(x)p_{Y|A}(y)\)</span></p>
+<p>注：条件独立性并不包含（不蕴涵）独立性，反之亦然</p>
+</blockquote>
+<p>假设 X 和 Y 相互独立</p>
+<p><span class="arithmatex">\(E[XY]=\sum\limits_{x\in D_{p_X}}\sum\limits_{y\in D_{p_Y}}xyp_{X,Y}(x,y)=\sum\limits_{x\in D_{p_X}}xp_X(x)\sum\limits_{y\in D_{p_Y}}yp_Y(y)=E[X]E[Y]\)</span> (1)</p>
+<p><span class="arithmatex">\(\text{var}(X+Y)=E[(\tilde X+\tilde Y)^2]=E[\tilde X^2+2\tilde X\tilde Y+\tilde Y^2]=E[\tilde X^2]+2E[\tilde X\tilde Y]+E[\tilde Y^2]\)</span></p>
+<p>由 X 和 Y 相互独立以及 (1) 的推广，有 <span class="arithmatex">\(E[\tilde X\tilde Y]=E[\tilde X]E[\tilde Y]=0\)</span></p>
+<p>固有 <span class="arithmatex">\(\text{var}(X+Y)=E[\tilde X^2]+E[\tilde Y^2]=\text{var}(X)+\text{var}(Y)\)</span> (3)</p>
+<div class="admonition note">
+<p class="admonition-title">两个随机变量之间独立性的性质</p>
+</div>
+<blockquote>
+<p>若 X 和 Y 相互独立，那么：</p>
+<ol>
+<li><span class="arithmatex">\(E[XY]=E[X]E[Y]\)</span></li>
+<li><span class="arithmatex">\(g(X)\)</span> 和 <span class="arithmatex">\(h(Y)\)</span> 相互独立；因而 <span class="arithmatex">\(E[g(X)h(Y)]=E[g(X)]E[h(Y)]\)</span></li>
+<li><span class="arithmatex">\(\text{var}(X+Y)=\text{var}(X)+\text{var}(Y)\)</span></li>
+<li><span class="arithmatex">\(\text{var}(XY)=E[X^2]E[Y^2]-(E[X]E[Y])^2\)</span></li>
+</ol>
+<p>假设样本 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 相互独立，记样本均值为 <span class="arithmatex">\(S_n=S_n(\mathbf X)=\frac{\sum\limits_{i=1}^nX_i}n\)</span>，那么</p>
+<p><span class="arithmatex">\(E[S_n]=\frac1n\sum\limits_{i=1}^nE[X_i]\)</span>，<span class="arithmatex">\(\text{var}(S_n)=\frac1{n^2}\sum\limits_{i=1}^n\text{var}(X_i)\)</span></p>
+<p>再假设 <span class="arithmatex">\(X_i\)</span> 均为伯努利随机变量，有 <span class="arithmatex">\(E[S_n]=p,\text{var}(S_n)=\frac{p(1-p)}n\)</span>，观察到随机变量函数 <span class="arithmatex">\(S_n\)</span> 的期望是 p 的一个很好的估计；并且 n 越大，反映估计精度的方差越小</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">多个随机变量之间的相互独立性</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(X_1,X_2,\dots,X_n\)</span> 是相互独立的随机变量，那么：</p>
+<ol>
+<li>对于所有 <span class="arithmatex">\(\mathbf x_i\in D_{p_{\mathbf X_i}}\)</span>，有 <span class="arithmatex">\(p_{\mathbf X}(\mathbf x)=\prod\limits_{i=1}^np_{\mathbf X_i}(\mathbf x_i)\)</span></li>
+<li>对于所有 <span class="arithmatex">\(\mathbf U\in 2^\mathbf X,\mathbf V\in2^{\mathbf X\setminus \mathbf U}\)</span>，有 <span class="arithmatex">\(g(\mathbf U)\)</span> 和 <span class="arithmatex">\(h(\mathbf V)\)</span> 相互独立</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习(p133)</p>
+<ol>
+<li>二项分布&amp;泊松分布的方差</li>
+<li>样本均值的期望和方差（n 次伯努利）</li>
+<li>用模拟方法估计概率</li>
+</ol>
+</div>
+<h3 id="8">8. 小节和讨论</h3>
 </article>
 </div>
 </div>

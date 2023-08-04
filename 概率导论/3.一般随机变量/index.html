@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -187,7 +190,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
+<a class="md-tabs__link md-tabs__link--active" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         概率导论
       </a>
 </li>
@@ -551,6 +554,16 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
+        术语和定义
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
         1.样本空间&amp;概率
       </a>
@@ -562,9 +575,51 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          3.一般随机变量
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         3.一般随机变量
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 连续随机变量 &amp; 概率密度函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 分布函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 正态随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 多个随机变量的概率密度
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 连续贝叶斯准则
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../4.%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%B7%B1%E5%85%A5%E5%86%85%E5%AE%B9/">
@@ -738,6 +793,42 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 连续随机变量 &amp; 概率密度函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 分布函数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 正态随机变量
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 多个随机变量的概率密度
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 连续贝叶斯准则
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -745,6 +836,405 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>3.一般随机变量</h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>离散：分布列PMF，分布函数CDF，期望，方差，矩；常见分布（伯努利，二项，泊松，几何，离散均匀）</li>
+<li>连续：概率密度函数PDF，分布函数CDF，期望，方差，矩；常见分布（连续均匀，指数，正态）</li>
+<li>随机变量类型：连续/离散，普通/复合/联合</li>
+<li>随机变量关系：相容性（完备性），无条件/条件（独立性）</li>
+</ul>
+</div>
+<h3 id="1">1. 连续随机变量 &amp; 概率密度函数</h3>
+<div class="admonition note">
+<p class="admonition-title">连续随机变量，概率密度函数(PDF)</p>
+</div>
+<blockquote>
+<p>对于随机变量 X，若存在一个非负函数 <span class="arithmatex">\(f_X\)</span>（对于所有 x，<span class="arithmatex">\(f_X(x)\ge0\)</span>），对于所有实数轴上的集合 B 都有 <span class="arithmatex">\(\int_Bf_X(x)~d_x=P(X\in B)\)</span>，</p>
+<p>则 X 称为<strong>连续随机变量</strong>，函数 <span class="arithmatex">\(f_X\)</span> 称为 X 的<strong>概率密度函数</strong>（简称 PDF，probability density function）</p>
+<p>注1：PDF 与离散随机变量的分布列相对应；上式对应于离散随机变量分布列的形式为 <span class="arithmatex">\(\sum\limits_{x\in B}p_X(x)=P(X\in B)\)</span></p>
+<p>注2：<span class="arithmatex">\(\int_Bf(x)~d_x\)</span> 可理解为黎曼积分，我们假定所涉及的函数是黎曼可积的；对于不寻常的函数或集合，该积分可能无法定义，这是近代数学分析所处理的问题</p>
+<p>注3：我们通常只会遇到具有有限多个间断点的逐段连续函数 <span class="arithmatex">\(f_X\)</span>，通常积分限位有限个区间的和（这些情况属于黎曼积分的处理范围）</p>
+<p>若 <span class="arithmatex">\(B=[a,b]\)</span>，有 <span class="arithmatex">\(P(a\le X\le b)=\int_a^bf_X(x)~d_x\)</span></p>
+<p>性质：区间端点的计算对概率不起作用，<span class="arithmatex">\(P(a\le X\le b)=P(a&lt;X&lt;b)=P(a\le X&lt; b)=P(a&lt; X\le b)\)</span></p>
+<p>性质2：满足概率律，<span class="arithmatex">\(f_X(x)\ge0\)</span>；<span class="arithmatex">\(\int_{-∞}^{+∞}f_X(x)~d_x=P(-∞&lt;X&lt;+∞)=1\)</span></p>
+<p>注4：<span class="arithmatex">\(f_X(x)&gt;1\)</span> 是可以被允许的</p>
+<p>对于很小的数 <span class="arithmatex">\(\delta&gt;0\)</span>，有 <span class="arithmatex">\(P([x,x+\delta]) = \int_x^{x+\delta}f_X(x)~d_x\approx f_x(x)\delta\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">均匀分布的随机变量</p>
+</div>
+<blockquote>
+<p>假设随机变量 X 取值于 <span class="arithmatex">\([a,b]\)</span> 的任意两个长度相同的子区间的概率是相同的，那么 X 称为<strong>具有均匀分布的随机变量</strong>，</p>
+<p>其 PDF 为 <span class="arithmatex">\(f_X(x)=\begin{cases}\frac1{b-a}&amp;a\le x\le b\\0&amp;其他\end{cases}\)</span></p>
+<p>推广：逐段均匀分布的随机变量：对于 <span class="arithmatex">\(a_1&lt;\dots&lt;a_n\)</span>，<span class="arithmatex">\(c_1,\dots,c_{n-1}\ge0\)</span>，有 <span class="arithmatex">\(f_X(x)=\begin{cases}c_i&amp;a_i\le x\le a_{i+1},i=1..n-1\\0&amp;其他\end{cases}\)</span>；满足 <span class="arithmatex">\(1=\int_{a_1}^{a_n}f_X(x)~d_x=\sum\limits_{i=1}^{n-1}\int_{a_i}^{a_{i+1}}c_i~d_x=\sum\limits_{i=1}^{n-1}c_i(a_{i+1}-a_i)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">可以取任意大值的PDF</p>
+</div>
+<blockquote>
+<p>如 <span class="arithmatex">\(f(x)=\begin{cases}\frac1{2\sqrt{x}}&amp;0&lt;x\le1\\0&amp;其他\end{cases}\)</span>，<span class="arithmatex">\(x\to0\)</span> 时，<span class="arithmatex">\(f(x)\)</span> 任意大；但是 <span class="arithmatex">\(\int_{-∞}^{+∞}f_X(x)~d_x=\int_0^1\frac1{2\sqrt x}~d_x=\sqrt x|_0^1=1\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">期望,各种参数</p>
+</div>
+<blockquote>
+<p>连续随机变量 X 的期望或均值定义为 <span class="arithmatex">\(E[X]=\int_{-∞}^{+∞}xf_X(x)~d_x\)</span> （仅当 <span class="arithmatex">\(\int_{-∞}^{+∞}|x|f_X(x)~d_x&lt;∞\)</span>）</p>
+<p>约定：本书总是假定 X 的期望是有定义的</p>
+<p>注：<span class="arithmatex">\(E[X]\)</span> 可以解释为 PDF 的中心和大量重复独立试验中 X 的取值的平均数</p>
+<ol>
+<li>连续随机变量的函数的期望：<span class="arithmatex">\(E[g(X)]=\int_{-∞}^{+∞}g(x)f_X(x)~d_x\)</span>（注：<span class="arithmatex">\(Y=g(X)\)</span> 可以是不仅限于连续随机变量）</li>
+<li>n 阶矩：<span class="arithmatex">\(E[X^n]=\int_{-∞}^{+∞}x^nf_X(x)~d_x\)</span></li>
+<li>方差：<span class="arithmatex">\(\text{var}(X)=E[(X-E[X])^2]=E[\tilde X^2]=E[X^2]-E[X]^2\ge 0\)</span></li>
+<li>标准差：<span class="arithmatex">\(\sigma_X=\sqrt{\text{var}(X)}\)</span></li>
+<li><span class="arithmatex">\(E[aX+b]=aE[X]+b\)</span>，<span class="arithmatex">\(\text{var}(aX+b)=a^2\text{var}(X)\)</span></li>
+</ol>
+</blockquote>
+<p><span class="arithmatex">\(E[g(X)]=E[Y]=\int_{D_{f_Y}}yf_Y(y)~d_y=\int_{D_{f_Y}}y\int_Bf_X(x)~d_x~d_y=\int_{D_{f_Y}}\int_Bg(x)f_X(x)~d_x~d_y\)</span></p>
+<p>（其中 <span class="arithmatex">\(B=\{x~|~g(x)=y\}\)</span>）</p>
+<p>由于 <span class="arithmatex">\(y\in D_{f_Y}, x\in\{x~|~g(x)=y\}\)</span> 蕴涵 <span class="arithmatex">\(x\in\{x~|~g(x)=D_{f_Y}\}=D_{f_X}\)</span> 有 <span class="arithmatex">\(E[g(X)]=\int_{D_{f_X}}g(x)f_X(x)~d_x\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">均匀随机变量</p>
+</div>
+<blockquote>
+<p>设 X 在 <span class="arithmatex">\([a,b]\)</span> 上均匀分布，即 PDF 为 <span class="arithmatex">\(f_X(x)=\begin{cases}\frac1{b-a}&amp;a\le x\le b\\0&amp;其他\end{cases}\)</span>，</p>
+<p>其期望为 <span class="arithmatex">\(E[X]=\frac{a+b}2\)</span>，二阶矩为 <span class="arithmatex">\(E[X^2]=\frac{a^2+ab+b^2}3\)</span>，方差为 <span class="arithmatex">\(\text{var}(X)=E[X^2]-E[X]^2=\frac{(b-a)^2}{12}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">指数随机变量</p>
+</div>
+<blockquote>
+<p>若 X 的 PDF 形如 <span class="arithmatex">\(f_X(x)=\begin{cases}\lambda e^{-\lambda x}&amp;x\ge0\\0&amp;其他\end{cases}\)</span>，而且 <span class="arithmatex">\(\lambda&gt;0\)</span>，</p>
+<p>那么称 X 是指数随机变量</p>
+<p>注：指数随机变量具有广泛的用处, 它可以表示到发生某个事件为止所用的时间, 例如,这个事件可以是某条信息到达计算机、一台仪器的使用寿命终止、 一个灯泡用坏了或一辆汽车出一次车祸, 等等</p>
+<p>性质：<span class="arithmatex">\(P(X\ge a)=\int_a^{+∞}\lambda e^{-\lambda x}~d_x=-e^{-\lambda x}|_a^{+∞}=e^{-\lambda a}\)</span></p>
+<p>均值，二阶矩，方差分别为 <span class="arithmatex">\(E[X]=\frac1\lambda\)</span>，<span class="arithmatex">\(E[X^2]=\frac2{\lambda^2}\)</span>，<span class="arithmatex">\(\text{var}(X)=\frac1{\lambda^2}\)</span></p>
+<p>注：<span class="arithmatex">\(\int_0^{+∞}x^ke^{-\lambda x}~d_x=\frac{k!}{\lambda^{k+1}}\)</span>，因此指数随机变量的 n 阶矩为 <span class="arithmatex">\(E[X^n]=\frac{n!}{\lambda^{n}}\)</span></p>
+</blockquote>
+<h3 id="2">2. 分布函数</h3>
+<p>我们分别用分布列(离散情况)和概率密度函数(连续情况)来刻画随机变量 X 的取值规律</p>
+<p>现在我们希望用一个统一的数学工具来刻画随机变量的取值规律</p>
+<div class="admonition note">
+<p class="admonition-title">分布函数(CDF)</p>
+</div>
+<blockquote>
+<p>随机变量 X 的分布函数定义为 <span class="arithmatex">\(F_X(x)=P(X\le x)=\begin{cases}\sum\limits_{i\le x}p_X(i)&amp;若 X 是离散的\\\int_{-∞}^xf_X(t)~d_t&amp;若 X 是连续的\end{cases}\)</span>，</p>
+<p>分布函数又称<strong>累积分布函数</strong>，简称为 CDF（cumulative distribution function）</p>
+<p>注：在一个概率模型中，随机变量 X 不管是 连续的，离散的，既非连续也非离散的，X 都有一个分布函数</p>
+<p>约定：凡是刻画事件 <span class="arithmatex">\(\{X\le x\}\)</span> 的概率的，都称为随机变量 X 的<strong>概论律</strong>；因此，离散情况下的 分布列，连续情况下的概率密度函数，一般情况下的分布函数 都是相应的随机变量的概率律</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">CDF的性质1</p>
+</div>
+<blockquote>
+<ul>
+<li>离散随机变量的 CDF，<span class="arithmatex">\(F_X(x)=P(X\le x)=\sum\limits_{i\le x}p_X(i)\)</span>：该函数为阶梯函数，在具有正概率的点上具有跳跃；在跳跃点上，<span class="arithmatex">\(F_X(x)\)</span> 取较大值，即 <span class="arithmatex">\(F_X(x)\)</span> 在跳跃点上右连续</li>
+</ul>
+<p>假设 X 有 n 个取正概率的点 <span class="arithmatex">\(a_1&lt;\dots&lt;a_n\)</span>，那么 <span class="arithmatex">\(F_X(x)=\begin{cases}\sum\limits_{j=1}^ip_X(a_j)&amp;a_i\le x&lt;a_{i+1},i=1..n-1\\1&amp;x\ge a_n\\0&amp;x&lt;a_1\end{cases}\)</span></p>
+<p>因而 <span class="arithmatex">\(p_X(a_i)=F_X(a_i)-F_X(a_{i-1})\)</span> （差分）</p>
+<p>X 只取整数值时：<span class="arithmatex">\(F_X(k)=\sum\limits_{i=-∞}^kp_X(i)\)</span>，<span class="arithmatex">\(p_X(k)=P(X\le k)-P(X\le k-1)=F_X(k)-F_X(k-1)\)</span>（<span class="arithmatex">\(k\in\mathbb Z\)</span>）</p>
+<ul>
+<li>连续随机变量的 CDF，<span class="arithmatex">\(F_X(x)=P(X\le x)=\int_{-∞}^xf_X(t)~d_t\)</span>：该函数为连续函数</li>
+</ul>
+<p>根据微积分基本定理 1，有 <span class="arithmatex">\(f_X(x)=\frac{d~F_X}{d_x}(x)\)</span> （微分）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">CDF的性质2</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(F_X\)</span> 是单调非减函数：对于所有 <span class="arithmatex">\(x\le y\)</span>，有 <span class="arithmatex">\(F_X(x)\le F_X(y)\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x\to-∞}F_X(x)=0\)</span>，<span class="arithmatex">\(\lim\limits_{x\to+∞}F_X(x)=1\)</span></li>
+<li>X 是离散随机变量时，<span class="arithmatex">\(F_X(x)\)</span> 是 x 的阶梯函数；X 是连续随机变量时，<span class="arithmatex">\(F_X(x)\)</span> 是 x 的连续函数</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">几何 &amp; 指数 随机变量的分布函数</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(F_{geo}(n)=\sum\limits_{i=1}^np(1-p)^{k-1}=p\frac{1-(1-p)^n}{1-(1-p)}=1-(1-p)^n\)</span></p>
+<p><span class="arithmatex">\(F_{exp}(n)=\begin{cases}\int_0^x\lambda e^{-\lambda t}~d_t&amp;x&gt;0\\0&amp;x\le 0\end{cases}=\begin{cases}1-e^{-\lambda x}&amp;x&gt;0\\0&amp;x\le 0\end{cases}\)</span></p>
+<p>假设 <span class="arithmatex">\(\delta=\frac{\ln(1-p)}{-\lambda}\)</span>，那么 <span class="arithmatex">\(F_{exp}(n\delta)=F_{geo}(n)\)</span>（<span class="arithmatex">\(n\in N^+\)</span>）</p>
+<p>假定我们以很快的速度抛掷不均匀的硬币（每 <span class="arithmatex">\(\delta\)</span> 一次，<span class="arithmatex">\(\delta&lt;&lt;1\)</span>），每次抛掷正面向上的概率为 <span class="arithmatex">\(p=1-e^{-\lambda\delta}\)</span>，</p>
+<p>第一次得到正面向上所抛掷的次数为 X，第一次得到正面向上的时刻为 <span class="arithmatex">\(X\delta\)</span>；而 <span class="arithmatex">\(X\delta\)</span> 与参数为 <span class="arithmatex">\(\lambda\)</span> 的指数随机变量时分接近</p>
+<p>若 X 是参数为 <span class="arithmatex">\(p=1-e^{-\lambda\delta}\)</span> 的几何随机变量；当 <span class="arithmatex">\(\delta\to0\)</span>，<span class="arithmatex">\(X\delta\)</span> 的分布函数趋近于指数分布函数 <span class="arithmatex">\(1-e^{-\lambda x}\)</span></p>
+</blockquote>
+<h3 id="3">3. 正态随机变量</h3>
+<div class="admonition note">
+<p class="admonition-title">正态随机变量</p>
+</div>
+<blockquote>
+<p>一个连续随机变量 X 称为<strong>正态</strong>的 或 <strong>高斯</strong>的，若它的概率密度函数具有如下形式：<span class="arithmatex">\(f_X(x)=\frac1{\sqrt{2\pi}\sigma}e^{-(x-\mu)^2/(2\sigma^2)}\)</span>，</p>
+<p>其中 <span class="arithmatex">\(\mu\)</span> 和 <span class="arithmatex">\(\sigma&gt;0\)</span> 是 PDF 的两个参数</p>
+<p>性质：满足归一化，<span class="arithmatex">\(\frac1{\sqrt{2\pi}\sigma}\int_{-∞}^{+∞} e^{-(x-\mu)^2/(2\sigma^2)}d_x=1\)</span>（注：<span class="arithmatex">\(e^{-x^2}\)</span> 没有初等原函数）</p>
+<p>均值为 <span class="arithmatex">\(E[X]=\mu\)</span>，方差为 <span class="arithmatex">\(\text{var}(X)=\sigma^2\)</span>，标准差为 <span class="arithmatex">\(\sigma\)</span></p>
+<p>注：显然 <span class="arithmatex">\(E[aX+b]=aE[X]+b=a\mu+b\)</span>，<span class="arithmatex">\(\text{var}(aX+b)=a^2\sigma^2\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">标准正态随机变量</p>
+</div>
+<blockquote>
+<p>假设正态随机变量 Y 的期望为 <span class="arithmatex">\(\mu=0\)</span>，方差为 <span class="arithmatex">\(\sigma^2=1\)</span>，则 Y 称为正态随机变量</p>
+<p>其 CDF 记为 <span class="arithmatex">\(\Phi(y)=P(Y\le y)=\frac1{\sqrt{2\pi}}\int_{-∞}^ye^{-t^2/2}d_t\)</span></p>
+<p>根据 <span class="arithmatex">\(f_Y(y)\)</span> 的对称性以及容斥原理，有 <span class="arithmatex">\(P(Y\le y)=P(Y\ge -y)=1-P(Y&lt;-y)\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\Phi(y)=1-\Phi(-y)\)</span> 或 <span class="arithmatex">\(\Phi(-y)=1-\Phi(y)\)</span></p>
+<p>注：<span class="arithmatex">\(\Phi(y)\)</span> 在一定范围内的值可通过“标准正态分布表”获得</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">正态随机变量的标准化</p>
+</div>
+<blockquote>
+<p>正态随机变量 X 的期望为 <span class="arithmatex">\(E[X]=\mu\)</span>，方差为 <span class="arithmatex">\(\text{var}(X)=\sigma^2\)</span>，</p>
+<p>而 <span class="arithmatex">\(Y=\frac{X-\mu}{\sigma}\)</span> 的期望为 <span class="arithmatex">\(E[Y]=E[\frac{X-\mu}{\sigma}]=\frac{E[X]-\mu}{\sigma}=0\)</span>，方差为 <span class="arithmatex">\(\text{var}(Y)=\text{var}(\frac{X-\mu}{\sigma})=\frac{\text{var}(X)}{\sigma^2}=1\)</span>（PDF 为 <span class="arithmatex">\(f_Y(y)=\frac1{\sqrt{2\pi}\sigma}e^{-y^2/2}=\frac1{\sqrt{2\pi}}e^{-y^2/2}\)</span>？）</p>
+<p>也就是说 <span class="arithmatex">\(Y=\frac{X-\mu}{\sigma}\)</span> 是标准正态随机变量</p>
+<p>应用：<span class="arithmatex">\(P(X\le x)=P(\frac{X-\mu}{\sigma}\le\frac{x-\mu}{\sigma})=P(Y\le \frac{x-\mu}{\sigma})=\Phi(\frac{x-\mu}{\sigma})\)</span> 或 <span class="arithmatex">\(P(X&gt; x)=1-\Phi(\frac{x-\mu}{\sigma})\)</span></p>
+<p>例：p179</p>
+<p>注：正态随机变量在概论论中十分重要；<strong>大量的独立同分布的随机变量的和的分布近似地服从正态分布，而这个事实与各个和项的具体的分布无关</strong>，这个事实就是<strong>中心极限定理</strong>（详见第 5 章）</p>
+</blockquote>
+<h3 id="4">4. 多个随机变量的概率密度</h3>
+<p>现在将 PDF 的概念推广到多个随机变量的情况</p>
+<p>与离散的情况相似,我们将引进联合、边缘以及条件PDF的概念，其直观解释和主要性质与离散情况完全平行</p>
+<div class="admonition note">
+<p class="admonition-title">联合概率密度</p>
+</div>
+<blockquote>
+<p>设 X 和 Y 为在同一个试验中的两个随机变量，若它们存在联合概率密度函数，则称 X 和 Y 是<strong>联合连续的</strong></p>
+<p>非负的二元函数 <span class="arithmatex">\(f_{X,Y}(x,y)\)</span> 称为 X 和 Y 的<strong>联合概率密度函数</strong>，若对任意平面上的二元集合 B，下式成立：<span class="arithmatex">\(P((x,y)\in B)=\int_{(x,y)\in B}\int f_{X,Y}(x,y)~d_xd_y\)</span></p>
+<p>若 <span class="arithmatex">\(B=\{(x,y)~|~a\le x\le b,c\le y\le d\}\)</span>，则上式为 <span class="arithmatex">\(P(a\le X\le b,c\le y\le d)=\int_c^d\int_a^bf_{X,Y}(x,y)~d_xd_y\)</span></p>
+<p>性质1：满足归一化公理 <span class="arithmatex">\(\int_{-∞}^{+∞}\int_{-∞}^{+∞}f_{X,Y}(x,y)~d_xd_y=1\)</span></p>
+<p>性质2：若 <span class="arithmatex">\(\delta&gt;0\)</span> 充分小，那么 <span class="arithmatex">\(P(a\le X\le a+\delta,c\le y\le c+\delta)=\int_c^{c+\delta}\int_a^{a+\delta}f_{X,Y}(x,y)~d_xd_y\approx f_{X,Y}(x,y)\cdot\delta^2\)</span></p>
+<p>注：<span class="arithmatex">\(f_{X,Y}(a,c)\)</span> 可以看作 <span class="arithmatex">\((X,Y)\)</span> 落入 <span class="arithmatex">\((a,c)\)</span> 附近单位面积中的概率</p>
+</blockquote>
+<p>作为例子，<span class="arithmatex">\(P(x\in A,Y\in(-∞,+∞))=\int_A\int_{-∞}^{+∞} f_{X,Y}(x,y)~d_yd_x\)</span>，而 <span class="arithmatex">\(P(x\in A)=\int_A f_X(x)~d_x\)</span></p>
+<p>因而 <span class="arithmatex">\(f_X(x)=\int_{-∞}^{+∞} f_{X,Y}(x,y)~d_y\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">边缘概率密度</p>
+</div>
+<blockquote>
+<p>设 X 和 Y 为在同一个试验中的两个随机变量，并且它们具有联合概率密度函数 <span class="arithmatex">\(f_{X,Y}(x,y)\)</span>，那么 X 和 Y 的边缘概率密度函数分别为：</p>
+<p><span class="arithmatex">\(f_X(x)=\int_{-∞}^{+∞}f_{X,Y}(x,y)~d_y\)</span>，<span class="arithmatex">\(f_Y(y)=\int_{-∞}^{+∞}f_{X,Y}(x,y)~d_x\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">二维均匀概率密度函数</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(S\in\mathbb R^2\)</span> 上的联合均匀概率密度函数为 <span class="arithmatex">\(f_{X,Y}(x,y)=\begin{cases}\frac1{S的面积}&amp;(x,y)\in S\\0&amp;其他\end{cases}\)</span></p>
+<p>若 <span class="arithmatex">\(A\subset S\)</span>，那么 <span class="arithmatex">\(P((X,Y)\in A)=\int_{(x,y)\in A}\int f_{X,Y}(x,y)~d_xd_y=\frac1{S的面积}\int_{(x,y)\in A}\int~d_xd_y=\frac{A的面积}{S的面积}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">布丰的抛针试验</p>
+</div>
+<blockquote>
+<p>这是一个著名的例子，几何概率由此发源</p>
+<p>在平面上画了若干条平行线，相互之间的距离为 d，现在往平面上随机地抛掷一根长度为 l 的针（<span class="arithmatex">\(l&lt;d\)</span>）</p>
+<p>设 X 为针离最近的一条直线的垂直距离(最短距离)（<span class="arithmatex">\(0\le X\le\frac d2\)</span>），<span class="arithmatex">\(\Theta\)</span> 为针与平行直线之间的夹角（<span class="arithmatex">\(0\le\Theta\le\frac\pi2\)</span>）</p>
+<p>假定 <span class="arithmatex">\((X,\Theta)\)</span> 为均匀随机变量组，它们的联合均匀 PDF 为 <span class="arithmatex">\(f_{X,\Theta}(x,\theta)=\frac4{\pi d}\)</span>（<span class="arithmatex">\(x\in[0,d/2],\theta\in[0,\pi/2]\)</span>）</p>
+<p>针与平行直线相交的充要条件为 <span class="arithmatex">\(X\le\frac l2\sin\Theta\)</span>，其相应概率为 <span class="arithmatex">\(P(X\le\frac l2\sin\Theta)=\int_{x\le\frac l2\sin\theta}\int f_{X,\Theta}(x,\theta)~d_xd_\theta=\frac{2l}{\pi d}\)</span></p>
+<p>另外，我们再通过试验获取“针与平行直线相交”的频率进而近似为概率，即可反推出 <span class="arithmatex">\(\pi\)</span> 的估计值</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">联合分布函数（联合 CDF）</p>
+</div>
+<blockquote>
+<p>设 X 和 Y 是在同一试验中两个随机变量，它们的联合 CDF 定义为 <span class="arithmatex">\(F_{X,Y}(x,y)=P(X\le x,Y\le y)\)</span></p>
+<p>以连续随机变量为例，若 X 和 Y 具有联合 PDF <span class="arithmatex">\(f_{X,Y}(x,y)\)</span>，则 <span class="arithmatex">\(F_{X,Y}(x,y)=P(X\le x,Y\le y)=\int_{-∞}^x\int_{-∞}^yf_{X,Y}(s,t)~d_td_s\)</span></p>
+<p>对联合 CDF 偏微分得到联合 PDF：<span class="arithmatex">\(\frac{\partial^{2}F_{X,Y}}{\partial x\partial y}(x,y)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">期望</p>
+</div>
+<blockquote>
+<p>X 和 Y 为联合连续随机变量，<span class="arithmatex">\(Z=g(X,Y)\)</span> 也是一个随机变量（4.1 节将讨论 Z 的 PDF 的计算方法），</p>
+<p>那么 <span class="arithmatex">\(E[g(X,Y)]=\int_{-∞}^{+∞}\int_{-∞}^{+∞}g(x,y)f_{X,Y}(x,y)~d_xd_y\)</span>，</p>
+<p><span class="arithmatex">\(E[aX+bY+c]=aE[X]+bE[Y]+c\)</span>（前文已证明）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">多于两个随机变量的情况</p>
+</div>
+<blockquote>
+<p>三个随机变量 X，Y，Z 的联合 PDF 满足 <span class="arithmatex">\(\int_{(x,y,z)\in B}f_{X,Y,Z}(x,y,z)~d_xd_yd_z\)</span>（注：该记号可能不严格）</p>
+<p>根据全概率定理，例如有 <span class="arithmatex">\(f_{X,Y}(x,y)=\int_{-∞}^{+∞}f_{X,Y,Z}(x,y,z)~d_z\)</span>，<span class="arithmatex">\(f_{X}(x)=\int_{-∞}^{+∞}\int_{-∞}^{+∞}f_{X,Y,Z}(x,y,z)~d_yd_z\)</span>，</p>
+<p><span class="arithmatex">\(g(X,Y,Z)\)</span> 的复合期望有 <span class="arithmatex">\(E[g(X,Y,Z)]=\int_{-∞}^{+∞}\int_{-∞}^{+∞}\int_{-∞}^{+∞}g(x,y,z)f_{X,Y,Z}(x,y,z)~d_xd_yd_z\)</span>，</p>
+<p>线性函数的复合期望：<span class="arithmatex">\(E[\sum\limits_{i=1}^na_iX_i]=\sum\limits_{i=1}^na_iE[X_i]\)</span></p>
+</blockquote>
+<h3 id="5">5. 条件</h3>
+<p>与离散随机变量的情况相似，可以以一个随机事件或另一个随机变量为条件，讨论随机变量的特性，并在此基础上建立 条件概率密度函数和条件期望的概念</p>
+<p>各种定义和公式都与离散的情况平行，且其意义的解释也都是类似的</p>
+<p>在连续情况下，还会遇到以零概率事件 <span class="arithmatex">\(\{Y=0\}\)</span> 为条件的情况，这在离散情况下是无法处理的</p>
+<div class="admonition note">
+<p class="admonition-title">以事件为条件的随机变量</p>
+</div>
+<blockquote>
+<p>连续随机变量 X 在事件 A 发生的条件下（<span class="arithmatex">\(P(A)&gt;0\)</span>）的<strong>条件概率密度函数</strong> <span class="arithmatex">\(f_{X|A}(x)\)</span> 由下式定义：对于所有直线上的集合 B，满足 <span class="arithmatex">\(P(X\in B|A)=\int_Bf_{X|A}(x)~d_x\)</span>，</p>
+<p>其中 <span class="arithmatex">\(f_{X|A}(x)=\begin{cases}\frac{f_X(x)}{P(X\in A)}&amp;x\in A\\0&amp;其他\end{cases}\)</span></p>
+<p>（注：条件 PDF 在条件集合外边取值为 0，在条件集合内部与无条件 PDF <strong>有相同形状</strong>而大小为原来的 <span class="arithmatex">\(\frac1{P(X\in A)}\)</span> 倍（归一化因子））</p>
+<p>满足归一化：<span class="arithmatex">\(\int_{-∞}^{+∞}f_{X|A}(x)~d_x=1\)</span></p>
+<p>X 在 <span class="arithmatex">\(\{X\in A\}\)</span> 的条件下（<span class="arithmatex">\(P(X\in A)&gt;0\)</span>）的条件概率为 <span class="arithmatex">\(P(X\in B|X\in A)=\frac{P(X\in A,X\in B)}{P(X\in A)}=\frac{\int_{A\cap B}f_X(x)~d_x}{P(X\in A)}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">指数随机变量的无记忆性</p>
+</div>
+<blockquote>
+<p>假设灯泡的使用寿命 T 是参数为 <span class="arithmatex">\(\lambda\)</span> 的指数随机变量，记 a，X 分别为灯泡的当前寿命，灯泡剩余的寿命（注：后者是不确定的量，所以设为随机变量以研究其分布函数），满足：<span class="arithmatex">\(T=a+X\)</span></p>
+<p>那么 <span class="arithmatex">\(P(X&gt;x|T&gt;a)=P(T&gt;x+a|T&gt;a)=\frac{P(T&gt;x+a,T&gt;a)}{P(T&gt;a)}=\frac{P(T&gt;x+a)}{P(T&gt;a)}=\frac{e^{-\lambda(x+a)}}{e^{-\lambda a}}=e^{-\lambda x}\)</span>，</p>
+<p>于是，<span class="arithmatex">\(P(X&gt;x|T&gt;a)=P(T&gt;x)\)</span>；换句话说，灯泡剩余时间 X 在 <span class="arithmatex">\(T&gt;a\)</span> 的条件下的还是服从指数随机变量的分布函数</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">联合条件 PDF</p>
+</div>
+<blockquote>
+<p>设 X 和 Y 是联合连续随机变量，其联合 PDF 为 <span class="arithmatex">\(f_{X,Y}\)</span>，假设作为条件的正概率事件为 <span class="arithmatex">\(C=\{(X,Y)\in A\}\)</span>，</p>
+<p>X 和 Y 的联合条件 PDF 为 <span class="arithmatex">\(f_{X,Y|C}(x,y)=\begin{cases}\frac{f_{X,Y}(x,y)}{P(C)}&amp;(x,y)\in A\\0&amp;其他\end{cases}\)</span></p>
+<p>性质1：<span class="arithmatex">\(f_{X|C}(x)=\int_{-∞}^{+∞}f_{X,Y|C}(x,y)~d_y\)</span></p>
+<p>性质2：若 <span class="arithmatex">\(A_1,\dots,A_n\)</span> 是样本空间的一个分割，则 <span class="arithmatex">\(f_X(x)=\sum\limits_{i=1}^nP(A_i)f_{X|A_i}(x)\)</span></p>
+</blockquote>
+<p>性质 2 证明：若 <span class="arithmatex">\(A_1,\dots,A_n\)</span> 是样本空间的一个分割，有 <span class="arithmatex">\(P(X\le x)=\sum\limits_{i=1}^nP(A_i)P(X\le x|A_i)\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\int_{-∞}^xf_X(t)~d_t=\sum\limits_{i=1}^nP(A_i)\int_{-∞}^xf_{X|A_i}(t)~d_t\)</span>，</p>
+<p>对两边微分有 <span class="arithmatex">\(f_X(x)=\sum\limits_{i=1}^nP(A_i)f_{X|A_i}(x)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">一个随机变量对另一个随机变量的条件</p>
+</div>
+<blockquote>
+<p>X 和 Y 为联合连续随机变量，其联合 PDF 为 <span class="arithmatex">\(f_{X,Y}(x,y)\)</span></p>
+<p>X 的条件 PDF 定义：<span class="arithmatex">\(f_{X|Y}(x|y)=\frac{f_{X,Y}(x,y)}{f_Y(y)}\)</span>（仅当 <span class="arithmatex">\(f_Y(y)&gt;0\)</span>）</p>
+<p>注：考虑条件 PDF 时，最好将 y 值固定下来，将 <span class="arithmatex">\(f_{X|Y}(x|y)\)</span> 看成 x 的函数；作为 x 的函数，<span class="arithmatex">\(f_{X|Y}(x|y)\)</span> 与 <span class="arithmatex">\(f_{X,Y}(x,y)\)</span> 具有相同的形状，因为它们仅相差一个与 x 无关的常数因子 <span class="arithmatex">\(f_Y(y)=\int_{-∞}^{+∞}f_{X,Y}(x,y)~d_x\)</span>；这暗示了归一化性质 <span class="arithmatex">\(\int_{-∞}^{+∞}f_{X|Y}(x|y)~d_x=1\)</span></p>
+<p>注2：此时的条件不是一个范围，而是一个随机变量的某个点</p>
+<p>考虑条件概率密度函数的概率意义，令 <span class="arithmatex">\(\delta_1,\delta_2&gt;0\)</span> 充分小，</p>
+<p><span class="arithmatex">\(P(x\le X\le x+\delta_1|y\le Y\le y+\delta_2)=\frac{P(x\le X\le x+\delta_1且y\le Y\le y+\delta_2)}{P(y\le Y\le y+\delta_2)}\approx\frac{f_{X,Y}(x,y)\delta_1\delta_2}{f_Y(y)\delta_2}=f_{X|Y}(x|y)\delta_1\)</span>，</p>
+<p>等式右侧 <span class="arithmatex">\(f_{X|Y}(x|y)\delta_1\)</span> 不依赖于 <span class="arithmatex">\(\delta_2\)</span>，我们将其认为是 <span class="arithmatex">\(\delta_2\to0\)</span> 的极限情况，即 <span class="arithmatex">\(P(x\le X\le x+\delta_1|Y=y)\approx f_{X|Y}(x|y)\delta_1\)</span>（<span class="arithmatex">\(\delta_1\)</span> 充分小），</p>
+<p>其积分形式为 <span class="arithmatex">\(P(X\in A|Y=y)=\int_Af_{X|Y}(x|y)~d_x\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例题</p>
+<ol>
+<li>圆上的均匀概率密度函数（p193）</li>
+<li>交通测速(p195)</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">多个随机变量的情况</p>
+</div>
+<blockquote>
+<p>例如：</p>
+<ul>
+<li><span class="arithmatex">\(f_{X,Y|Z}(x,y|z)=\frac{f_{X,Y,Z}(x,y,z)}{f_Z(z)}\)</span>（仅当 <span class="arithmatex">\(f_Z(z)&gt;0\)</span>）</li>
+<li><span class="arithmatex">\(f_{X|Y,Z}(x|y,z)=\frac{f_{X,Y,Z}(x,y,z)}{f_{Y,Z}(y,z)}\)</span>（<span class="arithmatex">\(f_{Y,Z}(y,z)&gt;0\)</span>）</li>
+</ul>
+<p>乘法规则：<span class="arithmatex">\(f_{X,Y,Z}(x,y,z)=f_{X|Y,Z}(x|y,z)f_{Y|Z}(y|z)f_Z(z)\)</span></p>
+</blockquote>
+<p>对于连续随机变量 X，给定时间 A 的条件期望 <span class="arithmatex">\(E[X|A]\)</span> 的定义利用条件 PDF <span class="arithmatex">\(f_{X|A}\)</span> 来定义</p>
+<p>类似地，条件期望 <span class="arithmatex">\(E[X|Y=y]\)</span> 通过条件 PDF <span class="arithmatex">\(f_{X|Y}\)</span> 来定义</p>
+<p>关于普通期望的各种性质可以原封不动的搬到条件期望中来；这些公式也与离散情况下类似，只是将求和符号变成积分符号，PMF 变成 PDF</p>
+<div class="admonition note">
+<p class="admonition-title">条件期望</p>
+</div>
+<blockquote>
+<p>X 和 Y 是联合连续随机变量，事件 A 满足 <span class="arithmatex">\(P(A)&gt;0\)</span></p>
+<p>定义式：</p>
+<ol>
+<li>X 在给定事件 A 之下的条件期望：<span class="arithmatex">\(E[X|A]=\int_{-∞}^{+∞}xf_{X|A}(x)~d_x\)</span></li>
+<li>X 在 <span class="arithmatex">\(Y=y\)</span> 之下的条件期望：<span class="arithmatex">\(E[X|Y=y]=\int_{-∞}^{+∞}xf_{X|Y}(x|y)~d_x\)</span></li>
+</ol>
+<p>复合期望(期望规则)：</p>
+<ol>
+<li><span class="arithmatex">\(E[g(X)|A]=\int_{-∞}^{+∞}g(x)f_{X|A}(x)~d_x\)</span></li>
+<li><span class="arithmatex">\(E[g(X)|Y=y]=\int_{-∞}^{+∞}g(x)f_{X|Y}(x|y)~d_x\)</span></li>
+</ol>
+<p><strong>全期望定理</strong>：</p>
+<ol>
+<li>设 <span class="arithmatex">\(A_1,\dots,A_n\)</span> 为互不相容的 n 事件，并且形成样本空间的一个分割（<span class="arithmatex">\(P(A_i)&gt;0\)</span>），则：<span class="arithmatex">\(E[X]=\sum\limits_{i=1}^nP(A_i)E[X|A_i]\)</span></li>
+<li><span class="arithmatex">\(E[X]=\int_{-∞}^{+∞}f_Y(y)E[X|Y=y]~d_y\)</span></li>
+</ol>
+<p>复合多元期望，如：<span class="arithmatex">\(E[g(X,Y)|Y=y]=\int g(x,y)f_{X|Y}(x|y)~d_x\)</span>；<span class="arithmatex">\(E[g(X,Y)]=\int f_Y(y)E[g(X,Y)|Y=y]~d_y\)</span></p>
+<p>注：全期望定理的证明详见 p197-198</p>
+<p>注2：全期望定理用于计算 期望，n 阶矩，方差（例如：分段不同分布的随机变量的期望可以用子区间下的随机变量的期望得到）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">独立性</p>
+</div>
+<blockquote>
+<p>假设两个连续随机变量 X 和 Y 具有联合 PDF，</p>
+<p>那么 X 和 Y 相互独立，当且仅当 对于所有 x 和 y，<span class="arithmatex">\(f_{X,Y}(x,y)=f_X(x)f_Y(y)\)</span></p>
+<p>上式等价于 对于所有 x，<span class="arithmatex">\(f_{X|Y}(x|y)=f_X(x)\)</span>（<span class="arithmatex">\(f_Y(y)&gt;0\)</span>）</p>
+<p>根据对称性，对于所有 y，<span class="arithmatex">\(f_{Y|X}(y|x)=f_Y(y)\)</span>（<span class="arithmatex">\(f_X(x)&gt;0\)</span>）</p>
+<p>推广，如：假设 X，Y，Z 具有联合连续随机变量，</p>
+<p>X，Y，Z 相互独立，当且仅当 对于所有 <span class="arithmatex">\(x,y,z\)</span>，<span class="arithmatex">\(f_{X,Y,Z}(x,y,z)=f_X(x)f_Y(y)f_Z(z)\)</span></p>
+<p>独立性蕴涵：（X 和 Y 任取离散或连续）</p>
+<ol>
+<li><span class="arithmatex">\(F_{X,Y}(x,y)=P(X\le x,Y\le y)=P(X\le x)P(Y\le y)=F_X(x)F_Y(y)\)</span>（证明见章节习题）</li>
+<li><span class="arithmatex">\(g(X)\)</span> 和 <span class="arithmatex">\(h(Y)\)</span> 相互独立</li>
+<li><span class="arithmatex">\(E[g(X)h(Y)]=E[g(X)]E[h(Y)]\)</span></li>
+<li><span class="arithmatex">\(\text{var}(X+Y)=\text{var}(X)+\text{var}(Y)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">独立的正态随机变量</p>
+</div>
+<blockquote>
+<p>X 和 Y 是相互独立的正态随机变量，期望和方差分别为 <span class="arithmatex">\(\mu_x,\mu_y\)</span>，<span class="arithmatex">\(\sigma_x^2,\sigma_y^2\)</span>，它们的联合 PDF 为：</p>
+<p><span class="arithmatex">\(f_{X,Y}(x,y)=f_X(x)f_Y(y)=\frac1{2\pi\sigma_x\sigma_y}\exp\{-\frac{(x-\mu_x)^2}{2\sigma_x^2}-\frac{(y-\mu_y)^2}{2\sigma_y^2}\}\)</span></p>
+<p>该函数的等高线为以 <span class="arithmatex">\((\mu_x,\mu_y)\)</span> 为中心，长短轴（其大小与 <span class="arithmatex">\(\sigma_x,\sigma_y\)</span> 正比）分别平行于两个坐标轴的椭圆</p>
+<p>该函数的图像鼓起的地方类似于“一颗侧面稍扁的痘痘”</p>
+</blockquote>
+<h3 id="6">6. 连续贝叶斯准则</h3>
+<p>条件概率的一个重要的应用是推断问题</p>
+<p>贝叶斯的思想大致可以描述为：假设 X 是需要研究（但 X 未被观察或我们直接观察 X）的随机变量，为此我们加入噪声随机变量 Y；已知 X 的分布律，通过测量得到 Y 在 X 条件下的条件分布律；最后，我们通过综合上述已知信息可以推断出噪声 Y 干扰下 X 的条件分布律</p>
+<div class="admonition note">
+<p class="admonition-title">连续贝叶斯准则</p>
+</div>
+<blockquote>
+<p>由 <span class="arithmatex">\(f_Xf_{Y|X}=f_{X,Y}=f_Yf_{X|Y}\)</span>，可以得到 <span class="arithmatex">\(f_{X|Y}(x|y)=\frac{f_X(x)f_{Y|X}(y|x)}{f_Y(y)}\)</span>，</p>
+<p>又由归一化性质 <span class="arithmatex">\(\int_{-∞}^{+∞}f_{X|Y}(x|y)~d_x=1\)</span> 得到等价式：</p>
+<p><span class="arithmatex">\(f_{X|Y}(x|y)=\frac{f_X(x)f_{Y|X}(y|x)}{\int_{-∞}^{+∞}f_X(t)f_{Y|X}(y|t)~d_t}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">关于离散随机变量的推断</p>
+</div>
+<blockquote>
+<p>我们需要研究事件 A（我们不知道 A 是否发生了），A 的概率 <span class="arithmatex">\(P(A)\)</span> 已知</p>
+<p>设噪声随机变量 Y 是连续的，<span class="arithmatex">\(f_{Y|A}(y),f_{Y|A^c}(y)\)</span> 已知</p>
+<p>我们感兴趣的是 A 的条件概率 <span class="arithmatex">\(P(A|Y=y)\)</span>，然而 <span class="arithmatex">\(\{Y=y\}\)</span> 是零概率事件，我们转而考虑事件 <span class="arithmatex">\(\{y\le Y\le y+\delta\}\)</span>（<span class="arithmatex">\(\delta&gt;0\)</span> 充分小，然后令 <span class="arithmatex">\(\delta\to0\)</span>），</p>
+<p>利用贝叶斯准则：<span class="arithmatex">\(P(A|Y=y)\approx P(A|y\le Y\le y+\delta)=\frac{P(A)P(y\le Y\le y+\delta|A)}{P(y\le Y\le y+\delta)}\approx \frac{P(A)f_{Y|A}(y)\delta}{f_Y(y)\delta}=\frac{P(A)f_{Y|A}(y)}{f_Y(y)}\)</span></p>
+<p>由于 <span class="arithmatex">\(f_Y(y)=P(A)f_{Y|A}(y)+P(A^c)f_{Y|A^c}(y)\)</span>，</p>
+<p>有 <span class="arithmatex">\(P(A|Y=y)=\frac{P(A)f_{Y|A}(y)}{P(A)f_{Y|A}(y)+P(A^c)f_{Y|A^c}(y)}\)</span></p>
+<p>将需要观察的事物推广到离散随机变量 N 上：贝叶斯准则 和 全概率定理 分别变成 <span class="arithmatex">\(P(N=n|Y=y)=\frac{p_N(n)f_{Y|N}(y|n)}{f_Y(y)}\)</span>，<span class="arithmatex">\(f_Y(y)=\sum\limits_ip_N(i)f_{Y|N}(y|i)\)</span></p>
+<p>于是 <span class="arithmatex">\(P(N=n|Y=y)=\frac{p_N(n)f_{Y|N}(y|n)}{\sum\limits_ip_N(i)f_{Y|N}(y|i)}\)</span></p>
+<p>练习：p205</p>
+<p>注：我们需要测量的是噪声，进而间接推断我们关心的事物</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">基于离散观察值的推断</p>
+</div>
+<blockquote>
+<p>与前面的情况相反，现在噪声随机变量是离散的；于是对贝叶斯准则 <span class="arithmatex">\(P(A|Y=y)=\frac{P(A)f_{Y|A}(y)}{f_Y(y)}\)</span> 进行“反转”有：</p>
+<p><span class="arithmatex">\(f_{Y|A}(y)=\frac{f_Y(y)P(A|Y=y)}{P(A)}\)</span>，</p>
+<p>又由 <span class="arithmatex">\(P(A)=\int_{-∞}^{+∞}f_Y(y)P(A|Y=t)~d_t\)</span>，</p>
+<p>于是 <span class="arithmatex">\(f_{Y|A}(y)=\frac{f_Y(y)P(A|Y=y)}{\int_{-∞}^{+∞}f_Y(t)P(A|Y=t)~d_t}\)</span></p>
+<p>类似地，噪声随机变量为 N 时有： <span class="arithmatex">\(f_{Y|N}(y|n)=\frac{f_Y(y)P(N=n|Y=y)}{\int_{-∞}^{+∞}f_Y(t)P(N=n|Y=t)~d_t}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">连续贝叶斯准则</p>
+</div>
+<blockquote>
+<p>设 Y 为离散随机变量</p>
+<ol>
+<li>若 Y 为离散随机变量：<span class="arithmatex">\(f_Y(y)f_{X|Y}(x|y)=f_X(x)f_{Y|X}(y|x)\)</span><ol>
+<li><span class="arithmatex">\(f_{X|Y}(x|y)=\frac{f_X(x)f_{Y|X}(y|x)}{f_Y(y)}=\frac{f_X(x)f_{Y|X}(y|x)}{\int_{-∞}^{+∞}f_X(t)f_{Y|X}(y|t)~d_t}\)</span></li>
+</ol>
+</li>
+<li>若 N 为连续随机变量：<span class="arithmatex">\(f_Y(y)P(N=n|Y=y)=p_N(n)f_{Y|N}(y|n)\)</span><ol>
+<li><span class="arithmatex">\(P(N=n|Y=y)=\frac{p_N(n)f_{Y|N}(y|n)}{f_Y(y)}=\frac{p_N(n)f_{Y|N}(y|n)}{\sum\limits_ip_N(i)f_{Y|N}(y|i)}\)</span></li>
+<li><span class="arithmatex">\(f_{Y|N}(y|n)=\frac{f_Y(y)P(N=n|Y=y)}{p_N(n)}=\frac{f_Y(y)P(N=n|Y=y)}{\int_{-∞}^{+∞}f_Y(t)P(N=n|Y=t)~d_t}\)</span></li>
+</ol>
+</li>
+<li>若 A 为某事件：<span class="arithmatex">\(f_Y(y)P(A|Y=y)=P(A)f_{Y|A}(y)\)</span><ol>
+<li><span class="arithmatex">\(P(A|Y=y)=\frac{P(A)f_{Y|A}(y)}{f_Y(y)}=\frac{P(A)f_{Y|A}(y)}{P(A)f_{Y|A}(y)+P(A^c)f_{Y|A^c}(y)}\)</span></li>
+<li><span class="arithmatex">\(f_{Y|A}(y)=\frac{f_Y(y)P(A|Y=y)}{P(A)}=\frac{f_Y(y)P(A|Y=y)}{\int_{-∞}^{+∞}f_Y(t)P(A|Y=t)~d_t}\)</span></li>
+</ol>
+</li>
+</ol>
+<p>注：上述 5 个贝叶斯准则均涉及了连续随机变量 Y；其他 4 种形式参考之前的章节</p>
+</blockquote>
 </article>
 </div>
 </div>

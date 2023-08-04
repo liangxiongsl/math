@@ -190,7 +190,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E5%AF%BC%E8%AE%BA/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
+<a class="md-tabs__link" href="../../%E6%A6%82%E7%8E%87%E5%AF%BC%E8%AE%BA/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         概率导论
       </a>
 </li>
@@ -299,6 +299,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2">
     2. 导数与微分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 中值定理&amp;导数应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 不定积分
   </a>
 </li>
 </ul>
@@ -577,6 +587,16 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E5%AF%BC%E8%AE%BA/%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
+        术语和定义
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E5%AF%BC%E8%AE%BA/%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E6%A6%82%E7%8E%87%E5%AF%BC%E8%AE%BA/1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
         1.样本空间&amp;概率
       </a>
@@ -778,6 +798,16 @@
     2. 导数与微分
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 中值定理&amp;导数应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 不定积分
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -885,14 +915,74 @@
 <ul>
 <li><span class="arithmatex">\(f(a),\lim\limits_{x\to a^-}f(x),\lim\limits_{x\to a^+}f(x),\lim\limits_{x\to a}f(x)\)</span></li>
 <li><span class="arithmatex">\(f'(a),\lim\limits_{x\to a^-}\frac{f(x)-f(a)}{x-a},\lim\limits_{x\to a^+}\frac{f(x)-f(a)}{x-a},\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}\)</span></li>
-<li><span class="arithmatex">\(\lim\limits_{x\to a^-}f'(x),\lim\limits_{x\to a^+}f'(x),\lim\limits_{x\to a}f'(x)\)</span></li>
+<li>
+<p><span class="arithmatex">\(\lim\limits_{x\to a^-}f'(x),\lim\limits_{x\to a^+}f'(x),\lim\limits_{x\to a}f'(x)\)</span></p>
+</li>
+<li>
+<p>f 在 a 处连续 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\lim\limits_{h\to0}f(a+h)=f(a)\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\lim\limits_{h\to0}f(a+h)-f(a)=0\)</span>（a 的左右侧极限值等于 a 处的函数值）</p>
+</li>
+<li>f 在 a 处可导 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\lim\limits_{h\to0}\frac{f(a+h)-f(a)}h\)</span> 存在 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(f'(a)=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}h\)</span></li>
 </ul>
+<p>注：根据题给条件，分析哪些性质是给定条件的必要条件？（如：f 可导的必要条件是 f 连续）</p>
 <div class="admonition note">
 <p class="admonition-title">2.1 用定义讨论函数可导性</p>
 <ol>
 <li>设 <span class="arithmatex">\(y=f(x)\)</span> 在 <span class="arithmatex">\(x_0\)</span> 处可导，求 <span class="arithmatex">\(\lim\limits_{x\to0}\frac{f(x_0+x)-f(x_0-3x)}x\)</span></li>
 <li><span class="arithmatex">\(f(x)=\begin{cases}\frac x{1-e^\frac1x}&amp;x\ne0\\0&amp;x=0\end{cases}\)</span> 在 <span class="arithmatex">\(x=0\)</span> 处的连续性，可导性</li>
 <li><span class="arithmatex">\(f(x)=\begin{cases}x^2\sin\frac1x&amp;x&gt;0\\0&amp;x\le0\end{cases}\)</span>：(1) 求 <span class="arithmatex">\(\lim\limits_{x\to0^+}f(x),\lim\limits_{x\to0^-}f(x),f'(0)\)</span>；(2) 求 <span class="arithmatex">\(\lim\limits_{x\to0^-}f'(x),\lim\limits_{x\to0^+}f'(x),\lim\limits_{x\to0}f'(x)\)</span></li>
+<li><span class="arithmatex">\(\varphi\)</span> 在 a 处连续，<span class="arithmatex">\(f(x)=(x-a)\varphi(x),g(x)=|x-a|\varphi(x)\)</span>；求 <span class="arithmatex">\(f'(a),g'(a)\)</span></li>
+<li><span class="arithmatex">\(f(x)=\begin{cases}\frac{1-\cos x}{\sqrt x}&amp;x&gt;0\\x^2g(x)&amp;x\le0\end{cases}\)</span>，其中 <span class="arithmatex">\(g(x)\)</span> 是有界函数，求 <span class="arithmatex">\(f'(0)\)</span></li>
+<li><span class="arithmatex">\(f(x)=\begin{cases}e^x&amp;x&lt;0\\a+bx&amp;x\ge0\end{cases}\)</span>，f 在 0 处可导；求 a，b</li>
+<li>对于所有 x，<span class="arithmatex">\(f(x+y)=f(x)f(y)\)</span>，<span class="arithmatex">\(f'(0)=1\)</span>；证：对于所有 x，有 <span class="arithmatex">\(f'(x)=f(x)\)</span></li>
+<li>证明：(1) 可导偶函数的导函数是奇函数；(2) 可导奇函数的导函数是偶函数</li>
+<li>f 连续，<span class="arithmatex">\(\lim\limits_{x\to0}\frac{f(x)}x=A\)</span>，<span class="arithmatex">\(\varphi(x)=\int_0^1f(xt)~d_t\)</span>；(1) 求 <span class="arithmatex">\(\varphi'(x)\)</span>，(2) 讨论 <span class="arithmatex">\(\varphi'(x)\)</span> 在 0 处的连续性</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2.2 计算导数&amp;微分</p>
+<ol>
+<li>计算导数：(1) <span class="arithmatex">\(\sin^2(\frac{1-\ln x}x)\)</span>，(2) <span class="arithmatex">\(e^{\sin^22x}\)</span>，(3) <span class="arithmatex">\(\frac x2\sqrt{x^2-a^2}-\frac{a^2}2\ln(x+\sqrt{x^2-a^2})\)</span>，(4) <span class="arithmatex">\(\sqrt{x+\sqrt{x+\cos x}}\)</span>，(5) <span class="arithmatex">\(\frac14\ln\frac{1+x}{1-x}-\frac12\tan^{-1}x\)</span>，(6) <span class="arithmatex">\(\sin x\cos x\cos 2x\cos 4x\)</span></li>
+<li>(1) <span class="arithmatex">\(f(x)=\prod\limits_{i=0}^{1000}(x-i)\)</span>，求 <span class="arithmatex">\(f'(0)\)</span>；(2) <span class="arithmatex">\(f(t)=\lim\limits_{x\to∞}t(\frac{x+t}{x-t})^x\)</span>，求 <span class="arithmatex">\(f'(t)\)</span></li>
+<li>(1) <span class="arithmatex">\(y=f(\frac{3x-2}{3x+2})\)</span>，<span class="arithmatex">\(f'(x)=\tan^{-1}x^2\)</span>，求 <span class="arithmatex">\(\frac{dy}{d_x}|_{x=0}\)</span>；(2) <span class="arithmatex">\(y=\tan^{-1}f(\sqrt x)+g(\tan^{-1}x^2)\)</span>，求 <span class="arithmatex">\(\frac{dy}{d_x}\)</span>（f 和 g 可导）；(3) <span class="arithmatex">\(y=e^{f^2(x)}f(e^{x^2})\)</span>，求 <span class="arithmatex">\(\frac{dy}{d_x}\)</span></li>
+<li><span class="arithmatex">\(f(x)=\sum\limits_{i=1}^na_i\sin(ix)\)</span>，<span class="arithmatex">\(|f(x)|\le|\sin x|\)</span>，证：<span class="arithmatex">\(|\sum\limits_{i=1}^nia_i|\le1\)</span></li>
+<li>(1) <span class="arithmatex">\(\tan^{-1}\frac yx=\ln\sqrt{x^2+y^2}\)</span>，求 <span class="arithmatex">\(\frac{dy}{d_x}\)</span>；(2) <span class="arithmatex">\(\sin xy+\ln(y-x)=x\)</span>，求 <span class="arithmatex">\(\frac{dy}{d_x}|_{x=0}\)</span>；(3) <span class="arithmatex">\(f(x)+2f(\frac1x)=\frac3x\)</span>，求 <span class="arithmatex">\(f'(x)\)</span></li>
+<li>计算 <span class="arithmatex">\(\frac{dy}{d_x}\)</span>：(1) <span class="arithmatex">\(x^y=y^x\)</span>，(2) <span class="arithmatex">\(y=\frac{(x-2)^3\sqrt{x-5}}{\sqrt[3]{x+1}}\)</span>，(3) <span class="arithmatex">\(x^{y^2}+y^2\ln x=4\)</span></li>
+<li>(1) <span class="arithmatex">\(\begin{cases}x=t-\ln(1+t)\\y=t^3+t^2\end{cases}\)</span>，计算 <span class="arithmatex">\(\frac{dy}{d_x}\)</span>；(2) <span class="arithmatex">\(\begin{cases}x=e^{\sin t}\\y=\sin e^t\\z=t^2\end{cases}\)</span>，计算 <span class="arithmatex">\(\frac{dx}{d_z},\frac{dy}{d_z}\)</span></li>
+<li>曲线 <span class="arithmatex">\(\begin{cases}x+t(1-t)=0\\te^y+y+1=0\end{cases}\)</span> 在 <span class="arithmatex">\(t=0\)</span> 处的切线方程</li>
+<li>(1) <span class="arithmatex">\(y=e^{\pi-3x}\cos 3x\)</span>，计算 <span class="arithmatex">\(dy|_{x=\frac\pi3}\)</span>；(2) <span class="arithmatex">\(y=e^{\sin x}+\ln\cos\sqrt x\)</span>，计算 <span class="arithmatex">\(dy\)</span>；(3) <span class="arithmatex">\(y=f(\tan^{-1}\frac1x)\)</span>，求 <span class="arithmatex">\(dy\)</span>（f 可导）；(4) <span class="arithmatex">\(e^{x+y}-y\sin x=0\)</span>，求 <span class="arithmatex">\(dy\)</span></li>
+<li>(1) <span class="arithmatex">\(f'(\cos x)=\cos 2x\)</span>，求 <span class="arithmatex">\(f''(x)\)</span>；(2) <span class="arithmatex">\(e^{x+y}-xy=1\)</span>，求 <span class="arithmatex">\(y''(0)\)</span>；(3) <span class="arithmatex">\(\begin{cases}x=e^{2t}-1\\y=2e^t\end{cases}\)</span>，求 <span class="arithmatex">\(y''\)</span>；(4) <span class="arithmatex">\(u=f(\varphi(x)+y^2)\)</span>，<span class="arithmatex">\(y+e^y=x\)</span>，求 <span class="arithmatex">\(\frac{d^2u}{d_{x^2}}\)</span>（f 和 <span class="arithmatex">\(\varphi\)</span> 二阶可导）</li>
+<li>使用变换 <span class="arithmatex">\(\begin{cases}u=\tan y\\x=e^t\end{cases}\)</span> 将方程 <span class="arithmatex">\(x^2\frac{d^2y}{d_{x^2}}+2x^2\tan y(\frac{dy}{d_x})^2+x\frac{dy}{d_x}-\sin y\cos y=0\)</span> 化为 u 关于 t 的方程</li>
+<li>计算 <span class="arithmatex">\(y^{(n)}\)</span>：<span class="arithmatex">\(y=\frac1{x^2-5x+4}\)</span>，<span class="arithmatex">\(y=\cos^2x\)</span>，<span class="arithmatex">\(y=\frac{x^3}{1-x}\)</span></li>
+<li><span class="arithmatex">\((x^2\sin 2x)^{(n)}\)</span></li>
+<li>证明 <span class="arithmatex">\(y=\tan^{-1}x\)</span> 满足：<span class="arithmatex">\((1+x^2)y^{(n)}+2(n-1)xy^{(n-1)}+(n-1)(n-2)y^{(n-2)}=0\)</span>（<span class="arithmatex">\(n\ge2\)</span>）</li>
+</ol>
+</div>
+<h3 id="3">3. 中值定理&amp;导数应用</h3>
+<p>注：</p>
+<ol>
+<li>等式存在性 <span class="arithmatex">\(\iff\)</span> 零点存在性</li>
+<li>介值定理（零点定理），罗尔定理 都可以用于证明零点存在性；罗尔定理可以用于反证“不存在多个零点”</li>
+<li>拉格朗日中值定理何时必用？（出现二阶导时？）</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">1. 中值定理</p>
+<ol>
+<li><span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上连续，在 <span class="arithmatex">\((a,b)\)</span> 上可导；证：<span class="arithmatex">\(\exists x\in(a,b)\)</span>，使得 <span class="arithmatex">\(f'(x)=\frac{f(x)-f(a)}{b-x}\)</span></li>
+<li>证：<span class="arithmatex">\(4ax^3+3bx^2+2cx=a+b+c\)</span> 至少存在一个小于 1 的正根</li>
+<li>f 在 <span class="arithmatex">\([0,1]\)</span> 可导，<span class="arithmatex">\(\exists x\in[0,1],f(x)\in(0,1)\)</span>，<span class="arithmatex">\(\forall x\in(0,1),f'(x)\ne1\)</span>；证：<span class="arithmatex">\(x\in(0,1)\)</span>，使得 <span class="arithmatex">\(f(x)=x\)</span></li>
+<li>f 在 <span class="arithmatex">\([0,1]\)</span> 连续，<span class="arithmatex">\((0,1)\)</span> 可微，且 <span class="arithmatex">\(f(0)=0,f(1)=1\)</span>；证：存在 <span class="arithmatex">\(x\in(a,b)\)</span> 使 <span class="arithmatex">\(e^{x-1}(f(x)+f'(x))=1\)</span></li>
+<li>f 在 <span class="arithmatex">\([a,b]\)</span> 连续，在 <span class="arithmatex">\((a,b)\)</span> 二阶可导，连接 <span class="arithmatex">\((a,f(a))\)</span> 和 <span class="arithmatex">\((b,f(b))\)</span> 的直线与 <span class="arithmatex">\(y=f(x)\)</span> 交于 <span class="arithmatex">\((c,f(c))\)</span>；证：存在 <span class="arithmatex">\(x\in(a,b)\)</span> 使得 <span class="arithmatex">\(f''(x)=0\)</span></li>
+</ol>
+</div>
+<h3 id="4">4. 不定积分</h3>
+<div class="admonition note">
+<p class="admonition-title">1. 不定积分1</p>
+<ol>
+<li><span class="arithmatex">\(\frac1{\sqrt{4-x^2}\sin^{-1}\frac x2}\)</span>，<span class="arithmatex">\(\sqrt{1+\sin x}\)</span>，<span class="arithmatex">\(\frac{\ln\tan x}{\sin 2x}\)</span>，<span class="arithmatex">\(\frac{\tan x}{a^2\sin^2x+b^2\cos^2x}\)</span>（<span class="arithmatex">\(a\ne0\)</span>）</li>
+<li><span class="arithmatex">\(x^3\sqrt{4-x^2}\)</span>，<span class="arithmatex">\(\frac1{x(x^n+4)}\)</span>，<span class="arithmatex">\(\frac1{\sin x+\tan x}\)</span>，<span class="arithmatex">\(\frac{e^x}{e^x+2+3e^{-x}}\)</span></li>
+<li><span class="arithmatex">\((x\ln x)^{\frac32}(\ln x+1)\)</span>，<span class="arithmatex">\(\frac{1-\ln x}{(x-\ln x)^2}\)</span>，<span class="arithmatex">\(\frac{1+x}{x(1+xe^x)}\)</span>，<span class="arithmatex">\(\frac{e^{\sin 2x}\sin^2x}{e^{2x}}\)</span></li>
+<li><span class="arithmatex">\(\frac{x}{(x^2+1)\sqrt{1-x^2}}\)</span>，<span class="arithmatex">\(\frac{x+1}{\sqrt{-x^2-4x}}\)</span></li>
+<li><span class="arithmatex">\(\frac1{x^2(2+x^3)^{\frac53}}\)</span>，<span class="arithmatex">\(\frac1{x^4\sqrt{1+x^2}}\)</span></li>
 </ol>
 </div>
 </article>

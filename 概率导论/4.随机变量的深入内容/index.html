@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -187,7 +190,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
+<a class="md-tabs__link md-tabs__link--active" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
         概率导论
       </a>
 </li>
@@ -551,6 +554,16 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/">
+        术语和定义
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%BB%83%E4%B9%A0/">
+        练习
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%26%E6%A6%82%E7%8E%87/">
         1.样本空间&amp;概率
       </a>
@@ -567,9 +580,26 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          4.随机变量的深入内容
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         4.随机变量的深入内容
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 随机变量函数的概率密度函数
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../5.%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/">
@@ -738,6 +768,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 随机变量函数的概率密度函数
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -745,6 +786,79 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>4.随机变量的深入内容</h1>
+<p>本章引入一些更深入的内容. 我们介绍如下一些有用的方法：</p>
+<ol>
+<li>推导出关于一个或者多个随机变量的函数的分布</li>
+<li>处理独立随机变量和的问题，包括求和的随机变量的个数自身也是随机的情形</li>
+<li>量化两个随机变量之间的相依程度</li>
+</ol>
+<p>为实现这些目标, 我们介绍了一些工具，包括<strong>矩母函数</strong>和<strong>卷积</strong>，并且我们将细化对<strong>条件期望</strong>概念的理解</p>
+<p>学习第5~7章时, 并不需要本章内容作为基础，因此，在首次阅读本书时可将本章视为选读内容</p>
+<p>然而，这里讨论的很多概念和方法为<strong>概率论</strong>和<strong>随机过程</strong>提供了更深入的研究背景，并为应用概率论和随机过程的其他学科提供了有力的工具. 但是，4.2 和 4.3 节所提到的概念，是第 8 章和第 9 章中学习统计推断的准备知识</p>
+<h3 id="1">1. 随机变量函数的概率密度函数</h3>
+<div class="admonition note">
+<p class="admonition-title">随机变量函数的 PDF</p>
+</div>
+<blockquote>
+<p>假设 X 的概率密度函数已知，计算 <span class="arithmatex">\(Y=g(X)\)</span> 的概率密度函数：</p>
+<ol>
+<li>计算 Y 的分布函数 CDF：<span class="arithmatex">\(F_Y(y)=P(g(X)\le y)=\int_{\{x|g(x)\le y\}}f_X(x)~d_x\)</span><ol>
+<li>若 g 单射，有 <span class="arithmatex">\(F_Y(y)=P(X\le g^{-1}(y))=F_X(g^{-1}(y))=\int_{-∞}^{g^{-1}(y)}f_X(x)~d_x\)</span>）</li>
+<li>或者有 <span class="arithmatex">\(F_Y(y)=P(X\ge h(y))=1-P(X\le h(y))=1-F_X(h(y))\)</span></li>
+</ol>
+</li>
+<li>对 <span class="arithmatex">\(F_Y\)</span> 求导，得到 Y 的 PDF：<span class="arithmatex">\(f_Y(y)=\frac{dF_Y}{d_y}(y)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li><span class="arithmatex">\(Y=\sqrt X\)</span>：<span class="arithmatex">\(F_Y(y)=y^2\)</span>，<span class="arithmatex">\(f_Y(y)=2y\)</span>（<span class="arithmatex">\(\sqrt{x_l}\le y\le\sqrt{x_r}\)</span>）</li>
+<li><span class="arithmatex">\(Y=\frac kX\)</span>（<span class="arithmatex">\(k&gt;0\)</span>）：<span class="arithmatex">\(F_Y(y)=1-F_X(\frac ky)\)</span>，<span class="arithmatex">\(f_Y(y)=\frac k{y^2}f_X(\frac ky)\)</span>（<span class="arithmatex">\(\frac k{x_r}\le y\le \frac k{x_l}\)</span>）</li>
+<li><span class="arithmatex">\(Y=X^2\)</span>：<span class="arithmatex">\(F_Y(y)=F_X(\sqrt y)-F_X(-\sqrt y)\)</span>，<span class="arithmatex">\(f_Y(y)=\frac1{2\sqrt y}[f_X(\sqrt y)+f_X(-\sqrt y)]\)</span>（<span class="arithmatex">\(x_l^2\le y\le x_r^2\)</span>）</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">线性函数</p>
+</div>
+<blockquote>
+<p>假设随机变量 <span class="arithmatex">\(Y=aX+b\)</span> （<span class="arithmatex">\(a\ne0\)</span>）是随机变量 X 的线性函数；X 的 PDF 和 CDF 分别为 <span class="arithmatex">\(f_X(x),F_X(x)\)</span></p>
+<p>那么 X 的 CDF 为：<span class="arithmatex">\(F_Y(y)=\begin{cases}F_X(\frac{y-b}a)&amp;a&gt;0\\1-F_X(\frac{y-b}a)&amp;a&lt;0\end{cases}\)</span></p>
+<p>X 的 PDF 为：<span class="arithmatex">\(f_Y(y)=\frac{dF_Y}{d_y}(y)=\frac1{|a|}f_X(\frac{y-b}a)\)</span>（<span class="arithmatex">\(ax_l+b\le y\le ax_r+b\)</span> 或 <span class="arithmatex">\(ax_r+b\le y\le ax_l+b\)</span>）</p>
+<p>从 PDF 的图像上看，<span class="arithmatex">\(f_Y\)</span> 将 <span class="arithmatex">\(f_X\)</span> 在 x 轴方向上拉长 |a| 倍（若 <span class="arithmatex">\(a&lt;0\)</span>，则附带 x 轴方向翻转），而在 y 轴方向上缩短为 <span class="arithmatex">\(\frac1{|a|}\)</span> 倍</p>
+<p>例1：指数随机变量线性函数的 PDF 为：<span class="arithmatex">\(f_Y(y)=\frac\lambda{|a|}e^{-\lambda(y-b)/a}\)</span>（<span class="arithmatex">\((y-b)/a\ge 0\)</span>）；<span class="arithmatex">\(b=0,a&gt;0\)</span> 时，Y 是参数为 <span class="arithmatex">\(\frac\lambda a\)</span> 的指数随机变量</p>
+<p>例2：正态随机变量（均值和方差分别为 <span class="arithmatex">\(\mu,\sigma\)</span>）线性函数的 PDF 为：<span class="arithmatex">\(f_Y(y)=\frac1{\sqrt{2\pi}|a|\sigma}e^{-(y-b-a\mu)^2/(2a^2\sigma^2)}\)</span>；Y 依然为正态随机变量，均值/方差/标准差 分别为 <span class="arithmatex">\(\mu_y=a\mu+b,\sigma_y^2=a^2\sigma^2,\sigma_y=|a|\sigma\)</span>（这些参数性质不仅限于 X 是正态随机变量）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">单调函数</p>
+</div>
+<blockquote>
+<p>假设随机变量 <span class="arithmatex">\(Y=g(X)\)</span>，其中 g 在 X 的取值空间 I（<span class="arithmatex">\(对于所有 x\notin I\)</span>，<span class="arithmatex">\(f_X(x)=0\)</span>）内<strong>严格单调</strong>，</p>
+<p>那么 g 是可逆的，设其逆为 <span class="arithmatex">\(h=f^{-1}\)</span></p>
+<p>易证 Y 的 CDF 为 <span class="arithmatex">\(F_Y(y)=\begin{cases}F_X(h(y))&amp;g严格递增\\1-F_X(h(y))&amp;g严格递减\end{cases}\)</span></p>
+<p>Y 的 PDF 为：<span class="arithmatex">\(f_Y(y)=|\frac{dh}{d_y}(y)|f_X(h(y))\)</span>（<span class="arithmatex">\(g(x_l)\le y\le g(x_r)\)</span> 或 <span class="arithmatex">\(g(x_r)\le y\le g(x_l)\)</span>）</p>
+<p>对于上述公式的直观理解参见 p234-235</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">两个随机变量的函数</p>
+</div>
+<blockquote>
+<p>复合随机变量 <span class="arithmatex">\(Z=g(X,Y)\)</span> 的联合 PDF 与一个随机变量的情况类似，但更复杂</p>
+<ol>
+<li>计算分布函数；有时用到随机变量之间的独立性，有时用图像来分析 CDF 更方便（注：不等号的改变）</li>
+<li>对 CDF 进行微分得到 PDF</li>
+</ol>
+<p>例1：X 和 Y 在 <span class="arithmatex">\([0,1]\)</span> 上连续均匀分布，且相互独立；结合图像可得到 <span class="arithmatex">\(Z=X/Y\)</span> 的 CDF 和 PDF 分别为 <span class="arithmatex">\(F_Z(z)=P(\frac YX\le z)=\begin{cases}\frac z2&amp;z\in[0,1]\\1-\frac1{2z}&amp;z&gt;1\\0&amp;其他\end{cases}\)</span>，<span class="arithmatex">\(f_Z(z)=P(\frac YX\le z)=\begin{cases}\frac 12&amp;z\in[0,1]\\\frac1{2z^2}&amp;z&gt;1\\0&amp;其他\end{cases}\)</span></p>
+<p>例2：记 X 和 Y 分别是罗密欧和朱丽叶约会时到达的时间(假定约会时刻为0)；X 和 Y 均是参数为 <span class="arithmatex">\(\lambda\)</span> 的指数随机变量；设 <span class="arithmatex">\(Z=X-Y\)</span>，结合图像可以得到 Z 的 CDF 和 PDF 分别为：<span class="arithmatex">\(F_Z(z)=P(X-Y\le z)=\begin{cases}1-\frac12e^{-\lambda z}&amp;z\ge0\\\frac12e^{\lambda z}&amp;z&lt;0\end{cases}\)</span>，<span class="arithmatex">\(f_Z(z)=P(X-Y\le z)=\begin{cases}\frac\lambda2e^{-\lambda z}&amp;z\ge0\\\frac\lambda2e^{\lambda z}&amp;z&lt;0\end{cases}=\frac\lambda2e^{-|\lambda| z}\)</span></p>
+<p>这就是著名的<strong>双边指数</strong>概率密度函数，也称为<strong>拉普拉斯</strong>概率密度函数</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">独立随机变量和——卷积</p>
+</div>
+<blockquote>
+<p>假设 X 和 Y 是两个独立的随机变量，考虑 <span class="arithmatex">\(Z=X+Y\)</span> 的分布</p>
+<p>若 X 和 Y 都是离散的，Z 的分布列为 <span class="arithmatex">\(p_Z(z)=P(Z=z)=P(X+Y=z)=\sum\limits_{\{(x,y)|x+y=z\}}P(X=x,Y=y)=\sum\limits_xP(X=x,Y=z-x)=\sum\limits_xp_X(x)p_Y(z-x)\)</span></p>
+</blockquote>
 </article>
 </div>
 </div>
