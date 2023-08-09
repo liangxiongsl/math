@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -587,9 +590,31 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          6.伯努利过程&amp;泊松过程
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         6.伯努利过程&amp;泊松过程
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 伯努利过程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 泊松过程
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../7.%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE/">
@@ -748,6 +773,22 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 伯努利过程
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 泊松过程
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -755,6 +796,404 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>6.伯努利过程&amp;泊松过程</h1>
+<p><strong>随机过程</strong>是处理包含时间以及数据序列的概率模型，比如随机过程可用于如下<strong>数据序列</strong>建模：</p>
+<ol>
+<li>每天的股票价格数据序列</li>
+<li>足球比赛得分数据序列</li>
+<li>机器失效时间数据序列</li>
+<li>交通网络中的每个点的交通负荷数据序列</li>
+<li>雷达对一架飞机的定位数据序列</li>
+</ol>
+<p>序列中每个数据视为一个随机变量，所以简单地说，随机过程就是一串（有限或者无限）随机变量序列，与概率的基本概念没有本质区别</p>
+<p>设在某个试验的样本空间中的每一个试验结果，对应着一个数列，这个数列中的每一个数，都对应着一个随机变量</p>
+<p>（注：在随机过程中产生的随机变量都是通常的随机变量，它们都定义在一个相同的样本空间上；相应的概率规律只要求明确无误地确定所有随机变量集合的任何子集的联合分布，而这些联合分布之间应该具有某种相容性）</p>
+<div class="admonition note">
+<p class="admonition-title">随机过程与随机变量序列的区别</p>
+<ol>
+<li>我们更倾向于强调过程中产生的数据序列之间的<strong>相关</strong>关系；如：股票的未来价格与历史价格是什么关系?</li>
+<li>我们对整个过程中<strong>长期均值</strong>感兴趣；如：有多大比例的时间，机器处于闲置?</li>
+<li>有时需要刻画某些<strong>边界事件</strong>的似然或者频率；如：在给定的时间内，电话系统里所有的电路同时处于忙碌状态的概率是多少? 计算机网络中缓冲器数据溢出的频率是多少?</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">随机过程的种类</p>
+<ol>
+<li>到达过程：我们感兴趣的是某种<strong>“到达” 特性</strong>是否发生；如：接收器接收信号的时刻，生产线上的工作完成时刻，商店顾客的购买行为的实施时刻；我们重点研究相邻到达时间(即两次到达之间的时间)是相互独立的随机变量的模型<ol>
+<li>在6.1节，我们考虑到达时间是<strong>离散</strong>的情形，相邻时间服从几何分布，即<strong>伯努利过程</strong></li>
+<li>在6.2节，我们考虑到达时间是<strong>连续</strong>的情形，相邻时间服从指数分布，即<strong>泊松过程</strong></li>
+</ol>
+</li>
+<li>马尔可夫过程：考虑数据在时间点上演化，而且未来数据的演化与历史数据有概率相关结构<ol>
+<li>如：股票的未来价格明显依赖于过去的价格</li>
+<li>但是在马尔可夫过程中，我们假设一类特殊的<strong>相关</strong>：未来的数据只依赖于当前的数据，而与过去的数据无关</li>
+<li>对于马尔可夫过程，概率统计学家积累了丰富的研究成果，处理方法也已经成熟，这是第 7 章讨论的主题</li>
+</ol>
+</li>
+<li>注：随机过程的种类非常多，不仅限于上述讨论的过程</li>
+</ol>
+</div>
+<h3 id="1">1. 伯努利过程</h3>
+<p>一般而言，伯努利过程是由一串伯努利试验组成；每次试验以概率 p 产生数据1(成功)，以概率 1-p 产生数据0 (失败)，而且跟试验序列中的其他试验是相互独立的</p>
+<p>当然, 投掷硬币只是对独立二进制输出数据的一个范例说明；比如，伯努利过程经常用于对诸如顾客到来，服务中心找到工作等系统进行建模；这里，时间被<strong>离散化</strong>为若干时间段，在第 k 段时间内，至少有一个顾客到达服务中心，就视为第 k 次试验“成功”；因此，我们常常使用“到达”这个词语。而不用“成功”，这是由实际背景决定的</p>
+<div class="admonition note">
+<p class="admonition-title">伯努利过程</p>
+</div>
+<blockquote>
+<p>伯努利过程视为一串<strong>相互独立</strong>的伯努利随机变量序列 <span class="arithmatex">\(X_1,\dots,X_n\)</span>，且对任意的 i：</p>
+<p><span class="arithmatex">\(P(X_i=1)=P(\text{第 i 次试验成功})=p\)</span></p>
+<p><span class="arithmatex">\(P(X_i=0)=P(\text{第 i 次试验失败})=1-p\)</span></p>
+<p>注：人们常常感兴趣的事一定时间内到达的总到达次数，或者首次到达的时间</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">伯努利过程相关随机变量及其性质</p>
+</div>
+<blockquote>
+<p>(1) 服从参数为 n 和 p 的二项分布：这是 n 次相继独立的试验成果的总次数 S 的分布，它的参数如下：</p>
+<p><span class="arithmatex">\(p_S(k)=\binom nkp^k(1-p)^{n-k}\)</span>（<span class="arithmatex">\(k=0..n\)</span>）</p>
+<p><span class="arithmatex">\(E[S]=np,\text{var}(S)=np(1-p)\)</span></p>
+<p>(2) 服从参数为 p 的几何分布：这是相互独立重复的伯努利试验首次成功的时刻 T 的分布，它的参数如下：</p>
+<p><span class="arithmatex">\(p_T(t)=p(1-p)^{t-1}\)</span>（<span class="arithmatex">\(t=1,2,\dots\)</span>）</p>
+<p><span class="arithmatex">\(E[T]=\frac1p,\text{var}(T)=\frac{1-p}{p^2}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">重新开始</p>
+</div>
+<blockquote>
+<p>现在假设伯努利过程运行了n 次，得到了观测数据 <span class="arithmatex">\(X_1,\dots,X_n\)</span>，未来试验序列 <span class="arithmatex">\(X_{n+1},X_{n+2},\dots\)</span> 仍然是独立的伯努利试验，形成了新的伯努利过程；进一步，这些未来试验与过去的试验都是独立的</p>
+<p>结论：从任意一个时刻开始，未来也可以用相同的伯努利过程来建模，而且与过去相互独立；人们称这种伯努利过程性质为<strong>重新开始</strong></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">无记忆性质</p>
+</div>
+<blockquote>
+<p>伯努利过程首次成功时试验的总次数 T 服从几何分布</p>
+<p>假设我们已经观察过程 n 步，但是没有“成功”结果出现</p>
+<p>考察直到出现“成功”的结果的 <span class="arithmatex">\(T-n\)</span> 次试验：<span class="arithmatex">\(P(T-n=t|T&gt;n)=p(1-p)^{t-1}=P(T=t)\)</span>（<span class="arithmatex">\(t=1,2,\dots\)</span>）</p>
+<p>也就是说，直到出现“成功”的结果的未来试验次数仍然是相同的几何分布；这种性质称为<strong>无记忆</strong>性质</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">独立性质</p>
+</div>
+<blockquote>
+<p>对于任意给定的时刻 n，随机变量序列 <span class="arithmatex">\(X_{n+1},X_{n+2},\dots\)</span>（过程的将来）也是伯努利过程，而且与 <span class="arithmatex">\(X_1,\dots,X_n\)</span>（过程的过去）独立</p>
+<p>对任意给定的时刻 n，令 <span class="arithmatex">\(\bar T\)</span> 是时刻 n 之后首次成功的时刻，则随机变量 <span class="arithmatex">\(\bar T-n\)</span> 服从参数为 p 的几何分布，且与随机变量 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 独立</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算机执行任务（详见 p325）：钙离子说明过程随时可以重新开始</li>
+<li>随机事件的重新新开始：设 N 是第一次连续遇到两次成功的时刻（即 <span class="arithmatex">\(N=\{i~|~X_{i-1}=X_i=1\}\)</span>），求紧接着两次试验都失败的概率概率 <span class="arithmatex">\(P(X_{N+1}=X_{N+2}=0)\)</span><ol>
+<li>由于条件 <span class="arithmatex">\(X_{N-1}=X_n=1\)</span> 已满足，所以未来的过程由独立的伯努利试验组成，即关于未来事件的概率与重新开始的伯努利过程的相应概率是一样的，所以 <span class="arithmatex">\(P(X_{N+1}=X_{N+2}=0)=(1-p)^2\)</span></li>
+<li>严格证明：<span class="arithmatex">\(P(X_{N+1}=X_{N+2}=0)=\sum\limits_{n=1}^∞P(N=n)P(X_{N+1}=X_{N+2}=0|N=n)=\sum\limits_{n=1}^∞P(N=n)P(X_{n+1}=X_{n+2}=0|N=n)\)</span></li>
+<li>N 确定后，事件 <span class="arithmatex">\(\{N=n\}\)</span> 发生，当且仅当 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 满足某个特定条件，而这些随机变量与 <span class="arithmatex">\(X_{n+1},X_{n+2},\dots\)</span> 是独立的，所以 <span class="arithmatex">\(P(X_{n+1}=X_{n+2}=0|N=n)=P(X_{n+1}=X_{n+2}=0)=(1-p)^2\)</span></li>
+<li>于是 <span class="arithmatex">\(P(X_{N+1}=X_{N+2}=0)=\sum\limits_{n=1}^∞P(N=n)(1-p)^2=(1-p)^2\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">相邻到达间隔时间</p>
+</div>
+<blockquote>
+<p>定义随机变量 <span class="arithmatex">\(T_k\)</span> 为第 k 次成功（或到达）的时间；易知 <span class="arithmatex">\(T_1,T_2,\dots\)</span> 相互独立，而且具有相同的几何分布</p>
+<p>随机变量 <span class="arithmatex">\(Y_k\)</span> 为第 k 次相邻到达的间隔时间，即 <span class="arithmatex">\(Y_1=T_1,Y_k=T_k-T_{k-1}\)</span></p>
+<p>满足 <span class="arithmatex">\(T_k=\sum\limits_{i=1}^kY_i\)</span></p>
+<p>伯努利过程的另一种描述：</p>
+<ol>
+<li>开始于一串相互独立的，参数为 p 的几何分布随机变量序列 <span class="arithmatex">\(T_1,T_2,\dots\)</span>，它们是相邻到达时间间隔</li>
+<li>观测成功(或到达)的时间为 <span class="arithmatex">\(T_1,T_1+T_2,T_1+T_2+T_3,\dots\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 k 次到达的时间</p>
+</div>
+<blockquote>
+<p>第 k 次到达的时间 <span class="arithmatex">\(Y_k\)</span> 等于 k 个独立同分布，服从<strong>几何分布</strong>的随机变量之和</p>
+<ol>
+<li>第 k 次到达的时间等于前 k 个相邻到达时间之和 <span class="arithmatex">\(Y_k=\sum\limits_{i=1}^kT_i\)</span>；而且 <span class="arithmatex">\(T_1,\dots,T_k\)</span> 独立同分布，服从参数为 p 的几何分布</li>
+<li><span class="arithmatex">\(E[Y_k]=\sum\limits_{i=1}^kE[T_i]=\frac kp\)</span>，<span class="arithmatex">\(\text{var}(Y_k)=\sum\limits_{i=1}^k\text{var}(T_i)=\frac{k(1-p)}{p^2}\)</span></li>
+<li><span class="arithmatex">\(p_{Y_k}(t)=\binom{t-1}{k-1}p^k(1-p)^{t-k}\)</span>（<span class="arithmatex">\(t=k,k+1,\dots\)</span>）</li>
+</ol>
+<p>这就是著名的<strong>阶数为 k 的帕斯卡分布</strong></p>
+<p>注：<span class="arithmatex">\(\{Y_k=t\}\)</span> 发生，当且仅当 “前 <span class="arithmatex">\(t-1\)</span> 次试验有 <span class="arithmatex">\(k-1\)</span> 次到达” 和 “第 t 次试验到达了 1 次”；于是 <span class="arithmatex">\(p_{Y_k}(t)=P(Y_k=t)=\binom{t-1}{k-1}p^{k-1}(1-p)^{t-k}\cdot p=\binom{t-1}{k-1}p^k(1-p)^{t-k}\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>在篮球比赛中，老王每分钟犯一次规的概率是 p，不同分钟内是否犯规是相互独立的；老王犯了 6  次规后，会被罚出场；如果一场比赛 30 分钟，计算老王参赛的时间的分布列？（若第 6 次犯规后，老王会在那一分钟结束后出场）<ol>
+<li>设随机变量 Z 为老王参赛时长</li>
+<li>(1) 若第 6 次犯规在第 <span class="arithmatex">\(6\sim29\)</span> 分钟内到达，那么 <span class="arithmatex">\(Z=Y_6\)</span>（6 阶帕斯卡分布）</li>
+<li>(2) 其余情况的概率恰好能用 (1) 的补事件的概率来表示</li>
+<li>于是 <span class="arithmatex">\(p_Z(z)=\begin{cases}p_{Y_6}(z)=\binom {z-1}5p^6(1-p)^{t-6}&amp;z=6..29\\1-\sum\limits_{i=1}^{29}p_{Y_6}(i)&amp;z=30\end{cases}\)</span>（注：<span class="arithmatex">\(Z=\min\{Y_6,30\}\)</span>）</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">伯努利过程的分裂和合并</p>
+</div>
+<blockquote>
+<p>分裂：伯努利过程每次到达的概率为 p，每当有一个到达时，我们选择或者保留下来(概率为 q )，或者抛弃(概率为 1-q )，保留还是抛弃的
+决定在不同的到达时间是相互独立的；保留下来的过程，以及 被抛弃的到达过程 都是伯努利过程</p>
+<p>合并：有两个独立的伯努利过程(参数分别是 p 和 q )，一个到达被收录到合并的过程中，当且仅当在这两个原始的过程中，至少有一个是到达状态，该事件的概率是 <span class="arithmatex">\(1-(1-p)(1-q)=p+q-pq\)</span>；既然不同的瞬间两个过程是相互独立的，合并后的不同的瞬间仍然是独立的，所以合并后的过程仍是伯努利过程，每次成功的概率是 <span class="arithmatex">\(p+q-pq\)</span></p>
+<p>注：伯努利过程(或其他过程)的分裂和合并在实际中经常发生；比如，两个机器工作中心可能有零部件到达流水线，然后把每个零部件随机分开到某一个机器；反之，一个机器可能面临许多不同类型的零部件，然后合并成一条流水线</p>
+</blockquote>
+<p>n 次独立的伯努利试验成功的次数是一个二项分布的随机变量，参数为 n 和 p，期望为 np</p>
+<p>在本小节里,我们集中处理一类特殊的情况：n 充分大，而 p 很小，均值 np 比较适中（连续情况参考 6.2）</p>
+<div class="admonition note">
+<p class="admonition-title">二项分布的泊松近似</p>
+</div>
+<blockquote>
+<ul>
+<li>参数为 <span class="arithmatex">\(\lambda\)</span> 的泊松随机变量 Z 取非负整数值；其分布列，均值，方差分别为 <span class="arithmatex">\(p_Z(k)=e^{-\lambda}\frac{\lambda^k}{k!}\)</span>，<span class="arithmatex">\(E[Z]=\lambda\)</span>，<span class="arithmatex">\(\text{var}(Z)=\lambda\)</span></li>
+<li>当 <span class="arithmatex">\(n\to∞\)</span>，<span class="arithmatex">\(p=\lambda/n\)</span> 时，二项分布的概率 <span class="arithmatex">\(p_S(k)=\binom nkp^k(1-p)^{n-k}\)</span> 收敛到 <span class="arithmatex">\(p_Z(k)\)</span>（其中 <span class="arithmatex">\(\lambda\)</span> 是常数，k 是任意固定的非负整数）</li>
+<li>一般而言，泊松分布是二项分布的一个很好的近似，只要 <span class="arithmatex">\(\lambda=np\)</span>，n 充分大，p 充分小</li>
+</ul>
+</blockquote>
+<p>证明：</p>
+<p>令 <span class="arithmatex">\(p=\lambda/n\)</span>，</p>
+<p>于是 <span class="arithmatex">\(p_S(k)=\binom nkp^k(1-p)^{n-k}=\frac{n!/(n-k)!}{k!}\cdot\frac{\lambda^k}{n^k}(1-\frac \lambda n)^{n-k}=(\prod\limits_{i=0}^{k-1}\frac{n-i}{n})\frac{\lambda^k}{k!}(1-\frac \lambda n)^{n-k}\)</span></p>
+<p><span class="arithmatex">\(\lim\limits_{n\to∞}p_S(k)=\lim\limits_{n\to∞}(\prod\limits_{i=0}^{k-1}\frac{n-i}{n})\frac{\lambda^k}{k!}(1-\frac \lambda n)^{n-k}=\frac{\lambda^k}{k!}e^{-\lambda}=p_Z(k)\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子(p332)</p>
+<ol>
+<li>加里·卡斯帕罗夫的象棋比赛</li>
+<li>数据传输</li>
+</ol>
+</div>
+<h3 id="2">2. 泊松过程</h3>
+<p>跟伯努利过程相比，泊松过程是连续时间轴上的到达过程</p>
+<p>通常，一个到达过程在应用上无法将连续时间离散化时，就采用泊松过程来刻画；可以说泊松过程是伯努利过程的连续版本</p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ul>
+<li>考虑一个城市内交通事故的可能模型：将时间分割成一分钟为单位的时间段，记录每分钟至少发生一次交通事故的“成功”数据，每个时间段发生事故的概率相同并且是常数，不同时间段之间事故的发生相互独立，这样得到的成功数据序列就是伯努利序列</li>
+<li>但是伯努利过程无法计算<strong>给定时间段内事故发生的次数</strong></li>
+<li>如果把划分的时间段变得充分小（趋于零），就能保证一个时间段之内发生不小于两次事故的概率趋于零，于是上述问题就得意解决了，这就是连续性时间模型</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定义</p>
+</div>
+<blockquote>
+<ul>
+<li><span class="arithmatex">\(P(k,\tau)=P(在时间段长度为\tau的时间内有k个到达)\)</span>（<span class="arithmatex">\(k=0,1,\dots\)</span>）</li>
+</ul>
+<p>（它没有指明区间的位置，这意味着，不管这个区间的位置在哪，只要时间区间长度为 <span class="arithmatex">\(\tau\)</span>，这个区间内的到达数的分布律就是 <span class="arithmatex">\(P(k,\tau)\)</span>）</p>
+<ul>
+<li><span class="arithmatex">\(\lambda\)</span>：该参数称为<strong>到达率</strong>或<strong>强度</strong>（<span class="arithmatex">\(\lambda&gt;0\)</span>）</li>
+</ul>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">泊松过程</p>
+</div>
+<blockquote>
+<p>一个到达过程称为强度为 <span class="arithmatex">\(\lambda\)</span> 的泊松过程，当且仅当该过程满足如下性质：</p>
+<ol>
+<li><strong>时间同质性</strong>：k 次到达的概率 <span class="arithmatex">\(P(k,\tau)\)</span> 在相同长度 <span class="arithmatex">\(\tau\)</span> 的时间段内都是一样的（与伯努利过程中“所有试验成功的概率都是 p”相对应）</li>
+<li><strong>独立性</strong>：一个特定时间段内到达的数目与其他（不相交的？）时间段内到达的历史是独立的（该性质类比于伯努利过程中试验的独立性）</li>
+<li><strong>小区间概率</strong>：概率 <span class="arithmatex">\(P(k,\tau)\)</span> 满足如下关系：<ol>
+<li><span class="arithmatex">\(P(0,\tau)=1-\lambda\tau-o(\tau)\)</span></li>
+<li><span class="arithmatex">\(P(1,\tau)=\lambda\tau+o_1(\tau)\)</span></li>
+<li><span class="arithmatex">\(P(k,\tau)=o_k(\tau)\)</span>（<span class="arithmatex">\(k=2,3,\dots\)</span>）</li>
+<li><span class="arithmatex">\(\lim\limits_{\tau\to0}\frac{o(\tau)}\tau=0\)</span>，<span class="arithmatex">\(\lim\limits_{\tau\to0}\frac{o_k(\tau)}\tau=0\)</span></li>
+<li>注：这些余弦可以理解为 <span class="arithmatex">\(P(k,\tau)\)</span> 做泰勒展开式，展开式中的 <span class="arithmatex">\(O(\tau^2)\)</span> 项</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">区间内到达的次数</p>
+</div>
+<p>假设一个固定的长度为 <span class="arithmatex">\(\tau\)</span> 的时间区间，将它分成 <span class="arithmatex">\(n=\frac\tau\delta\)</span> 个长度为 <span class="arithmatex">\(\delta\)</span> 的小区间（<span class="arithmatex">\(\delta\)</span> 是一个非常小的数）</p>
+<p>根据泊松过程的性质(3)，每个小区间内，到达一次的概率大致为 <span class="arithmatex">\(\lambda\delta\)</span>，没有到达的概率大致为 <span class="arithmatex">\(1-\lambda\delta\)</span></p>
+<p>所以这个过程大致可以由伯努利过程来近似；<span class="arithmatex">\(\delta\)</span> 越小，这个近似越精确</p>
+<p>在 <span class="arithmatex">\(\tau\)</span> 到达 k 次的频率 <span class="arithmatex">\(P(k,\tau)\)</span> 近似地等于每次试验成功概率为 <span class="arithmatex">\(p=\lambda\delta\)</span>，进行 <span class="arithmatex">\(n=\tau/\delta\)</span> 次独立伯努利试验，而成功 k 次的（二项）概率（<span class="arithmatex">\(P(k,\tau)=\binom{\tau/\delta}{k}(\lambda\delta)^k(1-\lambda\delta)^{\tau/\delta-k}\)</span>）</p>
+<p><span class="arithmatex">\(\tau\)</span> 保持不变，<span class="arithmatex">\(\delta\to0\)</span> 时，<span class="arithmatex">\(n=\frac\tau\delta\to∞\)</span>，<span class="arithmatex">\(p=\lambda\delta\to0\)</span></p>
+<p>而 <span class="arithmatex">\(np=\frac\tau\delta\cdot\lambda\delta=\tau\lambda\)</span> 保持不变，于是 <span class="arithmatex">\(P(k,\tau)\)</span> 趋于参数为 <span class="arithmatex">\(\tau\lambda\)</span> 的泊松分布：</p>
+<p><span class="arithmatex">\(P(k,\tau)=e^{-\lambda\tau}\frac{(\lambda\tau)^k}{k!}\)</span>（<span class="arithmatex">\(k=0,1,\dots\)</span>）</p>
+<p>注意到 <span class="arithmatex">\(e^{-\lambda\tau}\)</span> 的泰勒展开：</p>
+<ul>
+<li><span class="arithmatex">\(P(0,\tau)=e^{-\lambda\tau}=1-\lambda\tau+O(\tau^2)=1-\lambda\tau+o(\tau)\)</span></li>
+<li><span class="arithmatex">\(P(1,\tau)=\lambda\tau e^{-\lambda\tau}=\lambda\tau-(\lambda\tau)^2+O(\tau^3)=\lambda\tau+o_1(\tau)\)</span></li>
+<li>这与 [泊松过程的性质3] 相符</li>
+</ul>
+<p><span class="arithmatex">\(E[N_\tau]=\lambda\tau\)</span>，<span class="arithmatex">\(\text{var}(N_\tau)=\lambda\tau\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">首次到达的时间</p>
+</div>
+<blockquote>
+<p>设随机变量 T 为首次到达的时间</p>
+<p>其分布函数为 <span class="arithmatex">\(F_T(t)=P(T\le t)=1-P(T&gt;t)=1-P(0,t)=1-e^{-\lambda t}\)</span>（<span class="arithmatex">\(t\ge0\)</span>）</p>
+<p>于是 <span class="arithmatex">\(f_T(t)=\frac d{d_t}F_T(t)=\lambda e^{^{-\lambda t}}\)</span>（<span class="arithmatex">\(t\ge0\)</span>）</p>
+<p>这说明首次到达的时间服从参数为 <span class="arithmatex">\(\lambda\)</span> 的<strong>指数分布</strong></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">泊松过程相关的随机变量及其性质</p>
+</div>
+<blockquote>
+<ol>
+<li>服从参数为 <span class="arithmatex">\(\lambda\tau\)</span> 的<strong>泊松分布</strong>：这是泊松过程的强度为 <span class="arithmatex">\(\lambda\)</span>，在时间长度为 <span class="arithmatex">\(\tau\)</span> 的区间内到达的总次数 <span class="arithmatex">\(N_\tau\)</span> 的分布<ul>
+<li>分布列：<span class="arithmatex">\(p_{N_\tau}(k)=P(k,\tau)=e^{-\lambda\tau}\frac{(\lambda\tau)^k}{k!}\)</span>（<span class="arithmatex">\(k=0,1,\dots\)</span>）</li>
+<li>期望和方差分别为：<span class="arithmatex">\(E[N_\tau]=\lambda\tau\)</span>，<span class="arithmatex">\(\text{var}(N_\tau)=\lambda\tau\)</span></li>
+</ul>
+</li>
+<li>服从参数为 <span class="arithmatex">\(\lambda\)</span> 的<strong>指数分布</strong>：这是首次到达的时间 T 的分布<ul>
+<li>概率密度：<span class="arithmatex">\(f_T(t)=\lambda e^{-\lambda t}\)</span>（<span class="arithmatex">\(t\ge0\)</span>）</li>
+<li>期望和方差分别为：<span class="arithmatex">\(E[T]=\frac1\lambda\)</span>，<span class="arithmatex">\(\text{var}(T)=\frac1{\lambda^2}\)</span></li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">\</th>
+<th align="center">泊松</th>
+<th align="center">伯努利</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">到达时间</td>
+<td align="center">连续</td>
+<td align="center">离散</td>
+</tr>
+<tr>
+<td align="center">到达次数的分布</td>
+<td align="center">泊松</td>
+<td align="center">二项</td>
+</tr>
+<tr>
+<td align="center">相邻到达时间的分布</td>
+<td align="center">指数</td>
+<td align="center">几何</td>
+</tr>
+<tr>
+<td align="center">到达率</td>
+<td align="center"><span class="arithmatex">\(\lambda\)</span>/单位时间</td>
+<td align="center"><span class="arithmatex">\(p\)</span>/每次试验</td>
+</tr>
+</tbody>
+</table>
+<p>伯努利过程相对应泊松过程的离散化：将区间分为 <span class="arithmatex">\(\delta\)</span> 的小区间，每个小区间对应一个伯努利试验，参数为 <span class="arithmatex">\(p=\lambda\delta\)</span></p>
+<p>（泊松过程又相当于伯努利过程的极限形式？）</p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设接收电子邮件的强度为每小时 <span class="arithmatex">\(\lambda=0.2\)</span> 封的泊松过程<ol>
+<li>每小时检查一次电子邮件，每次检查电子邮件收到 0 封和 1 封的概率分别为 <span class="arithmatex">\(P(0,1)=e^{-0.2}\)</span>，<span class="arithmatex">\(P(1,1)=0.2e^{-0.2}\)</span></li>
+<li>一天检查一次电子邮件，一封都没有收到的概率为 <span class="arithmatex">\(P(0,24)=e^{-0.2\cdot24}=e^{-4.8}\)</span></li>
+</ol>
+</li>
+<li>独立泊松随机变量之和仍是泊松：顾客去超市购物可以用泊松过程来刻画，强度为每分钟 <span class="arithmatex">\(\lambda\)</span> 个顾客；记 M 为 <span class="arithmatex">\(9:00\)</span> 到 <span class="arithmatex">\(9:10\)</span> 来超时的顾客总数，N 为 <span class="arithmatex">\(9:30\)</span> 到 <span class="arithmatex">\(9:35\)</span> 来超时的顾客总数，那么 <span class="arithmatex">\(N+M\)</span> 的分布是什么？（前文 4.4 节已证得独立泊松之和也是泊松）<ol>
+<li>M 是参数为 <span class="arithmatex">\(\mu=10\cdot10=100\)</span> 的泊松；N 是参数为 <span class="arithmatex">\(\nu=10\cdot5=50\)</span> 的泊松</li>
+<li>记 <span class="arithmatex">\(\bar N\)</span> 是时间 <span class="arithmatex">\(9:10\)</span> 到 <span class="arithmatex">\(9:15\)</span> 来超时的顾客总数，则 <span class="arithmatex">\(\bar N\)</span> 与 N 一样是参数为 50 的泊松，而且 <span class="arithmatex">\(\bar N\)</span> 与 N 独立；所以 <span class="arithmatex">\(M+N\)</span> 的分布与 <span class="arithmatex">\(M+\bar N\)</span> 的分布一样，而 <span class="arithmatex">\(M+\bar N\)</span> 的参数为 <span class="arithmatex">\(10\cdot15=150\)</span>，于是 <span class="arithmatex">\(M+N\)</span> 是参数为 150 的泊松</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">独立性，无记忆性</p>
+</div>
+<blockquote>
+<ol>
+<li>独立性：对于所有给定时间 <span class="arithmatex">\(t&gt;0\)</span>，时间 t 之后的过程也是泊松过程，而且与事件 t 之前(包括 t)的历史过程相互独立（来源于泊松过程的独立性假设）</li>
+<li>无记忆性：对所有时间 <span class="arithmatex">\(t\)</span>，令 <span class="arithmatex">\(\bar T\)</span> 是时间 t 之后首次到达的时间，则随机变量 <span class="arithmatex">\(\bar T-t\)</span> 服从参数为 <span class="arithmatex">\(\lambda\)</span> 的指数分布，且与事件 t 之前(包括事件 t)的历史过程相互独立</li>
+<li><span class="arithmatex">\(P(\bar T-t&gt;s)=P(在时间[t,t+s]没有到达)=P(0,s)=e^{-\lambda s}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">相邻到达时间</p>
+</div>
+<blockquote>
+<p>设有一个从时刻 0 开始的泊松过程，与这个过程相关的重要的随机变量是<strong>第 k 次成功</strong>(或到达)的时间，记为 <span class="arithmatex">\(Y_k\)</span></p>
+<p>设随机变量 <span class="arithmatex">\(T_k\)</span> 为第 k 次相邻的到达时间；满足 <span class="arithmatex">\(T_1=Y_1\)</span>，<span class="arithmatex">\(T_k=Y_k-Y_{k-1}\)</span>（<span class="arithmatex">\(k=2,3,\dots\)</span>）</p>
+<p>其中 <span class="arithmatex">\(Y_k=\sum\limits_{i=1}^kT_i\)</span></p>
+<p>泊松过程的另一种描述：</p>
+<ol>
+<li>开始于一串相互独立并且公共参数为 <span class="arithmatex">\(\lambda\)</span> 的指数随机变量序列 <span class="arithmatex">\(T_1,T_2,\dots\)</span>，它们是相邻到达时间</li>
+<li>过程的到达时间为，<span class="arithmatex">\(T_1,T_1+T_2,T_1+T_2+T_3,\dots\)</span>，这样形成的随机过程就是泊松过程</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">第 k 次到达的时间</p>
+</div>
+<blockquote>
+<p>第 k 次到达的时间 <span class="arithmatex">\(Y_k\)</span> 等于 k 个独立同分布且服从<strong>指数分布</strong>的随机变量之和</p>
+<ol>
+<li>第 k 次到达的时间等于前 k 个相邻到达时间之和，即 <span class="arithmatex">\(Y_k=\sum\limits_{i=1}^kT_i\)</span>；而且 <span class="arithmatex">\(T_1,\dots,T_k\)</span> 独立同分布，服从参数为 <span class="arithmatex">\(\lambda\)</span> 的指数分布</li>
+<li><span class="arithmatex">\(E[Y_k]=\sum\limits_{i=1}^kE[T_i]=\frac k\lambda\)</span>，<span class="arithmatex">\(\text{var}(Y_k)=\sum\limits_{i=1}^k\text{var}(T_i)=\frac{k}{\lambda^2}\)</span></li>
+<li><span class="arithmatex">\(f_{Y_k}(y)=e^{-\lambda y}\frac{\lambda^k y^{k-1}}{(k-1)!}\)</span>（<span class="arithmatex">\(y\ge0\)</span>）</li>
+<li>这就是著名的<strong>阶数为 k 的埃尔朗分布</strong>（或 伽马分布）</li>
+</ol>
+<p>阶数为 k 的埃尔朗分布的 PDF 证明：（以下给出两种证明方法）</p>
+</blockquote>
+<p>(1) <span class="arithmatex">\(F_{Y_k}(y)=P(Y_k\le y)=\sum\limits_{i=k}^∞P(i,y)=1-\sum\limits_{i=0}^{k-1}P(i,y)=1-\sum\limits_{i=0}^{k-1}e^{-\lambda y}\frac{(\lambda y)^i}{i!}\)</span></p>
+<p><span class="arithmatex">\(f_{Y_k}(y)=\frac{d}{d_y}F_{Y_k}(y)=e^{-\lambda y}\frac{\lambda^k y^{k-1}}{(k-1)!}\)</span></p>
+<p>(2) 假设 <span class="arithmatex">\(Y_k\)</span> 的 PDF 为 <span class="arithmatex">\(f_{Y_k}(y)\)</span>，<span class="arithmatex">\(\delta\)</span> 充分小；然后定义三个事件：</p>
+<ol>
+<li>A：在区间 <span class="arithmatex">\([y,y+\delta]\)</span> 内到达第 k 次，于是 <span class="arithmatex">\(P(A)\approx\delta f_{Y_k}(y)\)</span></li>
+<li>B：在区间 <span class="arithmatex">\([y,y+\delta]\)</span> 内到达一次，于是 <span class="arithmatex">\(P(B)=P(1,\delta)\approx\lambda\delta\)</span></li>
+<li>C：在区间 <span class="arithmatex">\([0,y]\)</span> 内到达 <span class="arithmatex">\(k-1\)</span> 次，于是 <span class="arithmatex">\(P(C)=P(k-1,y)=e^{-\lambda y}\frac{(\lambda y)^{k-1}}{(k-1)!}\)</span></li>
+</ol>
+<p>由于 B 与 C 独立，有 <span class="arithmatex">\(P(A)=P(B)P(C)\)</span>，于是 <span class="arithmatex">\(\delta f_{Y_k}(y)=\lambda\delta\cdot e^{-\lambda y}\frac{(\lambda y)^{k-1}}{(k-1)!}\)</span></p>
+<p>最后 <span class="arithmatex">\(f_{Y_k}(y)=e^{-\lambda y}\frac{(\lambda y)^{k-1}}{(k-1)!}\lambda=e^{-\lambda y}\frac{\lambda^k y^{k-1}}{(k-1)!}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>你拨打国税局的热线电话后，被告知，除正在接受服务的人外，你前面还有 55 位等待服务；呼叫者离开所需时间是泊松过程，强度 <span class="arithmatex">\(\lambda\)</span> 是每分钟2人<ol>
+<li>平均而言，直到接受服务你需要等待多长时间为 <span class="arithmatex">\(E[Y_{56}]=\frac{56}\lambda=28\)</span></li>
+<li>等待时间超过 30 分钟的概率为 <span class="arithmatex">\(P(Y\ge30)=\int_{30}^{+∞}e^{-\lambda y}\frac{\lambda^{56}y^{55}}{55!}~d_y\)</span><ol>
+<li><strong>也可以使用中心极限定理来近似</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">泊松过程的分裂与合并</p>
+</div>
+<blockquote>
+<ol>
+<li>每当有一个到达时，我们选择保留下来（概率为 p），或者抛弃（概率为 <span class="arithmatex">\(1-p\)</span>），独立于其他到达；泊松分裂出来的过程是泊松的，强度为 <span class="arithmatex">\(\lambda p\)</span></li>
+<li>若两个相互独立的泊松过程（参数分别为 <span class="arithmatex">\(\lambda_1,\lambda_2\)</span>），这两个原始过程中任意一个到达都认为是新过程的一个到达，即原过程的合并过程，强度为 <span class="arithmatex">\(\lambda_1+\lambda_2\)</span>；任何一个到达状态以 <span class="arithmatex">\(\frac{\lambda_1}{\lambda_1+\lambda_2}\)</span> 的概率来自于第一个泊松过程，以 <span class="arithmatex">\(\frac{\lambda_2}{\lambda_1+\lambda_2}\)</span> 的概率来自于第二个泊松过程</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子（参见 p341-344）</p>
+<ol>
+<li>泊松过程的分裂</li>
+<li>泊松过程的合并</li>
+<li>竞争指数</li>
+<li>竞争指数的进一步讨论</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">伯努利过程 &amp; 泊松过程，随机变量之和</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">随机数个独立随机变量和的性质</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(N,X_1,\dots,X_n\)</span> 是独立随机变量，其中 N 取非负整数</p>
+<p>定义 <span class="arithmatex">\(Y=\sum\limits_{i=1}^NX_i\)</span>（<span class="arithmatex">\(Y=0\)</span>，若 <span class="arithmatex">\(N=0\)</span>）</p>
+<ol>
+<li>若 <span class="arithmatex">\(X_i\)</span> 为伯努利<span class="arithmatex">\((p)\)</span>，N 为二项<span class="arithmatex">\((m,q)\)</span>；那么 Y 为二项<span class="arithmatex">\((m,pq)\)</span></li>
+<li>若 <span class="arithmatex">\(X_i\)</span> 为伯努利<span class="arithmatex">\((p)\)</span>，N 为泊松<span class="arithmatex">\((\lambda)\)</span>；那么 Y 为泊松<span class="arithmatex">\((p\lambda)\)</span></li>
+<li>若 <span class="arithmatex">\(X_i\)</span> 为几何<span class="arithmatex">\((p)\)</span>，N 为几何<span class="arithmatex">\((q)\)</span>；那么 Y 为几何<span class="arithmatex">\((pq)\)</span></li>
+<li>若 <span class="arithmatex">\(X_i\)</span> 为指数<span class="arithmatex">\((\lambda)\)</span>，N 为几何<span class="arithmatex">\((q)\)</span>；那么 Y 为指数<span class="arithmatex">\((\lambda q)\)</span></li>
+</ol>
+<p>证明：利用矩母函数(4.4, 4.5)；习题 22，习题 6，习题 23；第 4 章最后一个习题</p>
+<p>记 <span class="arithmatex">\(N_t\)</span> 是在长度 t 的时间内强度为 <span class="arithmatex">\(\lambda\)</span> 的泊松过程到达的总数目；T 为时间长度，服从参数为 <span class="arithmatex">\(\nu\)</span> 的指数分布，且与泊松过程独立</p>
+<p>则 <span class="arithmatex">\(N_T+1\)</span> 是参数为 <span class="arithmatex">\(\frac{\nu}{\lambda+\nu}\)</span> 的几何分布（详见习题 24）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">随机插入的悖论</p>
+</div>
 </article>
 </div>
 </div>

@@ -598,6 +598,31 @@
     1. 随机变量函数的概率密度函数
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 协方差，相关
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 条件期望，条件方差
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-mgf">
+    4. 矩母函数(MGF)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 随机数个相互独立的随机变量之和
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 小节和讨论
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -778,6 +803,31 @@
     1. 随机变量函数的概率密度函数
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 协方差，相关
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 条件期望，条件方差
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-mgf">
+    4. 矩母函数(MGF)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 随机数个相互独立的随机变量之和
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6. 小节和讨论
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -858,7 +908,329 @@
 <blockquote>
 <p>假设 X 和 Y 是两个独立的随机变量，考虑 <span class="arithmatex">\(Z=X+Y\)</span> 的分布</p>
 <p>若 X 和 Y 都是离散的，Z 的分布列为 <span class="arithmatex">\(p_Z(z)=P(Z=z)=P(X+Y=z)=\sum\limits_{\{(x,y)|x+y=z\}}P(X=x,Y=y)=\sum\limits_xP(X=x,Y=z-x)=\sum\limits_xp_X(x)p_Y(z-x)\)</span></p>
+<p>即 <span class="arithmatex">\(p_Z(z)=\sum\limits_xp_X(x)p_Y(z-x)\)</span>，<span class="arithmatex">\(p_Z(z)\)</span> 称为 X 和 Y 的分布列的<strong>卷积</strong></p>
+<p>若 X 和 Y 都是连续的：（通过联合 PDF <span class="arithmatex">\(f_{X,Z}(x,z)\)</span> 得到 Z 的 PDF <span class="arithmatex">\(f_Z(z)\)</span>）</p>
+<p><span class="arithmatex">\(F_{Z|X}(z|x)=P(Z\le z|X=x)=P(X+Y\le z|X=x)=P(Y\le z-x|X=x)=P(Y\le z-x)=F_Y(z-x)\)</span></p>
+<p>等式两边对 z 微分有：<span class="arithmatex">\(f_{Z|X}(z|x)=f_Y(z-x)\)</span></p>
+<p><span class="arithmatex">\(f_Z(z)=\int_{-∞}^{+∞}f_{X,Z}(x,z)~d_x=\int_{-∞}^{+∞}f_X(x)f_{Y|X}(y|x)~d_x=\int_{-∞}^{+∞}f_X(x)f_Y(z-x)~d_x\)</span></p>
+<p>于是 <span class="arithmatex">\(f_Z(z)=\int_{-∞}^{+∞}f_X(x)f_Y(z-x)~d_x\)</span></p>
+<p>（被积函数非零，仅当 <span class="arithmatex">\(x\in\{x|x\in D_{f_X},z-x\in D_{f_Y}\}\)</span>）</p>
+<p>直观解释详见 p240</p>
+<p>应用：<span class="arithmatex">\(f_{X-Y}(z)=\int_{-∞}^{+∞}f_X(x)f_{-Y}(z-x)~d_x=\int_{-∞}^{+∞}f_X(x)f_Y(x-z)~d_x\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">独立随机变量卷积(例)</p>
+<ol>
+<li>假设 X 和 Y 相互独立，<span class="arithmatex">\(Z=X+Y\)</span></li>
+<li>X 和 Y 都是 <span class="arithmatex">\([a,b]\)</span> 上的连续均匀分布：<span class="arithmatex">\(f_Z(z)=\int_{-∞}^{+∞}f_X(x)f_Y(z-x)~d_x=\int_{\max\{a,z-b\}}^{\min\{b,z-a\}}1~d_x=\min\{b,z-a\}-\max\{a,z-b\}\)</span>（<span class="arithmatex">\(z\in[2a,2b]\)</span>）</li>
+<li>X 和 Y 都是正态分布：<span class="arithmatex">\(f_Z(z)=\int_{-∞}^{+∞}\frac1{\sqrt{2\pi}\sigma_x}\exp\left(-\frac{(x-\mu_x)^2}{2\sigma_x^2}\right)\cdot\frac1{\sqrt{2\pi}\sigma_y}\exp\left(-\frac{(z-x-\mu_y)^2}{2\sigma_y^2}\right)~d_x=\frac1{\sqrt{2\pi}\sqrt{\sigma_x^2+\sigma_y^2}}\exp\left(-\frac{(z-\mu_x-\mu_y)^2}{2(\sigma_x^2+\sigma_y^2)}\right)\)</span><ul>
+<li>注：上述积分计算较为复杂；<span class="arithmatex">\(Z=X+Y\)</span> 也是正态分布；推广：<span class="arithmatex">\(aX+bY\)</span> 也是正态的</li>
+<li>注2：即便 <span class="arithmatex">\(Z=X+Y\)</span> 的均值和方差可以通过独立性的性质简单地算出，但是并未提供“Z 是什么分布”的有关信息；于是计算 Z 的卷积是很有必要的</li>
+</ul>
+</li>
+<li>X 和 Y 都是指数分布：<span class="arithmatex">\(f_{X-Y}(z)=\int_{-∞}^{+∞}f_X(x)f_Y(x-z)~d_x=\begin{cases}\frac\lambda2e^{-\lambda z}&amp;z\ge0\\\frac\lambda2e^{\lambda z}&amp;z&lt;0\end{cases}\)</span><ol>
+<li>由于 X 和 Y 是同分布，因而 <span class="arithmatex">\(X-Y\)</span> 有对称性：<span class="arithmatex">\(f_{X-Y}(z)=f_{Y-X}(z)=f_{X-Y}(-z)\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">卷积的图像计算法</p>
+</div>
+<blockquote>
+<p>为了计算卷积 <span class="arithmatex">\(f_Z(z)=\int_{-∞}^{+∞}f_X(x)f_Y(z-x)~d_x\)</span>，</p>
+<p>我们分别将 <span class="arithmatex">\(f_X(x)\)</span>，<span class="arithmatex">\(f_Y(z-x)\)</span> 的图像画在二维直角坐标系中，分析它们的乘积的图像，进而通过几何计算面积，得到 <span class="arithmatex">\(f_Z(z)\)</span></p>
+<p>其中 <span class="arithmatex">\(f_Y(z-x)\)</span> 意味着 <span class="arithmatex">\(f_Y(x)\)</span> 先水平翻转，再向右平移 z 个单位长度</p>
+</blockquote>
+<h3 id="2">2. 协方差，相关</h3>
+<p>本节介绍如何量化两个随机变量之间关系的<strong>大小</strong>和<strong>方向</strong></p>
+<p>该内容非常重要，将应用于在第 8 章和第 9 章的估计方法</p>
+<div class="admonition note">
+<p class="admonition-title">协方差</p>
+</div>
+<blockquote>
+<p>X 和 Y 的协方差定义为 <span class="arithmatex">\(\text{cov}(X,Y)=E[(X-E[X])(Y-E[Y])]\)</span></p>
+<p>即 <span class="arithmatex">\(\text{cov}(X,Y)=E[\tilde X\tilde Y]\)</span></p>
+<p>不相关性：若 <span class="arithmatex">\(\text{cov}(X,Y)=0\)</span>，那么 X 和 是<strong>不相关</strong>的（等价于 <span class="arithmatex">\(E[XY]=E[X]E[Y]\)</span>）</p>
+<p>协方差的另一种表达：<span class="arithmatex">\(\text{cov}(X,Y)=E[XY]-E[X]E[Y]\)</span>（独立性 蕴涵 不相关性，逆命题不成立）</p>
+<p>性质：</p>
+<ol>
+<li><span class="arithmatex">\(\text{cov}(X,X)=\text{var}(X)\)</span></li>
+<li><span class="arithmatex">\(\text{cov}(X,aY+b)=a\cdot\text{var}(X,Y)\)</span></li>
+<li><span class="arithmatex">\(\text{cov}(X,Y+Z)=\text{cov}(X,Y)+\text{cov}(X,Z)\)</span></li>
+<li>推广：<span class="arithmatex">\(\text{cov}(\sum\limits_{i=1}^nX_i,\sum\limits_{i=1}^mY_i)=\sum\limits_{i=1}^n\sum\limits_{j=1}^m\text{cov}(X_i,Y_j)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">相关系数</p>
+</div>
+<blockquote>
+<p>两个<strong>方差非零</strong>的随机变量 X 和 Y 的相关系数定义为 <span class="arithmatex">\(\rho(X,Y)=\frac{\text{cov}(X,Y)}{\sqrt{\text{var}(X)\text{var}(Y)}}=\frac{E[\tilde X\tilde Y]}{\sqrt{E[\tilde X^2]E[\tilde Y^2]}}\)</span>（<span class="arithmatex">\(\rho(X,Y)\in[-1,1]\)</span>）</p>
+<p>（注：相关系数可以视为协方差 <span class="arithmatex">\(\text{cov}(X,Y)\)</span> 的标准化；<span class="arithmatex">\(\rho(X,X)=1\)</span>）</p>
+<p>若 <span class="arithmatex">\(rho&gt;0\)</span>（<span class="arithmatex">\(\rho&lt;0\)</span>），则 <span class="arithmatex">\(X-E[X]\)</span> 和 <span class="arithmatex">\(Y-E[Y]\)</span> 的值趋向同号（反号），且 <span class="arithmatex">\(|\rho|\)</span> 的大小反映了趋向程度的标准度量大小</p>
+<p>事实上，总可以假定 X 和 Y 有正的方差，在此种情况下，可以证明 <span class="arithmatex">\(\rho=1\)</span>（<span class="arithmatex">\(\rho=-1\)</span>），当且仅当 存在一个正的（负的）常数 c，使得 <span class="arithmatex">\(Y-E[Y]=c(X-E[X])\)</span></p>
+<p>例：独立地抛 n 次硬币，X 和 Y 分别为正面朝上和方面朝上的次数，满足 <span class="arithmatex">\(X+Y=n\)</span>；又有 <span class="arithmatex">\(E[X]+E[Y]=n\)</span>，所以 <span class="arithmatex">\(X-E[X]=-(Y-E[Y])\)</span>，协方差的性质，有 <span class="arithmatex">\(\rho(X,Y)=-1\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">随机变量之和的方差</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\text{var}(X_1+X_2)=\text{var}(X_1)+\text{var}(X_2)+2\text{cov}(X_1,X_2)\)</span></p>
+<p><span class="arithmatex">\(\text{var}(\sum\limits_{i=1}^nX_i)=\sum\limits_{i=1}^n\sum\limits_{j=1}^n\text{cov}(X_i,X_j)=\sum\limits_{i=1}^n\text{var}(X_i)+2\sum\limits_{i=1}^n\sum\limits_{j=1}^{i-1}\text{cov}(X_i,X_j)\)</span></p>
+<p>若 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 同分布，有 <span class="arithmatex">\(\text{var}(\sum\limits_{i=1}^nX_i)=n\cdot \text{var}(X_i)+n(n-1)\cdot\text{cov}(X_i,X_j)\)</span></p>
+<p>（任取 <span class="arithmatex">\(1\le i,j\le n\)</span>，<span class="arithmatex">\(i\ne j\)</span>）</p>
+<p>补充：<span class="arithmatex">\(\text{var}(X+Y)=\text{var}(X)+\text{var}(Y)+2\text{cov(X,Y)}=\text{var}(X)+\text{var}(Y)+2\rho(X,Y)\sqrt{\text{var}(X)\text{var}(Y)}\)</span></p>
+</blockquote>
+<h3 id="3">3. 条件期望，条件方差</h3>
+<p>本节再次讨论随机变量 X 在给定另一个随机变量 Y 之下的条件期望，可将这个条件期望看成依赖于 Y 的函数，因而成为<strong>随机变量</strong></p>
+<p>我们将导出全期望定理的另一个版本，称为<strong>重期望法则</strong>，用通俗的语言说，就是条件期望的期望等于无条件期望</p>
+<p>同时，我们也推导<strong>全方差法则</strong>，该法则涉及条件方差和无条件方差</p>
+<p>在本节中，我们研究 <span class="arithmatex">\(E[X|Y]\)</span> 的期望和方差；它的性质不仅在本章很重要，而且在第 8 章和第 9 章的<strong>估计</strong>和<strong>统计推断</strong>中也特别重要</p>
+<p>随机变量 X 的条件期望 <span class="arithmatex">\(E[X|Y=y]\)</span> 的值，依赖于 Y 的值 y；因为 <span class="arithmatex">\(E[X|Y=y]\)</span> 是 y 的函数，所以 <span class="arithmatex">\(E[X|Y]\)</span> 是 Y 的函数</p>
+<p>因而 <span class="arithmatex">\(E[X|Y]\)</span> 是一个随机变量，即 <span class="arithmatex">\(E[X|Y]=g(Y)\)</span></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>本节提到的 <span class="arithmatex">\(\tilde X=E[X|Y]-X\)</span> 与上文的含义（<span class="arithmatex">\(\tilde X=X-E[X]\)</span>）稍有些不同</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">重期望法则</p>
+</div>
+<blockquote>
+<p>由期望法则有 <span class="arithmatex">\(E[E[X|Y]]=\begin{cases}\sum\limits_yE[X|Y=y]p_Y(y)&amp;Y离散\\\int_{-∞}^{+∞}E[X|Y=y]f_Y(y)~d_y&amp;Y连续\end{cases}\)</span></p>
+<p>根据全期望定理，得到<strong>重期望法则</strong>： <span class="arithmatex">\(E[E[X|Y]]=E[X]\)</span></p>
+<p>条件期望的性质：<span class="arithmatex">\(E[Xg(Y)|Y]=g(Y)E[X|Y]\)</span>（在 Y 的条件下，<span class="arithmatex">\(g(Y)\)</span> 是一个常数）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>设硬币出现正面的概率为随机变量 Y（Y 在 <span class="arithmatex">\([0,1]\)</span> 上连续均匀分布），n 次独立抛硬币出现正面的次数为随机变量 X：<span class="arithmatex">\(E[X|Y]=nY\)</span>（二项分布的性质），<span class="arithmatex">\(E[Y]=\frac12\)</span>（连续均匀分布的性质）；使用重期望法则有 <span class="arithmatex">\(E[X]=E[E[X|Y]]=E[nY]=nE[Y]=\frac n2\)</span></li>
+<li>设长度为 l 的木根，每次将木根折成两半（每一处被选为折断点的机会均等），并丢弃另一半：设折第 i 次后剩余木根的长度为随机变量 <span class="arithmatex">\(X_i\)</span>，其期望长度为 <span class="arithmatex">\(E[X_n]=E[E[X_i|X_{i-1}]]=E[\frac12X_{i-1}]=\frac12E[X_{i-1}]\)</span>（特别地，<span class="arithmatex">\(X_0=E[X_0]=l\)</span>）</li>
+<li>利用组内平均成绩计算全部平均成绩的方法</li>
+<li><span class="arithmatex">\(\Delta=E[X_i|X_{i-1}]-E[X_i]\)</span> 的期望：<span class="arithmatex">\(E[E[X_i|X_{i-1}]-E[X_i]]=E[E[X_i|X_{i-1}]]-E[X_i]=E[X_i]-E[X_i]=0\)</span></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">条件期望作为估计量</p>
+</div>
+<blockquote>
+<p>假设我们将 Y 视为能提供关于 X 的信息的观测值，则我们将条件期望作为给定 Y 的条件下对 x 的<strong>估计</strong>，记为 <span class="arithmatex">\(\hat X=E[X|Y]\)</span></p>
+<p><strong>估计误差</strong>定义为：<span class="arithmatex">\(\tilde X=\hat X-X\)</span></p>
+<p>估计误差 <span class="arithmatex">\(\tilde X\)</span> 在 Y 下的条件期望为 <span class="arithmatex">\(E[\tilde X|Y]=E[(\hat X-X)|Y]=E[\hat X|Y]-E[X|Y]=\hat X-\hat X=0\)</span></p>
+<p>（注：<span class="arithmatex">\(\hat X\)</span> 在 Y 的条件下是常数）</p>
+<p>所以对于所有 y，都有 <span class="arithmatex">\(E[\tilde X|Y=y]=0\)</span></p>
+<p>估计误差没有系统性的正或负的偏倚：根据[重期望法则]，<span class="arithmatex">\(E[\tilde X]=E[E[\tilde X|Y]]=E[0]=0\)</span>（推论：<span class="arithmatex">\(\text{var}(\tilde X)=E[\tilde X^2]\)</span>）</p>
+<p><span class="arithmatex">\(E[\hat X\tilde X]=E[E[\hat X\tilde X|Y]]=E[\hat XE[\tilde X]]=0\)</span>   (1)</p>
+<p>估计 <span class="arithmatex">\(\hat X\)</span> 与估计误差 <span class="arithmatex">\(\tilde X\)</span> 不相关：<span class="arithmatex">\(\text{cov}(\hat X,\tilde X)=E[\hat X\tilde X]-E[\hat X]E[\tilde X]=0\)</span></p>
+<p><span class="arithmatex">\(\text{cov}(\hat X,\tilde X)=0\)</span> 和 <span class="arithmatex">\(X=\hat X+\tilde X\)</span> 蕴涵 <span class="arithmatex">\(\text{var}(X)=\text{var}(\hat X)+\text{var}(\tilde X)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">条件方差，全方差法则</p>
+</div>
+<blockquote>
+<p>随机变量 <span class="arithmatex">\(\text{var}(X|Y)=E[(X-E[X|Y])^2|Y]=E[\tilde X^2|Y]\)</span> 是关于 Y 的函数，即 <span class="arithmatex">\(\text{var}(X|Y)=g(Y)\)</span></p>
+<p>给定条件 <span class="arithmatex">\(\{Y=y\}\)</span> 之下，X 的<strong>条件方差</strong>为 <span class="arithmatex">\(\text{var}(X|Y=y)=E[\tilde X^2|Y=y]\)</span></p>
+<p>估计误差的方差：<span class="arithmatex">\(\text{var}(\tilde X)=E[(\tilde X-E[\tilde X])^2]=E[\tilde X^2]=E[E[\tilde X^2|Y]]=E[\text{var}(X|Y)]\)</span></p>
+<p>再由 <span class="arithmatex">\(\text{var}(X)=\text{var}(\hat X)+\text{var}(\tilde X)\)</span>，</p>
+<p>得到<strong>全方差法则</strong>：<span class="arithmatex">\(\text{var}(X)=E[\text{var}(X|Y)]+\text{var}(E[X|Y])\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>设硬币出现正面的概率为随机变量 Y（Y 在 <span class="arithmatex">\([0,1]\)</span> 上连续均匀分布），n 次独立抛硬币出现正面的次数为随机变量 X：<ul>
+<li>于是在 Y 的条件下：<span class="arithmatex">\(E[X|Y]=nY\)</span>，<span class="arithmatex">\(\text{var}(X|Y)=nY(1-Y)\)</span></li>
+<li>根据全方差法则：<span class="arithmatex">\(\text{var}(X)=\text{var}(E[X|Y])+E[\text{var}(X|Y)]=\text{var}(nY)+E[nY(1-Y)]=n\text{var}(Y)+nE[Y]-nE[Y^2]=\frac{n^2}{12}+\frac n2-\frac n3=\frac{n^2+2n}{12}\)</span></li>
+</ul>
+</li>
+<li>设长度为 l 的木根，每次将木根折成两半（每一处被选为折断点的机会均等），并丢弃另一半；设折第 i 次后剩余木根的长度为随机变量 <span class="arithmatex">\(X_i\)</span>：<ol>
+<li>第一次折木：<span class="arithmatex">\(E[X_1]=\frac l2,E[X_1^2]=\frac{l^2}3,\text{var}(X_1)=\frac{l^2}{12}\)</span></li>
+<li>第二次折木：<span class="arithmatex">\(E[X_2|X_1]=\frac{X_1}2,\text{var}(X_2|X_1)=\frac{X_1^2}{12}\)</span></li>
+<li>根据全方差法则：<span class="arithmatex">\(\text{var}(X_2)=\text{var}(E[X_2|X_1])+E[\text{var}(X_2|X_1)]=\text{var}(\frac{X_1}2)+E[\frac{X_1^2}{12}]=\frac14\text{var}(X_1)+\frac1{12}E[X_1^2]=\frac14\cdot\frac{l^2}{12}+\frac1{12}\cdot\frac{l^2}3=\frac{7l^2}{144}\)</span></li>
+</ol>
+</li>
+<li>学生成绩的方差与分组方差：参见p253-254</li>
+<li>通过构造条件来计算方差：参见p254-255</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">条件期望，条件期望 的性质（总结）</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(E[X|Y=y]\)</span> 的值依赖于 y</li>
+<li><span class="arithmatex">\(E[X|Y]\)</span> 是随机变量 Y 的函数，因此它也是一个随机变量；当 Y 的值为 y 时，它的值就等于 <span class="arithmatex">\(E[X|Y=y]\)</span></li>
+<li>重期望法则：<span class="arithmatex">\(E[X]=E[E[X|Y]]\)</span></li>
+<li><span class="arithmatex">\(E[X|Y=y]\)</span> 可视为已知 <span class="arithmatex">\(Y=y\)</span> 时对 X 的估计；相应的估计误差 <span class="arithmatex">\(E[X|Y]-X\)</span> 是一个零均值的随机变量，且与 <span class="arithmatex">\(E[X|Y]\)</span> 不相关</li>
+<li><span class="arithmatex">\(\text{var}(X|Y)\)</span> 也是个随机变量；当 Y 的值为 y 时，它的值就等于 <span class="arithmatex">\(\text{var}(X|Y=y)\)</span></li>
+<li>全方差法则：<span class="arithmatex">\(\text{var}(X)=E[\text{var}(X|Y)]+\text{var}(E[X|Y])\)</span></li>
+</ol>
+</blockquote>
+<h3 id="4-mgf">4. 矩母函数(MGF)</h3>
+<p>Moment Generating Function</p>
+<p>在本节中，我们引进与随机变量相关的矩母函数这个概念</p>
+<p><strong>矩母函数</strong>是对概率(如：分布列，概率密度函数)的另一种表述</p>
+<p>它并不是特别直观的，但是在解决某些类型的数学计算时很方便</p>
+<div class="admonition note">
+<p class="admonition-title">矩母函数</p>
+</div>
+<blockquote>
+<p>与随机变量 X 的相关的<strong>矩母函数</strong>是参数为 s 的函数 <span class="arithmatex">\(M_X(s)=E[e^{sX}]\)</span>（仅当 <span class="arithmatex">\(E[e^{sX}]\)</span> 存在）</p>
+<p>从上下文中可以明显看出所指随机变量是 X 时，矩母函数简记为 <span class="arithmatex">\(M(s)\)</span></p>
+<p>X 是离散随机变量时：<span class="arithmatex">\(M(s)=\sum\limits_xe^{sx}p_X(x)\)</span></p>
+<p>X 是连续随机变量时：<span class="arithmatex">\(M(s)=\int_{-∞}^{+∞}e^{sx}f_X(x)~d_x\)</span></p>
+<p>注：一个连续随机变量的相关矩母函数和它的概率密度函数的拉普拉斯变换是基本相同的，唯一的区别是拉普拉斯变换通常使用 <span class="arithmatex">\(e^{-sx}\)</span> 而不是 <span class="arithmatex">\(e^{sx}\)</span>；对于离散型的情况，变量 z 有时取代 <span class="arithmatex">\(e^s\)</span>，得到矩母函数 <span class="arithmatex">\(M(z)=\sum\limits_xz^xp_X(x)\)</span>，称作 z-变换</p>
+<p>性质：<span class="arithmatex">\(M_X(0)=1\)</span>；<span class="arithmatex">\(\lim\limits_{s\to-∞}M_X(s)=P(X=0)\)</span>（X 仅取非负整数值）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">矩母函数的例子</p>
+<ol>
+<li>伯努利<span class="arithmatex">\((p)\)</span>：<span class="arithmatex">\(M(s)=e^{s\cdot0}(1-p)+e^{s\cdot1}p=1-p+e^sp\)</span></li>
+<li>二项<span class="arithmatex">\((n,p)\)</span>：<span class="arithmatex">\(M(s)=\sum\limits_{i=0}^ne^{si}\binom nip_i(1-p)^{n-i}=(1-p+e^sp)^n\)</span>（n 个独立伯努利随机变量之和的矩母函数，等于 这些随机变量的矩母函数之积）</li>
+<li>泊松<span class="arithmatex">\((\lambda)\)</span>：<span class="arithmatex">\(M(s)=\sum\limits_{x=0}^∞e^{sx}\frac{e^{-\lambda}\lambda^x}{x!}=e^{\lambda(e^s-1)}\)</span></li>
+<li>几何<span class="arithmatex">\((p)\)</span>：<span class="arithmatex">\(M(s)=\sum\limits_{i=1}^∞e^{si}p(1-p)^{i-1}=\frac{pe^s}{1-(1-p)e^s}\)</span>（<span class="arithmatex">\(s&lt;-\ln(1-p)\)</span> 时收敛）</li>
+<li>离散均匀<span class="arithmatex">\((a,b)\)</span>：<span class="arithmatex">\(M(s)=\sum\limits_{i=a}^be^{si}\frac1{b-a+1}=\frac{e^{as}[e^{(b-a+1)s}-1]}{(b-a+1)(e^s-1)}=\frac{e^{(b+1)s}-e^{as}}{(b-a+1)(e^s-1)}\)</span></li>
+<li>连续均匀<span class="arithmatex">\((a,b)\)</span>：<span class="arithmatex">\(M(s)=\int_a^be^{sx}\frac1{b-a}~d_x=\frac{e^{bs}-e^{as}}{s(b-a)}\)</span></li>
+<li>指数<span class="arithmatex">\((\lambda)\)</span>：<span class="arithmatex">\(M(s)=\int_{0}^{+∞}e^{sx}\lambda e^{-\lambda x}~d_x=\frac{\lambda}{\lambda-s}\)</span>（仅当 <span class="arithmatex">\(s&lt;\lambda\)</span> 时积分收敛）</li>
+<li>随机变量的线性函数 <span class="arithmatex">\(Y=aX+b\)</span>：<span class="arithmatex">\(M_Y(s)=E[e^{s(aX+b)}]=e^{sb}E[e^{(sa)X}]=e^{sb}M_X(sa)\)</span></li>
+<li>标准正态<span class="arithmatex">\((0,1)\)</span>：<span class="arithmatex">\(M_Y(s)=\int_{-∞}^{+∞}e^{sy}\frac1{\sqrt{2\pi}}e^{-y^2/2}~d_y=e^{s^2/2}\)</span><ul>
+<li>注：积分用到了正态分布的归一化性质</li>
+</ul>
+</li>
+<li>正态<span class="arithmatex">\((\mu,\sigma^2)\)</span>：若 <span class="arithmatex">\(X=\sigma Y+\mu\)</span>（Y 为标准正态随机变量），那么 <span class="arithmatex">\(M_X(s)=M_Y(s\sigma)e^{s\mu}=e^{(s\sigma)^2/2+s\mu}\)</span></li>
+</ol>
+</div>
+<p>“矩母函数” 这一名称由于随机变量的矩可以通过矩母函数的公式轻易计算出得来的</p>
+<div class="admonition note">
+<p class="admonition-title">从矩母函数到矩</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\frac{d}{d_s}M(s)=\frac{d}{d_s}\int_{-∞}^{+∞}e^{sx}f_X(x)~d_x=\int_{-∞}^{+∞}\frac{d}{d_s}e^{sx}f_X(x)~d_x\)</span></p>
+<p>于是有结论：<span class="arithmatex">\(\frac{d}{d_s}M(s)=\frac{d}{d_s}M(s)=E[\frac{d}{d_s}e^{sX}]=E[Xe^{sX}]\)</span> (1)</p>
+<p>s 取零时，<span class="arithmatex">\(\frac{d}{d_s}M(s)|_{s=0}=E[X]\)</span></p>
+<p>将式 (1) 推广，有：<span class="arithmatex">\([M(s)]^{(n)}=E[(e^{sX})^{(n)}]=E[X^ne^{sX}]\)</span> （对 s 进行 n 次求导）</p>
+<p>于是 <span class="arithmatex">\([M(s)]^{(n)}|_{s=0}=E[(e^{sX})^{(n)}]|_{s=0}=E[X^n]\)</span></p>
+<p>也可以记为 <span class="arithmatex">\(E[X^n]=M^{(n)}(0)\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">n 阶矩</p>
+<ol>
+<li>泊松：<span class="arithmatex">\(E[X]=a_1\)</span>，<span class="arithmatex">\(E[X^i]=f(E[X^{i-1}])\)</span>（其中 <span class="arithmatex">\(a_i=\lambda^i\)</span>，<span class="arithmatex">\(f(a_i)=a_{i+1}+ia_i\)</span>）<ol>
+<li>令 <span class="arithmatex">\(g_n(k)=g_{n-1}(k-1)+kg_{n-1}(k)\)</span> 为 n 阶矩的第 i 次项系数（由于 <span class="arithmatex">\(E[X^n]\)</span> 是关于 <span class="arithmatex">\(\lambda\)</span> 的 n 次多项式）</li>
+<li>解得 n 阶矩的多项式系数之间的递推式： <span class="arithmatex">\(g_n(k)=k^n\sum\limits_{i=k}^n\frac{g_{i-1}(k-1)}{k^i}\)</span>；<span class="arithmatex">\(g_n(1)=1,g_n(2)=2^{n-1}-1\)</span>（<a href="http://localhost:8092/%E5%BE%AE%E7%A7%AF%E5%88%86/%E7%AB%9E%E8%B5%9B%E9%A2%981/#1">参考递归式求解</a>）</li>
+<li>于是 <span class="arithmatex">\(E[X^n]=\sum\limits_{k=1}^ng_n(k)\lambda^k\)</span></li>
+</ol>
+</li>
+<li>指数：<span class="arithmatex">\(E[X^n]=\frac{n!}{\lambda^n}\)</span></li>
+</ol>
+</div>
+<p>矩母函数 <span class="arithmatex">\(M_X(s)\)</span> 的一个非常重要的性质是它可逆，即可用它来确定随机变量 X 的概率律</p>
+<p>当然，为了使矩母函数 <span class="arithmatex">\(M_X(s)\)</span> 能够确定相应的概率律，一些合适的数学条件是必要的；幸运的是，我们所列举的例子中的矩母函数都满足这些条件</p>
+<div class="admonition note">
+<p class="admonition-title">矩母函数的可逆性</p>
+</div>
+<blockquote>
+<p>若随机变量 X 的矩母函数 <span class="arithmatex">\(M_X(x)\)</span> 满足：存在一个正数 <span class="arithmatex">\(a&gt;0\)</span>，对于所有 <span class="arithmatex">\(s\in[-a,a]\)</span>，<span class="arithmatex">\(M_X(x)\)</span> 都是有限的，则矩母函数 <span class="arithmatex">\(M_X(x)\)</span> 唯一地决定 X 的分布函数</p>
+<p><span class="arithmatex">\(M(s)\)</span> 若能表示为，<span class="arithmatex">\(M(s)=\sum\limits_ie^{a_is}b_i\)</span>，那么 <span class="arithmatex">\(p_x(a_i)=P(X=a_i)=b_i\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li><span class="arithmatex">\(X_1,\dots,X_n\)</span> 为 PDF <span class="arithmatex">\(f_{X_1},\dots,f_{X_n}\)</span> 的连续随机变量；随机变量 Y 的一个值 y 是这样取得的：随机地选出指标 i，选到 i 的概率为 <span class="arithmatex">\(p_i\)</span>，若指标 i 倍选中，y 即取 <span class="arithmatex">\(X_i\)</span> 的值；此时 Y 的 PDF 为 <span class="arithmatex">\(f_Y(y)=\sum\limits_{i=1}^np_if_{X_i}(y)\)</span></li>
+</ul>
+</div>
+<p>矩母函数的方法对于处理<strong>随机变量之和</strong>的问题尤其便利</p>
+<p>我们将看到，独立随机变量的和的矩母函数是和项的矩母函数的乘积，这样也提供了卷积公式之外的另一个便利的公式</p>
+<div class="admonition note">
+<p class="admonition-title">独立随机变量和</p>
+</div>
+<blockquote>
+<p>假设有两个随机变量 X 和 Y，并且随机变量 <span class="arithmatex">\(Z=X+Y\)</span>，有 <span class="arithmatex">\(M_Z(s)=E[e^{sZ}]=E[e^{s(X+Y)}]=E[e^{sX}e^{sY}]\)</span></p>
+<p>若 X 和 Y 独立，那么 <span class="arithmatex">\(M_Z(s)=E[e^{sX}]E[e^{sY}]=M_X(s)M_Y(s)\)</span> 或 <span class="arithmatex">\(M_{X+Y}(s)=M_X(s)M_Y(s)\)</span></p>
+<p>推广：设 <span class="arithmatex">\(Z=\sum\limits_{i=1}^nX_i\)</span>，那么 <span class="arithmatex">\(M_z(s)=\prod\limits_{i=1}^nM_{X_i}(s)\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>n 个独立伯努利随机变量之和</li>
+<li>n 个独立泊松随机变量之和的矩母函数：<span class="arithmatex">\(M_Z(s)=\prod\limits_{i=1}^nM_{X_i}(s)=\prod\limits_{i=1}^ne^{\lambda_i(e^s-1)}=e^{\sum\limits_{i=1}^n\lambda_i(e^s-1)}\)</span>（Z 是参数为 <span class="arithmatex">\(\sum\limits_{i=1}^n\lambda_i\)</span> 的泊松随机变量）</li>
+<li>n 个独立正态随机变量之和的矩母函数：<span class="arithmatex">\(M_Z(s)=\prod\limits_{i=1}^nM_{X_i}(s)=\prod\limits_{i=1}^ne^{(s\sigma_i)^2/2+\mu_i}=e^{\frac{s^2}2\sum\limits_{i=1}^n\sigma_i^2+\sum\limits_{i=1}^n\mu_i}\)</span>（Z 为均值，方差分别为 <span class="arithmatex">\(\sum\limits_{i=1}^n\mu_i,\sum\limits_{i=1}^n\sigma_i^2\)</span> 的正态随机变量）</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">联合分布的矩母函数</p>
+</div>
+<blockquote>
+<p>若两个随机变量 X 和 Y 具有联合 PDF，那么每个变量都有一个矩母函数 <span class="arithmatex">\(M_X(s)\)</span>，<span class="arithmatex">\(M_Y(s)\)</span>，它们是边缘分布的矩母函数（不包含关于这两个随机变量<strong>相依性</strong>的信息）</p>
+<p>同一试验中的 n 个随机变量 <span class="arithmatex">\(X_1,\dots,X_n\)</span>，记 <span class="arithmatex">\(s_1,\dots,s_n\)</span> 为无量纲实参数</p>
+<p><strong>多元矩函数</strong>是 n 个参数的函数，定义为：<span class="arithmatex">\(M_{X_1,\dots,X_n}(s_1,\dots,s_n)=E[e^{\sum\limits_{i=1}^ns_iX_i}]\)</span></p>
+<p>注：矩母函数的可逆性可以推广到多元情形，即如果 <span class="arithmatex">\(Y_1,\dots,Y_n\)</span> 是另一组随机变量，且 <span class="arithmatex">\(M_{X_1,\dots,X_n}(s_1,\dots,s_n)\)</span> 与  <span class="arithmatex">\(M_{Y_1,\dots,Y_n}(s_1,\dots,s_n)\)</span> 相同，则 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 的联合分布与 <span class="arithmatex">\(Y_1,\dots,Y_n\)</span> 的联合分布相同</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">矩母函数的三个应用</p>
+<ol>
+<li>计算随机变量的 n 阶矩</li>
+<li>计算 n 个独立随机变量之和的矩母函数（进而能讨论其分布性质）</li>
+<li>计算<strong>总数为随机数</strong>的随机变量之和的分布</li>
+</ol>
+</div>
+<h3 id="5">5. 随机数个相互独立的随机变量之和</h3>
+<p>到现在为止，我们讨论过的随机变量求和的问题中，总是假定随机变量个数是已知且固定的</p>
+<p>在本节中，我们考虑这样的情况：在随机变量求和的过程中，随机变量的数目本身也是随机的</p>
+<div class="admonition note">
+<p class="admonition-title">随机数个相互独立的随机变量之和(推导过程)</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(X_1,X_2,\dots\)</span> 是同分布的随机变量，<span class="arithmatex">\(N,X_1,X_2,\dots\)</span> 彼此独立（这些随机变量的任意有限子集都是独立的）</p>
+<p>设 <span class="arithmatex">\(Y=\sum\limits_{i=1}^NX_i\)</span>，分别讨论 <span class="arithmatex">\(E[Y]\)</span>，<span class="arithmatex">\(\text{var}(Y)\)</span>，<span class="arithmatex">\(M_Y(s)\)</span>：</p>
+<p>由于 <span class="arithmatex">\(E[Y|N=n]=E[\sum\limits_{i=1}^NX_i|N=n]=E[\sum\limits_{i=1}^nX_i|N=n]=E[\sum\limits_{i=1}^nX_i]=nE[X_i]\)</span>，得到 <span class="arithmatex">\(E[Y|N]=NE[X_i]\)</span> （任取 <span class="arithmatex">\(i=1..n\)</span>）</p>
+<p>(1) 根据重期望法则有：<span class="arithmatex">\(E[Y]=E[E[Y|N]]=E[NE[X_i]]=E[N]E[X_i]\)</span> （任取 <span class="arithmatex">\(i=1..n\)</span>）</p>
+<p>由于 <span class="arithmatex">\(\text{var}(Y|N=n)=\text{var}(\sum\limits_{i=1}^NX_i|N=n)=\text{var}(\sum\limits_{i=1}^nX_i)=n\text{var}(X_i)\)</span>，得到 <span class="arithmatex">\(\text{var}(Y|N)=N\text{var}(X_i)\)</span>（任取 <span class="arithmatex">\(i=1..n\)</span>）</p>
+<p>(2) 根据全方差法则有：<span class="arithmatex">\(\text{var}(Y)=\text{var}(E[Y|N])+E[\text{var}(Y|N)]=\text{var}(NE[X_i])+E[N\text{var}(X_i)]=E[X_i]^2\text{var}(N)+\text{var}(X_i)E[N]\)</span>（任取 <span class="arithmatex">\(i=1..n\)</span>）</p>
+<p>由于 <span class="arithmatex">\(E[e^{sY}|N=n]=E[\prod\limits_{i=1}^Ne^{sX_i}|N=n]=E[\prod\limits_{i=1}^ne^{sX_i}]=\prod\limits_{i=1}^nE[e^{sX_i}]=[M_{X_i}(s)]^n\)</span>，有 <span class="arithmatex">\(E[e^{sY}|N]=[M_{X_i}(s)]^N\)</span>（任取 <span class="arithmatex">\(i=1..n\)</span>）</p>
+<p>(3)：根据重期望法则有：<span class="arithmatex">\(M_Y(s)=E[e^{sY}]=E[E[e^{sY}|N]]=E[[M_X(s)]^N]=\sum\limits_{i=1}^∞[M_X(s)]^ip_N(n)\)</span></p>
+<p>而 N 的矩母函数有类似的形式 <span class="arithmatex">\(M_N(s)=E[e^{sN}]=\sum\limits_{i=1}^∞(e^s)^ip_N(i)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">随机数个相互独立的随机变量之和</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(X_1,X_2,\dots\)</span> 是同分布的随机变量，<span class="arithmatex">\(N,X_1,X_2,\dots\)</span> 彼此独立（这些随机变量的任意有限子集都是独立的）</p>
+<p>设 <span class="arithmatex">\(Y=\sum\limits_{i=1}^NX_i\)</span>，分别讨论 <span class="arithmatex">\(E[Y]\)</span>，<span class="arithmatex">\(\text{var}(Y)\)</span>，<span class="arithmatex">\(M_Y(s)\)</span>：</p>
+<ol>
+<li><span class="arithmatex">\(E[Y]=E[N]E[X_i]\)</span></li>
+<li><span class="arithmatex">\(\text{var}(Y)=E[X_i]^2\text{var}(N)+\text{var}(X_i)E[N]\)</span></li>
+<li><span class="arithmatex">\(M_Y(s)=\sum\limits_{i=1}^∞[M_X(s)]^ip_N(n)\)</span></li>
+<li><span class="arithmatex">\(M_N(s)=\sum\limits_{i=1}^∞(e^s)^ip_N(i)\)</span> 与 <span class="arithmatex">\(X_Y(s)\)</span> 有类似形式：若 <span class="arithmatex">\(g(e^s)=M_N(s)\)</span>，那么 <span class="arithmatex">\(g(M_X(s))=M_Y(s)\)</span></li>
+</ol>
+<p>注：N 一般具有上限值</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>有 3 个加油站，每家加油站任意一天营业的概率是 <span class="arithmatex">\(\frac12\)</span>，并且加油站之间营业与否相互独立；各家加油站汽油存量是相互独立的随机变量，在 0 到 1000 加仑之间均匀分布：<ol>
+<li>假设营业加油站的数目 N 是参数为 <span class="arithmatex">\(p=1/2\)</span> 的二项随机变量，其矩母函数为 <span class="arithmatex">\(M_N(s)=(1-p+pe^s)^3=\frac18(1+e^s)^3\)</span>（设 <span class="arithmatex">\(g(e^s)=M_N(s)\)</span>）</li>
+<li>每个加油站汽油存量 <span class="arithmatex">\(X_i\)</span> 的矩母函数为 <span class="arithmatex">\(M_{X_i}(s)=\frac{e^{1000s}-1}{1000s}\)</span></li>
+<li>汽油总量 <span class="arithmatex">\(Y=\sum\limits_{i=1}^3X_i\)</span> 的矩母函数为 <span class="arithmatex">\(M_Y(s)=g(M_{X_i}(s))=\frac18(1+\frac{e^{1000s}-1}{1000s})^3\)</span></li>
+</ol>
+</li>
+<li>潘子为了买《算法导论》需要逛很多书店，每家书店有这本书的概率是 p，并且相互独立；潘子在每家书店停留的时间满足参数为 <span class="arithmatex">\(\lambda\)</span> 的指数分布，停留时间与其他任何事情都独立；潘子会一直找，直到他找到了《算法导论》：<ol>
+<li>分析：书店数目 N 是参数为 p 的几何随机变量；第 i 家书店停留时间为 <span class="arithmatex">\(X_i\)</span>（服从参数为 <span class="arithmatex">\(\lambda\)</span> 的指数分布），停留总时间为 <span class="arithmatex">\(Y=\sum\limits_{i=1}^NX_i\)</span></li>
+<li><span class="arithmatex">\(E[Y]=E[N]E[X]=\frac1p\cdot\frac1\lambda\)</span></li>
+<li><span class="arithmatex">\(\text{var}(Y)=E[X_i]^2\text{var}(N)+\text{var}(X_i)E[N]=\frac1{\lambda^2}\cdot\frac{1-p}{p^2}+\frac1{\lambda^2}\cdot\frac1p=\frac1{(\lambda p)^2}\)</span></li>
+<li>由 <span class="arithmatex">\(M_X(s)=\frac\lambda{\lambda-s},M_N(s)=\frac{pe^s}{1-(1-p)e^s}\)</span> 有：<span class="arithmatex">\(M_Y(s)=\frac{p\frac\lambda{\lambda-s}}{1-(1-p)\frac\lambda{\lambda-s}}=\frac{p\lambda}{p\lambda-s}\)</span></li>
+<li>结论：Y 也服从参数为 <span class="arithmatex">\(p\lambda\)</span> 的指数分布（这个结果很令我们惊讶，因为<strong>定数</strong> n 个独立指数随机变量和反而不服从指数分布；例如，当 n=2 时，变量和的矩母函数为 <span class="arithmatex">\((\frac{\lambda}{\lambda-s})^2\)</span>，这与指数随机变量的矩母函数不相符）</li>
+</ol>
+</li>
+<li>个数服从几何分布的独立几何随机变量之和：记 N 服从参数为 p 的几何分布；记每个随机变量 <span class="arithmatex">\(X_i\)</span> 服从参数为 q 的几何分布（这些随机变量相互独立）；记 <span class="arithmatex">\(Y=\sum\limits_{i=1}^N\)</span><ol>
+<li><span class="arithmatex">\(M_N(s)=\frac{pe^s}{1-(1-p)e^s},M_X(s)=\frac{qe^s}{1-(1-q)e^s}\)</span></li>
+<li><span class="arithmatex">\(M_Y(s)=\frac{q\frac{pe^s}{1-(1-p)e^s}}{1-(1-q)\frac{pe^s}{1-(1-p)e^s}}=\frac{pqe^s}{1-(1-pq)e^s}\)</span></li>
+<li>也就是说，Y 也服从参数为 <span class="arithmatex">\(pq\)</span> 的几何分布</li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="6">6. 小节和讨论</h3>
 </article>
 </div>
 </div>

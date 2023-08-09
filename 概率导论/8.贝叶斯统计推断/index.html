@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -597,9 +600,26 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          8.贝叶斯统计推断
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         8.贝叶斯统计推断
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 贝叶斯推断，后验分布
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../9.%E7%BB%8F%E5%85%B8%E7%BB%9F%E8%AE%A1%E6%8E%A8%E6%96%AD/">
@@ -748,6 +768,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 贝叶斯推断，后验分布
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -755,6 +786,85 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>8.贝叶斯统计推断</h1>
+<p><strong>统计推断</strong>是从观测数据推断未知变量或未知模型的有关信息的过程</p>
+<p>第 8 章和第 9 章旨在：</p>
+<ol>
+<li>评价统计学中两种主要方法 (<strong>贝叶斯统计推断</strong>和<strong>经典统计推断</strong>)的优缺点，区别，类似之处</li>
+<li>介绍统计推断的主要内容：<strong>参数估计</strong>，<strong>假设经验</strong>，<strong>显著性检验</strong></li>
+<li>讨论统计学中最重要的方法：最大后验概率准则，最小均方估计，最大似然估计，回归，似然比检验 <span class="arithmatex">\(\dots\)</span></li>
+<li>举例说明如何运用理论</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">1. 概率与统计</p>
+</div>
+<blockquote>
+<p>概率论是建立在第 1 章公理的基础上的自我完善的数学课题；在概率推理中，我们总假设有一个完整的特定概率模型满足这些概率公理，然后运用数学方法对这个概率模型进行量化，以及回答感兴趣的问题；</p>
+<p>统计学可以说统计学是艺术的一部分；对一个具体的问题，存在很多合理的方法，可得出不同的结论；判断一种方法优于其他方法可以考虑如下几个因素：性质优良，过去的经验，共同的观点，以及统计学家对一种特定方法解决一类特殊的问题方面形成的共识</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">2. 贝叶斯统计，经典统计</p>
+</div>
+<blockquote>
+<p>在统计领域，有两种突出但对立的思想学派：<strong>贝叶斯学派</strong>和<strong>经典学派</strong>(也称<strong>频率学派</strong>)；它们之间最重要的区别就是如何看待未知模型或者变量</p>
+<ol>
+<li>贝叶斯方法主要是想将统计领域拉回到概率论的王国里，使得每个问题都只有唯一的答案；特别地，当人们欲对未知模型进行推断时，贝叶斯方法将该模型看成是随机地从已知的一类模型中选出来的；处理方法是引入随机变量 <span class="arithmatex">\(\Theta\)</span> 来刻画该模型，然后构造一个<strong>先验</strong>概率分布 <span class="arithmatex">\(p_\Theta(\theta)\)</span>，在已知数据 x 的情况下，人们原则上使用贝叶斯公式来推导后验概率分布 <span class="arithmatex">\(p_{\Theta|X}(\theta|x)\)</span>，这样就抓住了 x 能提供关于 <span class="arithmatex">\(\theta\)</span> 的所有信息</li>
+<li>经典统计方法将未知参数 <span class="arithmatex">\(\theta\)</span> 视为常数，但是未知就需要估计；然后经典统计的目标就是提出参数 <span class="arithmatex">\(\theta\)</span> 的估计方法，且保证具有一些性质；经典方法处理的不是一个概率模型，而是有多个待选的概率模型，每个标记为 <span class="arithmatex">\(\theta\)</span> 的一个可能值</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">3. 模型推断，变量推断</p>
+</div>
+<blockquote>
+<p>统计推断的应用主要有两种类型：模型推断和变量推断</p>
+<ol>
+<li><strong>模型推断</strong>：研究的目标是物理现象或过程，基于得到的数据为这些物理现象或过程<strong>构造</strong>或者<strong>验证</strong>一个模型(比如行星运行的是否为椭圆轨道)；利用这样的模型就可以对未来进行预测，或者推知许多未知的原因</li>
+<li><strong>变量推断</strong>：使用许多相关的，或者带有噪声的信息估计一个或者多个变量值（比如，若给定一些 GPS 的信息，那么我们现在的位置在什么地方）</li>
+</ol>
+<p>注：在很多情况下，我们将不强调它们的区别，这是因为相同的方法可以同时使用在这两种类型的推断中</p>
+<p>例（噪声信道）：发送端发送一串二进制信号 <span class="arithmatex">\(s_i\in\{0,1\}\)</span>，接收端观测到 <span class="arithmatex">\(X_i=as_i+W_i\)</span>（<span class="arithmatex">\(i=1..n\)</span>），其中 <span class="arithmatex">\(W_i\)</span> 是零均值的正态随机变量（反映信道的噪声），a 是实数（刻画信道的衰减率）</p>
+<ol>
+<li>在模型推断中，a 是未知的，发送端发送一组测试信号 <span class="arithmatex">\(s_1,\dots,s_n\)</span> 是知道发送端发送的型号的；性质的任务是基于观测值 <span class="arithmatex">\(X_1,\dots,X_n\)</span>，接收信号方欲估计 a 的值；这就是模型推断的任务：建立这个信道的模型</li>
+<li>在变量推断中，a 是假设已知的(可能是因为如上利用测试数据推断出来了，接收方观测到数据 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 的值；这就是变量推断的任务：确定 <span class="arithmatex">\(s_1,\dots,s_n\)</span> 的值</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">4. 统计推断问题的简单分类</p>
+</div>
+<blockquote>
+<ol>
+<li><strong>估计</strong>问题：模型完全确定，只是有一些未知的(可能是多维的)参数 <span class="arithmatex">\(\theta\)</span> 需要去估计；参数可以看成是随机变量（贝叶斯方法），也可以看成是未知常数（经典方法）；通常的目标就是得到 <span class="arithmatex">\(\theta\)</span> 的估计，使得它在某种意义上与真实值接近，如：<ol>
+<li>在例8.1噪声信道问题中，使用测试序列知识和观测值去估计 a</li>
+<li>使用民意测验数据，估计一个选举地方内选民支持候选人 A，而反对候选人 B 的比例</li>
+<li>基于股票市场历史数据,估计一个特定股票的价格每日走势的均值和方差</li>
+</ol>
+</li>
+<li><strong>二重假设检验</strong>问题：从两个假设出发，运用得到的数据去判断这两个中哪一个是正确的，如：<ol>
+<li>在例8.1噪声信道问题中，使用 a 的知识和 <span class="arithmatex">\(X_i\)</span> 去判断 <span class="arithmatex">\(s_i\)</span> 是 0 还是 1</li>
+<li>给定一个带有噪声的图片, 判断图片中是否有人</li>
+<li>给定有两种不同的医疗处理方法的临床实验数据,判断哪种疗法更有效</li>
+</ol>
+</li>
+<li><strong>m 重假设检验</strong>：有 m 个对立的假设，判断一种方法的好坏的依据是该方法做出错误结论的概率大小</li>
+</ol>
+</blockquote>
+<p>第 8 章重点讨论 贝叶斯估计问题，并讨论 假设检验问题</p>
+<p>第 9 章讨论 经典估计问题，并讨论更广的 假设检验问题</p>
+<p>（我们只是介绍性的讨论，远远不能满足实际中存在的统计推断问题的需要；为说明实际问题的广泛性，考虑具有形式 <span class="arithmatex">\(Y=g(X)+W\)</span> 的模型，该模型涉及两个随机变量 X 和 Y，其中 W 是零均值噪声，g 是需要估计的未知函数；这类问题，未知目标(比如这里的函数 g )是不能表述为固定数目的参数，称为<strong>非参数统计推断</strong>问题，就不在本书考虑范围之内了）</p>
+<div class="admonition info">
+<p class="admonition-title">本章的主要术语，问题，方法</p>
+<ol>
+<li><strong>贝叶斯统计</strong>：将未知参数视为已知先验分布的随机变量</li>
+<li>在<strong>参数估计</strong>中，对参数进行估计，使得在某种概率意义下估计接近真实值</li>
+<li>在<strong>假设检验</strong>中，未知参数根据对立的假设可能取有限个值，人们去选择其中一个假设，目标是使犯错误的概率很小</li>
+<li>贝叶斯推断的主要方法：<ol>
+<li><strong>最大后验概率(MAP)</strong>准则：在可能的参数/假设的取值范围内，选择一个在给定数据下，具有最大化条件概率/后验概率的值(参见8.2节)</li>
+<li><strong>最小均方(LMS)</strong>估计：选择数据的一个估计量或者函数，使得参数与估计之间的均方误差达到最小 (参见8.3节)</li>
+<li><strong>线性最小均方(LLMS)</strong>估计：选择数据的一个线性函数，使得参数与估计之间的均方误差达到最小 (参见8.4节)；这可能会得到更高的均方误差，但是计算简单，因为计算过程只依赖于相应随机变量的均值、方差和协方差</li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="1">1. 贝叶斯推断，后验分布</h3>
 </article>
 </div>
 </div>

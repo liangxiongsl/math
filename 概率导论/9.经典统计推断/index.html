@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -602,9 +605,26 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          9.经典统计推断
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         9.经典统计推断
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 经典参数估计
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -748,6 +768,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 经典参数估计
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -755,6 +786,206 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>9.经典统计推断</h1>
+<div class="admonition info">
+<p class="admonition-title">本章主要术语，问题，方法</p>
+</div>
+<blockquote>
+<ol>
+<li>经典统计：将未知参数看作是待确定的常数；对于未知参数的每个可能取值都假设一个单独的概率模型</li>
+<li>参数估计：希望找到在未知参数取任何可能值的情况下都基本正确的估计</li>
+<li>假设检验：未知参数对应于对立假设取有限的 <span class="arithmatex">\(m(m\ge2)\)</span> 个值；想要选择一个假设，使得在任何可能的假设下错误的概率最小</li>
+<li>显著性检验：希望接受或者拒绝一个简单的假设，保持错误拒绝的概率适当的小</li>
+<li>本章的经典推断方法：<ol>
+<li>最大似然估计：选择参数使得被观测到的数据“最有可能”出现，比如使获得当前数据的概率最大(参见 9.1 节)</li>
+<li>线性回归：在这样的意义下找出一组成对数据之间最合适的线性关系：这种线性关系使得模型与真实数据之间差值的平方和最小(参见 9.2 节)</li>
+<li>似然比校验：给定两个假设，根据它们发生“可能性”的比值选择其一，使得犯错的概率适当小(参见 9.3 节)</li>
+<li>显著性校验：给定一个假设，当且仅当观测数据落在某个拒绝域的时候拒绝该假设；特别设计的拒绝域使得错误拒绝的概率低于某个给定阈值(参见 9.4 节)</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h3 id="1">1. 经典参数估计</h3>
+<p>本节利用经典的方法讨论参数估计问题，所谓经典的方法就是将参数 <span class="arithmatex">\(\theta\)</span> 看作未知常数，而不是随机变量</p>
+<p>本节介绍一些定义，估计量的性质，最大似然估计量（对应贝叶斯 最大后验概率估计量）；估计未知的均值，估计未知的方差；建立一个由很大概率包含未知参数的区间（一个“置信区间”；前置知识：第 5 章的大数定律，中心极限定理）</p>
+<div class="admonition note">
+<p class="admonition-title">估计量</p>
+</div>
+<blockquote>
+<p>给定<strong>观测</strong> <span class="arithmatex">\(X=(X_1,\dots,X_n)\)</span>，<strong>估计量</strong>是指形式为 <span class="arithmatex">\(\hat\Theta=g(X)\)</span> 的随机变量</p>
+<p>（注：由于 X 的分布依赖于 <span class="arithmatex">\(\theta\)</span>，因而 <span class="arithmatex">\(\hat\Theta\)</span> 的分布也一样？）</p>
+<p>有时候，尤其是我们对<strong>观测数目</strong> n 起的作用感兴趣时，用 <span class="arithmatex">\(\hat\Theta_n\)</span> 表示一个估计量</p>
+<p>而且将 <span class="arithmatex">\(\hat\Theta\)</span> 看作一系列估计量也是合适的（分别对应 n 的不同取值）</p>
+<p><span class="arithmatex">\(\hat\Theta_n\)</span> 的均值和方差分别记为 <span class="arithmatex">\(E_\theta[\hat\Theta_n]\)</span>，<span class="arithmatex">\(\text{var}_\theta(\hat\Theta_n)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">估计量相关术语</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\hat\Theta_n\)</span> 是未知参数 <span class="arithmatex">\(\theta\)</span> 的一个<strong>估计量</strong>，也即关于 n 个观测 <span class="arithmatex">\(X_1,\dots,X_n\)</span>（服从参数为 <span class="arithmatex">\(\theta\)</span> 的分布）的一个函数</p>
+<ol>
+<li><strong>估计误差</strong>：记为 <span class="arithmatex">\(\tilde\Theta_n\)</span>，定义为 <span class="arithmatex">\(\tilde\Theta_n=\hat\Theta_n-\theta\)</span></li>
+<li>估计量的<strong>偏差</strong>：记为 <span class="arithmatex">\(b_\theta(\hat\Theta_n)\)</span>，是估计误差的期望值（<span class="arithmatex">\(b_\theta(\hat\Theta_n)=E_\theta(\tilde\Theta_n)\)</span>）：<span class="arithmatex">\(b_\theta(\hat\Theta_n)=E_\theta[\hat\Theta_n]-\theta\)</span></li>
+<li><strong>均方误差</strong>：记为 <span class="arithmatex">\(E_\theta(\tilde\Theta_n^2)\)</span>，有 <span class="arithmatex">\(E_\theta(\tilde\Theta_n^2)=b_\theta^2(\hat\Theta_n)+\text{var}_\theta(\hat\Theta_n)\)</span>（由于 <span class="arithmatex">\(E[X^2]=E[X]^2+\text{var}(X)\)</span>，<span class="arithmatex">\(b_\theta(\hat\Theta_n)=E_\theta(\tilde\Theta_n)\)</span>，<span class="arithmatex">\(\text{var}_\theta(\tilde\Theta_n)=\text{var}_\theta(\hat\Theta_n-\theta)=\text{var}_\theta(\hat\Theta_n)\)</span>）；均方误差与估计误差的大小相关</li>
+<li>
+<p><span class="arithmatex">\(\hat\Theta_n\)</span> 的期望，方差，偏差都依赖于 <span class="arithmatex">\(\theta\)</span>，而估计误差同时还依赖于观测 <span class="arithmatex">\(X_1,\dots,X_n\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\hat\Theta_n\)</span> 称为<strong>无偏</strong>，若 <span class="arithmatex">\(E_\theta[\hat\Theta_n]=\theta\)</span> 对于 <span class="arithmatex">\(\theta\)</span> 所有可能的取值都成立（等价于 <span class="arithmatex">\(E_\theta[\tilde\Theta_n]=0\)</span>；于是 <span class="arithmatex">\(E_\theta[\tilde\Theta_n^2]=\text{var}(\hat\Theta_n)\)</span>）</p>
+</li>
+<li><span class="arithmatex">\(\hat\Theta_n\)</span> 称为<strong>渐进无偏</strong>，若 <span class="arithmatex">\(\lim\limits_{n\to∞}E_\theta[\hat\Theta_n]=\theta\)</span> 对于 <span class="arithmatex">\(\theta\)</span> 所有可能的取值都成立</li>
+<li><span class="arithmatex">\(\hat\Theta_n\)</span> 称为 <span class="arithmatex">\(\theta\)</span> 的<strong>相合</strong>估计序列，如果对于 <span class="arithmatex">\(\theta\)</span> 所有可能的取值，序列 <span class="arithmatex">\(\hat\Theta_n\)</span> 依概率收敛到参数 <span class="arithmatex">\(\theta\)</span> 的真值</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">最大似然估计</p>
+</div>
+<blockquote>
+<p>设观测向量 <span class="arithmatex">\(X=(X_1,\dots,X_n)\)</span> 的<strong>联合分布列</strong>为 <span class="arithmatex">\(p_X(x;\theta)=p_X(x_1,\dots,x_n;\theta)\)</span>（<span class="arithmatex">\(\theta\)</span> 可为向量或数量）</p>
+<p>其中 <span class="arithmatex">\(X=(X_1,\dots,X_n)\)</span> 是 <span class="arithmatex">\(X\)</span> 的观测值（？）</p>
+<p>那么，<strong>最大似然</strong>估计是使（<span class="arithmatex">\(\theta\)</span> 的）数值函数 <span class="arithmatex">\(p_X(x_1,\dots,x_n;\theta)\)</span> 达到最大的数值：</p>
+<ul>
+<li>X 为离散随机变量时，<span class="arithmatex">\(\hat\theta_n=\arg\max\limits_\theta p_X(x_1,\dots,x_n;\theta)\)</span></li>
+<li>X 为连续随机变量时，<span class="arithmatex">\(\hat\theta_n=\arg\max\limits_\theta f_X(x_1,\dots,x_n;\theta)\)</span></li>
+</ul>
+<p>（称 <span class="arithmatex">\(p_X(x;\theta)\)</span> 或 <span class="arithmatex">\(f_X(x;\theta)\)</span> 为<strong>似然函数</strong>；X 和 x 都是向量：<span class="arithmatex">\(X=(X_1,\dots,X_n),x=(x_1,\dots,x_n)\)</span>）</p>
+<p>假设观测 <span class="arithmatex">\(X_i\)</span> 独立：</p>
+<ul>
+<li>X 为离散随机变量时，<span class="arithmatex">\(p_X(x_1,\dots,x_n;\theta)=\prod\limits_{i=1}^np_{X_i}(x_i,\theta)\)</span><ul>
+<li><span class="arithmatex">\(\ln p_X(x_1,\dots,x_n;\theta)=\sum\limits_{i=1}^n\ln p_{X_i}(x_i,\theta)\)</span></li>
+</ul>
+</li>
+<li>X 为连续随机变量时，<span class="arithmatex">\(f_X(x_1,\dots,x_n;\theta)=\prod\limits_{i=1}^nf_{X_i}(x_i,\theta)\)</span><ul>
+<li><span class="arithmatex">\(\ln f_X(x_1,\dots,x_n;\theta)=\sum\limits_{i=1}^n\ln f_{X_i}(x_i,\theta)\)</span></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>似然：对于已知 X 的观测值 x，<span class="arithmatex">\(p_X(x;\theta)\)</span> 不是未知参数等于 <span class="arithmatex">\(\theta\)</span> 的概率；事实上，这是当参数取值为 <span class="arithmatex">\(\theta\)</span> 时，观测值 x 可能出现的概率；因此，为去顶 <span class="arithmatex">\(\theta\)</span> 的估计值时，我们会问这样的问题：基于已知的观测，<span class="arithmatex">\(\theta\)</span> 取什么值可使观测值最可能出现呢？</li>
+<li>在贝叶斯最大后验概率估计中（8.2），估计的选择是使表达式 <span class="arithmatex">\(p_\Theta(\theta)p_{X|\Theta}(x|\theta)\)</span> 取遍 <span class="arithmatex">\(\theta\)</span> 达到最大，其中 <span class="arithmatex">\(p_\Theta(\theta)\)</span> 是包含一个位置离散参数 <span class="arithmatex">\(\theta\)</span> 的鲜艳分布列；因而若将 <span class="arithmatex">\(p_X(x;\theta)\)</span> 看作条件分布列，可将最大似然估计解释为具有<strong>均匀先验</strong>的最大后验概率估计（均匀先验是指对于所有 <span class="arithmatex">\(\theta\)</span> 都具有一样的鲜艳概率，也即没有任何信息的先验分布列）；同样地,对于连续的取值有界的 <span class="arithmatex">\(\theta\)</span>，可将最大似然估计解释为具有均匀先验密度的最大后验概率估计，对所有的 <span class="arithmatex">\(\theta\)</span> 其均匀先验密度为 <span class="arithmatex">\(f_\Theta(\theta)=c\)</span></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>罗密欧与朱丽叶（无偏；与例 8.2 的比较）</li>
+<li>伯努利随机变量的均值估计（渐进无偏；与例 8.8 的比较）</li>
+<li>估计指数随机变量分布中的参数（相合）：考虑顾客到达某服务台的时间问题，设第 i 个顾客到达服务台时刻是 <span class="arithmatex">\(Y_i\)</span>，第 i 个时间间隔 <span class="arithmatex">\(X_i=Y_i-Y_{i-1}\)</span>（<span class="arithmatex">\(Y_0=0\)</span>）服从参数为 <span class="arithmatex">\(\theta\)</span> 的指数分布，并且 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 相互独立（泊松到达模型）；现在用观测 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 来估计 <span class="arithmatex">\(\theta\)</span> 的值（可解释为到达的速率）<ol>
+<li>似然函数为 <span class="arithmatex">\(f_X(x;\theta)=\prod\limits_{i=1}^nf_{X_i}(x_i;\theta)=\prod\limits_{i=1}^n\theta e^{-\theta x_i}\)</span></li>
+<li>两边取对数有 <span class="arithmatex">\(\ln f_X(x;\theta)=\sum\limits\limits_{i=1}^n(\ln\theta-\theta x_i)=n\ln\theta-\theta\sum\limits_{i=1}^n x_i=n\ln\theta-\theta y_n\)</span></li>
+<li>两侧求导 <span class="arithmatex">\(\frac d{d_\theta}\ln f_X(x;\theta)=\frac d{d_\theta}[n\ln\theta-\theta y_n]=\frac n\theta-y_n\)</span></li>
+<li>有最值点 <span class="arithmatex">\(\hat\Theta_n=\frac1{Y_n/n}\)</span>；（根据弱大数定律）<span class="arithmatex">\(n\to∞\)</span> 时，<span class="arithmatex">\(Y_n/n\)</span> 依概率收敛到 <span class="arithmatex">\(E[X_i]=1/\theta\)</span>（即 <span class="arithmatex">\(\hat\Theta_n=\frac1{Y_n/n}\to\frac1{E[X_i]}=\frac1{1/\theta}=\theta\)</span>）</li>
+<li>也就是说，估计量是相合的</li>
+</ol>
+</li>
+<li>正态随机变量均值和方差的估计：通过 n 个观测 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 来估计正态分布的均值和方差<ol>
+<li>参数向量为 <span class="arithmatex">\(\theta=(\mu,\nu)\)</span>，相应的似然函数为 <span class="arithmatex">\(f_X(x;\mu,\nu)=\prod\limits_{i=1}^nf_{X_i}(x_i;\mu,\nu)=\prod\limits_{i=1}^n\frac1{\sqrt{2\pi}\sqrt\nu}e^{-(x_i-\mu)^2/(2\nu)}\)</span></li>
+<li>两侧取对数：<span class="arithmatex">\(\ln f_X(x;\mu,\nu)=\sum\limits_{i=1}^n\left[\ln(\frac1{\sqrt{2\pi\nu}})-\frac{(x_i-\mu)^2}{2\nu}\right]=-\frac n2\ln 2\pi\nu-\frac1{2\nu}\sum\limits_{i=1}^n(x_i-\mu)^2\)</span></li>
+<li>令 <span class="arithmatex">\(M_n=\frac1n\sum\limits_{i=1}^nX_i\)</span> 有 <span class="arithmatex">\(\sum\limits_{i=1}^n(x_i-\mu)^2=\sum\limits_{i=1}^n[(x_i-m_n)+(m_n-\mu)]^2=\sum\limits_{i=1}^n[(x_i-m_n)^2+(m_n-\mu)^2]\)</span>；令 <span class="arithmatex">\(\bar S_n^2=\frac1n\sum\limits_{i=1}^n(X_i-M_n)^2\)</span></li>
+<li>于是对数似然函数为 <span class="arithmatex">\(\ln f_X(x;\mu,\nu)=-\frac n2\ln 2\pi\nu-\frac1{2\nu}\sum\limits_{i=1}^n[(x_i-m_n)^2+(m_n-\mu)^2]=-\frac n2\ln 2\pi\nu-\frac n{2\nu}s_n^2-\frac n{2\nu}(m_n-\mu)^2\)</span></li>
+<li>上式分别对 <span class="arithmatex">\(\mu\)</span> 和 <span class="arithmatex">\(\nu\)</span> 求偏导，令导数为零，得到估计值和估计量：<span class="arithmatex">\(\hat\theta_n=(m_n,s_n^2)\)</span>，<span class="arithmatex">\(\hat\Theta_n=(M_n,\bar S_n^2)\)</span></li>
+<li>注意到 <span class="arithmatex">\(M_n\)</span> 是样本均值，<span class="arithmatex">\(\bar S_n^2\)</span> 可以看作“样本方差”</li>
+<li>易证，<span class="arithmatex">\(E_\theta[\bar S_n^2]\)</span> 当 n 增大时收敛到 <span class="arithmatex">\(\nu\)</span>，因而 <span class="arithmatex">\(\bar S_n^2\)</span> 是渐进无偏的；运用弱大数定律可知 <span class="arithmatex">\(M_n\)</span> 和 <span class="arithmatex">\(\bar S_n^2\)</span> 分别是 <span class="arithmatex">\(\mu\)</span> 和 <span class="arithmatex">\(\nu\)</span> 的相合估计量</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">最大似然估计的性质</p>
+</div>
+<blockquote>
+<ol>
+<li><strong>不变原理</strong>：如果 <span class="arithmatex">\(\hat\Theta_n\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的最大似然估计，那么对于任意关于 <span class="arithmatex">\(\theta\)</span> 的一一映射的函数 h，<span class="arithmatex">\(\zeta=h(\theta)\)</span> 的最大似然估计是 <span class="arithmatex">\(h(\hat\Theta_n)\)</span>；对于独立同分布的观测，在一些适合的假设条件下，最大似然估计量是相合的</li>
+<li>当 <span class="arithmatex">\(\theta\)</span> 是标量参数时，在某些合适的条件下最大似然估计量具有<strong>渐进正态性质</strong>；特别地，可以看见 <span class="arithmatex">\(\frac{\hat\Theta_n-\theta}{\sigma(\hat\Theta_n)}\)</span> 的分布接近标准正态分布，其中 <span class="arithmatex">\(\sigma^2(\hat\Theta_n)\)</span> 是 <span class="arithmatex">\(\hat\Theta_n\)</span> 的方差；因此，如果我们还能够估计 <span class="arithmatex">\(\sigma(\hat\Theta_n)\)</span>，就能进一步得到基于正态近似的误差方差估计；当 <span class="arithmatex">\(\theta\)</span> 是向量参数，针对每个分量可以得到类似的结论</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">最大似然估计</p>
+</div>
+<blockquote>
+<ol>
+<li>已知随机变量 <span class="arithmatex">\(X=(X_1,\dots,X_n)\)</span> 的观测值为 <span class="arithmatex">\(X=(X_1,\dots,X_n)\)</span>，其联合分布列为 <span class="arithmatex">\(p_X(x;\theta)\)</span>（或 PDF 为 <span class="arithmatex">\(f_X(x;\theta)\)</span>）</li>
+<li>最大似然函数是使得似然函数 <span class="arithmatex">\(p_X(x;\theta)\)</span>（或 <span class="arithmatex">\(f_X(x;\theta)\)</span>）达到最大值时 <span class="arithmatex">\(\theta\)</span> 的取值</li>
+<li>关于 <span class="arithmatex">\(\theta\)</span> 一一映射的函数 <span class="arithmatex">\(h(\theta)\)</span> 的最大似然估计是 <span class="arithmatex">\(h(\hat\theta_n)\)</span>，其中 <span class="arithmatex">\(\hat\Theta_n\)</span> 是 <span class="arithmatex">\(\theta\)</span> 的最大似然估计</li>
+<li>当随机变量 <span class="arithmatex">\(X_i\)</span> 是独立同分布时，在某些合适的假定条件下，最大似然估计的每个分量都具有相合性且渐进正态</li>
+</ol>
+</blockquote>
+<p>现在来讨论一个简单而重要的问题：如何估计一个概率分布的均值和方差</p>
+<p>假设观测 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 是独立同分布的，均值为未知参数 <span class="arithmatex">\(\theta\)</span></p>
+<p><span class="arithmatex">\(\theta\)</span> 的最自然估计量是<strong>样本均值</strong>：<span class="arithmatex">\(M_n=\frac{\sum\limits_{i=1}^nX_i}n\)</span>（即 <span class="arithmatex">\(\hat\Theta_n=M_n\)</span>）</p>
+<p>由于 <span class="arithmatex">\(E_\theta[M_n]=E_\theta[X_i]=\theta\)</span>，因而该估计量是无偏的，于是它的 均方误差 与 方差 相等：<span class="arithmatex">\(E_\theta[\tilde\Theta_n^2]=\text{var}_\theta(\hat\Theta_n)=\frac{\nu}n\)</span>（设 <span class="arithmatex">\(\nu=\text{var}_\theta(X_i)\)</span>）</p>
+<p>由计算看出，<span class="arithmatex">\(M_n\)</span> 的均方误差无依赖于 <span class="arithmatex">\(\theta\)</span></p>
+<p>更进一步，由大数定律，估计量依概率收敛到 <span class="arithmatex">\(\theta\)</span>，因而具有相合性</p>
+<p>但是样本均值 <span class="arithmatex">\(M_n\)</span> 未必是方差最小的估计量，如：考虑估计量 <span class="arithmatex">\(\hat\Theta_n=0\)</span>，其方差 <span class="arithmatex">\(\text{var}_\theta(\hat\Theta_n)=0\)</span>，但偏差 <span class="arithmatex">\(b_\theta(\hat\Theta_n)=-\theta\)</span></p>
+<p>特别地，依赖 <span class="arithmatex">\(\theta\)</span> 的均方误差为 <span class="arithmatex">\(\theta^2\)</span>（？）</p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ul>
+<li>假设观测 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 是正态独立同分布的，具有共同的未知均值 <span class="arithmatex">\(\theta\)</span> 和已知方差 <span class="arithmatex">\(\nu\)</span><ul>
+<li>假设参数 <span class="arithmatex">\(\theta\)</span> 服从正态的先验分布，对于 <span class="arithmatex">\(\theta\)</span> 的先验均值是零的情况，根据例 8.3 有估计量 <span class="arithmatex">\(\hat\Theta_n=\frac{\sum\limits_{i=1}^nX_i}{n+1}\)</span></li>
+<li>由于 <span class="arithmatex">\(E_\theta[\hat\Theta_n]=\frac n{n+1}\theta\)</span>，进而 <span class="arithmatex">\(b_\theta(\hat\Theta_n)=-\frac\theta{n+1}\)</span>（有偏）</li>
+<li>而 <span class="arithmatex">\(\lim\limits_{n\to∞}b_\theta(\hat\Theta_n)=0\)</span>，所以 <span class="arithmatex">\(\hat\Theta_n\)</span> 渐进无偏</li>
+<li>方差为 <span class="arithmatex">\(\text{var}_\theta(\hat\Theta_n)=\frac{n}{(n+1)^2}\nu\)</span>（比样本均值方差 <span class="arithmatex">\(\nu/n\)</span> 略小，并且不依赖于 <span class="arithmatex">\(\theta\)</span>）</li>
+<li><span class="arithmatex">\(E_\theta[\tilde\Theta_n^2]=b_\theta^2[\hat\Theta_n]+\text{var}_\theta(\hat\Theta_n)=\frac{\theta^2+n\nu}{(n+1)^2}\)</span></li>
+<li>假设样本均值 <span class="arithmatex">\(M_n=\frac{\sum\limits_{i=1}^nX_i}n\)</span> 和“样本方差”<span class="arithmatex">\(\bar S_n^2=\frac1n\sum\limits_{i=1}^n(X_i-M_n)^2\)</span>作为 <span class="arithmatex">\(\theta\)</span>，<span class="arithmatex">\(\nu\)</span> 的估计量</li>
+<li>根据事实 <span class="arithmatex">\(E_{(\theta,\nu)}[M_n]=\theta\)</span>，<span class="arithmatex">\(E_{\theta,\nu}[X_i^2]=\theta^2+\nu\)</span>，<span class="arithmatex">\(E_{(\theta,\nu)}[M_n^2]=\theta^2+\frac\nu n\)</span>（？？？）</li>
+<li>得到 <span class="arithmatex">\(\begin{aligned}\operatorname{E}_{(\theta,v)}[\bar{S_{n}^{2}}]=&amp; \frac{1}{n}\mathrm{E}_{(\theta,v)}\left[\sum_{i=1}^{n}X_{i}^{2}-2M_{n}\sum_{i=1}^{n}X_{i}+nM_{n}^{2}\right]  \\=&amp; \operatorname{E}_{(\theta,v)}\left[{\frac{1}{n}}\sum_{i=1}^{n}X_{i}^{2}-2M_{n}^{2}+M_{n}^{2}\right]  \\=&amp;\mathrm{E}_{(\theta,v)}\left[\frac{1}{n}\sum_{i=1}^{n}X_{i}^{2}-M_{n}^{2}\right] \\=&amp;\theta^{2}+v-\left(\theta^{2}+\frac{v}{n}\right) \\=&amp; \frac{n-1}{n}v. \end{aligned}\)</span></li>
+<li><span class="arithmatex">\(\bar S_n^2\)</span> 有偏但渐进无偏</li>
+<li>通过适当的比例缩放可以得到方差的无偏估计量 <span class="arithmatex">\(\hat S_n^2=\frac1{n-1}\sum\limits_{i=1}^n(X_i-M_n)^2=\frac n{n-1}\bar S_n^2\)</span>；<span class="arithmatex">\(E_{(\theta,\nu)}[\hat S_n^2]=\nu\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">随机变量的均值和方差估计</p>
+</div>
+<blockquote>
+<p>观测值 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 是独立同分布的，均值 <span class="arithmatex">\(\theta\)</span> 和方差 <span class="arithmatex">\(\nu\)</span> 均未知</p>
+<ol>
+<li>均值：样本均值 <span class="arithmatex">\(M_n=\frac{\sum\limits_{i=1}^nX_i}n\)</span> 是均值 <span class="arithmatex">\(\theta\)</span> 的一个无偏估计量，它的均方误差是 <span class="arithmatex">\(\frac\nu n\)</span></li>
+<li>方差：方差的估计量有两个，分别为 <span class="arithmatex">\(\bar S_n^2=\frac1n\sum\limits_{i=1}^n(X_i-M_n)^2\)</span>，<span class="arithmatex">\(\hat S_n^2=\frac1{n-1}\sum\limits_{i=1}^n(X_i-M_n)^2\)</span></li>
+<li>若 <span class="arithmatex">\(X_i\)</span> 服从正态分布：估计量 <span class="arithmatex">\(\bar S_n^2\)</span> 和最大似然估计量相等，它有偏但渐进无偏；估计量 <span class="arithmatex">\(\hat S_n^2\)</span> 是无偏的</li>
+<li>n 很大时，方差的两个估计量本质上是一致的</li>
+</ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">置信区间</p>
+</div>
+<blockquote>
+<p>考虑位置参数 <span class="arithmatex">\(\theta\)</span> 的一个估计量 <span class="arithmatex">\(\hat\Theta_n\)</span>；除了估计所得的数值，我们还想建立一个所谓的置信区间，使得这个区间以某个很高的概率包含参数 <span class="arithmatex">\(\theta\)</span> 的真值（这里的真实参数是一个常数，而置信区间是一个随机项）</p>
+<p>我们固定一个希望达到的<strong>置信水平</strong> <span class="arithmatex">\(1-\alpha\)</span>（<span class="arithmatex">\(\alpha\)</span> 往往是一个很小的数），然后用一个略小的估计量 <span class="arithmatex">\(\hat\Theta_n^-\)</span> 和一个略大的估计量 <span class="arithmatex">\(\hat\Theta_n^+\)</span> 代替点估计量 <span class="arithmatex">\(\hat\Theta_n\)</span>（<span class="arithmatex">\(\hat\Theta_n^-\le \hat\Theta_n^+\)</span>），</p>
+<p>且 <span class="arithmatex">\(P_\theta(\hat\Theta_n^-\le\theta\le\hat\Theta_n^+)\ge1-\alpha\)</span>（对于所有可能的 <span class="arithmatex">\(\theta\)</span>）</p>
+<p>与一般的估计量类似，<span class="arithmatex">\(\hat\Theta_n^-\)</span> 和 <span class="arithmatex">\(\hat\Theta_n^+\)</span> 也是观测的函数，因而是其分布依赖 <span class="arithmatex">\(\theta\)</span> 的随机变量</p>
+<p>称 <span class="arithmatex">\([\hat\Theta_n^-,\hat\Theta_n^+]\)</span> 为 <span class="arithmatex">\((1-\alpha)\)</span> <strong>置信区间</strong></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ul>
+<li>假设观测 <span class="arithmatex">\(X_i\)</span> 是正态同分布的，均值 <span class="arithmatex">\(\theta\)</span> 未知，方差 <span class="arithmatex">\(\nu\)</span> 已知<ol>
+<li>样本均值估计量 <span class="arithmatex">\(\hat\Theta_n=\frac{\sum\limits_{i=1}^n}n\)</span> 服从正态分布（参见第 4 章），均值和方差分别为 <span class="arithmatex">\(\theta\)</span>，<span class="arithmatex">\(\nu/n\)</span></li>
+<li>假设 z 已知，从正态分布表查表得到 <span class="arithmatex">\(\Phi(z)=1-\alpha/2\)</span>（原例是：<span class="arithmatex">\(\Phi(1.96)=0.975=1-\alpha/2\)</span>）</li>
+<li>于是 <span class="arithmatex">\(P_\theta\left(\frac{|\hat\Theta_n-\theta|}{\sqrt{\nu/n}}\le z\right)=1-\alpha=2\Phi(z)-1\)</span></li>
+<li><span class="arithmatex">\(P_\theta\left(\hat\Theta_n-z\sqrt{\nu/n}\le\theta\le \hat\Theta_n+z\sqrt{\nu/n}\right)=2\Phi(z)-1\)</span></li>
+<li>这说明 <span class="arithmatex">\(\left[\hat\Theta_n-z\sqrt{\nu/n},\hat\Theta_n+z\sqrt{\nu/n}\right]\)</span> 是 <span class="arithmatex">\(1-\alpha=2\Phi(z)-1\)</span> 的置信区间（<span class="arithmatex">\(\hat\Theta_n^-=\hat\Theta_n-z\sqrt{\nu/n}\)</span>，<span class="arithmatex">\(\hat\Theta_n^+=\hat\Theta_n+z\sqrt{\nu/n}\)</span>）</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">置信区间</p>
+</div>
+<blockquote>
+<ul>
+<li>对于一维的未知参数 <span class="arithmatex">\(\theta\)</span>，其<strong>置信区间</strong>是一个以很高概率包括 <span class="arithmatex">\(\theta\)</span> 的区间，端点为 <span class="arithmatex">\(\hat\Theta_n^-\)</span> 和 <span class="arithmatex">\(\hat\Theta_n^+\)</span></li>
+<li><span class="arithmatex">\(\hat\Theta_n^-\)</span> 和 <span class="arithmatex">\(\hat\Theta_n^+\)</span> 是依赖于观测 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 的随机变量</li>
+<li><span class="arithmatex">\((1-\alpha)\)</span> 置信区间对于 <span class="arithmatex">\(\theta\)</span> 的所有可能取值都满足 <span class="arithmatex">\(P_\theta(\hat\Theta_n^-\le\theta\le\hat\Theta_n^+)\ge1-\alpha\)</span></li>
+</ul>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">基于方差近似估计量的置信区间</p>
+</div>
 </article>
 </div>
 </div>

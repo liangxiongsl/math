@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -582,9 +585,46 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          5.极限定理
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         5.极限定理
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 马尔科夫和切比雪夫不等式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 弱大数定律
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 依概率收敛
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 中心极限定理
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 强大数定律
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../6.%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%BF%87%E7%A8%8B%26%E6%B3%8A%E6%9D%BE%E8%BF%87%E7%A8%8B/">
@@ -748,6 +788,37 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 马尔科夫和切比雪夫不等式
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 弱大数定律
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3. 依概率收敛
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 中心极限定理
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5. 强大数定律
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -755,6 +826,336 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>5.极限定理</h1>
+<p>在本章里，我们讨论随机变量序列的渐进性质</p>
+<p>设 <span class="arithmatex">\(X_1,X_2,\dots\)</span> 为<strong>独立同分布</strong>的随机变量序列，<strong>公共分布</strong> 的均值为 <span class="arithmatex">\(\mu\)</span>，方差为 <span class="arithmatex">\(\sigma^2\)</span></p>
+<p>定义该随机变量序列的<strong>部分和</strong>为 <span class="arithmatex">\(S_n=\sum\limits_{i=1}^nX_i\)</span></p>
+<p>本章的极限理论研究 <span class="arithmatex">\(S_n\)</span> 以及与 <span class="arithmatex">\(S_n\)</span> 相关的变量在 <span class="arithmatex">\(n\to∞\)</span> 时的极限性质</p>
+<p>显然 <span class="arithmatex">\(E[S_n]=n\mu\)</span></p>
+<p>由于随机变量序列各项之间的独立性有 <span class="arithmatex">\(\text{var}(S_n)=\sum\limits_{i=1}^n\text{var}(X_i)=n\sigma^2\)</span></p>
+<p>定义<strong>样本均值</strong>为 <span class="arithmatex">\(M_n=\frac{\sum\limits_{i=1}^nX_i}n=\frac{S_n}n\)</span></p>
+<p>于是 <span class="arithmatex">\(E[M_n]=E[\frac{S_n}n]=\frac1nE[S_n]=\mu\)</span>，<span class="arithmatex">\(\text{var}(M_n)=\text{var}(\frac{S_n}n)=\frac1{n^2}\text{var}(S_n)=\frac{\sigma^2}n\)</span></p>
+<p>其中 <span class="arithmatex">\(\lim\limits_{n\to∞}\text{var}(M_n)=0\)</span>，这意味着 <span class="arithmatex">\(M_n\)</span> 的分布大部分就必然与均值 <span class="arithmatex">\(\mu\)</span> 特别接近</p>
+<p>这种现象就是大数定律的内容，即随机变量序列 <span class="arithmatex">\(M_n\)</span>，从大样本意义上看，收敛于 <span class="arithmatex">\(X_i\)</span> 的均值 <span class="arithmatex">\(\mu\)</span></p>
+<p>按通常的解释,当样本量很大的时候，从 X 抽取的样本平均值就是 <span class="arithmatex">\(E[X]\)</span>，大数定律就为此提供了一个数学理论基础</p>
+<p>考虑另一个随机变量序列：<span class="arithmatex">\(S_n\)</span> 减去 <span class="arithmatex">\(n\mu\)</span>（<span class="arithmatex">\(E[S_n]\)</span>）得到<strong>零均值随机变量序列</strong> <span class="arithmatex">\(S_n-n\mu\)</span>，然后除以 <span class="arithmatex">\(\sigma\sqrt{n}\)</span>（<span class="arithmatex">\(\sqrt{\text{var}(S_n)}\)</span>），得到随机变量序列：</p>
+<p><span class="arithmatex">\(Z_n=\frac{S_n-E[S_n]}{\sqrt{\text{var}(S_n)}}=\frac{S_n-n\mu}{\sqrt n\sigma}\)</span></p>
+<p>易证 <span class="arithmatex">\(E[Z_n]=0\)</span>，<span class="arithmatex">\(\text{var}(Z_n)=1\)</span>（<span class="arithmatex">\(Z_n\)</span> 的均值与方差都不依赖于样本容量 n，因此它既不发散，也不收敛于一点）</p>
+<p><strong>中心极限定理</strong>就研究研究 <span class="arithmatex">\(Z_n\)</span> 的分布的渐进性质，并且得出结论：当 n 充分大的时候，<span class="arithmatex">\(Z_n\)</span> 的分布就接近于标准正态分布</p>
+<table>
+<thead>
+<tr>
+<th align="center">随机变量\参数</th>
+<th align="center">记号</th>
+<th align="center">均值</th>
+<th align="center">方差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">随机变量(独立同分布)</td>
+<td align="center"><span class="arithmatex">\(X_i\)</span></td>
+<td align="center"><span class="arithmatex">\(\mu\)</span></td>
+<td align="center"><span class="arithmatex">\(\sigma^2\)</span></td>
+</tr>
+<tr>
+<td align="center">部分和序列</td>
+<td align="center"><span class="arithmatex">\(S_n=\sum\limits_{i=1}^nX_i\)</span></td>
+<td align="center"><span class="arithmatex">\(n\mu\)</span></td>
+<td align="center"><span class="arithmatex">\(n\sigma^2\)</span></td>
+</tr>
+<tr>
+<td align="center">样本均值序列</td>
+<td align="center"><span class="arithmatex">\(M_n=\frac{S_n}n\)</span></td>
+<td align="center"><span class="arithmatex">\(\mu\)</span></td>
+<td align="center"><span class="arithmatex">\(\frac{\sigma^2}n\)</span></td>
+</tr>
+<tr>
+<td align="center">零均值随机变量序列</td>
+<td align="center"><span class="arithmatex">\(S_n-n\mu\)</span></td>
+<td align="center"><span class="arithmatex">\(0\)</span></td>
+<td align="center"><span class="arithmatex">\(n\sigma^2\)</span></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><span class="arithmatex">\(Z_n=\frac{S_n-E[S_n]}{\sqrt{\text{var}(S_n)}}=\frac{S_n-n\mu}{\sqrt n\sigma}\)</span></td>
+<td align="center"><span class="arithmatex">\(0\)</span></td>
+<td align="center"><span class="arithmatex">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">极限理论的用处</p>
+<ol>
+<li>从理论上看，极限理论为期望(或概率)和独立同分布试验序列之间的联系提供了合理的解释</li>
+<li>极限理论提供了 <span class="arithmatex">\(Z_n\)</span> 等随机变量序列当样本量 n 充分大时的渐近性质；与精确方法比较，为了了解 <span class="arithmatex">\(Z_n\)</span> 的性质，精确方法需要计算 <span class="arithmatex">\(Z_n\)</span> 的分布列或概率密度函数，但是在 n 充分大的时候，这些计算是非常复杂而且不得要领</li>
+<li>在使用大量观测数据集时，极限理论在统计推断中发挥主要的作用</li>
+</ol>
+</div>
+<h3 id="1">1. 马尔科夫和切比雪夫不等式</h3>
+<p>本节介绍一些重要的不等式.这些不等式使用随机变量的均值和方差去分析事件的概率</p>
+<p>在随机变量 X 的<strong>均值和方差易于计算</strong>，但<strong>分布不知道或不易计算</strong>时，这些不等式就非常有用</p>
+<div class="admonition note">
+<p class="admonition-title">马尔可夫不等式</p>
+</div>
+<blockquote>
+<p>假设随机变量 X 只取非负值，则对于所有 <span class="arithmatex">\(a&gt;0\)</span>，都有 <span class="arithmatex">\(P(X\ge a)\le\frac{E[X]}a\)</span></p>
+<p>注：马尔可夫不等式给出了 X 不小于某个正数的概率的上界</p>
+</blockquote>
+<p>证明：假设随机变量 <span class="arithmatex">\(X\ge0\)</span>，并且 <span class="arithmatex">\(a&gt;0\)</span></p>
+<p>构造 X 的一个函数：<span class="arithmatex">\(Y_a=\begin{cases}0&amp;X&lt;a\\a&amp;X\ge a\end{cases}\)</span></p>
+<p>其中 <span class="arithmatex">\(Y_a\le X\)</span></p>
+<p>于是 <span class="arithmatex">\(E[Y_a]=\int_a^{+∞}af_X(x)~d_x\le\int_0^{+∞}xf_X(x)~d_x=E[X]\)</span></p>
+<p>又因为 <span class="arithmatex">\(E[Y_a]=a\int_a^{+∞}f_X(x)~d_x=aP(X\ge a)\)</span>，所以有 <span class="arithmatex">\(P(X\ge a)\le\frac{E[X]}a\)</span></p>
+<p>注：若 <span class="arithmatex">\(a&lt;0\)</span>，那么 <span class="arithmatex">\(E[Y_a]=aP(X\ge a)=a\le E[X]\)</span> 或 <span class="arithmatex">\(P(X\le a)\ge\frac{E[X]}a\)</span>（不等式左侧等于 1）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>若 <span class="arithmatex">\(g(X)\ge h(X)\)</span>，则 <span class="arithmatex">\(E[g(X)]\ge E[h(x)]\)</span>？</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>X 服从 <span class="arithmatex">\([0,4]\)</span> 上的均匀分布，且 <span class="arithmatex">\(E[X]=2\)</span>：</li>
+<li>由马尔可夫不等式有：<span class="arithmatex">\(P(X\ge 2)\le 1,P(X\ge 3)\le\frac23=0.67,P(X\ge5)\le0.5\)</span></li>
+<li>而精确值：<span class="arithmatex">\(P(X\ge2)=0.5,P(X\ge 3)=0.25,P(X\ge4)=0\)</span></li>
+<li>可以看出由马尔可夫不等式给出的上界与真实概率相差非常远</li>
+<li>注：注意马尔可夫不等式的条件（<span class="arithmatex">\(X\ge0,a&gt;0\)</span>），如：<span class="arithmatex">\([-1,4]\)</span> 上的均匀分布是不满足的</li>
+</ol>
+</div>
+<p>下面介绍切比雪夫不等式</p>
+<p>粗略地讲，切比雪夫不等式是指如果一个随机变量的方差非常小的话，那么该随机变量取远离均值 <span class="arithmatex">\(\mu\)</span> 的概率也非常小</p>
+<div class="admonition note">
+<p class="admonition-title">切比雪夫不等式</p>
+</div>
+<blockquote>
+<p>若随机变量 X 的均值为 <span class="arithmatex">\(\mu\)</span>，方差为 <span class="arithmatex">\(\sigma^2\)</span>，</p>
+<p>则对于所有 <span class="arithmatex">\(c&gt;0\)</span>，都有 <span class="arithmatex">\(P(|X-\mu|\ge c)\le\frac{\sigma^2}{c^2}\)</span></p>
+<p>严格形式：<span class="arithmatex">\(P(|X-E[X]|\ge c)\le\frac{\text{var}(X)}{c^2}\)</span></p>
+<p>注：切比雪夫不等式指出 X 在邻域 <span class="arithmatex">\(U(\mu,c)=\{x~|~|x-\mu|&lt;c\}\)</span> 之外的上界</p>
+<p>等价式：<span class="arithmatex">\(P(X\notin U(\mu,c))\le\frac{\sigma^2}{c^2}=\frac{\text{var}(X)}{c^2}\)</span>，<span class="arithmatex">\(P(|X-\mu|\ge \sqrt a)\le\frac{\sigma^2}a=\frac{\text{var}(X)}a\)</span></p>
+<p>若 <span class="arithmatex">\(c=k\sigma\)</span>（<span class="arithmatex">\(k&gt;0\)</span>），那么有 <span class="arithmatex">\(P(|X-\mu|\ge k\sigma)\le\frac{\sigma^2}{(k\sigma)^2}=\frac1{k^2}\)</span></p>
+</blockquote>
+<p>证明：</p>
+<p>假设随机变量 X 的均值和期望分别为 <span class="arithmatex">\(\mu,\sigma^2\)</span></p>
+<p>将非负随机变量 <span class="arithmatex">\((X-\mu)^2\)</span> 代入马尔可夫不等式有：<span class="arithmatex">\(P((X-\mu)^2\ge a)\le \frac{E[(X-\mu)^2]}a=\frac{\text{var}(X)}a=\frac{\sigma^2}a\)</span>（对于所有 <span class="arithmatex">\(a&gt;0\)</span>）</p>
+<p>由于 <span class="arithmatex">\((X-\mu)^2\ge a\)</span> 等价于 <span class="arithmatex">\(|X-\mu|\ge \sqrt a\)</span>，于是 <span class="arithmatex">\(P(|X-\mu|\ge \sqrt a)\le\frac{\sigma^2}a\)</span></p>
+<p>记 <span class="arithmatex">\(c=\sqrt a&gt;0\)</span>，则有 <span class="arithmatex">\(P(|X-\mu|\ge c)\le\frac{\sigma^2}{c^2}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>X 服从 <span class="arithmatex">\([0,4]\)</span> 上的均匀分布，<span class="arithmatex">\(\mu=\frac14,\sigma^2=\frac{4^2}12=\frac43\)</span>；<span class="arithmatex">\(P(|X-2|\ge1)\le\frac43\)</span>（而概率永远不会超过 1，所以这个不等式不提供任何信息）</li>
+<li>X 服从 <span class="arithmatex">\(\lambda=1\)</span> 的指数分布，<span class="arithmatex">\(E[X]=\text(var)(X)=1\)</span>；<span class="arithmatex">\(P(X\ge c)=P(X-1\ge c-1)\le P(|X-1|\ge c-1)\le\frac1{(c-1)^2}\)</span>，而 <span class="arithmatex">\(P(X\ge c)=e^{-c}\)</span>（可以看出由切比雪夫不等式给出的上界比较保守）</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">切比雪夫不等式的上界</p>
+</div>
+<blockquote>
+<p>若 X 的取值空间是 <span class="arithmatex">\([a,b]\)</span>，可以证明 <span class="arithmatex">\(\sigma^2\le\frac{(b-a)^2}4\)</span></p>
+<p>证明详见 p 294</p>
+</blockquote>
+<h3 id="2">2. 弱大数定律</h3>
+<p>弱大数定律是指独立同分布的随机变量序列的样本均值，在大样本的情况下，以很大的概率与随机变量的均值非常接近</p>
+<p>独立同分布随机变量序列 <span class="arithmatex">\(X_1,X_2,\dots\)</span> 的公共分布均值为 <span class="arithmatex">\(\mu\)</span>，方差为 <span class="arithmatex">\(\sigma^2\)</span></p>
+<p>样本均值为 <span class="arithmatex">\(M_n=\frac1n\sum\limits_{i=1}^nX_i\)</span>，</p>
+<p>根据前文有 <span class="arithmatex">\(M_n\)</span> 的均值和方差：<span class="arithmatex">\(E[M_n]=\mu\)</span>，<span class="arithmatex">\(\text{var}(M_n)=\frac{\sigma^2}n\)</span></p>
+<p>利用切比雪夫不等式，对于所有 <span class="arithmatex">\(\epsilon&gt;0\)</span> <span class="arithmatex">\(P(|M_n-E[M_n]|\ge\epsilon)\le\frac{\text{var}(M_n)}{\epsilon^2}\)</span></p>
+<p>于是 <span class="arithmatex">\(P(|M_n-\mu|\ge\epsilon)\le\frac{\sigma^2}{n\epsilon^2}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">弱大数定律</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(X_1,X_2,\dots\)</span> 独立同分布，其公共分布均值为 <span class="arithmatex">\(\mu\)</span></p>
+<p>对于所有 <span class="arithmatex">\(\epsilon&gt;0\)</span>，当 <span class="arithmatex">\(n\to∞\)</span>，<span class="arithmatex">\(P(|M_n-\mu|\ge\epsilon)=P(|\frac1n\sum\limits_{i=1}^nX_i-\mu|\ge\epsilon)\to0\)</span></p>
+<p>注：弱大数定律指出对于充分大的 n，<span class="arithmatex">\(M_n\)</span> 的分布的大部分都集中在 <span class="arithmatex">\(\mu\)</span> 附近，<span class="arithmatex">\(M_n\)</span> 位于 <span class="arithmatex">\([\mu-\epsilon,\mu+\epsilon]\)</span> 的概率非常大（<span class="arithmatex">\(n\to∞\)</span> 时，该概率趋近于 1）；当然当 <span class="arithmatex">\(\epsilon\)</span> 非常小时，则需要更大的 n，使得 <span class="arithmatex">\(M_n\)</span> 以很大的概率落在该区间内</p>
+<p>注2：<span class="arithmatex">\(\text{var}(X_i)\)</span> 无界时，弱大数定律仍然成立；上述弱大数定律需要假设 <span class="arithmatex">\(E[X_i]\)</span> 是<strong>有限</strong>的</p>
+<p>我的理解：n 充分大时，样本均值 <span class="arithmatex">\(M_n\)</span> 任意地接近 <span class="arithmatex">\(X_i\)</span> 的均值 <span class="arithmatex">\(E[X_i]\)</span></p>
+<p>如：<span class="arithmatex">\(X_i\)</span> 是伯努利试验时，<span class="arithmatex">\(M_n\)</span> 有特殊的含义——频率，而 <span class="arithmatex">\(E[X_i]=p\)</span> 也就是事件 A 的概率；也就是说，n 充分大时，事件 A 发生的频率任意地接近事件 A 的概率 p</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>概率与频率：n 次独立重复的伯努利试验中，记 <span class="arithmatex">\(M_n\)</span> 为事件 A 发生的次数占总试验次数 n 的比例，<span class="arithmatex">\(M_n\)</span> 通常称为事件 A 的<strong>频率</strong>，而 <span class="arithmatex">\(E[X_i]=p\)</span>；n 充分大时，事件 A 发生的频率任意地接近事件 A 的概率 p</li>
+<li>选举问题：设 p 为选民支持某候选人的比例，现在“随机”（选民之间独立同分布）地对 n 个选民进行调查，计算这 n 个选民对候选人的支持率 <span class="arithmatex">\(M_n\)</span>，我们将 <span class="arithmatex">\(M_n\)</span> 视为 p 的估计；假设我们希望估计量 <span class="arithmatex">\(M_n\)</span> 与 真值 p 相差不到 0.01 的概率至少超过 <span class="arithmatex">\(95\%\)</span>，则至少需要调查多少人？<ol>
+<li>上述试验仍然是 独立重复的伯努利试验；上述问题意味着 <span class="arithmatex">\(P(M_n\in U(p,0.01))\ge 0.95\)</span>，也即 <span class="arithmatex">\(P(M_n\notin U(p,0.01))\le 1-0.95=0.05\)</span> (1)</li>
+<li>由弱大数定律（或切比雪夫不等式）有 <span class="arithmatex">\(P(M_n\notin U(p,0.01))\le \frac{\text{var}(M_n)}{0.01^2}=\frac{\sigma^2/n}{0.01^2}=\frac{p(1-p)}{0.01^2n}\)</span> (2)</li>
+<li>要使不等式 (1) 恒成立，一个充分条件是 <span class="arithmatex">\(\max\{\frac{p(1-p)}{0.01n}\}\le 0.05\)</span></li>
+<li>又因为 <span class="arithmatex">\(\max\{\frac{p(1-p)}{0.01^2n}\}=\frac{1/4}{0.01^2n}=\frac1{4\cdot0.01^2n}\)</span>，于是 <span class="arithmatex">\(\frac1{4\cdot0.01^2n}\le0.05\)</span>，<span class="arithmatex">\(n\le 5\cdot10^4\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">弱大数定律应用</p>
+</div>
+<blockquote>
+<p>独立重复的伯努利试验中，</p>
+<p>假设估计值 <span class="arithmatex">\(M_n=\frac{\sum\limits_{i=1}^n}n\)</span> 与真值 p 相差严格小于 <span class="arithmatex">\(\epsilon\)</span> 的概率不小于 <span class="arithmatex">\(\delta\)</span>，计算样本容量 n 的一个下界（<span class="arithmatex">\(0\le\epsilon,\delta\le 1\)</span>）</p>
+<p>问题等价于 <span class="arithmatex">\(P(M_n\in U(p,\epsilon))\ge \delta\)</span>，等价于 <span class="arithmatex">\(P(M_n\notin U(p,\epsilon))\le 1-\delta\)</span> (1)</p>
+<p>在该试验中 <span class="arithmatex">\(E[M_n]=E[X_i]=p,\text{var}(M_n)=\frac{\text{var}(X_i)}n=\frac{p(1-p)}n\)</span></p>
+<p>根据切比雪夫不等式 <span class="arithmatex">\(P(M_n\notin U(E[M_n],\epsilon))\le\frac{\text{var}(M_n)}{\epsilon^2}\)</span>，等价于 <span class="arithmatex">\(P(M_n\notin U(p,\epsilon))\le\frac{p(1-p)}{n\epsilon^2}\)</span></p>
+<p>不等式 (1) 恒成立的一个充分条件是 <span class="arithmatex">\(\max\{\frac{p(1-p)}{n\epsilon^2}\}\le 1-\delta\)</span></p>
+<p>而 <span class="arithmatex">\(\max\{\frac{p(1-p)}{n\epsilon^2}\}\le \frac1{4n\epsilon^2}\)</span>，于是 <span class="arithmatex">\(\frac1{4n\epsilon^2}\le 1-\delta\)</span>，即 <span class="arithmatex">\(n\ge\frac1{4\epsilon^2(1-\delta)}\)</span></p>
+<p>结论1：估计值 <span class="arithmatex">\(M_n\)</span> 与真值 p 相差严格小于 <span class="arithmatex">\(\epsilon\)</span> 的概率不小于 <span class="arithmatex">\(\delta\)</span> 时，n 的一个下界是 <span class="arithmatex">\(\frac1{4\epsilon^2(1-\delta)}\)</span></p>
+<p>结论2：估计值 <span class="arithmatex">\(M_n\)</span> 与真值 p 相差不小于 <span class="arithmatex">\(\epsilon\)</span> 的概率不大于 <span class="arithmatex">\(\delta\)</span> 时，n 的一个下界是 <span class="arithmatex">\(\frac1{4\epsilon^2\delta}\)</span></p>
+<p>注：这些结论仍然很保守，即给出的 n 的下界与 n 的最小值的偏离程度较大</p>
+<p>注2：<span class="arithmatex">\(\epsilon\)</span> 称为<strong>精度</strong>，<span class="arithmatex">\(\delta\)</span> 称为<strong>置信水平</strong></p>
+</blockquote>
+<h3 id="3">3. 依概率收敛</h3>
+<p>弱大数定律可以表述为“<span class="arithmatex">\(M_n\)</span> 收敛于 <span class="arithmatex">\(\mu\)</span>”（“<span class="arithmatex">\(M_n\)</span> 收敛于 <span class="arithmatex">\(E[X_i]\)</span>”）</p>
+<p>随机变量序列 <span class="arithmatex">\(M_1,M_2,\dots\)</span> 不是数列，所以这里的“收敛”的含义不同于数列的收敛，为了便于比较两种收敛，以下给出了数列的收敛定义：</p>
+<div class="admonition note">
+<p class="admonition-title">数列的收敛</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(a_1,a_2,\dots\)</span> 是实数数列，a 为实数，如果对所有 <span class="arithmatex">\(\epsilon&gt;0\)</span>，都存在 <span class="arithmatex">\(n_0\)</span> 使得对所有 <span class="arithmatex">\(n\ge n_0\)</span> 都有 <span class="arithmatex">\(|a_n-a|\le\epsilon\)</span>，</p>
+<p>则称数列 <span class="arithmatex">\(a_n\)</span> 收敛于 a，记为 <span class="arithmatex">\(\lim\limits_{n\to∞}a_n=a\)</span></p>
+<p>注：如果 <span class="arithmatex">\(\lim\limits_{n\to∞}a_n=a\)</span>，则对任意 <span class="arithmatex">\(\epsilon&gt;0\)</span>，当 n 充分大时，<span class="arithmatex">\(a_n\)</span> 必须在 a 的 <span class="arithmatex">\(\epsilon\)</span> 邻域内</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">依概率收敛</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(Y_1,Y_2,\dots\)</span> 是随机变量序列，a 为实数，如果对所有 <span class="arithmatex">\(\epsilon&gt;0\)</span> 都有 <span class="arithmatex">\(\lim\limits_{n\to∞}P(|Y_n-a|\ge\epsilon)=0\)</span></p>
+<p>则称 <span class="arithmatex">\(Y_n\)</span> 依概率收敛与 a</p>
+<p>注：弱大数定律可以描述为：<span class="arithmatex">\(M_n\)</span> 依概率收敛于 <span class="arithmatex">\(\mu=E[X_i]\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(X_1,X_2,\dots\)</span> 独立同分布，服从 <span class="arithmatex">\([0,1]\)</span> 上的均匀分布，<span class="arithmatex">\(Y_n=\min\{X_1,\dots,X_n\}\)</span>，验证 <span class="arithmatex">\(Y_n\)</span> 收敛于 0：<ol>
+<li>对于所有 <span class="arithmatex">\(\epsilon&gt;0\)</span>，<span class="arithmatex">\(P(|Y_n-0|\ge\epsilon)=P(Y_1\ge\epsilon,\dots,Y_n\ge\epsilon)=\prod\limits_{i=1}^nP(Y_i\ge\epsilon)=(1-\epsilon)^n\)</span>（最后一个等式需要 <span class="arithmatex">\(\epsilon\le1\)</span> 才能成立吧？）</li>
+<li>于是 <span class="arithmatex">\(\lim\limits_{n\to∞}P(|Y_n-0|\ge\epsilon)=\lim\limits_{n\to∞}(1-\epsilon)^n=0\)</span>，<span class="arithmatex">\(Y_n\)</span> 依概率收敛于 0</li>
+</ol>
+</li>
+<li>设 Y 服从 <span class="arithmatex">\(\lambda=1\)</span> 的指数分布；对任意正数 n，定义 <span class="arithmatex">\(Y_n=Y/n\)</span>，验证 <span class="arithmatex">\(Y_n\)</span> 依概率收敛于 0<ol>
+<li>对于所有 <span class="arithmatex">\(\epsilon&gt;0\)</span>，<span class="arithmatex">\(P(|Y_n-0|\ge\epsilon)=P(Y_n\ge\epsilon)=P(Y\ge n\epsilon)=e^{-n\epsilon}\)</span></li>
+<li>于是 <span class="arithmatex">\(\lim\limits_{n\to∞}P(|Y_n-0|\ge\epsilon)=\lim\limits_{n\to∞}e^{-n\epsilon}=0\)</span></li>
+</ol>
+</li>
+<li>离散随机变量序列 <span class="arithmatex">\(Y_n\)</span> 的分布列为 <span class="arithmatex">\(P(Y_n=y)=\begin{cases}1-\frac1n&amp;y=0\\\frac1n&amp;y=n^2\\0&amp;其他\end{cases}\)</span><ol>
+<li>对任意 <span class="arithmatex">\(\epsilon&gt;0\)</span> 有 <span class="arithmatex">\(\lim\limits_{n\to∞}P(|Y_n-0|\ge\epsilon)=\lim\limits_{n\to∞}\frac1n=0\)</span></li>
+<li>另一方面，<span class="arithmatex">\(n\to∞\)</span> 时，<span class="arithmatex">\(E[Y_n]=n^2\frac1n=n\to∞\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<h3 id="4">4. 中心极限定理</h3>
+<div class="admonition note">
+<p class="admonition-title">中心极限定理</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(X_1,X_2,\dots\)</span> 是独立同分布的随机变量序列，均值和方差分别为 <span class="arithmatex">\(\mu,\sigma^2\)</span></p>
+<p>定义 <span class="arithmatex">\(z_n=\frac{S_n-E[S_n]}{\sqrt{\text{var}(S_n)}}=\frac{S_n-n\mu}{\sqrt n\sigma}\)</span>（<span class="arithmatex">\(S_n=\sum\limits_{i=1}^nX_i\)</span>）</p>
+<p>（其中 <span class="arithmatex">\(E[Z_n]=0,\text{var}(z_n)=1\)</span>）</p>
+<p>则 <span class="arithmatex">\(Z_n\)</span> 的分布函数的<strong>极限分布</strong>为标准正态分布函数：<span class="arithmatex">\(\Phi(x)=\frac1{\sqrt{2\pi}}\int_{-∞}^xe^{-z^2/2}~d_z\)</span></p>
+<p>也就是说 对于所有 x，<span class="arithmatex">\(\lim\limits_{n\to∞}P(Z_n\le x)=\Phi(x)\)</span></p>
+<p>注：该定理的条件是 序列独立同分布，各项的均值和方差有限</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">基于中心极限定理的近似</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(X_1,X_2,\dots\)</span> 是独立同分布的随机变量序列，均值和方差分别为 <span class="arithmatex">\(\mu,\sigma^2\)</span></p>
+<p>令 <span class="arithmatex">\(S_n=\sum\limits_{i=1}^nX_i\)</span>；n 充分大时，概率 <span class="arithmatex">\(P(S_n\le c)\)</span> 通过将 <span class="arithmatex">\(S_n\)</span> 视为正态随机变量来近似计算：</p>
+<ol>
+<li>计算 <span class="arithmatex">\(E[S_n]=n\mu,\text{var}(S_n)=n\sigma^2\)</span></li>
+<li>计算 c 归一化后的值：<span class="arithmatex">\(z=\frac{c-E[S_n]}{\sqrt{\text{var}(S_n)}}=\frac{c-n\mu}{\sqrt n\sigma}\)</span></li>
+<li>计算近似值：<span class="arithmatex">\(P(S_n\le c)\approx\Phi(z)\)</span> 或 <span class="arithmatex">\(P(S_n&gt;c)\approx1-\Phi(z)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>飞机上运载 100 件包裹，每件包裹的重量是独立的随机变量，并且在 5 磅到 50 磅之间均匀分布，计算这 100 件包裹的总重量超过 3000 磅的概率：<ol>
+<li>方法1：计算 <span class="arithmatex">\(Y=\sum\limits_{i=1}^{100}X_i\)</span> CDF，然后计算概率（如：计算出矩母函数 <span class="arithmatex">\(M_Y(s)=[\frac{e^{sb}-e^{sa}}{s(b-a)}]^{n}\)</span>，然后求得分布列...）</li>
+<li>方法2：中心极限定理计算近似值：<span class="arithmatex">\(P(S_{100}&gt;3000)\approx1-\Phi\left(\frac{3000-100\cdot\frac{5+50}2}{\sqrt{100\cdot\frac{(50-5)^2}{12}}}\right)\)</span></li>
+</ol>
+</li>
+<li>一台机器对零件加工，每次加工一个零件，每个零件加工时间的加工时间独立同分布，满足 <span class="arithmatex">\([1,5]\)</span> 上的均匀分布；设 <span class="arithmatex">\(N_s\)</span> 是 s 个单位时间内的加工零件总数，计算 <span class="arithmatex">\(P(N_{320}\ge100)\)</span><ol>
+<li><span class="arithmatex">\(N_{320}\)</span> 不能表示为独立随机变量之和，我们转换成另一种观点：</li>
+<li>记 <span class="arithmatex">\(X_i\)</span> 是第 i 件零件的加工时间，<span class="arithmatex">\(S_n=\sum\limits_{i=1}^{100}\)</span> 是前 n 件的加工总时间</li>
+<li>于是事件 <span class="arithmatex">\(\{N_{320}\ge100\}\)</span> 与事件 <span class="arithmatex">\(\{S_{100}\le3230\}\)</span> 等价，于是 <span class="arithmatex">\(P(S_{100}\le320)\approx\Phi\left(\frac{320-100\cdot\frac{1+5}2}{\sqrt{100\cdot\frac{(5-1)^2}{12}}}\right)\)</span></li>
+</ol>
+</li>
+<li>选举问题：设 p 为选民支持某候选人的比例，现在“随机”（选民之间独立同分布）地对 n 个选民进行调查，计算这 n 个选民对候选人的支持率 <span class="arithmatex">\(M_n\)</span>，我们将 <span class="arithmatex">\(M_n\)</span> 视为 p 的估计；假设我们希望估计量 <span class="arithmatex">\(M_n\)</span> 与 真值 p 相差不到 0.01 的概率至少超过 <span class="arithmatex">\(95\%\)</span>，则至少需要调查多少人？<ol>
+<li><span class="arithmatex">\(n\ge\left[\frac{\Phi^{-1}(\frac{1+\delta}2)}{2\epsilon}\right]^2\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">中心极限定理的应用</p>
+</div>
+<blockquote>
+<p>独立重复的伯努利试验中，</p>
+<p>假设估计值 <span class="arithmatex">\(M_n=\frac{\sum\limits_{i=1}^n}n\)</span> 与真值 p 相差严格小于 <span class="arithmatex">\(\epsilon\)</span> 的概率不小于 <span class="arithmatex">\(\delta\)</span>，计算样本容量 n 的一个下界（<span class="arithmatex">\(0\le\epsilon,\delta\le 1\)</span>）</p>
+<p>问题等价于 <span class="arithmatex">\(P(|M_n-p|\le\epsilon))\ge \delta\)</span> 求解 n 的下界，</p>
+<p>上式也等价于 <span class="arithmatex">\(P(|M_n-p|\ge\epsilon))\le 1-\delta\)</span></p>
+<p>其中 <span class="arithmatex">\(E[M_n]=p,\text{var}(M_n)=\frac{p(1-p)}n\)</span></p>
+<p>易知 <span class="arithmatex">\(P(|M_n-p|\ge\epsilon)\approx2P(M_n-p\ge\epsilon)\)</span></p>
+<p>设 <span class="arithmatex">\(z=\frac{\epsilon-E[M_n-p]}{\sqrt{\text{var}(M_n-p)}}=\frac{\epsilon-0}{\sqrt{p(1-p)/n}}=\frac{\sqrt n\epsilon}{\sqrt{p(1-p)}}\ge 2\sqrt n\epsilon\)</span>，于是 <span class="arithmatex">\(\Phi(z)\ge\Phi(2\sqrt n\epsilon)\)</span></p>
+<p>(其中 <span class="arithmatex">\(E[M_n-p]=0,\text{var}(M_n-p)=\frac{p(1-p)}n\)</span>)</p>
+<p>应用中心极限定理 <span class="arithmatex">\(P(|M_n-p|\ge\epsilon)\approx 2P(M_n-p\ge\epsilon)\approx 2[1-\Phi(z)]\le2[1-\Phi(2\sqrt n\epsilon)]\le1-\delta\)</span></p>
+<p>原不等式成立的充分条件之一是 <span class="arithmatex">\(2[1-\Phi(2\sqrt n\epsilon)]\le1-\delta\)</span></p>
+<p>于是 <span class="arithmatex">\(n\ge\left[\frac{\Phi^{-1}(\frac{\delta+1}2)}{2\epsilon}\right]^2\)</span></p>
+<p>结论：</p>
+<ol>
+<li>估计值 <span class="arithmatex">\(M_n\)</span> 与真值 p 相差严格小于 <span class="arithmatex">\(\epsilon\)</span> 的概率不小于 <span class="arithmatex">\(\delta\)</span> 时，n 的一个下界是 <span class="arithmatex">\(n\ge\left[\frac{\Phi^{-1}(\frac{1+\delta}2)}{2\epsilon}\right]^2\)</span></li>
+<li>估计值 <span class="arithmatex">\(M_n\)</span> 与真值 p 相差不小于 <span class="arithmatex">\(\epsilon\)</span> 的概率不大于 <span class="arithmatex">\(\delta\)</span> 时，n 的一个下界是 <span class="arithmatex">\(n\ge\left[\frac{\Phi^{-1}(\frac{2-\delta}2)}{2\epsilon}\right]^2\)</span></li>
+</ol>
+<p>注：注意该方法与 弱大数定律 的解法的比较</p>
+</blockquote>
+<p>服从参数为 n 和 p 的二项分布的随机变量 <span class="arithmatex">\(S_n\)</span> 可以看成 n 个服从参数为 p 的伯努利分布的独立随机变量 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 的和：<span class="arithmatex">\(S_n=\sum\limits_{i=1}^nX_i\)</span></p>
+<p>使用中心极限定理近似事件 <span class="arithmatex">\(\{l\le S_n\le r\}\)</span></p>
+<p>而 <span class="arithmatex">\(l\le S_n\le r\iff \frac{l-E[S_n]}{\sqrt{\text{var}(S_n)}}\le\frac{S_n-E[S_n]}{\sqrt{\text{var}(S_n)}}\le\frac{r-E[S_n]}{\sqrt{\text{var}(S_n)}}\)</span></p>
+<p>（<span class="arithmatex">\(E[S_n]=np,\text{var}(S_n)=np(1-p)\)</span>）</p>
+<p>所以 <span class="arithmatex">\(P(l\le S_n\le r)=P\left(\frac{l-np}{\sqrt{np(1-p)}}\le\frac{S_n-np}{\sqrt{np(1-p)}}\le\frac{r-np}{\sqrt{np(1-p)}}\right)\approx\Phi(\frac{r-np}{\sqrt{np(1-p)}})-\Phi(\frac{l-np}{\sqrt{np(1-p)}})\)</span></p>
+<p>然而下述法则指出 <span class="arithmatex">\(l,r\)</span> 分别替换为 <span class="arithmatex">\(l-\frac12,r+\frac12\)</span> 近似结果更加准确</p>
+<div class="admonition note">
+<p class="admonition-title">二项分布的棣莫弗-拉普拉斯近似</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(S_n\)</span> 是服从参数为 n 和 p 的二项分布，n 充分大，l 和 r 是非负整数，则：</p>
+<p><span class="arithmatex">\(P(l\le S_n\le r)\approx\Phi(\frac{r+\frac12-np}{\sqrt{np(1-p)}})-\Phi(\frac{l-\frac12-np}{\sqrt{np(1-p)}})\)</span></p>
+<p>注：正态近似将二项分布随机变量 <span class="arithmatex">\(S_n\)</span> 看成均值为 <span class="arithmatex">\(np\)</span> 方差为 <span class="arithmatex">\(np(1-p)\)</span> 的正态分布</p>
+<p>注2：当 p 靠近 <span class="arithmatex">\(1/2\)</span> 时，的分布列是对称的，当 n 接近40或50时，使用上述近似方法就能得到很好的结果；当 p 靠近 1 或 0 时，这个近似结果就不好，这时需要更大的 n 才能得到相同的精度</p>
+<p>注3：该近似方法同样也适用于 <strong>单侧区间</strong>，<strong>单个点</strong> 的近似（该近似方法的特点是一定会扩大计算区间）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">中心极限定理的应用总结</p>
+<ol>
+<li>近似样本部分和 <span class="arithmatex">\(S_n\)</span> 的分布</li>
+<li>分析样本平均值 <span class="arithmatex">\(M_n\)</span> 的“置信度？”</li>
+</ol>
+</div>
+<h3 id="5">5. 强大数定律</h3>
+<p>强大数定律与弱大数定律一样，都是指样本均值收敛于真值；但是，它们强调的是不同的收敛类别</p>
+<div class="admonition note">
+<p class="admonition-title">强大数定律</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(X_1,X_2,\dots\)</span> 是均值为 <span class="arithmatex">\(\mu\)</span> 的独立同分布随机变量序列，则样本均值 <span class="arithmatex">\(M_n=\frac{\sum\limits_{i=1}^nX_i}n\)</span> 以<strong>概率 1</strong> 收敛于 <span class="arithmatex">\(\mu\)</span></p>
+<p>也就是说，<span class="arithmatex">\(P(\lim\limits_{n\to∞}\frac{\sum\limits_{i=1}^nX_i}n=\mu)=1\)</span></p>
+<p>注：对强大数定律的解释详见 p306</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">以概率 1 收敛</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(Y_1,Y_2,\dots\)</span> 是某种概率模型下的随机变量序列（不必独立），c 是某个实数</p>
+<p>若 <span class="arithmatex">\(P(\lim\limits_{n\to∞}Y_n=c)=1\)</span></p>
+<p>则称 <span class="arithmatex">\(Y_n\)</span> 以<strong>概率 1</strong>（或<strong>几乎处处</strong>）收敛于 c</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>详见 p307</li>
+</ol>
+</div>
 </article>
 </div>
 </div>

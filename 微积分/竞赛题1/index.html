@@ -835,6 +835,20 @@
 <li>极限</li>
 </ol>
 </div>
+<div class="admonition info">
+<p class="admonition-title">递推式求解</p>
+<ol>
+<li><span class="arithmatex">\(a_n=1+2a_{n-1}\to 2^n[\frac{a_n}{2^n}-\frac{a_{l-1}}{2^{l-1}}]=2^{n-l+1}-1\)</span></li>
+<li><span class="arithmatex">\(a_n=b_n+2a_{n-1}\to 2^n[\frac{a_n}{2^n}-\frac{a_{l-1}}{2^{l-1}}]=\sum\limits_{i=l}^n2^{n-i}b_i\)</span></li>
+<li><span class="arithmatex">\(a_n=b_n+pa_{n-1}\to p^n[\frac{a_n}{p^n}-\frac{a_{l-1}}{p^{l-1}}]=\sum\limits_{i=l}^np^{n-i}b_i=p^n\sum\limits_{i=l}^n\frac{b_i}{p^i}\)</span><ul>
+<li>于是 <span class="arithmatex">\(a_n=p^{n-l+1}a_{l-1}+p^n\sum\limits_{i=l}^n\frac{b_i}{p^i}\)</span> （其中 <span class="arithmatex">\(a_{l-1}\)</span> 可以是已知项或者初值条件）</li>
+<li>即 <span class="arithmatex">\(a_n=b_n+pa_{n-1}=p^{n-l+1}a_{l-1}+p^n\sum\limits_{i=l}^n\frac{b_i}{p^i}\)</span></li>
+<li>或者 <span class="arithmatex">\(a_n=b_{n-1}+pa_{n-1}=p^{n-l+1}a_{l-1}+p^n\sum\limits_{i=l}^n\frac{b_{i-1}}{p^i}\)</span></li>
+</ul>
+</li>
+<li>推广：构造某种变换 T 使得 <span class="arithmatex">\(T(a_i)=b_i+pT(a_{i-1})\)</span></li>
+</ol>
+</div>
 <p>极限与连续</p>
 <div class="admonition note">
 <p class="admonition-title">1.1 函数与极限</p>
