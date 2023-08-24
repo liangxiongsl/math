@@ -475,6 +475,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        常见问题
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
       </a>
@@ -937,7 +942,7 @@
 <li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 3.1 中值定理</li>
 <li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 3.2 未定型的极限问题</li>
 <li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 3.3 导数的应用</li>
-<li>[] 4.1 不定积分1</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> 4.1 不定积分1</li>
 <li>[] 4.2 不定积分2</li>
 <li>[] 5.1 定积分的概念及性质</li>
 </ul>
@@ -1213,7 +1218,7 @@
 <li><span class="arithmatex">\(\sec x\to\ln|\sec x+\tan x|\)</span>，<span class="arithmatex">\(\csc x\to\ln|\csc x-\cot x|=\ln|\tan\frac x2|=-\ln|\cot\frac x2|\)</span></li>
 </ol>
 </li>
-<li><span class="arithmatex">\(\frac{P(x)}{Q(x)}\)</span> 或 <span class="arithmatex">\(\frac{P(x)}{\sqrt{Q(x)}}\)</span> 可以做如下变换：<span class="arithmatex">\(\frac{P(x)}{Q(x)}=\frac{D(x)Q'(x)}{Q(x)}=\frac{[R(x)Q(x)+T(x)]Q'(x)}{Q(x)}\)</span>（<span class="arithmatex">\(Q'(x)\)</span> 能整除 <span class="arithmatex">\(P(x)\)</span>）</li>
+<li><span class="arithmatex">\(\frac{P(x)}{Q(x)}\)</span> 或 <span class="arithmatex">\(\frac{P(x)}{\sqrt{Q(x)}}\)</span> 可以做类似如下的变换：<span class="arithmatex">\(\frac{P(x)}{Q(x)}=\frac{AQ(x)+BQ'(x)+C}{Q(x)}\)</span></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">4.1 不定积分1</p>
@@ -1259,6 +1264,17 @@
 </ol>
 </div>
 <h3 id="5">5. 定积分及其应用</h3>
+<div class="admonition note">
+<p class="admonition-title">1. 定积分的概念及性质</p>
+<ol>
+<li>估计 <span class="arithmatex">\(\int_0^2e^{x^2-x}~d_x\)</span> 的定积分</li>
+<li>(1) <span class="arithmatex">\(\int_{-\frac\pi2}^{\frac\pi2}(x^3+\sin^2x)\cos^2x~d_x\)</span>，(2) <span class="arithmatex">\(\int_{-2}^2(x+1)\sqrt{4|x|-x^2}~d_x\)</span>，(3) <span class="arithmatex">\(\int_0^\pi\frac1{1+x^2}\sin^2x~d_x+\int_{-\pi}^0\frac1{1+x^2}\cos^2x~d_x\)</span>，(4) <span class="arithmatex">\(\int_{-\frac12}^{\frac12}[\frac{x\sin^{-1}x}{\sqrt{1-x^2}}-\ln(x+\sqrt{1+x^2})]~d_x\)</span></li>
+<li>计算 <span class="arithmatex">\(\frac d{d_x}F(x)\)</span>：(1) <span class="arithmatex">\(F(x)=\int_{x^2}^{\sin x}\cos\pi t^2~d_t\)</span>，(2) <span class="arithmatex">\(F(x)=\int_a^x(x-t)^2f(t)~d_t\)</span>，<span class="arithmatex">\(F(x)=\int_0^xf(t-x)~d_t\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{x\to0}\frac{(\int_0^xe^{t^2}~d_t)^2}{\int_0^xte^{2t^2}~d_t}\)</span></li>
+<li>计算 a 和 b：<span class="arithmatex">\(\lim\limits_{x\to0}\frac1{bx-\sin x}\int_0^x\frac{t^2}{\sqrt{a+t}}~d_t=1\)</span></li>
+<li>(1) <span class="arithmatex">\(\int_0^{\frac\pi2}\frac{\sin x}{\sin x+\cos x}~d_x\)</span>，(2) <span class="arithmatex">\(\int_0^\pi\frac{x\sin x}{1+\cos^2x}~d_x\)</span>，(3) <span class="arithmatex">\(\int_0^{n\pi}\sqrt{1+\sin2x}~d_x\)</span>，(4) <span class="arithmatex">\(\int_0^{\frac\pi2}\sin^6x~d_x\)</span>，(5) <span class="arithmatex">\(\int_{-\frac\pi4}^{\frac\pi4}\frac{\sin^2x}{1+e^{-x}}~d_x\)</span></li>
+</ol>
+</div>
 </article>
 </div>
 </div>

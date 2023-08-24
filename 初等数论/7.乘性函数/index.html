@@ -437,6 +437,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        常见问题
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
       </a>
@@ -828,6 +833,11 @@
     4.  莫比乌斯反演
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    (1) 分块技术
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -908,6 +918,11 @@
     4.  莫比乌斯反演
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    (1) 分块技术
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -916,6 +931,13 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>7.乘性函数</h1>
+<div class="admonition tip">
+<p class="admonition-title">约定</p>
+<ol>
+<li>默认 n 有素数幂分解：<span class="arithmatex">\(n=\prod\limits_{i=1}^{\omega(n)}p_i^{\alpha_i}\)</span></li>
+<li><span class="arithmatex">\(\omega(n)\)</span> 为素数幂分解后的不同的质数因子个数，<span class="arithmatex">\(p_i\)</span> 为第 i 小的素数，<span class="arithmatex">\(\alpha_i\)</span> 为第 i 小的素数的指数</li>
+</ol>
+</div>
 <p>本章研究定义在整数集合上的一类函数——<strong>乘性函数</strong>（或 <strong>积性函数</strong>），它在一个整数上的函数值等于该整数做素数幂分解后，所有素数幂上的函数值之积</p>
 <p>我们还研究称为<strong>完全数</strong>的特殊正整数，这种数与其真因子之和相等；并证明所有偶完全数是由<strong>梅森素数</strong>生成，其中梅森素数是形如 2 的方幂减 1 的素数</p>
 <p>我们还将证明算术函数的和函数来得到函数自身的一些信息</p>
@@ -927,6 +949,7 @@
 <p>算术函数：定义在正整数上的函数，称为算术函数</p>
 <p>乘性函数(积性函数)：算术函数 f 如果满足任意两个互素的正整数 n 和 m，均有 <span class="arithmatex">\(f(mn)=f(m)f(n)\)</span>，那么 f 称为乘性函数或积性函数</p>
 <p>完全乘性函数（完全积性函数）：算术函数 f 如果满足任意两个正整数 n 和 m，均有 <span class="arithmatex">\(f(mn)=f(m)f(n)\)</span>，那么 f 称为完全乘性函数或完全积性函数</p>
+<p>强乘性函数：乘性函数 f 满足 <span class="arithmatex">\(f(p^k)=f(p)\)</span>（<span class="arithmatex">\(p\in\mathbb P,k\in\mathbb N^+\)</span>），如：<span class="arithmatex">\(f(n)=\phi(n)/n\)</span></p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">例子</p>
@@ -995,6 +1018,7 @@
 <blockquote>
 <p>假设 f 是算术函数，f 的和函数定义为 n 中所有正因子处的值之和，即：</p>
 <p><span class="arithmatex">\(F(x)=\sum\limits_{d|n}f(d)\)</span></p>
+<p>可证 F 也是乘性函数，蕴涵 <span class="arithmatex">\(F(n)=F(\prod\limits_{i=1}^{\omega(n)}p_i^{\alpha_i})=\prod\limits_{i=1}^{\omega(n)}F(p_i^{\alpha_i})=\prod\limits_{i=1}^{\omega(n)}\sum\limits_{j=0}^{\alpha_i}f(p_i^j)\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title"><span class="arithmatex">\(\phi\)</span> 的和函数</p>
@@ -1002,15 +1026,79 @@
 <blockquote>
 <p>若 n 是正整数，那么 <span class="arithmatex">\(\sum\limits_{d|n}\phi(d)=n\)</span></p>
 </blockquote>
+<p>证明：</p>
 <p>对整数集合 <span class="arithmatex">\(\{1,\dots,n\}\)</span> 按照 <span class="arithmatex">\((i,n)\)</span> 进行划分，<span class="arithmatex">\(C_d\)</span> 类定义为：<span class="arithmatex">\(C_d=\{i~|~\forall i=1..n,(i,n)=d\}=\{i~|~\forall i=1..n,(i/d,n/d)=1\}\)</span>（蕴涵 <span class="arithmatex">\(d|n\)</span>）；并且满足 <span class="arithmatex">\(n=\sum\limits_{d|n}|C_d|\)</span></p>
 <p>而 <span class="arithmatex">\(|C_d|=\sum\limits_{i=1}^n[(i/d,n/d)=1]=\sum\limits_{i=1}^{\lfloor n/d\rfloor}[(i,n/d)=1]=\phi(n/d)\)</span> （第二个等式是由于 <span class="arithmatex">\(d|i\)</span>，所以枚举 d 的倍数，于是 <span class="arithmatex">\(i'/d=i\)</span>）</p>
 <p>于是 <span class="arithmatex">\(n=\sum\limits_{d|n}\phi(n/d)\)</span></p>
+<p>注：也可以通过和函数的性质（乘性函数）来证明</p>
 <p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">狄利克雷积</p>
+</div>
+<blockquote>
+<p>算术函数 f 和 g 的狄利克雷积为 <span class="arithmatex">\((f*g)(n)=\sum\limits_{d|n}f(d)g(n/d)\)</span></p>
+<p>性质：</p>
+<ol>
+<li>
+<p>交换律 <span class="arithmatex">\(f*g=g*f\)</span>，结合律 <span class="arithmatex">\((f*g)*h=f*(g*h)\)</span></p>
+</li>
+<li>
+<p>若 f 和 g 是乘性函数，那么 <span class="arithmatex">\(f*g\)</span> 也是乘性函数</p>
+</li>
+<li>
+<p>若 f 和 g 是算术函数，<span class="arithmatex">\(F=f*g\)</span>，那么 <span class="arithmatex">\(f=F*g^{-1}\)</span></p>
+</li>
+</ol>
+<p>推论：</p>
+<p>(1) 若 <span class="arithmatex">\(h=f*g\)</span>，那么 <span class="arithmatex">\((f*g)(p^k)=\sum\limits_{i=0}^kf(p^i)g(p^{k-i})\)</span>，<span class="arithmatex">\((f*g)(n)=\prod\limits_{i=1}^{\omega(n)}\sum\limits_{j=0}^{\alpha_i}f(p_i^j)g(p_i^{\alpha_i-j})\)</span></p>
+<p>(2) <span class="arithmatex">\((\mu*I_k)(p^t)=p^{k(t-1)}(p^k-1)\)</span>，<span class="arithmatex">\((\mu*I_k)(n)=\phi^k\prod\limits_{i=1}^{\omega(n)}\frac{p_i^k-1}{(p_i-1)^k}\)</span></p>
+</blockquote>
+<p>证明：</p>
+<p>(1) 令 <span class="arithmatex">\(h=f*g\)</span>，有 <span class="arithmatex">\(h(p^k)=\sum\limits_{d|p^k}f(d)g(p^k/d)=\sum\limits_{i=0}^kf(p^i)g(p^{k-i})\)</span></p>
+<p><span class="arithmatex">\(h(n)=\prod\limits_{i=1}^{\omega(n)}h(p_i^{\alpha_i})=\prod\limits_{i=1}^{\omega(n)}\sum\limits_{j=0}^{\alpha_i}f(p_i^j)g(p_i^{\alpha_i-j})\)</span></p>
+<p>(2) <span class="arithmatex">\((\mu*I_k)(p^t)=\sum\limits_{i=0}^t\mu(p^i)I_k(p^{t-i})=I_k(p^{t})-I_k(p^{t-1})=p^{kt}-p^{k(t-1)}=p^{k(t-1)}(p^k-1)\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定义</p>
+</div>
+<blockquote>
+<p>(1) 幂函数：<span class="arithmatex">\(I_k(n)=n^k\)</span></p>
+<p>(2) 狄利克雷单位元 <span class="arithmatex">\(\iota(n)=\begin{cases}1&amp;n=1\\0&amp;n\ge2\end{cases}=[n=1]\)</span>（乘性）</p>
+<p>性质：<span class="arithmatex">\(\iota*f=f*\iota=f\)</span></p>
+<p>狄利克雷逆元：<span class="arithmatex">\(f^{-1}(1)=1\)</span>，当且仅当 <span class="arithmatex">\(f^{-1}\)</span> 是算术函数 f 的逆函数，即 <span class="arithmatex">\(f^{-1}*f=f*f^{-1}=\iota\)</span></p>
+<p>(3) 刘维尔函数：<span class="arithmatex">\(\lambda(n)=\begin{cases}1&amp;n=1\\(-1)^{\sum\limits_{i=1}^{\omega(n)}\alpha_i}&amp;n\ge2\end{cases}\)</span>（完全乘性）</p>
+<p>性质：<span class="arithmatex">\(\sum\limits_{d|n}\lambda(d)=\begin{cases}0&amp;n不是完全平方数\\1&amp;n是完全平方数\end{cases}\)</span>；n 是完全平方数，当且仅当 <span class="arithmatex">\(\forall i=1..\omega(n),2|\alpha_i\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">加性函数</p>
+</div>
+<blockquote>
+<p>加性函数：若对所有互素的正整数 m 和 n 满足 <span class="arithmatex">\(f(mn)=f(m)+f(n)\)</span>，那么 f 称为加性函数</p>
+<p>完全加性函数：若对所有正整数 m 和 n 满足 <span class="arithmatex">\(f(mn)=f(m)+f(n)\)</span>，那么 f 称为完全加性函数（如：<span class="arithmatex">\(f(n)=\log n\)</span>）</p>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">练习</p>
 <ol>
-<li>计算满足 <span class="arithmatex">\(\phi(n)=k\)</span> 的所有正整数解</li>
-<li></li>
+<li>计算满足 <span class="arithmatex">\(\phi(n)=k\)</span> 的所有正整数解 <span class="arithmatex">\(\{n\}\)</span></li>
+<li>找出满足条件的正整数 n：(1) <span class="arithmatex">\(\phi(3n)=3\phi(n)\)</span>，(2) <span class="arithmatex">\(4|\phi(n)\)</span>，(3) <span class="arithmatex">\(\phi(n)=n/2\)</span>，(4) <span class="arithmatex">\(\phi(n)|n\)</span>，(5) <span class="arithmatex">\(\phi(n)=2^k\)</span></li>
+<li>证明：若正整数 m 和 n 满足 <span class="arithmatex">\((m,n)=p\)</span>，p 是素数，那么 <span class="arithmatex">\(\phi(mn)=\phi(m)\phi(n)p/(p-1)\)</span></li>
+<li>证明：<span class="arithmatex">\(\phi(m^k)=m^{k-1}\phi(m)\)</span></li>
+<li>证明：m 和 n 是正整数，<span class="arithmatex">\(\phi(mn)=\phi(m)\phi(n)(n,m)/\phi((m,n))\)</span></li>
+<li>证明：<span class="arithmatex">\((m,n)&gt;1\)</span> 时，有 <span class="arithmatex">\(\phi(ab)&gt;\phi(a)\phi(b)\)</span></li>
+<li>用欧拉 <span class="arithmatex">\(\phi\)</span> 函数证明有无穷多个素数</li>
+<li>证明：<span class="arithmatex">\(\phi(n)=k\)</span> 有唯一解 n，那么 <span class="arithmatex">\(36|n\)</span></li>
+<li>证明：若 p 为素数，那么 <span class="arithmatex">\(2^ap+1\)</span> 在 <span class="arithmatex">\(a=1..r\)</span> 处是合数（？）；若 p 不是费马素数，那么 <span class="arithmatex">\(\phi(n)=2^rp\)</span> 无解，其中 r 是正整数</li>
+<li>证明：存在无穷多个正整数 k 使得 <span class="arithmatex">\(\phi(n)=k\)</span> 恰有两个解，其中 n 是正整数（提示：取 <span class="arithmatex">\(k=2\cdot3^{6i+1}\)</span>，<span class="arithmatex">\(j=1,2,\dots\)</span>）</li>
+<li>证明：若 <span class="arithmatex">\(n\in\mathbb N^+,n\ne2,n\ne6\)</span>，那么 <span class="arithmatex">\(\phi(n)\ge\sqrt n\)</span></li>
+<li>若 n 为正整数且为合数，满足 <span class="arithmatex">\(\phi(n)|n-1\)</span>，那么 n 无平方因子且至少是三个不同素数之积（<span class="arithmatex">\(\forall\alpha_i=1\)</span>，<span class="arithmatex">\(\omega(n)\ge3\)</span>）</li>
+<li>若 <span class="arithmatex">\(m,n\in\mathbb N^+\)</span>，<span class="arithmatex">\(m|n\)</span>，那么 <span class="arithmatex">\(\phi(m)|\phi(n)\)</span></li>
+<li>证明：<span class="arithmatex">\(\phi(n)=n\prod\limits_{i=1}^{\omega(n)}(1-\frac1{p_i})\)</span>（使用容斥原理）</li>
+<li>证明：<span class="arithmatex">\(n\in\mathbb N^+\)</span>，n 是合数，那么 <span class="arithmatex">\(\phi(n)\le n-\sqrt n\)</span></li>
+<li>设 n 是正整数，<span class="arithmatex">\(n_1=\phi(n)\)</span>，<span class="arithmatex">\(n_i=\phi(n_{i-1})\)</span>（<span class="arithmatex">\(i\ge2\)</span>）：证明存在正整数 r 使得 <span class="arithmatex">\(n_r=1\)</span></li>
+<li>证明：f 和 g 都是乘性函数(或完全乘性函数)，那么 <span class="arithmatex">\(fg\)</span> 也是乘性函数(或完全乘性函数)</li>
+<li>证明：<span class="arithmatex">\(\omega(n)\)</span> 是加性函数</li>
+<li>证明：若 f 是加性函数且 <span class="arithmatex">\(g(n)=2^{f(n)}\)</span>，那么 g 是乘性函数</li>
+<li>证明：<span class="arithmatex">\(f(n)=n^k\)</span>（<span class="arithmatex">\(k\in\mathbb R\)</span>）是完全乘性的</li>
 </ol>
 </div>
 <h3 id="2">2. 因子和与因子个数</h3>
@@ -1047,7 +1135,7 @@
 </div>
 <blockquote>
 <p>n 称为完全数，如果 n 是一个正整数且满足 <span class="arithmatex">\(\sigma(n)=2n\)</span></p>
-<p>注：<span class="arithmatex">\(10^6\)</span> 以内只有 4 个完全数：<span class="arithmatex">\(6，2，496，8128\)</span></p>
+<p>注：<span class="arithmatex">\(10^6\)</span> 以内只有 4 个完全数：<span class="arithmatex">\(6,2,496,8128\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">偶完全数</p>
@@ -1105,13 +1193,13 @@
 </div>
 <blockquote>
 <p>假设 <span class="arithmatex">\(F(n)=\sum\limits_{d|n}f(d)\)</span></p>
-<p>经过观察假设 <span class="arithmatex">\(f(n)=\sum\limits_{d|n}\mu(d)f(\frac nd)\)</span>（<span class="arithmatex">\(\mu\)</span> 是待定函数）</p>
+<p>经过观察假设 <span class="arithmatex">\(f(n)=\sum\limits_{d|n}\mu(d)F(\frac nd)\)</span>（<span class="arithmatex">\(\mu\)</span> 是待定函数）</p>
 <p><span class="arithmatex">\(\begin{cases}F(1)=f(1)\\F(p)=f(1)+f(p)\\F(p^2)=f(1)+f(p)+f(p^2)\end{cases}\implies\begin{cases}f(1)=F(1)\\f(p)=F(p)-F(1)\\f(p^2)=F(p^2)-F(p)\end{cases}\implies\begin{cases}\mu(1)=1\\\mu(p)=-1\\\mu(p^2)=0\end{cases}\)</span></p>
 <p>或者，<span class="arithmatex">\(F(p^k)=\sum\limits_{i=0}^kf(p^i)\implies\forall k\ge1,f(p^k)=F(p^k)-F(p^{k-1})\)</span></p>
 <p>而 <span class="arithmatex">\(\forall k\ge2,f(p^k)=F(p^k)-F(p^{k-1})+0\cdot F(1)\implies\begin{cases}\mu(p^k/p^k)=\mu(1)=1\\\mu(p^k/p^{k-1})=\mu(p)=-1\\\mu(p^k/1)=\mu(p^k)=0\end{cases}\)</span></p>
 <p>假设 <span class="arithmatex">\(\mu\)</span> 是乘性函数</p>
 <p>于是 <span class="arithmatex">\(\forall n\in\mathbb N^+\)</span>，<span class="arithmatex">\(\mu(n)=\mu(\prod\limits_{i=1}^kp_i^{\alpha_i})=\prod\limits_{i=1}^k\mu(p_i^{\alpha_i})\)</span></p>
-<p>最后得出莫比乌斯函数的定义：<span class="arithmatex">\(\mu(n)=\begin{cases}1&amp;n=1\\(-1)^k&amp;n=\prod\limits_{i=1}^np_i\\0&amp;\exists\alpha_i\ge2\end{cases}\)</span></p>
+<p>最后得出莫比乌斯函数的定义：<span class="arithmatex">\(\mu(n)=\begin{cases}1&amp;n=1\\(-1)^{\omega(n)}&amp;n=\prod\limits_{i=1}^{\omega(n)}p_i\\0&amp;\exists\alpha_i\ge2\end{cases}\)</span></p>
 <p>Mertens 函数：<span class="arithmatex">\(M(n)=\sum\limits_{i=1}^n\mu(i)\)</span></p>
 </blockquote>
 <div class="admonition note">
@@ -1137,6 +1225,30 @@
 <p>由于 <span class="arithmatex">\((d,e)\)</span> 满足 <span class="arithmatex">\(d|n,e|(n/d)\)</span>，当且仅当 <span class="arithmatex">\(e|n,d|(n/e)\)</span></p>
 <p>于是 <span class="arithmatex">\(\sum\limits_{d|n}\mu(d)F(n/d)=\sum\limits_{e|n}\sum\limits_{d|(n/e)}\mu(d)f(e)=\sum\limits_{e|n}f(e)\sum\limits_{d|(n/e)}\mu(d)=\sum\limits_{e|n}f(e)[n/e=1]=f(n)\)</span></p>
 <p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：<span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m[(i,j)=k]=\sum\limits_{d=1}^{\min\{n/k,m/k\}}\mu(d)\lfloor\frac{n/k}d\rfloor\lfloor\frac{m/k}d\rfloor\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^n[i,n]\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m[i,j]\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m\tau(ij)\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">答案</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^m[(i,j)=k]=\sum\limits_{i=1}^{n/k}\sum\limits_{j=1}^{m/k}[(ik,jk)=k]=\sum\limits_{i=1}^{n/k}\sum\limits_{j=1}^{m/k}[(i,j)=1]\)</span></p>
+<p><span class="arithmatex">\(=\sum\limits_{i=1}^{n/k}\sum\limits_{j=1}^{m/k}\iota((i,j))=\sum\limits_{i=1}^{n/k}\sum\limits_{j=1}^{m/k}\sum\limits_{d|(i,j)}\mu(d)=\sum\limits_{i=1}^{n/k}\sum\limits_{j=1}^{m/k}\sum\limits_{d=1}^{\min\{n/k,m/k\}}[d|i][d|j]\mu(d)\)</span></p>
+<p><span class="arithmatex">\(=\sum\limits_{d=1}^{\min\{n/k,m/k\}}\mu(d)\sum\limits_{i=1}^{n/k}[d|i]\sum\limits_{j=1}^{m/k}[d|j]=\sum\limits_{d=1}^{\min\{n/k,m/k\}}\mu(d)\lfloor\frac{n/k}d\rfloor\lfloor\frac{m/k}d\rfloor\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<p>(2) 错误解答：</p>
+<p><span class="arithmatex">\(\sum\limits_{i=1}^n[i,n]=\sum\limits_{i=1}^n\frac{in}{(i,n)}=\sum\limits_{i=1}^n\sum\limits_{j=1}^n\frac{in}j\iota((i/j,n/j))=\sum\limits_{j=1}^n\sum\limits_{i=1}^{n/j}in\iota((i,n/j))\)</span></p>
+<p><span class="arithmatex">\(=\sum\limits_{j=1}^n\sum\limits_{i=1}^{n/j}in\sum\limits_{d|(i,n/j)}\mu(d)=\sum\limits_{j=1}^n\sum\limits_{i=1}^{n/j}in\sum\limits_{d=1}^{n/j}[d|i][d|(n/j)]\mu(d)\)</span></p>
+<p><span class="arithmatex">\(=n\sum\limits_{j=1}^n\sum\limits_{d=1}^{n/j}[d|(n/j)]\mu(d)\sum\limits_{i=1}^{n/j}i[d|i]=n\sum\limits_{j=1}^n\sum\limits_{d=1}^{n/j}[d|(n/j)]\mu(d)\sum\limits_{i=1}^{n/(jd)}id\)</span></p>
+<p><span class="arithmatex">\(=n\sum\limits_{j=1}^n\sum\limits_{d=1}^{n/j}[d|(n/j)]\mu(d)dS_1(\lfloor\frac n{jd}\rfloor)=n\sum\limits_{d|n}S_1(n/d)\sum\limits_{e|d}\mu(e)e\)</span>
+</p>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">莫比乌斯反演的应用</p>
 <ol>
@@ -1183,6 +1295,119 @@
 <li>证明：<span class="arithmatex">\(\Lambda(n)=-\sum\limits_{d|n}\mu(d)\log d\)</span></li>
 </ol>
 </div>
+<div class="admonition note">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>乘性函数：<span class="arithmatex">\(f(mn)=f(m)f(n)\)</span>，<span class="arithmatex">\((m,n)=1\)</span></li>
+<li>完全乘性函数：<span class="arithmatex">\(f(mn)=f(m)f(n)\)</span></li>
+</ol>
+<p>乘性函数（因子和，因子个数 均是完全乘性函数）：<span class="arithmatex">\(\phi,\sigma_k,\tau,\mu,\iota,I_k\)</span></p>
+<ol>
+<li>欧拉函数：<span class="arithmatex">\(\phi(n)=\sum\limits_{i=1}^n[(i,n)=1]\)</span><ol>
+<li><span class="arithmatex">\(\forall k\in\mathbb N,\phi(p^k)=p^k-p^{k-1}\)</span>，<span class="arithmatex">\(\phi(n)=n\prod\limits_{i=1}^{\omega(n)}(1-\frac1{p_i})\)</span>（另外 <span class="arithmatex">\(\phi(p^k)=\phi(p^a)p^{k-a}\)</span>，<span class="arithmatex">\(a\le k\)</span>）</li>
+<li><span class="arithmatex">\(\sum\limits_{d|n}\phi(d)=n\)</span>（<span class="arithmatex">\(\phi*I_0=I_1\)</span>）；<span class="arithmatex">\(\forall n\ge3,2|\phi(n)\)</span></li>
+</ol>
+</li>
+<li>因子和：<span class="arithmatex">\(\sigma(n)=\sum\limits_{d|n}d\)</span><ol>
+<li><span class="arithmatex">\(\forall k\in\mathbb N,\sigma(p^k)=\sum\limits_{i=0}^kp^i=\frac{p^{k+1}-1}{p-1}\)</span>，<span class="arithmatex">\(\sigma(n)=\prod\limits_{i=1}^{\omega(n)}\frac{p_i^{\alpha_i+1}-1}{p_i-1}\)</span></li>
+</ol>
+</li>
+<li>因子个数：<span class="arithmatex">\(\tau(n)=\sum\limits_{d|n}1\)</span><ol>
+<li><span class="arithmatex">\(\tau(p^k)=\sum\limits_{i=0}^k1=k+1\)</span>，<span class="arithmatex">\(\tau(n)=\prod\limits_{i=1}^{\omega(n)}(\alpha_i+1)\)</span></li>
+</ol>
+</li>
+<li>
+<p>莫比乌斯函数：（通过莫比乌斯反演 <span class="arithmatex">\(f(n)=\sum\limits_{d|n}\mu(d)f(\frac nd)\)</span> 定义）</p>
+<ol>
+<li><span class="arithmatex">\(\mu(p^k)=\begin{cases}1&amp;k=0\\-1&amp;k=1\\0&amp;k\ge2\end{cases}\)</span>，<span class="arithmatex">\(\mu(n)=\begin{cases}1&amp;n=1\\(-1)^{\omega(n)}&amp;\forall\alpha_i=1\\0&amp;\exists\alpha_i\ge2\end{cases}\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{d|n}\mu(d)=[n=1]\)</span>（<span class="arithmatex">\(\mu*I_0=\iota\)</span>）；即 <span class="arithmatex">\(\mu\)</span> 与 <span class="arithmatex">\(I_0\)</span> 互逆</li>
+</ol>
+</li>
+<li>
+<p>幂函数 &amp;&amp; 和函数,部分和：<span class="arithmatex">\(I_k(n)=n^k\)</span>，<span class="arithmatex">\(\sigma_k(n)=\sum\limits_{d|n}d^k\)</span>，<span class="arithmatex">\(S_k(n)=\sum\limits_{i=1}^nI_k(i)=\sum\limits_{i=1}^ni^k\)</span>（<span class="arithmatex">\(k\in\mathbb N\)</span>）</p>
+<ol>
+<li><span class="arithmatex">\(I_k*I_0=\sigma_k\)</span>，<span class="arithmatex">\(\sigma_0=\tau,\sigma_1=\sigma\)</span></li>
+<li><span class="arithmatex">\(I_aI_b=I_{a+b}\)</span>，<span class="arithmatex">\(I_kf*I_kg=I_k(f*g)\)</span>，<span class="arithmatex">\(I_a*I_{a+b}=I_a\sigma_b\)</span></li>
+</ol>
+</li>
+</ol>
+<p><span class="arithmatex">\(\phi\to I_1\to\sigma,\iota\to I_0\to\tau\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li><span class="arithmatex">\(\iota(n)\)</span> 是<strong>狄利克雷积</strong>的单位元</li>
+<li><span class="arithmatex">\(I_0(n)=1\)</span> 是<strong>和函数变换</strong> <span class="arithmatex">\(T(f)=\sum\limits_{d|n}f(d)I_0(n/d)\)</span> 的变换因子；而 <span class="arithmatex">\(\mu(n)\)</span> 是<strong>逆和函数变换</strong> <span class="arithmatex">\(T^{-1}(F)=\sum\limits_{d|n}F(d)\mu(n/d)\)</span> 的变换因子</li>
+</ol>
+</div>
+<h3 id="1">(1) 分块技术</h3>
+<div class="admonition note">
+<p class="admonition-title">数论分块(整除分块)</p>
+</div>
+<blockquote>
+<p>数论分块主要任务是计算 <span class="arithmatex">\(\sum\limits_{i=1}^nf(\lfloor\frac{n}{i}\rfloor)\)</span></p>
+<p>定义两个序列 <span class="arithmatex">\(\{a_n\},\{b_n\}\)</span> 满足：<span class="arithmatex">\(a_1=1,b_1=1\)</span>，<span class="arithmatex">\(a_i=b_{i-1}+1,b_i=\lfloor\frac{n}{\lfloor n/a_i\rfloor}\rfloor\)</span>（<span class="arithmatex">\(i=1..k\)</span>，<span class="arithmatex">\(k\le2\sqrt n\)</span>）</p>
+<p><span class="arithmatex">\(\sum\limits_{i=1}^nf(\lfloor\frac{n}{i}\rfloor)=\sum\limits_{i=1}^kf(\lfloor\frac{n}{a_i}\rfloor)(b_i-a_i+1)\)</span>（其中 <span class="arithmatex">\(k\le2\sqrt n\)</span>）</p>
+<p>推论：<span class="arithmatex">\(\sum\limits_{i=1}^nf(\lfloor\frac{n}{i}\rfloor)g(i)=\sum\limits_{i=1}^kf(\lfloor\frac{n}{a_i}\rfloor)[\mathsf G(b_i)-\mathsf G(a_i-1)]\)</span>（其中 G 是 g 的部分和：<span class="arithmatex">\(\mathsf G(n)=\sum\limits_{i=1}^ng(i)\)</span>）</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">变换定理</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{d|n}f(i,d)=\sum\limits_{d=1}^n\sum\limits_{i=1}^{\lfloor n/d\rfloor}f(id,d)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">杜教筛</p>
+</div>
+<blockquote>
+<p>假设 f 已知，构造 g 和 h 满足：<span class="arithmatex">\(h=g*f\)</span></p>
+<p>计算卷积的部分和：<span class="arithmatex">\(\sum\limits_{i=1}^nh(i)=\sum\limits_{i=1}^n(f*g)(i)=\sum\limits_{i=1}^n\sum\limits_{d|i}g(d)f(i/d)=\sum\limits_{d=1}^n\sum\limits_{i=1}^{\lfloor n/d\rfloor}g(d)f(i)=\sum\limits_{d=1}^ng(d)\mathsf F(\lfloor n/d\rfloor)\)</span></p>
+<p>于是 <span class="arithmatex">\(g(1)\mathsf F(n)=\sum\limits_{i=1}^nh(i)-\sum\limits_{d=2}^ng(d)\mathsf F(\lfloor n/d\rfloor)=\mathsf H(n)-\sum\limits_{d=2}^ng(d)\mathsf F(\lfloor n/d\rfloor)\)</span></p>
+<p>根据数论分块有：<span class="arithmatex">\(\mathsf F(n)=\displaystyle\frac{\mathsf H(n)-\sum\limits_{i=2}^k[\mathsf G(b_i)-\mathsf G(a_i-1)]\mathsf F(\lfloor n/a_i\rfloor)}{g(1)}\)</span></p>
+<p>复杂度：<span class="arithmatex">\(T(n)=\sum\limits_{i=2}^{\sqrt n}T(\lfloor n/a_i\rfloor)\)</span>，解得 <span class="arithmatex">\(T(n)=\omicron(n^{3/4})\)</span></p>
+<p>若 <span class="arithmatex">\(\forall n\le n^{2/3},\mathsf F(n)\)</span> 已知，那么 <span class="arithmatex">\(T(n)=O(n^{2/3})\)</span>（允许 <span class="arithmatex">\(n\le10^{10}\)</span>）</p>
+<p>结论：要快速计算 f 部分和，必须满足：g 和 h 的部分和为常数复杂度，并且 <span class="arithmatex">\(h=g*f\)</span>；若 <span class="arithmatex">\(n^{2/3}\)</span> 以内的 f 的部分和能线性计算，那么可以加速计算复杂度为 <span class="arithmatex">\(O(n^{2/3})\)</span></p>
+<p>注：杜教筛的复杂度是可以均摊的</p>
+<p>推论：</p>
+<ol>
+<li><span class="arithmatex">\(M(n)=1-\sum\limits_{i=2}^nM(\lfloor\frac ni\rfloor)\)</span></li>
+<li><span class="arithmatex">\(\Phi(n)=\frac {n(n+1)}2-\sum\limits_{i=2}^n\Phi(\lfloor\frac ni\rfloor)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ul>
+<li><span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^nij(i,j)\)</span></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">答案</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^nij(i,j)=\sum\limits_{i=1}^n\sum\limits_{j=1}^nij\sum\limits_{k=1}^{(i,j)}k\iota(\frac{(i,j)}k)=\sum\limits_{i=1}^n\sum\limits_{j=1}^nij\sum\limits_{k=1}^{(i,j)}k\iota((i/k,j/k))=\sum\limits_{k=1}^nk^3\sum\limits_{i=1}^{n/k}i\sum\limits_{j=1}^{n/k}j\iota((i,j))\)</span></p>
+<p><span class="arithmatex">\(=\sum\limits_{k=1}^nk^3\sum\limits_{i=1}^{n/k}i\sum\limits_{j=1}^{n/k}j\sum\limits_{d|(i,j)}\mu(d)=\sum\limits_{k=1}^nk^3\sum\limits_{i=1}^{n/k}i\sum\limits_{j=1}^{n/k}j\sum\limits_{d=1}^{n/k}[d|i][d|j]\mu(d)\)</span></p>
+<p><span class="arithmatex">\(=\sum\limits_{k=1}^nk^3\sum\limits_{d=1}^{n/k}\mu(d)\sum\limits_{i=1}^{n/k}i[d|i]\sum\limits_{j=1}^{n/k}j[d|j]=\sum\limits_{k=1}^nk^3\sum\limits_{d=1}^{n/k}\mu(d)\sum\limits_{i=1}^{n/(kd)}di\sum\limits_{j=1}^{n/(kd)}dj\)</span></p>
+<p><span class="arithmatex">\(=\sum\limits_{k=1}^nk^3\sum\limits_{d=1}^{n/k}d^2\mu(d)S_1(\lfloor\frac n{kd}\rfloor)^2=\sum\limits_{k=1}^nk^3\sum\limits_{d=1}^{n/k}d^2\mu(d)S_3(\lfloor\frac n{kd}\rfloor)\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定义</p>
+</div>
+<blockquote>
+<ol>
+<li>
+<p><span class="arithmatex">\((f,g)(n)=\sum\limits_{i=1}^n(f*g)(i)=\sum\limits_{i=1}^n\sum\limits_{d|i}f(d)g(n/d)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((f,g)(n)=\sum\limits_{i=1}^nf(i)\mathsf G(\lfloor n/i\rfloor)=\sum\limits_{i=1}^n\mathsf F(\lfloor n/i\rfloor)g(i)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((f,g)(n)=\sum\limits_{k=1}^n\prod\limits_{i=1}^{\omega(k)}\sum\limits_{j=0}^{\alpha_i}f(p_i^j)g(p_i^{\alpha_i-j})\)</span></p>
+</li>
+</ol>
+<p><span class="arithmatex">\((\iota,\iota)=\iota,(f,\iota)=\mathsf F\)</span>，<span class="arithmatex">\((I_k,\iota)=S_k\)</span></p>
+</blockquote>
 </article>
 </div>
 </div>

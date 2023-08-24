@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -434,6 +437,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        常见问题
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
       </a>
@@ -787,9 +795,26 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          6.特殊的同余式
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         6.特殊的同余式
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 威尔逊定理
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../7.%E4%B9%98%E6%80%A7%E5%87%BD%E6%95%B0/">
@@ -848,6 +873,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 威尔逊定理
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -855,6 +891,53 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>6.特殊的同余式</h1>
+<p>本章讨论三个理论和应用中很重要的同余式：</p>
+<ol>
+<li>威尔逊定理：若 p 是素数，则 p 除 <span class="arithmatex">\((p-1)!\)</span> 的余数是 <span class="arithmatex">\(-1\)</span></li>
+<li>费马小定理：给出了 <span class="arithmatex">\(a^p\)</span> 模 p 的同余式；特别地，若 p 是素数，a 是整数，那么 <span class="arithmatex">\(a^p\)</span> 和 a 被 p 除有相同的余数</li>
+<li>欧拉定理：将费马小定理推广到模不是素数的情形</li>
+</ol>
+<p>应用：</p>
+<ol>
+<li>素性检验，因子分解</li>
+<li>伪素数；证明素数</li>
+</ol>
+<h3 id="1">1. 威尔逊定理</h3>
+<div class="admonition note">
+<p class="admonition-title">威尔逊定理</p>
+</div>
+<blockquote>
+<p>若 p 是素数，则 <span class="arithmatex">\((p-1)!\equiv-1\pmod p\)</span></p>
+</blockquote>
+<p>证明：</p>
+<p>若 <span class="arithmatex">\(p=2\)</span>，那么 <span class="arithmatex">\((p-1)!+1=(2-1)!+1=0\)</span>，于是 <span class="arithmatex">\((p-1)!+1\equiv0\pmod p\)</span></p>
+<p>根据[定理4.10]，对于所有 <span class="arithmatex">\(a=1..p-1\)</span>，a 都有最小正整数逆 <span class="arithmatex">\(\bar a=1..p-1\)</span>，且 <span class="arithmatex">\(a\bar a\equiv 1\pmod p\)</span></p>
+<p>可证：<span class="arithmatex">\(\forall i=2..\frac{p-1}2\)</span>，<span class="arithmatex">\(i(i+\frac{p-3}2)\equiv1\pmod p\)</span>（提示：根据[定理4.11]，小于 p 的正整数中只有 1 和 <span class="arithmatex">\(p-1\)</span> 等于它们自身模 p 的逆）</p>
+<p>于是 <span class="arithmatex">\(\prod\limits_{i=2}^{p-2}i\equiv1\pmod p\)</span>，蕴涵 <span class="arithmatex">\((p-1)!\equiv p-1\pmod p\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">威尔逊定理的逆</p>
+</div>
+<blockquote>
+<p>假设 n 是正整数，且 <span class="arithmatex">\(n\ge2\)</span></p>
+<p>若 <span class="arithmatex">\((n-1)!\equiv-1\pmod n\)</span>，那么 n 是素数</p>
+</blockquote>
+<p>证明：<span class="arithmatex">\(\neg q\to p\)</span> 不成立</p>
+<p>(1)</p>
+<p>假设 n 是合数，存在 <span class="arithmatex">\(1&lt;a,b&lt;n\)</span> 使得 <span class="arithmatex">\(n=ab\)</span>，蕴涵 <span class="arithmatex">\(a|(n-1)!,b|(n-1)!\)</span></p>
+<p>若 <span class="arithmatex">\(a\ne b\)</span>，那么 <span class="arithmatex">\(ab|(n-1)!\)</span>，即 <span class="arithmatex">\(n|(n-1)!\)</span>，即 <span class="arithmatex">\((n-1)!\equiv 0\pmod n\)</span></p>
+<p>(2)</p>
+<p>因为 <span class="arithmatex">\((n-1)!\equiv-1\pmod n\)</span>，即 <span class="arithmatex">\(n|((n-1)!+1)\)</span>，根据[定理1.8]，<span class="arithmatex">\(a|((n-1)!+1)\)</span></p>
+<p>根据[定理1.9] 和 <span class="arithmatex">\(a|(n-1)!\)</span> 且 <span class="arithmatex">\(a|((n-1)!+1)\)</span>，有 <span class="arithmatex">\(a|[((n-1)!+1)-(n-1)!]\)</span>，即 <span class="arithmatex">\(a|1\)</span>，即 <span class="arithmatex">\(a=1\)</span> 或 <span class="arithmatex">\(a=-1\)</span>，这与 <span class="arithmatex">\(a\ge2\)</span> 矛盾</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<p>威尔逊定理及其逆命题给出了一种素性检验方法，但是复杂度不够优秀</p>
+<p>而费马小定理用于素性检验的复杂度更加优秀，并且该定理的名字主要用于区别费马大定理</p>
+<div class="admonition note">
+<p class="admonition-title">费马小定理</p>
+</div>
+<blockquote>
+<p>设 p 是素数，a 是正整数，且 <span class="arithmatex">\(p\nmid a\)</span>，则 <span class="arithmatex">\(a^{p-1}\equiv 1\pmod p\)</span></p>
+</blockquote>
 </article>
 </div>
 </div>

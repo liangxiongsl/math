@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#4">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -434,6 +437,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        常见问题
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
       </a>
@@ -772,9 +780,31 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          3.素数和最大公因子
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         3.素数和最大公因子
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 欧几里得算法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 线性丢然图方程
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../4.%E5%90%8C%E4%BD%99/">
@@ -848,6 +878,22 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4. 欧几里得算法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7. 线性丢然图方程
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -855,6 +901,64 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>3.素数和最大公因子</h1>
+<h3 id="4">4. 欧几里得算法</h3>
+<h3 id="7">7. 线性丢然图方程</h3>
+<div class="admonition note">
+<p class="admonition-title">丢然图方程</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(a,b\)</span> 是整数，且 <span class="arithmatex">\(d=(a,b)\)</span></p>
+<ol>
+<li>若 <span class="arithmatex">\(d\nmid c\)</span>，那么 <span class="arithmatex">\(ax+by=c\)</span> 没有整数解</li>
+<li>若 <span class="arithmatex">\(d\mid c\)</span>，那么存在无穷多个整数解</li>
+<li>此为，若 <span class="arithmatex">\(x=x_0,y=y_0\)</span> 是方程的一个特解，那么通解为 <span class="arithmatex">\(x=x_0+(b/d)n,y=y_0-(a/d)n\)</span></li>
+</ol>
+</blockquote>
+<p>假设整数 <span class="arithmatex">\(x,y\)</span> 满足 <span class="arithmatex">\(ax+by=c\)</span>，那么由于 <span class="arithmatex">\(d|a,d|b\)</span> 和[定理1.9]有 <span class="arithmatex">\(d|c\)</span>；反之若 <span class="arithmatex">\(d\nmid c\)</span>，那么方程不存在整数解</p>
+<p>现在假设 <span class="arithmatex">\(d|c\)</span>，由[定理3.9]，存在整数 <span class="arithmatex">\(s,t\)</span> 使得 <span class="arithmatex">\(d=as+bt\)</span>（1）</p>
+<p>由 <span class="arithmatex">\(d|c\)</span>，存在 e 使得 <span class="arithmatex">\(ed=c\)</span></p>
+<p>将（1）同时乘以 e 有 <span class="arithmatex">\(ed=a(se)+b(te)\)</span>，于是 <span class="arithmatex">\(c=a(se)+b(te)\)</span></p>
+<p>因此 <span class="arithmatex">\(x=x_0=se,y=y_0=te\)</span> 是方程的一个解</p>
+<p>证明方程有无穷多个解，需要证明两件事情：</p>
+<ol>
+<li>证明：<span class="arithmatex">\(ax+by=c\)</span> 的解形如 <span class="arithmatex">\(x=x_0+(b/d)n,y=y_0-(a/d)n\)</span></li>
+<li>证明：<span class="arithmatex">\(x=x_0+(b/d)n,y=y_0-(a/d)n\)</span> 是方程 <span class="arithmatex">\(ax+by=c\)</span> 的解</li>
+</ol>
+<p>1) 假设 <span class="arithmatex">\((x_0,y_0),(x,y)\)</span> 分别 <span class="arithmatex">\(ax+by=c\)</span> 的特解和通解，即分别有 <span class="arithmatex">\(ax_0+by_0=c\)</span>，<span class="arithmatex">\(ax+by=c\)</span></p>
+<p>上两式相减有 <span class="arithmatex">\(a(x-x_0)+b(y-y_0)=0\)</span> （1）</p>
+<p>那么 <span class="arithmatex">\((a/d)(x-x_0)+(b/d)(y-y_0)=0\)</span> 或 <span class="arithmatex">\((a/d)(x-x_0)=(b/d)(y_0-y)\)</span></p>
+<p>根据[引理3.4]和 <span class="arithmatex">\((a/d,b/d)=1\)</span> 有 <span class="arithmatex">\((a/d)|(y_0-y)\)</span> 和 <span class="arithmatex">\((b/d)|(x-x_0)\)</span>，于是存在整数 u 和 v 使得 <span class="arithmatex">\(u(a/d)=y_0-y\)</span> 和 <span class="arithmatex">\(v(b/d)=x-x_0\)</span> （2）</p>
+<p>（注：[定理3.6] 有，若 <span class="arithmatex">\((a,b)=d\)</span>，那么 <span class="arithmatex">\((a/d,b/d)=1\)</span>）</p>
+<p>联立（1）和（2）有 <span class="arithmatex">\(av(b/d)-bu(a/d)=0\)</span>，于是 <span class="arithmatex">\(u=v\)</span></p>
+<p>化简（2）：<span class="arithmatex">\(x=x_0+(b/d)n\)</span>，<span class="arithmatex">\(y=y_0-(a/d)n\)</span>（令 <span class="arithmatex">\(n=u=v\)</span>）</p>
+<p>2）<span class="arithmatex">\(ax+by=a[x_0+(b/d)n]+b[y_0-(a/d)n]=ax_0+by_0=c\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>结合欧几里得算法，可以得到二元线性丢番图方程的特解 <span class="arithmatex">\((x_0,y_0)\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>若 <span class="arithmatex">\(a_1,\dots,a_n\)</span> 是正整数，那么方程 <span class="arithmatex">\(\sum\limits_{i=1}^na_ix_i=c\)</span> 有正整数解，</p>
+<p>当且仅当 <span class="arithmatex">\(d=(a_1,\dots,a_n)\)</span> 能整除 c，即 <span class="arithmatex">\((a_1,\dots,a_n)|c\)</span></p>
+<p>另外，当存在一个解时，那么方程有无穷多个解</p>
+</blockquote>
+<p>证明：</p>
+<p>(1) 若 <span class="arithmatex">\(n=2\)</span>，命题成立</p>
+<p>(2) 若 <span class="arithmatex">\(n\ge 3\)</span>，</p>
+<p>根据[定理3.9] <span class="arithmatex">\(a_nx_n+a_{n+1}x_{n+1}\)</span> 所构成的集合与 <span class="arithmatex">\((a_n,a_{n+1})\)</span> 的倍数构成的集合相同，</p>
+<p>因此，对于所有整数 y，<span class="arithmatex">\(a_nx_n+a_{n+1}x_{n+1}=(a_n,a_{n+1})y\)</span> 有无穷多个解</p>
+<p>那么 <span class="arithmatex">\(\sum\limits_{i=1}^{n+1}a_ix_i=c\)</span> 等价于 <span class="arithmatex">\(\sum\limits_{i=1}^{n-1}a_ix_i+(a_n,a_{n+1})y=c\)</span></p>
+<p>由[引理3.2]，<span class="arithmatex">\((a_1,\dots,a_{n+1})=(a_1,\dots,a_{n-1},(a_n,a_{n+1}))\)</span>，</p>
+<p>注意到 <span class="arithmatex">\((a_1,\dots,a_{n-1},(a_n,a_{n+1}))|c\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 </article>
 </div>
 </div>

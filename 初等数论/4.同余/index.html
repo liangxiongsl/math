@@ -36,6 +36,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -434,6 +437,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        常见问题
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
       </a>
@@ -777,9 +785,31 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          4.同余
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         4.同余
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 同余引言
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 线性同余方程
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../5.%E5%90%8C%E4%BD%99%E7%9A%84%E5%BA%94%E7%94%A8/">
@@ -848,6 +878,22 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1. 同余引言
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+    2. 线性同余方程
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -855,6 +901,225 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>4.同余</h1>
+<p>德国大数学家高斯发明了同余式语言．这使得我们差不多能像处理等式一样来处理整除关系</p>
+<ol>
+<li>本章讨论同余的基本性质，描述如何进行同余式的算术运算</li>
+<li>研究含有未知数的线性同余方程</li>
+<li>研究线性同余方程组（古代中国数学难题），给出中国剩余定理的解法</li>
+<li>研究多项式同余方程</li>
+<li>提供一种使用同余语言分解整数的方法——波拉德 <span class="arithmatex">\(\rho\)</span> 方法</li>
+</ol>
+<h3 id="1">1. 同余引言</h3>
+<p>在引人同余之前，人们研究整除关系所用的记号笨拙而且难用．而引人方便的记号对加速数论的发展起了帮助作用</p>
+<div class="admonition note">
+<p class="admonition-title">同余</p>
+</div>
+<blockquote>
+<p>设 m 是正整数，若 a 和 b 是整数，且 <span class="arithmatex">\(m|(a-b)\)</span>，则称 <strong>a 和 b 模 m 同余</strong></p>
+<p>若 <span class="arithmatex">\(m|(a-b)\)</span>，则记 <span class="arithmatex">\(a\equiv b\pmod m\)</span>；若 <span class="arithmatex">\(m\nmid(a-b)\)</span>，则记 <span class="arithmatex">\(a\not\equiv b\pmod m\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>高斯——数学是科学的女王，数论是数学的女王</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理1</p>
+</div>
+<blockquote>
+<ol>
+<li>若 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，则 <span class="arithmatex">\(a\equiv b\pmod m\)</span> 当且仅当存在整数 k，使得 <span class="arithmatex">\(a=b+km\)</span></li>
+<li>假设 m 是正整数，那么模 m 的同余满足如下性质：<ol>
+<li>自反性：若 a 是整数，则 <span class="arithmatex">\(a\equiv a\pmod m\)</span></li>
+<li>对称性：若 a 和 b 是整数，且 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，则 <span class="arithmatex">\(b\equiv a\pmod m\)</span></li>
+<li>传递性：若 a，b，c 是整数，且 <span class="arithmatex">\(a\equiv b\pmod m,b\equiv c\pmod m\)</span>，则 <span class="arithmatex">\(a\equiv c\pmod m\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>(1) <span class="arithmatex">\(a\equiv b\pmod m\)</span>，等价于 <span class="arithmatex">\(m|(a-b)\)</span>，等价于存在 k 使得 <span class="arithmatex">\(km=a-b\)</span>，等价于 <span class="arithmatex">\(a=b+km\)</span></p>
+<p>(2.1) <span class="arithmatex">\(m|(a-a)=0\)</span>，所以 <span class="arithmatex">\(a\equiv a\pmod m\)</span></p>
+<p>(2.2) 若 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，则 <span class="arithmatex">\(m|(a-b)\)</span>，从而存在整数 k 使得 <span class="arithmatex">\(km=a-b\)</span>，即 <span class="arithmatex">\((-k)m=b-a\)</span>，等价于 <span class="arithmatex">\(m|(b-a)\)</span>，等价于 <span class="arithmatex">\(b\equiv a\pmod m\)</span></p>
+<p>(2.3) 若 <span class="arithmatex">\(a\equiv b\pmod m,b\equiv c\pmod m\)</span>，则有 <span class="arithmatex">\(m|(a-b),m|(b-c)\)</span>，从而存在整数 k 和 l 使得 <span class="arithmatex">\(km=a-b,lm=b-c\)</span>，于是 <span class="arithmatex">\((k+l)m=(a-b)+(b-c)=a-c\)</span>，于是 <span class="arithmatex">\(a\equiv c\pmod m\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<p>定理 (2) 意味着整数集合被分为 m 个不同的集合，这些集合称为<strong>模 m 剩余类</strong>（同余类）；同余类中任意两个整数都是模 m 同余的</p>
+<p>设 m 是正整数，给定整数 a，有带余除法有 <span class="arithmatex">\(a=bm+r\)</span>（<span class="arithmatex">\(0\le r\le m-1\)</span>），称 r 为 a 的<strong>模 m 最小非负剩余</strong>，是 a 模 m 的结果</p>
+<p>模 m 完全剩余系：模 m 完全剩余系是一个整数的集合，使得每个整数恰和此集合中的一个元素模 m 同余</p>
+<div class="admonition note">
+<p class="admonition-title">剩余类，最小非负剩余，完全剩余系，最小非负剩余的集合，绝对最小剩余的集合</p>
+</div>
+<blockquote>
+<p>模 m 剩余类：上述定理 (2) 将整数分为 m 个不同集合，这些集合称为<strong>模 m 剩余类（同余类）</strong>，同余类中任意两个整数都是模 m 同余的；由 r 确定的同余类为 <span class="arithmatex">\(C_r=\{a~|~a=bm+r\}\)</span>（<span class="arithmatex">\(m\in\mathbb N^+,r=0..m-1\)</span>）</p>
+<p>模 m 最小非负剩余：设 m 是正整数，给定整数 a，有带余除法有 <span class="arithmatex">\(a=bm+r\)</span>（<span class="arithmatex">\(0\le r\le m-1\)</span>），称 r 为 a 的<strong>模 m 最小非负剩余</strong>，是 a 模 m 的结果</p>
+<p>（注：计算机科学中常用记号 <span class="arithmatex">\(a\mod m=r\)</span>，表示 r 是 a 被 m 除所得的余数）</p>
+<p>（注2：方程 <span class="arithmatex">\(a=bm+r\)</span>，有 <span class="arithmatex">\(a\equiv r\pmod m\)</span>；由于 <span class="arithmatex">\(0..m-1\)</span> 中任意两个数都不是模 m 同余的，所有每个整数都和 <span class="arithmatex">\(0..m-1\)</span> 其中一个整数模 m 同余，进而存在 m 个整数，其中每个整数都恰与 <span class="arithmatex">\(0..m-1\)</span> 其中之一同余）</p>
+<p>模 m 完全剩余系：一个<strong>模 m 完全剩余系</strong>是一个整数集合，使得每个整数都<strong>恰好</strong>与此集合中的一个元素模 m 同余</p>
+<p>（注：<span class="arithmatex">\(\{0,\dots,m-1\}\)</span> 称为<strong>最小非负剩余</strong>的集合，该集合是模 m 完全剩余系）</p>
+<p>（注2：若 m 是正奇数，则 <span class="arithmatex">\(\left\{\frac{m-(2i+1)}2~|~i=0..2\lfloor\frac m2\rfloor\right\}\)</span>（<span class="arithmatex">\(2\lfloor\frac m2\rfloor=m-1\)</span>）称为<strong>模                       m 绝对最小剩余</strong>的集合，也是一个模 m 完全剩余系）</p>
+<p>（注3：若 k 是正整数，给定非负整数 m，对 m 做带余数除法有 <span class="arithmatex">\(m=tk+r\)</span>(<span class="arithmatex">\(r=0..k-1\)</span>)，那么 <span class="arithmatex">\(\left\{\frac{m-(ik+r)}k~|~i=0..m-1\right\}\)</span> 或 <span class="arithmatex">\(\left\{t-i~|~i=0..m-1\right\}\)</span> 是也是模 m 的完全剩余系）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>剩余类内的任意两个数模 m 同余；剩余系内任意两个数模 m 不同余</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理2</p>
+</div>
+<blockquote>
+<p>假设 a，b，c 是整数，m 是正整数，且 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，则：</p>
+<ol>
+<li><span class="arithmatex">\(a+c\equiv b+c\pmod m\)</span></li>
+<li><span class="arithmatex">\(a-c\equiv b-c\pmod m\)</span></li>
+<li><span class="arithmatex">\(ac\equiv bc\pmod m\)</span></li>
+<li><span class="arithmatex">\(a/c\equiv b/c\pmod{m/(m,c)}\)</span>（当 <span class="arithmatex">\(c|a,c|b,c&gt;0\)</span>）<ol>
+<li>推论：<span class="arithmatex">\(a/c\equiv b/c\pmod{m}\)</span>（当 <span class="arithmatex">\(c|a,c|b,c&gt;0\)</span>，<span class="arithmatex">\((m,c)=1\)</span>）</li>
+<li>推论2：<span class="arithmatex">\(a/c\equiv b/c\pmod p\)</span>（当 <span class="arithmatex">\(c|a,c|b,c&gt;0\)</span>，p 是质数，且 <span class="arithmatex">\(c\le p-1\)</span>）</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>证明：</p>
+<p>假设 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，那么 <span class="arithmatex">\(m|(a-b)\)</span></p>
+<p>(1) 由 <span class="arithmatex">\(a-b=(a+c)-(b+c)\)</span>，有 <span class="arithmatex">\(m|[(a+c)-(b+c)]\)</span>，蕴涵 <span class="arithmatex">\(a+c\equiv b+c\pmod m\)</span></p>
+<p>(2) 由 <span class="arithmatex">\(a-b=(a-c)-(b-c)\)</span>，有 <span class="arithmatex">\(m|[(a-c)-(b-c)]\)</span>，蕴涵 <span class="arithmatex">\(a-c\equiv b-c\pmod m\)</span></p>
+<p>(3) 由 <span class="arithmatex">\(a-b=ac-bc\)</span>，有 <span class="arithmatex">\(m|(ac-bc)\)</span>，蕴涵 <span class="arithmatex">\(ac\equiv bc\pmod m\)</span></p>
+<p>(4) 设 <span class="arithmatex">\(d=(m,c)\)</span></p>
+<p>由 <span class="arithmatex">\(m|(a-b)\)</span> 和 <span class="arithmatex">\(c|a,c|b,c&gt;0\)</span>，存在 k 使得 <span class="arithmatex">\(km=a-b=c(a/c-b/c)\)</span>，</p>
+<p>上式两边除以 d 有 <span class="arithmatex">\(k(m/d)=(c/d)(a/c-b/c)\)</span>，其中 <span class="arithmatex">\((m/d,c/d)=1\)</span>，</p>
+<p>根据[定理3.14]有 <span class="arithmatex">\(m/d|(a/c-b/c)\)</span>，进而 <span class="arithmatex">\(a/c\equiv b/c\pmod{m/d}\)</span></p>
+<p>或者有 <span class="arithmatex">\((c/d)|k\)</span>，即 <span class="arithmatex">\(c/d|(a-b)/m\)</span>，<span class="arithmatex">\(a/m\equiv b/m\pmod{c/d}\)</span>（假设 <span class="arithmatex">\(m|a,m|b\)</span>）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理3</p>
+</div>
+<blockquote>
+<p>假设 a，b，c，d 是整数，m 是正整数，且 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，<span class="arithmatex">\(c\equiv d\pmod m\)</span>，则：</p>
+<ol>
+<li><span class="arithmatex">\(a+c\equiv b+d\pmod m\)</span></li>
+<li><span class="arithmatex">\(a-c\equiv b-d\pmod m\)</span></li>
+<li><span class="arithmatex">\(ac\equiv bd\pmod m\)</span></li>
+</ol>
+</blockquote>
+<p>证明：</p>
+<p>由 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，<span class="arithmatex">\(c\equiv d\pmod m\)</span> 有 <span class="arithmatex">\(m|(a-b),m|(c-d)\)</span>，进而存在整数 k 和 l 使得 <span class="arithmatex">\(km=a-b,lm=c-d\)</span></p>
+<p>(1) 由 <span class="arithmatex">\(km=a-b,lm=c-d\)</span> 有 <span class="arithmatex">\((k+l)m=(a+c)-(b+d)\)</span>，即 <span class="arithmatex">\(m|((a+c)-(b+d))\)</span>，即 <span class="arithmatex">\(a+c\equiv c+d\pmod m\)</span></p>
+<p>(2) 由 <span class="arithmatex">\(km=a-b,lm=c-d\)</span> 有 <span class="arithmatex">\((k-l)m=(a-c)-(b-d)\)</span>，即 <span class="arithmatex">\(m|((a-c)-(b-d))\)</span>，即 <span class="arithmatex">\(a-c\equiv c-d\pmod m\)</span></p>
+<p>(3) 由 <span class="arithmatex">\(km=a-b,lm=c-d\)</span> 有 <span class="arithmatex">\(ckm=c(a-b),blm=b(c-d)\)</span>，进而 <span class="arithmatex">\((ck+bl)m=ac-bd\)</span>，即 <span class="arithmatex">\(m|(ac-bd)\)</span>，即 <span class="arithmatex">\(ac\equiv bd\pmod m\)</span></p>
+<p>或者 <span class="arithmatex">\(ckm=c(a-b),alm=a(c-d)\)</span>，即 <span class="arithmatex">\((ck-al)m=ad-bc\)</span>，进而 <span class="arithmatex">\((ck-al)m|(ad-bc)\)</span>，即 <span class="arithmatex">\(m|(ad-bc)\)</span>，即 <span class="arithmatex">\(ad\equiv bc\pmod m\)</span>，等价于 <span class="arithmatex">\(ac\equiv bd\pmod m\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">引理</p>
+</div>
+<blockquote>
+<p>m 个模 m 不同余的整数的集合构成一个模 m 的完全剩余系</p>
+</blockquote>
+<p>反证：假设一个包含 m 个数的集合不是模 m 的完全剩余系，等价于 集合中存在两个数模 m 同余，矛盾</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\{r_1,\dots,r_m\}\)</span> 是一个模 m 完全剩余系，那么存在正整数 a 满足 <span class="arithmatex">\((a,m)=1\)</span>，使得对于任意整数 b，有：</p>
+<p><span class="arithmatex">\(\{ar_i+b~|~i=1..m\}\)</span> 也是模 m 完全剩余系</p>
+</blockquote>
+<p>反证：假设 <span class="arithmatex">\(\{ar_i+b~|~i=1..m\}\)</span> 不是模 m 完全剩余系，即 <span class="arithmatex">\(\exists i\ne j,ar_i+b\equiv ar_j+b\pmod m\)</span></p>
+<p>等价于 <span class="arithmatex">\(ar_i\equiv ar_j\pmod m\)</span>，那么 <span class="arithmatex">\(r_i\equiv r_j\pmod {m/(m,a)}\)</span>，即 <span class="arithmatex">\(r_i\equiv r_j\pmod {m}\)</span>，与“<span class="arithmatex">\(\{r_1,\dots,r_m\}\)</span> 是一个模 m 完全剩余系”矛盾</p>
+<p>（其中也假设了 <span class="arithmatex">\((m,a)=1\)</span>）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(a,b\)</span> 是整数，<span class="arithmatex">\(k,m\)</span> 是正整数，且 <span class="arithmatex">\(a\equiv b\pmod m\)</span>，那么 <span class="arithmatex">\(a^k\equiv b^k\pmod m\)</span></p>
+</blockquote>
+<p>证明：<span class="arithmatex">\(a\equiv b\pmod m\)</span>，有 <span class="arithmatex">\(m|(a-b)\)</span>，</p>
+<p>而 <span class="arithmatex">\(a^k-b^k=(a-b)\sum\limits_{i=0}^{k-1}a^ib^{k-i}\)</span>，等价于 <span class="arithmatex">\((a-b)|(a^k-b^k)\)</span>，根据[定理1.8]蕴涵 <span class="arithmatex">\(m|(a^k-b^k)\)</span>，</p>
+<p>于是 <span class="arithmatex">\(a^k\equiv b^k\pmod m\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(a,b\in\mathbb Z\)</span>，<span class="arithmatex">\(\forall i=1..k,m_k\in\mathbb N^+\)</span>；<span class="arithmatex">\([m_1,\dots,m_k]\)</span> 是 <span class="arithmatex">\(m_1,\dots,m_k\)</span> 的最小公倍数</p>
+<p><span class="arithmatex">\(\forall i=1..k\)</span>，<span class="arithmatex">\(a\equiv b\pmod{m_i}\)</span>，那么 <span class="arithmatex">\(a\equiv b\pmod{[m_1,\dots,m_k]}\)</span></p>
+<p>推论：<span class="arithmatex">\(\forall i=1..k\)</span>，<span class="arithmatex">\(a\equiv b\pmod{m_i}\)</span>，并且 <span class="arithmatex">\(\forall i\ne j,(m_i,m_j)=1\)</span>，那么 <span class="arithmatex">\(a\equiv b\pmod{\prod\limits_{i=1}^km_i}\)</span>（证明参考 3.5 习题68）</p>
+<p>推论2：<span class="arithmatex">\(a\equiv b\pmod m\)</span>，等价于 <span class="arithmatex">\(\forall i=1..\omega(m)\)</span>，<span class="arithmatex">\(a\equiv b\pmod{p_i^{\alpha_i}}\)</span></p>
+</blockquote>
+<p>证明：<span class="arithmatex">\(\forall i=1..k,m_i|(a-b)\to[m_1,\dots,m_k]\mid(a-b)\)</span>：</p>
+<p>引证：<span class="arithmatex">\(a|c,b|c\iff[a,b]\mid c\)</span>；并推广：<span class="arithmatex">\(\forall i=1..n,a_i|c\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\([a_1,\dots,a_n]\mid c\)</span></p>
+<p>充分性：将 <span class="arithmatex">\(a,b,c\)</span> 进行素数幂分解 <span class="arithmatex">\(a=\prod\limits_{i=1}^np_i^{a_i},b=\prod\limits_{i=1}^np_i^{b_i},c=\prod\limits_{i=1}^np_i^{c_i}\)</span></p>
+<p>若 <span class="arithmatex">\(a|c,b|c\)</span>，那么 <span class="arithmatex">\(\forall i=1..n\)</span>，<span class="arithmatex">\(\max(a_i,b_i)\le c_i\)</span>，因此 <span class="arithmatex">\([a,b]\mid c\)</span>（其中 <span class="arithmatex">\([a,b]=\prod\limits_{i=1}^np_i^{\max(a_i,b_i)}\)</span>）</p>
+<p>必要性：由于 <span class="arithmatex">\(a|[a,b],b|[a,b]\)</span>，并且 <span class="arithmatex">\([a,b]\mid c\)</span>，有 <span class="arithmatex">\(a|c,b|c\)</span></p>
+<p>推广证明：（数学归纳法的证明用到了 <span class="arithmatex">\([a_1,\dots,a_n]=[[a_1,\dots,a_{n-1}],a_n]\)</span>）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<p>由 <span class="arithmatex">\(\forall i=1..k\)</span>，<span class="arithmatex">\(a\equiv b\pmod{m_i}\)</span> 有 <span class="arithmatex">\(\forall i=1..k,m_i|(a-b)\)</span>，</p>
+<p>当且仅当 <span class="arithmatex">\([m_1,\dots,m_k]\mid(a-b)\)</span>，即 <span class="arithmatex">\(a\equiv b\pmod{[m_1,\dots,m_k]}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">模质数运算（快速幂）</p>
+</div>
+<blockquote>
+<p>欲求解方程 <span class="arithmatex">\(b^N\equiv x\pmod m\)</span>，其中 x 是 <span class="arithmatex">\(b^N\)</span> 的最小非负剩余</p>
+<p>对 N 进行 2 次多项式分解：<span class="arithmatex">\(N=\sum\limits_{i=0}^{\omega_2(N)}a_i2^i\)</span>（<span class="arithmatex">\(a_i=0,1\)</span>；<span class="arithmatex">\(\omega_2(n)\)</span> 指的是 n 分解后的最高次数）</p>
+<p>于是 <span class="arithmatex">\(b^N=b^{\sum\limits_{i=0}^{\omega_2(N)}a_i2^i}=\prod\limits_{i=0}^{\omega_2(N)}b^{a_i2^i}=\prod\limits_{i=0}^{\omega_2(N)}(b^{2^i})^{a_i}\)</span></p>
+<p>假设 <span class="arithmatex">\(c_i=b^{2^i}\)</span>，有 <span class="arithmatex">\(c_i\cdot c_i=b^{2^i}b^{2^i}=b^{2^i+2^i}=b^{2\cdot2^i}=b^{2^{i+1}}=c_{i+1}\)</span></p>
+<p>所以 <span class="arithmatex">\(c_{i+1}=c_i^2\)</span> 或 <span class="arithmatex">\(c_i=c_{i-1}^2\)</span></p>
+<p>那么 <span class="arithmatex">\(b^N=\prod\limits_{i=0}^{\omega_2(N)}c_i^{a_i}\)</span></p>
+<p>最后 <span class="arithmatex">\(\prod\limits_{i=0}^{\omega_2(N)}c_i^{a_i}\equiv x\pmod m\)</span>（<span class="arithmatex">\(c_i=c_{i-1}^2,c_0=b\)</span>，<span class="arithmatex">\(a_i=0,1\)</span>）</p>
+<p>推广，对 N 做 k 次多项式分解：<span class="arithmatex">\(\prod\limits_{i=0}^{\omega_k(N)}c_i^{a_i}\equiv x\pmod m\)</span>（<span class="arithmatex">\(c_i=c_{i-1}^k,c_0=b\)</span>，<span class="arithmatex">\(a_i=0..k-1\)</span>）</p>
+<p>复杂度：<span class="arithmatex">\(O(\log_kNk\log_k^2m)\)</span></p>
+</blockquote>
+<h3 id="2">2. 线性同余方程</h3>
+<div class="admonition note">
+<p class="admonition-title">一元线性同余方程</p>
+</div>
+<blockquote>
+<p>包含未知整数 x 的同余式 <span class="arithmatex">\(ax\equiv b\pmod m\)</span>，称为一元线性同余方程</p>
+<p>注：同余方程与二元线性丢番图方程是类似的</p>
+<p>性质：若一个模 m 同余类的某个元素是某个同余方程的解，那么此同余类所有元素都是它的解</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>设 <span class="arithmatex">\(a,b\)</span> 是整数，m 是正整数，并且 <span class="arithmatex">\((a,m)=d\)</span></p>
+<ol>
+<li>若 <span class="arithmatex">\(d\nmid b\)</span>，那么 <span class="arithmatex">\(ax\equiv b\pmod m\)</span> 无解</li>
+<li>若 <span class="arithmatex">\(d\mid b\)</span>，那么 <span class="arithmatex">\(ax\equiv b\pmod m\)</span> 恰有 d 个模 m 不同余的解</li>
+</ol>
+<p>推论：若 <span class="arithmatex">\((a,m)=1\)</span>，那么 <span class="arithmatex">\(ax\equiv b\pmod m\)</span> 有<strong>模 m 的唯一解</strong></p>
+</blockquote>
+<p><span class="arithmatex">\(ax\equiv b\pmod m\)</span>，等价于 <span class="arithmatex">\(m|(ax-b)\)</span>，即存在 y 使得 <span class="arithmatex">\(km=ax-b\)</span> 或 <span class="arithmatex">\(b=ax-km=ax-my\)</span>（令 <span class="arithmatex">\(k=y\)</span>）</p>
+<p>所以 <span class="arithmatex">\(ax\equiv b\pmod m\)</span> 等价于二元线性丢番图方程 <span class="arithmatex">\(ax-my=b\)</span></p>
+<p>x 是 <span class="arithmatex">\(ax\equiv b\pmod m\)</span> 的解，当且仅当存在 y 使得 <span class="arithmatex">\(ax-my=b\)</span></p>
+<p>由[定理3.23]，当 <span class="arithmatex">\(d|b\)</span> 时，<span class="arithmatex">\(ax-my=b\)</span> 或 <span class="arithmatex">\(-ax+my=-b\)</span> 有无穷多个解：<span class="arithmatex">\(x=x_0+(m/d)t\)</span>，<span class="arithmatex">\(y=y_0+(a/d)t\)</span>；其中 <span class="arithmatex">\(x=x_0+(m/d)t\)</span> 是线性同余方程的解，这样的解有无穷多个（但并不蕴涵这些解的同余性质）</p>
+<p>假设 <span class="arithmatex">\(t_1,t_2\)</span> 确定的两个解 <span class="arithmatex">\(x_1=x_0+(m/d)t_1,x_2=x_0+(m/d)t_2\)</span> 模 m 同余，蕴涵 <span class="arithmatex">\(x_0+(m/d)t_1\equiv x_0+(m/d)t_2\pmod m\)</span></p>
+<p>蕴涵 <span class="arithmatex">\((m/d)t_1\equiv (m/d)t_2\pmod m\)</span>，蕴涵 <span class="arithmatex">\(t_1\equiv t_2\pmod{m/(m,m/d)}\)</span>，蕴涵 <span class="arithmatex">\(t_1\equiv t_2\pmod d\)</span>（其中 <span class="arithmatex">\((m,m/d)=m/d\)</span>）</p>
+<p>证得：若 <span class="arithmatex">\(x_1\equiv x_2\pmod m\)</span>，那么 <span class="arithmatex">\(t_1\equiv t_2\pmod d\)</span></p>
+<p>即：若 <span class="arithmatex">\(t_1\not\equiv t_2\pmod d\)</span>，那么 <span class="arithmatex">\(x_1\not\equiv x_2\pmod m\)</span></p>
+<p>当 t 取遍模 d 的完全剩余系时（特别地 <span class="arithmatex">\(t=0..d-1\)</span>），可以得到 d 个模 m 不同于的解</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">模的逆</p>
+</div>
+<blockquote>
+<p>整数 a 模 m 的逆，定义为线性同余方程 <span class="arithmatex">\(ax\equiv1\pmod m\)</span> 的解，记 <span class="arithmatex">\(x=\bar a\)</span></p>
+<p>a 模 m 的逆存在，当且仅当 <span class="arithmatex">\((a,m)=1\)</span></p>
+<p>应用：若 <span class="arithmatex">\((a,m)=1\)</span>，那么 <span class="arithmatex">\(ax\equiv b\pmod m\)</span>，<span class="arithmatex">\(\bar aax\equiv\bar ab\pmod m\)</span>，<span class="arithmatex">\(x\equiv\bar ab\pmod m\)</span></p>
+<p>注：可证 <span class="arithmatex">\(\bar a=1..p-1\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>假设 p 是素数，a 是正整数</p>
+<p><span class="arithmatex">\(a\equiv\bar a\pmod p\)</span>，当且仅当 <span class="arithmatex">\(a\equiv 1\pmod p\)</span> 或 <span class="arithmatex">\(a\equiv -1\pmod p\)</span></p>
+</blockquote>
+<p>证明：</p>
+<p>假设 <span class="arithmatex">\(p\nmid a\)</span>，<span class="arithmatex">\(a\equiv\bar a\pmod p\)</span> 等价于 <span class="arithmatex">\(a^2\equiv a\bar a\pmod p\)</span>，那么 <span class="arithmatex">\((a,p)=1\)</span>，那么 <span class="arithmatex">\(a^2\equiv1\pmod p\)</span>，等价于 <span class="arithmatex">\(a\equiv 1\pmod p\)</span> 或 <span class="arithmatex">\(a\equiv -1\pmod p\)</span></p>
+<p>假设 <span class="arithmatex">\(p\mid a\)</span>，<span class="arithmatex">\((a,p)=p\ge2\)</span>，a 模 p 没有逆元</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 </article>
 </div>
 </div>

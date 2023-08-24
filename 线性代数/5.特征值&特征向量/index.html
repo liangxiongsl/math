@@ -437,6 +437,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        常见问题
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../1.%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
         1.线性方程组
       </a>
@@ -991,6 +996,15 @@
 </li>
 </ol>
 </blockquote>
+<p>2)证明：<span class="arithmatex">\(\forall i=1..r, A\mathbf v_i=\lambda_i\mathbf v_i,\mathbf v_i\ne\mathbf0\)</span>（其中 <span class="arithmatex">\(\forall i\ne j,\lambda_i\ne\lambda_j\)</span>），那么 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_r\}线性无关\)</span></p>
+<p>证明 <span class="arithmatex">\(\neg q\to p\)</span> 矛盾：</p>
+<p>若 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_r\}\)</span> 线性相关，即根据[1.7] 蕴涵 <span class="arithmatex">\(\mathbf v_i=\sum\limits_{j=1}^{i-1}c_j\mathbf v_j\)</span>（1）</p>
+<p>（这里的 i 应满足 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> 线性无关）</p>
+<p>将（1）两边左乘 A 有 <span class="arithmatex">\(A\mathbf v_i=A\sum\limits_{j=1}^{i-1}c_j\mathbf v_j\)</span> 或 <span class="arithmatex">\(\lambda_i\mathbf v_i=\sum\limits_{j=1}^{i-1}c_j\lambda_j\mathbf v_j\)</span>（2）</p>
+<p>将（1）两边乘以 <span class="arithmatex">\(\lambda_i\)</span> 有 <span class="arithmatex">\(\lambda_i\mathbf v_i=\sum\limits_{j=1}^{i-1}c_j\lambda_i\mathbf v_j\)</span>（3）</p>
+<p>将（2）和（3）相减有：<span class="arithmatex">\(\sum\limits_{j=1}^{i-1}c_j(\lambda_i-\lambda_j)\mathbf v_j=\mathbf0\)</span></p>
+<p>由于 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> 线性无关，有 <span class="arithmatex">\(c_1(\lambda_i-\lambda_1)=\dots=c_{i-1}(\lambda_i-\lambda_{i-1})=0\)</span>；而 <span class="arithmatex">\(\lambda_i-\lambda_j\ne0\)</span>，于是 <span class="arithmatex">\(c_1=\dots=c_{i-1}=0\)</span>，这与（1）矛盾（因为特征向量 <span class="arithmatex">\(\mathbf v_i\)</span> 是非零向量）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">特征向量与差分方程</p>
 </div>
@@ -1010,6 +1024,17 @@
 <li><span class="arithmatex">\(\Delta&gt;0\)</span> 时，有一个实根，一对共轭复根</li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">自证结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\sum\limits_{i=0}^nc_iA^i=\mathbf0\)</span>，等价于 <span class="arithmatex">\(\sum\limits_{i=0}^nc_i\lambda^i=\mathbf0\)</span></li>
+<li><span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span>，那么 <span class="arithmatex">\(\det A=\prod\limits_{i=1}^n\lambda_i\)</span></li>
+</ol>
+</blockquote>
+<p>(1) 由于 <span class="arithmatex">\(\sum\limits_{i=0}^nc_iA^i=\mathbf0\)</span>，有：</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <h3 id="2">2. 特征方程</h3>
 <div class="admonition note">
 <p class="admonition-title">可逆矩阵定理(续)</p>
