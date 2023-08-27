@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../2.%E7%9F%A9%E9%98%B5%E4%BB%A3%E6%95%B0/" rel="prev"/>
-<link href="../4.%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/" rel="next"/>
+<link href="../%E7%BB%83%E4%B9%A0/" rel="prev"/>
+<link href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
-<title>3.行列式 - 数学</title>
+<title>结论 - 数学</title>
 <link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
@@ -36,9 +36,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#1">
-          跳转至
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -60,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              3.行列式
+              结论
             
           </span>
 </div>
@@ -426,8 +423,9 @@
         练习
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../%E7%BB%93%E8%AE%BA/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         结论
       </a>
 </li>
@@ -456,38 +454,10 @@
         2.矩阵代数
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          3.行列式
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3.%E8%A1%8C%E5%88%97%E5%BC%8F/">
         3.行列式
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 行列式
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 行列式的性质
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3. 克拉默法则，体积，线性变换
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../4.%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/">
@@ -888,140 +858,34 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1">
-    1. 行列式
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2. 行列式的性质
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3. 克拉默法则，体积，线性变换
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>3.行列式</h1>
-<p>3.1 引入行列式，3.2 介绍了方阵可逆性的充分条件，3.3 解释如何测度一个线性变换对图形面积的改变量（当局部地应用时，这一意义回答了两极附近的地图的扩张比例问题．这种思想以雅可比式在多元微积分）</p>
-<h3 id="1">1. 行列式</h3>
+<h1>结论</h1>
 <div class="admonition note">
-<p class="admonition-title">行列式</p>
+<p class="admonition-title">可逆矩阵定理</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(A\in \mathbb R^{n\times n}\)</span> 的行列式的递归定义为 <span class="arithmatex">\(\det A=\sum\limits_{i=1}^n(-1)^{i-1}a_{1i}\det A_{1i}\)</span>（仅当 <span class="arithmatex">\(n\ge 2\)</span>）</p>
-<p>特别地 <span class="arithmatex">\(n=1\)</span> 时，<span class="arithmatex">\(\det A=a_{11}\)</span></p>
-<p>注1：此处 <span class="arithmatex">\(\det A_{ij}\)</span> 为矩阵 A 删除第 i 行和第 j 列后得到的矩阵</p>
-<p>注2：<span class="arithmatex">\(T(n)\approx nT(n-1)+n-1 \implies T(n)=O(n!)\)</span></p>
-<p>记 <span class="arithmatex">\(C_{ij}=(-1)^{i+j}\det A_{ij}\)</span></p>
-<p>余因子：<span class="arithmatex">\(C_{ij}=(-1)^{i+j}\det A_{ij}\)</span></p>
-<p>第 i 行的余因子展开式：<span class="arithmatex">\(\det A=\sum\limits_{j=1}a_{ij}\cdot C_{ij}\)</span></p>
-<p>第 j 列的余因子展开式：<span class="arithmatex">\(\det A=\sum\limits_{i=1}a_{ij}\cdot C_{ij}\)</span></p>
+<p><span class="arithmatex">\(\begin{cases}A有n个主元位置\\A,A^T可逆\\\det A=|A|\ne0\\\text{rank}A=r(A)=n\\\forall i=1..n,\lambda_i\ne0\end{cases}\iff\begin{cases}A的各列(行)线性无关\\A\mathbf x=\mathbf0只有平凡解\mathbf x=\mathbf0\\\forall\mathbf b\in\mathbb R^n,A\mathbf x=\mathbf b总有唯一解\end{cases}\iff\begin{cases}A与I_n等价？\\A=\prod\limits_{i=1}^sE_i（E_i是行初等矩阵）\\A^TA是正定矩阵？\end{cases}\)</span></p>
+<p>注：该定理的否命题也同样重要；<span class="arithmatex">\(\text{rank} A=0..n\)</span></p>
+<p>注2：若 A 是正定矩阵 <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\begin{cases}A是对角矩阵\\\forall i=1..n,\lambda_i&gt;0（\lambda_i是A 的特征值）\\Q(\mathbf x)=\mathbf x^TA\mathbf x 是二次型\end{cases}\)</span></p>
 </blockquote>
 <div class="admonition note">
-<p class="admonition-title">行列式算法</p>
+<p class="admonition-title">断言</p>
 </div>
 <blockquote>
-<p>原理：由于行列式可以用余因子展开，某列或某行的零较多时，行列式的计算次数会大大减少</p>
-<p>每次选择某 列/行（该 列/行 的零的个数最多）进行余因子展开，递归计算 <span class="arithmatex">\(\det A\)</span></p>
-<p>推论：若 A 为三角矩阵，那么 <span class="arithmatex">\(\det A = \prod\limits_{i=1}^na_{ii}\)</span></p>
-</blockquote>
-<h3 id="2">2. 行列式的性质</h3>
-<div class="admonition note">
-<p class="admonition-title">(行列式)行变换</p>
-</div>
-<blockquote>
-<p>若 A 是方阵</p>
 <ol>
-<li>A 进行倍加变换得到 B：<span class="arithmatex">\(\det B=\det A\)</span>（<span class="arithmatex">\(L_i \leftarrow L_i+kL_j\)</span>）</li>
-<li>A 进行对换变换得到 B：<span class="arithmatex">\(\det B=-\det A\)</span>（<span class="arithmatex">\(L_i \leftrightarrow L_j\)</span>）</li>
-<li>A 进行倍乘变换得到 B：<span class="arithmatex">\(\det B=k\cdot \det A\)</span>（<span class="arithmatex">\(L_i \leftarrow kL_i\)</span>）</li>
+<li>等价：若同型矩阵 A，B 等价，那么存在 P 和 Q 使得 <span class="arithmatex">\(B=PAQ\)</span>；等价于 <span class="arithmatex">\(\text{rank} A=\text{rank} B\)</span></li>
+<li>合同：若同型矩阵 A，B 合同，那么存在可逆矩阵 P 使得 <span class="arithmatex">\(B=P^TAP\)</span>；A 与 B 的秩，正负惯性指数相同？</li>
+<li>相似：若同型矩阵 A，B 相似，那么存在可逆矩阵 P 使得 <span class="arithmatex">\(B=P^{-1}AP\)</span>；A 与 B 的秩，正负惯性指数，特征值均相同</li>
 </ol>
-<p>注1：一般倍加变换就够用了；倍乘变换可以用于提取公因子</p>
-<p>注2：列变换也具有相同效果</p>
-<p>行列式算法2：使用如上结论将 A 化简为阶梯型（复杂度：<span class="arithmatex">\(O(n^3)\)</span>）</p>
+<p><span class="arithmatex">\(\begin{cases}向量组等价\\矩阵等价(\cong)\\矩阵合同(\simeq)\\矩阵相似(\sim)\end{cases}\xrightarrow{具有}反身性，对称性，传递性\)</span></p>
+<p>关系：A 与 B 相似 或 A 与 B 合同 <span class="arithmatex">\(\implies\)</span> A 与 B 等价；正交矩阵 A 与 B 相似 <span class="arithmatex">\(\implies\)</span> A 与 B 合同</p>
 </blockquote>
-<div class="admonition note">
-<p class="admonition-title">方阵可逆的充要条件</p>
-</div>
-<blockquote>
-<p>方阵 A 可逆，当且仅当 <span class="arithmatex">\(\det A\ne0\)</span></p>
-<p>推论1：A 的列线性相关，则 <span class="arithmatex">\(\det A=0\)</span></p>
-<p>推论2：A 的行线性相关，则 <span class="arithmatex">\(\det A=0\)</span>（因为 A 可逆，当且仅当 <span class="arithmatex">\(A^T\)</span> 可逆）</p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">行列式的性质</p>
-</div>
-<blockquote>
-<p>若 <span class="arithmatex">\(A,B\in\mathbb R^{n\times n}\)</span>，那么</p>
-<ol>
-<li>总是有 <span class="arithmatex">\(\det(A+B)\ne \det A+\det B\)</span></li>
-<li><span class="arithmatex">\(\det AB = (\det A)(\det B)\)</span></li>
-<li><span class="arithmatex">\(\det A^T=\det A\)</span></li>
-<li>线性性质：若 <span class="arithmatex">\(T(\mathbf x)=\det[\mathbf a_1\dots \mathbf x\dots \mathbf a_n]\)</span>，那么有 <span class="arithmatex">\(T(c\mathbf x)=cT(\mathbf x)\)</span>，<span class="arithmatex">\(T(\mathbf u+\mathbf v)=T(\mathbf u)+T(\mathbf v)\)</span></li>
-</ol>
-<p>注：部分证明详见 p188-189</p>
-</blockquote>
-<h3 id="3">3. 克拉默法则，体积，线性变换</h3>
-<p>设 <span class="arithmatex">\(A_i(\mathbf b) = [\mathbf a_1\dots\mathbf a_{i-1}~~\mathbf b~~\mathbf a_{i+1}\dots\mathbf a_n]\)</span>，易得 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(A\mathbf x)\)</span></p>
-<p>假设 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，有 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(\mathbf b)\)</span></p>
-<p>两边取 <span class="arithmatex">\(\det\)</span> 有 <span class="arithmatex">\(\det[A\cdot I_i(\mathbf x)]=\det  A_i(\mathbf b)\)</span>，即 <span class="arithmatex">\(\det[A]\cdot \det I_i(\mathbf x)=\det  A_i(\mathbf b)\)</span></p>
-<p>又 <span class="arithmatex">\(\det I_i(\mathbf x) = x_i\)</span> （其中 <span class="arithmatex">\(\mathbf x=(x_1,\dots,x_n)\)</span>），得到 <span class="arithmatex">\(x_i=\frac{\det  A_i(\mathbf b)}{\det A}\)</span> （仅当 <span class="arithmatex">\(\det A\ne 0\)</span>）</p>
-<div class="admonition note">
-<p class="admonition-title">克拉默法则</p>
-</div>
-<blockquote>
-<p>设 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> <strong>可逆</strong>，则 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的唯一解由下式给出：</p>
-<p><span class="arithmatex">\(x_i=\frac{\det A_i(\mathbf b)}{\det A}=\frac{\det[\mathbf a_1\dots\mathbf b\dots\mathbf a_n]}{\det[\mathbf a_1\dots\mathbf a_i\dots\mathbf a_n]}\)</span> （<span class="arithmatex">\(1\le i\le n\)</span>）</p>
-<p>其中 <span class="arithmatex">\(A_i(\mathbf b) = [\mathbf a_1\dots\mathbf a_{i-1}~~\mathbf b~~\mathbf a_{i+1}\dots\mathbf a_n]\)</span> （显然有 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(A\mathbf x)\)</span>）</p>
-<p>注：克拉默法则显式地给出了线性方程组的解，因而可以直接表达方程组的解（初等行变换算法通常无法求解）</p>
-<p>注2：克拉默法则可用于研究 <span class="arithmatex">\(\mathbf b\)</span> 或 A 变化时，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的解的变化</p>
-</blockquote>
-<p>若 A 可逆，那么 <span class="arithmatex">\(AA^{-1}=I\)</span>，由矩阵乘法的定义有 <span class="arithmatex">\(A(A^{-1})_j=\mathbf e_j\)</span> </p>
-<p>（<span class="arithmatex">\((A^{-1})_j\)</span> 指 A 的第 j 列；<span class="arithmatex">\(\mathbf e_j\)</span> 指 I 的第 j 列）</p>
-<p>由克拉默法则有 <span class="arithmatex">\((A^{-1})_{ij}=\frac{\det A_i(\mathbf e_j)}{\det A}\)</span> (0)</p>
-<p>由于 <span class="arithmatex">\(\det A_i(\mathbf e_j) = C_{ji}\)</span>，得到推论 <span class="arithmatex">\(A^{-1}=\frac1{\det A}\begin{bmatrix}C_{11}&amp;\dots&amp;C_{n1}\\\vdots&amp;&amp;\vdots\\C_{1n}&amp;\dots&amp;C_{nn}\end{bmatrix}=\frac{\text{adj} A}{\det A}\)</span> (1)</p>
-<p>（注：<span class="arithmatex">\(\text{adj}A\)</span> 为伴随矩阵）</p>
-<p>于是 <span class="arithmatex">\((\det A)A^{-1}=\text{adj} A\)</span> 或 <span class="arithmatex">\((\det A)A^{-1}A=(\text{adj} A)A\)</span>，即 <span class="arithmatex">\((\det A)I=(\text{adj} A)A\)</span></p>
-<div class="admonition note">
-<p class="admonition-title">计算矩阵的逆</p>
-</div>
-<blockquote>
-<p>矩阵 <span class="arithmatex">\(A\in \mathbb R^{n\times n}\)</span> 的逆由下式给出：</p>
-<p><span class="arithmatex">\((A^{-1})_{ij}=\frac{\det A_i(\mathbf e_j)}{\det A}\)</span> （仅当 <span class="arithmatex">\(\det A\ne0\)</span>）</p>
-<p>注：复杂度为 <span class="arithmatex">\(O(n^5)\)</span></p>
-<p>推论1：<span class="arithmatex">\(A^{-1}=\frac1{\det A}\begin{bmatrix}C_{11}&amp;\dots&amp;C_{n1}\\\vdots&amp;&amp;\vdots\\C_{1n}&amp;\dots&amp;C_{nn}\end{bmatrix}=\frac{\text{adj} A}{\det A}\)</span>（记 <span class="arithmatex">\(\text{adj}A\)</span> 为伴随矩阵）</p>
-<p>推论2：<span class="arithmatex">\((\det A)I=(\text{adj} A)A\)</span> （复杂度为 <span class="arithmatex">\(O(n^2)\)</span> 仅当 A 和 <span class="arithmatex">\(\text{adj}A\)</span> 已知）</p>
-<p>题外话：p194 例 3，我笑拉：用 <span class="arithmatex">\(O(n^5)\)</span> 先求伴随矩阵，再用它以 <span class="arithmatex">\(O(n^2)\)</span> 求 <span class="arithmatex">\(\det A\)</span>；不如直接用初等行变换 <span class="arithmatex">\(O(n^3)\)</span></p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">面积，体积</p>
-</div>
-<blockquote>
-<p>由 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 的列确定的平行四边形的面积 或 平行六面体的体积等于 <span class="arithmatex">\(|\det A|\)</span> （<span class="arithmatex">\(n\le 3\)</span>）</p>
-<p>补充：对于 <span class="arithmatex">\(\mathbf a_1,\mathbf a_2\ne\mathbf 0\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span>；由 <span class="arithmatex">\(\mathbf a_1,\mathbf a_2\)</span> 确定的平行四边形面积等于由 <span class="arithmatex">\(\mathbf a_1,\mathbf a_2+c\mathbf a_1\)</span> 确定的平行四边形面积</p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">线性变换</p>
-</div>
-<blockquote>
-<p>设 S 是线性变换 <span class="arithmatex">\(T~:~\mathbb R^n\to\mathbb R^n\)</span> 的定义域内的一个集合，<span class="arithmatex">\(T(S)\)</span> 表示 S 中的点的像集 （<span class="arithmatex">\(n\le3\)</span>）</p>
-<p>若 S 是 <span class="arithmatex">\(\mathbb R^2\)</span> 上的平行四边形，那么 <span class="arithmatex">\(T(S)的面积=|\det A|\cdot S的面积\)</span></p>
-<p>若 S 是 <span class="arithmatex">\(\mathbb R^2\)</span> 上的平行六面体，那么 <span class="arithmatex">\(T(S)的体积=|\det A|\cdot S的体积\)</span></p>
-</blockquote>
+<p><span class="arithmatex">\(\text{tr}A=\sum\limits_{i=1}^na_{ii}\)</span></p>
 </article>
 </div>
 </div>
@@ -1032,7 +896,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: 2.矩阵代数" class="md-footer__link md-footer__link--prev" href="../2.%E7%9F%A9%E9%98%B5%E4%BB%A3%E6%95%B0/" rel="prev">
+<a aria-label="上一页: 练习" class="md-footer__link md-footer__link--prev" href="../%E7%BB%83%E4%B9%A0/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -1041,17 +905,17 @@
                 上一页
               </span>
 <div class="md-ellipsis">
-                2.矩阵代数
+                练习
               </div>
 </div>
 </a>
-<a aria-label="下一页: 4.向量空间" class="md-footer__link md-footer__link--next" href="../4.%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4/" rel="next">
+<a aria-label="下一页: 术语和定义" class="md-footer__link md-footer__link--next" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89/" rel="next">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 下一页
               </span>
 <div class="md-ellipsis">
-                4.向量空间
+                术语和定义
               </div>
 </div>
 <div class="md-footer__button md-icon">
