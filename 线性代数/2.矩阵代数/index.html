@@ -1082,6 +1082,22 @@
 <li><span class="arithmatex">\(AB^T=[\mathbf a_1\dots\mathbf a_n]\begin{bmatrix}\mathbf b_1^T\\\vdots\\\mathbf b_n^T\end{bmatrix}^{TT}=[\mathbf a_1\dots\mathbf a_n]\begin{bmatrix}\mathbf b_1^T\\\vdots\\\mathbf b_n^T\end{bmatrix}=\sum\limits_{i=1}^n\mathbf a_i\mathbf b_i^T\)</span></li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">矩阵乘法性质(断言)</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\text{Row}_i(ABC)=\text{Row}_i(A)BC\)</span>，<span class="arithmatex">\(\text{Col}_i(ABC)=AB\text{Col}_i(C)=AB\mathbf c_i\)</span></li>
+<li><span class="arithmatex">\(AB=[A\mathbf b_1~~\cdots~~A\mathbf b_n]\)</span></li>
+</ol>
+</blockquote>
+<p>(2) <span class="arithmatex">\(\forall i=1..,j=1..n\)</span></p>
+<ol>
+<li><span class="arithmatex">\((AB)_{ij}=\sum\limits_{k=1}^na_{ik}b_{kj}\)</span></li>
+<li><span class="arithmatex">\(([A\mathbf b_1~~\cdots~~A\mathbf b_n])_{ij}=\text{Row}_i(A\mathbf b_j)=\text{Row}_i(A)\mathbf b_j=\sum\limits_{k=1}^na_{ik}b_{kj}\)</span></li>
+</ol>
+<p>于是 <span class="arithmatex">\((AB)_{ij}=([A\mathbf b_1~~\cdots~~A\mathbf b_n])_{ij}\)</span>，最后 <span class="arithmatex">\(AB=[A\mathbf b_1~~\cdots~~A\mathbf b_n]\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <h3 id="2">2.矩阵的逆</h3>
 <div class="admonition 可逆">
 <p class="admonition-title">可逆</p>
@@ -1138,6 +1154,12 @@
 <p>矩阵逆元算法：<span class="arithmatex">\([A~I] \sim [I~A^{-1}]\)</span>，仅当 <span class="arithmatex">\(A\)</span> 行等价于 <span class="arithmatex">\(I\)</span>（否则 A 不可逆）</p>
 <p>证明详见 p123</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">推论</p>
+<ol>
+<li><span class="arithmatex">\([A~~I]\sim[I~~A^{-1}]\)</span>，蕴涵 <span class="arithmatex">\([A~~B]\sim[I~~A^{-1}B]\)</span> 或 <span class="arithmatex">\([A~~\mathbf b]\sim[I~~A^{-1}\mathbf b]\)</span></li>
+</ol>
+</div>
 <div class="admonition 逆矩阵的另一种观点">
 <p class="admonition-title">逆矩阵的另一种观点</p>
 </div>
