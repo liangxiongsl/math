@@ -1096,7 +1096,7 @@
 </ol>
 </li>
 <li>子空间：若 <span class="arithmatex">\(\mathbf u,\mathbf v\in H,c\in\mathbb R\)</span> 并且 <span class="arithmatex">\(H\subset V\)</span>（V 是向量空间），那么 <span class="arithmatex">\(\mathbf 0,\mathbf u+\mathbf v,c\mathbf u\in H\)</span>，则 H 是向量空间 V 的子空间</li>
-<li>张成子空间，张成集：<span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 称为由 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 生成的子空间；若子空间 H 的子集 <span class="arithmatex">\(S=\{\mathbf v_1,\dots,\mathbf v_p\}\subset H\)</span> 张成的子空间为 H 本身（即 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}=H\)</span>），那么 S 称为 H 的张成集</li>
+<li>张成子空间，张成集：<span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}=\left\{\sum\limits_{i=1}^pc_i\mathbf v_i~:~\forall i=1..p,c_i\in\mathbb R\right\}\)</span> 称为由 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 生成的子空间；若子空间 H 的子集 <span class="arithmatex">\(S=\{\mathbf v_1,\dots,\mathbf v_p\}\subset H\)</span> 张成的子空间为 H 本身（即 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}=H\)</span>），那么 S 称为 H 的张成集</li>
 </ol>
 </blockquote>
 <div class="admonition tip">
@@ -1104,20 +1104,59 @@
 <ol>
 <li>证明：点集 <span class="arithmatex">\(H=\{(3s,2+5s)~:~s\in\mathbb R\}\)</span> 不是 <span class="arithmatex">\(\mathbb R^2\)</span> 的子空间</li>
 <li>证明：<span class="arithmatex">\(\forall i=1..p\)</span>，<span class="arithmatex">\(\mathbf v_i\in\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}\)</span></li>
-<li>证明：若 S 是所有对称矩阵的集合（<span class="arithmatex">\(\{A~:~A=A^T\}\)</span>），<span class="arithmatex">\(M_{n\times n}\)</span> 是所有 <span class="arithmatex">\(n\times n\)</span> 矩阵的向量空间，那么 S 是 <span class="arithmatex">\(M_{n\times n}\)</span> 的子空间</li>
+<li>证明：若 S 是所有对称矩阵的集合（<span class="arithmatex">\(\{A~:~A=A^T,A\in\mathbb R^{n\times n}\}\)</span>），<span class="arithmatex">\(M_{n\times n}\)</span> 是所有 <span class="arithmatex">\(n\times n\)</span> 矩阵的向量空间，那么 S 是 <span class="arithmatex">\(M_{n\times n}\)</span> 的子空间</li>
 <li>判断题<ol>
-<li>若 f 是 <span class="arithmatex">\(\mathbb R\)</span> 上所有实值函数的向量空间 V 中的一个函数，且对某个 t 由 <span class="arithmatex">\(f(t)=0\)</span>，则 f 是 V 中的零向量</li>
-<li>在三维空间中，向量是一个箭头（有向线段）</li>
-<li>对向量空间 V 的一个子集 H，若零向量在 H 中，则 H 是 V 的一个子空间</li>
-<li>一个子空间仍是一个向量空间</li>
-<li>一个向量是一个向量空间中任意一个元素</li>
-<li>若 <span class="arithmatex">\(\mathbf u\)</span> 是向量空间 V 中的一个向量，则 <span class="arithmatex">\((-1)\mathbf u\)</span> 与 <span class="arithmatex">\(\mathbf u\)</span> 的负向量相同</li>
-<li>一个向量空间仍是一个子空间</li>
-<li><span class="arithmatex">\(\mathbb R^2\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的子空间</li>
+<li>若 f 是 <span class="arithmatex">\(\mathbb R\)</span> 上所有实值函数的向量空间 V 中的一个函数，且对某个 t 由 <span class="arithmatex">\(f(t)=0\)</span>，则 f 是 V 中的零向量（X）</li>
+<li>在三维空间中，向量是一个箭头（有向线段）（X）</li>
+<li>对向量空间 V 的一个子集 H，若零向量在 H 中，则 H 是 V 的一个子空间（X）</li>
+<li>一个子空间仍是一个向量空间（Y）</li>
+<li></li>
+<li>一个向量是一个向量空间中任意一个元素（Y）</li>
+<li>若 <span class="arithmatex">\(\mathbf u\)</span> 是向量空间 V 中的一个向量，则 <span class="arithmatex">\((-1)\mathbf u\)</span> 与 <span class="arithmatex">\(\mathbf u\)</span> 的负向量相同（Y）</li>
+<li>一个向量空间仍是一个子空间（Y）</li>
+<li><span class="arithmatex">\(\mathbb R^2\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的子空间（X）</li>
 </ol>
 </li>
+<li>令 V 是 <span class="arithmatex">\(xy\)</span> 平面的第一象限，即 <span class="arithmatex">\(V=\left\{(x,y)~:~x,y\ge0\right\}\)</span><ol>
+<li>若 <span class="arithmatex">\(\mathbf u,\mathbf v\in V\)</span>，证明：<span class="arithmatex">\(\mathbf u+\mathbf v\in V\)</span></li>
+<li>证明：<span class="arithmatex">\(\exists c\in\mathbb,c\mathbf u\not\in V\)</span></li>
+</ol>
+</li>
+<li>令 W 是 <span class="arithmatex">\(xy\)</span> 平面中第一，三象限的并集，即 <span class="arithmatex">\(W=\{(x,y)~:~xy\ge0\}\)</span><ol>
+<li>证明：<span class="arithmatex">\(\forall\mathbf u\in W,c\in\mathbb R\)</span>，<span class="arithmatex">\(c\mathbf u\in W\)</span></li>
+<li>证明：<span class="arithmatex">\(\exists \mathbf u,\mathbf v\in W\)</span>，<span class="arithmatex">\(\mathbf u+\mathbf v\not\in W\)</span></li>
+</ol>
+</li>
+<li>令 H 是 <span class="arithmatex">\(xy\)</span> 平面上所有单位圆内和圆上的点集，即 <span class="arithmatex">\(H=\{(x,y)~:~x^2+y^2\le 1\}\)</span>，证明：H 不是 <span class="arithmatex">\(\mathbb R^2\)</span> 的子空间</li>
+<li>用几何证明，<span class="arithmatex">\(\mathbb R^2\)</span> 中不过原点的直线对向量的加法不封闭</li>
 </ol>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 除了 <span class="arithmatex">\(H\subset V\)</span> 外，子空间的三个条件均不满足（零向量，加法封闭性，标量乘法封闭性）</p>
+<p>(2) 对于 <span class="arithmatex">\(\mathbf v_i\)</span>，权的仅给第 i 个权赋值为 1，其他取零，可得 <span class="arithmatex">\(\mathbf v_i\in H\)</span></p>
+<p>(3) 假设 <span class="arithmatex">\(A,B\in S,c\in\mathbb R\)</span></p>
+<ol>
+<li><span class="arithmatex">\(O=O^T\)</span>，于是 <span class="arithmatex">\(O\in S\)</span></li>
+<li><span class="arithmatex">\(A+B=A^T+B^T=(A+B)^T\)</span>，于是 <span class="arithmatex">\(A+B\in S\)</span></li>
+<li><span class="arithmatex">\(cA=cA^T=(cA)^T\)</span>，于是 <span class="arithmatex">\(cA\in S\)</span></li>
+</ol>
+<p>(5) 令 <span class="arithmatex">\(\mathbf u=(x_1,y_1),\mathbf v=(x_2,y_2)\)</span></p>
+<ol>
+<li>由 <span class="arithmatex">\(\mathbf u+\mathbf v=(x_1+x_2,y_1+y_2)\)</span>，其中 <span class="arithmatex">\(x_1+x_2,y_1+y_2\ge0\)</span>，于是 <span class="arithmatex">\(\mathbf u+\mathbf v\in V\)</span></li>
+<li>
+<p><span class="arithmatex">\(-1\mathbf u=(-x_1,y_1)\)</span>，其中 <span class="arithmatex">\(-x_1,-y_1\le0\)</span>，所以 <span class="arithmatex">\(\exists x_1,y_1&gt;0\)</span> 使得 <span class="arithmatex">\(-x_1,-y_1&lt;0\)</span>，进而 <span class="arithmatex">\(\mathbf u\not\in V\)</span>
+(6)</p>
+</li>
+<li>
+<p>令 <span class="arithmatex">\(\mathbf u=(x,y)\)</span>，<span class="arithmatex">\(c\mathbf u=(cx,cy)\)</span>，其中 <span class="arithmatex">\((cx)(cy)=c^2xy\ge0\)</span>，所以 <span class="arithmatex">\(c\mathbf u\in W\)</span></p>
+</li>
+<li>存在 <span class="arithmatex">\(\mathbf u=(1,2),\mathbf v=(-2,-1)\in W\)</span>，<span class="arithmatex">\(\mathbf u+\mathbf v=(-1,1)\)</span>，而 <span class="arithmatex">\(-1\cdot 1=-1\not\ge0\)</span>，所以 <span class="arithmatex">\(\mathbf u+\mathbf v\not\in W\)</span></li>
+</ol>
+<p>(7) 存在 <span class="arithmatex">\(\mathbf u=(1,1),\mathbf v=(0,1)\in H\)</span>，使得 <span class="arithmatex">\(\mathbf u+\mathbf v=(1,2)\)</span>，而 <span class="arithmatex">\(2&gt;1\)</span>，所以 H 不是 <span class="arithmatex">\(\mathbb R^2\)</span> 的子空间</p>
+</blockquote>
 <h3 id="2">2. 零空间，列空间，线性变换</h3>
 <p>在线性代数的应用中，<span class="arithmatex">\(\mathbb R^n\)</span> 的子空间通常由以下两种方式产生：</p>
 <ol>
@@ -1129,7 +1168,7 @@
 </div>
 <blockquote>
 <p>矩阵 A 的零空间定义为齐次方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的全体解的集合，记作 <span class="arithmatex">\(\text{Nul}A=\{\mathbf x~:~\mathbf x\in\mathbb R^n,A\mathbf x=\mathbf 0\}\)</span></p>
-<p>或者描述为 <span class="arithmatex">\(\mathbb R^n\)</span> 中通过线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 映射到 <span class="arithmatex">\(\mathbb R^m\)</span> 的全体向量 <span class="arithmatex">\(\mathbb x\)</span> 的集合（<span class="arithmatex">\(\forall \mathbf x\in\text{Nul}A,A\mathbf x=\mathbf 0\)</span>）</p>
+<p>或者描述为 <span class="arithmatex">\(\mathbb R^n\)</span> 中通过线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 映射到 <span class="arithmatex">\(\mathbb R^m\)</span> 中的零向量的全体向量 <span class="arithmatex">\(\mathbf x\)</span> 的集合（<span class="arithmatex">\(\forall \mathbf x\in\text{Nul}A,A\mathbf x=\mathbf 0\)</span>）</p>
 <p>注：<span class="arithmatex">\(\text{Nul}A\)</span> 是线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 中 <span class="arithmatex">\(\mathbf 0\)</span> 的原像的集合</p>
 </blockquote>
 <div class="admonition note">
@@ -1138,7 +1177,7 @@
 <blockquote>
 <ul>
 <li><span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 的零空间 <span class="arithmatex">\(\text{Nul}A\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个子空间</li>
-<li>等价地，m 个方程，n 个未知数的齐次线性方程组 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个子空间</li>
+<li>等价地，m 个方程，n 个未知数的齐次线性方程组 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的解集是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个子空间</li>
 </ul>
 </blockquote>
 <p>证明：</p>
@@ -1261,6 +1300,22 @@
 <p><strong>值域</strong>：线性变换 T 的值域是 W 中具有 <span class="arithmatex">\(T(\mathbf x)\)</span> 的形式的向量的集合 <span class="arithmatex">\(\{T(\mathbf u)~:~\mathbf u\in V\}\)</span></p>
 <p>注：若 T 是关于矩阵 A 的矩阵变换，那么 T 的核与值域分别对应 A 的零空间，列空间</p>
 </blockquote>
+<p>证明：线性变换 <span class="arithmatex">\(T:V\to W\)</span> 的<strong>核</strong> H 是向量空间；只需证明核是向量空间 V 的子空间</p>
+<p>假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in H,c\in\mathbb R\)</span></p>
+<ol>
+<li><span class="arithmatex">\(\mathbf 0=0T(\mathbf u)=T(0\mathbf u)=T(\mathbf 0)\)</span>，于是 <span class="arithmatex">\(\mathbf 0\in V\)</span></li>
+<li><span class="arithmatex">\(T(\mathbf u)=T(\mathbf v)=\mathbf 0\)</span>，有 <span class="arithmatex">\(T(\mathbf u)+T(\mathbf v)=\mathbf 0+\mathbf 0\)</span>，即 <span class="arithmatex">\(T(\mathbf u+\mathbf v)=\mathbf 0\)</span>，于是 <span class="arithmatex">\(\mathbf u+\mathbf v\in V\)</span></li>
+<li><span class="arithmatex">\(T(\mathbf u)=\mathbf 0\)</span>，有 <span class="arithmatex">\(cT(\mathbf u)=c\mathbf 0\)</span>，即 <span class="arithmatex">\(T(c\mathbf u)=\mathbf 0\)</span>，于是 <span class="arithmatex">\(c\mathbf u\in V\)</span></li>
+</ol>
+<p>证明：线性变换 <span class="arithmatex">\(T:V\to W\)</span> 的<strong>值域</strong> H 是向量空间；只需证明值域是向量空间 W 的子空间</p>
+<p>假设 <span class="arithmatex">\(\forall\mathbf u,\mathbf v\in W,\exists\mathbf s,\mathbf t\in V,\mathbf u=T(\mathbf s),\mathbf v=T(\mathbf t)\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span></p>
+<p>根据 V 是线性空间有 <span class="arithmatex">\(\mathbf 0,\mathbf s+\mathbf t,c\mathbf s\in V\)</span>，于是 <span class="arithmatex">\(T(\mathbf 0),T(\mathbf s+\mathbf t),T(c\mathbf s)\in W\)</span></p>
+<ol>
+<li><span class="arithmatex">\(\mathbf 0=0T(\mathbf u)=T(0\mathbf u)=T(\mathbf 0)\)</span>（注：等式两边的 <span class="arithmatex">\(\mathbf 0\)</span> 是不相等的）</li>
+<li><span class="arithmatex">\(\mathbf u+\mathbf v=T(\mathbf  s)+T(\mathbf t)=T(\mathbf s+\mathbf t)\in W\)</span></li>
+<li><span class="arithmatex">\(c\mathbf u=cT(\mathbf s)=T(c\mathbf s)\in W\)</span></li>
+</ol>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">例子</p>
 <ol>
@@ -1272,6 +1327,36 @@
 <li>微分方程 <span class="arithmatex">\(y''+\omega^2y=0\)</span> 的解集就是将 <span class="arithmatex">\(y=f(t)\)</span> 映成 <span class="arithmatex">\(f''(t)+\omega^2f(t)\)</span> 的线性变换的核</li>
 </ol>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>矩阵的零空间：<span class="arithmatex">\(A\in\mathbb R^{n\times m}\)</span> 的零空间为对应的齐次方程的解集 <span class="arithmatex">\(\text{Nul}A=\{\mathbf x~:~\mathbf x\in\mathbb R^n,A\mathbf x=\mathbf 0\}\)</span>；<span class="arithmatex">\(\forall\mathbf x\in\text{Nul}A\)</span>，<span class="arithmatex">\(\mathbf x\in\mathbb R^n,A\mathbf x=\mathbf 0\)</span><ol>
+<li>张成集表示形式：通过[行化简算法]求解 A 对应的齐次方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的解集 <span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf v_i\)</span>，那么 <span class="arithmatex">\(\text{Nul}A=\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>（<span class="arithmatex">\(\mathbf v_i\)</span> 与自由变量或非主元列一一对应）；注意：<span class="arithmatex">\(\mathbf v_i\)</span> 并不等于 A 的简化阶梯型 C 的非主元列</li>
+</ol>
+</li>
+<li>矩阵的列空间：<span class="arithmatex">\(A=[\mathbf a_1~\cdots~\mathbf a_n]\in\mathbb R^{n\times m}\)</span> 的行空间为 A 的列的所有线性组合的集合 <span class="arithmatex">\(\text{Col}A=\text{Span}\{\mathbf a_1,\cdots,\mathbf a_n\}=\{A\mathbf x~:~\mathbf x\in\mathbb R^n\}\)</span><ol>
+<li><span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Nul}A\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间（包含 m 个方程 n 个变量的方程组的解集是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间）；<span class="arithmatex">\(\text{Col}A\)</span> 是 <span class="arithmatex">\(\mathbb R^m\)</span> 的子空间</li>
+<li><span class="arithmatex">\(\text{Nul}A,\text{Col}A\)</span> 的共同问题：检验法（<span class="arithmatex">\(\mathbf u\)</span> 是否在其中），“超空间”判断（是谁的子空间），张成集，等价命题（当 <span class="arithmatex">\(\text{Nul}A=\{\mathbf 0\}\)</span> 或 <span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span> 时等价于什么）</li>
+<li>线性变换：映射或规则 <span class="arithmatex">\(T~:~V\to W\)</span> 满足，<span class="arithmatex">\(\forall \mathbf u,\mathbf v\in V,c\in\mathbb R\)</span>，<span class="arithmatex">\(T(\mathbf u+\mathbf v)=T(\mathbf u)+T(\mathbf v),T(c\mathbf u)=cT(\mathbf u)\)</span></li>
+<li>核（零空间）：线性变换 <span class="arithmatex">\(T~:~V\to W\)</span> 的核是 <span class="arithmatex">\(T(\mathbf u)=\mathbf 0\)</span> 的解集 <span class="arithmatex">\(\{\mathbf u~:~\mathbf u\in V,T(\mathbf u)=\mathbf 0\}\)</span></li>
+<li>值域：线性变换 <span class="arithmatex">\(T~:~V\to W\)</span> 的值域是 W 中具有 <span class="arithmatex">\(T(\mathbf x)\)</span> 的形式的向量的集合 <span class="arithmatex">\(\{T(\mathbf u)~:~\mathbf u\in V\}\)</span></li>
+<li><span class="arithmatex">\(\text{Nul}A,\text{Col}A,核,值域\)</span> 分别是 <span class="arithmatex">\(\mathbb R^n,\mathbb R^m,V,W\)</span> 的子空间</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf x\in\text{Col}A,\exists\mathbf y\in\mathbb R^n,A\mathbf y=\mathbf x\)</span>；<span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,A\mathbf x\in\text{Col}A\)</span>（常用）</li>
+<li><span class="arithmatex">\(\forall\mathbf x\in\text{Nul}A,A\mathbf x=\mathbf 0\)</span></li>
+</ol>
+</blockquote>
 <div class="admonition note">
 <p class="admonition-title">练习</p>
 <ol>
@@ -1279,20 +1364,26 @@
 <li>假设 <span class="arithmatex">\(A=\begin{bmatrix}7&amp;-3&amp;5\\-4&amp;1&amp;-5\\-5&amp;2&amp;-4\end{bmatrix},\mathbf v=\begin{bmatrix}2\\1\\-1\end{bmatrix},\mathbf w=\begin{bmatrix}7\\6\\-3\end{bmatrix}\)</span>，已知 <span class="arithmatex">\(A\mathbf x=\mathbf v,A\mathbf x=\mathbf w\)</span> 都是相容的；那么方程 <span class="arithmatex">\(A\mathbf x=\mathbf v+\mathbf w\)</span> 有什么结论？</li>
 <li>假设 A 是 n 阶方阵，<span class="arithmatex">\(\text{Col}A=\text{Nul}A\)</span>，证明：<span class="arithmatex">\(\text{Nul}A^2=\mathbb R^n\)</span></li>
 <li>判断题（<span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>）<ol>
-<li>A 的零空间是 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的解集</li>
-<li>A 的零空间包含在 <span class="arithmatex">\(\mathbb R^m\)</span> 中</li>
-<li>A 的列空间是映射 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的值域</li>
-<li>若 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 相容，那么 <span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span></li>
-<li>线性变换的核是一个向量空间</li>
-<li><span class="arithmatex">\(\text{Col}A\)</span> 是对某 <span class="arithmatex">\(\mathbf x\)</span> 所有能写成 <span class="arithmatex">\(A\mathbf x\)</span> 的向量的集合</li>
-<li>零空间是向量空间</li>
-<li>A 的列空间包含在 <span class="arithmatex">\(\mathbb R^m\)</span> 中</li>
-<li><span class="arithmatex">\(\text{Col}A\)</span> 是 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的所有解的集合</li>
-<li><span class="arithmatex">\(\text{Nul}A\)</span> 是映射 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的核</li>
-<li>一个线性变换的值域是一个向量空间</li>
-<li>一个齐次线性微分方程的所有解的集合是一个线性变换的核</li>
+<li>A 的零空间是 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的解集（Y）</li>
+<li>A 的零空间包含在 <span class="arithmatex">\(\mathbb R^m\)</span> 中（X）</li>
+<li>A 的列空间是映射 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的值域（Y）</li>
+<li>若 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 相容，那么 <span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span>（X）</li>
+<li>线性变换的核是一个向量空间（Y）</li>
+<li><span class="arithmatex">\(\text{Col}A\)</span> 是对某 <span class="arithmatex">\(\mathbf x\)</span> 所有能写成 <span class="arithmatex">\(A\mathbf x\)</span> 的向量的集合（Y）</li>
+<li>零空间是向量空间（Y）</li>
+<li>A 的列空间包含在 <span class="arithmatex">\(\mathbb R^m\)</span> 中（Y）</li>
+<li><span class="arithmatex">\(\text{Col}A\)</span> 是 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的所有解的集合（X）</li>
+<li><span class="arithmatex">\(\text{Nul}A\)</span> 是映射 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的核（Y）</li>
+<li>一个线性变换的值域是一个向量空间（Y）</li>
+<li>一个齐次线性微分方程的所有解的集合是一个线性变换的核（Y）</li>
 </ol>
 </li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}3&amp;-5&amp;-3\\6&amp;-2&amp;0\\-8&amp;4&amp;1\end{bmatrix}\)</span>，检验 <span class="arithmatex">\(\begin{bmatrix}1\\3\\-4\end{bmatrix}\in\text{Nul}A\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;3&amp;5&amp;0\\0&amp;1&amp;4&amp;-2\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(\text{Nul}A\)</span> 的显式表示（张成空间表示）</li>
+<li>判断这些空间是否是向量空间：(1) <span class="arithmatex">\(\left\{\begin{bmatrix}a\\b\\c\end{bmatrix}~:~\begin{matrix}a+b+c=2\end{matrix}\right\}\)</span>，(2) <span class="arithmatex">\(\left\{\begin{bmatrix}a\\b\\c\\d\end{bmatrix}~:~\begin{matrix}a-2b=4c\\2a=c+3d\end{matrix}\right\}\)</span>，(3) <span class="arithmatex">\(\left\{\begin{bmatrix}b-2d\\d\\b+3d\\d\end{bmatrix}~:~b,d\in\mathbb R\right\}\)</span>，<span class="arithmatex">\(\left\{\begin{bmatrix}b-5d\\2b\\2d+1\\d\end{bmatrix}~:~b,d\in\mathbb R\right\}\)</span></li>
+<li>计算 <span class="arithmatex">\(\mathbb R^{m\times n}\)</span> 的零空间，列空间的维数</li>
+<li>如何求出某个 <span class="arithmatex">\(\text{Nul}A,\text{Col}A\)</span> 中的非零向量？</li>
+<li>如何判定 <span class="arithmatex">\(\mathbf u\in\text{Nul}A\)</span> 或 <span class="arithmatex">\(\mathbf v\in\text{Col}A\)</span>？</li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1303,12 +1394,19 @@
 <ol>
 <li>法1：<span class="arithmatex">\(W=\left\{\mathbf x~:~[1~-3~-1]\mathbf x=\mathbf 0\right\}=\text{Nul}[1~-3~-1]\)</span></li>
 <li>法2：<span class="arithmatex">\(W=\left\{b\begin{bmatrix}3\\1\\0\end{bmatrix}+c\begin{bmatrix}1\\0\\1\end{bmatrix}\right\}=\text{Span}\left\{\begin{bmatrix}3\\1\\0\end{bmatrix},\begin{bmatrix}1\\0\\1\end{bmatrix}\right\}\)</span></li>
+<li>法3：根据[4.1]对子空间的定义</li>
 </ol>
 <p>(2) 由 <span class="arithmatex">\(A\mathbf x=\mathbf v,A\mathbf x=\mathbf w\)</span> 都是相容的，有 <span class="arithmatex">\(\mathbf v,\mathbf w\in\text{Col}A\)</span></p>
 <p>而 <span class="arithmatex">\(\text{Col}A\)</span> 是向量空间，于是 <span class="arithmatex">\(A\mathbf x=\mathbf v+\mathbf w\)</span> 是相容的</p>
 <p>(3) 根据列空间的定义有 <span class="arithmatex">\(\forall \mathbf x\in\mathbb R^n,A\mathbf x\in\text{Col}A\)</span></p>
-<p>由于 <span class="arithmatex">\(\text{Col}A=\text{Nul}A\)</span>，有 <span class="arithmatex">\(\forall \mathbf x\in\mathbb R^n,A\mathbf x\in\text{Nul}A\)</span>，进而 <span class="arithmatex">\(A(A\mathbf x)=\mathbf 0\)</span>，即 <span class="arithmatex">\(A^2\mathbf x=\mathbf 0\)</span>，于是 <span class="arithmatex">\(x\in\text{Nul}A^2\)</span></p>
+<p>由于 <span class="arithmatex">\(\text{Col}A=\text{Nul}A\)</span>，有 <span class="arithmatex">\(\forall \mathbf x\in\mathbb R^n,A\mathbf x\in\text{Nul}A\)</span>，进而 <span class="arithmatex">\(A(A\mathbf x)=\mathbf 0\)</span>，即 <span class="arithmatex">\(A^2\mathbf x=\mathbf 0\)</span>，于是 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,x\in\text{Nul}A^2\)</span>，即 <span class="arithmatex">\(\mathbb R^n\subset \text{Nul}A^2\)</span>，又 <span class="arithmatex">\(\text{Nul}A^2\subset\mathbb R^n\)</span>，于是 <span class="arithmatex">\(\text{Nul}A^2=\mathbb R^n\)</span></p>
+<p>(5) 参考[4.2一级结论]，(6) 参考[4.2总结]</p>
+<p>(7) ①和③都是向量空间（分别可以表示成矩阵的零空间，列空间），②和④都不是向量空间</p>
+<p>(8) m, n</p>
+<p>(9) 计算它们的张成集，然后选定一个适当的权值向量进行构造</p>
+<p>(10) <span class="arithmatex">\(\mathbf u\in\text{Nul}A\)</span>，若 <span class="arithmatex">\(A\mathbf u=\mathbf 0\)</span> 成立；<span class="arithmatex">\(\mathbf v\in\text{Col}A\)</span>，若 <span class="arithmatex">\(A\mathbf x=\mathbf v\)</span> 相容</p>
 </blockquote>
+<p><span class="arithmatex">\(\supset\cup\over\cap\subset\)</span> <span class="arithmatex">\(\subset\cap\over\cup\supset\)</span></p>
 <h3 id="3">3. 线性无关集，基</h3>
 <p>本节确认并研究尽可能“有效地”生成一个向量空间 V 或一个子空间 H 的子集；其关键是线性无关，这与定义在 <span class="arithmatex">\(\mathbb R^n\)</span> 中的一样</p>
 <div class="admonition note">
