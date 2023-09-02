@@ -1348,7 +1348,7 @@
 <li><span class="arithmatex">\(\text{Nul}A,\text{Col}A,核,值域\)</span> 分别是 <span class="arithmatex">\(\mathbb R^n,\mathbb R^m,V,W\)</span> 的子空间</li>
 </ol>
 </blockquote>
-<div class="admonition tip">
+<div class="admonition info">
 <p class="admonition-title">一级结论</p>
 </div>
 <blockquote>
@@ -1404,7 +1404,7 @@
 <p>(7) ①和③都是向量空间（分别可以表示成矩阵的零空间，列空间），②和④都不是向量空间</p>
 <p>(8) m, n</p>
 <p>(9) 计算它们的张成集，然后选定一个适当的权值向量进行构造</p>
-<p>(10) <span class="arithmatex">\(\mathbf u\in\text{Nul}A\)</span>，若 <span class="arithmatex">\(A\mathbf u=\mathbf 0\)</span> 成立；<span class="arithmatex">\(\mathbf v\in\text{Col}A\)</span>，若 <span class="arithmatex">\(A\mathbf x=\mathbf v\)</span> 相容</p>
+<p>(10) <span class="arithmatex">\(\mathbf u\in\text{Nul}A\)</span>，若 <span class="arithmatex">\(A\mathbf u=\mathbf 0\)</span> 成立；<span class="arithmatex">\(\mathbf v\in\text{Col}A\)</span>，若方程组 <span class="arithmatex">\(A\mathbf x=\mathbf v\)</span> 相容</p>
 </blockquote>
 <p><span class="arithmatex">\(\supset\cup\over\cap\subset\)</span> <span class="arithmatex">\(\subset\cap\over\cup\supset\)</span></p>
 <h3 id="3">3. 线性无关集，基</h3>
@@ -1415,15 +1415,15 @@
 <blockquote>
 <p>线性无关：V 中向量的一个<strong>指标集</strong> <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 称为<strong>线性无关</strong>的，如果向量方程 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf v_i=\mathbf 0\)</span> 只有平凡解（零解）（即 <span class="arithmatex">\(\forall c_i=0\)</span>）</p>
 <p>线性相关：<span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 称为<strong>线性相关</strong>的，如果向量方程 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf v_i=\mathbf 0\)</span> 存在一个非平凡解（非零解）（即 <span class="arithmatex">\(\exists c_i\ne0\)</span>）；此时上式称为<strong>线性相关关系</strong></p>
-<p>注：向量空间中的线性相关性与 <span class="arithmatex">\(\mathbb R^n\)</span> 中的线性相关性是由区别的</p>
+<p>注：向量空间中的线性相关性与 <span class="arithmatex">\(\mathbb R^n\)</span> 中的线性相关性是有区别的</p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">例子</p>
 <ol>
 <li><span class="arithmatex">\(\{\mathbf u\}\)</span> 线性无关，当且仅当 <span class="arithmatex">\(\mathbf u\ne\mathbf 0\)</span></li>
-<li><span class="arithmatex">\(\{\mathbf u,\mathbf v\}\)</span> 线性无关，当且仅当 <span class="arithmatex">\(\forall k\in\mathbb R,\mathbf u\ne k\mathbf v\)</span></li>
+<li><span class="arithmatex">\(\{\mathbf u,\mathbf v\}\)</span> 线性无关，当且仅当 <span class="arithmatex">\(\mathbf u\ne\mathbf 0\)</span> 且 <span class="arithmatex">\(\forall k\in\mathbb R,\mathbf v\ne k\mathbf u\)</span></li>
 <li><span class="arithmatex">\(\{\mathbf u\}\)</span> 线性相关，当且仅当 <span class="arithmatex">\(\mathbf u=\mathbf 0\)</span></li>
-<li><span class="arithmatex">\(\{\mathbf u,\mathbf v\}\)</span> 线性相关，当且仅当 <span class="arithmatex">\(\exists k\in\mathbb R,\mathbf u=k\mathbf v\)</span></li>
+<li><span class="arithmatex">\(\{\mathbf u,\mathbf v\}\)</span> 线性相关，当且仅当 <span class="arithmatex">\(\mathbf u=\mathbf 0\)</span> 或 <span class="arithmatex">\(\exists k\in\mathbb R,\mathbf v=k\mathbf u\)</span></li>
 <li>S 线性相关，若 <span class="arithmatex">\(\mathbf 0\in S\)</span></li>
 </ol>
 </div>
@@ -1452,14 +1452,14 @@
 <li>由 <span class="arithmatex">\(\mathcal B\)</span> 生成的子空间与 H 相同，即 <span class="arithmatex">\(H=\text{Span}\{\mathbf b_1,\cdots,\mathbf b_p\}\)</span></li>
 </ol>
 <p>等价地，H 的 基 <span class="arithmatex">\(\mathcal B\)</span> 就是 H 的<strong>线性无关</strong>的<strong>张成集</strong></p>
-<p>注：<span class="arithmatex">\(\forall \mathbf x\in H,\exists c_1,\dots,c_p\in\mathbb R\)</span>，<span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_ib_i\)</span></p>
+<p>注：<span class="arithmatex">\(\forall \mathbf x\in H,\exists c_1,\dots,c_p\in\mathbb R\)</span>，<span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf b_i\)</span></p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">例子</p>
 <ol>
 <li>若 A 是 <span class="arithmatex">\(n\times n\)</span> 的可逆矩阵，则 A 的各列线性无关，且 <span class="arithmatex">\(\text{Span}\{\mathbf a_1,\cdots,\mathbf a_n\}=\text{Col}A=\mathbb R^n\)</span>，于是 A 的各列是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基</li>
-<li><strong>标准基</strong>：令 <span class="arithmatex">\(\mathbf e_1=\begin{bmatrix}1\\\vdots\\0\end{bmatrix},\cdots,\mathbf e_n=\begin{bmatrix}0\\\vdots\\1\end{bmatrix}\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 单位矩阵 <span class="arithmatex">\(I_n\)</span> 的各列，那么 <span class="arithmatex">\(\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 称为 <span class="arithmatex">\(\mathbb R^n\)</span> 的标准基</li>
-<li>令 <span class="arithmatex">\(\mathbf v_1=\begin{bmatrix}3\\0\\-6\end{bmatrix}\)</span>，判断 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}\)</span> 是否为 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个基：<ol>
+<li><strong>标准基</strong>：令 <span class="arithmatex">\(\mathbf e_1=\begin{bmatrix}1\\\vdots\\0\end{bmatrix},\cdots,\mathbf e_n=\begin{bmatrix}0\\\vdots\\1\end{bmatrix}\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 单位矩阵 <span class="arithmatex">\(I_n\)</span> 的各列，那么 <span class="arithmatex">\(\{\mathbf e_1,\cdots,\mathbf e_n\}\)</span> 称为 <span class="arithmatex">\(\mathbb R^n\)</span> 的标准基</li>
+<li>令 <span class="arithmatex">\(\mathbf v_1=\begin{bmatrix}3\\0\\-6\end{bmatrix},\mathbf v_2=\begin{bmatrix}-4\\1\\7\end{bmatrix},\mathbf v_3=\begin{bmatrix}-2\\1\\5\end{bmatrix}\)</span>，判断 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}\)</span> 是否为 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个基：<ol>
 <li>法1：由于向量个数和向量维数相同，<span class="arithmatex">\(A=[\mathbf v_1,\mathbf v_2,\mathbf v_3]\)</span> 可逆，当且仅当 <span class="arithmatex">\(\det A\ne0\)</span></li>
 <li>法2：使用[4.3]的线性相关性的判别定理来判断向量组是否线性无关，然后验证向量组是否张成 <span class="arithmatex">\(\mathbb R^3\)</span></li>
 </ol>
@@ -1526,6 +1526,33 @@
 <li>基是一个尽可能小的生成集，尽可能大的线性无关集</li>
 </ol>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>线性无关：向量空间 V 中的指标集 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性无关，若向量方程 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf v_i=\mathbf 0\)</span> <strong>只有平凡解</strong>（<strong>零解</strong>，<span class="arithmatex">\(\forall c_i=0\)</span>）</li>
+<li>线性相关：向量空间 V 中的指标集 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性相关，若向量方程 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf v_i=\mathbf 0\)</span> <strong>存在一个非平凡解</strong>（<strong>非零解</strong>，<span class="arithmatex">\(\exists c_i\ne0\)</span>）；那么上式称为<strong>线性相关关系</strong></li>
+<li>线性相关判定定理：向量集合 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性相关，当且仅当 <span class="arithmatex">\(\mathbf v_1=\mathbf 0\)</span> 或<span class="arithmatex">\(\exists i\ge2\)</span> <span class="arithmatex">\(\mathbf v_i\)</span> 是前 <span class="arithmatex">\(i-1\)</span> 个向量的线性组合（即 <span class="arithmatex">\(\exists i\ge2\)</span>，使得 <span class="arithmatex">\(\mathbf v_i\in\text{Span}\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span>，也即 <span class="arithmatex">\(\exists i\ge2\)</span> 使得 <span class="arithmatex">\(\mathbf v_i=\sum\limits_{j=1}^{i-1}c_i\mathbf v_j\)</span> 相容）</li>
+<li>基：<span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_p\}\subset H\)</span> 是 V 的子空间 H 的基，若 <span class="arithmatex">\(\cal B\)</span> 是 H 的<strong>线性无关</strong>的<strong>张成集</strong>（三个性质：线性无关，张成，子集）<ol>
+<li><span class="arithmatex">\(\forall \mathbf x\in H,\exists c_1,\dots,c_p\in\mathbb R\)</span>，<span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf b_i\)</span>，即 <span class="arithmatex">\(\forall \mathbf x\in H,\mathbf x\in\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>，即 <span class="arithmatex">\(H\subset\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span></li>
+</ol>
+</li>
+<li>生成集定理：假设 <span class="arithmatex">\(S\subset H\)</span> 是子空间 H 的张成集，(1) 若 <span class="arithmatex">\(\mathbf v_i\in S\)</span> 是 S 中其余向量的线性组合，那么 S 去掉 <span class="arithmatex">\(\mathbf v_i\)</span> 仍然可以张成 H，(2) 若 <span class="arithmatex">\(H\ne\{\mathbf 0\}\)</span>，则 S 的某一(非空)子集是 H 的一个基</li>
+<li>基的例子：<span class="arithmatex">\(n\times n\)</span> 可逆矩阵 A 的各列，<span class="arithmatex">\(I_n\)</span> 的各列 <span class="arithmatex">\(\left\{\mathbf b_1,\cdots,\mathbf b_n\right\}\)</span>（标准基） 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的基；<span class="arithmatex">\(S=\{1,t,\cdots,t^n\}\)</span> 是 <span class="arithmatex">\(\mathbb P_n\)</span> 的标准基；<span class="arithmatex">\(\text{Col}A\)</span> 的基为矩阵 A 的主元列集合（并非 A 的阶梯型的 B 的主元列）；<span class="arithmatex">\(\text{Nul}A\)</span> 的基为矩阵 A 对应齐次方程的解集中的各向量</li>
+<li>基是一个<strong>尽可能小的生成集</strong>，<strong>尽可能大的线性无关集</strong>（H 的子集 S 能通过适当缩减或扩充向量以得到 H 的基）</li>
+<li>矩阵列之间的线性相关关系不会因初等变换而改变</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 H 是向量空间 V 的子空间，S 可以缩减为 H 的一个基，当且仅当 S 能张成 H（满足 <span class="arithmatex">\(|S|\ge\dim V\)</span>）</li>
+<li>S 缩减为线性无关集 T 后，T 是最大“父空间” V 的一个基，当且仅当 <span class="arithmatex">\(|T|=\dim V\)</span></li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">练习</p>
 <ol>
@@ -1538,14 +1565,18 @@
 <li>若 <span class="arithmatex">\(H=\text{Span}\{\mathbf b_1,\cdots,\mathbf b_p\}\)</span>，则 <span class="arithmatex">\(\{\mathbf b_1,\cdots,\mathbf b_p\}\)</span> 是 H 的一个基（X）</li>
 <li>一个 <span class="arithmatex">\(n\times n\)</span> 的可逆矩阵的列构成 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基（Y）</li>
 <li>基是一个尽可能大的生成集（X，参见本节末尾）</li>
-<li>在某些情形，矩阵列之间的线性相关关系受某种初等行变换影响</li>
+<li>在某些情形，矩阵列之间的线性相关关系受某种初等行变换影响（X?）</li>
 <li>子空间 H 中一个线性无关集是 H 的一个基（X）</li>
-<li>若非零向量的一个有限集合 S 生成一个向量空间 V，则 s 的某子集是 V 的一个基</li>
+<li>若非零向量的一个有限集合 S 生成一个向量空间 V，则 s 的某子集是 V 的一个基（Y）</li>
 <li>基是一个尽可能大的线性无关集（Y，参见本节末尾）</li>
 <li>[4.2]描述的对 <span class="arithmatex">\(\text{Nul}A\)</span> 产生一个生成集的标准方法有时对产生 <span class="arithmatex">\(\text{Nul}A\)</span> 的基不起作用（X？）</li>
-<li>若 B 是矩阵 A 的阶梯型，则 B 的主元列构成 <span class="arithmatex">\(\text{Col}A\)</span> 的一个基（Y）</li>
+<li>若 B 是矩阵 A 的阶梯型，则 B 的主元列构成 <span class="arithmatex">\(\text{Col}A\)</span> 的一个基（X）</li>
 </ol>
 </li>
+<li>给定 <span class="arithmatex">\(\mathbb R^n\)</span> 下的向量集 S，如何判断 S 是否为 线性无关集 或 <span class="arithmatex">\(\mathbb R^n\)</span> 的张成集？（<strong>重要</strong>）</li>
+<li>计算 <span class="arithmatex">\(\mathbb R^3\)</span> 上的平面 <span class="arithmatex">\(x+2y+z=0\)</span> 中向量的集合的一个基</li>
+<li>证明：<span class="arithmatex">\(S=\{\mathbf v_1,\cdots,\mathbf v_n\}\)</span> 张成 <span class="arithmatex">\(\mathbb R^n\)</span>，那么 S 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基</li>
+<li>证明：<span class="arithmatex">\(S=\{\mathbf v_1,\cdots,\mathbf v_n\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个线性无关集，那么 S 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基</li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1560,6 +1591,24 @@
 <p>(3) <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\mathbf v_2\}=\left\{s\mathbf v_1+t\mathbf v_2~:~s,t\in\mathbb R\right\}\ne H\)</span>；<span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2\}\)</span> 既不是 H 的子集，又不生成 H，所以 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2\}\)</span> 不是 H 的一个张成集（进而不是一个基）</p>
 <p>(4) 由 <span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 是 V 的一个基，所以 <span class="arithmatex">\(\forall \mathbf x\in V,\exists c_1,\dots,c_p\in\mathbb R\)</span>，有 <span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf v_i\)</span></p>
 <p>又由 <span class="arithmatex">\(T,V\)</span> 是线性变换，有 <span class="arithmatex">\(T(\mathbf x)=T(\sum\limits_{i=1}^pc_i\mathbf v_i)=\sum\limits_{i=1}^pc_iT(\mathbf v_i)=\sum\limits_{i=1}^pc_iU(\mathbf v_i)=U(\mathbf x)\)</span></p>
+<p>(6) 假设 S 对应的矩阵是 <span class="arithmatex">\(A\in\mathbb R^{n\times|S|}\)</span></p>
+<ol>
+<li>法1：假设 <span class="arithmatex">\(|S|=n\)</span>，A 可逆，当且仅当 S 是线性无关集，并且是张成集；否则 S 既不是线性无关集，也不是张成集</li>
+<li>法2：<span class="arithmatex">\(A 的主元位置个数=|S|\)</span>，当且仅当 S 线性无关；<span class="arithmatex">\(A 的主元位置个数=n\)</span>，当且仅当 S 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个张成集</li>
+<li>其他判断：若 <span class="arithmatex">\(n&lt;|S|\)</span>，则 S 不是线性无关的；若 <span class="arithmatex">\(n&gt;|S|\)</span>，则 S 不是 <span class="arithmatex">\(\mathbb R^n\)</span> 的张成集</li>
+</ol>
+<p>注：A 的主元位置个数实质是 <span class="arithmatex">\(\text{Col}A\)</span> 的维数</p>
+<p>(7) 原方程等价于齐次方程 <span class="arithmatex">\(A\mathbf x=[1~~2~~1]\begin{bmatrix}x\\y\\z\end{bmatrix}=0\)</span>，解得 <span class="arithmatex">\(\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}-2\\1\\0\end{bmatrix}y+\begin{bmatrix}-1\\0\\1\end{bmatrix}z\)</span>，于是 <span class="arithmatex">\(\text{Nul}A\)</span> 的基为 <span class="arithmatex">\(\left\{\begin{bmatrix}-2\\1\\0\end{bmatrix},\begin{bmatrix}-1\\0\\1\end{bmatrix}\right\}\)</span></p>
+<p>(8),(9): 长度为 n 的集合 S 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的张成集 或 线性无关集，等价于 S 对应的矩阵 A 是可逆的，分别等价于 S 是线性无关集 或 张成集，于是 S 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">常见问题总结</p>
+</div>
+<blockquote>
+<ol>
+<li>给定 <span class="arithmatex">\(\mathbb R^m\)</span> 中的 S，判断 S 判定是否线性无关，张成 <span class="arithmatex">\(\mathbb R^m\)</span></li>
+<li>计算基：(1)给定 S，(2)给定 A，求 <span class="arithmatex">\(\text{Nul}A,\text{Col}A\)</span> 的基，(3)给定 <span class="arithmatex">\(\mathbb R^2,\mathbb R^3\)</span> 上的经过原点的直线或平面</li>
+</ol>
 </blockquote>
 <h3 id="4">4. 坐标系</h3>
 <p>为一个向量空间 V 指定一个基 <span class="arithmatex">\(\mathcal B\)</span> 的主要原因是，给 V 强加上一个“坐标系”，使得 V 中的每个向量能被一组实数唯一表示</p>
@@ -1581,7 +1630,7 @@
 <p>假设 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 是向量空间 V 的一个基，</p>
 <p><span class="arithmatex">\(\forall \mathbf x\in V\)</span>，唯一存在实数组 <span class="arithmatex">\((c_1,\cdots,c_n)\)</span> 使得 <span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^nc_i\mathbf b_i\)</span>，</p>
 <p>那么 <span class="arithmatex">\((c_1,\cdots,c_n)\)</span> 称为 <span class="arithmatex">\(\mathbf x\)</span> 相对于基 <span class="arithmatex">\(\mathcal B\)</span> 的坐标(向量)（或 <span class="arithmatex">\(\mathbf x\)</span> 的 <span class="arithmatex">\(\mathcal B-坐标(向量)\)</span>），</p>
-<p>记 <span class="arithmatex">\([\mathbf x]_{\mathcal B}=\begin{bmatrix}c_1\\\vdots\\c_n\end{bmatrix}\)</span></p>
+<p>记 <span class="arithmatex">\([\mathbf x]_{\mathcal B}=\begin{bmatrix}c_1\\\vdots\\c_n\end{bmatrix}\)</span>（于是 <span class="arithmatex">\(\mathbf x=[\mathbf b_1~\cdots~\mathbf b_n][\mathbf x]_{\cal B}\)</span>）</p>
 <p>坐标映射：<span class="arithmatex">\(\mathbf x\mapsto[\mathbf x]_{\mathcal B}\)</span>（假设 <span class="arithmatex">\(\mathcal B\)</span> 有序或已经指定排列顺序）</p>
 </blockquote>
 <div class="admonition tip">
@@ -1595,7 +1644,7 @@
 <li><span class="arithmatex">\(\mathbf x=[\mathbf b_1,\cdots,\mathbf b_n][\mathbf x]_{\mathcal B}\)</span></li>
 </ol>
 </li>
-<li><span class="arithmatex">\(\mathbf x\in\mathbb R^n\)</span> 是 <span class="arithmatex">\(\bf x\)</span> 相对于 <span class="arithmatex">\(\mathbb R^n\)</span> 的标准基 <span class="arithmatex">\(\cal B=\{\bf e_1,\cdots,\bf e_n\}\)</span> 的坐标</li>
+<li><span class="arithmatex">\(\mathbf x\in\mathbb R^n\)</span> 是 <span class="arithmatex">\(\bf x\)</span> 相对于 <span class="arithmatex">\(\mathbb R^n\)</span> 的标准基 <span class="arithmatex">\(\cal E=\{\bf e_1,\cdots,\bf e_n\}\)</span> 的坐标</li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1648,7 +1697,7 @@
 <p class="admonition-title">例子</p>
 <ol>
 <li><span class="arithmatex">\(\mathbb P_3\)</span> 的标准基为 <span class="arithmatex">\(\mathcal B=\{1,t,t^2,t^3\}\)</span><ol>
-<li><span class="arithmatex">\(\forall \mathbf x\in\mathbb P_3\)</span>，<span class="arithmatex">\(\mathbf p(t)=a_0+a_1t+a_2t^2+a_3t^3\)</span>，<span class="arithmatex">\([\mathbf p(t)]_{\cal B}=(a_0,a_1,a_2,a_3)\)</span></li>
+<li><span class="arithmatex">\(\forall \mathbf p\in\mathbb P_3,t\in\mathbb R\)</span>，<span class="arithmatex">\(\mathbf p(t)=a_0+a_1t+a_2t^2+a_3t^3\)</span>，<span class="arithmatex">\([\mathbf p(t)]_{\cal B}=(a_0,a_1,a_2,a_3)\)</span></li>
 <li>坐标映射 <span class="arithmatex">\(\mathbf p\mapsto[\mathbf p]_{\cal B}\)</span> 是 <span class="arithmatex">\(\mathbb P_3\)</span> 到 <span class="arithmatex">\(\mathbb R^4\)</span> 的同构</li>
 <li>推广：<span class="arithmatex">\(\mathbb P_n\)</span> 与 <span class="arithmatex">\(\mathbb R^{n+1}\)</span> 同构</li>
 </ol>
@@ -1664,24 +1713,58 @@
 </li>
 </ol>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>唯一表示定理，坐标(向量)，坐标映射：假设 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 是向量空间 V 的一个基，那么 <span class="arithmatex">\(\forall \mathbf x\in V\)</span>，唯一存在实数组 <span class="arithmatex">\((c_1,\cdots,c_n)\)</span> 使得 <span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^nc_i\mathbf b_i\)</span>；其中 <span class="arithmatex">\(\mathbf x\)</span> 的 <span class="arithmatex">\(\cal B-坐标向量\)</span> 为该实数组，记作 <span class="arithmatex">\([\mathbf x]_{\cal B}=(c_1,\cdots,c_n)\)</span>；坐标映射定义为 <span class="arithmatex">\(\mathbf x\mapsto[\mathbf x]_{\mathcal B}\)</span>（<span class="arithmatex">\(\mathbb R^n\)</span> 上的坐标映射为 <span class="arithmatex">\([\mathbf x]_{\cal B}=P_{\cal B}^{-1}\mathbf x\)</span>）</li>
+<li>坐标变换矩阵：假设 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基，那么[唯一表示定理]可记为 <span class="arithmatex">\(\mathbf x=P_{\cal B}[\mathbf x]_{\cal B}\)</span>，其中 <span class="arithmatex">\(P_{\cal B}=[\mathbf b_1~\cdots~\mathbf b_n]\)</span> 定义为从 <span class="arithmatex">\(\cal B\)</span> 到 <span class="arithmatex">\(\cal E\)</span> 的<strong>坐标变换矩阵</strong>（注意：[唯一表示定理]表达了坐标映射的逆，而且 <span class="arithmatex">\(P_{\cal B}\)</span> 可逆；<span class="arithmatex">\(\cal E\)</span> 为 <span class="arithmatex">\(\mathbb R^n\)</span> 上的标准基）</li>
+<li>坐标映射定理：假设 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 是向量空间 V 的一个基，那么坐标映射 <span class="arithmatex">\(\mathbf x\mapsto[\mathbf x]_{\mathcal B}\)</span> 是由 V 映上到 <span class="arithmatex">\(\mathbb R^n\)</span> 的一对一的线性变换（双射线性变换）；即若向量空间 V 的基 <span class="arithmatex">\(\cal B\)</span> 有 n 个向量，那么 V 与 <span class="arithmatex">\(\mathbb R^n\)</span> 同构（或者 V 与 <span class="arithmatex">\(\mathbb R^{\dim V}\)</span> 同构）</li>
+<li>同构：从一个向量空间 V 映上到另一个向量空间 W 的一对一线性变换称为从 V 和 W 上的一个<strong>同构</strong>；每一个在 V 中向量空间的计算可以完全相同地出现在 W 中，反之亦然</li>
+<li>同构的例子：<span class="arithmatex">\(\mathbb P_n\)</span> 与 <span class="arithmatex">\(\mathbb R^{n+1}\)</span> 同构</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>根据[坐标映射定理]，若存在 V 的一个基 <span class="arithmatex">\(\cal B\)</span>，使得 <span class="arithmatex">\(\exists \mathbf v\in V,[\mathbf v]_{\cal B}\in\mathbb R^n\)</span>，那么 V 与 <span class="arithmatex">\(\mathbb R^n\)</span> 同构</li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">练习</p>
 <ol>
 <li><span class="arithmatex">\(\mathbf b_1=\begin{bmatrix}1\\0\\0\end{bmatrix},\mathbf b_2=\begin{bmatrix}-3\\4\\0\end{bmatrix},\mathbf b_3=\begin{bmatrix}3\\-6\\3\end{bmatrix},\mathbf x=\begin{bmatrix}-8\\2\\3\end{bmatrix}\)</span><ol>
-<li>证明 <span class="arithmatex">\(\cal B=\{\mathbf b_1,\mathbf b_2,\mathbf b_3\}\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个基</li>
-<li>求由 <span class="arithmatex">\(\cal B\)</span> 到标准基 <span class="arithmatex">\(\cal E\)</span> 的坐标变换矩阵</li>
+<li>证明 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\mathbf b_2,\mathbf b_3\}\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个基</li>
+<li>求由 <span class="arithmatex">\(\mathcal B\)</span> 到标准基 <span class="arithmatex">\(\cal E\)</span> 的坐标变换矩阵</li>
 <li>求 <span class="arithmatex">\(\mathbb R^3\)</span> 中 <span class="arithmatex">\(\mathbf x\)</span> 与 <span class="arithmatex">\([\mathbf x]_{\cal B}\)</span> 相关联的方程</li>
 <li>求 <span class="arithmatex">\([\mathbf x]_{\cal B}\)</span></li>
 </ol>
 </li>
-<li><span class="arithmatex">\(\cal B=\{1+t,1+t^2,t+t^2\}\)</span> 是 <span class="arithmatex">\(\mathbb P_2\)</span> 的一个基，求 <span class="arithmatex">\(\mathbf p(t)=6+3t-t^2\)</span> 关于 <span class="arithmatex">\(\cal B\)</span> 的坐标向量</li>
+<li><span class="arithmatex">\(\mathcal B=\{1+t,1+t^2,t+t^2\}\)</span> 是 <span class="arithmatex">\(\mathbb P_2\)</span> 的一个基，求 <span class="arithmatex">\(\mathbf p(t)=6+3t-t^2\)</span> 关于 <span class="arithmatex">\(\cal B\)</span> 的坐标向量</li>
 <li>判断题<ol>
-<li><span class="arithmatex">\(\mathbf x\in V\)</span> 且 <span class="arithmatex">\(\cal B\)</span> 包含 n 个向量，则 <span class="arithmatex">\([\mathbf x]_{\cal B}\in\mathbb R^n\)</span>（Y？）</li>
+<li><span class="arithmatex">\(\mathbf x\in V\)</span> 且 <span class="arithmatex">\(\cal B\)</span> 包含 n 个向量，则 <span class="arithmatex">\([\mathbf x]_{\cal B}\in\mathbb R^n\)</span>（Y）</li>
 <li>若 <span class="arithmatex">\(P_{\cal B}\)</span> 是坐标变换矩阵，则 <span class="arithmatex">\(\forall\mathbf x\in V,[\mathbf x]_{\cal B}=P_{\cal B}\mathbf x\)</span>（X）</li>
 <li><span class="arithmatex">\(\mathbb P_3\)</span> 与 <span class="arithmatex">\(\mathbb R^3\)</span> 同构（X）</li>
 <li>若 <span class="arithmatex">\(\cal B\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的标准基，则 <span class="arithmatex">\(\forall \mathbf x\in\mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf x=[\mathbf x]_{\cal B}\)</span>（Y）</li>
 <li>对应 <span class="arithmatex">\([\mathbf x]_{\cal B}\mapsto\mathbf x\)</span> 称为坐标映射（X）</li>
-<li>在某些情况下，<span class="arithmatex">\(\mathbb R^3\)</span> 中的平面与 <span class="arithmatex">\(\mathbb R^2\)</span> 同构（Y?）</li>
+<li>在某些情况下，<span class="arithmatex">\(\mathbb R^3\)</span> 中的平面与 <span class="arithmatex">\(\mathbb R^2\)</span> 同构（Y）</li>
+</ol>
+</li>
+<li>已知基和坐标向量 <span class="arithmatex">\(\mathcal B=\left\{\begin{bmatrix}3\\-5\end{bmatrix},\begin{bmatrix}-4\\6\end{bmatrix}\right\},[\mathbf x]_{\cal B}=\begin{bmatrix}5\\3\end{bmatrix}\)</span>；计算 <span class="arithmatex">\(\mathbf x\)</span></li>
+<li>已知基和向量 <span class="arithmatex">\(\mathcal B=\left\{\begin{bmatrix}1\\-3\end{bmatrix},\begin{bmatrix}2\\-5\end{bmatrix}\right\},\mathbf x=\begin{bmatrix}-2\\1\end{bmatrix}\)</span>；计算 <span class="arithmatex">\([\mathbf x]_{\cal B}\)</span></li>
+<li>给定 <span class="arithmatex">\(\mathbb R^n\)</span> 的基 <span class="arithmatex">\(\cal B\)</span>，求从 <span class="arithmatex">\(\cal B\)</span> 到 <span class="arithmatex">\(\cal E\)</span> 的坐标变换矩阵 <span class="arithmatex">\(P_{\cal B}\)</span></li>
+<li><span class="arithmatex">\(\mathbf B=\{1+t^2,t+t^2,1+2t+t^2\}\)</span> 是 <span class="arithmatex">\(\mathbb P_2\)</span> 的一个基，求 <span class="arithmatex">\(\mathbf p(t)=1+4t+7t^2\)</span> 关于 <span class="arithmatex">\(\cal B\)</span> 的坐标向量</li>
+<li>证明：若 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 是向量空间 V 的一个基，那么 <span class="arithmatex">\(\forall i=1..n,[\mathbf b_i]_{\cal B}=\mathbf e_i\)</span></li>
+<li>证明：若向量空间 V 的有限集 S，满足 <span class="arithmatex">\(\forall \mathbf x\in V\)</span>，<span class="arithmatex">\(\mathbf x\)</span> 可以唯一表示为 S 中元素的线性组合，那么 S 是 V 的一个基（唯一存在定理的逆定理）</li>
+<li>证明：<span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_n\}\)</span> 是向量空间 V 的一个线性相关生成集，那么 <span class="arithmatex">\(\forall\mathbf w\in V\)</span>，<span class="arithmatex">\(\mathbf w\)</span> 可以表示为多种 <span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_n\)</span> 的线性组合</li>
+<li>重要证明（假设 V 是向量空间，<span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 是 V 的一个基，坐标映射为 <span class="arithmatex">\(\mathbf x\mapsto [\mathbf x]_{\cal B}\)</span>）<ol>
+<li>证明：坐标映射是一对一的（即 <span class="arithmatex">\(\forall \mathbf u,\mathbf v\in V,[\mathbf u]_{\cal B}=[\mathbf v]_{\cal B}\)</span>，使得 <span class="arithmatex">\(\mathbf u=\mathbf v\)</span>）</li>
+<li>证明：坐标映射是映上到 <span class="arithmatex">\(\mathbb R^n\)</span> 的（即 <span class="arithmatex">\(\forall \mathbf y\in\mathbb R^n\)</span>，<span class="arithmatex">\(\exists\mathbf u\in V,[\mathbf u]_{\cal B}=\mathbf y\)</span>）</li>
+<li>证明：V 中的子集 <span class="arithmatex">\(\{\mathbf u_1,\cdots,\mathbf u_p\}\)</span> 线性无关，当且仅当坐标向量 <span class="arithmatex">\(\{[\mathbf u_1]_{\cal B},\cdots,[\mathbf u_p]_{\cal B}\}\)</span> 也线性无关（提示：坐标映射是一对一的，因此 <span class="arithmatex">\(\begin{cases}\sum\limits_{i=1}^pc_i\mathbf u_i=\mathbf 0\\ [\sum\limits_{i=1}^pc_i\mathbf u_i]_{\cal B}=[\mathbf 0]_{\cal B}\end{cases}\)</span> 这两个方程有相同的解）</li>
+<li>证明：假设 <span class="arithmatex">\(\mathbf u_1,\cdots,\mathbf u_p,w\in V\)</span>，<span class="arithmatex">\(\mathbf w\)</span> 是 <span class="arithmatex">\(\mathbf u_1,\cdots,\mathbf u_p\)</span> 的线性组合，当且仅当 <span class="arithmatex">\([\mathbf w]_{\cal B}\)</span> 是坐标向量 <span class="arithmatex">\([\mathbf u_1]_{\cal B},\cdots,[\mathbf u_p]_{\cal B}\)</span> 的线性组合</li>
 </ol>
 </li>
 </ol>
