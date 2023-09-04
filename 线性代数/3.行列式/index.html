@@ -919,10 +919,16 @@
 <p>3.1 引入行列式，3.2 介绍了方阵可逆性的充分条件，3.3 解释如何测度一个线性变换对图形面积的改变量（当局部地应用时，这一意义回答了两极附近的地图的扩张比例问题．这种思想以雅可比式在多元微积分）</p>
 <h3 id="1">1. 行列式</h3>
 <div class="admonition note">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(3\times 3\)</span> 矩阵 A 行化简后有 <span class="arithmatex">\(A\sim\begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}\\0&amp;a_{11}a_{22}-a_{12}a_{21}&amp;a_{11}a_{23}-a_{13}a_{21}\\0&amp;0&amp;a_{11}\Delta\end{bmatrix}\)</span>，其中 <span class="arithmatex">\(\Delta=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}-a_{13}a_{22}a_{31}\)</span>；若 A 可逆，则 <span class="arithmatex">\(\delta\ne0\)</span>，反之亦然</li>
+</ol>
+</div>
+<div class="admonition note">
 <p class="admonition-title">行列式</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(A\in \mathbb R^{n\times n}\)</span> 的行列式的递归定义为 <span class="arithmatex">\(\det A=\sum\limits_{i=1}^n(-1)^{i-1}a_{1i}\det A_{1i}\)</span>（仅当 <span class="arithmatex">\(n\ge 2\)</span>）</p>
+<p><span class="arithmatex">\(A\in \mathbb R^{n\times n}\)</span> 的行列式的递归定义为 <span class="arithmatex">\(\det A=\sum\limits_{i=1}^n(-1)^{i-1}a_{1i}\det A_{1i}\)</span>（仅当 <span class="arithmatex">\(n\ge 2\)</span>）（有时行列式简记为 <span class="arithmatex">\(|A|=\det A\)</span>）</p>
 <p>特别地 <span class="arithmatex">\(n=1\)</span> 时，<span class="arithmatex">\(\det A=a_{11}\)</span></p>
 <p>注1：此处 <span class="arithmatex">\(\det A_{ij}\)</span> 为矩阵 A 删除第 i 行和第 j 列后得到的矩阵</p>
 <p>注2：<span class="arithmatex">\(T(n)\approx nT(n-1)+n-1 \implies T(n)=O(n!)\)</span></p>
@@ -931,6 +937,15 @@
 <p>第 i 行的余因子展开式：<span class="arithmatex">\(\det A=\sum\limits_{j=1}a_{ij}\cdot C_{ij}\)</span></p>
 <p>第 j 列的余因子展开式：<span class="arithmatex">\(\det A=\sum\limits_{i=1}a_{ij}\cdot C_{ij}\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算 <span class="arithmatex">\(\det A\)</span>，其中 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;5&amp;0\\2&amp;4&amp;-1\\0&amp;-2&amp;0\end{bmatrix}\)</span><ol>
+<li><span class="arithmatex">\(\det A=-2\cdot(-1)^{3+2}\det\begin{bmatrix}1&amp;0\\2&amp;-1\end{bmatrix}=2\det\begin{bmatrix}1&amp;0\\2&amp;-1\end{bmatrix}=2(-1-0)=-2\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">行列式算法</p>
 </div>
@@ -939,9 +954,55 @@
 <p>每次选择某 列/行（该 列/行 的零的个数最多）进行余因子展开，递归计算 <span class="arithmatex">\(\det A\)</span></p>
 <p>推论：若 A 为三角矩阵，那么 <span class="arithmatex">\(\det A = \prod\limits_{i=1}^na_{ii}\)</span></p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>行列式，子矩阵，余因子，余因子展开式：<span class="arithmatex">\(n\times n\)</span> 矩阵的<strong>行列式</strong>定义为 <span class="arithmatex">\(\det A=\sum\limits_{i=1}^n(-1)^{i+j}a_{ki}\det A_{ki}=\sum\limits_{i=1}^na_{ki}C_{ki}\)</span> 或 <span class="arithmatex">\(\det A=\sum\limits_{i=1}^n(-1)^{i+j}a_{ik}\det A_{ik}=\sum\limits_{i=1}^na_{ik}C_{ik}\)</span>（<span class="arithmatex">\(\forall k=1..n\)</span>），并且 <span class="arithmatex">\(\det A\ne0\)</span> 等价于 A 可逆；<span class="arithmatex">\(A_{ij}\)</span>（<span class="arithmatex">\(i,j=1..n\)</span>）是 A 去掉第 i 行和第 j 列后的 <span class="arithmatex">\((n-1)\times(n-1)\)</span> 的<strong>子矩阵</strong>；<strong>余因子</strong>定义为 <span class="arithmatex">\(C_{ij}=(-1)^{i+j}\det A_{ij}\)</span>（行列式等于第 k 行或第 k 列的<strong>余因子展开式</strong>）</li>
+<li>定理：若 A  为三角矩阵，则 <span class="arithmatex">\(\det A\)</span> 等于 A 的主对角线上元素的乘积</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 <span class="arithmatex">\(A,B\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，那么：<span class="arithmatex">\(\det kA=k^n\det A\)</span>（<span class="arithmatex">\(k\in\mathbb R\)</span>），<span class="arithmatex">\(\det AB=(\det A)(\det B)\)</span>，<span class="arithmatex">\(\det A^T=\det A\)</span>，<span class="arithmatex">\(\det A^{-1}=\frac1{\det A}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^2\)</span> 对应的平行四边形的面积为 <span class="arithmatex">\(|\det[\mathbf u~~\mathbf v]|\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>如何根据定义快速行列式？</li>
+<li>计算 <span class="arithmatex">\(3\times 3\)</span> 矩阵的行列式的特殊方法</li>
+<li>判断题<ol>
+<li>一个 <span class="arithmatex">\(n\times n\)</span> 的行列式 由 <span class="arithmatex">\((n-1)\times(n-1)\)</span> 子矩阵的行列式所定义（Y）</li>
+<li>矩阵 A 的 <span class="arithmatex">\((i,j)\)</span> 余因子是 A 中划掉第 i 行和第 j 列所得到的矩阵 <span class="arithmatex">\(A_{ij}\)</span>（X）</li>
+<li><span class="arithmatex">\(\det A\)</span> 按某列的余因子展开式等于其按某行的余因子展开式（Y）</li>
+<li>三角形矩阵的行列式等于主对角线上元素之和（X）</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 每次寻找零的个数最多的行或列进行余因子展开，若有些行或列的零的个数相等，则通过观察选择其中一个合适的行或列</p>
+<p>(2) 参考 p183 左上角的习题</p>
+</blockquote>
 <h3 id="2">2. 行列式的性质</h3>
 <div class="admonition note">
-<p class="admonition-title">(行列式)行变换</p>
+<p class="admonition-title">(行列式)行变换定理</p>
 </div>
 <blockquote>
 <p>若 A 是方阵</p>
@@ -953,7 +1014,17 @@
 <p>注1：一般倍加变换就够用了；倍乘变换可以用于提取公因子</p>
 <p>注2：列变换也具有相同效果</p>
 <p>行列式算法2：使用如上结论将 A 化简为阶梯型（复杂度：<span class="arithmatex">\(O(n^3)\)</span>）</p>
+<p>另一种描述：假设 A 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，E 是 <span class="arithmatex">\(n\times n\)</span> 初等矩阵，则：</p>
+<p><span class="arithmatex">\(\det EA=(\det E)(\det A)\)</span>（其中 <span class="arithmatex">\(\det E=\begin{cases}1&amp;E是一个行倍加\\-1&amp;E是一个交换\\r&amp;E是一个r倍乘\end{cases}\)</span>）</p>
+<p>推论：<span class="arithmatex">\(\det A=\begin{cases}(-1)^r\cdot(U的主元的乘积)&amp;A可逆\\0&amp;A不可逆(奇异)\end{cases}\)</span>（U 为 A 的阶梯型，r 为 A 变换为 U 时使用的交换对换的次数）</p>
 </blockquote>
+<ol>
+<li><span class="arithmatex">\(n=2\)</span> 时，易证</li>
+<li><span class="arithmatex">\(n\ge3\)</span> 时，设 <span class="arithmatex">\(B=EA\)</span>，那么存在 <span class="arithmatex">\(\alpha\)</span> 使得 <span class="arithmatex">\(\det B_{ij}=\alpha\det A_{ij}\)</span>（对于 <span class="arithmatex">\(i,j=1..n\)</span>）（？？）</li>
+</ol>
+<p>于是 <span class="arithmatex">\(\det EA=\sum\limits_{i=1}^na_{ki}(-1)^{k+i}\det B_{ki}=\alpha\sum\limits_{i=1}^na_{ki}(-1)^{k+i}\det A_{ki}=\alpha\det A\)</span>（对于所有方阵 A）</p>
+<p>设 <span class="arithmatex">\(A=I_n\)</span>，有 <span class="arithmatex">\(\alpha=\det E=\begin{cases}1&amp;E是一个行倍加\\-1&amp;E是一个交换\\r&amp;E是一个r倍乘\end{cases}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">方阵可逆的充要条件</p>
 </div>
@@ -973,10 +1044,73 @@
 <li><span class="arithmatex">\(\det A^T=\det A\)</span></li>
 <li>线性性质：若 <span class="arithmatex">\(T(\mathbf x)=\det[\mathbf a_1\dots \mathbf x\dots \mathbf a_n]\)</span>，那么有 <span class="arithmatex">\(T(c\mathbf x)=cT(\mathbf x)\)</span>，<span class="arithmatex">\(T(\mathbf u+\mathbf v)=T(\mathbf u)+T(\mathbf v)\)</span></li>
 </ol>
-<p>注：部分证明详见 p188-189</p>
+</blockquote>
+<p>证明：</p>
+<p>(2)</p>
+<ol>
+<li>若 A 不可逆，由[2.3习题27]，<span class="arithmatex">\(AB\)</span> 也不可逆，即 <span class="arithmatex">\(\det AB=0=0\cdot\det B=(\det A)(\det B)\)</span></li>
+<li>若 A 可逆，由[可逆矩阵定理]，A 与 <span class="arithmatex">\(I_n\)</span> 行等价，即存在初等矩阵 <span class="arithmatex">\(E_1,\cdots,E_p\)</span> 使得 <span class="arithmatex">\(A=E_p\cdots E_1I_n=E_p\cdots E_1\)</span>，于是 <span class="arithmatex">\(|AB|=|E_p\cdots E_1B|=|E_p|\cdots|E_1|\cdot|B|=|E_p\cdots E_1|\cdot|B|=|A|\cdot|B|\)</span></li>
+</ol>
+<p>(4) 参见[习题43]</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition info">
+<p class="admonition-title">结论</p>
+</div>
+<blockquote>
+<ol>
+<li>行变换定理：假设 A 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，E 是 <span class="arithmatex">\(n\times n\)</span> 初等矩阵，则：<span class="arithmatex">\(\det EA=(\det E)(\det A)=\begin{cases}\det A&amp;E是一个行倍加\\-\det A&amp;E是一个交换\\r\det A&amp;E是一个r倍乘\end{cases}\)</span>；推论：<span class="arithmatex">\(\det A=\begin{cases}(-1)^r\cdot(U的主元的乘积)&amp;A可逆\\0&amp;A不可逆(奇异)\end{cases}\)</span>（U 为 A 的阶梯型，r 为 A 变换为 U 时使用的交换对换的次数）</li>
+<li>方阵的可逆性：方阵 A 可逆，当且仅当 <span class="arithmatex">\(\det A\ne0\)</span>；推论：A 的行或 A 的列线性相关，那么 <span class="arithmatex">\(\det A=0\)</span>（A 是奇异矩阵）</li>
+<li>行列式基本性质：假设 <span class="arithmatex">\(A,B\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，那么 <span class="arithmatex">\(\det AB=(\det A)(\det B),\det A^T=\det A\)</span></li>
+<li>定理：设 <span class="arithmatex">\(T(\mathbf x)=\det[\mathbf a_1\dots \mathbf x\dots \mathbf a_n]\)</span>（<span class="arithmatex">\(T~:~\mathbb R^n\to\mathbb R\)</span>），那么 (1) <span class="arithmatex">\(T(\mathbf u+\mathbf v)=T(\mathbf u)+T(\mathbf v)\)</span>，(2) <span class="arithmatex">\(T(c\mathbf x)=cT(\mathbf x)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\det kA=k^n\det A\)</span>，<span class="arithmatex">\(\det A^n=(\det A)^n\)</span>，<span class="arithmatex">\(\det A^{-1}=\frac1{\det A}\)</span>（由于行列式是“乘性函数” <span class="arithmatex">\(\det AB=(\det A)(\det B)\)</span>）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>快速计算 <span class="arithmatex">\(\begin{vmatrix}1&amp;-3&amp;1&amp;-2\\2&amp;-5&amp;-1&amp;-2\\0&amp;-4&amp;5&amp;1\\-3&amp;10&amp;-6&amp;8\end{vmatrix}\)</span></li>
+<li>利用行列式判断 <span class="arithmatex">\(\mathbf v_1=\begin{bmatrix}5\\-7\\9\end{bmatrix},\mathbf v_2=\begin{bmatrix}-3\\3\\-5\end{bmatrix},\mathbf v_3=\begin{bmatrix}2\\-7\\5\end{bmatrix}\)</span> 是否线性无关</li>
+<li>证明：假设 A 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，若 <span class="arithmatex">\(A^2=I\)</span>，那么 <span class="arithmatex">\(\det A=\pm1\)</span>；推广：<span class="arithmatex">\(A^{2n}=B\implies \det A=\pm\sqrt[2n]{\det B}\)</span>，<span class="arithmatex">\(A^{2n+1}=B\implies \det A=\sqrt[2n+1]{\det B}\)</span></li>
+<li>判断题：<ol>
+<li>矩阵的行倍加变换不会改变矩阵的行列式（Y）</li>
+<li>矩阵 A 的行列式是 A 的任意一个阶梯型 U 中主元之积在乘以 <span class="arithmatex">\((-1)^r\)</span>，其中 r 是 A 经行化简为 U 时所做的行交换的次数（<strong>X</strong>）</li>
+<li>若 A 的列线性相关，那么 <span class="arithmatex">\(\det A=0\)</span>（Y）</li>
+<li><span class="arithmatex">\(\det(A+B)=\det A+\det B\)</span>（X）</li>
+<li>如果连续做了两次行交换，则新的行列式等于原来的行列式（<strong>X</strong>）</li>
+<li>A 的行列式等于其对角线元素之积（X）</li>
+<li>若 <span class="arithmatex">\(\det A=0\)</span>，则其两行或两列系统，或者一行或一列为零（X）</li>
+<li><span class="arithmatex">\(\det A^{-1}=(-1)\det A\)</span>（X）</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\begin{vmatrix}a&amp;b&amp;c\\d&amp;e&amp;f\\g&amp;h&amp;i\end{vmatrix}=7\)</span>，计算 (1) <span class="arithmatex">\(\begin{vmatrix}a&amp;b&amp;c\\d+3a&amp;e+3b&amp;f+3c\\g&amp;h&amp;i\end{vmatrix}\)</span>，(2) <span class="arithmatex">\(\begin{vmatrix}a&amp;b&amp;c\\g&amp;h&amp;i\\d&amp;e&amp;f\end{vmatrix}\)</span>，(3) <span class="arithmatex">\(\begin{vmatrix}a&amp;b&amp;c\\d&amp;e&amp;f\\3g&amp;3h&amp;3i\end{vmatrix}\)</span></li>
+<li>判断是否可逆：(1) <span class="arithmatex">\(\begin{bmatrix}2&amp;6&amp;0\\1&amp;3&amp;0\\3&amp;9&amp;2\end{bmatrix}\)</span>，(2) <span class="arithmatex">\(\begin{bmatrix}5&amp;1&amp;-1\\1&amp;-3&amp;-2\\0&amp;5&amp;3\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(B=\begin{bmatrix}1&amp;0&amp;1\\1&amp;1&amp;2\\1&amp;2&amp;1\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(\det B^4\)</span></li>
+<li>证明以下结论：<ol>
+<li>若 A 可逆，那么 <span class="arithmatex">\(\det A^{-1}=\frac1{\det A}\)</span></li>
+<li>若 A 为方阵，且 <span class="arithmatex">\(\det A^3=0\)</span>，那么 A 不可逆</li>
+<li>若 <span class="arithmatex">\(A,B\)</span> 均为方阵，那么 <span class="arithmatex">\(\det AB=\det BA\)</span> 总是成立</li>
+<li>若 <span class="arithmatex">\(A,P\)</span> 均为方阵，P 可逆，那么 <span class="arithmatex">\(\det(PAP^{-1})=\det A\)</span></li>
+<li>假设 U 为方阵，且 <span class="arithmatex">\(U^TU=I\)</span>，那么 <span class="arithmatex">\(\det U=\pm1\)</span></li>
+<li>若 A 为 <span class="arithmatex">\(n\times n\)</span> 矩阵，那么 <span class="arithmatex">\(\det(rA)=r^n\det A\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(3) <span class="arithmatex">\(A^2=I\)</span>，蕴涵 <span class="arithmatex">\(\det A^2=\det I\)</span>，蕴涵 <span class="arithmatex">\((\det A)^2=1\)</span>，蕴涵 <span class="arithmatex">\(\det A=\pm1\)</span></p>
 </blockquote>
 <h3 id="3">3. 克拉默法则，体积，线性变换</h3>
-<p>设 <span class="arithmatex">\(A_i(\mathbf b) = [\mathbf a_1\dots\mathbf a_{i-1}~~\mathbf b~~\mathbf a_{i+1}\dots\mathbf a_n]\)</span>，易得 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(A\mathbf x)\)</span></p>
+<p>设 <span class="arithmatex">\(A_i(\mathbf x) = [\mathbf a_1\dots\mathbf a_{i-1}~~\mathbf x~~\mathbf a_{i+1}\dots\mathbf a_n]\)</span>，易得 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(\mathbf x)\)</span></p>
 <p>假设 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，有 <span class="arithmatex">\(A\cdot I_i(\mathbf x)=A_i(\mathbf b)\)</span></p>
 <p>两边取 <span class="arithmatex">\(\det\)</span> 有 <span class="arithmatex">\(\det[A\cdot I_i(\mathbf x)]=\det  A_i(\mathbf b)\)</span>，即 <span class="arithmatex">\(\det[A]\cdot \det I_i(\mathbf x)=\det  A_i(\mathbf b)\)</span></p>
 <p>又 <span class="arithmatex">\(\det I_i(\mathbf x) = x_i\)</span> （其中 <span class="arithmatex">\(\mathbf x=(x_1,\dots,x_n)\)</span>），得到 <span class="arithmatex">\(x_i=\frac{\det  A_i(\mathbf b)}{\det A}\)</span> （仅当 <span class="arithmatex">\(\det A\ne 0\)</span>）</p>

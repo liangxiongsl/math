@@ -511,6 +511,11 @@
     7. 基的变换
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 差分方程中的应用
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -948,6 +953,11 @@
     7. 基的变换
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 差分方程中的应用
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1277,7 +1287,7 @@
 </tr>
 <tr>
 <td align="left"><span class="arithmatex">\(\text{Nul}A=\{\mathbf 0\}\)</span>，当且仅当 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 仅有一个平凡解</td>
-<td align="left"><span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span>，当且仅当 <span class="arithmatex">\(\forall \mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有唯一解</td>
+<td align="left"><span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span>，当且仅当 <span class="arithmatex">\(\forall \mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解</td>
 </tr>
 <tr>
 <td align="left"><span class="arithmatex">\(\text{Nul}A=\{\mathbf 0\}\)</span>，当且仅当线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 是一对一的（单射）</td>
@@ -1355,6 +1365,16 @@
 <ol>
 <li><span class="arithmatex">\(\forall\mathbf x\in\text{Col}A,\exists\mathbf y\in\mathbb R^n,A\mathbf y=\mathbf x\)</span>；<span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,A\mathbf x\in\text{Col}A\)</span>（常用）</li>
 <li><span class="arithmatex">\(\forall\mathbf x\in\text{Nul}A,A\mathbf x=\mathbf 0\)</span></li>
+<li><span class="arithmatex">\(\text{Nul}A=\{\mathbf 0\}\iff A\mathbf x=\mathbf 0仅有平凡解\iff \mathbf x\mapsto A\mathbf x 是一对一的(单射)\)</span></li>
+<li><span class="arithmatex">\(\text{Col}A=\mathbb R^m\iff \forall \mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b有解\iff \mathbf x\mapsto A\mathbf x将\mathbb R^n映上到\mathbb R^m(满射)\)</span>（对应于[1.9节]的定理）</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(A\mathbf x=\mathbf b有解\iff\text{rank}[A~~\mathbf b]=\text{rank}A\)</span></li>
 </ol>
 </blockquote>
 <div class="admonition note">
@@ -1538,7 +1558,7 @@
 <li><span class="arithmatex">\(\forall \mathbf x\in H,\exists c_1,\dots,c_p\in\mathbb R\)</span>，<span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf b_i\)</span>，即 <span class="arithmatex">\(\forall \mathbf x\in H,\mathbf x\in\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>，即 <span class="arithmatex">\(H\subset\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span></li>
 </ol>
 </li>
-<li>生成集定理：假设 <span class="arithmatex">\(S\subset H\)</span> 是子空间 H 的张成集，(1) 若 <span class="arithmatex">\(\mathbf v_i\in S\)</span> 是 S 中其余向量的线性组合，那么 S 去掉 <span class="arithmatex">\(\mathbf v_i\)</span> 仍然可以张成 H，(2) 若 <span class="arithmatex">\(H\ne\{\mathbf 0\}\)</span>，则 S 的某一(非空)子集是 H 的一个基</li>
+<li>生成集定理：假设 <span class="arithmatex">\(S\subset H\)</span> 是子空间 H 的张成集，(1) 若 <span class="arithmatex">\(\mathbf v_i\in S\)</span> 是 S 中其余向量的线性组合，那么 S 去掉 <span class="arithmatex">\(\mathbf v_i\)</span> 仍然可以张成 H，(2) 若 <span class="arithmatex">\(H\ne\{\mathbf 0\}\)</span>，则 S 的某一(非空)子集是 H 的一个基（其中 <span class="arithmatex">\(|S|\ge|\cal B|\)</span>）</li>
 <li>基的例子：<span class="arithmatex">\(n\times n\)</span> 可逆矩阵 A 的各列，<span class="arithmatex">\(I_n\)</span> 的各列 <span class="arithmatex">\(\left\{\mathbf b_1,\cdots,\mathbf b_n\right\}\)</span>（标准基） 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的基；<span class="arithmatex">\(S=\{1,t,\cdots,t^n\}\)</span> 是 <span class="arithmatex">\(\mathbb P_n\)</span> 的标准基；<span class="arithmatex">\(\text{Col}A\)</span> 的基为矩阵 A 的主元列集合（并非 A 的阶梯型的 B 的主元列）；<span class="arithmatex">\(\text{Nul}A\)</span> 的基为矩阵 A 对应齐次方程的解集中的各向量</li>
 <li>基是一个<strong>尽可能小的生成集</strong>，<strong>尽可能大的线性无关集</strong>（H 的子集 S 能通过适当缩减或扩充向量以得到 H 的基）</li>
 <li>矩阵列之间的线性相关关系不会因初等变换而改变</li>
@@ -1791,7 +1811,7 @@
 <p>推论：V 的线性无关集由不大于 n 个的向量所组成</p>
 <p>注：该定理可以推广到 V 的无穷集中</p>
 </blockquote>
-<p>令 <span class="arithmatex">\(\{\bf u_1,\cdots,u_p\}\)</span> 是 V 中一个含有不少于 <span class="arithmatex">\(n+1\)</span> 的向量的集合（<span class="arithmatex">\(p\ge n+1\)</span>），</p>
+<p>令 <span class="arithmatex">\(\{\bf u_1,\cdots,u_p\}\)</span> 是 V 中一个含有不少于 <span class="arithmatex">\(n+1\)</span> 个向量的集合（<span class="arithmatex">\(p\ge n+1\)</span>），</p>
 <p>由于坐标向量 <span class="arithmatex">\([\mathbf u_1]_{\cal B},\cdots,[\mathbf u_p]_{\cal B}\)</span> 的个数（p）多于每个向量中元素的个数（n），所以 <span class="arithmatex">\([\mathbf u_1]_{\cal B},\cdots,[\mathbf u_p]_{\cal B}\)</span> 线性相关</p>
 <p>于是 <span class="arithmatex">\(\exists c_i\ne0,\sum\limits_{i=1}^pc_i[\mathbf u_i]_{\cal B}=\mathbf 0\)</span>，根据坐标映射是线性变换有 <span class="arithmatex">\([\sum\limits_{i=1}^pc_i\mathbf u_i]_{\cal B}=\mathbf 0\)</span></p>
 <p>上式右边的零向量展示了从 <span class="arithmatex">\(\cal B\)</span> 中的基向量构建向量 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf u_i\)</span> 所需的 n 个权，即 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf u_i=\sum\limits_{i=1}^n0\mathbf b_i=\mathbf 0\)</span></p>
@@ -1869,6 +1889,28 @@
 <li><span class="arithmatex">\(\dim\text{Col}A\)</span> 为 A 中主元列的个数</li>
 </ol>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>定理1：向量空间 V 有一组基还有 n 个向量，若 V 的一个子集 S 包含大于 n 个向量，那么 S 线性相关</li>
+<li>定理2：向量空间 V 有一组基含有 n 个向量，那么 V 的每一组基恰好有 n 个向量</li>
+<li>有限维，维数，无穷维：若 V 由有限集生成，则 V 称为<strong>有限维的</strong>，V 的<strong>维数</strong>为 <span class="arithmatex">\(\dim V\)</span>（即 V 的基中向量的个数）；若 V 不是由一个有限集生成，则 V 称为<strong>无穷维的</strong></li>
+<li>维数的例子：<span class="arithmatex">\(\dim\{\mathbf 0\}=0\)</span>，<span class="arithmatex">\(\dim\{\mathbb R^n\}=n\)</span>，<span class="arithmatex">\(\dim\{\mathbb P_n\}=n+1\)</span>，<span class="arithmatex">\(\dim\{\mathbb P\}=∞\)</span>，<span class="arithmatex">\(\dim\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}=n\)</span>（其中 <span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_n\}\)</span> 是最大线性无关子集，且 <span class="arithmatex">\(n\le p\)</span>）；<span class="arithmatex">\(\dim\text{Nul}A\)</span> 为 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 中自由变量的个数，<span class="arithmatex">\(\dim\text{Col}A\)</span> 为 A 中主元列的个数</li>
+<li>子空间按维数分类：可以将维数为 n 的向量空间的子空间分为 <span class="arithmatex">\(n+1\)</span> 类，分别为 <span class="arithmatex">\(0,1,\cdots,n\)</span> 维子空间（其中零维子空间为 <span class="arithmatex">\(\{0\}\)</span>，n 维子空间为 V 本身）</li>
+<li>定理3：假设 H 是有限维向量空间 V 的子空间，则 H 中任一个线性无关集 S 均可扩充为 H 的一个基，且 H 的也是有限维的，并且 <span class="arithmatex">\(\dim H\le \dim V\)</span></li>
+<li>基定理：假设 V 是 n 维向量空间（<span class="arithmatex">\(n\ge1\)</span>），S 是含有 n 个元素的 V 的子集，若 S 是线性无关集或 V 的生成集，那么 S 是 V 的一个基</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>向量空间 V 的子集 S 是 V 的一个基，若同时满足以下任意两个条件：(1) <span class="arithmatex">\(|S|=\dim V\)</span>，(2) S 是线性无关集，(3) <span class="arithmatex">\(\text{Span}(S)=V\)</span></li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">习题</p>
 <ol>
@@ -1880,30 +1922,32 @@
 <li>假设 H 和 K 是向量空间 V 的子空间，[4.1习题32]说明了 <span class="arithmatex">\(H\cap K\)</span> 也是 V 的子空间，证明：<span class="arithmatex">\(\dim(H\cap K)\le\dim H\)</span></li>
 <li>判断题1<ol>
 <li>矩阵主元列的个数等于列空间的维数（Y）</li>
-<li><span class="arithmatex">\(\mathbb R^3\)</span> 中的平面是 <span class="arithmatex">\(\mathbb R^3\)</span> 的二维子空间（Y）</li>
+<li><span class="arithmatex">\(\mathbb R^3\)</span> 中的平面是 <span class="arithmatex">\(\mathbb R^3\)</span> 的二维子空间（X）</li>
 <li>向量空间 <span class="arithmatex">\(\mathbb P_4\)</span> 的维数为 4（X）</li>
-<li>若 <span class="arithmatex">\(\dim V=n\)</span>，S 是 V 中一个线性无关集，则 S 是 V 的一个基</li>
-<li><span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 生成一个有限维向量空间 V，T 是 V 中多于 p 个向量的集合，则 T 是线性相关的</li>
-<li><span class="arithmatex">\(\mathbb R^2\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个二维子空间</li>
-<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 中变量个数等于 <span class="arithmatex">\(\text{Nul}A\)</span> 的维数</li>
-<li>一个向量空间是无穷维的，如果它由一个无限集生成</li>
-<li>若 <span class="arithmatex">\(\dim V=n\)</span>，S 生成 V，则 S 是 V 的一个基</li>
-<li><span class="arithmatex">\(\mathbb R^3\)</span> 只有一个三维子空间，即 <span class="arithmatex">\(\mathbb R^3\)</span> 自身</li>
+<li>若 <span class="arithmatex">\(\dim V=n\)</span>，S 是 V 中一个线性无关集，则 S 是 V 的一个基（X）</li>
+<li><span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 生成一个有限维向量空间 V，T 是 V 中多于 p 个向量的集合，则 T 是线性相关的（Y）</li>
+<li><span class="arithmatex">\(\mathbb R^2\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个二维子空间（X）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 中变量个数等于 <span class="arithmatex">\(\text{Nul}A\)</span> 的维数（<strong>X</strong>）</li>
+<li>一个向量空间是无穷维的，如果它由一个无限集生成（<strong>X</strong>）</li>
+<li>若 <span class="arithmatex">\(\dim V=n\)</span>，S 生成 V，则 S 是 V 的一个基（X）</li>
+<li><span class="arithmatex">\(\mathbb R^3\)</span> 只有一个三维子空间，即 <span class="arithmatex">\(\mathbb R^3\)</span> 自身（Y）</li>
 </ol>
 </li>
 <li>判断题2<ol>
 <li>若存在集合 <span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 生成 V，则 <span class="arithmatex">\(\dim V\le p\)</span>（Y）</li>
 <li>若 V 中存在线性无关集 <span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>，则 <span class="arithmatex">\(\dim V\ge p\)</span>（Y）</li>
 <li>若 <span class="arithmatex">\(\dim V=p\)</span>，则 V 存在一个 <span class="arithmatex">\(p+1\)</span> 个向量的生成集（Y）</li>
-<li>若 V 中存在一个线性相关基 <span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>，则 <span class="arithmatex">\(\dim V\le p\)</span></li>
-<li>若 V 中任意由 p 个元素组成的集合均不能生成 V，则 <span class="arithmatex">\(\dim V&gt;p\)</span></li>
-<li>若 <span class="arithmatex">\(p\ge 2\)</span>，<span class="arithmatex">\(\dim V=p\)</span>，则每个由 <span class="arithmatex">\(p-1\)</span> 个非零向量构成的集合是线性无关的</li>
+<li>若 V 中存在一个线性相关集 <span class="arithmatex">\(\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>，则 <span class="arithmatex">\(\dim V\le p\)</span>（X）</li>
+<li>若 V 中任意由 p 个元素组成的集合均不能生成 V，则 <span class="arithmatex">\(\dim V&gt;p\)</span>（Y）</li>
+<li>若 <span class="arithmatex">\(p\ge 2\)</span>，<span class="arithmatex">\(\dim V=p\)</span>，则每个由 <span class="arithmatex">\(p-1\)</span> 个非零向量构成的集合是线性无关的（X）</li>
 </ol>
 </li>
 <li>计算子空间的基，维数：(1) <span class="arithmatex">\(\left\{\begin{bmatrix}s-2t\\s+t\\3t\end{bmatrix}~:~s,t\in\mathbb R\right\}\)</span>，(2) <span class="arithmatex">\(\left\{\begin{bmatrix}2c\\a-b\\b-3c\\a+2b\end{bmatrix}~:~a,b,c\in\mathbb R\right\}\)</span>，(3) <span class="arithmatex">\(\{(a,b,c)~:~a-3b+c=0,b-2c=0,2b-c=0\}\)</span></li>
 <li>求 <span class="arithmatex">\(\mathbb R^3\)</span> 中所有第一个和第三个元素相等的子空间的维数</li>
 <li>求 <span class="arithmatex">\(\begin{bmatrix}1\\0\\2\end{bmatrix},\begin{bmatrix}3\\1\\1\end{bmatrix},\begin{bmatrix}9\\4\\-2\end{bmatrix},\begin{bmatrix}-7\\-3\\1\end{bmatrix}\)</span> 生成的子空间的维数</li>
 <li>计算 <span class="arithmatex">\(\text{Nul}A,\text{Col}A\)</span> 的维数：(1) <span class="arithmatex">\(A=\begin{bmatrix}1&amp;-6&amp;9&amp;0&amp;-2\\0&amp;1&amp;2&amp;-4&amp;5\\0&amp;0&amp;0&amp;5&amp;1\\0&amp;0&amp;0&amp;0&amp;0\end{bmatrix}\)</span>，(2) <span class="arithmatex">\(A=\begin{bmatrix}1&amp;0&amp;9&amp;5\\0&amp;0&amp;1&amp;-4\end{bmatrix}\)</span>，(3) <span class="arithmatex">\(A=\begin{bmatrix}1&amp;-1&amp;0\\0&amp;4&amp;7\\0&amp;0&amp;5\end{bmatrix}\)</span></li>
+<li>证明：前 4 个艾尔米特(Hermite)多项式 <span class="arithmatex">\(1,2t,-2+4t^2,-12t+8t^3\)</span> 构成 <span class="arithmatex">\(\mathbb P_3\)</span> 的一个基</li>
+<li>证明：前 4 个拉盖尔(Laguerre)多项式 <span class="arithmatex">\(1,1-t,2-4t+t^2,6-18t+9t^2-t^3\)</span> 构成 <span class="arithmatex">\(\mathbb P_3\)</span> 的一个基</li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1917,6 +1961,8 @@
 </ol>
 <p>(2) 设 <span class="arithmatex">\(S=\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 是 <span class="arithmatex">\(H\cap K\)</span> 的一组基，则 S 是 H 的线性无关子集</p>
 <p>根据[4.5定理3]，S 能被扩充为 H 的一组基；由于子空间的维数等于基的向量数，故 <span class="arithmatex">\(\dim(H\cap K)=p\le\dim H\)</span></p>
+<p>(5) 等价于求 <span class="arithmatex">\(\text{Col}A\)</span> 或 <span class="arithmatex">\(\text{Nul}A\)</span> 的维数</p>
+<p>(6)，（7） 等价于求 <span class="arithmatex">\(\dim\text{Col}A\)</span></p>
 </blockquote>
 <h3 id="6">6. （矩阵的）秩</h3>
 <p>设想一个 <span class="arithmatex">\(40\times 50\)</span> 矩阵 A 中放置 <span class="arithmatex">\(2000\)</span> 个随机数，然后确定 A 中线性无关列的最大个数，以及 <span class="arithmatex">\(A^T\)</span> 的线性无关列的最大个数（即 A 中线性无关行的最大个数）</p>
@@ -1965,7 +2011,7 @@
 <p class="admonition-title">秩，秩定理</p>
 </div>
 <blockquote>
-<p>维数：矩阵 A 的<strong>秩</strong>定义为 A 的列空间的维数（<span class="arithmatex">\(\dim\text{Col}A\)</span>），记作 <span class="arithmatex">\(\text{rank}A\)</span>；零空间的维数称为 A 的<strong>零维</strong></p>
+<p>秩：矩阵 A 的<strong>秩</strong>定义为 A 的列空间的维数（<span class="arithmatex">\(\dim\text{Col}A\)</span>），记作 <span class="arithmatex">\(\text{rank}A\)</span>；零空间的维数称为 A 的<strong>零维</strong></p>
 <p>秩定理：矩阵 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 的列空间和行空间的维数相等（<span class="arithmatex">\(\dim\text{Col}A=\dim\text{Row}A\)</span>），这个公共的秩数（即 A 的秩）还等于 A 的主元位置的个数，且满足 <span class="arithmatex">\(\text{rank}A+\dim\text{Nul}A=n\)</span></p>
 </blockquote>
 <p>(1) 由[4.3定理]，<span class="arithmatex">\(\text{rank}A\)</span> 是 A 中主元列的个数，也是 A 的阶梯型 B 中主元位置的个数</p>
@@ -1999,6 +2045,28 @@
 <p>假设 <span class="arithmatex">\(\begin{cases}A\in\mathbb R^{m\times n}\end{cases}\)</span>（<span class="arithmatex">\(m\le n\)</span>）</p>
 <p><span class="arithmatex">\(\begin{cases}\dim\text{Nul}A=n-m\\\text{rank}A=\dim\text{Col}A=\dim\text{Row}A=m\\\text{Col}A=\mathbb R^m\end{cases}\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\begin{cases}A\mathbf x=\mathbf 0有n-m个自由变量\\\forall \mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b有解\end{cases}\)</span></p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>行空间：矩阵 A 的行向量的线性组合的集合 <span class="arithmatex">\(\text{Row}A\)</span>；满足 <span class="arithmatex">\(\text{Row}A=\text{Col}A^T\)</span></li>
+<li>定理1：若矩阵 A 和矩阵 B 行等价，那么它们的行空间相同（即 <span class="arithmatex">\(\text{Row}A=\text{Row}B\)</span>）；若 B 是阶梯型矩阵，那么 B 的非零行构成 A 的行空间的一个<strong>基</strong>，同时也是 B 的行空间的一个基</li>
+<li>秩，秩定理：矩阵 A 的秩定义为 A 的列空间的维数，记 <span class="arithmatex">\(\text{rank}A=\dim\text{Col}A\)</span>；秩定理指出 (1) 矩阵 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 的列空间与行空间的维数相等（即 <span class="arithmatex">\(\dim\text{Col}A=\dim\text{Row}A\)</span>），这个公共的秩数还等于 A 的主元位置的个数，(2) <span class="arithmatex">\(\text{rank}A+\dim\text{Nul}A=n\)</span></li>
+<li>可逆矩阵定理：<span class="arithmatex">\(A\in\mathbb R^{n\times n}可逆\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\begin{cases}A的列构成\mathbb R^n的一个基\\\text{Col}A=\mathbb R^n\\\dim\text{Col}A=n\\\text{rank}A=n\\\text{Nul}A=\{\mathbf 0\}\\\dim\text{Nul}A=0\end{cases}\)</span></li>
+<li>矩阵 A 确定的基本子空间：<span class="arithmatex">\(\text{Row}A,\text{Col}A,\text{Nul}A,\text{Row}A^T,\text{Col}A^T,\text{Nul}A^T\)</span>（<span class="arithmatex">\(\text{Col}A,\text{Row}A^T,\text{Nul}A^T\)</span> 是 <span class="arithmatex">\(\mathbb R^m\)</span> 的子空间，<span class="arithmatex">\(\text{Row}A,\text{Nul}A,\text{Col}A^T\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间）</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(m\times n\)</span> 矩阵 A 满足事实：<span class="arithmatex">\(\text{rank}A+\dim\text{Nul}A=n\)</span>，<span class="arithmatex">\(\text{rank}A\le\min\{m,n\}\)</span>，<span class="arithmatex">\(\dim\text{Nul}A\ge \max\{n-m,0\}\)</span>；两种正交关系：<span class="arithmatex">\(\text{Row}A\bot\text{Nul}A\)</span>，<span class="arithmatex">\(\text{Col}A\bot\text{Nul}A^T\)</span>（该符号不严格？）</li>
+<li><span class="arithmatex">\(\text{rank}A=\dim\text{Row}A=\dim\text{Col}A=\text{rank}A^T=\dim\text{Row}A^T=\dim\text{Col}A^T\)</span></li>
+<li><span class="arithmatex">\(\text{rank}A+\dim\text{Nul}A=n,\text{rank}A+\text{Nul}A^T=m\)</span></li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">练习</p>
 <ol>
@@ -2022,10 +2090,14 @@
 <li>若 A 与 B 行等价，则它们的行空间相同（Y）</li>
 </ol>
 </li>
+<li>求 (1) 中矩阵 A 的 <span class="arithmatex">\(\text{Nul}A,\text{Col}A,\text{Row}A\)</span> 的基，维数；A 的秩</li>
+<li><span class="arithmatex">\(4\times 7\)</span> 矩阵 A 有 4 个主元列，那么 <span class="arithmatex">\(\text{Col}A=\mathbb R^4\)</span> 和 <span class="arithmatex">\(\text{Nul}A=\mathbb R^3\)</span> 是否成立？</li>
+<li><span class="arithmatex">\(5\times 6\)</span> 矩阵 A 有 4 个主元列，那么 <span class="arithmatex">\(\text{Col}A=\mathbb R^4\)</span> 和 <span class="arithmatex">\(\text{Nul}A=\mathbb R^2\)</span> 是否成立？</li>
+<li><span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 的秩数最大是多少？零空间的维数最小是多少？</li>
 <li><span class="arithmatex">\(\text{Row}A,\text{Col}A,\text{Nul}A,\text{Row}A^T,\text{Col}A^T,\text{Nul}A^T\)</span> 称为 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 确定的基本子空间<ol>
 <li><span class="arithmatex">\(\text{Row}A,\text{Col}A,\text{Nul}A,\text{Row}A^T,\text{Col}A^T,\text{Nul}A^T\)</span> 哪个是 <span class="arithmatex">\(\mathbb R^m\)</span> 或 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间？最多有多少不同的基本子空间？</li>
 <li>证明：<span class="arithmatex">\(\dim\text{Row}A+\dim\text{Nul}A=n\)</span>，<span class="arithmatex">\(\dim\text{Col}A+\dim\text{Nul}A^T=m\)</span></li>
-<li>证明：<span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(A^T\mathbf x=\mathbf 0\)</span> 有平凡解</li>
+<li>证明：<span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(A^T\mathbf x=\mathbf 0\)</span> 仅有平凡解</li>
 <li><span class="arithmatex">\(\text{rank}[A~~\mathbf b]\)</span> 和 <span class="arithmatex">\(\text{rank}A\)</span> 满足什么条件，才能使得 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 相容（<span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>）</li>
 </ol>
 </li>
@@ -2049,17 +2121,22 @@
 <li>将 B 继续进行[行化简算法]，得到简化阶梯型 C</li>
 <li>由 <span class="arithmatex">\(\text{Col}A^T=\text{Row}A\)</span> 和 <span class="arithmatex">\(\dim\text{Row}A=\dim\text{Col}A\)</span>，有 <span class="arithmatex">\(\dim\text{Col}A^T=\dim\text{Col}A=2\)</span></li>
 </ol>
-<p>(3)</p>
+<p>(4) A 有 4 个主元列，等价于 <span class="arithmatex">\(\dim\text{Col}A=4\)</span>，于是 <span class="arithmatex">\(\text{Col}A\)</span> 是 <span class="arithmatex">\(\mathbb R^4\)</span> 的 4 维子空间</p>
+<p><span class="arithmatex">\(\dim\text{Nul}A=7-4=3\)</span>，于是 <span class="arithmatex">\(\text{Nul}A\)</span> 是 <span class="arithmatex">\(\mathbb R^7\)</span> 的 3 维子空间</p>
+<p>最后 <span class="arithmatex">\(\text{Col}A=\mathbb R^4\)</span>，<span class="arithmatex">\(\text{Nul}A\ne\mathbb R^7\)</span></p>
+<p>(5) 类似于 (4) 可知，两个命题为假</p>
+<p>(6) <span class="arithmatex">\(\text{rank}A\le\min\{m,n\}\)</span>；<span class="arithmatex">\(\dim\text{Nul}A\ge \max\{n-m,0\}\)</span></p>
+<p>(7)</p>
 <ol>
-<li><span class="arithmatex">\(\text{Row}A^T,\text{Col}A,\text{Nul}A^T\in\mathbb R^m\)</span>，<span class="arithmatex">\(\text{Row}A,\text{Col}A^T,\text{Nul}A\in\mathbb R^n\)</span>；由 <span class="arithmatex">\(\text{Row}A^T=\text{Col}A\)</span> 和 <span class="arithmatex">\(\text{Row}A=\text{Col}A^T\)</span>，最多有 4 个基本不同子空间</li>
+<li><span class="arithmatex">\(\text{Row}A^T,\text{Col}A,\text{Nul}A^T\subset\mathbb R^m\)</span>，<span class="arithmatex">\(\text{Row}A,\text{Col}A^T,\text{Nul}A\subset\mathbb R^n\)</span>；由 <span class="arithmatex">\(\text{Row}A^T=\text{Col}A\)</span> 和 <span class="arithmatex">\(\text{Row}A=\text{Col}A^T\)</span>，最多有 4 个基本不同子空间</li>
 <li>由[秩定理]和相关结论易得证</li>
-<li><span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(\dim\text{Col}A=m\)</span>；<span class="arithmatex">\(A^T\mathbf x=\mathbf 0\)</span>，当且仅当 <span class="arithmatex">\(\dim\text{Nul}A^T=0\)</span>；由 <span class="arithmatex">\(\dim\text{Col}A^T=\dim\text{Col}A\)</span> 和 <span class="arithmatex">\(\dim\text{Col}A^T+\dim\text{Nul}A^T=m\)</span>，而 <span class="arithmatex">\(\dim\text{Col}A=m\)</span>，于是 <span class="arithmatex">\(\dim\text{Nul}A^T=\dim\text{Col}A-m=0\)</span>，得证</li>
-<li><span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(\text{rank}[A~~\mathbf b]=\text{rank}A\)</span>，当且仅当 <span class="arithmatex">\([A~~\mathbf b]\)</span> 没有主元列（参见[1.2定理2]）</li>
+<li><span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(\dim\text{Col}A=m\)</span>；<span class="arithmatex">\(A^T\mathbf x=\mathbf 0\)</span> 仅有平凡解，当且仅当 <span class="arithmatex">\(\dim\text{Nul}A^T=0\)</span>；由 <span class="arithmatex">\(\dim\text{Col}A^T=\dim\text{Col}A\)</span> 和 <span class="arithmatex">\(\dim\text{Col}A^T+\dim\text{Nul}A^T=m\)</span>，而 <span class="arithmatex">\(\dim\text{Col}A=m\)</span>，于是 <span class="arithmatex">\(\dim\text{Nul}A^T=\dim\text{Col}A-m=0\)</span>，得证</li>
+<li><span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(\text{rank}[A~~\mathbf b]=\text{rank}A\)</span>，当且仅当 <span class="arithmatex">\(\mathbf b\)</span> 不是 <span class="arithmatex">\([A~~\mathbf b]\)</span> 的主元列（参见[1.2定理2]）</li>
 </ol>
 </blockquote>
 <h3 id="7">7. 基的变换</h3>
 <p>对一个 n 维向量空间 V，当一个基 <span class="arithmatex">\(\cal B\)</span> 取定后，与之相关的映上到 <span class="arithmatex">\(\mathbb R^n\)</span> 的坐标映射对 V 提供了一个坐标系；V 中每个向量 <span class="arithmatex">\(\mathbf x\)</span> 由它的 <span class="arithmatex">\(\cal B-坐标向量\)</span> <span class="arithmatex">\([\bf x]_{\cal B}\)</span> 唯一确定</p>
-<p>在某些应用中，一个问题开始是用一个基召描述一个问题开始是用一个基 <span class="arithmatex">\(\cal B\)</span> 描述，但问题的解可以通过将 <span class="arithmatex">\(\cal B\)</span> 变换到新的基 <span class="arithmatex">\(\cal\)</span> 得到简化（参见第 5 章和第 7 章）</p>
+<p>在某些应用中，一个问题开始是用一个基 <span class="arithmatex">\(\cal B\)</span> 描述，但问题的解可以通过将 <span class="arithmatex">\(\cal B\)</span> 变换到新的基 <span class="arithmatex">\(\cal C\)</span> 而得到简化（参见第 5 章和第 7 章）</p>
 <div class="admonition tip">
 <p class="admonition-title">例子</p>
 <ol>
@@ -2071,7 +2148,7 @@
 </div>
 <p>下述定理给出了上例的推广</p>
 <div class="admonition note">
-<p class="admonition-title">定理1</p>
+<p class="admonition-title">基变换定理</p>
 </div>
 <blockquote>
 <p>假设 <span class="arithmatex">\(\mathcal B=\{\bf b_1,\cdots,b_n\},\mathcal C=\{\bf c_1,\cdots,c_n\}\)</span> 是向量空间 V 的两个基，</p>
@@ -2088,7 +2165,7 @@
 <p>（弱化的结论有：<span class="arithmatex">\([P_{\cal C}~~[\mathbf b_i]_{\cal C}]\sim[I~~\mathbf b_i]\)</span>）</p>
 <p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
-<p class="admonition-title">定理2</p>
+<p class="admonition-title">定理</p>
 </div>
 <blockquote>
 <p>[定理1]中 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span> 可逆</p>
@@ -2107,7 +2184,7 @@
 <p class="admonition-title">例子</p>
 <ol>
 <li><span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\mathbf b_2\}=\left\{\begin{bmatrix}-9\\1\end{bmatrix},\begin{bmatrix}-5\\-1\end{bmatrix}\right\},\mathcal C=\{\mathbf c_1,\mathbf c_2\}=\left\{\begin{bmatrix}1\\-4\end{bmatrix},\begin{bmatrix}3\\-5\end{bmatrix}\right\}\)</span>，求 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span><ol>
-<li><span class="arithmatex">\(\begin{bmatrix}-9&amp;-5&amp;|&amp;1&amp;3\\1&amp;-1&amp;|&amp;-4&amp;-5\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;|&amp;6&amp;4\\0&amp;1&amp;|&amp;-5&amp;-3\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P=\begin{bmatrix}6&amp;4\\-5&amp;-3\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}1&amp;3&amp;|&amp;-9&amp;-5\\-4&amp;-5&amp;|&amp;1&amp;-1\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;|&amp;6&amp;4\\0&amp;1&amp;|&amp;-5&amp;-3\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P=\begin{bmatrix}6&amp;4\\-5&amp;-3\end{bmatrix}\)</span></li>
 </ol>
 </li>
 <li><span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\mathbf b_2\}=\left\{\begin{bmatrix}1\\-3\end{bmatrix},\begin{bmatrix}-2\\4\end{bmatrix}\right\},\mathcal C=\{\mathbf c_1,\mathbf c_2\}=\left\{\begin{bmatrix}-7\\9\end{bmatrix},\begin{bmatrix}-5\\7\end{bmatrix}\right\}\)</span>，计算 <span class="arithmatex">\(\underset{\cal B\leftarrow C}P,\underset{\cal C\leftarrow B}P\)</span><ol>
@@ -2117,6 +2194,24 @@
 </li>
 </ol>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>基变换定理：假设 <span class="arithmatex">\(\mathcal B=\{\bf b_1,\cdots,b_n\},\mathcal C=\{\bf c_1,\cdots,c_n\}\)</span> 是向量空间 V 的两个基，那么存在一个 <span class="arithmatex">\(n\times n\)</span> 矩阵，使得 <span class="arithmatex">\(\forall\mathbf x\in V\)</span>，<span class="arithmatex">\([\mathbf x]_{\cal C}=\underset{\cal C\leftarrow B}P[\mathbf x]_{\cal B}\)</span></li>
+<li>坐标变换矩阵：基变换定理中 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P=[[\mathbf b_1]_{\cal C}~~\cdots~~[\mathbf b_n]_{\cal C}]\)</span> 称为<strong>由 <span class="arithmatex">\(\cal B\)</span> 到 <span class="arithmatex">\(\cal C\)</span> 的坐标向量矩阵</strong>；并且 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P=P_{\cal C}^{-1}P_{\cal B}\)</span>，<span class="arithmatex">\(\underset{\cal C\leftarrow B}P=(\underset{\cal B\leftarrow C}P)^{-1}\)</span>，该矩阵的各列线性无关(参见[4.4习题25])</li>
+<li><span class="arithmatex">\(\mathbb R^n\)</span> 中基的变换：假设 <span class="arithmatex">\(\cal E=\{\mathbf e_1,\cdots,\mathbf e_n\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的标准基，<span class="arithmatex">\(\cal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的任意一个基，那么 [4.4节] 引入的坐标变换矩阵满足 <span class="arithmatex">\(P_{\cal B}=\underset{\cal E\leftarrow B}P\)</span>（即 <span class="arithmatex">\(\forall i=1..n,[\bf b_i]_{\cal E}=b_i\)</span>）</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 <span class="arithmatex">\(\cal B\)</span> 和 <span class="arithmatex">\(\cal C\)</span> 是向量空间 <span class="arithmatex">\(\mathbb R^n\)</span> 的两个基，<span class="arithmatex">\(\cal E\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的标准基，那么 <span class="arithmatex">\(\forall i=1..n\)</span>，<span class="arithmatex">\([\mathbf b_i]_{\cal B}=\mathbf e_i\)</span> 和 <span class="arithmatex">\([\mathbf b_i]_{\cal C}=P_{\cal C}^{-1}\mathbf b_i\)</span></li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">练习</p>
 <ol>
@@ -2125,10 +2220,16 @@
 <li>判断题<ol>
 <li>坐标变换矩阵 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span> 的列是 <span class="arithmatex">\(\cal C\)</span> 中向量的 <span class="arithmatex">\(\cal B-坐标向量\)</span>（X）</li>
 <li>若 <span class="arithmatex">\(V=\mathbb R^n\)</span>，<span class="arithmatex">\(\cal C\)</span> 为 V 的标准基，则 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span> 与[4.4]中引入的坐标变换矩阵 <span class="arithmatex">\(P_{\cal B}\)</span> 相同（Y）</li>
-<li><span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span> 的列是线性无关的</li>
+<li><span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span> 的列是线性无关的（Y）</li>
 <li>若 <span class="arithmatex">\(V=\mathbb R^2\)</span>，<span class="arithmatex">\(\cal B=\{\mathbf b_1,\mathbf b_2\},\cal C=\{\mathbf c_1,\mathbf c_2\}\)</span>，则将 <span class="arithmatex">\([\mathbf c_1~~\mathbf c_2~~\mathbf b_1~~\mathbf b_2]\)</span> 行化简为 <span class="arithmatex">\([I~~P]\)</span> 时产生的矩阵 P，满足 <span class="arithmatex">\(\forall\mathbf x\in V,[\mathbf x]_{\cal B}=P[\mathbf x]_{\cal C}\)</span>（X）</li>
 </ol>
 </li>
+<li><span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\mathbf b_2\},\mathcal C=\{\mathbf c_1,\mathbf c_2\}\)</span> 是向量空间 V 的两个基，设 <span class="arithmatex">\(\begin{cases}\mathbf b_1=6\mathbf c_1-2\mathbf c_2\\\mathbf b_2=9\mathbf c_1-4\mathbf c_2\end{cases}\)</span><ol>
+<li>计算 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span></li>
+<li>计算 <span class="arithmatex">\(\mathbf x=-3\mathbf b_1+2\mathbf b_2\)</span> 的 <span class="arithmatex">\(\cal C-坐标向量\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\mathcal B=\left\{\begin{bmatrix}7\\5\end{bmatrix},\begin{bmatrix}-3\\-1\end{bmatrix}\right\},\mathcal C=\left\{\begin{bmatrix}1\\-5\end{bmatrix},\begin{bmatrix}-2\\2\end{bmatrix}\right\}\)</span>，计算 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span>，<span class="arithmatex">\(\underset{\cal B\leftarrow C}P\)</span></li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -2138,6 +2239,43 @@
 <p>(1) <span class="arithmatex">\(P=[P_{\cal G}^{-1}\mathbf f_1~~P_{\cal G}^{-1}\mathbf f_2]=P_{\cal G}^{-1}P_{\cal F}=\underset{\cal G\leftarrow F}P\)</span></p>
 <p>于是 <span class="arithmatex">\([\mathbf v]_{\cal G}=P[\mathbf v]_{\cal F}\)</span></p>
 <p>(2) <span class="arithmatex">\(\underset{\cal C\leftarrow B}P=(\underset{\cal B\leftarrow C}P)^{-1}\)</span></p>
+<p>(4) <span class="arithmatex">\(\begin{cases}\mathbf b_1=6\mathbf c_1-2\mathbf c_2\\\mathbf b_2=9\mathbf c_1-4\mathbf c_2\end{cases}\implies\begin{cases}[\mathbf b_1]_{\cal C}=6[\mathbf c_1]_{\cal C}-2[\mathbf c_2]_{\cal C}=\begin{bmatrix}6\\-2\end{bmatrix}\\ [\mathbf b_2]_{\cal C}=9[\mathbf c_1]_{\cal C}-4[\mathbf c_2]_{\cal C}=\begin{bmatrix}9\\-4\end{bmatrix}\end{cases}\)</span>，于是 <span class="arithmatex">\(\underset{\cal C\leftarrow B}P=[[\mathbf b_1]_{\cal C}~~[\mathbf b_2]_{\cal C}]=\begin{bmatrix}6&amp;9\\-2&amp;-4\end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\mathbf x=-3\mathbf b_1+2\mathbf b_2\implies[\mathbf x]_{\cal B}=-3[\mathbf b_1]_{\cal B}+2[\mathbf b_2]_{\cal B}=\begin{bmatrix}-3\\2\end{bmatrix}\)</span>，于是 <span class="arithmatex">\([\mathbf x]_{\cal C}=\underset{\cal C\leftarrow B}P[\mathbf x]_{\cal B}=\begin{bmatrix}0\\-2\end{bmatrix}\)</span></p>
+</blockquote>
+<h3 id="8">8. 差分方程中的应用</h3>
+<p>目前计算机被广泛应用到各个领域，很多科学和工程商的问题在某种意义上将用离散的或数字化的数据来处理胜过连续的数据来处理</p>
+<p>拆分方程往往是分析这样的数据的合适工具，甚至使用微分方程对连续过程建模时，其数值解通常由一个相关的差分方程得到</p>
+<div class="admonition note">
+<p class="admonition-title">离散时间信号</p>
+</div>
+<blockquote>
+<p>离散时间信号的向量空间记为 <span class="arithmatex">\(\mathbb S\)</span>，<span class="arithmatex">\(\mathbb S\)</span> 中的信号是定义在整数上的函数，同时可以使用一个数列将其直观化，即 <span class="arithmatex">\(\{y_k\}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">信号空间 <span class="arithmatex">\(\mathbb S\)</span> 中的线性无关性，Casorati 矩阵</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(\{u_k\},\{v_k\},\{w_k\}\in\mathbb S\)</span>，</p>
+<p>若方程 <span class="arithmatex">\(\forall k,c_1u_k+c_2v_k+c_3w_k=0\)</span> 蕴涵 <span class="arithmatex">\(c_1=c_2=c_3=0\)</span>，那么 <span class="arithmatex">\(\{u_k\},\{v_k\},\{w_k\}\)</span> 恰好是线性无关的</p>
+<p>上述方程等价于 <span class="arithmatex">\(\forall k,\begin{cases}c_1u_k+c_2v_k+c_3w_k=0\\c_1u_{k+1}+c_2v_{k+1}+c_3w_{k+1}=0\\c_1u_{k+2}+c_2v_{k+2}+c_3w_{k+2}=0\end{cases}\)</span>，即 <span class="arithmatex">\(\forall k,\begin{bmatrix}u_k&amp;v_k&amp;w_k\\u_{k+1}&amp;v_{k+1}&amp;w_{k+1}\\u_{k+2}&amp;v_{k+2}&amp;w_{k+2}\end{bmatrix}\begin{bmatrix}c_1\\c_2\\c_3\end{bmatrix}=\begin{bmatrix}0\\0\\0\end{bmatrix}\)</span></p>
+<p>上述方程组的系数矩阵为信号的<strong>Casorati 矩阵</strong>，该矩阵的行列式称为 <span class="arithmatex">\(\{u_k\},\{v_k\},\{w_k\}\)</span> 的<strong>Casorati 行列式</strong></p>
+<p>若 <span class="arithmatex">\(\exists k\)</span>，使得 Casorati 矩阵可逆，则上述矩阵方程蕴涵 <span class="arithmatex">\(c_1=c_2=c_3=0\)</span>，蕴涵这三个信号线性无关</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>证明：<span class="arithmatex">\(1^k,(-2)^k,3^k\)</span> 是线性无关的信号<ol>
+<li>这三个信号的 Casorati 矩阵为 <span class="arithmatex">\(\begin{bmatrix}1^k&amp;(-2)^k&amp;3^k\\1^{k+1}&amp;(-2)^{k+1}&amp;3^{k+1}\\1^{k+2}&amp;(-2)^{k+2}&amp;3^{k+2}\end{bmatrix}\)</span>；当 <span class="arithmatex">\(k=0\)</span> 时，可以简单证明该矩阵可逆，所以这三个信号线性无关</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">线性差分方程</p>
+</div>
+<blockquote>
+<p>给定数 <span class="arithmatex">\(a_0,a_1,\cdots,a_n\)</span>（其中 <span class="arithmatex">\(a_0,a_n\ne0\)</span>），一个信号 <span class="arithmatex">\(\{z_k\}\)</span>，方程 <span class="arithmatex">\(\forall k,\sum\limits_{i=0}^na_iy_{k+n-i}=z_k\)</span> 被称为 <strong>n 阶线性差分方程</strong>（或<strong>线性递归关系</strong>）</p>
+<p>注：为了简化，通常 <span class="arithmatex">\(a_0=1\)</span>；若 <span class="arithmatex">\(\{z_k\}\)</span> 是领序列，则方程是<strong>齐次的</strong>，否则是<strong>非齐次的</strong></p>
 </blockquote>
 </article>
 </div>
