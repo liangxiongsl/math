@@ -1249,12 +1249,30 @@
 <li>矩阵，矩阵相等<span class="arithmatex">\((A=B)\)</span>，矩阵加法<span class="arithmatex">\((A+B)\)</span>，矩阵标量乘法<span class="arithmatex">\((cA)\)</span></li>
 <li>矩阵公理：<span class="arithmatex">\(M_{m\times n}\)</span> 满足[向量空间公理]，并且具有该公理的所有性质和推论</li>
 <li>矩阵向量乘法：<span class="arithmatex">\(A\mathbf x=\sum\limits_{i=1}^nx_i\mathbf a_i\)</span>（即线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span>）</li>
-<li>矩阵乘法：假设 B 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，A 是 <span class="arithmatex">\(n\times p\)</span> 矩阵，<span class="arithmatex">\(BA=B[\mathbf a_1, \cdots, \mathbf a_p] = [A\mathbf b_1, A\mathbf b_2, \dots, A\mathbf b_p]\)</span>；线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\mapsto B(A\mathbf x)\)</span> 与 <span class="arithmatex">\(\mathbf x\mapsto (AB)\mathbf x\)</span> 等价</li>
+<li>矩阵乘法：假设 B 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，A 是 <span class="arithmatex">\(n\times p\)</span> 矩阵，<span class="arithmatex">\(BA=B[\mathbf a_1, \cdots, \mathbf a_p] = [B\mathbf a_1, A\mathbf a_2, \dots, B\mathbf a_p]\)</span>；线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\mapsto B(A\mathbf x)\)</span> 与 <span class="arithmatex">\(\mathbf x\mapsto (BA)\mathbf x\)</span> 等价</li>
 <li>矩阵乘法的行列式法则：(1) <span class="arithmatex">\(\text{row}_i(AB)=\text{row}_i(A)B\)</span>，(2) <span class="arithmatex">\(\text{col}_i(AB)=A\text{col}_i(B)=A\mathbf b_i\)</span>，(3) <span class="arithmatex">\((AB)_{ij}=\text{row}_i(A)\text{col}_j(B)=\sum\limits_{k=1}^n a_{ik}b_{kj}\)</span></li>
 <li>矩阵乘法的性质：乘法结合律 <span class="arithmatex">\(A(BC)=(AB)C\)</span>，乘法与加法的分配律 <span class="arithmatex">\(A(B+C)=AB+AC,(B+C)A=BA+CA\)</span>，矩阵乘法与标量乘法的结合律 <span class="arithmatex">\(r(AB)=(rA)B=A(rB)\)</span>，乘法单位元 <span class="arithmatex">\(I_mA=A=AI_n\)</span>；矩阵乘法<strong>不满足交换律</strong>，一些矩阵<strong>通常没有乘法逆元</strong></li>
 <li>矩阵乘幂：<span class="arithmatex">\(A^k=\begin{cases}\prod\limits_{i=1}^kA&amp;k\in\mathbb N^+\\I_n&amp;k=0\end{cases}\)</span></li>
 <li>矩阵转置：若 A 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，那么 A 的转置矩阵定义为 <span class="arithmatex">\(n\times m\)</span> 矩阵 <span class="arithmatex">\(A^T\)</span>，它的列依次为 A 的行（反之亦然）</li>
 <li>矩阵转置的性质：(1) <span class="arithmatex">\((A^T)^T=A\)</span>，(2) 转置是线性变换 <span class="arithmatex">\((A+B)^T=A^T+B^T,(rA)^T=rA^T\)</span>，(3) 反乘性 <span class="arithmatex">\((AB)^T=B^TA^T\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假定 <span class="arithmatex">\(A,D\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，D 是对角矩阵（<span class="arithmatex">\(\forall i\ne j,d_{ij}=0\)</span>），那么：(1) <span class="arithmatex">\(AD\)</span> 表示 D 将 A 的各列分别放大 <span class="arithmatex">\(d_{ii}\)</span> 倍，(2) <span class="arithmatex">\(DA\)</span> 表示 D 将 A 的各行分别放大 <span class="arithmatex">\(d_{ii}\)</span> 倍</li>
+<li><span class="arithmatex">\(AB=(\text{row}_1(A),\cdots,\text{row}_m(A))B=(\text{row}_1(A)B,\cdots,\text{row}_m(A)B)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span></li>
+<li>假设 <span class="arithmatex">\(A\in M_{m\times n},B\in M_{m\times p}\)</span>，<span class="arithmatex">\(AX=B\)</span> 有解，当且仅当 <span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span>，其解为与 A 和 B 的各列相关的非齐次方程的解构成的矩阵</li>
 </ol>
 </blockquote>
 <div class="admonition tip">
@@ -1278,6 +1296,31 @@
 <li><span class="arithmatex">\(A=\begin{bmatrix}2&amp;0&amp;-1\\4&amp;-5&amp;2\end{bmatrix},B=\begin{bmatrix}7&amp;-5&amp;1\\1&amp;-4&amp;-3\end{bmatrix},C=\begin{bmatrix}1&amp;2\\-2&amp;1\end{bmatrix},D=\begin{bmatrix}3&amp;5\\-1&amp;4\end{bmatrix},E=\begin{bmatrix}-5\\3\end{bmatrix}\)</span>，计算 (1) <span class="arithmatex">\(-2A,B-2A,AC,CD\)</span>，(2) <span class="arithmatex">\(A+2B,3C-E,CB,EB\)</span></li>
 <li><span class="arithmatex">\(A\in M_{5\times 3},AB\in M_{5\times 7}\)</span>，计算 B 的维数？</li>
 <li><span class="arithmatex">\(BC\in M_{3\times 4}\)</span>，那么 B 有几行？</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}2&amp;5\\-3&amp;1\end{bmatrix},B=\begin{bmatrix}4&amp;-5\\3&amp;k\end{bmatrix}\)</span>，<span class="arithmatex">\(AB=BA\)</span>，计算 k</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}2&amp;-3\\-4&amp;6\end{bmatrix},B=\begin{bmatrix}8&amp;4\\5&amp;5\end{bmatrix},C=\begin{bmatrix}5&amp;-2\\3&amp;1\end{bmatrix}\)</span>，验证：<span class="arithmatex">\(AB=AC\)</span>，但 <span class="arithmatex">\(B\ne C\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;1&amp;1\\1&amp;2&amp;3\\1&amp;4&amp;5\end{bmatrix},D=\begin{bmatrix}2&amp;0&amp;0\\0&amp;3&amp;0\\0&amp;0&amp;5\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(AD\)</span> 和 <span class="arithmatex">\(DA\)</span>；求解方程 <span class="arithmatex">\(AB=BA\)</span>，其中 <span class="arithmatex">\(B\ne\mathbf 0,B\ne I_3\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}3&amp;-6\\-1&amp;2\end{bmatrix}\)</span>，求解矩阵 <span class="arithmatex">\(AB=\mathbf 0\)</span>；为什么存在一个解使得 B 有两个不同的非零列？</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;-2\\-2&amp;5\end{bmatrix},AB=\begin{bmatrix}-1&amp;2&amp;-1\\6&amp;-9&amp;3\end{bmatrix}\)</span>，求解方程得到 B</li>
+<li>假设矩阵乘法 <span class="arithmatex">\(AB,BA\)</span> 有定义<ol>
+<li>若 B 的前两列相等，那么 <span class="arithmatex">\(AB\)</span> 的各列的关系如何？</li>
+<li>若 B 的前两行相等，那么 <span class="arithmatex">\(BA\)</span> 的各行的关系如何？</li>
+<li>若 B 的第 i 列是 <span class="arithmatex">\(1..i-1\)</span> 列的线性组合（<span class="arithmatex">\(\mathbf b_i=\sum\limits_{j=1}^{i-1}c_j\mathbf b_j\)</span>），那么 <span class="arithmatex">\(AB\)</span> 的第 i 列如何？</li>
+<li>若 B 的第 i 行是 <span class="arithmatex">\(1..i-1\)</span> 行的线性组合（<span class="arithmatex">\(\text{row}_i(B)=\sum\limits_{j=1}^{i-1}c_j\text{row}_j(B)\)</span>），那么 <span class="arithmatex">\(BA\)</span> 的第 i 行如何？</li>
+<li>证明：若 B 的各列线性相关，那么 <span class="arithmatex">\(AB\)</span> 的各列线性相关；若 B 的各行线性相关，那么 <span class="arithmatex">\(BA\)</span> 的各行线性相关</li>
+<li>若 <span class="arithmatex">\(AB\)</span> 的第 i 列是一个零列，而 B 的第 i 列是非零列，那么 A 的各列关系如何？</li>
+</ol>
+</li>
+<li>假设矩阵 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，<span class="arithmatex">\(C,D\in M_{n\times n}\)</span>，乘法 <span class="arithmatex">\(CA,AD\)</span> 有定义<ol>
+<li>证明：<span class="arithmatex">\(CA=I_n\)</span>，当且仅当 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 只有平凡解；为什么 A 的列数不多于行数？</li>
+<li>证明：<span class="arithmatex">\(AD=I_m\)</span>，当且仅当 <span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解；为什么 A 的行数不多于列数？</li>
+<li>证明：若 <span class="arithmatex">\(\exists C,D\)</span> 使得 <span class="arithmatex">\(CA=I_n,AD=I_m\)</span>，那么  <span class="arithmatex">\(m=n,C=D\)</span></li>
+<li>若 A 的各列生成 <span class="arithmatex">\(\mathbb R^m\)</span>，那么如何构造 D 使得 <span class="arithmatex">\(AD=I_m\)</span>？</li>
+</ol>
+</li>
+<li>把 <span class="arithmatex">\(\mathbb R^n\)</span> 中的向量看作 <span class="arithmatex">\(n\times 1\)</span> 的矩阵：<span class="arithmatex">\(\forall \mathbf u,\mathbf v\in\mathbb R^n\)</span>，(1) 矩阵乘积 <span class="arithmatex">\(\mathbf u^T\mathbf v\)</span> 是 <span class="arithmatex">\(1\times 1\)</span> 矩阵，称为 <span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 的<strong>数量积</strong>或<strong>内积</strong>；(2) 矩阵乘积 <span class="arithmatex">\(\mathbf u\mathbf v^T\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，称为 <span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 的<strong>外积</strong>：<ol>
+<li></li>
+</ol>
+</li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1286,6 +1329,25 @@
 <blockquote>
 <p>(4) <span class="arithmatex">\(-2A=\begin{bmatrix}-4&amp;0&amp;2\\-8&amp;10&amp;-4\end{bmatrix},B-2A=\begin{bmatrix}3&amp;-5&amp;3\\-7&amp;6&amp;-7\end{bmatrix}\)</span>，<span class="arithmatex">\(AC\)</span> 没有定义（<span class="arithmatex">\(A\in M_{2\times 3},C\in M_{2\times 2}\)</span>，而 <span class="arithmatex">\(2\ne3\)</span>），<span class="arithmatex">\(CD=\begin{bmatrix}1&amp;13\\-7&amp;-6\end{bmatrix}\)</span></p>
 <p><span class="arithmatex">\(A+2B=\begin{bmatrix}16&amp;-10&amp;1\\6&amp;-13&amp;-4\end{bmatrix}\)</span>，<span class="arithmatex">\(3C-E\)</span> 没有定义（<span class="arithmatex">\(3C\in M_{2\times 2},(-1)E\in M_{2\times 1}\)</span>，<span class="arithmatex">\(M_{2\times 2}\cap M_{2\times 1}=\emptyset\)</span>），<span class="arithmatex">\(CB=\begin{bmatrix}9&amp;-13&amp;-5\\-13&amp;6&amp;-5\end{bmatrix}\)</span>，<span class="arithmatex">\(EB\)</span> 没有定义（<span class="arithmatex">\(E\in M_{2\times 1},B\in M_{2\times 3}\)</span>，而 <span class="arithmatex">\(1\ne2\)</span>）</p>
+<p>(9) <span class="arithmatex">\(AD=\begin{bmatrix}2&amp;3&amp;5\\2&amp;6&amp;15\\2&amp;12&amp;25\end{bmatrix},DA=\begin{bmatrix}2&amp;2&amp;2\\3&amp;6&amp;9\\5&amp;20&amp;25\end{bmatrix}\)</span>；可以构造 <span class="arithmatex">\(B=kI_3\)</span>（<span class="arithmatex">\(k\ne0\)</span>）</p>
+<p>(10) <span class="arithmatex">\(A\sim\begin{bmatrix}1&amp;-2\\0&amp;0\end{bmatrix}\)</span>，其中 <span class="arithmatex">\(B=\begin{bmatrix}2s&amp;2t\\s&amp;t\end{bmatrix}\)</span>（<span class="arithmatex">\(s,t\in\mathbb R\)</span>）；A 不行等价于初等矩阵，所以 A 不可逆，于是非齐次方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 没有唯一解</p>
+<p>(11) <span class="arithmatex">\(\begin{bmatrix}7&amp;-8&amp;1\\4&amp;-5&amp;1\end{bmatrix}\)</span></p>
+<p>(12) </p>
+<ol>
+<li><span class="arithmatex">\(AB\)</span> 的前两列相等（因为 <span class="arithmatex">\(AB=[A\mathbf b_1~~A\mathbf b_2\cdots]\)</span>）</li>
+<li><span class="arithmatex">\(BA\)</span> 的前两行相等（因为 <span class="arithmatex">\(BA=(\text{row}_1(B)A,\text{row}_2(B)A,\cdots)\)</span>）</li>
+<li><span class="arithmatex">\(AB\)</span> 的第 i 列也是 <span class="arithmatex">\(1..i-1\)</span> 列的线性组合，因为 <span class="arithmatex">\(\text{col}_i(AB)=A\mathbf b_i=A\sum\limits_{j=1}^{i-1}c_j\mathbf b_j=\sum\limits_{j=1}^{i-1}c_jA\mathbf b_j=\sum\limits_{j=1}^{i-1}c_j\text{col}_j(AB)\)</span></li>
+<li><span class="arithmatex">\(BA\)</span> 的第 i 列也是 <span class="arithmatex">\(1..i-1\)</span> 行的线性组合，因为 <span class="arithmatex">\(\text{row}_i(BA)=\text{row}_i(B)A=(\sum\limits_{j=1}^{i-1}c_j\text{row}_j(B))A=\sum\limits_{j=1}^{i-1}c_j\text{row}_j(B)A=\sum\limits_{j=1}^{i-1}c_j\text{row}_j(BA)\)</span></li>
+<li>参见上两小问的讨论</li>
+<li><span class="arithmatex">\(\text{col}_i(AB)=A\mathbf b_i=\mathbf 0\)</span>，该齐次方程却有非零解 <span class="arithmatex">\(\mathbf b_i\ne\mathbf 0\)</span>，于是 A 的各列线性相关</li>
+</ol>
+<p>(13)</p>
+<ol>
+<li>假设 <span class="arithmatex">\(\exists\mathbf x\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span>，于是 <span class="arithmatex">\(CA\mathbf x=C\mathbf 0\)</span>，即 <span class="arithmatex">\(I_m\mathbf x=\mathbf 0\)</span>，即 <span class="arithmatex">\(\mathbf x=\mathbf 0\)</span>；这意味着 A 的每一列都有主元位置，蕴涵 A 的行数至少为 n</li>
+<li>假设 <span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m\)</span>，而 <span class="arithmatex">\(AD=I_m\)</span>，即 <span class="arithmatex">\((AD)\mathbf b=I_m\mathbf b=\mathbf b\)</span>，即 <span class="arithmatex">\(A(D\mathbf b)=\mathbf b\)</span>，即 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的一个解为 <span class="arithmatex">\(\mathbf x=D\mathbf b\)</span>；这意味着 A 的每一行都有主元位置，蕴涵 A 的列数至少为 m</li>
+<li><span class="arithmatex">\(CA=I_n\)</span> 蕴涵 <span class="arithmatex">\(CAD=I_nD=D\)</span>；<span class="arithmatex">\(AD=I_m\)</span> 蕴涵 <span class="arithmatex">\(CAD=CI_m=C\)</span>；于是 <span class="arithmatex">\(C=D\)</span>，蕴涵 <span class="arithmatex">\(n=m\)</span></li>
+<li>求解 <span class="arithmatex">\(\forall i=1..m,A\mathbf d_i=\mathbf e_i\)</span> 这 m 个矩阵方程即可</li>
+</ol>
 </blockquote>
 <h3 id="2">2.矩阵的逆</h3>
 <div class="admonition 可逆">
