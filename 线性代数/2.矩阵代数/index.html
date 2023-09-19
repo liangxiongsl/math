@@ -1241,6 +1241,38 @@
 </ol>
 <p>于是 <span class="arithmatex">\((AB)_{ij}=([A\mathbf b_1~~\cdots~~A\mathbf b_n])_{ij}\)</span>，最后 <span class="arithmatex">\(AB=[A\mathbf b_1~~\cdots~~A\mathbf b_n]\)</span></p>
 <p><span class="arithmatex">\(\blacksquare\)</span></p>
+<p>以下总结了线性代数常见集合及其内部的运算：</p>
+<table>
+<thead>
+<tr>
+<th align="center">集合\运算</th>
+<th align="center">(二元,部分封闭)</th>
+<th align="center">(二元,不封闭)</th>
+<th align="center">(一元)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><span class="arithmatex">\(\mathbb R\)</span></td>
+<td align="center"><span class="arithmatex">\(+,\times\)</span></td>
+<td align="center"></td>
+<td align="center">加法逆元,乘法逆元</td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\mathbb R^n\)</span></td>
+<td align="center"><span class="arithmatex">\(+\)</span></td>
+<td align="center"><span class="arithmatex">\(\cdot,\times,\circ\)</span>(点击,叉积,外积)</td>
+<td align="center">加法逆元,转置 T</td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(M_{m\times n}\)</span></td>
+<td align="center"><span class="arithmatex">\(+,\times\)</span></td>
+<td align="center"></td>
+<td align="center">加法逆元,乘法逆元,转置 T</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(\mathbb R,\mathbb R^n,M_{m\times n}\)</span> 中任意两个集合的运算可以归结为 <span class="arithmatex">\(\mathbb R,M_{m\times n}\)</span> 之间的运算（因为 <span class="arithmatex">\(\mathbb R^n\subset M_{m\times n}\)</span>），而 <span class="arithmatex">\(\mathbb R,M_{m\times n}\)</span> 之间的运算就是标量乘法</p>
 <div class="admonition info">
 <p class="admonition-title">结论</p>
 </div>
@@ -1249,7 +1281,7 @@
 <li>矩阵，矩阵相等<span class="arithmatex">\((A=B)\)</span>，矩阵加法<span class="arithmatex">\((A+B)\)</span>，矩阵标量乘法<span class="arithmatex">\((cA)\)</span></li>
 <li>矩阵公理：<span class="arithmatex">\(M_{m\times n}\)</span> 满足[向量空间公理]，并且具有该公理的所有性质和推论</li>
 <li>矩阵向量乘法：<span class="arithmatex">\(A\mathbf x=\sum\limits_{i=1}^nx_i\mathbf a_i\)</span>（即线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span>）</li>
-<li>矩阵乘法：假设 B 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，A 是 <span class="arithmatex">\(n\times p\)</span> 矩阵，<span class="arithmatex">\(BA=B[\mathbf a_1, \cdots, \mathbf a_p] = [B\mathbf a_1, A\mathbf a_2, \dots, B\mathbf a_p]\)</span>；线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\mapsto B(A\mathbf x)\)</span> 与 <span class="arithmatex">\(\mathbf x\mapsto (BA)\mathbf x\)</span> 等价</li>
+<li>矩阵乘法：假设 B 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，A 是 <span class="arithmatex">\(n\times p\)</span> 矩阵，<span class="arithmatex">\(BA=B[\mathbf a_1, \cdots, \mathbf a_p] = [B\mathbf a_1, \dots, B\mathbf a_p]\)</span>；线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\mapsto B(A\mathbf x)\)</span> 与 <span class="arithmatex">\(\mathbf x\mapsto (BA)\mathbf x\)</span> 等价</li>
 <li>矩阵乘法的行列式法则：(1) <span class="arithmatex">\(\text{row}_i(AB)=\text{row}_i(A)B\)</span>，(2) <span class="arithmatex">\(\text{col}_i(AB)=A\text{col}_i(B)=A\mathbf b_i\)</span>，(3) <span class="arithmatex">\((AB)_{ij}=\text{row}_i(A)\text{col}_j(B)=\sum\limits_{k=1}^n a_{ik}b_{kj}\)</span></li>
 <li>矩阵乘法的性质：乘法结合律 <span class="arithmatex">\(A(BC)=(AB)C\)</span>，乘法与加法的分配律 <span class="arithmatex">\(A(B+C)=AB+AC,(B+C)A=BA+CA\)</span>，矩阵乘法与标量乘法的结合律 <span class="arithmatex">\(r(AB)=(rA)B=A(rB)\)</span>，乘法单位元 <span class="arithmatex">\(I_mA=A=AI_n\)</span>；矩阵乘法<strong>不满足交换律</strong>，一些矩阵<strong>通常没有乘法逆元</strong></li>
 <li>矩阵乘幂：<span class="arithmatex">\(A^k=\begin{cases}\prod\limits_{i=1}^kA&amp;k\in\mathbb N^+\\I_n&amp;k=0\end{cases}\)</span></li>
@@ -1273,7 +1305,46 @@
 <ol>
 <li>假设 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解，当且仅当 <span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span></li>
 <li>假设 <span class="arithmatex">\(A\in M_{m\times n},B\in M_{m\times p}\)</span>，<span class="arithmatex">\(AX=B\)</span> 有解，当且仅当 <span class="arithmatex">\(\text{Col}A=\mathbb R^m\)</span>，其解为与 A 和 B 的各列相关的非齐次方程的解构成的矩阵</li>
+<li>矩阵复合运算</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th align="left"><span class="arithmatex">\(D\)</span></th>
+<th align="left"><span class="arithmatex">\(A+B\)</span></th>
+<th align="left"><span class="arithmatex">\(AB\)</span></th>
+<th align="left"><span class="arithmatex">\(cA\)</span></th>
+<th align="left"><span class="arithmatex">\(A^{-1}\)</span></th>
+<th align="left"><span class="arithmatex">\(A^T\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="arithmatex">\(D^{-1}\)</span></td>
+<td align="left"></td>
+<td align="left"><span class="arithmatex">\(B^{-1}A^{-1}\)</span></td>
+<td align="left"><span class="arithmatex">\(\frac1cA^{-1}\)</span></td>
+<td align="left"><span class="arithmatex">\(A\)</span></td>
+<td align="left"><span class="arithmatex">\((A^{-1})^T\)</span></td>
+</tr>
+<tr>
+<td align="left"><span class="arithmatex">\(D^T\)</span></td>
+<td align="left"><span class="arithmatex">\(A^T+B^T\)</span></td>
+<td align="left"><span class="arithmatex">\(B^TA^T\)</span></td>
+<td align="left"><span class="arithmatex">\(cA^T\)</span></td>
+<td align="left"><span class="arithmatex">\((A^T)^{-1}\)</span></td>
+<td align="left"><span class="arithmatex">\(A\)</span></td>
+</tr>
+<tr>
+<td align="left"><span class="arithmatex">\(\det D\)</span></td>
+<td align="left"></td>
+<td align="left"><span class="arithmatex">\((\det A)(\det B)\)</span></td>
+<td align="left"><span class="arithmatex">\(c^n\det A\)</span></td>
+<td align="left"><span class="arithmatex">\(\frac1{\det A}\)</span></td>
+<td align="left"><span class="arithmatex">\(\det A\)</span></td>
+</tr>
+</tbody>
+</table>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">练习</p>
@@ -1310,17 +1381,21 @@
 <li>若 <span class="arithmatex">\(AB\)</span> 的第 i 列是一个零列，而 B 的第 i 列是非零列，那么 A 的各列关系如何？</li>
 </ol>
 </li>
-<li>假设矩阵 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，<span class="arithmatex">\(C,D\in M_{n\times n}\)</span>，乘法 <span class="arithmatex">\(CA,AD\)</span> 有定义<ol>
-<li>证明：<span class="arithmatex">\(CA=I_n\)</span>，当且仅当 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 只有平凡解；为什么 A 的列数不多于行数？</li>
-<li>证明：<span class="arithmatex">\(AD=I_m\)</span>，当且仅当 <span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解；为什么 A 的行数不多于列数？</li>
+<li>假设矩阵 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，<span class="arithmatex">\(C,D\in M_{n\times m}\)</span>，乘法 <span class="arithmatex">\(CA,AD\)</span> 有定义（<strong>重要</strong>）<ol>
+<li>证明：<span class="arithmatex">\(\exists C,CA=I_n\)</span>，当且仅当 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 只有平凡解；为什么 A 的列数不多于行数？</li>
+<li>证明：<span class="arithmatex">\(\exists D,AD=I_m\)</span>，当且仅当 <span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b\)</span> 有解；为什么 A 的行数不多于列数？</li>
 <li>证明：若 <span class="arithmatex">\(\exists C,D\)</span> 使得 <span class="arithmatex">\(CA=I_n,AD=I_m\)</span>，那么  <span class="arithmatex">\(m=n,C=D\)</span></li>
 <li>若 A 的各列生成 <span class="arithmatex">\(\mathbb R^m\)</span>，那么如何构造 D 使得 <span class="arithmatex">\(AD=I_m\)</span>？</li>
+<li>证明：假设 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(\exists C,D\)</span>，<span class="arithmatex">\(CA=I_n,AD=I_m\)</span>，计算 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的解</li>
 </ol>
 </li>
 <li>把 <span class="arithmatex">\(\mathbb R^n\)</span> 中的向量看作 <span class="arithmatex">\(n\times 1\)</span> 的矩阵：<span class="arithmatex">\(\forall \mathbf u,\mathbf v\in\mathbb R^n\)</span>，(1) 矩阵乘积 <span class="arithmatex">\(\mathbf u^T\mathbf v\)</span> 是 <span class="arithmatex">\(1\times 1\)</span> 矩阵，称为 <span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 的<strong>数量积</strong>或<strong>内积</strong>；(2) 矩阵乘积 <span class="arithmatex">\(\mathbf u\mathbf v^T\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，称为 <span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 的<strong>外积</strong>：<ol>
-<li></li>
+<li><span class="arithmatex">\(\mathbf u=\begin{bmatrix}-2\\3\\-4\end{bmatrix},\mathbf v=\begin{bmatrix}a\\b\\c\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(\mathbf u^T\mathbf v,\mathbf v^T\mathbf u,\mathbf u\mathbf v^T,\mathbf v\mathbf u^T\)</span></li>
+<li>假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span>，那么 <span class="arithmatex">\(\mathbf u^T\mathbf v\)</span> 和 <span class="arithmatex">\(\mathbf v^T\mathbf u\)</span> 有什么关系，<span class="arithmatex">\(\mathbf u\mathbf v^T\)</span> 和 <span class="arithmatex">\(\mathbf v\mathbf u^T\)</span> 有什么关系？</li>
 </ol>
 </li>
+<li>假设 <span class="arithmatex">\(A\in M_{m\times n},\mathbf x\in\mathbb R^m\)</span>，证明：<span class="arithmatex">\(I_mA=A\)</span>，<span class="arithmatex">\(I_m\mathbf x=\mathbf x\)</span></li>
+<li>假设 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，证明：<span class="arithmatex">\(AI_n=A\)</span></li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1347,6 +1422,12 @@
 <li>假设 <span class="arithmatex">\(\forall\mathbf b\in\mathbb R^m\)</span>，而 <span class="arithmatex">\(AD=I_m\)</span>，即 <span class="arithmatex">\((AD)\mathbf b=I_m\mathbf b=\mathbf b\)</span>，即 <span class="arithmatex">\(A(D\mathbf b)=\mathbf b\)</span>，即 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的一个解为 <span class="arithmatex">\(\mathbf x=D\mathbf b\)</span>；这意味着 A 的每一行都有主元位置，蕴涵 A 的列数至少为 m</li>
 <li><span class="arithmatex">\(CA=I_n\)</span> 蕴涵 <span class="arithmatex">\(CAD=I_nD=D\)</span>；<span class="arithmatex">\(AD=I_m\)</span> 蕴涵 <span class="arithmatex">\(CAD=CI_m=C\)</span>；于是 <span class="arithmatex">\(C=D\)</span>，蕴涵 <span class="arithmatex">\(n=m\)</span></li>
 <li>求解 <span class="arithmatex">\(\forall i=1..m,A\mathbf d_i=\mathbf e_i\)</span> 这 m 个矩阵方程即可</li>
+<li><span class="arithmatex">\(\mathbf x=D\mathbf b\)</span>，而非 <span class="arithmatex">\(\mathbf x=C\mathbf b\)</span></li>
+</ol>
+<p>(14) </p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u^T\mathbf v=\mathbf v^T\mathbf u=-2a+3b-4c,\mathbf u\mathbf v^T=\begin{bmatrix}-2a&amp;-2b&amp;-2c\\3a&amp;3b&amp;3c\\-4a&amp;-4b&amp;-4c\end{bmatrix},\mathbf v\mathbf u^T=\begin{bmatrix}-2a&amp;3a&amp;-4a\\-2b&amp;3b&amp;-4b\\-2c&amp;3c&amp;-4c\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\mathbf u^T\mathbf v=\mathbf v^T\mathbf u\)</span>，<span class="arithmatex">\(\mathbf u\mathbf v^T=(\mathbf v\mathbf u^T)^T\)</span></li>
 </ol>
 </blockquote>
 <h3 id="2">2.矩阵的逆</h3>
@@ -1359,6 +1440,10 @@
 <p>注：矩阵的逆唯一，仅当该矩阵的逆存在</p>
 <p>另外，不可逆矩阵称为 <strong>奇异矩阵</strong>，而可逆举矩阵也称为 <strong>非奇异矩阵</strong></p>
 </blockquote>
+<p>证明 A 的逆的唯一性：</p>
+<p>假设 A 存有两个逆，即 <span class="arithmatex">\(\exists B\ne C\in M_{n\times n}\)</span> 使得 <span class="arithmatex">\(CA=I_n=AC,BA=I_n=AB\)</span></p>
+<p>于是 <span class="arithmatex">\(B=BI_n=B(AC)=(BA)C=I_nC=C\)</span>，与假设矛盾，于是 A 的逆不存在或唯一</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -1366,11 +1451,16 @@
 </ul>
 </div>
 <div class="admonition note">
-<p class="admonition-title">(方形)矩阵方程的解</p>
+<p class="admonition-title">(方形)矩阵方程的唯一解</p>
 </div>
 <blockquote>
 <p>若 A 是可逆 <span class="arithmatex">\(n\times n\)</span> 矩阵，则对于每一个 <span class="arithmatex">\(\mathbf b\in R^n\)</span>，方程 <span class="arithmatex">\(A\mathbf x = \mathbf b\)</span> 有唯一解 <span class="arithmatex">\(\mathbf x=A^{-1}\mathbf b\)</span></p>
 </blockquote>
+<p>证明：</p>
+<p>假设 <span class="arithmatex">\(\forall\mathbf b\in R^n\)</span></p>
+<p>(1) 存在性：存在 <span class="arithmatex">\(\mathbf x=A^{-1}\mathbf b\)</span>，使得 <span class="arithmatex">\(A\mathbf x=A(\mathbf x=A^{-1}\mathbf b)=(AA^{-1})\mathbf b=I_n\mathbf b=\mathbf b\)</span></p>
+<p>(2) 唯一性：假设 <span class="arithmatex">\(\mathbf x\)</span> 是 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 任意一个解，等价于 <span class="arithmatex">\(A^{-1}(A\mathbf x)=A^{-1}\mathbf b\)</span>，即 <span class="arithmatex">\((A^{-1}A)\mathbf x=A^{-1}\mathbf b\)</span>，即 <span class="arithmatex">\(\mathbf x=A^{-1}\mathbf b\)</span>（等式右侧的常量唯一，所以左侧的 <span class="arithmatex">\(\mathbf x\)</span> 唯一）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -1388,33 +1478,48 @@
 <li><span class="arithmatex">\(A^T\)</span> 也是可逆矩阵，而且 <span class="arithmatex">\((A^T)^{-1}=(A^{-1})^T\)</span></li>
 </ol>
 </blockquote>
+<p>假设 <span class="arithmatex">\(\exists A^{-1},AA^{-1}=I_n,A^{-1}A=I_n\)</span>；<span class="arithmatex">\(\exists B^{-1},BB^{-1}=I_n,B^{-1}B=I_n\)</span></p>
+<p>(1) 证明 <span class="arithmatex">\(\exists C,CA^{-1}=I_n,A^{-1}C=I_n\)</span>：若 <span class="arithmatex">\(C=A\)</span>，那么 <span class="arithmatex">\(CA^{-1}=I_n,A^{-1}C=I_n\)</span></p>
+<p>(2) 证明 <span class="arithmatex">\(\exists C,C(AB)=I_n,(AB)C=I_n\)</span>：若 <span class="arithmatex">\(C=B^{-1}A^{-1}\)</span>，那么 <span class="arithmatex">\((B^{-1}A^{-1})(AB)=B^{-1}(A^{-1}A)B=B^{-1}B=I_n\)</span> 且 <span class="arithmatex">\((AB)(B^{-1}A^{-1})=A^{-1}(B^{-1}B)A=A^{-1}A=I_n\)</span></p>
+<p>(3) 证明 <span class="arithmatex">\(\exists C,CA^T=I_n,A^TC=I_n\)</span>：若 <span class="arithmatex">\(C=(A^{-1})^T\)</span>，那么 <span class="arithmatex">\((A^{-1})^TA^T=(AA^{-1})^T=I_n^T=I_n\)</span> 且 <span class="arithmatex">\(A^T(A^{-1})^T=(A^{-1}A)^T=I_n^T=I_n\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition 初等行变换">
 <p class="admonition-title">初等行变换</p>
 </div>
 <blockquote>
-<p>若对 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 矩阵进行初等行变换，所得矩阵可以表示成 <span class="arithmatex">\(EA\)</span> </p>
+<p>若对 <span class="arithmatex">\(A\in M_{m\times n}\)</span> 矩阵进行初等行变换，所得矩阵可以表示成 <span class="arithmatex">\(EA\)</span> </p>
 <p>其中 E 是 <span class="arithmatex">\(m\times m\)</span> 矩阵，它是由 <span class="arithmatex">\(I_m\)</span> 进行同一行变换所得</p>
 <p>另外，初等矩阵 E 是可逆的，E 的逆是一个同类型的初等矩阵，它把 E 变回 I</p>
 </blockquote>
-<div class="admonition tip">
-<p class="admonition-title">3 种初等矩阵</p>
+<div class="admonition note">
+<p class="admonition-title">初等矩阵</p>
 </div>
 <blockquote>
+<p>把单位矩阵 <span class="arithmatex">\(I_n\)</span> 进行一次初等行变换，就能得到<strong>初等矩阵</strong>；初等矩阵是可逆的（因为初等行变换是可逆的）</p>
+<p>3 种初等矩阵：</p>
 <ol>
 <li>行倍加（矩阵）：初等矩阵 E 是一个行倍加，若 E 是由单位矩阵 I 经一行加另一行的倍数而得到</li>
 <li>交换（矩阵）：初等矩阵 E 是一个交换，若 E 是由单位矩阵 I 交换两行而得到</li>
 <li>r 倍乘（矩阵）：初等矩阵 E 是一个 r 倍乘，若 E 是由单位矩阵 I 的某一行乘以一个非零数而得到</li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>初等矩阵的乘法逆元可通过[逆初等行变换]得到</li>
+</ol>
+</div>
 <div class="admonition 定理">
 <p class="admonition-title">定理</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(n\times n\)</span> 矩阵 A 是可逆的，当且仅当 A 行等价于 <span class="arithmatex">\(I_n\)</span></p>
+<p><span class="arithmatex">\(n\times n\)</span> 矩阵 A 是可逆的，当且仅当 A 行等价于 <span class="arithmatex">\(I_n\)</span>；A 可以表示为 <span class="arithmatex">\(A=E_p\cdots E_1I_n\)</span></p>
 <p>初等行变换 E 使得 A 化简为 <span class="arithmatex">\(I_n\)</span>，同时也可以使得 <span class="arithmatex">\(I_n\)</span> 化简为 <span class="arithmatex">\(A^{-1}\)</span></p>
-<p>矩阵逆元算法：<span class="arithmatex">\([A~I] \sim [I~A^{-1}]\)</span>，仅当 <span class="arithmatex">\(A\)</span> 行等价于 <span class="arithmatex">\(I\)</span>（否则 A 不可逆）</p>
+<p>矩阵逆元算法：<span class="arithmatex">\([A~I_n] \sim [I_n~A^{-1}]\)</span>，仅当 <span class="arithmatex">\(A\)</span> 行等价于 <span class="arithmatex">\(I\)</span>（否则 A 不可逆）</p>
 <p>证明详见 p123</p>
 </blockquote>
+<p>证明 <span class="arithmatex">\([A~I_n] \sim [I_n~A^{-1}]\)</span>：<span class="arithmatex">\([A~I_n] \sim [A^{-1}A~~A^{-1}I_n]=[I_n~A^{-1}]\)</span>（A 可逆，蕴涵 <span class="arithmatex">\(A^{-1}\)</span> 可逆，蕴涵 <span class="arithmatex">\(A^{-1}\)</span> 可以表示为初等矩阵的连乘积）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">推论</p>
 <ol>
@@ -1428,28 +1533,140 @@
 <p class="admonition-title">Tip</p>
 <p>计算 <span class="arithmatex">\(A^{-1}\)</span> 需要的运算次数大概是 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的 3 倍</p>
 </div>
+<p>大部分关于矩阵乘法逆元，转置的基本性质如下：（假设 <span class="arithmatex">\(A,B\)</span> 可逆；以下两个表格表示上一行等于下一行）</p>
+<table>
+<thead>
+<tr>
+<th align="left"><span class="arithmatex">\((A+B)^{-1}\)</span></th>
+<th align="left"><span class="arithmatex">\((AB)^{-1}\)</span></th>
+<th align="left"><span class="arithmatex">\((-A)^{-1}\)</span></th>
+<th align="left"><span class="arithmatex">\((A^{-1})^{-1}\)</span></th>
+<th align="left"><span class="arithmatex">\((A^T)^{-1}\)</span></th>
+<th align="left"><span class="arithmatex">\((cA)^{-1}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left"><span class="arithmatex">\(B^{-1}A^{-1}\)</span></td>
+<td align="left"><span class="arithmatex">\(-A^{-1}\)</span></td>
+<td align="left"><span class="arithmatex">\(A\)</span></td>
+<td align="left"><span class="arithmatex">\((A^{-1})^T\)</span></td>
+<td align="left"><span class="arithmatex">\(\frac1cA^{-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left"><span class="arithmatex">\((A+B)^T\)</span></th>
+<th align="left"><span class="arithmatex">\((AB)^T\)</span></th>
+<th align="left"><span class="arithmatex">\((-A)^T\)</span></th>
+<th align="left"><span class="arithmatex">\((A^{-1})^T\)</span></th>
+<th align="left"><span class="arithmatex">\((A^T)^T\)</span></th>
+<th align="left"><span class="arithmatex">\((cA)^T\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="arithmatex">\(A^T+B^T\)</span></td>
+<td align="left"><span class="arithmatex">\(B^TA^T\)</span></td>
+<td align="left"><span class="arithmatex">\(-A^T\)</span></td>
+<td align="left"><span class="arithmatex">\((A^T)^{-1}\)</span></td>
+<td align="left"><span class="arithmatex">\(A\)</span></td>
+<td align="left"><span class="arithmatex">\(cA^T\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>可逆，非奇异：矩阵 <span class="arithmatex">\(A\in M_{n\times n}\)</span> 可逆，若 <span class="arithmatex">\(\exists C\in M_{n\times n},CA=I_n,AC=I_n\)</span>，蕴涵 C 唯一，于是记 <span class="arithmatex">\(C=A^{-1}\)</span>；可逆矩阵，又称非奇异矩阵（相反的，<span class="arithmatex">\(不可逆矩阵=奇异矩阵\)</span>）</li>
+<li>矩阵方程的唯一解：假设 <span class="arithmatex">\(A\in M_{n\times n}\)</span>，若 A 可逆</li>
+<li>可逆矩阵基本定理：假设 <span class="arithmatex">\(A,B\)</span> 可逆，那么 <span class="arithmatex">\(A^{-1},(AB)^{-1}m,A^T\)</span> 均可逆，并且：(1) 自封性 <span class="arithmatex">\((A^{-1})^{-1}=A\)</span>，(2) 反乘性 <span class="arithmatex">\((AB)^{-1}=B^{-1}A^{-1}\)</span>，(3) <span class="arithmatex">\((A^T)^{-1}=(A^{-1})^T\)</span></li>
+<li>初等矩阵：单位矩阵 <span class="arithmatex">\(I_n\)</span> 经过一次初等行变换得到的矩阵，称为<strong>初等矩阵</strong>；初等矩阵分为三类：(1) 行倍加(矩阵)，(2) 交换(矩阵)，(3) r 倍乘(矩阵)</li>
+<li>定理：A 可逆，当且仅当 <span class="arithmatex">\(A\sim I_n\)</span></li>
+<li>可逆矩阵分解定理：A 可逆，蕴涵 <span class="arithmatex">\(A=E_p\cdots E_1I_n\)</span>（<span class="arithmatex">\(E_i\)</span> 之间满足交换律）</li>
+<li>矩阵乘法逆元有关算法：假设 A 可逆，那么 <span class="arithmatex">\([A~I_n]\sim[I_n~~A^{-1}],[A~B]\sim[I_n~~A^{-1}B],[A~\mathbf b]\sim[I_n~~A^{-1}\mathbf b]\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断矩阵是否可逆：<span class="arithmatex">\(A=\begin{bmatrix}3&amp;-9\\2&amp;6\end{bmatrix},B=\begin{bmatrix}4&amp;-9\\0&amp;5\end{bmatrix},C=\begin{bmatrix}6&amp;-9\\-4&amp;6\end{bmatrix}\)</span>（行列式可参考[第 3 章]）</li>
+<li>计算 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;-2&amp;-1\\-1&amp;5&amp;6\\5&amp;-4&amp;5\end{bmatrix}\)</span> 的逆</li>
+<li>假设 <span class="arithmatex">\(A,B\in M_{m\times n},c\in\mathbb R\)</span>，计算 $(A+B)<sup -1="-1">{-1},(AB)</sup>,(-A)<sup -1="-1">{-1},(A</sup>)<sup>{-1},(A</sup>T)<sup -1="-1">{-1},(cA)</sup></li>
+<li>判断题1：（默认假设 <span class="arithmatex">\(A,B\in M_{m\times n}\)</span>）<ol>
+<li>为了使 B 为 A 的逆，<span class="arithmatex">\(AB=I_n\)</span> 和 <span class="arithmatex">\(BA=I\)</span> 都必须为真（Y）</li>
+<li><span class="arithmatex">\(A^{-1}B^{-1}\)</span> 是 <span class="arithmatex">\(AB\)</span> 的逆（X）</li>
+<li>若 <span class="arithmatex">\(A=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}\)</span> 且 <span class="arithmatex">\(ab-cd\ne0\)</span>，则 A 可逆（X）</li>
+<li>若 A 可逆，则 <span class="arithmatex">\(\forall \mathbf b\in\mathbb R^n\)</span>，方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 相容（方程有解）（Y）</li>
+<li>每个初等矩阵都可逆（Y）</li>
+<li>若干个可逆 <span class="arithmatex">\(n\times n\)</span> 矩阵的连乘积可逆，其逆为这些矩阵的逆按<strong>相同</strong>顺序的连乘积（X）</li>
+<li>若 A 可逆，则 <span class="arithmatex">\(A^{-1}\)</span> 的逆就是 A 本身（Y）</li>
+<li>若 <span class="arithmatex">\(A=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}\)</span> 且 <span class="arithmatex">\(ad=bc\)</span>，则 A 不可逆（Y）</li>
+<li>若 A 可行化简为单位矩阵 <span class="arithmatex">\(I_n\)</span>，在 A 可逆（Y）</li>
+<li>若 A 可逆，则把 A 化简为 <span class="arithmatex">\(I_n\)</span> 的行变换，也将 <span class="arithmatex">\(A^{-1}\)</span> 化简为 <span class="arithmatex">\(I_n\)</span>（X）</li>
+</ol>
+</li>
+<li>如何更快地求解 4 个方程 <span class="arithmatex">\(A\mathbf x=\mathbf b_1,A\mathbf x=\mathbf b_2,A\mathbf x=\mathbf b_3,A\mathbf x=\mathbf b_4\)</span></li>
+<li>证明：<span class="arithmatex">\(A\in M_{n\times n},B\in M_{n\times p}\)</span>，A 可逆，那么 <span class="arithmatex">\(AX=B\)</span> 有唯一解，且 <span class="arithmatex">\(X=A^{-1}B\)</span></li>
+<li>假设 <span class="arithmatex">\(AB=AC\)</span>，是否仍有 <span class="arithmatex">\(B=C\)</span>？</li>
+<li><span class="arithmatex">\(A\in M_{m\times n},B\in M_{m\times p}\)</span>，求解方程：<span class="arithmatex">\(AX=B\)</span></li>
+<li><span class="arithmatex">\(A\in M_{m\times n},B\in M_{p\times n}\)</span>，求解方程：<span class="arithmatex">\(XA=B\)</span></li>
+<li>证明：<span class="arithmatex">\(A,B\in M_{n\times n}\)</span>，若 <span class="arithmatex">\(B,AB\)</span> 可逆，那么 A 也可逆</li>
+<li><span class="arithmatex">\(A,B,X\in M_{n\times n}\)</span>，<span class="arithmatex">\(A,X,A-AX\)</span> 可逆，<span class="arithmatex">\((A-AX)^{-1}=X^{-1}B\)</span><ol>
+<li>证明：B 可逆</li>
+<li>计算 X</li>
+</ol>
+</li>
+<li>矩阵可逆定理相关证明：（假设 A 是 <span class="arithmatex">\(n\times n\)</span> 矩阵）<ol>
+<li>证明：若 A 可逆，那么 (1) A 的各列线性无关，(2) A 的各列张成 <span class="arithmatex">\(\mathbb R^n\)</span></li>
+<li>证明：若 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 仅有平凡解，那么 (1) A 有 n 个主元列，(2) A 行等价于 <span class="arithmatex">\(I_n\)</span></li>
+<li>证明：若 <span class="arithmatex">\(\forall \mathbf b\in\mathbb R^n\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解，那么 A 可逆</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\det A=36\ne0\)</span>，<span class="arithmatex">\(\det B=20\)</span>，<span class="arithmatex">\(\det C=0\)</span>；<span class="arithmatex">\(A,B\)</span> 可逆，C 不可逆</p>
+<p>另外，计算逆元有三种方法：(1) [行化简算法]（<span class="arithmatex">\(O(n^3)\)</span>），(2) 克拉默法则（<span class="arithmatex">\(O(n^5)\)</span> 或 <span class="arithmatex">\(O(n^2)\)</span>），(3) 余因子表示方法（<span class="arithmatex">\(O(n^4)\)</span>）</p>
+<p>(2) 假设 A 可逆，并使用[行化简算法]：<span class="arithmatex">\([A~|~I_n]\sim\begin{bmatrix}1&amp;-2&amp;-1&amp;|&amp;1&amp;0&amp;0\\0&amp;3&amp;5&amp;|&amp;1&amp;1&amp;0\\0&amp;0&amp;0&amp;|&amp;-7&amp;-2&amp;1\end{bmatrix}\)</span>，然而 A 不行等价于 <span class="arithmatex">\(I_n\)</span>，于是 A 不可逆</p>
+<p>(5) 法1：<span class="arithmatex">\([A~~\mathbf b_1~~\mathbf b_2~~\mathbf b_3~~\mathbf b_4]\sim[I_n~~A^{-1}\mathbf b_1~~A^{-1}\mathbf b_2~~A^{-1}\mathbf b_3~~A^{-1}\mathbf b_4]\)</span>；法2：计算 <span class="arithmatex">\(A^{-1}\)</span>，然后得到 <span class="arithmatex">\(\mathbf x_1=A^{-1}\mathbf b_1,\mathbf x_2=A^{-1}\mathbf b_2,\mathbf x_3=A^{-1}\mathbf b_3,\mathbf x_4=A^{-1}\mathbf b_4\)</span></p>
+<p>(7) 若 <span class="arithmatex">\(\exists D,DA=I_n\)</span>，那么 <span class="arithmatex">\(D(AB)=D(AC)\)</span>，即 <span class="arithmatex">\((DA)B=(DA)C\)</span>，即 <span class="arithmatex">\(B=C\)</span></p>
+<p><span class="arithmatex">\(DA=I_n\)</span>，即 <span class="arithmatex">\(A^TD^T=I_n^T=I_n\)</span>，设 <span class="arithmatex">\(X=D^T\)</span> 有 <span class="arithmatex">\(A^TX=I_n\)</span></p>
+<p>于是，若 <span class="arithmatex">\(A^TX=I_n\)</span> 相容（即 <span class="arithmatex">\(A^T\)</span> 的主元列个数等于 <span class="arithmatex">\([A^T~~I_n]\)</span> 的主元列个数），那么 <span class="arithmatex">\(B=C\)</span></p>
+<p>(10) B 可逆，蕴涵 <span class="arithmatex">\(B^{-1}\)</span> 可逆</p>
+<p>而 <span class="arithmatex">\(AB=AB\)</span>，即 <span class="arithmatex">\(A=(AB)B^{-1}\)</span>，其中 <span class="arithmatex">\(AB,B^{-1}\)</span> 均可逆，那么 A 也可逆（可逆矩阵的连乘积也可逆）</p>
+<p>(11) </p>
+<ol>
+<li><span class="arithmatex">\(A-AX\)</span> 可逆，蕴涵 <span class="arithmatex">\((A-AX)^{-1}\)</span> 可逆；<span class="arithmatex">\((A-AX)^{-1}=X^{-1}B\)</span>，蕴涵 <span class="arithmatex">\(B=X(A-AX)^{-1}\)</span>，其中 B 是可逆矩阵的连乘积，蕴涵 B 可逆</li>
+<li><span class="arithmatex">\((A-AX)^{-1}=X^{-1}B\)</span>，蕴涵 <span class="arithmatex">\(X=B(A-AX)=BA-BAX\)</span>，蕴涵 <span class="arithmatex">\(X(I_n+BA)=BA\)</span>；<span class="arithmatex">\(A,B\)</span> 可逆，蕴涵 <span class="arithmatex">\(BA\)</span> 可逆；而 <span class="arithmatex">\(X^{-1}\)</span> 也可逆，所以 <span class="arithmatex">\((I_n+BA)\)</span> 可逆，于是 <span class="arithmatex">\(X=BA(I_n+BA)^{-1}\)</span>
+</li>
+</ol>
+</blockquote>
 <h3 id="3">3.可逆矩阵的特征</h3>
 <div class="admonition 可逆矩阵定理">
 <p class="admonition-title">可逆矩阵定理</p>
 </div>
 <blockquote>
-<p>设 A 为 <span class="arithmatex">\(n\times n\)</span> 矩阵，则下列命题等价：</p>
-<ol>
-<li>A 是可逆矩阵</li>
-<li>A 行等价于 <span class="arithmatex">\(n\times n\)</span> 单位矩阵 <span class="arithmatex">\(I_n\)</span></li>
-<li>A 有 n 个主元位置</li>
-<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 仅有平凡解</li>
-<li>A 的各列线性无关</li>
-<li>线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 是一对一的</li>
-<li>对 <span class="arithmatex">\(\mathbb R^n\)</span> 中任意 <span class="arithmatex">\(\mathbf b\)</span>，方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 至少有一个解</li>
-<li>A 的各列生成 <span class="arithmatex">\(\mathbb R^n\)</span></li>
-<li>线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 把 <span class="arithmatex">\(\mathbb R^n\)</span> 映射到 <span class="arithmatex">\(\mathbb R^n\)</span></li>
-<li>存在 <span class="arithmatex">\(n\times n\)</span> 矩阵 C 使得 <span class="arithmatex">\(CA=I\)</span></li>
-<li>存在 <span class="arithmatex">\(n\times n\)</span> 矩阵 D 使得 <span class="arithmatex">\(AD=I\)</span></li>
-<li><span class="arithmatex">\(A^T\)</span> 是可逆矩阵</li>
-</ol>
-<p>证明：p128</p>
+<p>假设 <span class="arithmatex">\(A\in M_{n\times n}\)</span>，那么：</p>
+<p>(1) <span class="arithmatex">\(\begin{cases}A可逆\\A有n个主元位置\\A行等价于单位矩阵I_n\end{cases}\)</span> <span class="arithmatex">\(\iff\)</span> (2) <span class="arithmatex">\(\begin{cases}\exists C\in M_{n\times n},CA=I_n\\方程A\mathbf x=\mathbf 0仅有平凡解\\A的各列线性无关\\线性变换\mathbf x\mapsto A\mathbf x是一对一的\end{cases}\)</span> <span class="arithmatex">\(\iff\)</span> (3) <span class="arithmatex">\(\begin{cases}\exists D\in M_{n\times n},AD=I_n\\方程\forall\mathbf b\in\mathbb R^n,A\mathbf x=\mathbf b有解\\A的各列生成\mathbb R^n\\线性变换\mathbf x\mapsto A\mathbf x把\mathbb R^n映上到\mathbb R^n\end{cases}\)</span></p>
+<p><span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(A^{-1}可逆\)</span></p>
+<p>注：大花括号内部各行相互等价，不同大括号之间的不同行也相互等价</p>
 </blockquote>
+<p>证明以下三个命题环：</p>
+<ol>
+<li><span class="arithmatex">\((1.1)\implies(2.1)\implies(2.2)\implies(1.2)\implies(1.3)\implies(1.1)\)</span></li>
+<li><span class="arithmatex">\((1.1)\implies(3.1)\implies(3.2)\implies(1.1)\)</span></li>
+<li><span class="arithmatex">\((2.2)\iff(2.3)\iff(2.4)\)</span>（对任意矩阵都成立）</li>
+</ol>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition 定理">
 <p class="admonition-title">定理</p>
 </div>
@@ -1465,7 +1682,58 @@
 <p>定理：线性变换 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^n\)</span> 是可逆的，当且仅当 T 的标准矩阵 A 是可逆的，此时称 S 是 T 的<strong>逆</strong>，记 <span class="arithmatex">\(S=T^{-1}\)</span></p>
 <p>充分性：若 T 是一对一线性变换，那么 T 是可逆线性变换</p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>矩阵可逆定理(v2.0)：假设 <span class="arithmatex">\(A\in M_{n\times n}\)</span>：(1) <span class="arithmatex">\(\begin{cases}A可逆\\A有n个主元位置\\A行等价于单位矩阵I_n\\A的列构成\mathbb R^n的一个基\\\det A\ne0\end{cases}\)</span> <span class="arithmatex">\(\iff\)</span> (2) <span class="arithmatex">\(\begin{cases}\exists C\in M_{n\times n},CA=I_n\\方程A\mathbf x=\mathbf 0仅有平凡解\\A的各列线性无关\\线性变换\mathbf x\mapsto A\mathbf x是一对一的\\\text{Nul}A=\{\mathbf 0\}\\\dim\text{Nul}A=0\end{cases}\)</span> <span class="arithmatex">\(\iff\)</span> (3) <span class="arithmatex">\(\begin{cases}\exists D\in M_{n\times n},AD=I_n\\方程\forall\mathbf b\in\mathbb R^n,A\mathbf x=\mathbf b有解\\A的各列生成\mathbb R^n\\线性变换\mathbf x\mapsto A\mathbf x把\mathbb R^n映上到\mathbb R^n\\\text{Col}A=\mathbb R^n\\\dim\text{Col}A=n\\\text{rank}A=n\\0不是A的特征值\end{cases}\)</span></li>
+<li>矩阵定理：假设 <span class="arithmatex">\(A\in M_{m\times n}\)</span>：(1) <span class="arithmatex">\(\begin{cases}\forall i=1..m,\sum\limits_{j=1}^na_{ij}x_j=b_i\\\sum\limits_{i=1}^nx_i\mathbf a_i=\mathbf b\\A\mathbf x=\mathbf b\end{cases}\)</span>，(2) <span class="arithmatex">\(\begin{cases}\text{rank}A=\text{rank}[A~~\mathbf b]\\A\mathbf x=\mathbf b相容\\\mathbf b是\mathbf a_1,\cdots,\mathbf a_n的线性组合\\\mathbf b\in\text{Span}\{\mathbf a_1,\cdots,\mathbf a_n\}\end{cases}\)</span>，(3) <span class="arithmatex">\(\begin{cases}\exists C\in M_{n\times m},CA=I_n\\方程A\mathbf x=\mathbf 0仅有平凡解\\A的各列线性无关\\线性变换\mathbf x\mapsto A\mathbf x是一对一的\\\text{Nul}A=\{\mathbf 0\}\\\dim\text{Nul}A=0\end{cases}\)</span>，(4) <span class="arithmatex">\(\begin{cases}\exists D\in M_{n\times m},AD=I_m\\方程\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b有解\\A的各列生成\mathbb R^m\\线性变换\mathbf x\mapsto A\mathbf x把\mathbb R^n映上到\mathbb R^m\\\text{Col}A=\mathbb R^m\\\dim\text{Col}A=m\\\text{rank}A=m\\\forall\mathbf b\in\mathbb R^m是\mathbf a_1,\cdots,\mathbf a_n的线性组合\\A的每一行都有主元位置\end{cases}\)</span>；<span class="arithmatex">\((4)\implies(2)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断题：（假设 <span class="arithmatex">\(A,C,D\in M_{n\times n}\)</span>）<ol>
+<li>若方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 仅有平凡解，则 A 行等价于 <span class="arithmatex">\(I_n\)</span>（Y）</li>
+<li>若 A 的各列生成 <span class="arithmatex">\(\mathbb R^n\)</span>，则 A 各列线性无关（Y）</li>
+<li><span class="arithmatex">\(\forall \mathbf b\in\mathbb R^n\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解（X）</li>
+<li>若 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 有非平凡解，则 A 的主元列小于 n 个（Y）</li>
+<li>若 <span class="arithmatex">\(A^T\)</span> 不可逆，则 A 不可逆（Y）</li>
+<li>若 <span class="arithmatex">\(\exists D,AD=I_n\)</span>，那么 <span class="arithmatex">\(\exists C,CA=I_n\)</span>（Y）</li>
+<li>若 A 各列线性无关，则 A 的各列生成 <span class="arithmatex">\(\mathbb R^n\)</span>（Y）</li>
+<li>若 <span class="arithmatex">\(\forall \mathbf b\in\mathbb R^n\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解，那么对于每个 <span class="arithmatex">\(\mathbf b\)</span>，解是唯一的（Y）</li>
+<li>线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 是 <span class="arithmatex">\(\mathbb R^n\to\mathbb R^n\)</span> 的满射，则 A 有 n 个主元位置（<strong>X</strong>）</li>
+<li>若 <span class="arithmatex">\(\exists \mathbf b\in\mathbb R^n\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 不相容，那么线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 不是一对一的（Y）</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(m\times n\)</span> 矩阵 A 被称为<strong>上三角矩阵</strong>，若 A 的主对角线以下的元素均为 0；A 被称为<strong>下三角矩阵</strong>，若 A 的主对角线以上的元素均为 0</li>
+<li>假设 L 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，若 <span class="arithmatex">\(L\mathbf x=\mathbf 0\)</span> 有平凡解，那么 L 的各列是否张成 <span class="arithmatex">\(\mathbb R^n\)</span>？</li>
+<li>证明：A 各列线性无关，那么 <span class="arithmatex">\(A^2\)</span> 的各列生成 <span class="arithmatex">\(\mathbb R^n\)</span></li>
+<li>证明：假设 <span class="arithmatex">\(A,B\)</span> 是方阵，若 <span class="arithmatex">\(AB\)</span> 可逆，那么 <span class="arithmatex">\(A,B\)</span> 都可逆</li>
+<li>计算线性变换 <span class="arithmatex">\(T(x_1,x_2)=(-4x_1+9x_2,4x_1-7x_2)\)</span> 的逆变换 <span class="arithmatex">\(T^{-1}\)</span></li>
+<li>若 <span class="arithmatex">\(T:\mathbb R^n\to\mathbb R^n\)</span> 是可逆线性变换，那么 T 是一对一的，并且映上到 <span class="arithmatex">\(\mathbb R^n\)</span>；应用多个定理给出第二种解释</li>
+<li>证明：若 T 是将 <span class="arithmatex">\(\mathbb R^n\)</span> 映上到 <span class="arithmatex">\(\mathbb R^n\)</span> 的线性变换，那么 <span class="arithmatex">\(T^{-1}\)</span> 存在它且将 <span class="arithmatex">\(\mathbb R^n\)</span> 映上到 <span class="arithmatex">\(\mathbb R^n\)</span>；<span class="arithmatex">\(T^{-1}\)</span> 是否一对一？</li>
+<li>证明：假设 <span class="arithmatex">\(T,U\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 到 <span class="arithmatex">\(\mathbb R^n\)</span> 的线性变换，若 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,T(U(\mathbf x))=\mathbf x\)</span>，那么 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,U(T(\mathbf x))=\mathbf x\)</span></li>
+<li>假设 <span class="arithmatex">\(T:\mathbb R^n\to\mathbb R^n\)</span> 是线性变换，<span class="arithmatex">\(\exists \mathbf u\ne\mathbf v\)</span>，有 <span class="arithmatex">\(T(\mathbf u)=T(\mathbf v)\)</span>，T 能否将 <span class="arithmatex">\(\mathbb R^n\)</span> 映上到 <span class="arithmatex">\(\mathbb R^n\)</span>？</li>
+<li></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(3) “<span class="arithmatex">\(L\mathbf x=\mathbf 0\)</span> 有平凡解”不能提供“L 的各列是否张成 <span class="arithmatex">\(\mathbb R^n\)</span>”的任何信息</p>
+<p>(4) A 各列线性无关，蕴涵 A 可逆，蕴涵 <span class="arithmatex">\(A^2\)</span> 可逆，蕴涵 <span class="arithmatex">\(A^2\)</span> 的各列生成 <span class="arithmatex">\(\mathbb R^n\)</span></p>
+<p>(5) <span class="arithmatex">\(AB\)</span> 可逆，蕴涵 <span class="arithmatex">\(\exists W,(AB)W=I_n,W(AB)=I_n\)</span>，即 <span class="arithmatex">\(A(BW)=I_n,(WA)B=I_n\)</span>，于是 A 和 B 都可逆
+</p>
+</blockquote>
 <h3 id="4">4.分块矩阵</h3>
+<p>目前为止，我们讨论了矩阵 A 可以看作一个数字的矩形表，也可以看作一组列向量</p>
+<p>本节将介绍将 A 按照水平线和竖直线分成多块，以更加精确地描述矩阵的内部结构，并讨论更多性质</p>
 <div class="admonition note">
 <p class="admonition-title">分块矩阵</p>
 </div>
@@ -1475,7 +1743,7 @@
 <p>加法：<span class="arithmatex">\(A + B\)</span> 的每一块恰好是 A 和 B 对应分块(的矩阵)的和（仅当 A 和 B 维数相同，并且分块方式相同）</p>
 <p>数乘：<span class="arithmatex">\(cA\)</span> 的每一块为 <span class="arithmatex">\((cA)_{ij}=cA_{ij}\)</span></p>
 <p>乘法：<span class="arithmatex">\(AB\)</span> 的每一块为 <span class="arithmatex">\((AB)_{ij} = \text{row}_{i}(A)\text{col}_j(B) = \sum\limits_{k=1}^nA_{ik}B_{kj}\)</span>；或者 <span class="arithmatex">\(AB = \sum\limits_{i=1}^n\text{col}_i(A)\text{row}_i(B)\)</span></p>
-<p>转置：<span class="arithmatex">\(AB\)</span> 的每一块为 <span class="arithmatex">\((A^T)_{ij} = A^T_{ji}\)</span></p>
+<p>转置：<span class="arithmatex">\(AB\)</span> 的每一块为 <span class="arithmatex">\((A^T)_{ij} = A_{ji}\)</span></p>
 </blockquote>
 <p>对于 分块上三角矩阵 <span class="arithmatex">\(A = \begin{bmatrix}A_{11}&amp;A_{12}\\0&amp;A_{22}\end{bmatrix}\)</span>，假设其逆矩阵为 <span class="arithmatex">\(B = \begin{bmatrix}B_{11}&amp;B_{12}\\B_{21}&amp;B_{22}\end{bmatrix}\)</span>（<span class="arithmatex">\(A,B\in\mathbb R^{(p+q)\times (p+q)}\)</span>），</p>
 <p>因而 <span class="arithmatex">\(AB = \begin{bmatrix}A_{11}&amp;A_{12}\\0&amp;A_{22}\end{bmatrix}\begin{bmatrix}B_{11}&amp;B_{12}\\B_{21}&amp;B_{22}\end{bmatrix}=\begin{bmatrix}I_p&amp;0\\0&amp;I_q\end{bmatrix}\)</span></p>
@@ -1496,10 +1764,50 @@
 <p>分块对角矩阵的逆：<span class="arithmatex">\(A^{-1} = \begin{bmatrix}\ddots\\&amp;A_{ii}^{-1}\\&amp;&amp;\ddots\end{bmatrix}\)</span></p>
 <p>注：A 的划分方法可以是用若干子矩形将对角线进行划分，其中子矩阵越小越好</p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>分块矩阵乘法：假设 <span class="arithmatex">\(A\in M_{m\times n},B\in M_{n\times p}\)</span>，并且 A 的列和 B 的行有相同的分割方法，则 <span class="arithmatex">\(\forall i,j,(AB)_{ij}=\sum\limits_{k=1}^sA_{ik}B_{kj}\)</span>（<span class="arithmatex">\(A_{ij}\)</span> 表示 A 的 <span class="arithmatex">\((i,j)\)</span> 块）</li>
+<li>矩阵乘法的列行展开：假设 <span class="arithmatex">\(A\in M_{m\times n},B\in M_{n\times p}\)</span>，那么 <span class="arithmatex">\(AB=\sum\limits_{k=1}^n\text{col}_i(A)\text{row}_i(B)\)</span></li>
+<li>分块三角矩阵的逆：<span class="arithmatex">\(\begin{cases}\begin{bmatrix}A_{11}&amp;A_{12}\\0&amp;A_{22}\end{bmatrix}^{-1}=\begin{bmatrix}A_{11}^{-1}&amp;-A_{11}^{-1}A_{12}A_{22}^{-1}\\0&amp;A_{22}^{-1}\end{bmatrix}\\\begin{bmatrix}A_{11}&amp;0\\A_{21}&amp;A_{22}\end{bmatrix}^{-1}=\begin{bmatrix}A_{11}^{-1}&amp;0\\-A_{22}^{-1}A_{12}A_{11}^{-1}&amp;A_{22}^{-1}\end{bmatrix}\end{cases}\)</span></li>
+<li>分块对角矩阵的逆：<span class="arithmatex">\(\begin{bmatrix}A_{11}\\&amp;\ddots\\&amp;&amp;A_{nn}\end{bmatrix}^{-1}=\begin{bmatrix}A_{11}^{-1}\\&amp;\ddots\\&amp;&amp;A_{nn}^{-1}\end{bmatrix}\)</span>，<span class="arithmatex">\(\newcommand\iddots{\mathinner{  \kern1mu\raise1pt{.}  \kern2mu\raise4pt{.}  \kern2mu\raise7pt{\Rule{0pt}{7pt}{0pt}.}  \kern1mu}}\begin{bmatrix}&amp;&amp;A_{11}\\&amp;\dots\\A_{nn}\end{bmatrix}^{-1}=\begin{bmatrix}&amp;&amp;A_{nn}^{-1}\\&amp;\iddots\\A_{11}^{-1}\end{bmatrix}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算 <span class="arithmatex">\(\begin{bmatrix}I_n&amp;\mathbf 0\\A&amp;I_m\end{bmatrix}\)</span> 的乘法逆元</li>
+<li><span class="arithmatex">\(X=[X_1~~X_2]\)</span>，计算 <span class="arithmatex">\(X^TX\)</span></li>
+<li>计算分块矩阵乘积：<ol>
+<li><span class="arithmatex">\(\begin{bmatrix}I_n&amp;\mathbf 0\\E&amp;I_n\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}E&amp;\mathbf 0\\\mathbf 0&amp;F\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}\mathbf 0&amp;I_n\\I_n&amp;\mathbf 0\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}I_n&amp;\mathbf 0\\-X&amp;I_n\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}\)</span></li>
+</ol>
+</li>
+<li></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\begin{bmatrix}I_n&amp;\mathbf 0\\A&amp;I_m\end{bmatrix}^{-1}=\begin{bmatrix}I_n^{-1}&amp;\mathbf 0\\-I_m^{-1}AI_{n}^{-1}&amp;I_m^{-1}\end{bmatrix}=\begin{bmatrix}I_n&amp;\mathbf 0\\-A&amp;I_m\end{bmatrix}\)</span></p>
+<p>(2) <span class="arithmatex">\(X^TX=\begin{bmatrix}X_1^T\\X_2^T\end{bmatrix}\begin{bmatrix}X_1&amp;X_2\end{bmatrix}=\begin{bmatrix}X_1^TX_1&amp;X_1^TX_2\\X_2^TX_1&amp;X_2^TX_2\end{bmatrix}\)</span>（注：<span class="arithmatex">\(X^TX\ne\begin{bmatrix}X_1X_1&amp;X_1X_2\\X_2X_1&amp;X_2X_2\end{bmatrix}\)</span>）</p>
+<p>(3) </p>
+<ol>
+<li><span class="arithmatex">\(\begin{bmatrix}I_n&amp;\mathbf 0\\E&amp;I_n\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}=\begin{bmatrix}A&amp;B\\C+EA&amp;D+EB\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}E&amp;\mathbf 0\\\mathbf 0&amp;F\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}=\begin{bmatrix}EA&amp;EB\\FC&amp;FD\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}\mathbf 0&amp;I_n\\I_n&amp;\mathbf 0\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}=\begin{bmatrix}C&amp;D\\A&amp;B\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\begin{bmatrix}I_n&amp;\mathbf 0\\-X&amp;I_n\end{bmatrix}\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}=\begin{bmatrix}A&amp;B\\C-XA&amp;D-XB\end{bmatrix}\)</span></li>
+</ol>
+</blockquote>
 <h3 id="5">5. 矩阵因式分解</h3>
-<p>设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 可以简化为阶梯形</p>
-<p>对 A <strong>只进行倍加变换的</strong>初等行变换以得到 U（如果可能）</p>
-<p>有 <span class="arithmatex">\(\begin{bmatrix}A&amp;I\end{bmatrix} \sim \begin{bmatrix}EA&amp;E\end{bmatrix}=\begin{bmatrix}U&amp;E\end{bmatrix}\)</span> （<span class="arithmatex">\(E=\prod\limits_{i=p}^1E_i\)</span>；E 可逆）</p>
+<p>假设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 可以行倍加简化为阶梯形</p>
+<p>对 A <strong>只进行倍加变换的</strong>初等行变换以得到阶梯型 U（如果可能）</p>
+<p>那么 <span class="arithmatex">\(\exists E\)</span> 使得 <span class="arithmatex">\(\begin{bmatrix}A&amp;I\end{bmatrix} \sim \begin{bmatrix}EA&amp;E\end{bmatrix}=\begin{bmatrix}U&amp;E\end{bmatrix}\)</span> （<span class="arithmatex">\(E=\prod\limits_{i=p}^1E_i\)</span>；E 可逆）</p>
 <p>记 <span class="arithmatex">\(U=EA, L=E^{-1}\)</span>，有 <span class="arithmatex">\(A=E^{-1}U=LU\)</span></p>
 <p>这里的 <span class="arithmatex">\(E^{-1}\)</span> 显然是下三角矩阵</p>
 <p>由于只进行了从上往下的倍加变换，因而 L 也是下三角矩阵，</p>
@@ -1518,9 +1826,43 @@
 </div>
 <blockquote>
 <p>对于 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span> 和一系列向量 <span class="arithmatex">\(\mathbf b_i\)</span> 大量求解矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b_i\)</span></p>
-<p><span class="arithmatex">\(A\mathbf x=\mathbf b_i \iff \begin{cases}L\mathbf y=\mathbf b\\U\mathbf x=\mathbf y\end{cases}\)</span></p>
+<p><span class="arithmatex">\(A\mathbf x=\mathbf b_i \iff \begin{cases}L\mathbf y=\mathbf b_i\\U\mathbf x=\mathbf y\end{cases}\)</span></p>
 <p>先求解 <span class="arithmatex">\(\mathbf y\)</span> 再求得 <span class="arithmatex">\(\mathbf x\)</span></p>
 <p>注：随机的矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的求解复杂度是 <span class="arithmatex">\(O(n^3)\)</span>；而三角或阶梯型矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的求解复杂度是 <span class="arithmatex">\(O(n^2)\)</span></p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>LU 分解：仅使用行倍加将 A 行化简为阶梯型 U，即若存在初等矩阵 <span class="arithmatex">\(E\in M_{m\times m}\)</span> 使得 <span class="arithmatex">\(\begin{bmatrix}A&amp;I_m\end{bmatrix} \sim \begin{bmatrix}EA&amp;E\end{bmatrix}=\begin{bmatrix}U&amp;E\end{bmatrix}\)</span>，那么 <span class="arithmatex">\(A=E^{-1}U\)</span>（记 <span class="arithmatex">\(L=E^{-1}\)</span>；对于 <span class="arithmatex">\(\forall i=1..m\)</span>，每次 <span class="arithmatex">\(A'\)</span> 第 i 行的主元下方的元素变为零；建议在 A 行化简为 U 后再通过化简的步骤中得到矩阵 L）</li>
+<li>LU 分解计算矩阵方程：若矩阵 A 能 LU 分解，那么 <span class="arithmatex">\(A\mathbf x=\mathbf b \iff \begin{cases}L\mathbf y=\mathbf b\\U\mathbf x=\mathbf y\end{cases}\)</span>（<span class="arithmatex">\(\mathbf y,\mathbf x\)</span> 未知）</li>
+<li>LU 分解计算乘法逆元：<span class="arithmatex">\(A^{-1}=(LU)^{-1}=U^{-1}L^{-1}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>对 <span class="arithmatex">\(A=\begin{bmatrix}2&amp;-4&amp;-2&amp;3\\6&amp;-9&amp;-5&amp;8\\2&amp;-7&amp;-3&amp;9\\4&amp;-2&amp;-2&amp;-1\\-6&amp;3&amp;3&amp;4\end{bmatrix}\)</span> 进行 LU 分解</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}3&amp;-7&amp;-2\\-3&amp;5&amp;1\\6&amp;-4&amp;0\end{bmatrix},\mathbf{b}=\begin{bmatrix}-7\\5\\2\end{bmatrix}\)</span>，使用 LU 分解计算 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span></li>
+<li>各种分解算法：<ol>
+<li>简化 LU 分解</li>
+<li>秩分解</li>
+<li>QR 分解</li>
+<li>奇异值分解</li>
+<li>谱分解</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(U=\begin{bmatrix}2&amp;-4&amp;-2&amp;3\\0&amp;3&amp;1&amp;-1\\0&amp;0&amp;0&amp;5\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0\end{bmatrix}\)</span>，<span class="arithmatex">\(L=\begin{bmatrix}1&amp;0&amp;0&amp;0&amp;0\\3&amp;1&amp;\underline{0}&amp;0&amp;0\\1&amp;-1&amp;1&amp;0&amp;0\\2&amp;2&amp;-1&amp;1&amp;0\\-3&amp;-3&amp;2&amp;0&amp;1\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(L=\begin{bmatrix}1&amp;&amp;0&amp;&amp;0\\-1&amp;&amp;1&amp;&amp;0\\2&amp;&amp;-5&amp;&amp;1\end{bmatrix},U=\begin{bmatrix}3&amp;&amp;-7&amp;&amp;-2\\0&amp;&amp;-2&amp;&amp;-1\\0&amp;&amp;0&amp;&amp;-1\end{bmatrix}\)</span>；<span class="arithmatex">\([L~~\mathbf b]\sim[I_m~~L^{-1}\mathbf b]=[I_m~~\mathbf y]\)</span>，其中 <span class="arithmatex">\(\mathbf y=\begin{bmatrix}-7\\-2\\6\end{bmatrix}\)</span>；<span class="arithmatex">\([U~~\mathbf y]\sim[V~~\mathbf x]\)</span>，其中 <span class="arithmatex">\(\mathbf x=\begin{bmatrix}3\\4\\-6\end{bmatrix}\)</span>（V 为简化阶梯型）</li>
+</ol>
 </blockquote>
 <h3 id="6">6. 列昂惕夫投入产出模型</h3>
 <div class="admonition note">

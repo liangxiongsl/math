@@ -1086,33 +1086,61 @@
 <p>性质：设 <span class="arithmatex">\(\mathbf u,\mathbf v,\mathbf w\in\mathbb R^n\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span></p>
 <ol>
 <li><span class="arithmatex">\(\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u\)</span></li>
-<li><span class="arithmatex">\((\mathbf u+\mathbf v)\cdot\mathbf w=\mathbf u\cdot\mathbf w+\mathbf v\mathbf w\)</span></li>
+<li><span class="arithmatex">\((\mathbf u+\mathbf v)\cdot\mathbf w=\mathbf u\cdot\mathbf w+\mathbf v\cdot\mathbf w\)</span></li>
 <li><span class="arithmatex">\((c\mathbf u)\cdot\mathbf v=c(\mathbf u\cdot\mathbf v)=\mathbf u\cdot(c\mathbf v)\)</span></li>
 <li><span class="arithmatex">\(\mathbf u\cdot\mathbf u\ge0\)</span>（<span class="arithmatex">\(\mathbf u\cdot\mathbf u=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf u=\mathbf 0\)</span>）</li>
 <li>注：满足 交换律；点积-加法，点积-数乘 的分配率</li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u=\begin{bmatrix}2\\-5\\-1\end{bmatrix},\mathbf v=\begin{bmatrix}3\\2\\-3\end{bmatrix}\)</span>，那么 <span class="arithmatex">\({\bf u\cdot v}=(2)(3)+(-5)(2)+(-1)(-3)=(3)(2)+(2)(-5)+(-3)(-1)={\bf v\cdot u}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">向量长度</p>
 </div>
 <blockquote>
-<p>向量 <span class="arithmatex">\(\mathbf v\in\mathbb R^n\)</span> 的长度(或 范数)为 <span class="arithmatex">\(\|\mathbf v\|=\sqrt{\mathbf v\cdot\mathbf v}=\sqrt{\sum\limits_{i=1}^nv_i}\)</span>（显然 <span class="arithmatex">\(\|\mathbf v\|=\mathbf v\cdot\mathbf v\)</span>）</p>
+<p>向量 <span class="arithmatex">\(\mathbf v\in\mathbb R^n\)</span> 的长度(或 范数)为 <span class="arithmatex">\(\|\mathbf v\|=\sqrt{\bf v\cdot v}=\sqrt{\sum\limits_{i=1}^nv_i^2}\)</span>（显然 <span class="arithmatex">\(\|\mathbf v\|^2=\mathbf v\cdot\mathbf v\)</span>）</p>
 <p>性质1：<span class="arithmatex">\(\|c\mathbf v\|=|c|~\|\mathbf v\|\)</span></p>
-<p>性质2：<span class="arithmatex">\(\mathbf v\)</span> 的单位向量为 <span class="arithmatex">\(\mathbf u=\frac {\mathbf v}{\|\mathbf v\|}\)</span></p>
+<p>性质2：<span class="arithmatex">\(\mathbf v\)</span> 的单位向量为 <span class="arithmatex">\(\mathbf u=\pm\frac {\mathbf v}{\|\mathbf v\|}\)</span></p>
+<p>注：<span class="arithmatex">\(\mathbb R^n\)</span> 下的范数就是向量各元素的几何平均数</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf v=(1,-2,2,0)\)</span> 的单位向量为 <span class="arithmatex">\((1/3,-2/3,2/3,0)\)</span></li>
+<li>验证 <span class="arithmatex">\(\|\mathbf v\|=1\)</span>：只需验证 <span class="arithmatex">\(\|\mathbf v\|^2=\bf v\cdot v\)</span></li>
+<li>W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间且由向量 <span class="arithmatex">\(\mathbf x=(2/3,1)\)</span> 生成，计算 W 的一个包含单位向量的基：<span class="arithmatex">\(\mathbf y=x\frac{\mathbf x}{\|\mathbf x\|}=\frac{3\mathbf x}{\|3\mathbf x\|}=(2/\sqrt{13},3/\sqrt{13})\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">距离</p>
 </div>
 <blockquote>
 <p><span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span> 之间的距离定义为 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\|\mathbf u-\mathbf v\|\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u=(7,1),\mathbf v=(3,2)\)</span>，<span class="arithmatex">\(\bf u,v\)</span> 之间的距离为 <span class="arithmatex">\(\|\mathbf u-\mathbf v\|=\|(4,-1)\|=\sqrt{17}\)</span></li>
+<li><span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^3\)</span> 之间的距离为 <span class="arithmatex">\(\|\mathbf u-\mathbf v\|=\sqrt{(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)}=\sqrt{(u_1-v_1)^2+(u_2-v_2)^2+(u_3-v_3)^2}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
-<p class="admonition-title">正交向量</p>
+<p class="admonition-title">向量正交</p>
 </div>
 <blockquote>
 <p>两向量 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span> 正交，当且仅当 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\text{dist}(\mathbf u,-\mathbf v)\)</span>，</p>
 <p>当且仅当 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\mathbf0\)</span></p>
 </blockquote>
+<p>证明：</p>
+<p><span class="arithmatex">\(\|\mathbf u-\mathbf v\|^2=\sum\limits_{i=1}^n(u_i-v_i)^2=\sum\limits_{i=1}^n(u_i^2-2u_iv_i+v_i^2)\)</span></p>
+<p><span class="arithmatex">\(\|\mathbf u-(-\mathbf v)\|^2=\sum\limits_{i=1}^n(u_i+v_i)^2=\sum\limits_{i=1}^n(u_i^2+2u_iv_i+v_i^2)\)</span></p>
+<p><span class="arithmatex">\(\|\mathbf u-\mathbf v\|^2=\|\mathbf u-(-\mathbf v)\|^2\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\sum\limits_{i=1}^n(u_i^2-2u_iv_i+v_i^2)=\sum\limits_{i=1}^n(u_i^2+2u_iv_i+v_i^2)\)</span></p>
+<p>即 <span class="arithmatex">\(4\sum\limits_{i=1}^nu_iv_i=0\)</span> 或 <span class="arithmatex">\(\bf u\cdot v=0\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">毕达哥拉斯(勾股)定理</p>
 </div>
@@ -1128,7 +1156,16 @@
 <p>性质1：向量 <span class="arithmatex">\(\mathbf x\in W^\bot\)</span>，当且仅当 <span class="arithmatex">\(\mathbf x\)</span> 与 W 的任意向量都正交（<span class="arithmatex">\((W^\bot)^\bot=W\)</span> ？）</p>
 <p>性质2：<span class="arithmatex">\(W,W^\bot\)</span> 同时是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间</p>
 <p>性质3：<span class="arithmatex">\(W,W^\bot\subset\mathbb R^n\)</span>，那么 <span class="arithmatex">\(\dim W+\dim W^\bot=n\)</span>（证明用到了秩定理）</p>
+<p>注：<span class="arithmatex">\(W^\bot=\{\mathbf u:~\mathbf u\in\mathbb R^n,\forall\mathbf v\in W,\mathbf u\cdot\mathbf v=0\}\)</span></p>
 </blockquote>
+<p>证明：<span class="arithmatex">\(W^\bot\)</span> 是子空间</p>
+<p>根据定义可知，<span class="arithmatex">\(W^\bot\subset\mathbb R^n\)</span></p>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf v\in W,\mathbf 0\cdot\mathbf v=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf 0\in W^\bot\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf x,\mathbf y\in W^\bot\)</span>，都有 <span class="arithmatex">\(\forall\mathbf v\in W,\mathbf x\cdot\mathbf v=\mathbf 0,\mathbf y\cdot\mathbf v=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf 0=\mathbf 0+\mathbf 0=\mathbf x\cdot\mathbf v+\mathbf y\cdot\mathbf v=(\mathbf x+\mathbf y)\cdot \mathbf v\)</span>，蕴涵 <span class="arithmatex">\(\mathbf x+\mathbf y\in W^\bot\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf x\in W^\bot,c\in\mathbb R\)</span>，都有 <span class="arithmatex">\(\forall\mathbf v\in W,\mathbf x\cdot\mathbf v=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\((c\mathbf x)=c(\mathbf x\cdot\mathbf v)=c\mathbf 0=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(c\mathbf x\in W^\bot\)</span></li>
+</ol>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">定理</p>
 </div>
@@ -1136,6 +1173,14 @@
 <p>假设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>，那么 A 的行空间的正交补是 A 的零空间，且 A 的列空间的正交补是 <span class="arithmatex">\(A^T\)</span> 的零空间，即：</p>
 <p><span class="arithmatex">\((\text{Row}A)^\bot=\text{Nul}A\)</span>，<span class="arithmatex">\((\text{Col}A)^\bot=\text{Nul}A^T\)</span></p>
 </blockquote>
+<p>证明：<span class="arithmatex">\((\text{Row}A)^\bot=\text{Nul}A\)</span></p>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf x\in\text{Nul}A,A\mathbf x=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf x\)</span> 与 A 的各列正交，于是 <span class="arithmatex">\(\mathbf x\)</span> 与 A 的各行的线性组合正交(使用到[内积公理])，即 <span class="arithmatex">\(\mathbf x\in(\text{Row}A)^\bot\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf x\in(\text{Row}A)^\bot,\forall\mathbf v\in\text{Row}A,\mathbf x\cdot\mathbf v=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf v\cdot\mathbf x=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf x\in\text{Nul}A\)</span></li>
+</ol>
+<p>证明：<span class="arithmatex">\((\text{Col}A)^\bot=\text{Nul}A^T\)</span></p>
+<p>由 <span class="arithmatex">\((\text{Row}A)^\bot=\text{Nul}A\)</span> 和 <span class="arithmatex">\(\text{Col}A=\text{Row}A^T\)</span>，从而 <span class="arithmatex">\((\text{Col}A)^\bot=(\text{Row}A^T)^\bot=\text{Nul}A^T\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">角度</p>
 </div>
@@ -1144,46 +1189,262 @@
 <p><span class="arithmatex">\(\mathbf u\cdot\mathbf v=\|\mathbf u\|~\|\mathbf v\|\cos\mathfrak g\)</span></p>
 <p>注：对于 <span class="arithmatex">\(n\ge 4\)</span>，<span class="arithmatex">\(\cos\mathfrak g\)</span> 被统计学家称为相关系数</p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>实数组内积：假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 的<strong>内积</strong>或<strong>点积</strong>定义为 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\mathbf u^T\mathbf v=\sum\limits_{i=1}^nu_iv_i\in\mathbb R\)</span></li>
+<li>实数组内积定理：假设 <span class="arithmatex">\(\mathbf u,\mathbf v,\mathbf w\in\mathbb R^n\)</span>，<span class="arithmatex">\(c\in\mathbb R\)</span>（继承自[6.7内积公理]）<ol>
+<li>点积交换律 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\mathbf v\cdot\mathbf u\)</span></li>
+<li>加法和点积的分配律 <span class="arithmatex">\((\mathbf u+\mathbf v)\cdot\mathbf w=\mathbf u\cdot\mathbf w+\mathbf v\cdot\mathbf w\)</span></li>
+<li>标量乘法和点积的结合律 <span class="arithmatex">\((c\mathbf u)\cdot\mathbf v=c(\mathbf u\cdot\mathbf v)=\mathbf u\cdot(c\mathbf v)\)</span></li>
+<li><span class="arithmatex">\(\mathbf u\cdot\mathbf u\ge0\)</span>（<span class="arithmatex">\(\mathbf u\cdot\mathbf u=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf u=\mathbf 0\)</span>）</li>
+</ol>
+</li>
+<li>长度(范数)，单位向量，距离：假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span>： <span class="arithmatex">\(\mathbf u\)</span> 的<strong>范数</strong>为 <span class="arithmatex">\(\|\mathbf u\|=\sqrt{\bf u\cdot u}\)</span>（<span class="arithmatex">\(\|\mathbf u\|^2=\mathbf u\cdot\mathbf u\)</span>），满足 <span class="arithmatex">\(\|c\mathbf u\|=|c|\|\mathbf u\|\)</span>；<span class="arithmatex">\(\mathbf u\)</span> 的<strong>单位向量</strong>为 <span class="arithmatex">\(\pm\frac{\mathbf u}{\|\mathbf u\|}\)</span>；<span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 之间的<strong>距离</strong>为 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\|\mathbf u-\mathbf v\|\)</span></li>
+<li>正交，毕达哥拉斯定理(勾股定理)，正交补：<span class="arithmatex">\(\bf u,v\)</span> <strong>正交</strong>（记 <span class="arithmatex">\(\bf u\bot v\)</span>），当且仅当 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\text{dist}(\mathbf u,-\mathbf v)\)</span>，等价于 <span class="arithmatex">\(\bf u\cdot v=0\)</span>，等价于 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2\)</span>（<strong>毕达哥拉斯定理</strong>）；<span class="arithmatex">\(\mathbf u\)</span> 与向量空间 W <strong>正交</strong>（记 <span class="arithmatex">\(\mathbf u\bot W\)</span>），当且仅当 <span class="arithmatex">\(\forall\mathbf v\in W,\bf u\cdot v=0\)</span>；所有与子空间 W 正交的向量构成集合，称为 W 的<strong>正交补</strong>，记为 <span class="arithmatex">\(W^\bot=\{\mathbf u:~\mathbf u\in\mathbb R^n,\mathbf u\bot W\}\)</span></li>
+<li>正交补的性质：(1) <span class="arithmatex">\(\mathbf x\in W^\bot\)</span>，当且仅当 <span class="arithmatex">\(\forall\mathbf v\in W,\mathbf x\cdot\mathbf v=0\)</span>，(2) <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，(3) <span class="arithmatex">\(\forall W,W^\bot\subset\mathbb R^n\)</span>，<span class="arithmatex">\(\dim W+\dim W^\bot=n\)</span></li>
+<li>定理：若 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，那么 (1) <span class="arithmatex">\((\text{Row}A)^\bot=\text{Nul}A\)</span>，(2) <span class="arithmatex">\((\text{Col}A)^\bot=\text{Nul}A^T\)</span></li>
+<li>角度：<span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span> 之间的<strong>角度</strong> <span class="arithmatex">\(\theta\)</span> 由 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\|\mathbf u\|~\|\mathbf v\|\cos\theta\)</span> 定义</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf a=\begin{bmatrix}-2\\1\end{bmatrix},\mathbf b=\begin{bmatrix}-3\\1\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(\frac{\bf a\cdot b}{\bf a\cdot a},(\frac{\bf a\cdot b}{\bf a\cdot a})\mathbf a\)</span></li>
+<li><span class="arithmatex">\(\mathbf c=\begin{bmatrix}4/3\\-1\\2/3\end{bmatrix},\mathbf d=\begin{bmatrix}5\\6\\-1\end{bmatrix}\)</span><ol>
+<li>计算向量 <span class="arithmatex">\(\bf c\)</span> 方向的单位向量 <span class="arithmatex">\(\bf u\)</span></li>
+<li>证明：<span class="arithmatex">\(\bf d,c\)</span> 正交</li>
+<li>解释为什么 <span class="arithmatex">\(\bf d\)</span> 正交于单位向量 <span class="arithmatex">\(\bf u\)</span></li>
+</ol>
+</li>
+<li>W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，证明：<span class="arithmatex">\(\dim W+\dim W^\bot=n\)</span></li>
+<li>判断题（假设 <span class="arithmatex">\(\bf x,u,v\in\mathbb R^n,c\in\mathbb R\)</span>）<ol>
+<li><span class="arithmatex">\(\mathbf v\cdot\mathbf v=\|\mathbf v\|^2\)</span>（Y）</li>
+<li><span class="arithmatex">\(\mathbf u\cdot(c\mathbf v)=c(\mathbf u\cdot\mathbf v)\)</span>（Y）</li>
+<li>如果 <span class="arithmatex">\(\bf u\)</span> 到 <span class="arithmatex">\(\bf v\)</span> 的距离等于 <span class="arithmatex">\(\bf u\)</span> 到 <span class="arithmatex">\(-\bf v\)</span> 的距离，那么 <span class="arithmatex">\(\bf u,v\)</span> 正交（Y）</li>
+<li>对于方阵 A，<span class="arithmatex">\(\text{Col}A\)</span> 中的向量与 <span class="arithmatex">\(\text{Nul}A\)</span> 中的向量正交（X）</li>
+<li>如果向量 <span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_p\)</span> 生成子空间 W，且 <span class="arithmatex">\(\forall i=1..p,\mathbf x\cdot\mathbf b_i=0\)</span>，那么 <span class="arithmatex">\(\mathbf x\in W^\bot\)</span>（Y）</li>
+<li><span class="arithmatex">\(\mathbf u\cdot\mathbf v-\mathbf v\cdot\mathbf u=0\)</span>（Y）</li>
+<li><span class="arithmatex">\(\|c\mathbf u\|=c\|\mathbf u\|\)</span>（<strong>X</strong>）</li>
+<li>若 <span class="arithmatex">\(\bf x\)</span> 与子空间 W 中任一向量正交，那么 <span class="arithmatex">\(\mathbf x\in W^\bot\)</span>（Y）</li>
+<li><span class="arithmatex">\(\|\mathbf u\|^2+\|\mathbf v\|^2=\|\mathbf u+\mathbf v\|^2\)</span>，那么 <span class="arithmatex">\(\bf u,v\)</span> 相互正交（Y）</li>
+<li><span class="arithmatex">\(m\times n\)</span> 矩阵 A 的零空间中的向量与 A 的行空间中的向量正交（Y）</li>
+</ol>
+</li>
+<li>如何计算：(1) <span class="arithmatex">\(\bf u,v\)</span> 的点积，(2) <span class="arithmatex">\(\bf u\)</span> 的范数，单位向量(同向或反向)，(3) <span class="arithmatex">\(\bf u,v\)</span> 的距离，夹角，正交性</li>
+<li>证明平行四边形法则：<span class="arithmatex">\(\forall\bf u,v\in\mathbb R^n\)</span>，<span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2+\|\mathbf u-\mathbf v\|^2=2(\|\mathbf u\|^2+\|\mathbf v\|^2)\)</span></li>
+<li>假设 <span class="arithmatex">\(\begin{bmatrix}a\\b\\c\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(W=\text{Span}\left\{\mathbf v\right\}\)</span> 的正交补</li>
+<li>证明：若 <span class="arithmatex">\(\mathbf y\)</span> 与 <span class="arithmatex">\(\bf u\)</span> 和 <span class="arithmatex">\(\bf v\)</span> 都正交，那么 <span class="arithmatex">\(\bf v\)</span> 与 <span class="arithmatex">\(H=\text{Span}\{\bf u,v\}\)</span> 正交</li>
+<li>证明：若 <span class="arithmatex">\(\mathbf y\)</span> 与 <span class="arithmatex">\(\forall i=1..p,\mathbf v_i\)</span> 正交，那么 <span class="arithmatex">\(\mathbf y\)</span> 与 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 正交</li>
+<li>证明：<span class="arithmatex">\(\{\mathbf 0\}=W\cap W^\bot\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\frac{\bf a\cdot b}{\bf a\cdot a}=\frac75,(\frac{\bf a\cdot b}{\bf a\cdot a})\mathbf a=\begin{bmatrix}-14/5\\7/5\end{bmatrix}\)</span></p>
+<p>(2) </p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u=\frac{\mathbf c}{\|\mathbf c\|}=\frac{3\mathbf c}{\|3\mathbf c\|}=\begin{bmatrix}4/\sqrt{29}\\-3/\sqrt{29}\\2/\sqrt{29}\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\mathbf d\cdot\mathbf c=(4/3)(5)+(-1)(6)+(2/3)(-1)=0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf d,\mathbf c\)</span> 正交</li>
+<li><span class="arithmatex">\(\mathbf d\cdot\mathbf u=\mathbf d\cdot(\frac1{\|\bf c\|}\mathbf c)=\frac1{\|\bf c\|}(\mathbf d\cdot\mathbf c)=\frac1{\|\bf c\|}0=0\)</span></li>
+</ol>
+<p>(3) </p>
+<p>若 <span class="arithmatex">\(W=\{\mathbf 0\}\)</span>，而 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,\mathbf 0\cdot\mathbf x=0\)</span>，蕴涵 <span class="arithmatex">\(\mathbb R^n=W^\bot\)</span>，于是 <span class="arithmatex">\(\dim W+\dim W^\bot=n\)</span></p>
+<p>若 <span class="arithmatex">\(W\ne\{\mathbf 0\}\)</span>，假设 <span class="arithmatex">\(\{\bf b_1,\cdots,b_p\}\)</span> 是 W 的一个基（<span class="arithmatex">\(1\le p\le n\)</span>），设矩阵 A 的各行为 <span class="arithmatex">\(\mathbf b_1^T,\cdots,\mathbf b_p^T\)</span>，于是 <span class="arithmatex">\(W=\text{Row}A\)</span>，而 <span class="arithmatex">\(W^\bot=(\text{Row}A)^\bot=\text{Nul}A\)</span>，于是 <span class="arithmatex">\(\dim W+\dim W^\bot=\dim\text{Row}A+\dim\text{Nul}A=n\)</span>（根据[4.4秩定理]）</p>
+<p>(5)</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u\cdot\mathbf v=\sum\limits_{i=1}^nu_iv_i\)</span></li>
+<li><span class="arithmatex">\(\|\mathbf u\|=\sqrt{\sum\limits_{i=1}^nu_i^2}\)</span>，<span class="arithmatex">\(\mathbf e_u=\pm\frac{\mathbf u}{\|\mathbf u\|}\)</span></li>
+<li><span class="arithmatex">\(\|\mathbf u-\mathbf v\|=\sum\limits_{i=1}^n(u_i-v_i)^2\)</span>，<span class="arithmatex">\(\cos\theta=\frac{\mathbf u\cdot\mathbf v}{\|\mathbf u\|\|\mathbf v\|}=\mathbf e_u\cdot\mathbf e_u\)</span>（假设 <span class="arithmatex">\(\bf u,v\ne0\)</span>），<span class="arithmatex">\(\bf u\cdot v=0\iff \bf u\bot v\)</span></li>
+</ol>
+<p>(7) 方程组 <span class="arithmatex">\(\mathbf v^T\mathbf x=\mathbf 0\)</span> 的解集即为 <span class="arithmatex">\(W^\bot=\begin{cases}\text{Span}\left\{\begin{bmatrix}-b/a\\1\\0\end{bmatrix},\begin{bmatrix}-c/a\\0\\1\end{bmatrix}\right\}&amp;a\ne0\\\text{Span}\left\{\begin{bmatrix}1\\0\\0\end{bmatrix},\begin{bmatrix}0\\-c/b\\1\end{bmatrix}\right\}&amp;a=0,b\ne0\\\text{Span}\left\{\begin{bmatrix}1\\0\\0\end{bmatrix},\begin{bmatrix}0\\1\\0\end{bmatrix}\right\}&amp;a=b=0,c\ne0\\\mathbb R^3&amp;a=b=c=0\end{cases}\)</span></p>
+<p>(8) <span class="arithmatex">\(\forall\mathbf x\in H,\exists c_1,c_2\in\mathbb R\)</span>，使得 <span class="arithmatex">\(\mathbf x=c_1\mathbf u+c_2\mathbf v\)</span></p>
+<p><span class="arithmatex">\(\mathbf y\cdot\mathbf x=\mathbf y\cdot(c_1\mathbf u+c_2\mathbf v)=\mathbf y\cdot(c_1\mathbf u)+\mathbf y\cdot(c_2\mathbf v)=c_1(\mathbf y\cdot\mathbf u)+c_2(\mathbf y\cdot\mathbf v)=0\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\mathbf y\)</span> 与 H 正交</p>
+<p>(9) 也就是 (8) 的推广，原理也是[内积公理]</p>
+<p>(10) </p>
+</blockquote>
 <h3 id="2">2. 正交集</h3>
 <div class="admonition note">
-<p class="admonition-title">正交集，线性无关集，正交基</p>
+<p class="admonition-title">正交集，正交集定理，正交基，正交基定理</p>
 </div>
 <blockquote>
 <p>正交集：<span class="arithmatex">\(\mathbb R^n\)</span> 中的向量集合 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 称为正交集，当且仅当集合中任意两个向量都正交（对于所有 <span class="arithmatex">\(i\ne j\)</span>，<span class="arithmatex">\(\mathbf u_i\cdot\mathbf u_j=0\)</span>）</p>
-<p>线性无关集：<span class="arithmatex">\(S=\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中非零向量构成的正交集，那么 S 是线性无关集（因此 S 是一组基）</p>
-<p>正交基：定义为 <span class="arithmatex">\(\mathbb R^n\)</span> 中的子空间 W 的一个正交集</p>
-<p>正交基的性质1：<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中子空间 W 的正交基；对于所有 <span class="arithmatex">\(\mathbf y\in W\)</span>，线性组合 <span class="arithmatex">\(\mathbf y=\sum\limits_{i=1}^pc_i\mathbf u_i\)</span> 中的权可以由 <span class="arithmatex">\(c_i=\frac{\mathbf y\cdot\mathbf u_i}{\mathbf u_i\cdot\mathbf u_i}\)</span> 计算</p>
-<p>正交基的性质2：<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中子空间 W 的正交基；对于所有 <span class="arithmatex">\(\mathbf y\in W\)</span>，<span class="arithmatex">\(\mathbf y=\sum\limits_{i=1}^p\text{Proj}_{L_i}\mathbf y\)</span>（其中 <span class="arithmatex">\(L_i=\text{Span}\{\mathbf u_i\}\)</span>；参见“正交投影”的概念）</p>
+<p>正交集定理：<span class="arithmatex">\(S=\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中<strong>非零向量</strong>构成的正交集，那么 S 是线性无关集（因此 S 是 <span class="arithmatex">\(\text{Span}(S)\)</span> 的一组基）</p>
+<p>正交基：定义为 <span class="arithmatex">\(\mathbb R^n\)</span> 中的子空间 W 的一个不含零向量的正交集</p>
+<p>正交基定理：<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中子空间 W 的正交基；对于所有 <span class="arithmatex">\(\mathbf y\in W\)</span>，线性组合 <span class="arithmatex">\(\mathbf y=\sum\limits_{i=1}^pc_i\mathbf u_i\)</span> 中的权可以由 <span class="arithmatex">\(c_i=\frac{\mathbf y\cdot\mathbf u_i}{\mathbf u_i\cdot\mathbf u_i}\)</span> 计算</p>
+<p>正交基定理(形式2)：<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中子空间 W 的正交基；对于所有 <span class="arithmatex">\(\mathbf y\in W\)</span>，<span class="arithmatex">\(\mathbf y=\sum\limits_{i=1}^p\text{proj}_{L_i}\mathbf y\)</span>（其中 <span class="arithmatex">\(L_i=\text{Span}\{\mathbf u_i\}\)</span>；参见“正交投影”的概念）</p>
 </blockquote>
-<p>考虑对 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 的一个分解 <span class="arithmatex">\(\mathbf y=\hat y+\mathscr z\alpha=\alpha\mathbf u+\mathscr z\)</span></p>
-<p>其中 <span class="arithmatex">\(\mathbf u\)</span> 与 <span class="arithmatex">\(\mathscr z\)</span> 正交，即 <span class="arithmatex">\(\mathbf u\cdot\mathscr z=0\)</span>，因而 <span class="arithmatex">\(\mathbf u\cdot(\mathbf y-\alpha\mathbf u)=0\)</span>，所以 <span class="arithmatex">\(\alpha=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\)</span></p>
+<p>(1) 证明：不含零向量的正交集 <span class="arithmatex">\(S=\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是线性无关的 [正交集定理]</p>
+<p>显然 <span class="arithmatex">\(\exists c_1,\cdots,c_p\in\mathbb R\)</span>，使得 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf u_i=\mathbf 0\)</span></p>
+<p>于是 <span class="arithmatex">\(\forall j=1..p\)</span>，有 <span class="arithmatex">\(\mathbf u_j\cdot\sum\limits_{i=1}^pc_i\mathbf u_i=\mathbf u_j\cdot\mathbf 0\)</span>，即 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i(\mathbf u_j\cdot\mathbf u_i)=0\)</span></p>
+<p>由于 S 是正交集（<span class="arithmatex">\(\forall i\ne j\in S,\mathbf u_i\cdot\mathbf u_j=0\)</span>），于是 <span class="arithmatex">\(c_j(\mathbf u_j\cdot\mathbf u_j)=0\)</span></p>
+<p>而 <span class="arithmatex">\(\mathbf u_j\ne0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf u_j\cdot\mathbf u_j&gt;0\)</span>，于是 <span class="arithmatex">\(c_j=0\)</span>（<span class="arithmatex">\(\forall j=1..p\)</span>），即 S 是线性无关的</p>
+<p>(2) 证明：[正交基定理]</p>
+<p>根据张成集的定义，<span class="arithmatex">\(\forall\mathbf x\in\text{Span}\{\mathbf u_1,\cdots,\mathbf u_p\},\exists c_1,\cdots,c_p\)</span> 使得 <span class="arithmatex">\(\mathbf x=\sum\limits_{j=1}^pc_j\mathbf u_j\)</span></p>
+<p><span class="arithmatex">\(\forall i=1..p\)</span>，对上式左乘上点积有 <span class="arithmatex">\(\mathbf u_i\cdot\mathbf x=\mathbf u_i\cdot\sum\limits_{j=1}^pc_j\mathbf u_j\)</span>，</p>
+<p>根据正交基的性质，于是 <span class="arithmatex">\(\mathbf u_i\cdot\mathbf x=c_i(\mathbf u_i\cdot\mathbf u_i)\)</span>，即 <span class="arithmatex">\(c_i=\frac{\mathbf u_i\cdot\mathbf x}{\mathbf u_i\cdot\mathbf u_i}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u_1=\begin{bmatrix}3\\1\\1\end{bmatrix},\mathbf u_2=\begin{bmatrix}-1\\2\\1\end{bmatrix},\mathbf u_3=\begin{bmatrix}-1/2\\-2\\7/2\end{bmatrix}\)</span>，可以验证 <span class="arithmatex">\(S=\{\mathbf u_1,\mathbf u_2,\mathbf u_3\}\)</span> 是 <span class="arithmatex">\(\text{Span}(\mathcal S)\)</span> 的一个正交基，<span class="arithmatex">\(\mathbf y=\begin{bmatrix}6\\1\\-8\end{bmatrix}\)</span> 的 <span class="arithmatex">\(\mathcal S-坐标\)</span> 为 <span class="arithmatex">\([\mathbf y]_{\cal S}=\begin{bmatrix}11/11\\-12/6\\-33/(33/2)\end{bmatrix}=\begin{bmatrix}1\\-2\\-2\end{bmatrix}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">正交投影</p>
 </div>
 <blockquote>
 <p>给定非零向量 <span class="arithmatex">\(\mathbf u\in\mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 可以分解为两正交向量之和：<span class="arithmatex">\(\mathbf y=\hat y+\mathscr z=\alpha\mathbf u+\mathscr z=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u+\mathscr z\)</span></p>
-<p>正交投影：<span class="arithmatex">\(\hat y=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u\)</span> 称为 <span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(\mathbf u\)</span> 上的正交投影，记为 <span class="arithmatex">\(\hat y=\text{Proj}_L\mathbf y=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u\)</span>（L 为 <span class="arithmatex">\(\mathbf u\)</span> 生成的子空间，即 <span class="arithmatex">\(L=\text{Span}\{\mathbf u\}\)</span>）</p>
+<p>正交投影：<span class="arithmatex">\(\hat y=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u\)</span> 称为 <span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(\mathbf u\)</span> 上的正交投影，记为 <span class="arithmatex">\(\hat y=\text{proj}_L\mathbf y=\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\mathbf u\)</span>（L 为 <span class="arithmatex">\(\mathbf u\)</span> 生成的子空间，即 <span class="arithmatex">\(L=\text{Span}\{\mathbf u\}\)</span>）</p>
 <p><span class="arithmatex">\(\mathbf y\)</span> 与 <span class="arithmatex">\(\mathbf u\)</span> 正交的分量：<span class="arithmatex">\(\mathscr z=\mathbf y-\hat y\)</span></p>
 <p>性质：<span class="arithmatex">\(\hat y\)</span> 与 <span class="arithmatex">\(\mathbf z\)</span> 构成正交集 <span class="arithmatex">\(\{\hat y,\mathbf y-\hat y\}\)</span></p>
 <p>注：对于 <span class="arithmatex">\(\mathbb R^2\)</span>，<span class="arithmatex">\(\hat y\)</span> 对应的点距离 <span class="arithmatex">\(\mathbf y\)</span> 对应的点最近，距离为 <span class="arithmatex">\(\|\mathscr z\|\)</span></p>
 </blockquote>
-<p>应用：一个力分解为力的分量</p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf y=\begin{bmatrix}7\\6\end{bmatrix}\)</span> 在 <span class="arithmatex">\(\mathbf u=\begin{bmatrix}4\\2\end{bmatrix}\)</span> 上的正交分解：设 <span class="arithmatex">\(\begin{bmatrix}7\\6\end{bmatrix}=\frac{\mathbf y\cdot\mathbf u}{\mathbf u\cdot\mathbf u}\mathbf u+\mathbf z\)</span>，解得 <span class="arithmatex">\(\frac{\mathbf y\cdot\mathbf u}{\mathbf u\cdot\mathbf u}=2,\mathbf z=\begin{bmatrix}-1\\2\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\mathbf y\)</span> 到 <span class="arithmatex">\(L=\text{Span}\{\mathbf u\}\)</span> 的距离为 <span class="arithmatex">\(\|\mathbf z\|=\|\mathbf y-\hat y\|=\|\mathbf y-\text{proj}_{L(\mathbf u)}\mathbf y\|=\|\mathbf y-(\frac{\mathbf y\cdot\mathbf u}{\mathbf u\cdot\mathbf u})\mathbf u\|\)</span>，而非 <span class="arithmatex">\(\|\mathbf y-\mathbf u\|\)</span></li>
+<li>二维或三维空间上的力可以分解为在某个感兴趣的正交基的各个元素上的投影之和 </li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">单位正交集(基)，正交矩阵</p>
 </div>
 <blockquote>
 <p>单位正交集：集合 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是单位正交集，当且仅当 它是有单位向量构成的正交集</p>
 <p>单位正交基：W 是一个由单位正交集合生成的子空间，那么 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 W 的单位正交基</p>
-<p>性质1：矩阵 <span class="arithmatex">\(U\in\mathbb R^{m\times n}\)</span> 具有单位正交列向量，当且仅当 <span class="arithmatex">\(U^TU=I\)</span>（<span class="arithmatex">\(\det U=\pm1\)</span>）</p>
-<p>性质2：矩阵 <span class="arithmatex">\(U\in\mathbb R^{m\times n}\)</span> 具有单位正交列向量，<span class="arithmatex">\(\mathbf x,\mathbf y\in\mathbb R^n\)</span>，那么：（证明详见习题 25）</p>
+<p>单位正交定理：矩阵 <span class="arithmatex">\(U\in\mathbb R^{m\times n}\)</span> 具有单位正交列向量，当且仅当 <span class="arithmatex">\(U^TU=I_n\)</span>（<span class="arithmatex">\(\det U=\pm1\)</span>）</p>
+<p>单位正交性质：矩阵 <span class="arithmatex">\(U\in\mathbb R^{m\times n}\)</span> 具有单位正交列向量，<span class="arithmatex">\(\mathbf x,\mathbf y\in\mathbb R^n\)</span>，那么：（证明详见习题 25）</p>
 <ol>
-<li><span class="arithmatex">\(\|U\mathbf x\|=\|\mathbf x\|\)</span></li>
 <li><span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=\mathbf x\cdot\mathbf y\)</span></li>
+<li><span class="arithmatex">\(\|U\mathbf x\|=\|\mathbf x\|\)</span></li>
 <li><span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf x\cdot\mathbf y=0\)</span></li>
 </ol>
 <p>正交矩阵：满足 <span class="arithmatex">\(U^{-1}=U^T\)</span> 的可逆方阵 <span class="arithmatex">\(U\in\mathbb R^{n\times n}\)</span>（具有单位正交列的方阵是正交矩阵，此类矩阵同样具有单位正交行）</p>
-<p>应用：对称方阵 A 进行对角化(“对角分解”) <span class="arithmatex">\(A=PDP^{-1}\)</span>，使得 P 为正交矩阵（即具有单位正交列；对称矩阵应用对角化定理得到的 P 的各列不旦线性无关，而且是正交的，详见 7.1），则 <span class="arithmatex">\(A=PDP^T\)</span>
-应用：若对称矩阵 <span class="arithmatex">\(A\in\mathbb R^n\)</span> 具有 n 个本质不同的特征值，那么对 A 的对角化(“对角分解”)使得 <span class="arithmatex">\(A=PDP^{-1}=PDP^T\)</span>（仅当 P 为单位矩阵）成立 （其中 P 的各列正交；详见 5.3 和 7.1）</p>
+<p>应用：若对称矩阵 <span class="arithmatex">\(A\in M_{n\times n}\)</span> 具有 n 个本质不同的特征值，那么对 A 的对角化(“对角分解”)使得 <span class="arithmatex">\(A=PDP^{-1}=PDP^T\)</span>（仅当 P 为单位矩阵）成立 （其中 P 的各列正交；详见 5.3 和 7.1）</p>
+</blockquote>
+<p>证明：[单位正交定理]</p>
+<p><span class="arithmatex">\(U^TU=\begin{bmatrix}\mathbf u_1^T\\\vdots\\\mathbf u_n^T\end{bmatrix}\begin{bmatrix}\mathbf u_1\cdots\mathbf u_n\end{bmatrix}=\begin{bmatrix}\mathbf u_1^T\mathbf u_1&amp;\cdots&amp;\mathbf u_1^T\mathbf u_n\\\vdots&amp;&amp;\vdots\\\mathbf u_n^T\mathbf u_1&amp;\cdots&amp;\mathbf u_n^T\mathbf u_n\end{bmatrix}=\begin{bmatrix}\mathbf u_1\cdot\mathbf u_1&amp;\cdots&amp;\mathbf u_1\cdot\mathbf u_n\\\vdots&amp;&amp;\vdots\\\mathbf u_n\cdot\mathbf u_1&amp;\cdots&amp;\mathbf u_n\cdot\mathbf u_n\end{bmatrix}\)</span></p>
+<p>(1) <span class="arithmatex">\(\forall i,j=1..n,i\ne j,\mathbf u_i\cdot\mathbf u_j=0\)</span>，当且仅当 <span class="arithmatex">\(U^TU\)</span> 是对角矩阵</p>
+<p>(2) <span class="arithmatex">\(\forall i=1..n,\mathbf u_i\cdot\mathbf u_i=1\)</span>，当且仅当 <span class="arithmatex">\(U^TU\)</span> 的对角线是单位的</p>
+<p>(1) 和 (2) 同时满足（即 U 的各列是单位正交的），等价于 <span class="arithmatex">\(U^TU\)</span> 是单位矩阵 <span class="arithmatex">\(I_n\)</span></p>
+<p>证明：[正交单位性质]</p>
+<p><span class="arithmatex">\(\forall\mathbf x,\mathbf y\in\mathbb R^m\)</span></p>
+<ol>
+<li><span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=(U\mathbf x)^T(U\mathbf y)=(\mathbf x^TU^T)(U\mathbf y)=\mathbf x^T((U^TU)\mathbf y)=\mathbf x^T(I_n\mathbf y)=\mathbf x^T\mathbf y=\mathbf x\cdot\mathbf y\)</span></li>
+<li>由 (1) 有 <span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf x)=\mathbf x\cdot\mathbf x\)</span>，蕴涵 <span class="arithmatex">\(\sqrt{(U\mathbf x)\cdot(U\mathbf x)}=\sqrt{\mathbf x\cdot\mathbf x}\)</span>，即 <span class="arithmatex">\(\|U\mathbf x\|=\|\mathbf x\|\)</span></li>
+<li>由 (1) 有 <span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=0\)</span> 等价于 <span class="arithmatex">\(\mathbf x\cdot\mathbf y=0\)</span></li>
+</ol>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>要检验 <span class="arithmatex">\(U^TU=I_n\)</span>，只需要检验 <span class="arithmatex">\(U^TU\)</span> 的主对角线以及上三角的区域即可（根据[点积的交换律]）</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>正交集，正交基：若 <span class="arithmatex">\(\mathbb R^n\)</span> 中的向量集 <span class="arithmatex">\(S=\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 中任意两个向量都正交，那么 S 称为<strong>正交集</strong>；若 S 不含零向量，那么 S 称为<strong>正交基</strong>（顾名思义，S 也是 <span class="arithmatex">\(\text{Span}(S)\)</span> 一组基）</li>
+<li>正交基定理：假设 <span class="arithmatex">\(\mathcal B=\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span> 是正交基，那么 <span class="arithmatex">\(\forall\mathbf x\in\text{Span}(\cal B)\)</span>，<span class="arithmatex">\(\mathbf x\)</span> 的坐标向量 <span class="arithmatex">\([\mathbf x]_{\cal B}\)</span> 的每个元素为 <span class="arithmatex">\(\forall i=1..p,c_i=\frac{\mathbf v_i\cdot\mathbf x}{\mathbf v_i\cdot\mathbf v_i}\)</span>（<span class="arithmatex">\(\mathbf x\)</span> 可以表示为 <span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf v_i=\sum\limits_{i=1}^p\text{proj}_{L(\mathbf v_i)}\mathbf x\)</span>）</li>
+<li>正交分解，正交投影，正交分量，投影距离：<span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf y\)</span> 可以表示为 <span class="arithmatex">\(\mathbf y=\hat y+\mathbf z\)</span>（其中 <span class="arithmatex">\(\hat y=c\mathbf u\)</span>，<span class="arithmatex">\(\mathbf u\cdot\mathbf z=0\)</span>）或 <span class="arithmatex">\(\mathbf y=(\frac{\mathbf y\cdot\mathbf u}{\mathbf u\cdot\mathbf u})\mathbf u+\mathbf z\)</span>，该式称为 <span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(\mathbf u\)</span> 上的<strong>正交分解</strong>；记 <span class="arithmatex">\(\text{proj}_{L(\mathbf u)}\mathbf y=\hat y\)</span> 为 <span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(\mathbf u\)</span> 上的<strong>正交投影</strong>，记 <span class="arithmatex">\(\mathbf z=\mathbf y-\hat y\)</span> 为 <strong><span class="arithmatex">\(\mathbf y\)</span> 与 <span class="arithmatex">\(\mathbf u\)</span> 正交的分量</strong>（正交投影与正交分量构成正交集：<span class="arithmatex">\(\{\hat y,\mathbf z\}\)</span>）；<span class="arithmatex">\(\mathbf y\)</span> 到 <span class="arithmatex">\(\mathbf u\)</span> 上的投影距离为 <span class="arithmatex">\(\|\mathbf z\|=\|\mathbf y-\hat y\|=\|\mathbf y-\text{proj}_{L(\mathbf u)}\mathbf y\|=\|\mathbf y-(\frac{\mathbf y\cdot\mathbf u}{\mathbf u\cdot\mathbf u})\mathbf u\|\)</span></li>
+<li>单位正交基（单位正交集）：有单位向量构成的正交集，称为<strong>单位正交集</strong>，同时也是<strong>单位正交基</strong></li>
+<li>单位正交定理：<span class="arithmatex">\(m\times n\)</span> 矩阵 A 的各列是单位正交的（即 A 的各列是 <span class="arithmatex">\(\text{Col}A\)</span> 的一组单位正交基），当且仅当 <span class="arithmatex">\(A^TA=I_n\)</span>（也可以对 A 的各行做类似定义）</li>
+<li>单位正交性质：若 <span class="arithmatex">\(m\times n\)</span> 矩阵 A 的各列是单位正交的，那么：（<span class="arithmatex">\(\forall\mathbf x,\mathbf y\in\mathbb R^n\)</span>）<ol>
+<li><span class="arithmatex">\((A\mathbf x)\cdot(A\mathbf y)=\mathbf x\cdot\mathbf y\)</span></li>
+<li><span class="arithmatex">\(\|A\mathbf x\|=\|\mathbf x\|\)</span>（线性映射 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 保持长度不变）</li>
+<li><span class="arithmatex">\((A\mathbf x)\cdot(A\mathbf y)=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf x\cdot\mathbf y=0\)</span></li>
+</ol>
+</li>
+<li>正交矩阵：若 <span class="arithmatex">\(n\times n\)</span> 矩阵 A 满足 <span class="arithmatex">\(A^{-1}=A^T\)</span>，那么 A 称为<strong>正交矩阵</strong></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>若方阵 A 具有单位正交列，那么 A 是正交矩阵</li>
+<li><span class="arithmatex">\(m\times n\)</span> 矩阵 A 的各列是正交的，当且仅当 <span class="arithmatex">\(A^TA=D\)</span>（D 是对角矩阵）</li>
+<li>A 是正交矩阵，当且仅当 A 的各列单位正交的</li>
+<li><span class="arithmatex">\(\forall\mathbf y,\mathbf u\in\mathbb R^n,c\ne0,\text{proj}_{L(c\mathbf u)}\mathbf y=\text{proj}_{L(\mathbf u)}\mathbf y\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>若对称矩阵 A 有 n 个相异的特征值，那么 A 可对角化为 <span class="arithmatex">\(A=PDP^{-1}=PDP^T\)</span>（其中 P 是正交矩阵）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：假设 <span class="arithmatex">\(\mathbf u_1=\begin{bmatrix}-1/\sqrt5\\2/\sqrt5\end{bmatrix},\mathbf u_2=\begin{bmatrix}2/\sqrt5\\1/\sqrt5\end{bmatrix}\)</span>，<span class="arithmatex">\(\{\mathbf u_1,\mathbf u_2\}\)</span> 是 <span class="arithmatex">\(\mathbb R^2\)</span> 的单位正交基</li>
+<li>假设 <span class="arithmatex">\(\mathbf y=\begin{bmatrix}7\\6\end{bmatrix},\mathbf u=\begin{bmatrix}2\\1\end{bmatrix}\)</span>，计算：<span class="arithmatex">\(\mathbf y\)</span> 在直线 <span class="arithmatex">\(L(\mathbf u)=\text{Span}\{\mathbf u\}\)</span> 上的正交投影</li>
+<li>假设 <span class="arithmatex">\(U=\begin{bmatrix}1/\sqrt2&amp;2/3\\1/\sqrt2&amp;-2/3\\0&amp;1/3\end{bmatrix},\mathbf x=\begin{bmatrix}\sqrt2\\3\end{bmatrix},\mathbf y=\begin{bmatrix}-3\sqrt2\\6\end{bmatrix}\)</span>，验证：<span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=\mathbf x\cdot\mathbf y\)</span></li>
+<li>证明：若 U 是具有单位正交列的矩阵，那么 <span class="arithmatex">\(\det U=\pm1\)</span></li>
+<li>判断题<ol>
+<li><span class="arithmatex">\(\mathbb R^n\)</span> 中的每个线性无关集并非都是正交集（Y）</li>
+<li>若 <span class="arithmatex">\(\mathbf y\)</span> 是正交集中非零向量的线性组合，那么线性组合的权可以不用矩阵的行变换求得（Y）</li>
+<li>如果非零向量构成的正交集中的向量被单位化，那么，其中一些新向量可能不正交（X）</li>
+<li>一个具有单位正交列的矩阵是正交矩阵（X）</li>
+<li>若 L 是通过原点的直线，并且 <span class="arithmatex">\(\hat y\)</span> 是 <span class="arithmatex">\(\mathbf y\)</span> 在 L 上的投影，那么 <span class="arithmatex">\(\|\hat y\|\)</span> 表示 <span class="arithmatex">\(\mathbf y\)</span> 到 L 的距离（x）</li>
+<li><span class="arithmatex">\(\mathbb R^n\)</span> 中的每个正交集并非都是线性无关的（Y）</li>
+<li>若 <span class="arithmatex">\(S=\{\mathbf u_1,\cdots,\mathbf u_p\}\)</span> 满足 <span class="arithmatex">\(\forall i\ne j,\mathbf u_i\cdot\mathbf u_j=0\)</span>，那么 S 是单位正交集（X）</li>
+<li>若矩阵 A 的列是单位正交的，那么线性映射 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 保持长度不变（Y）</li>
+<li>向量 <span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(\mathbf v\)</span> 上的正交投影和 <span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(c\mathbf v\)</span>（<span class="arithmatex">\(c\ne0\)</span>）上的正交投影一致（Y）</li>
+<li>正交矩阵可逆（Y）</li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(S=\{\begin{bmatrix}-1\\4\\-3\end{bmatrix},\begin{bmatrix}5\\2\\1\end{bmatrix},\begin{bmatrix}3\\-4\\-7\end{bmatrix}\}\)</span>，判断 S 是否是正交集</li>
+<li>假设 <span class="arithmatex">\(\mathbf{u}_1=\begin{bmatrix}1\\0\\1\end{bmatrix},\mathbf{u}_2=\begin{bmatrix}-1\\4\\1\end{bmatrix},\mathbf{u}_3=\begin{bmatrix}2\\1\\-2\end{bmatrix},\mathbf{x}=\begin{bmatrix}8\\-4\\-3\end{bmatrix}\)</span>，(1) 证明：<span class="arithmatex">\(\mathcal B=\{\mathbf u_1,\mathbf u_2,\mathbf u_3\}\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的正交基，(2) 计算 <span class="arithmatex">\([\mathbf y]_{\cal B}\)</span></li>
+<li>假设 <span class="arithmatex">\(\mathbf x=\begin{bmatrix}1\\7\end{bmatrix},\mathbf u=\begin{bmatrix}-4\\2\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(\bf x\)</span> 在直线 <span class="arithmatex">\(L(\bf u)\)</span> 上的正交投影</li>
+<li>假设 <span class="arithmatex">\(\mathbf x=\begin{bmatrix}2\\3\end{bmatrix},\mathbf u=\begin{bmatrix}4\\-7\end{bmatrix}\)</span>，计算：<span class="arithmatex">\(\bf x\)</span> 在 <span class="arithmatex">\(\bf u\)</span> 上的正交分解</li>
+<li>假设 <span class="arithmatex">\(\mathbf x=\begin{bmatrix}3\\1\end{bmatrix},\mathbf u=\begin{bmatrix}8\\6\end{bmatrix}\)</span>，计算：<span class="arithmatex">\(\bf x\)</span> 到直线 <span class="arithmatex">\(L(\bf u)\)</span> 直线之间的距离</li>
+<li>证明：A 是正交矩阵，当且仅当 A 的各列是单位正交的</li>
+<li>证明：若 <span class="arithmatex">\(U,V\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 正交矩阵，那么 <span class="arithmatex">\(UV\)</span> 也是正交矩阵</li>
+<li>说明正交矩阵交换一些列或行后仍是正交矩阵</li>
+<li>证明：<span class="arithmatex">\(\forall\mathbf y,\mathbf u\in\mathbb R^n,c\ne0,\text{proj}_{L(c\mathbf u)}\mathbf y=\text{proj}_{L(\mathbf u)}\mathbf y\)</span></li>
+<li>证明：<span class="arithmatex">\(\forall\mathbf u\ne\mathbf 0\)</span>，<span class="arithmatex">\(\mathbf x\mapsto\text{proj}_{L(\mathbf u)}\mathbf x\)</span> 是线性变换</li>
+<li>假设 <span class="arithmatex">\(\mathbf y\in\mathbb R^n,\mathbf u\ne\mathbf 0\)</span>，定义 <span class="arithmatex">\(\text{refl}_{L(\mathbf u)}\mathbf y=\mathbf y-2(\mathbf y-\text{proj}_{L(\mathbf u)}\mathbf x)=2\text{proj}_{L(\mathbf u)}\mathbf x-\mathbf y\)</span> 为 <strong><span class="arithmatex">\(\mathbf y\)</span> 在 <span class="arithmatex">\(\mathbf u\)</span> 上的反射</strong></li>
+<li>证明：<span class="arithmatex">\(\forall\mathbf u\ne\mathbf 0\)</span>，<span class="arithmatex">\(\mathbf x\mapsto\text{refl}_{L(\mathbf u)}\mathbf x\)</span> 是线性变换</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\mathbf u_1\cdot\mathbf u_1=1,\mathbf u_2\cdot\mathbf u_2=1,\mathbf u_1\cdot\mathbf u_2=0\)</span>，所以 <span class="arithmatex">\(\{\mathbf u_1,\mathbf u_2\}\)</span> 是 <span class="arithmatex">\(\mathbb R^2\)</span> 的单位正交基</p>
+<p>(2) <span class="arithmatex">\(\text{proj}_{L(\mathbf u)}\mathbf y=(\frac{\mathbf y\cdot\mathbf u}{\mathbf u\cdot\mathbf u})\mathbf u=\frac{20}5\mathbf u=\begin{bmatrix}8\\4\end{bmatrix}\)</span></p>
+<p>(3) <span class="arithmatex">\(U\mathbf x=\begin{bmatrix}3\\-1\\1\end{bmatrix},U\mathbf y=\begin{bmatrix}1\\-7\\2\end{bmatrix},(U\mathbf x)\cdot(U\mathbf y)=12\)</span>；而 <span class="arithmatex">\(\mathbf x\cdot\mathbf y=12\)</span>；于是 <span class="arithmatex">\((U\mathbf x)\cdot(U\mathbf y)=\mathbf x\cdot\mathbf y\)</span></p>
+<p>(4) 由于 <span class="arithmatex">\(U^TU=I_n\)</span> 有 <span class="arithmatex">\(\det(U^TU)=\det I_n\)</span>，即 <span class="arithmatex">\((\det U^T)(\det U)=1\)</span>，即 <span class="arithmatex">\((\det U)^2=1\)</span>，即 <span class="arithmatex">\(\det U=\pm1\)</span></p>
+<p>(6) <span class="arithmatex">\(\begin{bmatrix}-1\\4\\-3\end{bmatrix}\cdot\begin{bmatrix}3\\-4\\-7\end{bmatrix}=2\ne0\)</span>，于是 S 不是正交集</p>
+<p>(7)</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u_1\cdot\mathbf u_2=0,\mathbf u_2\cdot\mathbf u_3=0,\mathbf u_1\cdot\mathbf u_3=0\)</span>，并且 <span class="arithmatex">\(\forall i=1..3,\mathbf u_i\ne\mathbf 0\)</span>，于是 <span class="arithmatex">\(\cal B\)</span> 是正交基</li>
+<li>根据[正交基定理]<span class="arithmatex">\(，[\mathbf x]_{\cal B}=\begin{bmatrix}(\mathbf u_1\cdot\mathbf x)/(\mathbf u_1\cdot\mathbf u_1)\\(\mathbf u_2\cdot\mathbf x)/(\mathbf u_2\cdot\mathbf u_2)\\(\mathbf u_3\cdot\mathbf x)/(\mathbf u_3\cdot\mathbf u_3)\end{bmatrix}=\begin{bmatrix}5/2\\-27/18\\18/9\end{bmatrix}=\begin{bmatrix}5/2\\-3/2\\2\end{bmatrix}\)</span></li>
+</ol>
+<p>(8) <span class="arithmatex">\(\text{Porj}_{L(\bf u)}\mathbf x=(\frac{\bf u\cdot x}{\bf u\cdot u})\mathbf u=\frac{10}{20}\mathbf u=\begin{bmatrix}-2\\1\end{bmatrix}\)</span></p>
+<p>(9) 假设 <span class="arithmatex">\(\mathbf x=\text{Porj}_{L(\bf u)}\mathbf x+\mathbf z\)</span>（<span class="arithmatex">\((\text{Porj}_{L(\bf u)}\mathbf x)\cdot\mathbf z=0\)</span>），解得 <span class="arithmatex">\(\text{Porj}_{L(\bf u)}\mathbf x=\frac{-13}{65}\mathbf u=\begin{bmatrix}-4/5\\7/5\end{bmatrix},\mathbf z=\mathbf x-\text{Porj}_{L(\bf u)}\mathbf x=\begin{bmatrix}14/5\\8/5\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(\mathbf x=\begin{bmatrix}-4/5\\7/5\end{bmatrix}+\begin{bmatrix}14/5\\8/5\end{bmatrix}\)</span></p>
+<p>(10) <span class="arithmatex">\(\bf x\)</span> 在 <span class="arithmatex">\(\bf u\)</span> 上的正交分解为 <span class="arithmatex">\(\mathbf x=\text{Porj}_{L(\bf u)}\mathbf x+\mathbf z=\begin{bmatrix}12/5\\9/5\end{bmatrix}+\begin{bmatrix}3/5\\-4/5\end{bmatrix}\)</span></p>
+<p>于是 <span class="arithmatex">\(\bf x\)</span> 到 <span class="arithmatex">\(L(\bf u)\)</span> 的距离为 <span class="arithmatex">\(\|\mathbf z\|=1\)</span></p>
+<p>(11)</p>
+<p>U 的各列是单位正交的，等价于 <span class="arithmatex">\(U^TU=I_n\)</span>，根据[可逆矩阵定理]，U 可逆，并且 <span class="arithmatex">\(U^{-1}=U^T\)</span>，即 U 是正交矩阵</p>
+<p>(12)</p>
+<p><span class="arithmatex">\(U,V\)</span> 是正交矩阵，蕴涵 <span class="arithmatex">\(U^{-1}=U^T,V^{-1}=V^T\)</span>，蕴涵 <span class="arithmatex">\(UV\)</span> 可逆</p>
+<p>于是 <span class="arithmatex">\((UV)^{-1}=V^{-1}U^{-1}=V^TU^T=(UV)^T\)</span></p>
+<p>(13) 交换正交矩阵的列或行不会改变各列之间的正交关系</p>
+<p>(14) <span class="arithmatex">\(\text{proj}_{L(c\mathbf u)}\mathbf y=\left[\frac{(c\mathbf u)\cdot\mathbf y}{(c\mathbf u)\cdot(c\mathbf u)}\right]c\mathbf u=\frac1c\left[\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\right]c\mathbf u=\left[\frac{\mathbf u\cdot\mathbf y}{\mathbf u\cdot\mathbf u}\right]\mathbf u=\text{proj}_{L(\mathbf u)}\mathbf y\)</span></p>
 </blockquote>
 <h3 id="3">3. 正交投影</h3>
 <p>对给定向量 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 和 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W，存在 <span class="arithmatex">\(\hat y\in W\)</span>，满足：</p>
@@ -1196,7 +1457,7 @@
 </div>
 <blockquote>
 <p>若 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，那么对于所有 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span>  都可以唯一表示为 <span class="arithmatex">\(\mathbf y=\hat y+\mathscr z\)</span>（其中 <span class="arithmatex">\(\hat y\in W,\mathscr z\in W^\bot\)</span>）</p>
-<p>若 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 W 的任意正交基，那么 <span class="arithmatex">\(\mathbf y=\hat y+\mathscr z=\sum\limits_{i=1}^p\text{Proj}_{L_i}\mathbf y+\sum\limits_{i=p+1}^n\text{Proj}_{L_i}\mathbf y\)</span></p>
+<p>若 <span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 W 的任意正交基，那么 <span class="arithmatex">\(\hat y=\sum\limits_{i=1}^p\text{proj}_{L_i}\mathbf y,\mathscr z=\mathbf y-\hat y\)</span></p>
 <p>（其中 <span class="arithmatex">\(\hat y\)</span> 称为 <span class="arithmatex">\(\mathbf y\)</span> <strong>在 W 上的正交投影</strong>，记作 <span class="arithmatex">\(\text{proj}_W\mathbf y\)</span>）</p>
 <p>证明详见 p361</p>
 <p>补充：<span class="arithmatex">\(\mathbf z=\mathbf y-\text{proj}_W\mathbf y\)</span>，那么 <span class="arithmatex">\(\mathbf z\)</span> 与 W 正交</p>
@@ -1209,6 +1470,18 @@
 <p><span class="arithmatex">\(\mathbf x\)</span> 在 W 上的正交投影：记为 <span class="arithmatex">\(\text{proj}_W\mathbf x=\sum\limits_{i=1}^p\text{Proj}_{L_i}\mathbf x\)</span>（<span class="arithmatex">\(\{\mathbf u_1,\dots,\mathbf u_p\}\)</span> 是 W 的一组正交基，<span class="arithmatex">\(L_i=\text{span}\{\mathbf u_i\}\)</span>）</p>
 <p>性质：<span class="arithmatex">\(\text{proj}_W(\mathbf x+\mathbf y)=\text{proj}_W\mathbf x+\text{proj}_W\mathbf y\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(\mathbf y=\begin{bmatrix}1\\2\\3\end{bmatrix},\mathbf u_1=\begin{bmatrix}2\\5\\-1\end{bmatrix},\mathbf u_2=\begin{bmatrix}-2\\1\\1\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(\bf y\)</span> 在 <span class="arithmatex">\(W=\text{Span}\{\mathbf u_1,\mathbf u_2\}\)</span> 上的正交分解：<ol>
+<li>设 <span class="arithmatex">\(\mathbf y=\text{proj}_W\mathbf y+\mathbf z\)</span></li>
+<li><span class="arithmatex">\(\text{proj}_W\mathbf y=(\frac{\mathbf y\cdot\mathbf u_1}{\mathbf u_1\cdot\mathbf u_1})\mathbf u_1+(\frac{\mathbf y\cdot\mathbf u_2}{\mathbf u_2\cdot\mathbf u_2})\mathbf u_2=(9/30)\begin{bmatrix}2\\5\\-1\end{bmatrix}+(3/6)\begin{bmatrix}-2\\1\\1\end{bmatrix}=\begin{bmatrix}-2/5\\2\\1/5\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\mathbf z=\mathbf y-\text{proj}_W\mathbf y=\begin{bmatrix}7/5\\0\\14/5\end{bmatrix}\)</span></li>
+<li>（可以验证 <span class="arithmatex">\(\mathbf z\cdot\mathbf u_1=0,\mathbf z\cdot\mathbf u_2=0\)</span> 是否成立）</li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">正交投影的几何解释</p>
 </div>
@@ -1220,6 +1493,16 @@
 <p>也就是说，对于所有 <span class="arithmatex">\(\mathbf v\in W,\mathbf v\ne\hat y\)</span> 都有 <span class="arithmatex">\(\|\mathbf y-\hat y\|&lt;\|\mathbf y-\mathbf v\|\)</span></p>
 <p>其中 <span class="arithmatex">\(\hat y\)</span> 称为 W 中元素对 <span class="arithmatex">\(\mathbf y\)</span> 的最佳逼近</p>
 </blockquote>
+<p>利用几何画图可证 <span class="arithmatex">\((\mathbf y-\hat y)\cdot(\hat y-\mathbf v)=0\)</span>，</p>
+<p>根据[勾股定理]有 <span class="arithmatex">\(\|\mathbf y-\hat y\|^2+\|\hat y-\mathbf v\|^2=\|(\mathbf y-\hat y)+(\hat y-\mathbf v)\|^2=\|\mathbf y-\mathbf v\|^2\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\|\mathbf y-\mathbf v\|\ge\|\mathbf y-\hat y\|\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(\mathbf u_1=\begin{bmatrix}2\\5\\-1\end{bmatrix},\mathbf u_2=\begin{bmatrix}-2\\1\\1\end{bmatrix},\mathbf y=\begin{bmatrix}1\\2\\3\end{bmatrix},W=\text{Span}\{\mathbf u_1,\mathbf u_2\}\)</span>，则 W 中离 <span class="arithmatex">\(\bf y\)</span> 最近的点是 <span class="arithmatex">\(\hat y=(\frac{\mathbf y\cdot\mathbf u_1}{\mathbf u_1\cdot\mathbf u_1})\mathbf u_1+(\frac{\mathbf y\cdot\mathbf u_2}{\mathbf u_2\cdot\mathbf u_2})\mathbf u_2=\begin{bmatrix}-2/5\\2\\1/5\end{bmatrix}\)</span>；<span class="arithmatex">\(\bf y\)</span> 到 W 中的最近点的距离为 <span class="arithmatex">\(\|\mathbf y-\hat y\|=7\sqrt5/5\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">定理</p>
 </div>
@@ -1228,6 +1511,95 @@
 <p>若 <span class="arithmatex">\(U=[\mathbf u_1~~\dots~~\mathbf u_p]\)</span>（<span class="arithmatex">\(U\in\mathbb R^{n\times p}\)</span>），则对于所有 <span class="arithmatex">\(\mathbf y\in\mathbb R^n\)</span> 都有 <span class="arithmatex">\(\text{proj}_W\mathbf y = UU^T\mathbf y\)</span></p>
 <p>（注意：<span class="arithmatex">\(U^TU\mathbf x=I_p\mathbf x=\mathbf x\)</span>，<span class="arithmatex">\(UU^T\mathbf y=\text{proj}_W\mathbf y\)</span>）</p>
 <p>另外，当 <span class="arithmatex">\(U\in\mathbb R^{n\times n}\)</span> 时，<span class="arithmatex">\(\mathbf y=UU^T\mathbf y=\text{proj}_W\mathbf y\)</span></p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>正交分解定理：若 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个子空间，那么 <span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n,\mathbf y=\hat y+\mathbf z\)</span>（其中 <span class="arithmatex">\(\hat y\in\ W,\mathbf z\in W^\bot\)</span> 并且唯一）；式中 <span class="arithmatex">\(\hat y\)</span> 称为 <strong><span class="arithmatex">\(\mathbf y\)</span> 在 W 上的正交投影</strong>，记为 <span class="arithmatex">\(\text{proj}_W\mathbf y\)</span>；若 <span class="arithmatex">\(\{\mathbf u_1,\cdots,\mathbf u_p\}\)</span> 是 W 的一个正交基，那么 <span class="arithmatex">\(\hat y=\sum\limits_{i=1}^p(\frac{\mathbf y\cdot\mathbf u_i}{\mathbf u_i\cdot\mathbf u_i})\mathbf u_i,\mathbf z=\mathbf y-\hat y\)</span></li>
+<li>最佳逼近定理：若 <span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n\)</span> 在 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W 上的正交分解为 <span class="arithmatex">\(\mathbf y=\hat y+\mathbf z\)</span>（<span class="arithmatex">\(\hat y\in\ W,\mathbf z\in W^\bot\)</span>），那么 <span class="arithmatex">\(\forall\mathbf v\in W,\|\mathbf z\|=\|\mathbf y-\hat y\|\le\|\mathbf y-\mathbf v\|\)</span>；其中 <span class="arithmatex">\(\hat y\)</span> 称为 <strong>W 中元素对 <span class="arithmatex">\(\mathbf y\)</span> 的最佳逼近</strong></li>
+<li>定理：若 <span class="arithmatex">\(\{\mathbf u_1,\cdots,\mathbf u_p\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W 的单位正交基，那么 <span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n,\hat y=\text{proj}_W\mathbf y=\sum\limits_{i=1}^p(\mathbf y\cdot\mathbf u_i)\mathbf u_i\)</span>；若 <span class="arithmatex">\(U=[\mathbf u_1\cdots\mathbf u_p]\)</span>，则 <span class="arithmatex">\(\hat y=\text{proj}_W\mathbf y=UU^T\mathbf y\)</span>（注：该定理并没有比[正交分解定理]的计算更优）</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，若 <span class="arithmatex">\(\mathbf y\in W\)</span>，那么 <span class="arithmatex">\(\text{proj}_W\mathbf y=\mathbf y\)</span></li>
+<li>假设 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，<span class="arithmatex">\(\forall\mathbf y\notin W\)</span>，根据[正交分解定理]可以构造出非零向量 <span class="arithmatex">\(\mathbf y-\hat y\in W^\bot\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>若 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，那么 <span class="arithmatex">\(\forall\bf y\in\mathbb R^n\)</span> 可以正交分解为 <span class="arithmatex">\(\bf y=u+v\)</span>（<span class="arithmatex">\(\mathbf u\in\text{Row}A,\mathbf v\in\text{Nul}A\)</span>）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>假设 <span class="arithmatex">\(\mathbf{u}_{1}=\begin{bmatrix}&amp;-7\\&amp;1\\&amp;4\end{bmatrix},\mathbf{u}_{2}=\begin{bmatrix}&amp;-1\\&amp;1\\&amp;-2\end{bmatrix},\mathbf{y}=\begin{bmatrix}&amp;-9\\&amp;1\\&amp;6\end{bmatrix},W=\text{Span}\{\mathbf u_1,\mathbf u_2\}\)</span>，计算 <span class="arithmatex">\(\text{proj}_W\mathbf y\)</span></li>
+<li><span class="arithmatex">\(\bf u,v\in\mathbb R^n,c\in\mathbb R\)</span>，W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，证明 <span class="arithmatex">\(\mathbf x\mapsto\text{proj}_W\mathbf x\)</span> 是线性变换：<span class="arithmatex">\(\text{proj}_W({\bf u+v})=\text{proj}_W\mathbf u+\text{proj}_W\mathbf v\)</span>，(2) <span class="arithmatex">\(\text{proj}_W({c\bf u})=c\cdot\text{proj}_W\bf u\)</span></li>
+<li>判断题<ol>
+<li>若 <span class="arithmatex">\(\bf z\)</span> 与 <span class="arithmatex">\(\bf u_1,u_2\)</span> 都正交，<span class="arithmatex">\(W=\text{Span}\{\bf u_1,u_2\}\)</span>，那么 <span class="arithmatex">\(\mathbf z\in W^\bot\)</span>（Y）</li>
+<li>W 是任一子空间，<span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n\)</span> 有 <span class="arithmatex">\(\mathbf y-\text{proj}_W\mathbf y\)</span> 与 W 正交（Y）</li>
+<li><span class="arithmatex">\(\mathbf y\)</span> 在子空间 W 上的正交投影 <span class="arithmatex">\(\hat y\)</span> 的计算有时会依赖于 W 正交基的选取（<strong>X</strong>）</li>
+<li>如果 <span class="arithmatex">\(\bf y\)</span> 属于子空间 W，那么 <span class="arithmatex">\(\text{proj}_W\mathbf y=\mathbf y\)</span>（Y）</li>
+<li>若 <span class="arithmatex">\(n\times p\)</span> 矩阵 U 的列是单位正交的，那么 <span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n,\text{proj}_{\text{Col}U}\mathbf y=UU^T\mathbf y\)</span>（Y）</li>
+<li>若 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，且 <span class="arithmatex">\(\mathbf v\in W,\mathbf v\in W^\bot\)</span>，那么 <span class="arithmatex">\(\mathbf v=\mathbf 0\)</span>（Y）</li>
+<li>[正交分解定理]中，<span class="arithmatex">\(\hat y\)</span> 的每一项在 W 上的正交投影是它本身（<strong>Y</strong>？）</li>
+<li>若 <span class="arithmatex">\(\mathbf y=\mathbf z_1+\mathbf z_2\)</span>，<span class="arithmatex">\(\mathbf z_1\in W,\mathbf z_2\in W^\bot\)</span>，那么 <span class="arithmatex">\(\mathbf z_1=\text{proj}_W\mathbf y\)</span>（Y）</li>
+<li>子空间 W 中的元素对向量 <span class="arithmatex">\(\mathbf y\)</span> 的最佳逼近是 <span class="arithmatex">\(\mathbf y-\text{proj}_W\mathbf y\)</span>（<strong>X</strong>）</li>
+<li><span class="arithmatex">\(n\times p\)</span> 矩阵 U 有单位正交列，那么 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,UU^T\mathbf x=\mathbf x\)</span>（<strong>X</strong>）</li>
+</ol>
+</li>
+<li>给定 <span class="arithmatex">\(\mathbb R^n\)</span> 上的子空间 W 及其<strong>正交基</strong> <span class="arithmatex">\(\{\mathbf u_1,\cdots,\mathbf u_p\}\)</span>，<span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n\)</span><ol>
+<li>如何计算 <span class="arithmatex">\(\bf y\)</span> 的正交分解？</li>
+<li>如何计算 W 中元素对 <span class="arithmatex">\(\bf y\)</span> 的最佳逼近？W 中元素到 <span class="arithmatex">\(\bf y\)</span> 的最短距离是？</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\mathbf y=\begin{bmatrix}4\\8\\1\end{bmatrix},\mathbf u_1=\begin{bmatrix}2/3\\1/3\\2/3\end{bmatrix},\mathbf u_2=\begin{bmatrix}-2/3\\2/3\\1/3\end{bmatrix},U=[\mathbf u_1~~\mathbf u_2]\)</span><ol>
+<li>计算 <span class="arithmatex">\(U^TU\)</span>，<span class="arithmatex">\(UU^T\)</span></li>
+<li>计算 <span class="arithmatex">\(\text{proj}_W\bf y\)</span>，<span class="arithmatex">\((UU^T)\bf y\)</span></li>
+</ol>
+</li>
+<li>W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，<span class="arithmatex">\(\cal B\)</span> 是 W 的一个正交基，<span class="arithmatex">\(\cal C\)</span> 是 <span class="arithmatex">\(W^\bot\)</span> 的正交基<ol>
+<li>证明：<span class="arithmatex">\(\cal B\cup C\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的正交集</li>
+<li>证明：<span class="arithmatex">\(\cal B\cup C\)</span> 可以张成 <span class="arithmatex">\(\mathbb R^n\)</span></li>
+<li>证明：<span class="arithmatex">\(\dim W+\dim W^\bot=n\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\text{proj}_W\mathbf y=(\frac{\mathbf u_1\cdot\mathbf y}{\mathbf u_1\cdot\mathbf u_1})\mathbf u_1+(\frac{\mathbf u_2\cdot\mathbf y}{\mathbf u_2\cdot\mathbf u_2})\mathbf u_2=(88/66)\mathbf u_1+(-2/6)\mathbf u_2=\begin{bmatrix}-9\\1\\6\end{bmatrix}\)</span></p>
+<p>(2) 假设 <span class="arithmatex">\(\{\mathbf b_1,\cdots,\mathbf b_p\}\)</span> 是 W 的一组基</p>
+<ol>
+<li><span class="arithmatex">\(\text{proj}_W({\bf u+v})=\sum\limits_{i=1}^p\left(\frac{\mathbf b_i\cdot(\bf u+v)}{\mathbf b_i\cdot\mathbf b_i}\right)\mathbf b_i=\sum\limits_{i=1}^p\left(\frac{\mathbf b_i\cdot\mathbf u}{\mathbf b_i\cdot\mathbf b_i}+\frac{\mathbf b_i\cdot\mathbf v}{\mathbf b_i\cdot\mathbf b_i}\right)\mathbf b_i\)</span> <span class="arithmatex">\(=\sum\limits_{i=1}^p\left(\frac{\mathbf b_i\cdot\mathbf u}{\mathbf b_i\cdot\mathbf b_i}\right)\mathbf b_i+\sum\limits_{i=1}^p\left(\frac{\mathbf b_i\cdot\mathbf v}{\mathbf b_i\cdot\mathbf b_i}\right)\mathbf b_i=\text{proj}_W\mathbf u+\text{proj}_W\mathbf v\)</span></li>
+<li><span class="arithmatex">\(\text{proj}_W({c\bf u})=\sum\limits_{i=1}^p\left(\frac{\mathbf b_i\cdot(c\bf u)}{\mathbf b_i\cdot\mathbf b_i}\right)\mathbf b_i=\sum\limits_{i=1}^pc\left(\frac{\mathbf b_i\cdot\bf u}{\mathbf b_i\cdot\mathbf b_i}\right)\mathbf b_i=c\cdot\text{proj}_W\bf u\)</span></li>
+</ol>
+<p>(3.8) [正交分解定理]具有唯一性，(3.9) 最佳逼近指的是 <span class="arithmatex">\(\text{proj}_W\mathbf y\)</span>，(3.10) 根据假设有 <span class="arithmatex">\(\text{proj}_{\text{Col}U}\mathbf x=UU^T\mathbf x\)</span>，仅当 <span class="arithmatex">\(\text{proj}_{\text{Col}U}\mathbf x=\mathbf x\)</span>（即 <span class="arithmatex">\(\mathbf x\in\text{Col}U\)</span>），才有 <span class="arithmatex">\(UU^T\mathbf x=\mathbf x\)</span></p>
+<p>(4)</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf y=\hat y+\mathbf z\)</span>（其中 <span class="arithmatex">\(\hat y=\sum\limits_{i=1}^p(\frac{\mathbf y\cdot\mathbf u_i}{\mathbf u_i\cdot\mathbf u_i})\mathbf u_i,\mathbf z=\mathbf y-\hat y\)</span>）</li>
+<li>W 中元素对 <span class="arithmatex">\(\bf y\)</span> 的最佳逼近是 <span class="arithmatex">\(\hat y=\text{proj}_W\bf y\)</span>；W 中元素到 <span class="arithmatex">\(\bf y\)</span> 的最短距离是 <span class="arithmatex">\(\|\mathbf y-\hat y\|\)</span></li>
+</ol>
+<p>(5) </p>
+<ol>
+<li><span class="arithmatex">\(U^TU=I_2,UU^T=\begin{bmatrix}8/9&amp;-2/9&amp;2/9\\-2/9&amp;5/9&amp;4/9\\2/9&amp;4/9&amp;5/9\end{bmatrix}\)</span></li>
+<li>由 U 的各列单位正交，有 <span class="arithmatex">\(\text{proj}_W\mathbf y=UU^T\mathbf y=\begin{bmatrix}8/9&amp;-2/9&amp;2/9\\-2/9&amp;5/9&amp;4/9\\2/9&amp;4/9&amp;5/9\end{bmatrix}\begin{bmatrix}4\\8\\1\end{bmatrix}=\begin{bmatrix}2\\4\\5\end{bmatrix}\)</span></li>
+</ol>
+<p>(6)</p>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf x\in\mathcal B,\mathbf y\in\mathcal C,\mathbf x\cdot\mathbf y=0\)</span> 和 <span class="arithmatex">\(\forall\mathbf x\ne\mathbf y\in\mathcal B,\mathbf x\cdot\mathbf y=0\)</span> 以及 <span class="arithmatex">\(\forall\mathbf x\ne\mathbf y\in\mathcal C,\mathbf x\cdot\mathbf y=0\)</span>，即 <span class="arithmatex">\(\forall\mathbf x\ne\mathbf y\in\mathcal B\cup\mathcal C,\mathbf x\cdot\mathbf y=0\)</span>，即 <span class="arithmatex">\(\cal B\cup C\)</span> 是正交集</li>
+</ol>
 </blockquote>
 <h3 id="4-">4. 格拉姆-施密特方法</h3>
 <p>格拉姆-施密特方法是对 <span class="arithmatex">\(\mathbb R^n\)</span> 中任意非零子空间构造 正交基 或 标准正交基 的简单算法（换句话说，就是从基 <span class="arithmatex">\(\{\mathbf x_1,\dots,\mathbf x_p\}\)</span> 中构造出正交基 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span>）</p>
@@ -1243,6 +1615,8 @@
 <p>并且对于所有 <span class="arithmatex">\(i\le p\)</span>，有 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_i\}=\text{Span}\{\mathbf x_1,\dots,\mathbf x_i\}\)</span></p>
 <p>注：计算所得的 <span class="arithmatex">\(\mathbf v_i\)</span> 可能有分母，手算时允许进行倍乘消去分母</p>
 </blockquote>
+<p>由于 <span class="arithmatex">\(\forall i=1..p\mathbf v_i\)</span> 是 <span class="arithmatex">\(\mathbf x_i\)</span> 在子空间 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\cdots,\mathbf v_{i-1}\}\)</span> 上的正交分量，所以 <span class="arithmatex">\(\mathbf v_i\)</span> 正交于 <span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_{i-1}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">标准正交基</p>
 </div>
@@ -1258,6 +1632,19 @@
 <p>其中 <span class="arithmatex">\(Q\in\mathbb R^{m\times n}\)</span>，其列形成 <span class="arithmatex">\(\text{Col}A\)</span> 的一个标准正交基；<span class="arithmatex">\(R\in\mathbb R^{n\times n}\)</span> 为上三角可逆矩阵并且对角线上的元素为正数</p>
 <p>应用：<span class="arithmatex">\(A^TA=(QR)^T(QR)=R^TQ^TQR=R^TR\)</span></p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<ol>
+<li>格拉姆-施密特方法：假设 <span class="arithmatex">\(\cal B\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W 的一个基，<strong>格拉姆-施密特方法</strong>是一种变换 <span class="arithmatex">\(\mathcal B\mapsto\mathcal C\)</span>，使得 <span class="arithmatex">\(\cal C\)</span> 是 W 的正交基；具体而言，<span class="arithmatex">\(\forall i=1..n\)</span>，有 <span class="arithmatex">\(\mathbf c_i=\mathbf b_i-\text{proj}_{\text{Span}\{\mathbf c_1,\cdots,\mathbf c_{i-1}\}}\mathbf b_i=\mathbf b_i-\sum\limits_{j=1}^{i-1}(\frac{\mathbf b_i\cdot\mathbf c_j}{\mathbf c_j\cdot\mathbf c_j})\mathbf c_j\)</span></li>
+<li>QR 分解：若 <span class="arithmatex">\(A\in M_{m\times n}\)</span> 的各列线性无关，那么 A 可以分解为 <span class="arithmatex">\(A=QR\)</span>（<span class="arithmatex">\(Q\in M_{m\times n}\)</span> 为 <span class="arithmatex">\(\text{Col}A\)</span> 的一个<strong>单位正交基</strong>，<span class="arithmatex">\(R=Q^TA\)</span>）</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<ol>
+<li>[格拉姆-施密特方法]的计算过程中或计算过后将 <span class="arithmatex">\(\forall i=1..n,\mathbf c_i\)</span> 单位化，可以得到单位正交基或标准正交基 <span class="arithmatex">\(\cal C'\)</span>；另外，在计算过程中将 <span class="arithmatex">\(\mathbf c_i\)</span> 去分母总是可以优化计算</li>
+</ol>
 <h3 id="5">5. 最小二乘问题</h3>
 <p>解一个矩形方程组 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，方程组无解时，最好的方法是寻找 <span class="arithmatex">\(\mathbf x\)</span> 使得 <span class="arithmatex">\(A\mathbf x\)</span> 尽可能接近 <span class="arithmatex">\(\mathbf b\)</span></p>
 <p>考虑 <span class="arithmatex">\(A\mathbf x\)</span> 为 <span class="arithmatex">\(\mathbf b\)</span> 的一个近似，而<strong>一般的最小二乘问题</strong>就是找出使 <span class="arithmatex">\(\|\mathbf b-A\mathbf x\|\)</span> 尽可能小的 <span class="arithmatex">\(\mathbf x\)</span></p>

@@ -521,6 +521,16 @@
     8. 差分方程中的应用
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9. 马尔可夫链中的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    补充练习
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1063,6 +1073,16 @@
     8. 差分方程中的应用
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9. 马尔可夫链中的应用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    补充练习
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1198,8 +1218,8 @@
 </div>
 <blockquote>
 <ol>
-<li>向量空间公理：若 <span class="arithmatex">\(\mathbf u,\mathbf v,\mathbf w\in V\)</span>，<span class="arithmatex">\(c,d\in\mathbb R\)</span>，那么<ol>
-<li><span class="arithmatex">\(\mathbf u+\mathbf v\)</span>，<span class="arithmatex">\(c\mathbf u\)</span>，<span class="arithmatex">\(\mathbf 0\)</span>，<span class="arithmatex">\(-\mathbf u\in V\)</span></li>
+<li>向量空间公理：若 <span class="arithmatex">\(\forall\mathbf u,\mathbf v,\mathbf w\in V\)</span>，<span class="arithmatex">\(c,d\in\mathbb R\)</span>，那么<ol>
+<li><span class="arithmatex">\(\exists\mathbf u+\mathbf v\)</span>，<span class="arithmatex">\(c\mathbf u\)</span>，<span class="arithmatex">\(\mathbf 0\)</span>，<span class="arithmatex">\(-\mathbf u\in V\)</span></li>
 <li><span class="arithmatex">\(\mathbf u+\mathbf v=\mathbf v+\mathbf u\)</span>，<span class="arithmatex">\((\mathbf u+\mathbf v)+\mathbf w=\mathbf u+(\mathbf v+\mathbf w)\)</span></li>
 <li><span class="arithmatex">\(c(\mathbf u+\mathbf v)=c\mathbf u+c\mathbf v\)</span>，<span class="arithmatex">\((c+d)\mathbf u=c\mathbf u+d\mathbf u\)</span></li>
 <li><span class="arithmatex">\(c(d\mathbf u)=(cd)\mathbf u\)</span>，<span class="arithmatex">\(1\mathbf u=\mathbf u\)</span></li>
@@ -1212,6 +1232,14 @@
 </li>
 <li>子空间：若 <span class="arithmatex">\(\mathbf u,\mathbf v\in H,c\in\mathbb R\)</span> 并且 <span class="arithmatex">\(H\subset V\)</span>（V 是向量空间），那么 <span class="arithmatex">\(\mathbf 0,\mathbf u+\mathbf v,c\mathbf u\in H\)</span>，则 H 是向量空间 V 的子空间</li>
 <li>张成子空间，张成集：<span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}=\left\{\sum\limits_{i=1}^pc_i\mathbf v_i~:~\forall i=1..p,c_i\in\mathbb R\right\}\)</span> 称为由 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 生成的子空间；若子空间 H 的子集 <span class="arithmatex">\(S=\{\mathbf v_1,\dots,\mathbf v_p\}\subset H\)</span> 张成的子空间为 H 本身（即 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}=H\)</span>），那么 S 称为 H 的张成集</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf x\in\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>，<span class="arithmatex">\(\exists c_1,\cdots,c_p\)</span> 使得 <span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf v_i\)</span></li>
 </ol>
 </blockquote>
 <div class="admonition tip">
@@ -1658,7 +1686,7 @@
 <ol>
 <li>线性无关：向量空间 V 中的指标集 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性无关，若向量方程 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf v_i=\mathbf 0\)</span> <strong>只有平凡解</strong>（<strong>零解</strong>，<span class="arithmatex">\(\forall c_i=0\)</span>）</li>
 <li>线性相关：向量空间 V 中的指标集 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性相关，若向量方程 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf v_i=\mathbf 0\)</span> <strong>存在一个非平凡解</strong>（<strong>非零解</strong>，<span class="arithmatex">\(\exists c_i\ne0\)</span>）；那么上式称为<strong>线性相关关系</strong></li>
-<li>线性相关判定定理：向量集合 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性相关，当且仅当 <span class="arithmatex">\(\mathbf v_1=\mathbf 0\)</span> 或<span class="arithmatex">\(\exists i\ge2\)</span> <span class="arithmatex">\(\mathbf v_i\)</span> 是前 <span class="arithmatex">\(i-1\)</span> 个向量的线性组合（即 <span class="arithmatex">\(\exists i\ge2\)</span>，使得 <span class="arithmatex">\(\mathbf v_i\in\text{Span}\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span>，也即 <span class="arithmatex">\(\exists i\ge2\)</span> 使得 <span class="arithmatex">\(\mathbf v_i=\sum\limits_{j=1}^{i-1}c_i\mathbf v_j\)</span> 相容）</li>
+<li>线性相关判定定理：向量集合 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_p\}\)</span> 线性相关，当且仅当 <span class="arithmatex">\(\mathbf v_1=\mathbf 0\)</span> 或<span class="arithmatex">\(\exists i\ge2\)</span>， <span class="arithmatex">\(\mathbf v_i\)</span> 是前 <span class="arithmatex">\(i-1\)</span> 个向量的线性组合（即 <span class="arithmatex">\(\exists i\ge2\)</span>，使得 <span class="arithmatex">\(\mathbf v_i\in\text{Span}\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span>，也即 <span class="arithmatex">\(\exists i\ge2\)</span> 使得 <span class="arithmatex">\(\mathbf v_i=\sum\limits_{j=1}^{i-1}c_i\mathbf v_j\)</span> 相容）</li>
 <li>基：<span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_p\}\subset H\)</span> 是 V 的子空间 H 的基，若 <span class="arithmatex">\(\cal B\)</span> 是 H 的<strong>线性无关</strong>的<strong>张成集</strong>（三个性质：线性无关，张成，子集）<ol>
 <li><span class="arithmatex">\(\forall \mathbf x\in H,\exists c_1,\dots,c_p\in\mathbb R\)</span>，<span class="arithmatex">\(\mathbf x=\sum\limits_{i=1}^pc_i\mathbf b_i\)</span>，即 <span class="arithmatex">\(\forall \mathbf x\in H,\mathbf x\in\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span>，即 <span class="arithmatex">\(H\subset\text{Span}\{\mathbf v_1,\cdots,\mathbf v_p\}\)</span></li>
 </ol>
@@ -1667,6 +1695,15 @@
 <li>基的例子：<span class="arithmatex">\(n\times n\)</span> 可逆矩阵 A 的各列，<span class="arithmatex">\(I_n\)</span> 的各列 <span class="arithmatex">\(\left\{\mathbf b_1,\cdots,\mathbf b_n\right\}\)</span>（标准基） 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的基；<span class="arithmatex">\(S=\{1,t,\cdots,t^n\}\)</span> 是 <span class="arithmatex">\(\mathbb P_n\)</span> 的标准基；<span class="arithmatex">\(\text{Col}A\)</span> 的基为矩阵 A 的主元列集合（并非 A 的阶梯型的 B 的主元列）；<span class="arithmatex">\(\text{Nul}A\)</span> 的基为矩阵 A 对应齐次方程的解集中的各向量</li>
 <li>基是一个<strong>尽可能小的生成集</strong>，<strong>尽可能大的线性无关集</strong>（H 的子集 S 能通过适当缩减或扩充向量以得到 H 的基）</li>
 <li>矩阵列之间的线性相关关系不会因初等变换而改变</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>线性无关集 S 是 <span class="arithmatex">\(\text{Span}(S)\)</span> 的一组基</li>
+<li><span class="arithmatex">\(\exists c_1,\cdots,c_p\)</span> 使得 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf v_i=\mathbf 0\)</span></li>
 </ol>
 </blockquote>
 <div class="admonition info">
@@ -2143,7 +2180,7 @@
 <blockquote>
 <p><span class="arithmatex">\(A\in\mathbb R^{n\times n}可逆\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\begin{cases}A的列构成\mathbb R^n的一个基\\\text{Col}A=\mathbb R^n\\\dim\text{Col}A=n\\\text{rank}A=n\\\text{Nul}A=\{\mathbf 0\}\\\dim\text{Nul}A=0\end{cases}\)</span></p>
 </blockquote>
-<div class="admonition note">
+<div class="admonition question">
 <p class="admonition-title">矩阵定理(猜想)</p>
 </div>
 <blockquote>
@@ -2381,6 +2418,36 @@
 <blockquote>
 <p>给定数 <span class="arithmatex">\(a_0,a_1,\cdots,a_n\)</span>（其中 <span class="arithmatex">\(a_0,a_n\ne0\)</span>），一个信号 <span class="arithmatex">\(\{z_k\}\)</span>，方程 <span class="arithmatex">\(\forall k,\sum\limits_{i=0}^na_iy_{k+n-i}=z_k\)</span> 被称为 <strong>n 阶线性差分方程</strong>（或<strong>线性递归关系</strong>）</p>
 <p>注：为了简化，通常 <span class="arithmatex">\(a_0=1\)</span>；若 <span class="arithmatex">\(\{z_k\}\)</span> 是领序列，则方程是<strong>齐次的</strong>，否则是<strong>非齐次的</strong></p>
+</blockquote>
+<h3 id="9">9. 马尔可夫链中的应用</h3>
+<h3 id="_1">补充练习</h3>
+<div class="admonition tip">
+<p class="admonition-title">补充练习</p>
+<ol>
+<li>证明：<span class="arithmatex">\(\text{Col}AB\subset\text{Col}A\)</span>，并且 <span class="arithmatex">\(\text{Row}AB\subset\text{Row}B\)</span></li>
+<li>秩的性质（假设 <span class="arithmatex">\(A\in M_{m\times n},B\in M_{n\times p}\)</span>）<ol>
+<li>证明：<span class="arithmatex">\(\text{rank}AB\le\min\{\text{rank}A,\text{rank}B\}\)</span></li>
+<li>证明：若 <span class="arithmatex">\(P\in M_{m\times m}\)</span> 可逆，那么 <span class="arithmatex">\(\text{rank}PA=\text{rank}A\)</span></li>
+<li>证明：若 <span class="arithmatex">\(Q\in M_{n\times n}\)</span> 可逆，那么 <span class="arithmatex">\(\text{rank}AQ=\text{rank}A\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1)</p>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf y\in\text{Col}AB\)</span>，<span class="arithmatex">\(\exists\mathbf x\)</span> 使得 <span class="arithmatex">\(\mathbf y=(AB)\mathbf x=A(B\mathbf x)\)</span>，蕴涵 <span class="arithmatex">\(\mathbf y\in\text{Col}A\)</span>，于是 <span class="arithmatex">\(\text{Col}AB\subset\text{Col}A\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf y\in\text{Row}AB\)</span>，<span class="arithmatex">\(\exists\mathbf x\)</span> 使得 <span class="arithmatex">\(\mathbf y=(AB)^T\mathbf x=(B^TA^T)\mathbf x=B^T(A^T\mathbf x)\)</span>，蕴涵 <span class="arithmatex">\(\mathbf y\in\text{Row}B\)</span>，于是 <span class="arithmatex">\(\text{Row}AB\subset\text{Row}B\)</span></li>
+</ol>
+<p>(2)</p>
+<ol>
+<li>由 <span class="arithmatex">\(\text{Col}AB\subset\text{Col}A\)</span> 和 <span class="arithmatex">\(\text{Row}AB\subset\text{Row}B\)</span> 有 <span class="arithmatex">\(\dim\text{Col}AB\le\dim\text{Col}A\)</span> 和 <span class="arithmatex">\(\dim\text{Row}AB\le\dim\text{Row}B\)</span>，于是 <span class="arithmatex">\(\text{rank}AB\le\text{rank}A,\text{rank}AB\le\text{rank}B\)</span>，即 <span class="arithmatex">\(\text{rank}AB\le\min\{\text{rank}A,\text{rank}B\}\)</span></li>
+<li>由 (2.1) 有 <span class="arithmatex">\(\text{rank}A=\text{rank}(P^{-1}(PA))\le\text{rank}(PA)\le\text{rank}A\)</span>，于是 <span class="arithmatex">\(\text{rank}(PA)=\text{rank}A\)</span></li>
+<li>令 <span class="arithmatex">\(P=Q^T\)</span>，于是 P 可逆，结合 (2.2) 的结论，有 <span class="arithmatex">\(\text{rank}(PA)=\text{rank}A=\text{rank}A^T=\text{rank}(PA^T)=\text{rank}(AP^T)=\text{rank} (AQ)\)</span>，于是 <span class="arithmatex">\(\text{rank}A=\text{rank} (AQ)\)</span>；或者用 (2.2) 类似的方式证明：<span class="arithmatex">\(\text{rank}A=\text{rank}((AQ)Q^{-1})\le\text{rank}(AQ)\le\text{rank}A\)</span></li>
+</ol>
 </blockquote>
 </article>
 </div>

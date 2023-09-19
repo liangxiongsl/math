@@ -1086,10 +1086,19 @@
 <p>特征空间：A 的对应于 <span class="arithmatex">\(\lambda\)</span> 的特征空间为 <span class="arithmatex">\(\text{Nul}(A-\lambda I)\)</span>（即方程的解集）</p>
 <p>注2：<span class="arithmatex">\(A\mathbf x=\lambda\mathbf x\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(A^n\mathbf x=\lambda^n\mathbf x\)</span>（证明：数学归纳法）</p>
 <p>注3：A 的对应于其第 i 个特征值 <span class="arithmatex">\(\lambda_i\)</span> 的特征向量 <span class="arithmatex">\(\mathbf x_{ij}\in \text{Nul}(A-\lambda I)\)</span>，因而任意多个 <span class="arithmatex">\(\mathbf x_{ij}\)</span> 的<strong>非零</strong>线性组合也是特征向量</p>
+<p>注4：<span class="arithmatex">\(\{A对应于\lambda的特征空间\}=\{A对应于\lambda的特征向量集\}\cup\{\mathbf 0\}\)</span></p>
 </blockquote>
 <p>假设有三角矩阵 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> </p>
 <p>根据可逆矩阵定理，<span class="arithmatex">\((A-\lambda I)\mathbf x=\mathbf 0\)</span> 有非平凡解，当且仅当 <span class="arithmatex">\(\det(A-\lambda I)=0\)</span></p>
 <p>即<span class="arithmatex">\((A-\lambda I)\mathbf x=\mathbf 0\)</span> 有非平凡解，当且仅当 存在 <span class="arithmatex">\(\lambda\)</span> 使得 <span class="arithmatex">\(\lambda = a_{ii}\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;6\\5&amp;2\end{bmatrix},\mathbf u=\begin{bmatrix}6\\-5\end{bmatrix},\mathbf v=\begin{bmatrix}3\\-2\end{bmatrix}\)</span>，判断 <span class="arithmatex">\(\bf u,v\)</span> 是否为 A 的特征向量：由于 <span class="arithmatex">\(A\mathbf u=\begin{bmatrix}-24\\20\end{bmatrix}=-4\begin{bmatrix}6\\-5\end{bmatrix}=\mathbf u\)</span>，<span class="arithmatex">\(\forall k,A\mathbf v=\begin{bmatrix}-9\\11\end{bmatrix}\ne k\mathbf v\)</span>，因此 <span class="arithmatex">\(\bf u\)</span> 是 A 的特征向量，而 <span class="arithmatex">\(\bf v\)</span> 不是</li>
+<li>证明 7 是 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;6\\5&amp;2\end{bmatrix}\)</span> 的特征值：<span class="arithmatex">\(A-7I_n=\begin{bmatrix}-6&amp;6\\5&amp;-5\end{bmatrix}\sim\begin{bmatrix}-6&amp;6\\0&amp;0\end{bmatrix}\)</span>，于是 <span class="arithmatex">\((A-7I_n)\mathbf x=\mathbf 0\)</span> 存在非平凡解，那么 7 是 A 的特征值</li>
+<li>计算 <span class="arithmatex">\(A=\begin{bmatrix}4&amp;-1&amp;6\\2&amp;1&amp;6\\2&amp;-1&amp;8\end{bmatrix}\)</span> 对应于 <span class="arithmatex">\(\lambda=2\)</span> 的特征空间的基：<span class="arithmatex">\(A-2I_n=\begin{bmatrix}2&amp;-1&amp;6\\2&amp;-1&amp;6\\2&amp;-1&amp;6\end{bmatrix}\sim\begin{bmatrix}1&amp;-0.5&amp;3\\0&amp;0&amp;0\\0&amp;0&amp;0\end{bmatrix}\)</span>，对应的齐次方程的通解为 <span class="arithmatex">\(\mathbf x=x_2\begin{bmatrix}0.5\\1\\0\end{bmatrix}+x_3\begin{bmatrix}-3\\0\\1\end{bmatrix}\)</span>，那么该特征空间 <span class="arithmatex">\(\text{Nul}(A-2I_n)\)</span> 的一个基为 <span class="arithmatex">\(\left\{\begin{bmatrix}0.5\\1\\0\end{bmatrix},\begin{bmatrix}-3\\0\\1\end{bmatrix}\right\}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">定理</p>
 </div>
@@ -1102,19 +1111,25 @@
 <p><span class="arithmatex">\(\lambda_1,\dots,\lambda_r\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵 A 的特征值(对于所有 <span class="arithmatex">\(i\ne j,\lambda_i\ne\lambda_j\)</span>)，<span class="arithmatex">\(\mathbf v_1,\dots,\mathbf v_r\)</span> 是分别与 <span class="arithmatex">\(\lambda_1,\dots,\lambda_r\)</span> 对应的特征向量；那么向量集合 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_r\}\)</span> 线性无关</p>
 </li>
 <li>
-<p>性质：由于 A 对应于特征值 <span class="arithmatex">\(\lambda\)</span> 的特征向量之间的非零线性组合也是特征向量（如 <span class="arithmatex">\(c_1\mathbf v_1+c_2\mathbf v_2\ne\mathbf 0\)</span>）</p>
+<p>性质：由 A 对应于特征值 <span class="arithmatex">\(\lambda\)</span> 的特征向量之间的非零线性组合也是特征向量（如 <span class="arithmatex">\(c_1\mathbf v_1+c_2\mathbf v_2\ne\mathbf 0\)</span>）</p>
 </li>
 </ol>
 </blockquote>
 <p>2)证明：<span class="arithmatex">\(\forall i=1..r, A\mathbf v_i=\lambda_i\mathbf v_i,\mathbf v_i\ne\mathbf0\)</span>（其中 <span class="arithmatex">\(\forall i\ne j,\lambda_i\ne\lambda_j\)</span>），那么 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_r\}线性无关\)</span></p>
 <p>证明 <span class="arithmatex">\(\neg q\to p\)</span> 矛盾：</p>
-<p>若 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_r\}\)</span> 线性相关，即根据[1.7] 蕴涵 <span class="arithmatex">\(\mathbf v_i=\sum\limits_{j=1}^{i-1}c_j\mathbf v_j\)</span>（1）</p>
+<p>若 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_r\}\)</span> 线性相关，即根据[1.7] 蕴涵（有必要时对特征向量集进行重排） <span class="arithmatex">\(\exists c_i\ne0,\mathbf v_i=\sum\limits_{j=1}^{i-1}c_j\mathbf v_j\)</span>（1）</p>
 <p>（这里的 i 应满足 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> 线性无关）</p>
 <p>将（1）两边左乘 A 有 <span class="arithmatex">\(A\mathbf v_i=A\sum\limits_{j=1}^{i-1}c_j\mathbf v_j\)</span> 或 <span class="arithmatex">\(\lambda_i\mathbf v_i=\sum\limits_{j=1}^{i-1}c_j\lambda_j\mathbf v_j\)</span>（2）</p>
 <p>将（1）两边乘以 <span class="arithmatex">\(\lambda_i\)</span> 有 <span class="arithmatex">\(\lambda_i\mathbf v_i=\sum\limits_{j=1}^{i-1}c_j\lambda_i\mathbf v_j\)</span>（3）</p>
 <p>将（2）和（3）相减有：<span class="arithmatex">\(\sum\limits_{j=1}^{i-1}c_j(\lambda_i-\lambda_j)\mathbf v_j=\mathbf0\)</span></p>
 <p>由于 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_{i-1}\}\)</span> 线性无关，有 <span class="arithmatex">\(c_1(\lambda_i-\lambda_1)=\dots=c_{i-1}(\lambda_i-\lambda_{i-1})=0\)</span>；而 <span class="arithmatex">\(\lambda_i-\lambda_j\ne0\)</span>，于是 <span class="arithmatex">\(c_1=\dots=c_{i-1}=0\)</span>，这与（1）矛盾（因为特征向量 <span class="arithmatex">\(\mathbf v_i\)</span> 是非零向量）</p>
 <p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}3&amp;6&amp;-8\\0&amp;0&amp;6\\0&amp;0&amp;2\end{bmatrix},B=\begin{bmatrix}4&amp;0&amp;0\\-2&amp;1&amp;0\\5&amp;3&amp;4\end{bmatrix}\)</span> 的特征值集合分别为 <span class="arithmatex">\(\{3,0,2\}\)</span>，<span class="arithmatex">\(\{4,1\}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">特征向量与差分方程</p>
 </div>
@@ -1145,6 +1160,77 @@
 </blockquote>
 <p>(1) 由于 <span class="arithmatex">\(\sum\limits_{i=0}^nc_iA^i=\mathbf0\)</span>，有：</p>
 <p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition info">
+<p class="admonition-title">结论</p>
+</div>
+<blockquote>
+<ol>
+<li>特征值，特征向量，特征空间：假设 <span class="arithmatex">\(A\in M_{n\times n}\)</span>，若 <span class="arithmatex">\(\exists\lambda\in\mathbb R\)</span> 使得 <span class="arithmatex">\(A\bf x=\lambda x\)</span> 或 <span class="arithmatex">\((A-\lambda I_n)\bf x=0\)</span>（而 <span class="arithmatex">\(\mathbf x\ne\mathbf 0\)</span>），那么 <span class="arithmatex">\(\lambda\)</span> 称为 A 的<strong>特征值</strong>，<span class="arithmatex">\(\bf x\)</span> 称为 A 的对应于 <span class="arithmatex">\(\lambda\)</span> 的<strong>特征向量</strong>；A 的对应于 <span class="arithmatex">\(\lambda\)</span> 的<strong>特征空间</strong>为 <span class="arithmatex">\(A\bf x=\lambda x\)</span> 的解集 <span class="arithmatex">\(\text{Nul}(A-\lambda I_n)\)</span></li>
+<li>特征判定定理：(1) <span class="arithmatex">\(\lambda是A的特征值\iff方程A\mathbf x=\lambda\mathbf x存在非平凡解\iff A-\lambda I_n不可逆\iff\det(A-\lambda I_n)=0\)</span>；(2) <span class="arithmatex">\(\mathbf x是A的特征向量\iff\exists\lambda\in\mathbb R,A\mathbf x=\lambda\mathbf x\)</span></li>
+<li>定理：<span class="arithmatex">\(\lambda_1,\dots,\lambda_r\)</span> 是方阵 A 的不同特征值，<span class="arithmatex">\(\mathbf v_1,\dots,\mathbf v_r\)</span> 分别与 <span class="arithmatex">\(\lambda_1,\dots,\lambda_r\)</span>，那么 <span class="arithmatex">\(\{\mathbf v_1,\dots,\mathbf v_r\}\)</span> 线性无关</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>方阵 A 不可逆 <span class="arithmatex">\(\iff\)</span> A 有零特征值</li>
+<li>若 <span class="arithmatex">\(A\in M_{n\times n}\)</span> 是三角矩阵，那么 <span class="arithmatex">\(\forall i=1..n\)</span>，第 i 个特征值为 <span class="arithmatex">\(\lambda_i=a_{ii}\)</span></li>
+<li>方阵 A 对应于某个特征值 <span class="arithmatex">\(\lambda\)</span> 的多个特征向量的非零线性组合仍是特征向量</li>
+<li>方阵 A 的各列之和（或各行之和）为 s，那么 A 有一个特征值 s；特别地，<span class="arithmatex">\(A=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}\)</span>，则 A 的特征值为 <span class="arithmatex">\(\lambda_1=s,\lambda_2=a+d-s=(\det A)/s\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}6&amp;-3&amp;1\\3&amp;0&amp;5\\2&amp;2&amp;6\end{bmatrix}\)</span>，5 是 A 的特征值吗？</li>
+<li>若 <span class="arithmatex">\(\bf x\)</span> 是 A 对应于 <span class="arithmatex">\(\lambda\)</span> 的特征向量，计算 <span class="arithmatex">\(A^n\bf x\)</span></li>
+<li>假设 <span class="arithmatex">\(\bf b_1,b_2\)</span> 分别是对应于不同特征值 <span class="arithmatex">\(\lambda_1,\lambda_2\)</span> 的特征向量，<span class="arithmatex">\(\bf b_3,b_4\)</span> 是对应于第三个不同的特征值 <span class="arithmatex">\(\lambda_3\)</span> 的线性无关的特征向量，<span class="arithmatex">\(\{\bf b_1,b_2,b_3,b_4\}\)</span> 是否为线性无关集？</li>
+<li><span class="arithmatex">\(\lambda\)</span> 是方阵 A 的特征值，证明：<span class="arithmatex">\(2\lambda\)</span> 是 <span class="arithmatex">\(2A\)</span> 的特征值</li>
+<li>判断题<ol>
+<li>若对某个向量 <span class="arithmatex">\(\bf x\)</span> 有 <span class="arithmatex">\(A\bf x=\lambda x\)</span>，则 <span class="arithmatex">\(\lambda\)</span> 是 A 的特征值（<strong>X</strong>）</li>
+<li>矩阵 A 不可逆，当且仅当 0 是 A 的特征值（Y）</li>
+<li>数 c 是 A 的特征值，当且仅当 <span class="arithmatex">\((A-cI_n)\bf x=0\)</span> 有非平凡解（Y）</li>
+<li>求 A 的特征向量可能是困难的，但验证一个给定的向量是否为特征向量是容易的（Y）</li>
+<li>为求 A 的特征值，可将 A 化简为阶梯型（X）</li>
+<li>若存在 <span class="arithmatex">\(\lambda\)</span> 使 <span class="arithmatex">\(A\bf x=\lambda x\)</span> 成立，那么 <span class="arithmatex">\(\bf x\)</span> 是 A 的特征向量（<strong>X</strong>）</li>
+<li>若 <span class="arithmatex">\(\bf v_1,v_2\)</span> 是线性无关的特征向量，则它们是对应于不同特征值的特征向量（<strong>X</strong>）</li>
+<li>随机矩阵的稳态向量就是其特征向量（Y）</li>
+<li>矩阵的特征值是在其主对角线上的元素（X）</li>
+<li>矩阵 A 的特征空间是某矩阵的零空间（Y）</li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(\lambda\)</span> 是矩阵 A 的特征值，证明：<span class="arithmatex">\(\lambda^-1\)</span> 也是 <span class="arithmatex">\(A^{-1}\)</span> 的特征值</li>
+<li>证明：若 <span class="arithmatex">\(A^2\)</span> 是零矩阵，那么 A 只有零特征值</li>
+<li>证明：<span class="arithmatex">\(\lambda\)</span> 是矩阵 A 的特征值，当且仅当 <span class="arithmatex">\(\lambda\)</span> 是 <span class="arithmatex">\(A^T\)</span> 的特征值</li>
+<li>证明：若方阵 A 的每行元素之和都等于 s，那么 s 是 A 的特征值</li>
+<li>证明：若方阵 A 的每列元素之和都等于 s，那么 s 是 A 的特征值</li>
+<li>设 T 是 <span class="arithmatex">\(\mathbb R^2\)</span> 的相对过原点的某条直线的反射变换，求变换矩阵 A 的特征值和特征空间</li>
+<li>设 T 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的相对过原点的某条直线的旋转变换，求变换矩阵 A 的特征值和特征空间</li>
+<li><span class="arithmatex">\(\bf u,v\)</span> 是矩阵 A 的特征值 <span class="arithmatex">\(\lambda,\mu\)</span> 对应的特征向量，定义 <span class="arithmatex">\(\mathbf x_k=c_1\lambda^k\mathbf u+c_2\mu^k\mathbf v\)</span>，证明：<span class="arithmatex">\(\mathbf x_k=A\mathbf x_{k-1}\)</span></li>
+<li></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(A-5I_n=\begin{bmatrix}1&amp;-3&amp;1\\3&amp;-5&amp;5\\2&amp;2&amp;1\end{bmatrix}\sim\begin{bmatrix}1&amp;-3&amp;1\\0&amp;4&amp;2\\0&amp;0&amp;1\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(A-5I_n=\begin{bmatrix}1&amp;-3&amp;1\\3&amp;-5&amp;5\\2&amp;2&amp;1\end{bmatrix}\sim\begin{bmatrix}1&amp;-3&amp;1\\0&amp;4&amp;2\\0&amp;0&amp;-5\end{bmatrix}\)</span>，即 <span class="arithmatex">\(A-5I_n\)</span> 不可逆，所以 5 不是 A 的特征值</p>
+<p>(2) <span class="arithmatex">\(A^n\mathbf x=\lambda^n\mathbf x\)</span></p>
+<p>(5.7) 若矩阵 A 的同一特征值对应的特征空间的基元素个数不小于 2，那么存在两个特征空间中的向量线性无关（如：特征空间的基为 <span class="arithmatex">\(\{\bf v_1,v_2\}\)</span>，那么 <span class="arithmatex">\(c\bf v_1\)</span> 与 <span class="arithmatex">\(d\bf v_2\)</span> 线性无关）</p>
+<p>(6) <span class="arithmatex">\(A\mathbf x=\lambda\mathbf x\)</span> 和 A 可逆，蕴涵 <span class="arithmatex">\(\mathbf x=A^{-1}(\lambda\mathbf x)=\lambda(A^{-1}\mathbf x)\)</span></p>
+<p>而 <span class="arithmatex">\(A^{-1}\)</span> 可逆，蕴涵 <span class="arithmatex">\(A^{-1}\ne\mathbf 0\)</span>，又因 <span class="arithmatex">\(\mathbf x\ne0\)</span>，于是 <span class="arithmatex">\(\lambda\ne0\)</span>，于是 <span class="arithmatex">\(\lambda\)</span> 有乘法逆元</p>
+<p>最后 <span class="arithmatex">\(A^{-1}\mathbf x=\lambda^{-1}\mathbf x\)</span></p>
+<p>(7) 设 <span class="arithmatex">\(\lambda\)</span> 是 A 的特征值，蕴涵 <span class="arithmatex">\(A\mathbf x=\lambda\mathbf x,A^2\mathbf x=\lambda^2\mathbf x\)</span></p>
+<p><span class="arithmatex">\(A^2=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(A^2\mathbf x=\mathbf 0\mathbf x=\mathbf 0\)</span>，于是 <span class="arithmatex">\(\lambda^2\mathbf x=\mathbf 0\)</span></p>
+<p>由于 <span class="arithmatex">\(\mathbf x\ne\mathbf 0\)</span>，于是 <span class="arithmatex">\(\lambda=0\)</span></p>
+<p>(8) 两个方程 <span class="arithmatex">\(A\mathbf x=\lambda\mathbf x\)</span> 与 <span class="arithmatex">\(A^T\mathbf x=\lambda\mathbf x\)</span>（<span class="arithmatex">\(\mathbf x\ne\mathbf 0\)</span>）有相同的 <span class="arithmatex">\(\lambda\)</span> 解集，当且仅当 <span class="arithmatex">\(\det(A-\lambda I_n)=\det(A^T-\lambda I_n)\)</span></p>
+<p>而 <span class="arithmatex">\(\det(A-\lambda I_n)=\det[(A-\lambda I_n)^T]=\det(A^T-\lambda I_n^T)=\det(A^T-\lambda I_n)\)</span>，</p>
+<p>于是 A 与 <span class="arithmatex">\(A^T\)</span> 具有相同的特征值解集</p>
+<p>(9) 若 <span class="arithmatex">\(\mathbf v\)</span> 是 A 的特征向量（其中 <span class="arithmatex">\(\mathbf v\)</span> 的各个元素为 1），有 <span class="arithmatex">\(A\mathbf v=s\mathbf v\)</span></p>
+<p>(10) 由 (8) 和 (9) 有 A 与 <span class="arithmatex">\(A^T\)</span> 有相同的特征值解集，而 s 是 <span class="arithmatex">\(A^T\)</span> 的特征值，于是 s 也是 <span class="arithmatex">\(A\)</span> 的特征值</p>
+</blockquote>
 <h3 id="2">2. 特征方程</h3>
 <div class="admonition note">
 <p class="admonition-title">可逆矩阵定理(续)</p>
@@ -1166,6 +1252,12 @@
 <p>根的重数：特征方程的不重解集中第 i 个特征值 <span class="arithmatex">\(\lambda_i\)</span> 作为特征方程根的重数称为 <strong>(代数)重数</strong></p>
 <p>复根(复特征值)：特征方程的复数根</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>一个 <span class="arithmatex">\(6\times 6\)</span> 矩阵的特征多项式是 <span class="arithmatex">\(\lambda^6-4\lambda^5-12\lambda^4=\lambda^4(\lambda-6)(\lambda+2)\)</span>，其特征值是 0（重数为 4），6（重数为 1），-2（重数为 1）</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">相似性</p>
 </div>
@@ -1175,8 +1267,11 @@
 <p>相似变换：<span class="arithmatex">\(T~:~A\to P^{-1}AP\)</span></p>
 <p>定理：A 和 B 相似，那么它们具有相同的特征多项式</p>
 </blockquote>
-<p>证：令 <span class="arithmatex">\(B=P^{-1}AP\)</span></p>
-<p>那么 <span class="arithmatex">\(B-\lambda I = P^{-1}AP-\lambda P^{-1}P=P^{-1}(A-\lambda I)P\)</span>，因而 <span class="arithmatex">\(\det(B-\lambda I) = \det[P^{-1}(A-\lambda I)P] = \det(P^{-1})\det(A-\lambda I)\det(P)=\det(A-\lambda I)\)</span></p>
+<p>证：</p>
+<p><span class="arithmatex">\(\det(P^{-1}AP-\lambda I_n)=\det[P^{-1}AP-\lambda(P^{-1}I_nP)]=\det[P^{-1}(A-\lambda I_n)P]\)</span></p>
+<p><span class="arithmatex">\(=(\det P^{-1})\det(A-\lambda I_n)(\det P)=\det(A-\lambda I_n)\)</span></p>
+<p>于是 A 与 <span class="arithmatex">\(B=P^{-1}AP\)</span> 有相同的特征多项式</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition info">
 <p class="admonition-title">特征空间的基</p>
 </div>
@@ -1199,6 +1294,96 @@
 <p>那么 <span class="arithmatex">\(\mathbf x_k = A^k\mathbf x_0 = A^k\sum\limits_{i=1}^nc_i\mathbf b_i = \sum\limits_{i=1}^nc_iA^k\mathbf b_i=\sum\limits_{i=1}^nc_i\lambda_i^k\mathbf b_i\)</span></p>
 <p>于是 <span class="arithmatex">\(\mathbf x_k = \sum\limits_{i=1}^nc_i\lambda_i^k\mathbf b_i\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}0.95&amp;0.03\\0.05&amp;0.97\end{bmatrix}\)</span>，<span class="arithmatex">\(\mathbf x_0=\begin{bmatrix}0.6\\0.4\end{bmatrix}\)</span>，<span class="arithmatex">\(\mathbf x_k=A\mathbf x_{k-1}\)</span>（<span class="arithmatex">\(k\ge1\)</span>），化简 <span class="arithmatex">\(\mathbf x_k\)</span>：<ol>
+<li><span class="arithmatex">\(\mathbf x_k=A^k\mathbf x_0\)</span></li>
+<li>将 <span class="arithmatex">\(\mathbf x_0\)</span> 表示为 A 的特征向量的线性组合：(1) 由 <span class="arithmatex">\(\det(A-\lambda I_n)=0\)</span> 得到特征值 <span class="arithmatex">\(\lambda_1=1,\lambda_2=0.92\)</span>，(2) 经过计算得到每个特征空间 <span class="arithmatex">\(\text{Nul}(A-\lambda_1I_n)=\text{Span}\left\{\begin{bmatrix}0.6\\1\end{bmatrix}\right\},\text{Nul}(A-\lambda_2I_n)=\text{Span}\left\{\begin{bmatrix}-1\\1\end{bmatrix}\right\}\)</span>，(3) 求解 <span class="arithmatex">\(\begin{bmatrix}0.6&amp;-1\\1&amp;1\end{bmatrix}\begin{bmatrix}c_1\\c_2\end{bmatrix}=\mathbf x_0=\begin{bmatrix}0.6\\0.4\end{bmatrix}\)</span> 得到 <span class="arithmatex">\(c_1=\frac58,c_2=-\frac9{40}\)</span>，于是 <span class="arithmatex">\(\mathbf x_0=c_1\mathbf v_1+c_2\mathbf v_2=\frac58\begin{bmatrix}0.6\\1\end{bmatrix}-\frac9{40}\begin{bmatrix}-1\\1\end{bmatrix}\)</span></li>
+<li>于是 <span class="arithmatex">\(\mathbf x_k=A^k\mathbf x_0=A^k(c_1\mathbf v_1+c_2\mathbf v_2)=c_1A^k\mathbf v_1+c_2A^k\mathbf v_2=c_1\lambda_1^k\mathbf v_1+c_2\lambda_2^k\mathbf v_2=\frac58(1^k)\begin{bmatrix}0.6\\1\end{bmatrix}-\frac9{40}(0.92)^k\begin{bmatrix}-1\\1\end{bmatrix}\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>特征多项式，特征方程，根的重数：假设 <span class="arithmatex">\(A\in M_{n\times n}\)</span>，<span class="arithmatex">\(\lambda\)</span> 是 A 的特征值，<span class="arithmatex">\(\det(A-\lambda I_n)\)</span> 称为<strong>特征多项式</strong>，<span class="arithmatex">\(\det(A-\lambda I_n)=0\)</span> 称为<strong>特征方程</strong>；特征方程根的重数称为 <span class="arithmatex">\(\lambda\)</span> 的<strong>(代数)重数</strong></li>
+<li>特征向量基：若 A 存在 n 个线性无关的特征向量，那么这些向量张成 <span class="arithmatex">\(\mathbb R^n\)</span>，称这个向量集称为<strong>特征向量基</strong></li>
+<li>相似，相似变换：<span class="arithmatex">\(n\times n\)</span> 矩阵 A 与 B <strong>相似</strong>，若存在矩阵 P 使得 <span class="arithmatex">\(P^{-1}AP=B\)</span> 或 <span class="arithmatex">\(P^{-1}BP=A\)</span>；<span class="arithmatex">\(A\mapsto P^{-1}AP\)</span> 称为<strong>相似变换</strong></li>
+<li>相似定理：若 A 与 B 相似，那么它们具有相同的特征多项式（即特征值解集相同），即 <span class="arithmatex">\(\det(A-\lambda I_n)=\det(B-\lambda I_n)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>矩阵的特征值 <span class="arithmatex">\(\lambda\)</span> 的代数重数不小于其特征空间的维数</li>
+<li><span class="arithmatex">\(\det A=\prod\limits_{i=1}^n\lambda_i\)</span></li>
+<li>若 A 与 B 有相同的特征多项式（<span class="arithmatex">\(\det(A-\lambda I_n)=\det(B-\lambda I_n)\)</span>），那么 <span class="arithmatex">\(\det A=\det B\)</span>；推论：A 与 B 相似，那么 <span class="arithmatex">\(\det A=\det B\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;-4\\4&amp;2\end{bmatrix}\)</span> 的特征方程，特征值</li>
+<li>判断题<ol>
+<li>A 的行列式值等于其对角线上元素的乘积（X）</li>
+<li>对 A 作初等行变换不会改变 A 的行列式值（X）</li>
+<li><span class="arithmatex">\((\det A)(\det B)=\det AB\)</span>（Y）</li>
+<li>若 <span class="arithmatex">\(\lambda+5\)</span> 是 A 的特征值多项式的因子，那么 5 是 A 的特征值（X）</li>
+<li>A 为 <span class="arithmatex">\(3\times 3\)</span> 矩阵，那么 <span class="arithmatex">\(\det A\)</span> 等于 A 的各列生成的平行六面体的体积（X）</li>
+<li><span class="arithmatex">\(\det A^T=(-1)\det A\)</span>（X）</li>
+<li>A 的特征方程的根 r 的重数称为特征值 r 的代数重数（Y）</li>
+<li>对 A 作行变换不会改变其特征值（X）</li>
+</ol>
+</li>
+<li>计算特征值及其重数：(1) <span class="arithmatex">\(\begin{bmatrix}1&amp;0&amp;-1\\2&amp;3&amp;-1\\0&amp;6&amp;0\end{bmatrix}\)</span>，(2) <span class="arithmatex">\(\begin{bmatrix}4&amp;-7&amp;0&amp;2\\0&amp;3&amp;-4&amp;6\\0&amp;0&amp;3&amp;-8\\0&amp;0&amp;0&amp;1\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}5&amp;-2&amp;6&amp;-1\\0&amp;3&amp;h&amp;0\\0&amp;0&amp;5&amp;4\\0&amp;0&amp;0&amp;1\end{bmatrix}\)</span>，A 的特征值 5 对应的特征空间是 2 维的，计算  h</li>
+<li>证明：<span class="arithmatex">\(\det A=\prod\limits_{i=1}^n\lambda_i\)</span>（<span class="arithmatex">\(\forall\lambda_i\)</span> 是 A 的特征值）</li>
+<li>QR 分解：对 A 进行多次迭代分解，其路径上的矩阵 <span class="arithmatex">\(A_i\)</span> 与 A 相似，步骤如下：<span class="arithmatex">\(\forall i\)</span>，将 <span class="arithmatex">\(A_i\)</span> 分解为 <span class="arithmatex">\(A_i=Q_iR_i\)</span>（其中 <span class="arithmatex">\(Q_i^{-1}=Q_i^T\)</span>，<span class="arithmatex">\(R_i\)</span> 是上三角），得到下一个相似矩阵 <span class="arithmatex">\(A_{i+1}=R_iQ_i\)</span>，如此反复</li>
+<li>证明：假设 Q 可逆，<span class="arithmatex">\(QR\)</span> 与 <span class="arithmatex">\(RQ\)</span> 相似</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}0.6&amp;0.3\\0.4&amp;0.7\end{bmatrix},\mathbf x_0=\begin{bmatrix}0.5\\0.5\end{bmatrix}\)</span><ol>
+<li>计算由 A 的特征向量构成的 <span class="arithmatex">\(\mathbb R^2\)</span> 的一个基</li>
+<li><span class="arithmatex">\(\mathbf x_k=A^k\mathbf x_0\)</span>，计算 <span class="arithmatex">\(\lim\limits_{k\to+∞}\mathbf x_k\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}0.5&amp;0.2&amp;0.3\\0.3&amp;0.8&amp;0.3\\0.2&amp;0&amp;0.4\end{bmatrix},\mathbf v_1=\begin{bmatrix}0.3\\0.6\\0.3\end{bmatrix},\mathbf v_2=\begin{bmatrix}1\\-3\\2\end{bmatrix},\mathbf v_3=\begin{bmatrix}-1\\0\\1\end{bmatrix}\)</span><ol>
+<li>证明：<span class="arithmatex">\(\bf v_1,v_2,v_3\)</span> 是 A 的特征值</li>
+<li>构造一个 <span class="arithmatex">\(\mathbf x_0\)</span> 使得 <span class="arithmatex">\(\mathbf 0\)</span> 的各项非负，并且各项之和为 1；<span class="arithmatex">\(\mathbf x_k=A\mathbf x_0\)</span>，计算 <span class="arithmatex">\(\lim\limits_{k\to+∞}\mathbf x_k\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(0=\det(A-\lambda I_n)=\begin{bmatrix}1-\lambda&amp;-4\\4&amp;2-\lambda\end{bmatrix}=\lambda^2-3\lambda+18\)</span></p>
+<p>解得特征值 <span class="arithmatex">\(\lambda=\frac{3\pm\sqrt{-63}}2\)</span></p>
+<p>(3)</p>
+<ol>
+<li><span class="arithmatex">\(\det\begin{bmatrix}1-\lambda&amp;0&amp;-1\\2&amp;3-\lambda&amp;-1\\0&amp;6&amp;0-\lambda\end{bmatrix}=[-1,1][1,-3,6]-12=[-1,4,-9,6]\)</span>（其中方括号 <span class="arithmatex">\([~]\)</span> 表示关于 <span class="arithmatex">\(\lambda\)</span> 的多项式向量），枚举 6 的正负整数因子 k，发现不存在 <span class="arithmatex">\(\lambda+k\)</span> 能整除特征多项式，于是特征方程没有整数解（无法简单的用手计算特征值）</li>
+<li>上三角矩阵 A 的特征值分别为 4（重数为 1），3（重数为 2），1（重数为 1）</li>
+</ol>
+<p>(4) <span class="arithmatex">\(A-5I_n=\begin{bmatrix}0&amp;-2&amp;6&amp;-1\\0&amp;-2&amp;h&amp;0\\0&amp;0&amp;0&amp;4\\0&amp;0&amp;0&amp;-4\end{bmatrix}\sim\begin{bmatrix}0&amp;1&amp;-3&amp;0\\0&amp;0&amp;6-h&amp;0\\0&amp;0&amp;0&amp;1\\0&amp;0&amp;0&amp;0\end{bmatrix}\)</span>，仅当 <span class="arithmatex">\(h=5\)</span> 时，A 的特征值 5 对应的特征空间是 2 维的</p>
+<p>(5) 由于 <span class="arithmatex">\(\forall\lambda_i\)</span> 是 A 的特征值，蕴涵 <span class="arithmatex">\(\det(A-\lambda I_n)=\prod\limits_{i=1}^n(\lambda_i-\lambda)\)</span></p>
+<p>令 <span class="arithmatex">\(\lambda=0\)</span>，有 <span class="arithmatex">\(\det A=\prod\limits_{i=1}^n\lambda_i\)</span></p>
+<p>(7) 证明 <span class="arithmatex">\(\exists P,QR=P^{-1}RQP\)</span>：令 <span class="arithmatex">\(P=Q^{-1}\)</span>，有 <span class="arithmatex">\(P^{-1}RQP=(Q^{-1})^{-1}RQQ^{-1}=QR\)</span></p>
+<p>(8) </p>
+<ol>
+<li><span class="arithmatex">\(\det(A-\lambda I_n)=(\lambda-1)(\lambda-0.3)\)</span>（注：A 的各列之和为 1，根据[5.1练习10]有 <span class="arithmatex">\(\lambda=1\)</span>），于是 <span class="arithmatex">\(\lambda_1=1,\lambda_2=0.3\)</span>；分别计算 1 和 <span class="arithmatex">\(0.3\)</span> 对应的特征方程的基有 <span class="arithmatex">\(\left\{\begin{bmatrix}3/4\\1\end{bmatrix}\right\},\left\{\begin{bmatrix}-1\\1\end{bmatrix}\right\}\)</span>；由于 A 的所有特征空间的基的向量（共有 2 个）之间线性无关，于是这些向量构成<span class="arithmatex">\(\mathbb R^2\)</span> 的一个基，即 <span class="arithmatex">\(\left\{\begin{bmatrix}3/4\\1\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}\)</span></li>
+<li>解方程 <span class="arithmatex">\(\begin{bmatrix}3/4&amp;-1\\1&amp;1\end{bmatrix}\begin{bmatrix}c_1\\c_2\end{bmatrix}=\begin{bmatrix}0.5\\0.5\end{bmatrix}\)</span>：<span class="arithmatex">\(\begin{bmatrix}3/4&amp;-1&amp;0.5\\1&amp;1&amp;0.5\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;4/7\\0&amp;1&amp;-1/14\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(\mathbf x_0=c_1\mathbf v_1+c_2\mathbf v_2=(4/7)\begin{bmatrix}3/4\\1\end{bmatrix}+(-1/14)\begin{bmatrix}-1\\1\end{bmatrix}\)</span>；<span class="arithmatex">\(\mathbf x_k=A^k\mathbf x_0=A^k(c_1\mathbf v_1+c_2\mathbf v_2)=c_1\lambda_1^k\mathbf v_1+c_2\lambda_2^k\mathbf v_2=(4/7)(1)^k\begin{bmatrix}3/4\\1\end{bmatrix}+(-1/14)(0.3)^k\begin{bmatrix}-1\\1\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(\lim\limits_{k\to+∞}\mathbf x_k=(4/7)\begin{bmatrix}3/4\\1\end{bmatrix}=\begin{bmatrix}3/7\\4/7\end{bmatrix}\)</span></li>
+</ol>
+<p>(9)</p>
+<ol>
+<li><span class="arithmatex">\(A\mathbf v_1=\mathbf v_1,A\mathbf v_2=0.5\mathbf v_2,A\mathbf v_3=0.2\mathbf v_3\)</span>；于是 <span class="arithmatex">\(\lambda_1=1,\lambda_2=0.5,\lambda_3=0.2\)</span></li>
+<li>令 <span class="arithmatex">\(\mathbf x_0=c_1\mathbf v_1+c_2\mathbf v_2+c_3\mathbf v_3\)</span>，于是 <span class="arithmatex">\(1=[1~1~1]\mathbf x_0=[1~1~1](c_1\mathbf v_1+c_2\mathbf v_2+c_3\mathbf v_3)=c_1\)</span>，即 <span class="arithmatex">\(\mathbf x_0=\mathbf v_1+c_2\mathbf v_2+c_3\mathbf v_3\)</span>，蕴涵 <span class="arithmatex">\(\mathbf x_k=A^k\mathbf x_0=\lambda_1^k\mathbf v_1+c_2\lambda_2^k\mathbf v_2+c_3\lambda_3^k\mathbf v_3=\mathbf v_1+c_2(0.5)^k\mathbf v_2+c_3(0.2)^k\mathbf v_3\)</span>，于是 <span class="arithmatex">\(\lim\limits_{k\to+∞}\mathbf x_k=\mathbf v_1\)</span></li>
+</ol>
+</blockquote>
 <h3 id="3">3. 对角化</h3>
 <div class="admonition note">
 <p class="admonition-title">对角矩阵</p>
@@ -1215,6 +1400,13 @@
 <p>若 <span class="arithmatex">\(A,D\in\mathbb R^{n\times n}\)</span>（其中 D 为对角矩阵）相似，即 <span class="arithmatex">\(A=PDP^{-1}\)</span></p>
 <p>那么 <span class="arithmatex">\(A^k = \prod\limits_{i=1}^k(PDP^{-1})=PD^kP^{-1}\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\begin{bmatrix}5&amp;0\\0&amp;3\end{bmatrix}^k=\begin{bmatrix}5^k&amp;0\\0&amp;3^k\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}7&amp;2\\-4&amp;1\end{bmatrix},D=\begin{bmatrix}5&amp;0\\0&amp;3\end{bmatrix},P=\begin{bmatrix}1&amp;1\\-1&amp;-2\end{bmatrix}\)</span>，其中 <span class="arithmatex">\(A=PDP^{-1}\)</span>，计算 <span class="arithmatex">\(A^k\)</span>：<span class="arithmatex">\(A^k=\prod\limits_{i=1}^k(PDP^{-1})=PD^kP^{-1}=\begin{bmatrix}1&amp;1\\-1&amp;-2\end{bmatrix}\begin{bmatrix}5^k&amp;0\\0&amp;3^k\end{bmatrix}\begin{bmatrix}1&amp;1\\-1&amp;-2\end{bmatrix}^{-1}=\begin{bmatrix}2\cdot5^k-3^k&amp;5^k-3^k\\2\cdot3^k-2\cdot5^k&amp;2\cdot3^k-5^k\end{bmatrix}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">对角化定理</p>
 </div>
@@ -1224,18 +1416,35 @@
 <p>证明：详见p296</p>
 <p>对角化算法：</p>
 <ol>
-<li>求得 A 的特征值集合 <span class="arithmatex">\(\mathbf \lambda=(\lambda_1,\dots,\lambda_n)\)</span>（包含重根）；记 <span class="arithmatex">\(D=I\mathbf\lambda\)</span></li>
-<li>对于每个本质不同的特征值 <span class="arithmatex">\(\lambda_i\)</span>，通过 <span class="arithmatex">\((A-\lambda_i I)\mathbf v=\mathbf 0\)</span> 求得若干线性无关的特征向量（或者 求得所有构成 <span class="arithmatex">\(\text{Nul}(A-\lambda_iI)\)</span> 的基的向量）</li>
-<li>将 (2) 所得的特征向量依照顺序排列得到 <span class="arithmatex">\(\text B=[\mathbf v_1,\dots,\mathbf v_k]\)</span>；若 <span class="arithmatex">\(k&lt;n\)</span> 或 <span class="arithmatex">\(\text B\)</span> 不可逆，说明 A 无法对角化，算法结束</li>
-<li>得到 A 的对角化形式 <span class="arithmatex">\(A=BDB^{-1}\)</span></li>
+<li>通过特征多项式 <span class="arithmatex">\(\det(A-\lambda I_n)=0\)</span> 计算特征值集合 <span class="arithmatex">\(\mathbf u=(\lambda_1,\cdots,\lambda_n)\)</span>，此时 <span class="arithmatex">\(D=I_n\mathbf u\)</span></li>
+<li><span class="arithmatex">\(\forall i=1..n\)</span>，计算特征空间 <span class="arithmatex">\(\text{Nul}(A-\lambda_i I_n)\)</span>；得到线性无关的特征向量构成的矩阵 <span class="arithmatex">\(P=\begin{bmatrix}\mathbf v_1\cdots\mathbf v_n\end{bmatrix}\)</span>（即 D 以特征向量基作为各列）</li>
+<li>得到 A 的对角化形式 <span class="arithmatex">\(A=PDP^{-1}\)</span></li>
 </ol>
 </blockquote>
+<p>假设 <span class="arithmatex">\(\lambda_1,\cdots,\lambda_n\)</span> 是 A 的特征值，<span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_n\)</span> 是 A 的特征向量（<span class="arithmatex">\(\forall i\)</span>，<span class="arithmatex">\(\lambda_i\)</span> 与 <span class="arithmatex">\(\mathbf v_i\)</span> 相对应）</p>
+<p><span class="arithmatex">\(AP=A[\mathbf v_1\cdots\mathbf v_n]=[A\mathbf v_1\cdots A\mathbf v_n]=[\lambda_1\mathbf v_1\cdots\lambda_n\mathbf v_n]\)</span></p>
+<p><span class="arithmatex">\(PD=[\mathbf v_1\cdots\mathbf v_n]I_n\begin{bmatrix}\lambda_1\\\vdots\\\lambda_n\end{bmatrix}=[\lambda_1\mathbf v_1\cdots\lambda_n\mathbf v_n]\)</span></p>
+<p>于是 <span class="arithmatex">\(AP=PD\)</span></p>
+<p>若 P 可逆，那么 <span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_n\)</span> 线性无关，于是  <span class="arithmatex">\(A=PDP^{-1}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>方阵 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 拥有 <span class="arithmatex">\(m\le n\)</span> 个本质不同的特征值，不同的特征值可能对应多个特征向量</li>
 <li>若 A 的特征向量个数 <span class="arithmatex">\(&lt;n\)</span>，则这些特征向量不能张成 <span class="arithmatex">\(\mathbb R^n\)</span>，进而 A 不能对角化</li>
 </ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>对角化 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;3&amp;3\\-3&amp;-5&amp;-3\\3&amp;3&amp;1\end{bmatrix}\)</span>：<ol>
+<li><span class="arithmatex">\(\det(A-\lambda I_n)=\det\begin{bmatrix}[-1,1]&amp;3&amp;3\\-3&amp;[-1,-5]&amp;-3\\3&amp;3&amp;[-1,1]\end{bmatrix}=[-1,1][1,4,4]+(-3)[3,6]+(-3)[-3,-6]=[-1,1][1,4,4]=[-1,1][1,2]^2\)</span>，得到特征值：<span class="arithmatex">\(\lambda_1=1,\lambda_2=-2\)</span>（重数分别为 1，2），得到 <span class="arithmatex">\(D=\begin{bmatrix}1&amp;0&amp;0\\0&amp;-2&amp;0\\0&amp;0&amp;-2\end{bmatrix}\)</span></li>
+<li>计算特征空间：<span class="arithmatex">\(\text{Nul}(A-\lambda_1 I_n)=\text{Span}\left\{\begin{bmatrix}1\\-1\\1\end{bmatrix}\right\},\text{Nul}(A-\lambda_2 I_n)=\text{Span}\left\{\begin{bmatrix}-1\\1\\0\end{bmatrix},\begin{bmatrix}-1\\0\\1\end{bmatrix}\right\}\)</span>，得到 <span class="arithmatex">\(P=\begin{bmatrix}1&amp;-1&amp;-1\\-1&amp;1&amp;0\\1&amp;0&amp;1\end{bmatrix}\)</span></li>
+<li>于是 <span class="arithmatex">\(A=PDP^{-1}\)</span>（可以预先验证必要性：<span class="arithmatex">\(AP=PD\)</span>）</li>
+</ol>
+</li>
+<li>对角化  <span class="arithmatex">\(\begin{bmatrix}5&amp;0&amp;0&amp;0\\0&amp;5&amp;0&amp;0\\1&amp;4&amp;-3&amp;0\\-1&amp;-2&amp;0&amp;-3\end{bmatrix}\)</span></li>
+</ol>
 </div>
 <div class="admonition note">
 <p class="admonition-title">定理</p>
@@ -1252,61 +1461,268 @@
 <ol>
 <li>多于所有 <span class="arithmatex">\(1\le i\le p\)</span>，<span class="arithmatex">\(\lambda_i\)</span> 的特征空间的维数不大于 <span class="arithmatex">\(\lambda_i\)</span> 的代数重数</li>
 <li>矩阵 A 可对角化，当且仅当 所有不同特征空间的维数之和为 n（即 特征多项式可完全分解为线性因子；每个 <span class="arithmatex">\(\lambda_i\)</span> 的特征空间的维数等于 <span class="arithmatex">\(\lambda_i\)</span> 的代数重数）</li>
-<li>若 A 可对角化，那么 <span class="arithmatex">\(\text B_i\)</span> 是对应于 <span class="arithmatex">\(\lambda_i\)</span> 的特征空间的基，则集合 <span class="arithmatex">\(\{\text B_1,\dots,\text B_p\}\)</span> 中所有向量的集合是 <span class="arithmatex">\(\mathbb R^n\)</span> 的特征向量基（<span class="arithmatex">\(\text B=\bigcup\limits_{i=1}^p\text B_i\)</span> ？）</li>
+<li>若 A 可对角化，那么 <span class="arithmatex">\(\cal B_i\)</span> 是对应于 <span class="arithmatex">\(\lambda_i\)</span> 的特征空间的基，则集合 <span class="arithmatex">\(\{\cal B_1,\dots,\cal B_p\}\)</span> 中所有向量的集合是 <span class="arithmatex">\(\mathbb R^n\)</span> 的特征向量基</li>
 </ol>
 <p>注：证明参考 p298 下的脚注</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>对角化不唯一</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>对角矩阵：<span class="arithmatex">\(n\times n\)</span> 矩阵 D 除了对角线上的元素外均为零，称 D 为<strong>对角矩阵</strong>，可以记为 <span class="arithmatex">\(D=I_n\mathbf v\)</span></li>
+<li>对角化定理：<span class="arithmatex">\(n\times n\)</span> 矩阵 A 可对角化，当且仅当具有特征向量基（即 <span class="arithmatex">\(A=PDP^{-1}\)</span> 中，D 是对角矩阵，当且仅当 P 的各列是 A 的特征向量基；蕴涵 D 的主对角线元素是对应于 P 中特征向量的特征值）</li>
+<li>可对角化的充分性：(1) A 具有 n 个相异的特征值，(2) A 是对角线元素互不相同的三角矩阵</li>
+<li>定理：假设 <span class="arithmatex">\(n\times n\)</span> 矩阵 A 有 p 个相异的特征值，那么：(1) <span class="arithmatex">\(\forall i=1..p,\dim\text{Nul}(A-\lambda_i I_n)\le\lambda_i的重数\)</span>，(2) A 可对角化，当且仅当特征空间维数之和为 n，即 <span class="arithmatex">\(\sum\limits_{i=1}^p\dim\text{Nul}(A-\lambda_i I_n)=n\)</span>，(3) 假设 A 可对角化，<span class="arithmatex">\(\cal B_i\)</span> 是特征空间 <span class="arithmatex">\(\text{Nul}(A-\lambda I_n)\)</span> 的基，那么 <span class="arithmatex">\(\bigcap\limits_{i=1}^p\mathcal B_i\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的特征向量基</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>若 D 为对角矩阵，那么 <span class="arithmatex">\(\forall i=1..n,(D^n)_ii=d_{ii}^n\)</span></li>
+<li>矩阵 A 做对角化变换有 <span class="arithmatex">\(P^{-1}AP=D\)</span>，那么 <span class="arithmatex">\(A^k=\prod\limits_{i=1}^k(PDP^{-1})=PD^kP^{-1}\)</span></li>
+<li>若<strong>可逆</strong>矩阵 A <strong>可对角化</strong>，那么 <span class="arithmatex">\(A^{-1}\)</span> 也可逆并且可对角化，<span class="arithmatex">\(A^{-1}\)</span> 的特征值分别为 <span class="arithmatex">\(1/\lambda_1,\cdots,1/\lambda_n\)</span>，<span class="arithmatex">\(A^{-1}\)</span> 的特征空间与 A 的特征空间相同</li>
+<li>若矩阵 A 对角化为 <span class="arithmatex">\(A=PDP^{-1}\)</span>，那么 <span class="arithmatex">\(A^T\)</span> 也可对角化，有 <span class="arithmatex">\(A^T=QD^TQ^{-1}\)</span>（<span class="arithmatex">\(Q=(P^T)^{-1}\)</span>）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}4&amp;-3\\2&amp;-1\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(A^8\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}4&amp;-3\\2&amp;-1\end{bmatrix},\mathbf v_1=\begin{bmatrix}3\\1\end{bmatrix},\mathbf v_2=\begin{bmatrix}2\\1\end{bmatrix}\)</span>，其中 <span class="arithmatex">\(\mathbf v_1,\mathbf v_2\)</span> 是 A 的特征向量</li>
+<li><span class="arithmatex">\(4\times 4\)</span> 矩阵 A 的特征值是 <span class="arithmatex">\(5,3,-2\)</span>，其中 <span class="arithmatex">\(\lambda=3\)</span> 的特征空间是二维的，那么 A 能否对角化？</li>
+<li>判断题（假设 <span class="arithmatex">\(A,B,P,D\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵）<ol>
+<li>若存在矩阵 D 和可逆矩阵 P，使得 <span class="arithmatex">\(A=PDP^{-1}\)</span>，则 A 可对角化（X）</li>
+<li>若 <span class="arithmatex">\(\mathbb R^n\)</span> 有 A 的特征向量基，则 A 可对角化（Y）</li>
+<li>A 可对角化，当且仅当 A 的特征值重数之和为 n（X）</li>
+<li>若 A 可对角化，则 A 可逆（<strong>X</strong>）</li>
+<li>若 A 有 n 个特征向量，则 A 可对角化（X）</li>
+<li>若 A 可对角化，则 A 有 n 个相异的特征值（<strong>X</strong>）</li>
+<li>若 <span class="arithmatex">\(AP=PD\)</span>，D 为对角矩阵，那么 P 的非零列是 A 的特征向量（Y？）</li>
+<li>若 A 可逆，则 A 可对角化（X）</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}-2&amp;12\\-1&amp;5\end{bmatrix}=\begin{bmatrix}3&amp;4\\1&amp;1\end{bmatrix}\begin{bmatrix}2&amp;0\\0&amp;1\end{bmatrix}\begin{bmatrix}-1&amp;4\\1&amp;-3\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(A^k\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}4&amp;0&amp;-2\\2&amp;5&amp;4\\0&amp;0&amp;5\end{bmatrix}=\begin{bmatrix}-2&amp;0&amp;-1\\0&amp;1&amp;2\\1&amp;0&amp;0\end{bmatrix}\begin{bmatrix}5&amp;0&amp;0\\0&amp;5&amp;0\\0&amp;0&amp;4\end{bmatrix}\begin{bmatrix}0&amp;0&amp;1\\2&amp;1&amp;4\\-1&amp;0&amp;-2\end{bmatrix}\)</span>，计算 A 的特征值，每个特征空间的基</li>
+<li>证明：若 A 可逆，并且可对角化，则 <span class="arithmatex">\(A^{-1}\)</span> 也可对角化</li>
+<li>证明：若 A 可对角化，那么 <span class="arithmatex">\(A^T\)</span> 也可对角化</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\det(A-\lambda I_n)=(\lambda-1)(\lambda-2)\)</span>，有 <span class="arithmatex">\(\lambda_1=1,\lambda_2=2\)</span>，记 $$；进而 <span class="arithmatex">\(\text{Nul}(A-\lambda_1 I_n)=\text{Span}\left\{\begin{bmatrix}1\\1\end{bmatrix}\right\},\text{Nul}(A-\lambda_2 I_n)=\text{Span}\left\{\begin{bmatrix}1.5\\1\end{bmatrix}\right\}\)</span>，记 <span class="arithmatex">\(P=\begin{bmatrix}1&amp;1.5\\1&amp;1\end{bmatrix}\)</span>；于是 <span class="arithmatex">\(A=PDP^{-1}=\begin{bmatrix}1&amp;1.5\\1&amp;1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;2\end{bmatrix}^8\begin{bmatrix}1&amp;1.5\\1&amp;1\end{bmatrix}^{-1}=\begin{bmatrix}3\cdot2^8-2&amp;3-3\cdot2^8\\2^9-2&amp;3-2^9\end{bmatrix}=\begin{bmatrix}766&amp;-765\\510&amp;-509\end{bmatrix}\)</span></p>
+<p>(2) <span class="arithmatex">\(A\mathbf v_1=\begin{bmatrix}3\\1\end{bmatrix}=\mathbf v_1,A\mathbf v_2=\begin{bmatrix}6\\3\end{bmatrix}=3\mathbf v_2\)</span>，记 <span class="arithmatex">\(D=\begin{bmatrix}1&amp;0\\0&amp;3\end{bmatrix}\)</span></p>
+<p>记 <span class="arithmatex">\(P=\begin{bmatrix}3&amp;2\\1&amp;1\end{bmatrix}\)</span></p>
+<p>有 <span class="arithmatex">\(A=PDP^{-1}\)</span></p>
+<p>(3) <span class="arithmatex">\(\dim\text{Nul}(A-3I_n)=2,\dim\text{Nul}(A-5I_n)\ge1,\dim\text{Nul}(A-(-2)I_n)\ge1\)</span>，所以各特征空间之和不小于 4，而各特征空间之和个数不大于 4，于是各特征空间之和为 4，于是 A 可对角化</p>
+<p>(4.4) 一个反例：A 具有 0 特征值，蕴涵 D 不可逆，于是 A 不可逆；(4.6) 相异特征值个数小于 n，A 也可能可以对角化；(4.8) 一个反例：<span class="arithmatex">\(\begin{bmatrix}1&amp;2\\0&amp;1\end{bmatrix}\)</span></p>
+<p>(5) <span class="arithmatex">\(A=\begin{bmatrix}3&amp;4\\1&amp;1\end{bmatrix}\begin{bmatrix}2&amp;0\\0&amp;1\end{bmatrix}\begin{bmatrix}-1&amp;4\\1&amp;-3\end{bmatrix}=-\begin{bmatrix}3&amp;4\\1&amp;1\end{bmatrix}\begin{bmatrix}2&amp;0\\0&amp;1\end{bmatrix}\begin{bmatrix}3&amp;4\\1&amp;1\end{bmatrix}^{-1}\)</span>，于是 <span class="arithmatex">\(A^k=(-1)^k\begin{bmatrix}3&amp;4\\1&amp;1\end{bmatrix}\begin{bmatrix}2&amp;0\\0&amp;1\end{bmatrix}^k\begin{bmatrix}3&amp;4\\1&amp;1\end{bmatrix}^{-1}=\begin{bmatrix}4-3\cdot2^k&amp;12(2^k-1)\\1-2^k&amp;2^{k+2}-3\end{bmatrix}\)</span></p>
+<p>(6) 特征值为 <span class="arithmatex">\(\lambda_1=5\)</span>（重数为 2），<span class="arithmatex">\(\lambda_2=4\)</span>（重数为 1）；两个特征值对应的特征空间的基分别为 <span class="arithmatex">\(\left\{\begin{bmatrix}-2\\0\\1\end{bmatrix},\begin{bmatrix}0\\1\\0\end{bmatrix}\right\},\left\{\begin{bmatrix}-1\\2\\0\end{bmatrix}\right\}\)</span></p>
+<p>(7) 假设 A 的对角化为 <span class="arithmatex">\(A=PDP^{-1}\)</span>，由于 A 可逆，那么 <span class="arithmatex">\(A^{-1}=PD^{-1}P^{-1}\)</span></p>
+<p>(8) 假设 A 的对角化为 <span class="arithmatex">\(A=PDP^{-1}\)</span>，于是 <span class="arithmatex">\(A^T=(PDP^{-1})^T=(P^T)^{-1}D^TP^T\)</span>；令 <span class="arithmatex">\(Q=(P^T)^{-1}\)</span>，有 <span class="arithmatex">\(A^T=QD^TQ^{-1}\)</span>，即 <span class="arithmatex">\(A^T\)</span> 可对角化</p>
 </blockquote>
 <h3 id="4">4. 特征向量，线性变换</h3>
 <p>在本节，我们将矩阵分解 <span class="arithmatex">\(A=PDP^{-1}\)</span> 理解为线性变换；我们还将看到变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的是指是简单的映射 <span class="arithmatex">\(\mathbf u\mapsto D\mathbf u\)</span></p>
 <hr/>
-<p>设 <span class="arithmatex">\(V, W\)</span> 分别 <span class="arithmatex">\(n,m\)</span> 维向量空间，<span class="arithmatex">\(\text B,\text C\)</span> 分别为 <span class="arithmatex">\(V,W\)</span> 的基；线性变换 <span class="arithmatex">\(T~:~V\to W\)</span></p>
-<p>若 <span class="arithmatex">\(\mathbf x\in V, [\mathbf x]_\text B\in\mathbb R^n\)</span>，<span class="arithmatex">\(T(\mathbf x)\in W,[T(\mathbf x)]_\text C\in\mathbb R^m\)</span></p>
-<p>由于 <span class="arithmatex">\(\mathbf x=[\mathbf b_1\dots\mathbf b_n][\mathbf x]_\text B\)</span>，而且 T 是线性变换，固有 <span class="arithmatex">\(T(\mathbf x)=\begin{bmatrix}T(\mathbf b_1)\dots T(\mathbf b_n)\end{bmatrix}[\mathbf x]_\text B\)</span></p>
-<p><span class="arithmatex">\([T(\mathbf x)]_\text C=\begin{bmatrix}[T(\mathbf b_1)]_\text C\dots [T(\mathbf b_n)]_\text C\end{bmatrix}[\mathbf x]_\text B\)</span></p>
-<p>记 <span class="arithmatex">\([T(\mathbf x)]_\text C = M[\mathbf x]_\text B\)</span> （其中 <span class="arithmatex">\(M=\begin{bmatrix}[T(\mathbf b_1)]_\text C\dots [T(\mathbf b_n)]_\text C\end{bmatrix}\)</span>）</p>
 <div class="admonition note">
 <p class="admonition-title">V 到 W 的线性变换</p>
 </div>
 <blockquote>
-<p>设 <span class="arithmatex">\(V, W\)</span> 分别 <span class="arithmatex">\(n,m\)</span> 维向量空间，<span class="arithmatex">\(\text B,\text C\)</span> 分别为 <span class="arithmatex">\(V,W\)</span> 的基；有线性变换 <span class="arithmatex">\(T~:~V\to W\)</span></p>
-<p>若 <span class="arithmatex">\(\mathbf x\in V, [\mathbf x]_\text B\in\mathbb R^n\)</span>，<span class="arithmatex">\(T(\mathbf x)\in W,[T(\mathbf x)]_\text C\in\mathbb R^m\)</span></p>
-<p>那么 <span class="arithmatex">\(T(\mathbf x)\)</span> 在 W 中以 <span class="arithmatex">\(\text C\)</span> 为基的坐标为 <span class="arithmatex">\([T(\mathbf x)]_\text C = M[\mathbf x]_\text B\)</span> （其中 <span class="arithmatex">\(M=\begin{bmatrix}[T(\mathbf b_1)]_\text C\dots [T(\mathbf b_n)]_\text C\end{bmatrix}\)</span>）</p>
-<p>注：M 取决于向量空间 V 的基 B</p>
+<p>设 <span class="arithmatex">\(V, W\)</span> 分别 <span class="arithmatex">\(n,m\)</span> 维向量空间，<span class="arithmatex">\(\cal B,C\)</span> 分别为 <span class="arithmatex">\(V,W\)</span> 的基；有线性变换 <span class="arithmatex">\(T~:~V\to W\)</span></p>
+<p>若 <span class="arithmatex">\(\mathbf x\in V, [\mathbf x]_{\cal B}\in\mathbb R^n\)</span>，<span class="arithmatex">\(T(\mathbf x)\in W,[T(\mathbf x)]_{\cal C}\in\mathbb R^m\)</span></p>
+<p>那么 <span class="arithmatex">\(T(\mathbf x)\)</span> 在 W 中以 <span class="arithmatex">\({\cal C}\)</span> 为基的坐标为 <span class="arithmatex">\([T(\mathbf x)]_{\cal C} = M[\mathbf x]_{\cal B}\)</span> （其中 <span class="arithmatex">\(M=\begin{bmatrix}[T(\mathbf b_1)]_{\cal C}\dots [T(\mathbf b_n)]_{\cal C}\end{bmatrix}\)</span>，称为<strong>T相对于基 <span class="arithmatex">\(\cal B\)</span> 和 <span class="arithmatex">\(\cal C\)</span> 的矩阵</strong>）</p>
+<p>另外，<span class="arithmatex">\(\forall\mathbf v\in\mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf v\mapsto M\mathbf v\)</span>（或 <span class="arithmatex">\([\mathbf x]_{\cal B}\to M[\mathbf x]_{\cal B}\)</span>） 将 V 的坐标映射到 W 中的坐标</p>
 </blockquote>
+<p>设 <span class="arithmatex">\(V, W\)</span> 分别 <span class="arithmatex">\(n,m\)</span> 维向量空间，<span class="arithmatex">\(\cal B,C\)</span> 分别为 <span class="arithmatex">\(V,W\)</span> 的基；线性变换 <span class="arithmatex">\(T~:~V\to W\)</span></p>
+<p>即给定了几种映射关系：<span class="arithmatex">\(V\underset{P_{\cal B}}{\overset{[~]_{\cal B}}\rightleftharpoons}\mathbb R^n,W\underset{P_{\cal C}}{\overset{[~]_{\cal C}}\rightleftharpoons}\mathbb R^m,V\overset{T}\longrightarrow W\)</span></p>
+<p><span class="arithmatex">\(\forall\mathbf x\in V\)</span>，计算映射 <span class="arithmatex">\(S:~\mathbf x\mapsto[T(\mathbf x)]_{\cal C}\)</span>：</p>
+<p>根据[4.4唯一表示定理]有 <span class="arithmatex">\(\mathbf x=P_{\cal B}[\mathbf x]_{\cal B}=[\mathbf b_1\cdots\mathbf b_n][\mathbf x]_{\cal B}\)</span></p>
+<p>由于 T 是线性变换，于是 <span class="arithmatex">\(T(\mathbf x)=T([\mathbf b_1\cdots\mathbf b_n][\mathbf x]_{\cal B})=[T(\mathbf b_1)\cdots T(\mathbf b_n)][\mathbf x]_{\cal B}\)</span></p>
+<p>由于坐标映射 <span class="arithmatex">\([]_{\cal C}\)</span> 也是线性变换，于是 <span class="arithmatex">\([T(\mathbf x)]_{\cal C}=[[T(\mathbf b_1)]_{\cal C}\cdots[T(\mathbf b_n)]_{\cal C}][\mathbf x]_{\cal B}\)</span></p>
+<p>记 <span class="arithmatex">\([T(\mathbf x)]_{\cal C} = M[\mathbf x]_{\cal C}\)</span> （其中 <span class="arithmatex">\(M=\begin{bmatrix}[T(\mathbf b_1)]_{\cal C}\dots [T(\mathbf b_n)]_{\cal C}\end{bmatrix}\)</span>）</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\cal B=\{\bf b_1,b_2\},\cal C=\{\bf c_1,c_2,c_3\}\)</span> 分别是 <span class="arithmatex">\(V,W\)</span> 的基，<span class="arithmatex">\(T:V\to W\)</span> 是线性变换，满足：<span class="arithmatex">\(T(\mathbf b_1)=3\mathbf c_1-2\mathbf c_2+5\mathbf c_3,T(\mathbf b_2)=4\mathbf c_1+7\mathbf c_2-\mathbf c_3\)</span>，那么 T 相对于基 <span class="arithmatex">\(\cal B\)</span> 和 <span class="arithmatex">\(\cal C\)</span> 的矩阵为 <span class="arithmatex">\(M=[[T(\mathbf b_1)]_{\cal C}~~[T(\mathbf b_2)]_{\cal C}]=\begin{bmatrix}3&amp;4\\-2&amp;7\\5&amp;-1\end{bmatrix}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">V 到 V 的线性变换</p>
 </div>
 <blockquote>
-<p>设 V 为 n 维向量空间，<span class="arithmatex">\(\text B\)</span> 为 V 的基；有线性变换 <span class="arithmatex">\(T~:~V\to V\)</span></p>
-<p>若 <span class="arithmatex">\(\mathbf x,T(\mathbf x)\in V\)</span>，<span class="arithmatex">\([\mathbf x]_\text B, [T(\mathbf x)]_\text B\in\mathbb R^n\)</span></p>
-<p>那么 <span class="arithmatex">\(T(\mathbf x)\)</span> 在 V 中以 <span class="arithmatex">\(\text B\)</span> 为基的坐标为 <span class="arithmatex">\([T(\mathbf x)]_\text B = M[\mathbf x]_\text B = [T]_\text B[\mathbf x]_\text B\)</span>（其中 <span class="arithmatex">\(M=\begin{bmatrix}[T(\mathbf b_1)]_\text B\dots [T(\mathbf b_n)]_\text B\end{bmatrix}\)</span>）</p>
-<p>注：<span class="arithmatex">\(M=[T]_\text B\)</span> 称为 <strong>T 相对于 <span class="arithmatex">\(\text B\)</span> 的矩阵</strong>，简称为 <strong>T 的 <span class="arithmatex">\(\text B-\)</span>矩阵</strong></p>
+<p>设 V 为 n 维向量空间，<span class="arithmatex">\({\cal B}\)</span> 为 V 的基；有线性变换 <span class="arithmatex">\(T~:~V\to V\)</span></p>
+<p>若 <span class="arithmatex">\(\mathbf x,T(\mathbf x)\in V\)</span>，<span class="arithmatex">\([\mathbf x]_{\cal B}, [T(\mathbf x)]_{\cal B}\in\mathbb R^n\)</span></p>
+<p>那么 <span class="arithmatex">\(T(\mathbf x)\)</span> 在 V 中以 <span class="arithmatex">\({\cal B}\)</span> 为基的坐标为 <span class="arithmatex">\([T(\mathbf x)]_{\cal B}=[T]_{\cal B}[\mathbf x]_{\cal B}\)</span>（其中 <span class="arithmatex">\([T]_{\cal B}=\begin{bmatrix}[T(\mathbf b_1)]_{\cal B}\dots [T(\mathbf b_n)]_{\cal B}\end{bmatrix}\)</span>）</p>
+<p>注：<span class="arithmatex">\(M=[T]_{\cal B}\)</span> 称为 <strong>T 相对于 <span class="arithmatex">\({\cal B}\)</span> 的矩阵</strong>，简称为 <strong>T 的 <span class="arithmatex">\({\cal B}-\)</span>矩阵</strong></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(T:\mathbb P_2\to\mathbb P_2\)</span>：<span class="arithmatex">\(T(a_0+a_1t+a_2t^2)=a_1+2a_2t\)</span> 是线性变换<ol>
+<li>当基 <span class="arithmatex">\(\mathcal B=\{1,t,t^2\}\)</span> 时，T 的 <span class="arithmatex">\(\cal B-矩阵\)</span>为 <span class="arithmatex">\(M=[[T(\mathbf b_1)]_{\cal B}~~[T(\mathbf b_2)]_{\cal B}~~[T(\mathbf b_3)]_{\cal B}]=[[T(1)]_{\cal B}~~[T(t)]_{\cal B}~~[T(t^2)]_{\cal B}]=\begin{bmatrix}0&amp;1&amp;0\\0&amp;0&amp;2\\0&amp;0&amp;0\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf p\in\mathbb P_2\)</span>，<span class="arithmatex">\([T(\mathbf p)]_{\cal B}=[T]_{\cal B}[\mathbf p]_{B}\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title"><span class="arithmatex">\(\mathbb R^n\)</span>上的线性变换</p>
 </div>
 <blockquote>
-<p>设 A 可对角化，即其特征空间的基 <span class="arithmatex">\(\text B\)</span> 张成 <span class="arithmatex">\(\mathbb R^n\)</span>，而且 <span class="arithmatex">\(A=PDP^{-1}\)</span>（<span class="arithmatex">\(\text B=\{\mathbf b_1\dots\mathbf b_n\}, P=[\mathbf b_1\dots\mathbf b_n], D=I\mathbf\lambda\)</span>）</p>
-<p>若 <span class="arithmatex">\(T~:~\mathbf x\mapsto A\mathbf x\)</span>，那么 D 是变换 T 的 <span class="arithmatex">\(\text B-\)</span> 矩阵（换句话说 <span class="arithmatex">\([T(\mathbf x)]_\text B = D[\mathbf x]_\text B\)</span>）</p>
+<p>设 A 可对角化，即其特征空间的基 <span class="arithmatex">\({\cal B}\)</span> 张成 <span class="arithmatex">\(\mathbb R^n\)</span>，而且 <span class="arithmatex">\(A=PDP^{-1}\)</span>（<span class="arithmatex">\({\cal B}=\{\mathbf b_1\dots\mathbf b_n\}, P=[\mathbf b_1\dots\mathbf b_n], D=I\mathbf\lambda\)</span>）</p>
+<p>若 <span class="arithmatex">\(T~:~\mathbf x\mapsto A\mathbf x\)</span>，那么 D 是变换 T 的 <span class="arithmatex">\({\cal B}-\)</span> 矩阵（换句话说 <span class="arithmatex">\([T(\mathbf x)]_{\cal B} = D[\mathbf x]_{\cal B}\)</span>）</p>
 <p>注：<span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 和 <span class="arithmatex">\(\mathbf u\mapsto D\mathbf u\)</span> 描述的是相对于不同基的同一个线性变换</p>
 </blockquote>
 <p>证：</p>
-<p>由于 <span class="arithmatex">\([T]_\text B=[[T(\mathbf b_1)]_\text B\dots[T(\mathbf b_n)]_\text B]\)</span></p>
-<p>而对于所有 <span class="arithmatex">\(i\le n\)</span> 有 <span class="arithmatex">\([T(\mathbf b_i)]_\text B=[A\mathbf b_i]_\text B=P^{-1}A\mathbf b_i\)</span>（其中 <span class="arithmatex">\(T(\mathbf x)=A\mathbf x, \mathbf x=P[\mathbf x]_\text B\)</span>）</p>
-<p>那么 <span class="arithmatex">\([T]_\text B = [P^{-1}A\mathbf b_1\dots P^{-1}A\mathbf b_n]=P^{-1}A[\mathbf b_1\dots\mathbf b_n]=P^{-1}AP=D\)</span></p>
+<p>假设矩阵 A 可对角化为 <span class="arithmatex">\(A=PDP^{-1}\)</span>，其中 <span class="arithmatex">\(P=[\mathbf b_1\cdots\mathbf b_n]\)</span>，<span class="arithmatex">\(\mathbb R^n\)</span> 的特征向量基为 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span></p>
+<p>假设有线性变换 <span class="arithmatex">\(T:\mathbf x\mapsto A\mathbf x\)</span>，那么 <span class="arithmatex">\(T的\cal B-矩阵\)</span> 为 <span class="arithmatex">\([T]_{\cal B}=[[T(\mathbf b_1)]_{\cal B}\cdots[T(\mathbf b_n)]_{\cal B}]=[[A\mathbf b_1]\cdots[A\mathbf b_n]]\)</span></p>
+<p><span class="arithmatex">\(=[P^{-1}A\mathbf b_1\cdots P^{-1}A\mathbf b_n]=P^{-1}A[\mathbf b_1\cdots\mathbf b_n]=P^{-1}AP=D\)</span></p>
+<p>即 <span class="arithmatex">\([T]_{\cal B}=D\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(A=\begin{bmatrix}7&amp;2\\-4&amp;1\end{bmatrix}\)</span>，<span class="arithmatex">\(\mathbb R^2\to\mathbb R^2\)</span> 的变换 <span class="arithmatex">\(T:T(\mathbf x)=A\mathbf x\)</span>，计算 <span class="arithmatex">\(\mathbb R^2\)</span> 的一个基，使得 <span class="arithmatex">\(T的\cal B-矩阵\)</span> 是对角矩阵：将 A 对角化有 <span class="arithmatex">\(A=PDP^{-1}\)</span>，其中 <span class="arithmatex">\(D=\begin{bmatrix}3&amp;0\\0&amp;5\end{bmatrix},P=\begin{bmatrix}-1&amp;-1\\2&amp;1\end{bmatrix}\)</span>；若 <span class="arithmatex">\(\cal B\)</span> 由 P 的各列构成，那么 <span class="arithmatex">\(T的\cal B-矩阵\)</span> 为 <span class="arithmatex">\([T]_{\cal B}=D\)</span></li>
+</ol>
+</div>
+<p>有关向量线性变换的矩阵：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><span class="arithmatex">\((V,\mathcal B;V,\mathcal C)\)</span></th>
+<th align="left"><span class="arithmatex">\(\underset{\cal C\leftarrow B}P\)</span></th>
+<th align="left">从 <span class="arithmatex">\(\mathcal B\)</span> 到 <span class="arithmatex">\(\mathcal C\)</span> 的坐标变换矩阵</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="arithmatex">\((\mathbb R^n,\mathcal B;\mathbb R^n,\mathcal E)\)</span></td>
+<td align="left"><span class="arithmatex">\(P_{\cal B}\)</span></td>
+<td align="left">从 <span class="arithmatex">\(\mathcal B\)</span> 到 <span class="arithmatex">\(\mathcal E\)</span> 的坐标变换矩阵</td>
+</tr>
+<tr>
+<td align="left"><span class="arithmatex">\((T;V,\mathcal B)\)</span></td>
+<td align="left"><span class="arithmatex">\([T]_{\cal B}\)</span></td>
+<td align="left">T的 <span class="arithmatex">\(\mathcal B\)</span> 矩阵</td>
+</tr>
+<tr>
+<td align="left"><span class="arithmatex">\((T;V,\mathcal B;W,\mathcal C)\)</span></td>
+<td align="left"><span class="arithmatex">\(M\)</span></td>
+<td align="left">T 相对于基 <span class="arithmatex">\(\mathcal B\)</span> 和 <span class="arithmatex">\(\mathcal C\)</span> 的矩阵</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">矩阵表示的相似性</p>
 </div>
 <blockquote>
-<p>若 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 在基 <span class="arithmatex">\(\text B\)</span> 的列向量构成的矩阵 P 之下，与 C 相似，即 <span class="arithmatex">\(A=PCP^{-1}\)</span>（其中 <span class="arithmatex">\(P=[\mathbf b_1\dots\mathbf b_n]\)</span>）</p>
-<p>那么 C 是 <span class="arithmatex">\(T~:~\mathbf x\mapsto A\mathbf x\)</span> 的 <span class="arithmatex">\(\text B-\)</span> 矩阵（即 <span class="arithmatex">\([T(\mathbf x)]_\text B = C[\mathbf x]_\text B\)</span>）</p>
-<p>反之，若 <span class="arithmatex">\(T~:~\mathbf x\mapsto A\mathbf x\)</span>，<span class="arithmatex">\(\text B\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基，那么 T 的 <span class="arithmatex">\(\text B-\)</span> 矩阵相似于 A</p>
-<p>注：若 P 是以 <span class="arithmatex">\(\text B\)</span> 的向量作为列构成的矩阵，那么 <span class="arithmatex">\([T(\mathbf x)]_\text B=P^{-1}AP\)</span></p>
+<p>若 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 在基 <span class="arithmatex">\({\cal B}\)</span> 的列向量构成的矩阵 P 之下，与 C 相似，即 <span class="arithmatex">\(A=PCP^{-1}\)</span>（其中 <span class="arithmatex">\(P=[\mathbf b_1\dots\mathbf b_n]\)</span>）</p>
+<p>那么 C 是 <span class="arithmatex">\(T~:~\mathbf x\mapsto A\mathbf x\)</span> 的 <span class="arithmatex">\({\cal B}-\)</span> 矩阵（即 <span class="arithmatex">\([T(\mathbf x)]_{\cal B} = C[\mathbf x]_{\cal B}\)</span>）</p>
+<p>反之，若 <span class="arithmatex">\(T~:~\mathbf x\mapsto A\mathbf x\)</span>，<span class="arithmatex">\({\cal B}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的一个基，那么 T 的 <span class="arithmatex">\({\cal B}-\)</span> 矩阵相似于 A</p>
+<p>注：若 P 是以 <span class="arithmatex">\({\cal B}\)</span> 的向量作为列构成的矩阵，那么 <span class="arithmatex">\([T(\mathbf x)]_{\cal B}=P^{-1}AP\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">诺尔当型</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(V\to W\)</span> 的线性变换，线性变换相当于基 <span class="arithmatex">\(\cal B,C\)</span> 的矩阵：假设 <span class="arithmatex">\(V,W\)</span> 分别为 <span class="arithmatex">\(n,m\)</span> 维向量空间，<span class="arithmatex">\(\cal B,C\)</span> 分别为 <span class="arithmatex">\(V,W\)</span> 的基，有线性变换 <span class="arithmatex">\(T:V\to W\)</span>，那么 <span class="arithmatex">\(\forall\mathbf x\in V\)</span>，有 <span class="arithmatex">\([T(\mathbf x)]_{\cal C}=M[\mathbf x]_{\cal C}=[[T(\mathbf b_1)]_{\cal C}\cdots[T(\mathbf b_n)]_{\cal C}][\mathbf x]_{\cal B}\)</span>；M 称为<strong>T 相对于基 <span class="arithmatex">\(\cal B\)</span> 和 <span class="arithmatex">\(\cal C\)</span> 的矩阵</strong></li>
+<li><span class="arithmatex">\(V\to V\)</span> 的线性变换，线性变换的 <span class="arithmatex">\(\cal B-矩阵\)</span>：假设 V 是 n维向量空间，<span class="arithmatex">\(\cal B\)</span> 为 V 的基，有线性变换 <span class="arithmatex">\(T:V\to V\)</span>，那么 <span class="arithmatex">\(T(\mathbf x)\)</span> 在 V 中以 <span class="arithmatex">\(\cal B\)</span> 为基的坐标为 <span class="arithmatex">\([T(\mathbf x)]_{\cal B}=[T]_{\cal B}[\mathbf x]_{\cal B}=\begin{bmatrix}[T(\mathbf b_1)]_{\cal B}\dots [T(\mathbf b_n)]_{\cal B}\end{bmatrix}[\mathbf x]_{\cal B}\)</span>；<span class="arithmatex">\([T]_{\cal B}\)</span> 称为<strong>T 相当于基 <span class="arithmatex">\(\cal B\)</span> 的矩阵</strong>或<strong>T 的 <span class="arithmatex">\(\cal B\)</span> 矩阵</strong></li>
+<li><span class="arithmatex">\(\mathbb R^n\to\mathbb R^n\)</span> 的线性变换：假设矩阵 A 可对角化为 <span class="arithmatex">\(A=PDP^{-1}\)</span>，其中 <span class="arithmatex">\(P=[\mathbf b_1\cdots\mathbf b_n]\)</span>，<span class="arithmatex">\(\mathbb R^n\)</span> 对应于 A 的特征向量基为 <span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\cdots,\mathbf b_n\}\)</span>，有线性变换 <span class="arithmatex">\(T:\mathbf x\mapsto A\mathbf x\)</span>，那么 <span class="arithmatex">\(T的\cal B-矩阵\)</span> 为 <span class="arithmatex">\([T]_{\cal B}=D\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>假设 <span class="arithmatex">\(T:\mathbb P_2\to\mathbb P_2\)</span>，T 相对于基 <span class="arithmatex">\(\mathcal B=\{1,t,t^2\}\)</span> 的矩阵是 <span class="arithmatex">\([T]_{\cal B}\)</span>，计算 <span class="arithmatex">\(T(a_0+a_1t+a_2t^2)\)</span></li>
+<li>假设 <span class="arithmatex">\(A,B,C\)</span> 是  <span class="arithmatex">\(n\times n\)</span> 矩阵，证明：<ol>
+<li>A 相似于 A</li>
+<li>若 A 相似于 B，B 相似于 C，那么 A 相似于 C</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\mathbf b_2,\mathbf b_3\},\mathcal D=\{\mathbf d_1,\mathbf d_2\}\)</span> 分别是向量空间 <span class="arithmatex">\(V,W\)</span> 的基，<span class="arithmatex">\(T:V\to W\)</span> 是线性变换，且 <span class="arithmatex">\(T(\mathbf{b}_1)=3\mathbf{d}_1-5\mathbf{d}_2,T(\mathbf{b}_2)=-\mathbf{d}_1+6\mathbf{d}_2,T(\mathbf{b}_3)=4\mathbf{d}_2\)</span></li>
+<li><span class="arithmatex">\(\mathcal E=\{\mathbf e_1,\mathbf e_2,\mathbf e_3\},\mathcal B=\{\mathbf b_1,\mathbf b_2,\mathbf b_3\}\)</span> 分别是向量空间 <span class="arithmatex">\(\mathbb R^3,V\)</span> 的基，<span class="arithmatex">\(T:\mathbb R^3\to V\)</span> 是线性变换，且 <span class="arithmatex">\(T(x_1,x_2,x_3)=(x_3-x_2)\mathbf b_1-(x_1+x_3)\mathbf b_2+(x_1-x_2)\mathbf b_3\)</span><ol>
+<li>计算 <span class="arithmatex">\(T(\mathbf e_1),T(\mathbf e_2),T(\mathbf e_3)\)</span></li>
+<li>计算 <span class="arithmatex">\([T(\mathbf e_1)]_{\cal B},[T(\mathbf e_2)]_{\cal B},[T(\mathbf e_3)]_{\cal B}\)</span></li>
+<li>计算 T 相当于 <span class="arithmatex">\(\cal E\)</span> 和 <span class="arithmatex">\(\cal B\)</span> 的矩阵 M</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\mathcal B=\{\mathbf b_1,\mathbf b_2,\mathbf b_3\},\mathcal E=\{\mathbf e_1,\mathbf e_2\}\)</span> 分别是向量空间 <span class="arithmatex">\(V,\mathbb R^2\)</span> 的基，<span class="arithmatex">\(T:V\to\mathbb R^2\)</span> 是线性变换，且 <span class="arithmatex">\(T(x_1\mathbf b_1+x_2\mathbf b_2+x_3\mathbf b_3)=\begin{bmatrix}2x_1-4x_2+5x_3\\-x_2+3x_3\end{bmatrix}\)</span>，计算 T 相当于 <span class="arithmatex">\(\cal B\)</span> 和 <span class="arithmatex">\(\cal E\)</span> 的矩阵 M</li>
+<li>证明：A 相似于 B，那么 <span class="arithmatex">\(A^k\)</span> 相似于 <span class="arithmatex">\(B^k\)</span></li>
+<li>证明：B 相似于 A，C 相似于 A，那么 B 相似于 C</li>
+<li>证明：若 A 可对角化，B 相似于 A，那么 B 也可对角化（于是某个 <span class="arithmatex">\(n\times n\)</span> 的相似矩阵集合中的矩阵同时可对角化或都不可对角化）</li>
+<li>方阵 A 的主对角元素之和称为 A 的<strong>轨迹</strong>，记为 <span class="arithmatex">\(\text{tr}A\)</span>；满足 <span class="arithmatex">\(\text{tr}(AB)=\text{tr}(BA)\)</span><ol>
+<li>证明：若 A 与 B 相似，那么 <span class="arithmatex">\(\text{rank}A=\text{rank}B\)</span></li>
+<li>证明：若 A 与 B 相似，那么 <span class="arithmatex">\(\text{tr}A=\text{tr}B\)</span></li>
+<li>证明：<span class="arithmatex">\(\text{tr}A=\sum\limits_{i=1}^n\lambda_i\)</span>（<span class="arithmatex">\(\forall\lambda_i\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵 A 的特征值）</li>
+</ol>
+</li>
+<li>-<ol>
+<li><span class="arithmatex">\(\cal B\)</span> 是 <span class="arithmatex">\(V=\mathbb R^n\)</span> 的基，<span class="arithmatex">\(\cal E\)</span> 是 <span class="arithmatex">\(W=\mathbb R^n\)</span> 的标准基，<span class="arithmatex">\(I:~I(\mathbf x)=\mathbf x\)</span> 是 <span class="arithmatex">\(V\to W\)</span> 的恒等变换，求 I 相对于 <span class="arithmatex">\(\cal B,E\)</span> 的矩阵 M，该矩阵在 [4.4] 中称为什么矩阵？</li>
+<li><span class="arithmatex">\(\cal B,C\)</span> 分别是向量空间 <span class="arithmatex">\(V,W\)</span> 的基，且 <span class="arithmatex">\(V=W\)</span>，<span class="arithmatex">\(I:~I(\mathbf x)=\mathbf x\)</span> 是 <span class="arithmatex">\(V\to W\)</span> 的恒等变换，求 I 相对于 <span class="arithmatex">\(\cal B,C\)</span> 的矩阵 M，该矩阵在 [4.7] 中称为什么矩阵？</li>
+<li>设 <span class="arithmatex">\(\cal B\)</span> 是向量空间 V 的基，求 <span class="arithmatex">\(V\to V\)</span> 的恒等变换 <span class="arithmatex">\(I的\cal B-矩阵\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\([T(a_0+a_1t+a_2t^2)]_{\cal B}=[T]_{\cal B}[a_0+a_1t+a_2t^2]_{\cal B}=\begin{bmatrix}3&amp;4&amp;0\\0&amp;5&amp;-1\\1&amp;-2&amp;7\end{bmatrix}\begin{bmatrix}a_0\\a_1\\a_2\end{bmatrix}=\begin{bmatrix}3a_0+4a_1\\5a_1-a_2\\a_0-2a_1+7a_2\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(T(a_0+a_1t+a_2t^2)=P_{\cal B}[T(a_0+a_1t+a_2t^2)]_{\cal B}=[1~~t~~t^2]\begin{bmatrix}3a_0+4a_1\\5a_1-a_2\\a_0-2a_1+7a_2\end{bmatrix}=(3a_0+4a_1)+(5a_1-a_2)t+(a_0-2a_1+7a_2)t^2\)</span></p>
+<p>(2)</p>
+<ol>
+<li><span class="arithmatex">\(A=I_n^{-1}AI_n\)</span>，所以 A 相似于 A</li>
+<li>由假设，存在可逆矩阵 <span class="arithmatex">\(P,Q\)</span> 使得 <span class="arithmatex">\(B=P^{-1}AP,C=Q^{-1}BQ\)</span>，蕴涵 <span class="arithmatex">\(C=Q^{-1}P^{-1}APQ=(PQ)^{-1}A(PQ)\)</span>，于是 A 相似于 C</li>
+</ol>
+<p>(3) <span class="arithmatex">\(M=\begin{bmatrix}3&amp;-1&amp;0\\-5&amp;6&amp;4\end{bmatrix}\)</span></p>
+<p>(4)</p>
+<ol>
+<li><span class="arithmatex">\(T(\mathbf e_1)=-\mathbf b_2+\mathbf b_3,T(\mathbf e_2)=-\mathbf b_1-\mathbf b_3,T(\mathbf e_3)=\mathbf b_1-\mathbf b_2\)</span></li>
+<li><span class="arithmatex">\([T(\mathbf e_1)]_{\cal B}=\begin{bmatrix}0\\-1\\1\end{bmatrix},[T(\mathbf e_2)]_{\cal B}=\begin{bmatrix}-1\\0\\-1\end{bmatrix},[T(\mathbf e_1)]_{\cal B}=\begin{bmatrix}1\\-1\\0\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(M=\begin{bmatrix}0&amp;-1&amp;1\\-1&amp;0&amp;-1\\1&amp;-1&amp;0\end{bmatrix}\)</span></li>
+</ol>
+<p>(5) <span class="arithmatex">\(\begin{bmatrix}2&amp;-4&amp;5\\0&amp;-1&amp;3\end{bmatrix}\)</span></p>
+<p>(6) A 相似于 B，蕴涵存在矩阵 P 使得 <span class="arithmatex">\(B=P^{-1}AP\)</span>，那么 <span class="arithmatex">\(B^k=P^{-1}A^kP\)</span>，于是 <span class="arithmatex">\(A^k\)</span> 相似于 <span class="arithmatex">\(B^k\)</span></p>
+<p>(7) 由假设存在矩阵 <span class="arithmatex">\(P,Q\)</span> 使得 <span class="arithmatex">\(A=P^{-1}BP,A=Q^{-1}CQ\)</span>，蕴涵 <span class="arithmatex">\(P^{-1}BP=Q^{-1}CQ\)</span>，蕴涵 <span class="arithmatex">\(C=(PQ^{-1})^{-1}BPQ^{-1}\)</span>，即 B 相似于 C</p>
+<p>(8) A 可对角化，蕴涵存在 <span class="arithmatex">\(P,D\)</span> 使得 <span class="arithmatex">\(A=PDP^{-1}\)</span>；B 相似于 A，蕴涵存在 Q 使得 <span class="arithmatex">\(A=Q^{-1}BQ\)</span>；于是 <span class="arithmatex">\(B=(QP)D(QP)^{-1}\)</span>，即 B 可对角化</p>
+<p>(9) </p>
+<ol>
+<li>A 与 B 相似，蕴涵 <span class="arithmatex">\(B=P^{-1}AP\)</span>；由 [4补充习题13,14] 和 P 的可逆性有 <span class="arithmatex">\(\text{rank}B=\text{rank}(P^{-1}AP)=\text{rank}(AP)=\text{rank}A\)</span></li>
+<li>A 与 B 相似，蕴涵 <span class="arithmatex">\(B=P^{-1}AP\)</span>；<span class="arithmatex">\(\text{tr}B=\text{tr}(P^{-1}AP)=\text{tr}((P^{-1}A)P)=\text{tr}(P(P^{-1}A))=\text{tr}((P^{-1}P)A)=\text{tr}A\)</span></li>
+<li>若 A 可对角化，蕴涵存在 <span class="arithmatex">\(D,P\)</span> 使得 <span class="arithmatex">\(A=PDP^{-1}\)</span>（A 与 D 相似），根据 (9.2) 有 <span class="arithmatex">\(\text{tr}A=\text{tr}D=\sum\limits_{i=1}^n\lambda_i\)</span>；若 A 不可对角化，</li>
+</ol>
+<p>(10)</p>
+<ol>
+<li><span class="arithmatex">\(\forall i=1..n,[I(\mathbf b_i)]_{\cal E}=[\mathbf b_i]_{\cal E}=\mathbf b_i\)</span>，于是 <span class="arithmatex">\(M=[\mathbf b_1\cdots\mathbf b_n]=P_{\cal B}\)</span>，于是 M 为从 <span class="arithmatex">\(\cal B\)</span> 到 <span class="arithmatex">\(\cal E\)</span> 的坐标变换矩阵（<span class="arithmatex">\((\mathbb R^n,\mathcal B;\mathbb R^n,\mathcal E)\)</span>）</li>
+<li><span class="arithmatex">\(\forall i=1..n,[I(\mathbf b_i)]_{\cal C}=[\mathbf b_i]_{\cal C}\)</span>，于是 <span class="arithmatex">\(M=[[\mathbf b_1]_{\cal C}\cdots[\mathbf b_n]_{\cal C}]=\underset{\cal C\leftarrow B}P\)</span>，于是 M 为由 <span class="arithmatex">\(\cal B\)</span> 到 <span class="arithmatex">\(\cal C\)</span> 的坐标变换矩阵（<span class="arithmatex">\((V,\mathcal B;V,\mathcal C)\)</span>）</li>
+<li><span class="arithmatex">\([I]_{\cal B}=[[I(\mathbf b_1)]_{\cal B}\cdots [I(\mathbf b_n)]_{\cal B}]=[[\mathbf b_1]_{\cal B}\cdots [\mathbf b_n]_{\cal B}]=[\mathbf e_1\cdots\mathbf e_n]=I_n\)</span></li>
+</ol>
+</blockquote>
 <h3 id="5">5. 复特征值</h3>
+<p><span class="arithmatex">\(n\times n\)</span> 矩阵的特征方程是 n 次多项式，若考虑复根，则方程恰好有 n 个根</p>
+<p>将实空间情况推广到复空间，目的是 (1) 方便讨论有关方阵 A 的关键信息，(2) 开辟线性代数的新领域</p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}0&amp;-1\\1&amp;0\end{bmatrix}\)</span>，那么 <span class="arithmatex">\(\mathbb R^2\)</span> 上的线性变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 将向量逆时针旋转 <span class="arithmatex">\(1/4\)</span> 圈，并且具有周期性；复特征值为 <span class="arithmatex">\(\lambda_1=i,\lambda_2=-i\)</span>，对应的线性无关的复特征向量为 <span class="arithmatex">\(\begin{bmatrix}i\\1\end{bmatrix},\begin{bmatrix}-i\\1\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}0.5&amp;-0.6\\0.75&amp;1.1\end{bmatrix}\)</span> 的复特征值为 <span class="arithmatex">\(\lambda_1=0.8+0.6i,\lambda_2=0.8-0.6i\)</span>，对应的线性无关的付特征向量为 <span class="arithmatex">\(\begin{bmatrix}-0.4+0.8i\\1\end{bmatrix},\begin{bmatrix}-0.4-0.8i\\1\end{bmatrix}\)</span>；<span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 实质上也是旋转变换</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">复特征值</p>
 </div>
@@ -1329,12 +1745,20 @@
 <p class="admonition-title">作用于 <span class="arithmatex">\(\mathbb C^n\)</span> 上的实矩阵的特征值，特征向量</p>
 </div>
 <blockquote>
-<p>设 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span></p>
-<p>由于 <span class="arithmatex">\(\overline{A\mathbf x}=\overline{A}~\overline{\mathbf x}=A\overline{\mathbf x}\)</span> 有 <span class="arithmatex">\(A\overline{\mathbf x}=\overline{A\mathbf x}=\overline{\lambda\mathbf x}=\overline{\lambda}~\overline{\mathbf x}\)</span></p>
-<p>这表明，若 <span class="arithmatex">\(\lambda,\mathbf x\)</span> 分别是 A 的特征值和特征向量；那么 <span class="arithmatex">\(\overline{\lambda},\overline{\mathbf x}\)</span> 也分别是 A 的特征值和特征向量</p>
-<p>换句话说复特征值或复特征向量成对出现</p>
+<p>假设 <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span>，<span class="arithmatex">\(\lambda\)</span> 是 A 的特征值，<span class="arithmatex">\(\mathbf x\)</span> 是对应的特征向量</p>
+<p>那么 <span class="arithmatex">\(\bar\lambda\)</span> 也是 A 的特征值，<span class="arithmatex">\(\bar{\bf x}\)</span> 是对应的特征向量</p>
+<p>于是 <span class="arithmatex">\(\overline{\lambda},\overline{\mathbf x}\)</span> 也分别是 A 的特征值和特征向量</p>
+<p>换句话说复特征值和复特征向量成对出现</p>
 <p>注：此处的复数指的是 <span class="arithmatex">\(a+ib\)</span>（<span class="arithmatex">\(b\ne0\)</span>）</p>
 </blockquote>
+<p>由于 <span class="arithmatex">\(\overline{A\mathbf x}=\overline{A}~\overline{\mathbf x}=A\overline{\mathbf x}\)</span> 有 <span class="arithmatex">\(A\overline{\mathbf x}=\overline{A\mathbf x}=\overline{\lambda\mathbf x}=\overline{\lambda}~\overline{\mathbf x}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\begin{bmatrix}0.5&amp;-0.6\\0.75&amp;1.1\end{bmatrix}\)</span> 有成对出现的共轭特征值 <span class="arithmatex">\(\lambda_1=0.8+0.6i,\lambda_2=0.8-0.6i\)</span>，以及对应的共轭特征向量 <span class="arithmatex">\(\begin{bmatrix}-0.4+0.8i\\1\end{bmatrix},\begin{bmatrix}-0.4-0.8i\\1\end{bmatrix}\)</span></li>
+</ol>
+</div>
 <p>具有复特征值的实矩阵隐含旋转性质</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

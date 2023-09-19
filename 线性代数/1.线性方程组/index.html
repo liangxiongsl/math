@@ -1108,6 +1108,15 @@
 <li>（有时讨论复空间 <span class="arithmatex">\(\mathbb C\)</span>，多项式空间 <span class="arithmatex">\(\mathbb P,\mathbb P_n\)</span>，信号空间 <span class="arithmatex">\(\mathbb S\)</span> 等空间）</li>
 </ol>
 </div>
+<ol>
+<li>第1章：线性方程组（贯穿整个线性代数）</li>
+<li>第2章，第4章：矩阵代数，向量代数</li>
+<li>第3章：行列式（研究矩阵代数的有力工具）</li>
+<li>第5章：矩阵的特征性质</li>
+<li>第6章：向量和矩阵的正交性质</li>
+<li>第7章：</li>
+<li>第8章：</li>
+</ol>
 <h3 id="_1"></h3>
 <h3 id="1">1.线性方程组</h3>
 <div class="admonition 线性方程">
@@ -1208,6 +1217,29 @@
 <li>若有解，它是否只有一个解，即解是否唯一？</li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>线性方程：<span class="arithmatex">\(\sum\limits_{i=1}^n a_ix_i = b\)</span></li>
+<li>线性方程组：<span class="arithmatex">\(\forall i=1..m,\sum\limits_{j=1}^na_{ij}x_j=b_i\)</span> 或 <span class="arithmatex">\(\begin{cases}a_{11}x_1+\cdots+a_{1n}x_n=b_1\\~~~~~~~~~~~~~~~~\vdots\\a_{m1}x_1+\cdots+a_{mn}x_n=b_n\end{cases}\)</span></li>
+<li>向量方程：<span class="arithmatex">\(\sum\limits_{i=1}^nx_i\mathbf a_i=\mathbf b\)</span></li>
+<li>矩阵方程：<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span></li>
+<li>解，解集，等价：线性方程组的<strong>解</strong>定义为能替代 <span class="arithmatex">\((x_1,x_2,\dots,x_n)\)</span> 的一组数 <span class="arithmatex">\((s_1,s_2,\dots,s_n)\)</span>；线性方程组的<strong>解集</strong>为所有解的集合，即 <span class="arithmatex">\(\{\mathbf x~:~有关\mathbf x的方程组\}\)</span>；两个线性方程组<strong>等价</strong>，当且仅当它们的解集相同</li>
+<li>相容性：若(非齐次)线性方程组有唯一解或无穷多解，则称该线性方程组是<strong>相容</strong>的；若它无解，则称它是<strong>不相容</strong>的</li>
+<li>系数矩阵，增广矩阵：线性方程组，向量方程，矩阵方程三者可以一一对应，其中 A 称为<strong>系数矩阵</strong>，<span class="arithmatex">\([A~~\mathbf b]\)</span> 称为<strong>增广矩阵</strong></li>
+<li>行初等变换：(1) 倍加变换 <span class="arithmatex">\(L_i \leftarrow L_i+kL_j\)</span>，(2) 对换变换 <span class="arithmatex">\(L_i \leftrightarrow L_j\)</span>，(3) 倍乘变换 <span class="arithmatex">\(L_i \leftarrow kL_i\)</span>；行初等变换是<strong>可逆</strong>的，并且象与原像之间是<strong>行等价</strong>的</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\mathbb R^n\)</span> 上一个线性方程（隐含 n 个未知数）代表 <span class="arithmatex">\(\mathbb R^n\)</span> 的 <span class="arithmatex">\(n-1\)</span> 子空间</li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">习题</p>
 <ol>
@@ -1216,8 +1248,28 @@
 <li>线性方程组的解的唯一性，如：多条二维直线是否交于一点？</li>
 <li>解集 <span class="arithmatex">\((\mathbf x_1,\dots,\mathbf x_n)\)</span> 线性方程组构造几个等价的增广矩阵</li>
 <li>给定矩阵 A 和 B，求 A 到 B 的初等行变换序列</li>
+<li>判断题：<ol>
+<li>每个初等行变换都是可逆的（Y）</li>
+<li><span class="arithmatex">\(5\times 6\)</span> 矩阵为 6 行（X）</li>
+<li>包含 n 个变量 <span class="arithmatex">\(x_1,\cdots,x_n\)</span> 的线性方程组的<strong>解集</strong>是一组数 <span class="arithmatex">\((s_1,\cdots,s_n)\)</span>，当用这组数代替 <span class="arithmatex">\(x_1,\cdots,x_n\)</span> 时，方程组中每个方程成为恒等式（X）</li>
+<li>线性方程组的两个基本问题：存在性，唯一性（Y）</li>
+<li>对增广矩阵的初等行变换不会改变相关的线性方程组的解集（Y）</li>
+<li>两个矩阵行等价，若它们有相同的行数（X）</li>
+<li>不相容线性方程组有一个或更多解（X）</li>
+<li>两个线性方程组等价，若它们有相同的解集（Y）</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\forall f,g\in\mathbb R\)</span>，<span class="arithmatex">\(\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}\mathbf x=\begin{bmatrix}f\\g\end{bmatrix}\)</span> 相容（<span class="arithmatex">\(a\ne0\)</span>）</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;2&amp;-5&amp;0\\0&amp;1&amp;-3&amp;-2\\0&amp;-3&amp;9&amp;5\end{bmatrix},B=\begin{bmatrix}1&amp;2&amp;-5&amp;0\\0&amp;1&amp;-3&amp;-2\\0&amp;0&amp;0&amp;-1\end{bmatrix}\)</span>，并且存在初等矩阵 E 使得 <span class="arithmatex">\(B=EA\)</span>，计算 E</li>
 </ol>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(7) <span class="arithmatex">\(\begin{bmatrix}a&amp;b&amp;f\\c&amp;d&amp;g\end{bmatrix}\sim\begin{bmatrix}a&amp;b&amp;f\\0&amp;d-\frac cab&amp;g-\frac caf\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(d-\frac cab\ne0\)</span></p>
+<p>(8) <span class="arithmatex">\(E=\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;3&amp;1\end{bmatrix}\)</span></p>
+</blockquote>
 <h3 id="2">2.行化简与阶梯型矩阵</h3>
 <div class="admonition 先导元素">
 <p class="admonition-title">先导元素</p>
@@ -1295,7 +1347,7 @@
 <p class="admonition-title">存在与唯一性定理</p>
 </div>
 <blockquote>
-<p>线性方程组相容，当且仅当 其增广矩阵的最右列不是主元列（换句话说，增广矩阵的阶梯型没有形如 <span class="arithmatex">\([0~\dots~0~b],~b\ne 0\)</span> 的行）</p>
+<p>线性方程组相容，当且仅当 其增广矩阵的最右列不是主元列（换句话说，增广矩阵的阶梯型没有形如 <span class="arithmatex">\([0~\dots~0~b],~b\ne 0\)</span> 的行；即 <span class="arithmatex">\(\{A 的主元列数\}=\{[A~~\mathbf b]的主元列数\}\)</span>）</p>
 <p>假设线性方程组相容，若没有自由变量，则为<strong>唯一解</strong>，否则有<strong>无穷多解</strong></p>
 </blockquote>
 <div class="admonition 解线性方程组的步骤">
@@ -1307,6 +1359,60 @@
 <li>继续行阶梯算法得到 简化阶梯型，得到对应的方程组</li>
 <li>将得到的方程组表示为 “基本变量由自由变量表示” 的形式</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>先导元素：矩阵 A 的某一非零行 <span class="arithmatex">\(\text{row}_i(A)\)</span> 的左边第一个非零元素称为<strong>先导元素</strong></li>
+<li>(行)阶梯型，简化(行)阶梯型：矩阵 A 是<strong>行阶梯型</strong>，若满足 (1) A 的任意非零行位于任意零行之上，(2) A 的非零行的先导元素严格位于上一行右下方（蕴涵 任意先导元素所在列正下方的元素为零）；行阶梯型 A 是<strong>简化阶梯型</strong>，若满足 (1) 任意先导元素为 1，(2) 任意先导元素所在列正上方的元素为零</li>
+<li>定理：矩阵 A 行等价于唯一的简化阶梯型；A 行等价于无穷多个阶梯型</li>
+<li>主元位置，主元，主元列：假设矩阵 A 行等价与阶梯型 U，那么 U 的任意先导元素所在的位置称为<strong>主元位置</strong>（同时也是 A 的主元位置），A 的主元位置上的元素称为<strong>主元</strong>，A 的主元所在的列称为<strong>主元列</strong>；注：行等价于同一简化阶梯型的矩阵拥有相同的一组主元位置，通常主元和主元列互不相同</li>
+<li><strong>行化简算法</strong>：</li>
+<li>基本变量，自由变量，线性方程组的通解：主元位置对应的未知变量称为<strong>基本变量</strong>，非主元位置对应的未知变量称为<strong>自由变量</strong>，线性方程的解集或<strong>通解</strong>可以用以自由变量线性表示基本变量的方程组来表示（但形式不唯一）</li>
+<li>线性方程组解的<strong>存在性</strong>，<strong>唯一性</strong>：线性方程组的解<strong>存在</strong>，当且仅当 其增广矩阵 A 的最右列不是主元列（即 <span class="arithmatex">\(\text{rank}A=\text{rank}[A~~\mathbf b]\)</span>）；方程组的解<strong>唯一</strong>，当且仅当方程组没有自由变量（即 <span class="arithmatex">\(\dim\text{Nul}A=0\)</span>）</li>
+<li>线性方程组解法：假设线性方程组为 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，求解过程为：(1) 使用[行化简算法]将 <span class="arithmatex">\([A~~\mathbf b]\sim[U~~\mathbf v']\)</span>（U 为简化阶梯型），(2) 给 U 添加或减少一些零行得到 <span class="arithmatex">\(n\times n\)</span> 矩阵 <span class="arithmatex">\(D'\)</span>（<span class="arithmatex">\(\mathbf v\)</span> 同样也添加或减少相等数量的 0 得到 <span class="arithmatex">\(\mathbf v\)</span>），重排 <span class="arithmatex">\(D'\)</span> 的行使得每个主元为于对角线上得到矩阵 <span class="arithmatex">\(D\)</span>，(3) 方程组的解为 <span class="arithmatex">\(\mathbf x=(I_n-D)\mathbf x+\mathbf v\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\([A~~\mathbf b]=\begin{bmatrix}1&amp;-3&amp;-5&amp;0\\0&amp;1&amp;-1&amp;-1\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的通解</li>
+<li><span class="arithmatex">\([A~~\mathbf b]=\begin{bmatrix}1&amp;-2&amp;-1&amp;3&amp;0\\-2&amp;4&amp;5&amp;-5&amp;3\\3&amp;-6&amp;-6&amp;8&amp;2\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的通解</li>
+<li>判断题<ol>
+<li>某些矩阵只要用不同的行变换次序就可化简为不止一个简化阶梯型矩阵（X）</li>
+<li>[行化简算法]只能用于线性方程组的增广矩阵（X）</li>
+<li>线性方程组中基本变量是系数矩阵中主元列对应的变量（Y）</li>
+<li>求线性方程组的解集的参数表示就是解这个方程组（Y）</li>
+<li>若某个增广矩阵的阶梯型的一行是 <span class="arithmatex">\([0~0~0~5~0]\)</span>，那么对应的线性方程组不相容（X）</li>
+<li>矩阵的阶梯型是唯一的（X）</li>
+<li>若增广矩阵的每一列都包含一个主元，则相应的方程组是相容的（X）</li>
+<li>化简矩阵为阶梯型被称为行化简过程的<strong>向前步骤</strong>（Y）</li>
+<li>当方程组具有自由变量时，解集一定包含许多解（<strong>X</strong>）</li>
+<li>方程组的通解是所有解的一个显式表示（Y）</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\begin{cases}x_1+hx_2=2\\4x_1+8x_2=k\end{cases}\)</span>，方程组 (1) 无解，(2) 有唯一解，(3) 有多解 时，h 和 k 的取值是?</li>
+<li>方程组的 <span class="arithmatex">\(3\times 5\)</span> 系数矩阵有 3 个主元列，该方程组是否相容？</li>
+<li>方程组的系数矩阵中每一行都有主元位置，该方程组是否相容？</li>
+<li>若线性方程组的方程个数 m 小于未知数个数 n，称之为<strong>欠定方程组</strong>（<span class="arithmatex">\(m&lt;n\)</span>）；设一个欠定方程组相容，证明：该方程组有无穷多解</li>
+<li>若线性方程组的方程个数 m 大于未知数个数 n，称之为<strong>超定方程组</strong>（<span class="arithmatex">\(m&gt;n\)</span>）；超定方程组一定相容吗？</li>
+<li><strong>插值多项式</strong>：假设有某个 n 次多项式 <span class="arithmatex">\(p_n(t)=\sum\limits_{i=0}^na_it^i\)</span>，给定 <span class="arithmatex">\(n+1\)</span> 个点值 <span class="arithmatex">\(\forall i=0..n,p_n(x_i)=y_i\)</span>，于是有 <span class="arithmatex">\(\begin{cases}a_0+a_1x_0+\cdots+a_nx_0^n=y_0\\~~~~~~~~~~~~~~~~~~~~~~~\vdots\\a_0+a_1x_n+\cdots+a_nx_n^n=y_n\end{cases}\)</span>，即矩阵方程 <span class="arithmatex">\(\begin{bmatrix}1&amp;x_0&amp;\cdots&amp;x_0^n\\\vdots&amp;\vdots&amp;&amp;\vdots\\1&amp;x_n&amp;\cdots&amp;x_n^n\end{bmatrix}\begin{bmatrix}a_0\\\vdots\\a_n\end{bmatrix}=\begin{bmatrix}y_0\\\vdots\\y_n\end{bmatrix}\)</span>（系数矩阵恰好是范德蒙德矩阵）</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\([A~~\mathbf b]=\begin{bmatrix}1&amp;-3&amp;-5&amp;0\\0&amp;1&amp;-1&amp;-1\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;-8&amp;-3\\0&amp;1&amp;-1&amp;-1\end{bmatrix}\)</span>，<span class="arithmatex">\(\mathbf x=\begin{bmatrix}0&amp;0&amp;8\\0&amp;0&amp;1\\0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}+\begin{bmatrix}-3\\-1\\0\end{bmatrix}=\begin{bmatrix}8\\1\\1\end{bmatrix}x_3+\begin{bmatrix}-3\\-1\\0\end{bmatrix}\)</span> 或者 <span class="arithmatex">\(\begin{cases}x_1=-3+8x_3\\x_2=-1+x_3\\x_3是自由变量\end{cases}\)</span></p>
+<p>(2) <span class="arithmatex">\([A~~\mathbf b]=\begin{bmatrix}1&amp;-2&amp;-1&amp;3&amp;0\\-2&amp;4&amp;5&amp;-5&amp;3\\3&amp;-6&amp;-6&amp;8&amp;2\end{bmatrix}\sim\begin{bmatrix}1&amp;-2&amp;-1&amp;3&amp;0\\0&amp;0&amp;3&amp;1&amp;3\\0&amp;0&amp;-3&amp;-1&amp;2\end{bmatrix}\sim\begin{bmatrix}1&amp;-2&amp;-1&amp;3&amp;0\\0&amp;0&amp;3&amp;1&amp;3\\0&amp;0&amp;0&amp;0&amp;5\end{bmatrix}\)</span>，方程组不相容，即无解</p>
+<p>(3.9) 方程组具有自由变量，并不蕴涵方程组相容</p>
+<p>(4) <span class="arithmatex">\(\begin{bmatrix}1&amp;h&amp;2\\4&amp;8&amp;k\end{bmatrix}\sim\begin{bmatrix}1&amp;h&amp;2\\0&amp;8-4h&amp;k-8\end{bmatrix}\)</span>，于是：</p>
+<p><span class="arithmatex">\(h=2,k\ne8\)</span> 时，无解；<span class="arithmatex">\(h\ne2\)</span> 时，有唯一解；<span class="arithmatex">\(h=2,k=8\)</span> 时，有无穷多解</p>
+<p>(5) 方程组相容，因为 <span class="arithmatex">\(3\times (3+k)\)</span>（<span class="arithmatex">\(k\ge0\)</span>）矩阵最多有 3 个主元列，而 A 有 3 个主元列，于是 <span class="arithmatex">\([A~~\mathbf b]\)</span> 的主元列个数不会比 A 的更多，即 <span class="arithmatex">\(\text{rank}A=\text{rank}[A~~\mathbf b]\)</span></p>
+<p>(6) <span class="arithmatex">\(m=\text{rank}A\le\min\{m,n\}\)</span>，蕴涵 <span class="arithmatex">\(m\le n\)</span>，而 <span class="arithmatex">\(\text{rank}A\le\text{rank}[A~~\mathbf b]\le\min\{m,n+1\}\)</span>，于是 <span class="arithmatex">\(m\le\text{rank}[A~~\mathbf b]\le m\)</span>，即 <span class="arithmatex">\(\text{rank}[A~~\mathbf b]=\text{rank}A\)</span>，于是方程组相容（结论总结到了[2.3矩阵定理]）</p>
+<p>(7) <span class="arithmatex">\(\text{rank}A\le\min\{m,n\}=m\)</span>，根据[4.6秩定理]有 <span class="arithmatex">\(\dim\text{Nul}A=n-\text{rank}A\ge n-m&gt;0\)</span>，即自由变量个数不小于 1，于是方程组有无穷多解</p>
+</blockquote>
 <h3 id="3">3.向量方程</h3>
 <div class="admonition note">
 <p class="admonition-title"><span class="arithmatex">\(\mathbb R^n 中的向量\)</span></p>
@@ -1350,6 +1456,57 @@
 <li><span class="arithmatex">\(\text{Span}\{\mathbf u\}\)</span> 表示 <span class="arithmatex">\(\mathbf u\)</span> 的倍数的集合；在 <span class="arithmatex">\(\mathbb R^3\)</span> 上表示 <span class="arithmatex">\(\mathbf 0\)</span> 或 直线</li>
 <li>假设 <span class="arithmatex">\(\mathbf u,\mathbf v \ne \mathbf 0\)</span>，且 <span class="arithmatex">\(\mathbf u \ne k\mathbf v\)</span>（k 为变量），那么 <span class="arithmatex">\(\mathbb R^3\)</span> 上 <span class="arithmatex">\(\text{Span}\{\mathbf u, \mathbf v\}\)</span> 表示一个平面</li>
 </ul>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\mathbb R^n\)</span> 中向量定义，相等，加法，标量乘法（<span class="arithmatex">\(\forall\mathbf u,\mathbf v\in\mathbb R^n,c\in\mathbb R\)</span>）：(1) 向量定义 <span class="arithmatex">\(\mathbf v=(v_1,\cdots,v_n)\)</span>，(2) 向量相等 <span class="arithmatex">\(\mathbf u=\mathbf v\iff u_1=v_1,\cdots,u_n=v_n\)</span>，(3) 向量加法 <span class="arithmatex">\(\mathbf u+\mathbf v=(u_1+v_1,\cdots,u_n+v_n)\)</span>，(4) 向量标量乘法 <span class="arithmatex">\(c\mathbf v=(cv_1,\cdots,cv_n)\)</span></li>
+<li><span class="arithmatex">\(\mathbb R^n\)</span> 公理：<span class="arithmatex">\(\mathbb R^n\)</span> 满足[向量空间公理]，并且具有该公理的所有性质和推论（有10种基本性质）</li>
+<li>线性组合：<span class="arithmatex">\(\forall i=1..p,v_i\in\mathbb R^n,c_i\in\mathbb R\)</span>，<span class="arithmatex">\(\mathbf y=\sum\limits_{i=1}^pc_i\mathbf v_i\)</span> 称为向量 <span class="arithmatex">\(\mathbf v_1,\mathbf v_2,\dots,\mathbf v_p\)</span> 以 <span class="arithmatex">\(c_1,c_2\dots,c_p\)</span> 为<strong>权</strong>的<strong>线性组合</strong></li>
+<li>向量方程：形如 <span class="arithmatex">\(x_1\mathbf a_1 + x_2\mathbf a_2 + \dots + x_n\mathbf a_n = \mathbf b\)</span> 的方程称为<strong>向量方程</strong>；其增广矩阵为 <span class="arithmatex">\([\mathbf a_1~\mathbf a_2~\dots~\mathbf a_n~\mathbf b]\)</span></li>
+<li>张成：<span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_p\}=\left\{\sum\limits_{i=1}^pc_i\mathbf v_i~:~\forall i=1..p,c_i\in\mathbb R\right\}\)</span>（在[4.1节]已给出定义）；性质：<span class="arithmatex">\(\mathbf b\in\text{Span}\{\mathbf a_1,\cdots,\mathbf a_n\}\iff A\mathbf x=\mathbf b相容\)</span>（总结为[2.3矩阵定理]）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf v_1=\begin{bmatrix}1\\-1\\-2\end{bmatrix},\mathbf v_2=\begin{bmatrix}5\\-4\\-7\end{bmatrix},\mathbf v_3=\begin{bmatrix}-3\\1\\0\end{bmatrix},\mathbf y=\begin{bmatrix}-4\\3\\h\end{bmatrix}\)</span>，<span class="arithmatex">\(\mathbf y\in\text{Span}\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}\)</span>，计算 h</li>
+<li><span class="arithmatex">\(\mathbf w_1,\mathbf w_2,\mathbf w_3\in\mathbb R^n\)</span>，并且 <span class="arithmatex">\(\mathbf u,\mathbf v\in\text{Span}\{\mathbf w_1,\mathbf w_2,\mathbf w_3\}\)</span>，证明：<span class="arithmatex">\(\mathbf u+\mathbf v\in\text{Span}\{\mathbf w_1,\mathbf w_2,\mathbf w_3\}\)</span></li>
+<li>判断题<ol>
+<li><span class="arithmatex">\(\begin{bmatrix}-4\\3\end{bmatrix}=(-4,3)\)</span>（Y）</li>
+<li>平面上对应于 <span class="arithmatex">\(\begin{bmatrix}-2\\5\end{bmatrix},\begin{bmatrix}-5\\2\end{bmatrix}\)</span> 的两点位于通过原点的一条直线上（Y）</li>
+<li>向量 <span class="arithmatex">\(\frac12\mathbf v_1\)</span> 是 <span class="arithmatex">\(\mathbf v_1,\mathbf v_2\)</span> 的线性组合（Y）</li>
+<li>增广矩阵为 <span class="arithmatex">\(\begin{bmatrix}\mathbf a_1&amp;\mathbf a_2&amp;\mathbf a_3&amp;\mathbf b\end{bmatrix}\)</span> 的线性方程组的解集与向量方程 <span class="arithmatex">\(x_1\mathbf a_1+x_2\mathbf a_2+x_3\mathbf a_3=\mathbf b\)</span> 的解集相同（Y）</li>
+<li><span class="arithmatex">\(\text{Span}\{\mathbf u,\mathbf v\}\)</span> 总是表示经过原点的一个平面（X）</li>
+<li>任意 5 个实数组成的数列是 <span class="arithmatex">\(\mathbb R^5\)</span> 中的一个向量（Y）</li>
+<li>向量 <span class="arithmatex">\(\mathbf u\)</span> 等于向量 <span class="arithmatex">\(\mathbf u-\mathbf v\)</span> 与向量 <span class="arithmatex">\(\mathbf v\)</span> 之和（Y）</li>
+<li>线性组合 <span class="arithmatex">\(\sum\limits_{i=1}^pc_i\mathbf u_i\)</span> 中，权 <span class="arithmatex">\(c_1,\cdots,c_p\)</span> 不全为 0（X）</li>
+<li>当 <span class="arithmatex">\(\mathbf u,\mathbf v\ne\mathbf 0\)</span>，<span class="arithmatex">\(\text{Span}\{\mathbf u,\mathbf v\}\)</span> 包含通过 <span class="arithmatex">\(\mathbf u\)</span> 与原点的直线（Y）</li>
+<li>增广矩阵为 <span class="arithmatex">\(\begin{bmatrix}\mathbf a_1&amp;\mathbf a_2&amp;\mathbf a_3&amp;\mathbf b\end{bmatrix}\)</span> 的线性方程组是否有解的问题，等价于 <span class="arithmatex">\(\mathbf b\)</span> 是否属于 <span class="arithmatex">\(\text{Span}\{\mathbf a_1,\mathbf a_2,\mathbf a_3\}\)</span>（Y）</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;0&amp;-4\\0&amp;3&amp;-2\\-2&amp;6&amp;3\end{bmatrix},\mathbf b=\begin{bmatrix}4\\1\\-4\end{bmatrix}\)</span>，<span class="arithmatex">\(W=\text{Span}\{\mathbf a_1,\mathbf a_2,\mathbf a_3\}\)</span><ol>
+<li><span class="arithmatex">\(\mathbf b\in\{\mathbf a_1,\mathbf a_2,\mathbf a_3\}\)</span> 是否成立？<span class="arithmatex">\(\{\mathbf a_1,\mathbf a_2,\mathbf a_3\}\)</span> 有多少个向量？</li>
+<li><span class="arithmatex">\(\mathbf b\in W\)</span> 是否成立？<span class="arithmatex">\(W\)</span> 有多少个向量？</li>
+<li>证明：<span class="arithmatex">\(\mathbf a_1\in W\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\begin{bmatrix}1&amp;5&amp;-3&amp;-4\\-1&amp;-4&amp;1&amp;3\\-2&amp;-7&amp;0&amp;h\end{bmatrix}\sim\begin{bmatrix}1&amp;5&amp;-3&amp;-4\\0&amp;1&amp;-2&amp;-1\\0&amp;0&amp;0&amp;h-5\end{bmatrix}\)</span>，<span class="arithmatex">\(\text{rank}A=\text{rank}[A~\mathbf b]\)</span>，当且仅当 <span class="arithmatex">\(h=5\)</span></p>
+<p>(2) <span class="arithmatex">\(\mathbf u+\mathbf v=\sum\limits_{i=1}^nc_i\mathbf w_i+\sum\limits_{i=1}^nd_i\mathbf w_i=\sum\limits_{i=1}^n(c_i+d_i)\mathbf u_i\in\text{Span}\{\mathbf w_1,\mathbf w_2,\mathbf w_3\}\)</span>；实际上根据[4.1]的讨论，<span class="arithmatex">\(H=\text{Span}(S)\)</span>（<span class="arithmatex">\(S\subset V\)</span>）是向量空间 V 的子空间，也即 H 是向量空间，蕴涵 H 满足加法封闭性</p>
+<p>(4)</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf b\not\in\{\mathbf a_1,\mathbf a_2,\mathbf a_3\}\)</span>，并且 <span class="arithmatex">\(\{\mathbf a_1,\mathbf a_2,\mathbf a_3\}\)</span> 有三个向量</li>
+<li><span class="arithmatex">\(\mathbf b\in W\)</span>，并且 W 有无穷多个向量</li>
+<li><span class="arithmatex">\(\mathbf a_1=1\mathbf a_1+0\mathbf a_2+0\mathbf a_3\)</span>，于是 <span class="arithmatex">\(\mathbf a_1\in W\)</span></li>
+</ol>
 </blockquote>
 <h3 id="4">4. 矩阵方程</h3>
 <p><span class="arithmatex">\(\mathbf A\mathbf x = \mathbf b\)</span></p>
@@ -1432,6 +1589,51 @@
 <li><span class="arithmatex">\(A(c\mathbf u) = c(A\mathbf u)\)</span></li>
 </ol>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>矩阵：矩阵 A 是 <span class="arithmatex">\(m\times n\)</span> 的阵列，各列分别为 <span class="arithmatex">\(\mathbf a_1, \mathbf a_2,\dots, \mathbf a_n\)</span>（<span class="arithmatex">\(\mathbf a_i \in \mathbb R^m\)</span>），记为 <span class="arithmatex">\(A=\begin{bmatrix}a_{11}&amp;a_{12}&amp;\dots&amp;a_{1n}\\a_{21}&amp;a_{22}&amp;\dots&amp;a_{2n}\\\vdots&amp;\vdots&amp;&amp;\vdots\\a_{m1}&amp;a_{m2}&amp;\dots&amp;a_{mn}\end{bmatrix} = \begin{bmatrix}\mathbf a_1&amp;\mathbf a_2&amp;\dots&amp;\mathbf a_n\end{bmatrix}\)</span></li>
+<li>矩阵向量乘法：<span class="arithmatex">\(A\in M_{m\times n}\)</span> 与 <span class="arithmatex">\(\mathbf x\in\mathbb R^n\)</span> 的乘法为 <span class="arithmatex">\(A\mathbf x=\begin{bmatrix}\mathbf a_1&amp;\mathbf a_2&amp;\dots&amp;\mathbf a_n\end{bmatrix} \begin{bmatrix}x_1\\ x_2\\\vdots\\ x_n\end{bmatrix}=\sum\limits_{i=1}^nx_i\mathbf a_i\)</span>（详见[2.1]）</li>
+<li>矩阵方程：形如 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的方程，称为矩阵方程</li>
+<li>部分的矩阵定理（该内容归纳在[2.3矩阵定理]中）</li>
+<li>单位矩阵：对角线元素均为 1 的，其他元素为 0 的 <span class="arithmatex">\(n\times n\)</span> 矩阵，记为 <span class="arithmatex">\(I=I_n\)</span>；满足 <span class="arithmatex">\(\forall\mathbf x\in \mathbb R^n,I_n\mathbf x=\mathbf x\)</span></li>
+<li>定理：假设 <span class="arithmatex">\(A\in M_{m\times n},\mathbf u,\mathbf v\in\mathbb R^n,c\in\mathbb R\)</span>，那么 (1) <span class="arithmatex">\(A(\mathbf u + \mathbf v) = A\mathbf u + A\mathbf v\)</span>，(2) <span class="arithmatex">\(A(c\mathbf u) = c(A\mathbf u)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;5&amp;-2&amp;0\\-3&amp;1&amp;9&amp;-5\\4&amp;-8&amp;-1&amp;7\end{bmatrix},\mathbf p=\begin{bmatrix}3\\-2\\0\\-4\end{bmatrix},\mathbf b=\begin{bmatrix}-7\\9\\0\end{bmatrix}\)</span>，满足 <span class="arithmatex">\(A\mathbf p=\mathbf b\)</span>，求 <span class="arithmatex">\(\mathbf b\)</span> 以 A 的列为线性组合的表达式</li>
+<li>构造 <span class="arithmatex">\(3\times 3\)</span> 矩阵 A，且向量 <span class="arithmatex">\(\mathbf b,\mathbf c\in\mathbb R^3\)</span>，使得 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有一个解，而 <span class="arithmatex">\(A\mathbf x=\mathbf c\)</span> 无解</li>
+<li>判断题<ol>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 称为向量方程（X）</li>
+<li>向量 <span class="arithmatex">\(\mathbf b\)</span> 是矩阵 A 的各列的线性组合，当且仅当方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 相容（Y）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 相容，若增广矩阵 <span class="arithmatex">\([A~~\mathbf b]\)</span> 每行都有一个主元位置（X）</li>
+<li>乘积 <span class="arithmatex">\(A\mathbf x\)</span> 的第一个元素是标量乘积之和（Y）</li>
+<li><span class="arithmatex">\(m\times n\)</span> 矩阵 A 的列生成 <span class="arithmatex">\(\mathbb R^m\)</span>，则 <span class="arithmatex">\(\forall \mathbf b\in\mathbb R^m\)</span>，方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 相容（Y）</li>
+<li><span class="arithmatex">\(\exists\mathbf b\in\mathbb R^m\)</span>，方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 不相容，那么 A 不可能每一行都有一个主元位置（Y）</li>
+<li>矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 对应于一个由相同解集的向量方程（Y）</li>
+<li>向量的任意线性组合可以表示成 <span class="arithmatex">\(A\mathbf x\)</span> 的形式（Y）</li>
+<li>增广矩阵为 <span class="arithmatex">\([\mathbf a_1~~\mathbf a_2~~\mathbf a_3~~\mathbf b]\)</span> 的线性方程组的解集与 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的解集相同，其中 <span class="arithmatex">\(A=[\mathbf a_1~~\mathbf a_2~~\mathbf a_3]\)</span>（Y）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 不相容，则 <span class="arithmatex">\(\mathbf b\)</span> 不属于 A 的列生成的集合（Y）</li>
+<li>若增广矩阵 <span class="arithmatex">\([A~~\mathbf b]\)</span> 在每一行有一个主元位置，则方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 不相容（X）</li>
+<li><span class="arithmatex">\(m\times n\)</span> 矩阵 A 的列不生成 <span class="arithmatex">\(\mathbb R^m\)</span>，则 <span class="arithmatex">\(\exists\mathbf b\in\mathbb R^m\)</span>，方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 不相容（Y）</li>
+</ol>
+</li>
+<li>证明：欠定方程组 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span>（<span class="arithmatex">\(m&lt;n\)</span>）没有唯一解</li>
+<li>证明：超定方程组 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span>（<span class="arithmatex">\(m&gt;n\)</span>）不张成 <span class="arithmatex">\(\mathbb R^m\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\mathbf b=3\begin{bmatrix}1\\-3\\4\end{bmatrix}-2\begin{bmatrix}5\\1\\-8\end{bmatrix}+0\begin{bmatrix}-2\\9\\-1\end{bmatrix}-4\begin{bmatrix}0\\-5\\7\end{bmatrix}\)</span>（如果先行化简 <span class="arithmatex">\([A~~\mathbf b]\)</span> 得到 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的一个解就显得没有必要了）</p>
+<p>(4) 欠定：<span class="arithmatex">\(\dim\text{Nul}A\ge\max\{0,n-m\}=n-m&gt;0\)</span>，蕴涵方程组没有唯一解</p>
+<p>(5) 超定：<span class="arithmatex">\(\text{rank}A\le\min\{m,n\}=n&lt;m\)</span>，蕴涵方程组不张成 <span class="arithmatex">\(\mathbb R^m\)</span></p>
+</blockquote>
 <h3 id="5">5. 线性方程组的解集</h3>
 <div class="admonition 齐次线性方程组">
 <p class="admonition-title">齐次线性方程组</p>
@@ -1473,6 +1675,58 @@
 <li>把一般解 <span class="arithmatex">\(\mathbf x\)</span> 表示成向量，如果有自由变量，其元素依赖于自由变量</li>
 <li>把 <span class="arithmatex">\(\mathbf x\)</span> 分解为向量的线性组合，将方程右侧的自由变量替换为参数</li>
 </ol>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>设 (1) 方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 对某个 <span class="arithmatex">\(\mathbf b\)</span> 是<strong>相容</strong>的，<span class="arithmatex">\(\mathbf p\)</span> 为一个特解；(2) <span class="arithmatex">\(\mathbf v_h\)</span> 是齐次方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的通解</p>
+<p>则 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的通解是所有形如 <span class="arithmatex">\(\mathbf w=\mathbf p+\mathbf v_h\)</span></p>
+</blockquote>
+<p>由 <span class="arithmatex">\(A\mathbf p=\mathbf b\)</span> 和 <span class="arithmatex">\(A\mathbf v_h=\mathbf 0\)</span>，于是 <span class="arithmatex">\(A\mathbf w=A(\mathbf p+\mathbf v_h)=A\mathbf p+A\mathbf v_h=\mathbf b+\mathbf 0=\mathbf b\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>齐次线性方程组，平凡解：<strong>齐次</strong>线性方程组形如 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span>；齐次线性方程组总有<strong>平凡解</strong>（零解）<span class="arithmatex">\(\mathbf x=\mathbf 0\)</span></li>
+<li>方程组解的参数向量形式：参见[1.2总结]</li>
+<li>非齐次方程的构造解：<strong>相容</strong>方程组 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的通解为 <span class="arithmatex">\(\mathbf w=\mathbf p+\mathbf v_h\)</span>（其中 <span class="arithmatex">\(\mathbf p\)</span> 是方程的一个特解，<span class="arithmatex">\(\mathbf v_h\)</span> 的对应齐次方程的通解）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>描述两个 <span class="arithmatex">\(\mathbb R^3\)</span> 的平面 <span class="arithmatex">\(\begin{cases}x_1+4x_2-5x_3=0\\2x_1-x_2+8x_3=9\end{cases}\)</span> 的交集（注意：第二个方程不是 <span class="arithmatex">\(\mathbb R^3\)</span> 的子空间）</li>
+<li>给出 <span class="arithmatex">\(10x_1-3x_2-2x_3=7\)</span> 的参数向量形式的通解</li>
+<li>判断题<ol>
+<li>齐次方程总是相容的（Y）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 给出它的解集的显示表达式（X）</li>
+<li>齐次方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 至少有一个自由变量，当且仅当方程有平凡解（X）</li>
+<li>方程 <span class="arithmatex">\(\mathbf x=\mathbf p+t\mathbf v\)</span> 描述了一条直线，它通过 <span class="arithmatex">\(\mathbf v\)</span> 且平行于 <span class="arithmatex">\(\mathbf p\)</span>（X）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的阶级是所有形如 <span class="arithmatex">\(\mathbf w=\mathbf p+\mathbf v_h\)</span> 的向量集，其中 <span class="arithmatex">\(\mathbf v_h\)</span> 是对应齐次方程的任意解（Y）</li>
+<li>若 <span class="arithmatex">\(\mathbf x\)</span> 是 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的非平凡解，则 <span class="arithmatex">\(\mathbf x\)</span> 的每个元素不等于零（X）</li>
+<li>方程 <span class="arithmatex">\(\mathbf x=x_2\mathbf u+x_3\mathbf v\)</span>（<span class="arithmatex">\(x_2,x_3\)</span> 是自由变量，<span class="arithmatex">\(\mathbf u,\mathbf v\)</span> 没有倍数关系）表示经过原点的平面（Y）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 是齐次的，当且仅当零向量是它的解（<strong>Y</strong>）</li>
+<li>把一个向量加上 <span class="arithmatex">\(\mathbf p\)</span> 就是把该向量沿平行于 <span class="arithmatex">\(\mathbf p\)</span> 的方向移动（<strong>Y</strong>）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的解集可由平移 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的解集得到（<strong>X</strong>）</li>
+</ol>
+</li>
+<li>证明：假设 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有解，若 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 仅有平凡解，那么 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的解唯一</li>
+<li>设 A 是 <span class="arithmatex">\(3\times 3\)</span> 零矩阵，求 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的解集</li>
+<li>严格非齐次方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>（<span class="arithmatex">\(\mathbf b\ne\mathbf 0\)</span>）的解集是否可能是经过原点的平面？</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\begin{bmatrix}1&amp;4&amp;-5&amp;0\\2&amp;-1&amp;8&amp;9\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;3&amp;4\\0&amp;1&amp;-2&amp;-1\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(\mathbf x=x_3\begin{bmatrix}-3\\2\\1\end{bmatrix}+\begin{bmatrix}4\\-1\\0\end{bmatrix}\)</span></p>
+<p>(2) <span class="arithmatex">\(\begin{bmatrix}10&amp;-3&amp;-2&amp;7\end{bmatrix}\sim\begin{bmatrix}1&amp;-3/10&amp;-1/5&amp;7/10\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(\mathbf x=x_2\begin{bmatrix}3/10\\1\\0\end{bmatrix}+x_3\begin{bmatrix}1/5\\0\\1\\\end{bmatrix}+\begin{bmatrix}7/10\\0\\0\end{bmatrix}\)</span></p>
+<p>(4) <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的解为 <span class="arithmatex">\(\mathbf x=\mathbf p+\mathbf v_h\)</span>（其中 <span class="arithmatex">\(A\mathbf p=\mathbf b\)</span>，<span class="arithmatex">\(A\mathbf v_h=\mathbf 0\)</span>，<span class="arithmatex">\(\mathbf v_h\)</span> 是任意一个齐次解），又因 <span class="arithmatex">\(\mathbf v_h=\mathbf 0\)</span>，于是 <span class="arithmatex">\(\mathbf p+\mathbf v_h\)</span> 唯一（反命题也成立）</p>
+<p>(5) <span class="arithmatex">\(\mathbf x=x_1\begin{bmatrix}1\\0\\0\end{bmatrix}+x_2\begin{bmatrix}0\\1\\0\end{bmatrix}+x_3\begin{bmatrix}0\\0\\1\end{bmatrix}\)</span></p>
+<p>(6) 假设解集经过原点，蕴涵存在一个解 <span class="arithmatex">\(\mathbf x=\mathbf 0\)</span>，使得 <span class="arithmatex">\(\mathbf 0=A\mathbf b=\mathbf b\)</span>，矛盾；所以解集不经过原点</p>
 </blockquote>
 <h3 id="6">6. 线性方程组的应用</h3>
 <ol>
@@ -1544,6 +1798,62 @@
 <li>如果存在 <span class="arithmatex">\(\mathbf v_i=\mathbf 0\)</span>，那么 S 线性相关</li>
 </ol>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>线性无关，线性相关，线性相关判定定理：参见[4.3总结]</li>
+<li>矩阵各列的线性无关的等价条件：参见[2.3总结]</li>
+<li>线性相关的充分性：(1) <span class="arithmatex">\(\exists\mathbf v_i=\mathbf0\)</span>，(2) 线性组合是欠定的（即 <span class="arithmatex">\(m&lt;n\)</span>），(3) <span class="arithmatex">\(\exists i,\exists j&lt;i\)</span>，<span class="arithmatex">\(\mathbf v_i\)</span> 与 <span class="arithmatex">\(\mathbf v_j\)</span> 有倍数关系</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>向量集 S 的超集 T 线性无关，蕴涵 S 线性无关</li>
+<li>向量集 S 的子集 R 线性相关，蕴涵 S 线性相关</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u=\begin{bmatrix}3\\2\\-4\end{bmatrix},\mathbf v=\begin{bmatrix}-6\\1\\7\end{bmatrix},\mathbf w=\begin{bmatrix}0\\-5\\2\end{bmatrix},\mathbf z=\begin{bmatrix}3\\7\\-5\end{bmatrix}\)</span><ol>
+<li>以上任意两个向量组成的向量集都是线性无关的吗？</li>
+<li>(1) 的结论是否蕴涵 <span class="arithmatex">\(\{\mathbf u,\mathbf v,\mathbf w,\mathbf z\}\)</span> 也线性无关？</li>
+<li>为确定 <span class="arithmatex">\(\{\mathbf u,\mathbf v,\mathbf w,\mathbf z\}\)</span> 线性相关，是否有必要验证 <span class="arithmatex">\(\mathbf w\)</span> 是 <span class="arithmatex">\(\{\mathbf u,\mathbf v,\mathbf z\}\)</span> 的线性组合？</li>
+<li><span class="arithmatex">\(\{\mathbf u,\mathbf v,\mathbf w,\mathbf z\}\)</span> 是否线性相关？</li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(\{\bf v_1,v_2,v_3\}\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 中向量的线性相关集，并且 <span class="arithmatex">\(\bf v_4\in\mathbb R^n\)</span>，证明：<span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2,\mathbf v_3,\mathbf v_4\}\)</span> 是线性相关集</li>
+<li>判断题：<ol>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 有平凡解，则 A 的各列线性无关（X）</li>
+<li>若 S 是线性相关集，则 S 中每个向量是其他向量的线性组合（X）</li>
+<li>任意 <span class="arithmatex">\(4\times 5\)</span> 矩阵的各列线性相关（Y）</li>
+<li>假设 <span class="arithmatex">\(\bf x,y\)</span> 线性无关，若 <span class="arithmatex">\(\{\bf x,y,z\}\)</span> 线性相关，那么 <span class="arithmatex">\(\bf z\in\text{Span}\{x,y\}\)</span>（Y）</li>
+<li>两个向量线性相关，当且仅当它们位于过原点的一条直线上（Y）</li>
+<li>每个向量组的向量个数严格小于每个向量所含元素个数，则向量组线性无关（X）</li>
+<li>若 <span class="arithmatex">\(\{\bf u,v\}\)</span> 线性无关，而 <span class="arithmatex">\(\bf w\in\text{Span}\{u,v\}\)</span>，则 <span class="arithmatex">\(\{\bf u,v,w\}\)</span>（Y）</li>
+<li>若 <span class="arithmatex">\(\mathbb R^n\)</span> 中一个向量组线性相关，则此向量组包含的向量个数严格大于每个向量的元素个数（X）</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) </p>
+<ol>
+<li>可验证以上任意两个向量组成的向量集中的两个向量不是倍数关系，所以这些大小为 2 的向量集线性无关</li>
+<li>该命题为假</li>
+<li>没必要</li>
+<li>这些向量的齐次线性组合方程是欠定的（<span class="arithmatex">\(3&lt;4\)</span>），所以它们线性相关</li>
+</ol>
+<p>(2) <span class="arithmatex">\(\exists c_1\cdot c_2\cdot c_3\ne0\)</span>，使得 <span class="arithmatex">\(c_1\mathbf v_1+c_2\mathbf v_2+c_3\mathbf v_3=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(c_1\mathbf v_1+c_2\mathbf v_2+c_3\mathbf v_3+0\mathbf v_4=\mathbf 0\)</span>，于是 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2,\mathbf v_3,\mathbf v_4\}\)</span> 是线性相关集</p>
+</blockquote>
 <h3 id="8">8. 线性变换</h3>
 <div class="admonition 变换">
 <p class="admonition-title">变换</p>
@@ -1599,6 +1909,44 @@
 <li>若 <span class="arithmatex">\(T(\mathbf x)\)</span> 为线性变换，那么 <span class="arithmatex">\(r T(\mathbf x)\)</span> 也为线性变换（此时称为 压缩变换(<span class="arithmatex">\(0\le r\le 1\)</span>) 或 拉伸变换(<span class="arithmatex">\(r &gt; 1\)</span>)）</li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>变换，定义域，余定义域，原像，像，值域：<strong>变换</strong> T 是一个映射规则 <span class="arithmatex">\(T:~\mathbb R^n\to \mathbb R^m\)</span>，<span class="arithmatex">\(\mathbb R^n\)</span> 称为 T 的<strong>定义域</strong>，<span class="arithmatex">\(\mathbb R^m\)</span> 称为 T 的<strong>余定义域</strong>（或取值空间）；<span class="arithmatex">\(\forall\bf x\in\mathbb R^n\)</span> 称为<strong>原像</strong>，<span class="arithmatex">\(T(\mathbf x) \in \mathbb R^m\)</span> 称为 <span class="arithmatex">\(\bf x\)</span> 在 T 作用下的<strong>像</strong>，<span class="arithmatex">\(\{T(\mathbf x)~|~ \mathbf x \in \mathbb R^n \}\)</span> 称为 T 的<strong>值域</strong></li>
+<li>矩阵变换：变换 <span class="arithmatex">\(T(\mathbf x) = A\mathbf x\)</span> 称为矩阵变换（其中 <span class="arithmatex">\(A\in M_{m\times n}\)</span>）</li>
+<li>线性变换：线性变换 T 满足：假设 <span class="arithmatex">\(\forall \mathbf u,\mathbf v\in\mathbb R^n,c\in\mathbb R\)</span>，有 (1) <span class="arithmatex">\(T(\mathbf u+\mathbf v)=T(\mathbf u)+T(\mathbf v)\)</span>，(2) <span class="arithmatex">\(T(c\mathbf u)=cT(\mathbf u)\)</span>；蕴涵 T 的值域也是向量空间（参见[4.2总结]）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>若矩阵变换 <span class="arithmatex">\(T~:~\mathbb R^\to\mathbb R^2\)</span>，<span class="arithmatex">\(T(\mathbf x)=A\mathbf x\)</span>，那么 A 有几行几列？</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;0\\0&amp;-1\end{bmatrix}\)</span>，给出 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的几何解释</li>
+<li>由 <span class="arithmatex">\(\bf 0\)</span> 到向量 <span class="arithmatex">\(\bf u\)</span> 的线段是形如 <span class="arithmatex">\(t\bf u\)</span> 的点集（<span class="arithmatex">\(0\le t\le1\)</span>），证明：线性变换 T 把这个线段映射为 <span class="arithmatex">\(\bf 0\)</span> 到 <span class="arithmatex">\(T(\bf u)\)</span> 的线段</li>
+<li>判断题<ol>
+<li>线性变换是一种特殊的函数（Y）</li>
+<li>A 是 <span class="arithmatex">\(3\times 5\)</span> 矩阵，<span class="arithmatex">\(T(\mathbf X)=A\mathbf x\)</span>，那么 T 的定义域是 <span class="arithmatex">\(\mathbb R^3\)</span>（X）</li>
+<li>A 是 <span class="arithmatex">\(m\times n\)</span> 矩阵，则 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的<strong>值域</strong>是 <span class="arithmatex">\(\mathbb R^m\)</span>（<strong>X</strong>）</li>
+<li>所有线性变换都是矩阵变换（<strong>X</strong>）</li>
+<li>变换 T 是线性的，当且仅当 <span class="arithmatex">\(\forall \mathbf v_1,\mathbf v_2\in\mathbb R^m,c_1,c_2\in\mathbb R\)</span>，<span class="arithmatex">\(T(c_1\mathbf v_1+c_2\mathbf v_2)=c_1T(\mathbf v_1)+c_2T(\mathbf v_2)\)</span>（Y）</li>
+<li>所有矩阵变换都是线性变换（Y）</li>
+<li>变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 的<strong>余定义域</strong>是 A 的列的所有线性组合所构成的集合（<strong>X</strong>）</li>
+<li>若 <span class="arithmatex">\(T:~\mathbb R^n\to\mathbb R^m\)</span> 是线性变换，<span class="arithmatex">\(\bf c\in\mathbb R^m\)</span>，则唯一性问题是：“<span class="arithmatex">\(\bf c\)</span> 是否在 T 的值域中”（X？）</li>
+<li>线性变换保持向量加法和标量乘法运算（Y）</li>
+<li>叠加原理是线性变换的物理描述（Y）</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) A 是 <span class="arithmatex">\(2\times 5\)</span> 矩阵</p>
+<p>(2) A 是一个初等矩阵，具体来说将第二行变为相反数，几何上 Y 将某点 <span class="arithmatex">\(\bf x\)</span> 映射到与 <span class="arithmatex">\(x_1\)</span> 对称的点上</p>
+</blockquote>
 <h3 id="9">9. 线性变换的矩阵</h3>
 <p>当一个线性变换 T 是由几何中提出来或用语言叙述时，我们通常希望有关于 <span class="arithmatex">\(T(\mathbf x)\)</span> 的公式</p>
 <p>下面的讨论指出，从 <span class="arithmatex">\(\mathbb R^n\)</span> 到 <span class="arithmatex">\(\mathbb R^m\)</span> 的每个线性变换实际上是一个矩阵变换 <span class="arithmatex">\(\mathbf x \mapsto A\mathbf x\)</span>，而且变换 T 的重要性质归结为 A 的性质</p>
@@ -1650,7 +1998,7 @@
 </div>
 <blockquote>
 <p>假设映射 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^m\)</span></p>
-<p>若对于每个 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，有且仅有一个映射 T 下的原像 <span class="arithmatex">\(\mathbf x\)</span></p>
+<p>若 <span class="arithmatex">\(\forall\bf b\in\mathbb R^m\)</span> 是至多一个 <span class="arithmatex">\(\bf\in\mathbb R^n\)</span> 的像</p>
 <p>则称 T 为 <strong>单射</strong> 或 <strong>一对一映射</strong></p>
 </blockquote>
 <div class="admonition tip">
@@ -1673,6 +2021,43 @@
 <li>T 把 <span class="arithmatex">\(\mathbb R^n\)</span> 映射到 <span class="arithmatex">\(\mathbb R^m\)</span>，当且仅当 A 的列生成 <span class="arithmatex">\(\mathbb R^m\)</span></li>
 <li>T 是一对一的，当且仅当 A 的列线性无关</li>
 </ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>线性变换的模型：假设有线性变换 <span class="arithmatex">\(T:~\mathbb R^n\to\mathbb R^m\)</span>，<span class="arithmatex">\(T(\mathbf x)=A\mathbf x\)</span>，那么 <span class="arithmatex">\(A=[T(\mathbf e_1) \dots T(\mathbf e_n)]\)</span> 称为 T 的标准矩阵</li>
+<li>满射(到 <span class="arithmatex">\(\mathbb R^m\)</span> 上的映射)：假设有映射 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^m\)</span>，若 <span class="arithmatex">\(\forall \bf b\in\mathbb R^m,\exists x\in\mathbb R^n\)</span>，使得 <span class="arithmatex">\(T(\mathbf x)=\mathbf b\)</span>，那么 T 称为<strong>满射</strong>，或 T 将 <span class="arithmatex">\(\mathbb R^n\)</span> <strong>映上到</strong> <span class="arithmatex">\(\mathbb R^m\)</span>（余定义域=值域）；等价条件：标准矩阵 A 的列张成 <span class="arithmatex">\(\mathbb R^m\)</span></li>
+<li>单射(一对一映射)：假设有映射 <span class="arithmatex">\(T~:~\mathbb R^n \to \mathbb R^m\)</span>，若 <span class="arithmatex">\(\forall\bf b\in\mathbb R^m\)</span> 是至多一个 <span class="arithmatex">\(\bf\in\mathbb R^n\)</span> 的像，则称 T 为 <strong>单射</strong> 或 <strong>一对一映射</strong>；等价条件：A 的各列线性无关</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(T:~\mathbb R^2\to\mathbb R^2\)</span> 是一个线性变换，它现做水平剪切变换（<span class="arithmatex">\(\bf e_2\)</span> 映射为 <span class="arithmatex">\(\mathbf e_2-0.5\mathbf e_1\)</span>，<span class="arithmatex">\(e_1\)</span> 不变），然后在左关于 <span class="arithmatex">\(x_2\)</span> 的对称变换，计算 T 的标准矩阵</li>
+<li><span class="arithmatex">\(7\times 5\)</span> 矩阵 A 有 5 个主元，有线性变换 <span class="arithmatex">\(T(\mathbf x)=A\mathbf b\)</span>，T 是否为一对一的？T 是否映上到 <span class="arithmatex">\(\mathbb R^7\)</span>？</li>
+<li>判断题<ol>
+<li>线性变换 <span class="arithmatex">\(T:\mathbb R^n\to\mathbb R^m\)</span> 完全由它对单位矩阵 <span class="arithmatex">\(I_n\)</span> 的列的作用决定（Y）</li>
+<li>若 <span class="arithmatex">\(T:\mathbb R^2\to\mathbb R^2\)</span> 把向量绕原点旋转一角度 <span class="arithmatex">\(\varphi\)</span>，则 T 是线性变换（Y）</li>
+<li>两个线性变换的复合不一定是线性变换（X）</li>
+<li>映射 <span class="arithmatex">\(T:\mathbb R^n\to\mathbb R^m\)</span> 把 <span class="arithmatex">\(\mathbb R^n\)</span> 映上到 <span class="arithmatex">\(\mathbb R^m\)</span>，若 <span class="arithmatex">\(\mathbb R^n\)</span> 中每个向量 <span class="arithmatex">\(\bf x\)</span> 映上到 <span class="arithmatex">\(\mathbb R^m\)</span> 中的某个向量（X？）</li>
+<li>若 A 是 <span class="arithmatex">\(3\times 2\)</span> 矩阵，那么变换 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 不是一对一的（X）</li>
+<li>每个从 <span class="arithmatex">\(\mathbb R^n\)</span> 到 <span class="arithmatex">\(\mathbb R^m\)</span> 不都是矩阵变换（X）</li>
+<li><span class="arithmatex">\(T:\mathbb R^n\to\mathbb R^m\)</span> 的标准矩阵的各列是 <span class="arithmatex">\(I_n\)</span> 的各列的像(Y)</li>
+<li><span class="arithmatex">\(T:\mathbb R^2\to\mathbb R^2\)</span> 对点关于水平轴，垂直轴，原点做对称变换，那么标准矩阵为 <span class="arithmatex">\(A=\begin{bmatrix}a&amp;0\\0&amp;b\end{bmatrix}\)</span>（<span class="arithmatex">\(a,b=\pm1\)</span>）（Y）</li>
+<li><span class="arithmatex">\(T:\mathbb R^n\to\mathbb R^m\)</span> 一对一，若 <span class="arithmatex">\(\mathbb R^n\)</span> 中每个向量都映上到 <span class="arithmatex">\(\mathbb R^m\)</span> 中的唯一的向量（<strong>x</strong>）</li>
+<li>若 A 是 <span class="arithmatex">\(3\times 2\)</span> 矩阵，则 <span class="arithmatex">\(\mathbf x\mapsto A\mathbf x\)</span> 不能将 <span class="arithmatex">\(\mathbb R^2\)</span> 映上到 <span class="arithmatex">\(\mathbb R^3\)</span>（Y）</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(A=\begin{bmatrix}-1&amp;0\\0&amp;1\end{bmatrix}\begin{bmatrix}1&amp;-0.5\\0&amp;1\end{bmatrix}=\begin{bmatrix}-1&amp;0.5\\0&amp;1\end{bmatrix}\)</span></p>
+<p>(2) <span class="arithmatex">\(\text{rank}A=5\)</span>，蕴涵 <span class="arithmatex">\(\dim\text{Nul}A=5-5=0\)</span>，蕴涵 A 的各列线性无关，于是 T 是一对一的；A 是超定的，所以 T 不可能映上到 <span class="arithmatex">\(\mathbb R^7\)</span></p>
 </blockquote>
 <h3 id="10">10. 商业，科学，工程中的线性模型</h3>
 <ul>
