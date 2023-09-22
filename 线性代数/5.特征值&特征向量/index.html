@@ -442,11 +442,6 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89%28%E7%B2%BE%E7%BB%86%E5%8C%96%29/">
-        术语和定义(精细化)
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
         常见问题
       </a>
@@ -1326,6 +1321,17 @@
 <li>若 A 与 B 有相同的特征多项式（<span class="arithmatex">\(\det(A-\lambda I_n)=\det(B-\lambda I_n)\)</span>），那么 <span class="arithmatex">\(\det A=\det B\)</span>；推论：A 与 B 相似，那么 <span class="arithmatex">\(\det A=\det B\)</span></li>
 </ol>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>特征值算法：假设 A 是方阵：(0) 常规算法是解方程 <span class="arithmatex">\(\det(A-\lambda I_n)=0\)</span>，(1) <span class="arithmatex">\(\text{tr}A=\sum\limits_{i=1}^n\lambda_i\)</span>，(2) <span class="arithmatex">\(\det A=\prod\limits_{i=1}^n\lambda_i\)</span>，(3) 若 A 的各列之和或各行之和为 s，那么一个特征值为 s，(4) 若已知 <span class="arithmatex">\(\bf v\)</span> 是特征向量，使用[特征向量的检验算法]可以间接求出一个特征值，(5) 对 A 执行 n 次 QR 分解</li>
+<li><span class="arithmatex">\(\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}\)</span> 的特征值为 <span class="arithmatex">\(\frac{(a+d)\pm\sqrt{(a-d)^2+4bc}}2\)</span></li>
+<li>假设 <span class="arithmatex">\(3\times 3\)</span> 的矩阵 A 有一个特征值 a，那么其余特征值是 <span class="arithmatex">\(\frac{b\pm\sqrt{b^2-4c}}2\)</span>（<span class="arithmatex">\(b=\text{tr}A-a,c=(\det A)/a\)</span>）</li>
+<li>若已知方阵 A 的一些特征值或特征向量，那么 A 的特征值的计算将大大简化</li>
+</ol>
+</blockquote>
 <div class="admonition tip">
 <p class="admonition-title">例子</p>
 <ol>
@@ -1476,7 +1482,7 @@
 </div>
 <blockquote>
 <ol>
-<li>对角矩阵：<span class="arithmatex">\(n\times n\)</span> 矩阵 D 除了对角线上的元素外均为零，称 D 为<strong>对角矩阵</strong>，可以记为 <span class="arithmatex">\(D=I_n\mathbf v\)</span></li>
+<li>对角矩阵：<span class="arithmatex">\(n\times n\)</span> 矩阵 D 除了对角线上的元素外均为零，称 D 为<strong>对角矩阵</strong>，</li>
 <li>对角化定理：<span class="arithmatex">\(n\times n\)</span> 矩阵 A 可对角化，当且仅当具有特征向量基（即 <span class="arithmatex">\(A=PDP^{-1}\)</span> 中，D 是对角矩阵，当且仅当 P 的各列是 A 的特征向量基；蕴涵 D 的主对角线元素是对应于 P 中特征向量的特征值）</li>
 <li>可对角化的充分性：(1) A 具有 n 个相异的特征值，(2) A 是对角线元素互不相同的三角矩阵</li>
 <li>定理：假设 <span class="arithmatex">\(n\times n\)</span> 矩阵 A 有 p 个相异的特征值，那么：(1) <span class="arithmatex">\(\forall i=1..p,\dim\text{Nul}(A-\lambda_i I_n)\le\lambda_i的重数\)</span>，(2) A 可对角化，当且仅当特征空间维数之和为 n，即 <span class="arithmatex">\(\sum\limits_{i=1}^p\dim\text{Nul}(A-\lambda_i I_n)=n\)</span>，(3) 假设 A 可对角化，<span class="arithmatex">\(\cal B_i\)</span> 是特征空间 <span class="arithmatex">\(\text{Nul}(A-\lambda I_n)\)</span> 的基，那么 <span class="arithmatex">\(\bigcap\limits_{i=1}^p\mathcal B_i\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的特征向量基</li>
@@ -1487,10 +1493,11 @@
 </div>
 <blockquote>
 <ol>
-<li>若 D 为对角矩阵，那么 <span class="arithmatex">\(\forall i=1..n,(D^n)_ii=d_{ii}^n\)</span></li>
+<li>若 D 为对角矩阵，那么 <span class="arithmatex">\(\forall i=1..n,(D^n)_{ii}=d_{ii}^n\)</span></li>
 <li>矩阵 A 做对角化变换有 <span class="arithmatex">\(P^{-1}AP=D\)</span>，那么 <span class="arithmatex">\(A^k=\prod\limits_{i=1}^k(PDP^{-1})=PD^kP^{-1}\)</span></li>
 <li>若<strong>可逆</strong>矩阵 A <strong>可对角化</strong>，那么 <span class="arithmatex">\(A^{-1}\)</span> 也可逆并且可对角化，<span class="arithmatex">\(A^{-1}\)</span> 的特征值分别为 <span class="arithmatex">\(1/\lambda_1,\cdots,1/\lambda_n\)</span>，<span class="arithmatex">\(A^{-1}\)</span> 的特征空间与 A 的特征空间相同</li>
 <li>若矩阵 A 对角化为 <span class="arithmatex">\(A=PDP^{-1}\)</span>，那么 <span class="arithmatex">\(A^T\)</span> 也可对角化，有 <span class="arithmatex">\(A^T=QD^TQ^{-1}\)</span>（<span class="arithmatex">\(Q=(P^T)^{-1}\)</span>）</li>
+<li>若方阵 A 对角化为 <span class="arithmatex">\(A=PDP^{-1}\)</span>，那么 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,A^k\mathbf x=A^kP[\mathbf x]_{\cal P}=A^k\sum\limits_{i=1}^nc_i\mathbf p_i=\sum\limits_{i=1}^nc_i(A^k\mathbf p_i)=\sum\limits_{i=1}^nc_i(\lambda_i^k\mathbf p_i)\)</span>（其中 <span class="arithmatex">\([\mathbf x]_{\cal P}\)</span> 是 <span class="arithmatex">\(\mathbf x\)</span> 在特征向量基下的坐标）；或者 <span class="arithmatex">\(A^k\mathbf x=(PDP^{-1})^k\mathbf x=PD^kP^{-1}\mathbf x\)</span></li>
 </ol>
 </blockquote>
 <div class="admonition tip">

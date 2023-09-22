@@ -442,11 +442,6 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89%28%E7%B2%BE%E7%BB%86%E5%8C%96%29/">
-        术语和定义(精细化)
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
         常见问题
       </a>
@@ -1044,15 +1039,31 @@
 <blockquote>
 <p><span class="arithmatex">\(A\in\mathbf R^{n\times n}\)</span> 是对称矩阵，当且仅当 <span class="arithmatex">\(A^T=A\)</span>；当且仅当 对于所有 <span class="arithmatex">\(i,j\le n\)</span> 有 <span class="arithmatex">\(a_{ij}=a_{ji}\)</span></p>
 </blockquote>
-<p>A 是对称矩阵，设 <span class="arithmatex">\(\mathbf v_1,\mathbf v_2\)</span> 是分别对应于 <span class="arithmatex">\(\lambda_1,\lambda_2\)</span> 特征向量，并且 <span class="arithmatex">\(\lambda_1\ne\lambda_2\)</span></p>
-<p>由于 <span class="arithmatex">\(\lambda_1\mathbf v_1\cdot\mathbf v_2=(\lambda_1\mathbf v_1)^T\mathbf v_2=(A\mathbf v_1)^T\mathbf v_2=\mathbf v_1^TA^T\mathbf v_2=\mathbf v_1^T(A\mathbf v_2)=\mathbf v_1^T(\lambda_2\mathbf v_2)=\lambda_2(\mathbf v_1\cdot\mathbf v_2)\)</span></p>
-<p>那么 <span class="arithmatex">\(\lambda_1(\mathbf v_1\cdot\mathbf v_2)=\lambda_2(\mathbf v_1\cdot\mathbf v_2)\)</span>，由于 <span class="arithmatex">\(\lambda_1\ne\lambda_2\)</span>，所以 <span class="arithmatex">\(\mathbf v_1\cdot\mathbf v_2\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\begin{bmatrix}a&amp;b\\b&amp;c\end{bmatrix},\begin{bmatrix}a&amp;b&amp;c\\b&amp;d&amp;e\\c&amp;e&amp;f\end{bmatrix}\)</span> 均为对称矩阵</li>
+<li>对角化 <span class="arithmatex">\(A=\begin{bmatrix}6&amp;-2&amp;-1\\-2&amp;6&amp;-1\\-1&amp;-1&amp;5\end{bmatrix}\)</span>：（对角化的内容详见[5.3]）<ol>
+<li>特征方程 <span class="arithmatex">\(0=\det(A-\lambda I_3)=-(\lambda-8)(\lambda-6)(\lambda-3)\)</span> 的解为 <span class="arithmatex">\(\lambda_1=8,\lambda_2=6,\lambda_3=3\)</span></li>
+<li><span class="arithmatex">\(\text{Nul}(A-\lambda_1I_3)=\text{Span}\left\{\begin{bmatrix}-1\\1\\0\end{bmatrix}\right\},\text{Nul}(A-\lambda_2I_3)=\text{Span}\left\{\begin{bmatrix}-1/2\\-1/2\\1\end{bmatrix}\right\},\text{Nul}(A-\lambda_3I_3)=\text{Span}\left\{\begin{bmatrix}1\\1\\1\end{bmatrix}\right\}\)</span>，得到 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个特征向量基 <span class="arithmatex">\(S=\left\{\begin{bmatrix}-1\\1\\0\end{bmatrix},\begin{bmatrix}-1/2\\-1/2\\1\end{bmatrix},\begin{bmatrix}1\\1\\1\end{bmatrix}\right\}\)</span></li>
+<li>（选做）单位化 S 得到 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个单位特征向量基 <span class="arithmatex">\(\left\{\begin{bmatrix}-1/\sqrt2\\1/\sqrt2\\0\end{bmatrix},\begin{bmatrix}-1/\sqrt6\\-1/\sqrt6\\2/\sqrt6\end{bmatrix},\begin{bmatrix}1/\sqrt3\\1/\sqrt3\\1/\sqrt3\end{bmatrix}\right\}\)</span></li>
+<li>令 <span class="arithmatex">\(P=\begin{bmatrix}-1/\sqrt2&amp;-1/\sqrt6&amp;1/\sqrt3\\1/\sqrt2&amp;-1/\sqrt6&amp;1/\sqrt3\\0&amp;2\sqrt6&amp;1/\sqrt3\end{bmatrix},D=\begin{bmatrix}8&amp;0&amp;0\\0&amp;6&amp;0\\0&amp;0&amp;3\end{bmatrix}\)</span>，有 <span class="arithmatex">\(A=PDP^{-1}\)</span></li>
+<li>由于 P 恰好是单位正交矩阵，于是 <span class="arithmatex">\(A=PDP^T\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">定理</p>
 </div>
 <blockquote>
 <p>假设 A 是对称矩阵，那么不同特征空间的任意两个特征向量是正交的（不同特征值对应的向量之间正交）</p>
 </blockquote>
+<p>假设 <span class="arithmatex">\(\lambda_1,\lambda_2\)</span> 是 A 的两个特征值（<span class="arithmatex">\(\lambda_1\ne\lambda_2\)</span>），并且 <span class="arithmatex">\(\mathbf 0\ne\mathbf v_1\in\text{Nul}(A-\lambda_1I_n),\mathbf 0\ne\mathbf v_2\in\text{Nul}(A-\lambda_2I_n)\)</span></p>
+<p><span class="arithmatex">\(\lambda_1(\mathbf v_1\cdot\mathbf v_2)=\lambda_1(\mathbf v_1^T\mathbf v_2)=(\lambda_1\mathbf v_1^T)\mathbf v_2=(\lambda_1\mathbf v_1)^T\mathbf v_2=(A\mathbf v_1)^T\mathbf v_2=\mathbf v_1^TA^T\mathbf v_2\)</span></p>
+<p>由于 <span class="arithmatex">\(A^T=A\)</span>，于是 <span class="arithmatex">\(\lambda_1(\mathbf v_1\cdot\mathbf v_2)=\mathbf v_1^TA\mathbf v_2=\mathbf v_1^T(\lambda_2\mathbf v_2)=\lambda_2(\mathbf v_1^T\mathbf v_2)=\lambda_2(\mathbf v_1\cdot\mathbf v_2)\)</span></p>
+<p>于是 <span class="arithmatex">\((\lambda_1-\lambda_2)(\mathbf v_1\cdot\mathbf v_2)=0\)</span>，而 <span class="arithmatex">\(\lambda_1\ne\lambda_2\)</span>，那么 <span class="arithmatex">\(\mathbf v_1\cdot\mathbf v_2=0\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">正交对角化</p>
 </div>
@@ -1066,6 +1077,18 @@
 </ol>
 <p>（注：<span class="arithmatex">\(\mathbf p_i\)</span> 为单位特征向量）</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>正交对角化 <span class="arithmatex">\(A=\begin{bmatrix}3&amp;-2&amp;4\\-2&amp;6&amp;2\\4&amp;2&amp;3\end{bmatrix}\)</span>：<ol>
+<li><span class="arithmatex">\(0=\det(A-\lambda I_n)=-(\lambda-7)^2(\lambda+2)\)</span> 解得 <span class="arithmatex">\(\lambda_1=7,\lambda_2=-2\)</span></li>
+<li>A 的特征空间分别为 <span class="arithmatex">\(\text{Nul}(A-\lambda_1 I_n)=\text{Span}\left\{\begin{bmatrix}-1/2\\1\\0\end{bmatrix},\begin{bmatrix}1\\0\\1\end{bmatrix}\right\},\text{Nul}(A-\lambda_2 I_n)=\text{Span}\left\{\begin{bmatrix}-1\\-1/2\\1\end{bmatrix}\right\}\)</span>，得到 <span class="arithmatex">\(\mathbb R^3\)</span> 的特征向量基 <span class="arithmatex">\(S=\left\{\begin{bmatrix}-1/2\\1\\0\end{bmatrix},\begin{bmatrix}1\\0\\1\end{bmatrix},\begin{bmatrix}-1\\-1/2\\1\end{bmatrix}\right\}\)</span></li>
+<li>S 单位正交化为 <span class="arithmatex">\(\left\{\begin{bmatrix}-1/\sqrt5\\2/\sqrt5\\0\end{bmatrix},\begin{bmatrix}4/\sqrt{45}\\2/\sqrt{45}\\5/\sqrt{45}\end{bmatrix},\begin{bmatrix}-2/3\\-1/3\\2/3\end{bmatrix}\right\}\)</span></li>
+<li>于是 <span class="arithmatex">\(A=PDP^T\)</span>（<span class="arithmatex">\(P=\begin{bmatrix}-1/\sqrt5&amp;4/\sqrt{45}&amp;-2/3\\2/\sqrt5&amp;2/\sqrt{45}&amp;-1/3\\0&amp;5/\sqrt{45}&amp;2/3\end{bmatrix}\)</span>，<span class="arithmatex">\(D=\begin{bmatrix}7&amp;0&amp;0\\0&amp;7&amp;0\\0&amp;0&amp;-2\end{bmatrix}\)</span>）</li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">谱定理</p>
 </div>
@@ -1080,39 +1103,192 @@
 </ol>
 <p>注：(1)参考 5.5-24；(2)参考 7.1-31 或 (4)；(3)参考 7.1 “定理”；(4)参考 7.1-32 或 第6章补充习题 16</p>
 </blockquote>
+<p>(2) </p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">谱分解</p>
 </div>
 <blockquote>
-<p>对称矩阵 A 的正交对角化得到 <span class="arithmatex">\(A=PDP^T\)</span>，其中 <span class="arithmatex">\(P=[\mathbf u_1,\dots,\mathbf u_n]\)</span>，</p>
-<p>那么 <span class="arithmatex">\(A=PDP^T=[\mathbf u_1,\dots,\mathbf u_n]I\begin{bmatrix}\lambda_1\\\vdots\\\lambda_n\end{bmatrix}\begin{bmatrix}\mathbf u_1^T\\\vdots\\\mathbf u_n^T\end{bmatrix}^{TT}=[\mathbf u_1\lambda_1,\dots,\mathbf u_n\lambda_1]\begin{bmatrix}\mathbf u_1^T\\\vdots\\\mathbf u_n^T\end{bmatrix}=\sum\limits_{i=1}^n\lambda_i\mathbf u_i\mathbf u_i^T\)</span></p>
-<p><span class="arithmatex">\(A=\sum\limits_{i=1}^n\lambda_i\mathbf u_i\mathbf u_i^T\)</span> 称为 A 的谱分解</p>
-<p><span class="arithmatex">\(\mathbf u_i\mathbf u_i^T\)</span> 称为 投影矩阵，<span class="arithmatex">\(\text{rank}(\mathbf u_i\mathbf u_i^T)=1\)</span></p>
-<p><span class="arithmatex">\((\mathbf u_i\mathbf u_i^T)\mathbf x\)</span> 称为 <span class="arithmatex">\(\mathbf x\)</span> 在由 <span class="arithmatex">\(\mathbf u_i\)</span> 生成的子空间（<span class="arithmatex">\(\text{Span}\{\mathbf u_i\}\)</span>）上的正交投影</p>
+<p>对称矩阵 A 的谱分解为 <span class="arithmatex">\(A=\sum\limits_{i=1}^n\lambda_i\mathbf p_i\mathbf p_i^T\)</span>（P 和 D 由 A 的正交对角化得到）</p>
+<p><span class="arithmatex">\(\mathbf p_i\mathbf p_i^T\)</span> 称为 投影矩阵（满足 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,\text{proj}_{L(\mathbf p_i)}\mathbf x=(\frac{\mathbf x\cdot\mathbf p_i}{\mathbf p_i\cdot\mathbf p_i})\mathbf p_i=\mathbf p_i\mathbf p_i^T\mathbf x\)</span>）</p>
+<p>推论：$$</p>
+</blockquote>
+<p>将对称矩阵正交对角化为 <span class="arithmatex">\(A=PDP^T\)</span></p>
+<p>于是 <span class="arithmatex">\(A=[\mathbf p_1\cdots\mathbf p_n]\begin{bmatrix}\lambda_1\\&amp;\ddots\\&amp;&amp;\lambda_n\end{bmatrix}\begin{bmatrix}\mathbf p_1^T\\\vdots\\\mathbf p_n^T\end{bmatrix}=[\mathbf p_1\cdots\mathbf p_n]\begin{bmatrix}\mathbf \lambda_1\mathbf p_1^T\\\vdots\\\lambda_n\mathbf p_n^T\end{bmatrix}=\sum\limits_{i=1}^n\mathbf p_i(\lambda_i\mathbf p_i^T)=\sum\limits_{i=1}^n\lambda_i\mathbf p_i\mathbf p_i^T\)</span></p>
+<p>（注：D 与单位矩阵 <span class="arithmatex">\(I_n\)</span> 行等价或列等价，于是 <span class="arithmatex">\(DP^T\)</span> 将 <span class="arithmatex">\(P^T\)</span> 的一些行放大 <span class="arithmatex">\(\lambda_i\)</span> 倍，或者 <span class="arithmatex">\(PD\)</span> 将 P 的一些列放大 <span class="arithmatex">\(\lambda_i\)</span> 倍）</p>
+<p>证明：</p>
+<p><span class="arithmatex">\(A^n\mathbf x=A(A^{n-1}\mathbf x)=(\sum\limits_{i=1}^n\lambda_i\mathbf p_i\mathbf p_i^T)A^{n-1}\mathbf x=\sum\limits_{i=1}^n\lambda_i\mathbf p_i\mathbf p_i^TA^{n-1}\mathbf x=\sum\limits_{i=1}^n\lambda_i\mathbf p_i\mathbf p_i^T(\lambda_i^{n-1}\mathbf x)=\sum\limits_{i=1}^n\lambda_i^n\mathbf p_i\mathbf p_i^T\mathbf x\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>A 的正交对角化为 <span class="arithmatex">\(A=PDP^T=\begin{bmatrix}-1/\sqrt5&amp;4/\sqrt{45}&amp;-2/3\\2/\sqrt5&amp;2/\sqrt{45}&amp;-1/3\\0&amp;5/\sqrt{45}&amp;2/3\end{bmatrix}\begin{bmatrix}7&amp;0&amp;0\\0&amp;7&amp;0\\0&amp;0&amp;-2\end{bmatrix}\begin{bmatrix}-1/\sqrt5&amp;4/\sqrt{45}&amp;-2/3\\2/\sqrt5&amp;2/\sqrt{45}&amp;-1/3\\0&amp;5/\sqrt{45}&amp;2/3\end{bmatrix}^T\)</span>，那么 A 的谱分解为 <span class="arithmatex">\(A=7\begin{bmatrix}1/5&amp;-2/5&amp;0\\-2/5&amp;4/5&amp;0\\0&amp;0&amp;0\end{bmatrix}+7\begin{bmatrix}16/45&amp;8/45&amp;20/45\\8/45&amp;4/45&amp;10/45\\20/45&amp;10/45&amp;25/45\end{bmatrix}-2\begin{bmatrix}4/9&amp;2/9&amp;-4/9\\2/9&amp;1/9&amp;-2/9\\-4/9&amp;-2/9&amp;4/9\end{bmatrix}\)</span></li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>对称矩阵：<span class="arithmatex">\(n\times n\)</span> 矩阵 A 满足 <span class="arithmatex">\(A^T=A\)</span>（即 <span class="arithmatex">\(\forall i,j=1..n,a_{ij}=a_{ji}\)</span>），那么称 A 为<strong>对称矩阵</strong></li>
+<li>对称矩阵的性质：若 A 是对称矩阵，那么：(1) 位于不同向量空间的任意两个特征向量是正交的（<span class="arithmatex">\(\forall i\ne j,\mathbf u\in\text{Nul}(A-\lambda_iI_n),\mathbf v\in\text{Nul}(A-\lambda_jI_n)\)</span>，有 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=0\)</span>），(2) 若 A 没有重复的特征值，那么 A 的任意对角化都是正交对角化</li>
+<li>正交对角化定理：方阵 A 可正交对角化（即存在正交矩阵 P 和对角矩阵 D 使得 <span class="arithmatex">\(A=PDP^T=PDP^{-1}\)</span>），当且仅当 A 是对称矩阵</li>
+<li>正交对角化算法：(1) 利用特征方程 <span class="arithmatex">\(\text{det}(A-\lambda I_n)=0\)</span> 计算特征值，(2) 计算各个特征空间的基，(3) 对每个特征空间基使用[格拉姆-施密特算法]正交化，然后进行单位化，(4) 以特征值为对角线得到对角矩阵 D，以所有特征空间的正交基的向量作为列得到 P，有 <span class="arithmatex">\(A=PDP^T=PDP^{-1}\)</span></li>
+<li>谱，谱定理：矩阵 A 的特征值的集合称为<strong>谱</strong>；对称矩阵 <span class="arithmatex">\(A\in M_{n\times n}\)</span> 的<strong>谱定理</strong>：(1) A 有 n 个实特征值（相同的特征值重复计数），(2) 每个特征值对应的特征空间的维数等于该特征值的重数（<span class="arithmatex">\(\forall i=1..p,\dim\text{Nul}(A-\lambda_iI_n)=\lambda_i的重数\)</span>），(3) 不同的特征空间两两相互正交（<span class="arithmatex">\(\forall i,j=1..n,i\ne j,\text{Nul}(A-\lambda_iI_n)=(\text{Nul}(A-\lambda_jI_n))^\bot\)</span>），(4) A 可正交对角化</li>
+<li>谱分解，投影矩阵：对称矩阵 A 的<strong>谱分解</strong>为 <span class="arithmatex">\(A=\sum\limits_{i=1}^n\lambda_i\mathbf p_i\mathbf p_i^T\)</span>（P 和 D 由 A 的正交对角化得到）；<span class="arithmatex">\(\forall i=1..n,\mathbf p_i\mathbf p_i^T\)</span> 称为<strong>投影矩阵</strong></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>矩阵 A 可逆，当且仅当其对角化 <span class="arithmatex">\(A=PDP^{-1}\)</span> 中 D 可逆（即 A 没有 0 特征值）</li>
+<li>若 B 是 <span class="arithmatex">\(n\times n\)</span> 对称矩阵，且 <span class="arithmatex">\(B=B^2\)</span>，那么 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,\text{proj}_{\text{Col}B}\mathbf x=B\mathbf x\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>单位正交的对称矩阵 A 满足 <span class="arithmatex">\(A=A^T=A^{-1}\)</span></li>
+<li><span class="arithmatex">\(\text{proj}_{L(\bf u)}\mathbf x=(\frac{\bf x\cdot u}{\bf u\cdot u})\mathbf u=(\frac{\mathbf u\mathbf u^T}{\bf u\cdot u})\mathbf x\)</span>；<span class="arithmatex">\(\text{proj}_W\mathbf x=\sum\limits_{i=1}^n\frac{\mathbf u_i\mathbf u_i^T}{\mathbf u_i\cdot\mathbf u_i}\mathbf x\)</span>（若 <span class="arithmatex">\(\mathbf u_1,\cdots,\mathbf u_n\)</span> 是 W 的正交基）；<span class="arithmatex">\(\text{proj}_W\mathbf x=UU^T\mathbf x\)</span>（若 U 的各列是 W 的单位正交基的元素）</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">常用矩阵的性质</p>
+</div>
+<blockquote>
+<ol>
+<li>单位矩阵：<span class="arithmatex">\(\det A=1\)</span></li>
+<li>正交矩阵（此处为非单位矩阵）：<span class="arithmatex">\(\det A=\pm\prod\limits_{i=1}^n\|\mathbf a_i\|\)</span>（若 A 是方阵）</li>
+<li>对称矩阵：</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：若矩阵 A 是对称的，那么 <span class="arithmatex">\(A^2\)</span> 也是对称的</li>
+<li>证明：若矩阵 A 可正交对角化，那么 <span class="arithmatex">\(A^2\)</span> 也可正交对角化</li>
+<li>判断题<ol>
+<li>可正交对角化的方阵一定是对称的（Y）</li>
+<li>若 <span class="arithmatex">\(A^T=A\)</span> 且向量 <span class="arithmatex">\(\bf u\)</span> 和 <span class="arithmatex">\(\bf v\)</span> 满足 <span class="arithmatex">\(A\mathbf u=3\mathbf u\)</span> 和 <span class="arithmatex">\(A\mathbf v=4\mathbf v\)</span>，那么 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=0\)</span>（Y）</li>
+<li>对称矩阵 A 有 n 个不同的实特征值（X）</li>
+<li><span class="arithmatex">\(\forall\mathbf v\in\mathbb R^n\)</span>，矩阵 <span class="arithmatex">\(\mathbf v\mathbf v^T\)</span> 被称为投影矩阵（X）</li>
+<li>每一个对称矩阵都可以正交对角化（<strong>X</strong>？）</li>
+<li>若 <span class="arithmatex">\(B=PDP^T\)</span>，其中 <span class="arithmatex">\(P^T=P^{-1}\)</span> 且 D 是对角矩阵，那么 B 是对称矩阵（<strong>Y</strong>）</li>
+<li>一个正交矩阵是可正交对角化的（X）</li>
+<li>一个对称矩阵的特征空间的维数等于对应的特征值的重数（<strong>X</strong>）</li>
+</ol>
+</li>
+<li>如何计算各列正交的方阵的逆？</li>
+<li>证明：<span class="arithmatex">\(\text{proj}_{L(\bf u)}\mathbf x=(\frac{\bf u\cdot x}{\bf u\cdot u})\mathbf u=\frac{\mathbf u\mathbf u^T}{\bf u\cdot u}\mathbf x\)</span> 中的后一个等式不成立</li>
+<li>计算这些各列正交的矩阵的逆：(1) <span class="arithmatex">\(A=\begin{bmatrix}2/3&amp;-2/3&amp;-1/3\\1/3&amp;2/3&amp;-2/3\\2/3&amp;1/3&amp;2/3\end{bmatrix}\)</span>，(2) <span class="arithmatex">\(A=\begin{bmatrix}2&amp;-2&amp;-1\\1&amp;2&amp;-2\\2&amp;1&amp;2\end{bmatrix}\)</span></li>
+<li>假设矩阵 A 是对称矩阵（<strong>重要</strong>）<ol>
+<li>给定足够多个特征值 <span class="arithmatex">\(\lambda_1,\cdots,\lambda_p\)</span>，是否能加速 A 的正交对角化？</li>
+<li>给定足够多个特征向量 <span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_p\)</span>，是否能假设 A 的正交对角化？</li>
+</ol>
+</li>
+<li>证明：若 A 是 <span class="arithmatex">\(n\times n\)</span> 的对称矩阵，那么 <span class="arithmatex">\(\forall\mathbf x,\mathbf y\in\mathbb R^n,(A\mathbf x)\cdot\mathbf y=\mathbf x\cdot(A\mathbf y)\)</span></li>
+<li>证明：若 A 是 <span class="arithmatex">\(n\times n\)</span> 的对称矩阵，B 是 <span class="arithmatex">\(n\times m\)</span> 矩阵，那么 <span class="arithmatex">\(B^TAB,BAB^T,B^TB,BB^T\)</span> 是对称矩阵</li>
+<li>证明：若 A 是可正交对角化的可逆矩阵，那么 <span class="arithmatex">\(A^{-1}\)</span> 可正交对角化（并且 <span class="arithmatex">\(A^{-1}=PD^{-1}P^{-1}\)</span>）</li>
+<li>证明：若 A 和 B 都可正交对角化，且 <span class="arithmatex">\(AB=BA\)</span>，那么 AB 也可以正交对角化</li>
+<li>证明：若 <span class="arithmatex">\(A=PRP^{-1}\)</span>，并且 P 是正交矩阵，R 是上三角矩阵，那么 R 对角矩阵</li>
+<li>假设 <span class="arithmatex">\(\mathbf u\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 上的单位向量，<span class="arithmatex">\(B=\mathbf u\mathbf u^T\)</span><ol>
+<li>证明：<span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,\text{proj}_{L(\bf u)}\mathbf x=\mathbf u\mathbf u^T\mathbf x\)</span></li>
+<li>证明：B 是对称矩阵，并且 <span class="arithmatex">\(B^2=B\)</span></li>
+<li>证明：<span class="arithmatex">\(\bf u\)</span> 是 B 的特征向量，并求对应的特征值</li>
+</ol>
+</li>
+<li>假设 B 是 <span class="arithmatex">\(n\times n\)</span> 的对称矩阵，<span class="arithmatex">\(B^2=B\)</span>，任何此类矩阵被称为<strong>投影矩阵</strong>（或<strong>正交投影矩阵</strong>），<span class="arithmatex">\(\forall\mathbf y\in\mathbb R^n\)</span>，设 <span class="arithmatex">\(\hat y=B\mathbf y,\mathbf z=\mathbf y-\hat y\)</span><ol>
+<li>证明：<span class="arithmatex">\(\hat y\)</span> 与 <span class="arithmatex">\(\bf z\)</span> 正交</li>
+<li>证明：假设 <span class="arithmatex">\(W=\text{Col}B\)</span>，那么 <span class="arithmatex">\(\bf y\)</span> 是空间 W 中一个向量与 <span class="arithmatex">\(W^\bot\)</span> 中一个向量之和，并且 <span class="arithmatex">\(\hat y\)</span> 是 <span class="arithmatex">\(\bf y\)</span> 在 W 上的正交投影</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 由 <span class="arithmatex">\(A=A^T\)</span>，<span class="arithmatex">\(A^2=(A^T)^2=A^TA^T=(AA)^T=(A^2)^T\)</span>，于是 <span class="arithmatex">\(A^2\)</span> 也是对称的</p>
+<p>(2) A 可正交对角化，蕴涵 A 是对称矩阵，根据(1)有 <span class="arithmatex">\(A^2\)</span> 也是对称矩阵，蕴涵 <span class="arithmatex">\(A^2\)</span> 可正交对角化</p>
+<p>(3.4) </p>
+<p>(6)</p>
+<ol>
+<li>A 是单位正交矩阵，于是 <span class="arithmatex">\(A^{-1}=A^T=\begin{bmatrix}2/3&amp;1/3&amp;2/3\\-2/3&amp;2/3&amp;1/3\\-1/3&amp;-2/3&amp;2/3\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(\frac13A\)</span> 是单位正交矩阵，于是 <span class="arithmatex">\(A^{-1}=(3\frac13A)^{-1}=\frac13(\frac13A)^{-1}=\frac13\begin{bmatrix}2/3&amp;1/3&amp;2/3\\-2/3&amp;2/3&amp;1/3\\-1/3&amp;-2/3&amp;2/3\end{bmatrix}\)</span></li>
+</ol>
+<p>(9) </p>
+<ol>
+<li><span class="arithmatex">\((B^TAB)^T=B^TA^T(B^T)^T=B^TAB\)</span></li>
+<li><span class="arithmatex">\((BAB^T)^T=(B^T)^TA^TB^T=BAB^T\)</span></li>
+<li>令 <span class="arithmatex">\(A=I_n\)</span>，易得 <span class="arithmatex">\((B^TB)^T=B^TB\)</span>，<span class="arithmatex">\((BB^T)^T=BB^T\)</span></li>
+</ol>
+<p>(10) <span class="arithmatex">\(A=PDP^T\)</span> 和 A 可逆，蕴涵 <span class="arithmatex">\(A^{-1}=(PDP^{-1})^{-1}=PD^{-1}P^{-1}\)</span>，其中 <span class="arithmatex">\(D^{-1}\)</span> 是对角矩阵，于是 <span class="arithmatex">\(A^{-1}\)</span> 可正交对角化</p>
+<p>(12) 由 P 是正交矩阵和 <span class="arithmatex">\(A=PRP^{-1}\)</span>，有 <span class="arithmatex">\(A=PRP^T\)</span>，即 <span class="arithmatex">\(R=P^TAP\)</span>，蕴涵 <span class="arithmatex">\(R^T=P^TA^TP=P^TAP=R\)</span>，于是 R 是对称的；又由 R 是上三角矩阵，于是 R 是对角矩阵</p>
+<p>(13) </p>
+<ol>
+<li><span class="arithmatex">\((\mathbf u\mathbf u^T)\mathbf x=\mathbf u(\mathbf u^T\mathbf x)=\mathbf u(\mathbf u\cdot\mathbf x)=(\mathbf u\cdot\mathbf x)\mathbf u=(\mathbf x\cdot\mathbf u)\mathbf u=\text{proj}_{L(\bf u)}\mathbf x\)</span>（由于 <span class="arithmatex">\(\bf u\)</span> 是单位向量）</li>
+<li><span class="arithmatex">\(B^T=(\mathbf u\mathbf u^T)^T=\mathbf u^{TT}\mathbf u^T=\mathbf u\mathbf u^T=B\)</span>，于是 B 是对称矩阵；<span class="arithmatex">\(B^2=(\mathbf u\mathbf u^T)(\mathbf u\mathbf u^T)=\mathbf u(\mathbf u^T\mathbf u)\mathbf u^T=\mathbf u\mathbf u^T=B\)</span>，于是 <span class="arithmatex">\(B^2=B\)</span></li>
+<li><span class="arithmatex">\(B\mathbf u=\mathbf u\mathbf u^T\mathbf u=\mathbf u(1)=1\mathbf u\)</span>，于是 1 是 <span class="arithmatex">\(\bf u\)</span> 对应的特征值</li>
+</ol>
+<p>(14)</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf z\cdot\hat y=(\mathbf y-\hat y)\cdot\hat y=(\mathbf y-B\mathbf y)\cdot(B\mathbf y)=\mathbf y\cdot(B\mathbf y)-(B\mathbf y)\cdot(B\mathbf y)\)</span> <span class="arithmatex">\(=\mathbf y\cdot(B\mathbf y)-(B\mathbf y)^T(B\mathbf y)=\mathbf y^TB\mathbf y-\mathbf y^TB^TB\mathbf y=\mathbf y^TB\mathbf y-\mathbf y^TB^2\mathbf y=\mathbf y^TB\mathbf y-\mathbf y^TB\mathbf y=0\)</span>（由于 <span class="arithmatex">\(B^T=B,B^2=B\)</span>）</li>
+<li><span class="arithmatex">\(\hat y=B\mathbf y\)</span>，蕴涵 <span class="arithmatex">\(\hat y\in W\)</span>；又由 (1) 的结论，于是 <span class="arithmatex">\(\mathbf z\in W^\bot\)</span>；根据[正交分解定理]有 <span class="arithmatex">\(\hat y\)</span> 是 <span class="arithmatex">\(\bf y\)</span> 在 W 是上的正交投影</li>
+</ol>
 </blockquote>
 <h3 id="2">2. 二次型</h3>
-<p>本教材除了第 6 章计算 <span class="arithmatex">\(\mathbf x^T\mathbf x\)</span> 时所遇到的平方和外，我们所关注的主要是线性方程；这类平方和及其更一般的形式 表达式称为二次型，常应用在工程（设计标准和优化），信号处理（输出的噪声功率），物理学（势能，动能），微分几何（曲面的法曲率），经济学（效用函数），统计学（置信椭圆体）</p>
+<p>本教材除了第 6 章计算 <span class="arithmatex">\(\mathbf x^T\mathbf x\)</span> 时所遇到的平方和外，我们所关注的主要是线性方程；这类平方和及其更一般的形式的表达式称为二次型，常应用在工程（设计标准和优化），信号处理（输出的噪声功率），物理学（势能，动能），微分几何（曲面的法曲率），经济学（效用函数），统计学（置信椭圆体）</p>
 <div class="admonition note">
 <p class="admonition-title">二次型</p>
 </div>
 <blockquote>
-<p>二次型 <span class="arithmatex">\(Q~:~\mathbb R^n\to\mathbb R\)</span> 定义为(多元)函数 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=\sum\limits_{i=1}^nx_i\text{row}_i(A)\mathbf x=\sum\limits_{i=1}^nx_i\mathbf A_i\cdot \mathbf x\)</span></p>
+<p>二次型 <span class="arithmatex">\(Q~:~\mathbb R^n\to\mathbb R\)</span> 定义为(多元)函数 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span></p>
 <p>其中<strong>对称矩阵</strong> <span class="arithmatex">\(A\in\mathbb R^{n\times n}\)</span> 称为<strong>关于二次型的矩阵</strong></p>
-<p>注：记 <span class="arithmatex">\(\mathbf A_i=\text{row}_i(A)^T\)</span> 为 A 的第 i 行构成的列向量（顺时针旋转 <span class="arithmatex">\(90^\circ\)</span>）</p>
+<p>其展开形式为：<span class="arithmatex">\(Q(\mathbf x)=\sum\limits_{i=1}^nx_i(\mathbf x\cdot\mathbf a_i)=\sum\limits_{i=1}^n\sum\limits_{j=1}^nx_ix_ja_{ij}\)</span> 或 <span class="arithmatex">\(Q(\mathbf x)=\sum\limits_{i=1}^na_{ii}x_i^2+\sum\limits_{i=1}^n\sum\limits_{j=1}^{i-1}2a_{ij}x_iy_j\)</span></p>
 <p>另外，最简单的二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TI\mathbf x=\|\mathbf x\|^2\)</span></p>
-<p>二次型的展开形式：<span class="arithmatex">\(Q(\mathbf x)=\sum\limits_{i=1}^n\sum\limits_{j=i}^nc_{ij}x_ix_j\)</span> （其中 <span class="arithmatex">\(c_{ij}=2a_{ij}=2a_{ji}\)</span>）</p>
+<p>注：<span class="arithmatex">\(0,cx_1^2,\|\mathbf x\|^2\)</span> 也是二次型</p>
 </blockquote>
+<p><span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=\mathbf x^T\sum\limits_{i=1}^n\mathbf a_i(x_i)=\sum\limits_{i=1}^nx_i(\mathbf x^T\mathbf a_i)=\sum\limits_{i=1}^nx_i(\mathbf x\cdot\mathbf a_i)=\sum\limits_{i=1}^nx_i\sum\limits_{j=1}^nx_ja_{ji}=\sum\limits_{i=1}^n\sum\limits_{j=1}^nx_ix_ja_{ji}=\sum\limits_{i=1}^n\sum\limits_{j=1}^nx_ix_ja_{ij}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf x=\begin{bmatrix}x_1\\x_2\end{bmatrix}\)</span>，<span class="arithmatex">\(A=\begin{bmatrix}4&amp;0\\0&amp;3\end{bmatrix},B=\begin{bmatrix}3&amp;-2\\-2&amp;7\end{bmatrix}\)</span>，使用二次型的展开式直接得到 <span class="arithmatex">\(\mathbf x^TA\mathbf x=4x_1^2+3x_2^2,\mathbf x^TB\mathbf x=(3x_1^2+7x_2^2)+(-4x_1x_2)\)</span></li>
+<li><span class="arithmatex">\(\mathbf x=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}\)</span>，<span class="arithmatex">\(Q(\mathbf x)=5x_1^2+3x_2^2+2x_3^2-x_1x_2+8x_2x_3\)</span>，使用二次型的展开式直接得到 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^T\begin{bmatrix}5&amp;-1/2&amp;0\\-1/2&amp;3&amp;4\\0&amp;4&amp;2\end{bmatrix}\mathbf x\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">二次型的变量代换</p>
 </div>
 <blockquote>
-<p>根据 [谱定理]，对称矩阵 A 可正交对角化 <span class="arithmatex">\(A=PDP^T\)</span>，即 <span class="arithmatex">\(D=P^TAP\)</span></p>
+<p>假设 <span class="arithmatex">\(n\times n\)</span> 对称矩阵 A 正交对角化为 <span class="arithmatex">\(A=PDP^T\)</span>（<span class="arithmatex">\(D=P^TAP\)</span>）</p>
 <p>定义(逆)变换 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span> 或 <span class="arithmatex">\(\mathbf y=P^{-1}\mathbf x\)</span>（正交矩阵 P 可逆）</p>
-<p>二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=(P\mathbf y)^TA(P\mathbf y)=\mathbf y^T(P^TAP)\mathbf y=\mathbf y^TD\mathbf y\)</span>，</p>
+<p>二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span> 可变形为 <span class="arithmatex">\(Q(\mathbf x)=\mathbf y^TD\mathbf y=\sum\limits_{i=1}^n\lambda_iy_i^2\)</span></p>
 <p>即 <span class="arithmatex">\(Q(\mathbf x)=\mathbf y^TD\mathbf y=\sum\limits_{i=1}^n\lambda_iy_i^2\)</span> （其中 <span class="arithmatex">\(\mathbf y=P^{-1}\mathbf x=P^T\mathbf x\)</span>）</p>
-<p>注：该变换间接把 A 转换为了对角矩阵 <span class="arithmatex">\(D=P^TAP\)</span></p>
+<p>又或者 <span class="arithmatex">\(Q(\mathbf x)=[\mathbf x]_{\cal P}^TD[\mathbf x]_{\cal P}\)</span>（<span class="arithmatex">\(\cal P\)</span> 为 <span class="arithmatex">\(\text{Col}P\)</span> 的一个基）</p>
 <p>性质：<span class="arithmatex">\(\|P\mathbf y\|=\|\mathbf y\|\)</span></p>
+<p>注：二次型的正交对角变换的目的是去除二次型的交叉乘积项</p>
 </blockquote>
+<p><span class="arithmatex">\(n\times n\)</span> 对称矩阵 A 正交对角化为 <span class="arithmatex">\(A=PDP^T\)</span>，蕴涵 <span class="arithmatex">\(D=P^TAP\)</span></p>
+<p>由于 P 可逆，于是唯一 <span class="arithmatex">\(\exists\mathbf y,\mathbf x=P\mathbf y\)</span>；同时 <span class="arithmatex">\(\mathbf y=P^{-1}\mathbf x\)</span>，于是 <span class="arithmatex">\(\mathbf y=[\mathbf x]_{\cal P}\)</span>（<span class="arithmatex">\(\cal P\)</span> 为 <span class="arithmatex">\(\text{Col}P\)</span> 的一个基）</p>
+<p><span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=(P\mathbf y)^TA(P\mathbf y)=\mathbf y^T(P^TAP)\mathbf y=\mathbf y^TD\mathbf y\)</span></p>
+<p>或者 <span class="arithmatex">\(Q(\mathbf x)=[\mathbf x]_{\cal P}^TD[\mathbf x]_{\cal P}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;-4\\-4&amp;-5\end{bmatrix}\)</span>，将二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span> 变换为一个没有交叉乘积项的二次型：<ol>
+<li>A 正交对角化为 <span class="arithmatex">\(A=PDP^T=\begin{bmatrix}2/\sqrt5&amp;1/\sqrt5\\-1/\sqrt5&amp;2\sqrt5\end{bmatrix}\begin{bmatrix}3&amp;0\\0&amp;-7\end{bmatrix}\begin{bmatrix}2/\sqrt5&amp;1/\sqrt5\\-1/\sqrt5&amp;2\sqrt5\end{bmatrix}^T\)</span></li>
+<li>令 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span>，经计算有 <span class="arithmatex">\(Q(\mathbf x)=\mathbf y^TD\mathbf y=3y_1^2-7y_2^2\)</span></li>
+</ol>
+</li>
+<li>(1) 中的 <span class="arithmatex">\(Q(\mathbf x)\)</span> 在 <span class="arithmatex">\(\mathbf x=(2,-2)\)</span> 处的取值为 <span class="arithmatex">\(Q(\mathbf x)=3y_1^2-7y^2=16\)</span>（其中 <span class="arithmatex">\(\mathbf y=P^T\mathbf x=(6/\sqrt5,-2/\sqrt5)\)</span>）</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">主轴定理</p>
 </div>
@@ -1125,13 +1301,25 @@
 <p class="admonition-title">主轴的几何定义</p>
 </div>
 <blockquote>
-<p>设二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span>（A 对称），<span class="arithmatex">\(c\in\mathbb R\)</span></p>
+<p>假设二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span>（A 对称），<span class="arithmatex">\(c\in\mathbb R\)</span></p>
 <p>若 <span class="arithmatex">\(A\in\mathbb R^2\)</span>，那么满足 <span class="arithmatex">\(Q(\mathbf x)=c\)</span> 的 <span class="arithmatex">\(\mathbf x\)</span> 对应一个 椭圆，双曲线，两条相交直线，单个点，空集 其中之一</p>
 <ul>
 <li>若 A 是对角矩阵，那么图像为标准的图像</li>
 <li>若 A 不是对角矩阵，那么图像是标准图像的旋转</li>
 </ul>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>某个椭圆方程为 <span class="arithmatex">\(5x_1^2-4x_1x_2+5x_2^2=48\)</span>，求一个变量代换，将方程中的交叉项消去<ol>
+<li>椭圆方程等价于 <span class="arithmatex">\(\mathbf x^TA\mathbf x=48\)</span>，其中 <span class="arithmatex">\(A=\begin{bmatrix}5&amp;-2\\-2&amp;5\end{bmatrix},\mathbf x=(x_1,x_2)\)</span></li>
+<li>A 正交对角化为 <span class="arithmatex">\(A=\begin{bmatrix}1/\sqrt2&amp;-1/\sqrt2\\1/\sqrt2&amp;1/\sqrt2\end{bmatrix}\begin{bmatrix}3&amp;0\\0&amp;7\end{bmatrix}\begin{bmatrix}1/\sqrt2&amp;-1/\sqrt2\\1/\sqrt2&amp;1/\sqrt2\end{bmatrix}^T\)</span></li>
+<li>设 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span>，经计算后有 <span class="arithmatex">\(\mathbf x^TA\mathbf x=\mathbf y^TD\mathbf y=3y_1^2+7y_2^2\)</span></li>
+<li>于是 <span class="arithmatex">\(3y_1^2+7y_2^2=48\)</span>（<span class="arithmatex">\(\mathbf y=P^T\mathbf x\)</span>）</li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">二次型的分类</p>
 </div>
@@ -1155,6 +1343,89 @@
 <li>负定的，当且仅当 A 的所有特征值都是负数（A 称为负定矩阵）</li>
 <li>不定的，当且仅当 A 既有正特征值，又有负特征值（A 称为不定矩阵）</li>
 </ol>
+</blockquote>
+<p>由[主轴定理]，存在一个单位正交的变量代换 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span> 使得 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=\mathbf y^TD\mathbf y=\sum\limits_{i=1}^n\lambda_iy_i^2\)</span></p>
+<p>假设 <span class="arithmatex">\(\mathbf x\ne\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf y\ne\mathbf 0\)</span>，即 <span class="arithmatex">\(\exists i,y_i\ne0\)</span>，蕴涵 <span class="arithmatex">\(y_i&gt;0\)</span></p>
+<p>若 <span class="arithmatex">\(\forall i=1..n,\lambda_i&gt;0\)</span>，那么 <span class="arithmatex">\(Q(\mathbf x)&gt;0\)</span>，即 <span class="arithmatex">\(Q(\mathbf x)\)</span> 是正定的；若 <span class="arithmatex">\(Q(\mathbf x)&gt;0\)</span>，那么假设 <span class="arithmatex">\(\bf y\)</span> 只有第 <span class="arithmatex">\(\forall i=1..n\)</span> 个元素 <span class="arithmatex">\(\mathbf y_i\)</span> 非零，于是 <span class="arithmatex">\(\lambda_i&gt;0\)</span>，而对于 <span class="arithmatex">\(\bf y\)</span> 有不小于 2 个元素非零的情况也满足 <span class="arithmatex">\(\forall i=1..n,\lambda_i&gt;0\)</span></p>
+<p>于是 <span class="arithmatex">\(\forall i=1..n,\lambda_i&gt;0\)</span>，当且仅当 <span class="arithmatex">\(Q(\mathbf x)\)</span> 是正定的，</p>
+<p>同理 <span class="arithmatex">\(\forall i=1..n,\lambda_i&lt;0\)</span>，当且仅当 <span class="arithmatex">\(Q(\mathbf x)\)</span> 是负定的</p>
+<p>...</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(Q(\mathbf x)=3x_1^2+2x_2^2+x_3^2+4x_1x_2+4x_2x_3\)</span>，于是 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^T\begin{bmatrix}3&amp;2&amp;0\\2&amp;2&amp;2\\0&amp;2&amp;1\end{bmatrix}\mathbf x\)</span>，而 A 的特征值为 <span class="arithmatex">\(\lambda_1=5,\lambda_2=2,\lambda_3=-1\)</span>，于是 <span class="arithmatex">\(Q(\mathbf x)\)</span> 是不定二次型</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>二次型，关于二次型的矩阵：假设 <span class="arithmatex">\(A\in M_{n\times n}\)</span> 是对称矩阵，那么多元实值函数（<span class="arithmatex">\(Q:~\mathbb R^n\to\mathbb R\)</span>） <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x=\sum\limits_{i=1}^nx_i(\mathbf x\cdot\mathbf a_i)\)</span> 定义为<strong>二次型</strong>；A 称为<strong>关于二次型的矩阵</strong>；另外 <span class="arithmatex">\(Q(\mathbf x)=\sum\limits_{i=1}^n\sum\limits_{j=1}^nx_ix_ja_{ij}=\sum\limits_{i=1}^na_{ii}x_i^2+\sum\limits_{i=1}^n\sum\limits_{j=1}^{i-1}2a_{ij}x_iy_j\)</span></li>
+<li>二次型的正交对角变换：<span class="arithmatex">\(n\times n\)</span> 正交对角化为 <span class="arithmatex">\(A=PDP^T\)</span>，假设有逆变换 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span>，那么二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf y^TD\mathbf y=\sum\limits_{i=1}^n\lambda_iy_i^2\)</span>（<span class="arithmatex">\(\mathbf y=P^T\mathbf x\)</span>）</li>
+<li>主轴定理，主轴：假设 A 是 <span class="arithmatex">\(n\times n\)</span> 对称矩阵，那么 <span class="arithmatex">\(\exists\mathbf y,\mathbf x=P\mathbf y\)</span>（单位正交变量代换）使得二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 变换为不包含交叉乘积项的二次型 <span class="arithmatex">\(\mathbf y^TD\mathbf y\)</span>；正交矩阵 P 的列称为二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 的主轴</li>
+<li>主轴的几何意义：假设二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span>（<span class="arithmatex">\(\mathbf x\in\mathbb R^2\)</span>，A 是对称矩阵），那么 <span class="arithmatex">\(Q(\mathbf x)=c\)</span> 对应一个 椭圆，双曲线，两条相交直线，单个点，空集 其中之一；若 A 是对角矩阵，那么 <span class="arithmatex">\(Q(\mathbf x)=c\)</span> 的图像为标准的图像，否则为标准图像的旋转</li>
+<li>二次型的分类：<span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x是\begin{cases}正定的&amp;\forall\mathbf x\ne\mathbf 0,Q(\mathbf x)&gt;0\\负定的&amp;\forall\mathbf x\ne\mathbf 0,Q(\mathbf x)&lt;0\\不定的&amp;\exists\mathbf x\ne\mathbf y,Q(\mathbf x)Q(\mathbf y)&lt;0\\半正定的&amp;\forall\mathbf x,Q(\mathbf x)\ge0\\半负定的&amp;\forall\mathbf x,Q(\mathbf x)\le0\end{cases}\)</span></li>
+<li>二次型定理：<span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x是\begin{cases}正定的&amp;\forall i=1..n,\lambda_i&gt;0\\负定的&amp;\forall i=1..n,\lambda_i&lt;0\\不定的&amp;\exists i\ne j,\lambda_i\lambda_j&lt;0\\半正定的&amp;\forall i=1..n,\lambda_i\ge0\\半负定的&amp;\forall i=1..n,\lambda_i\le0\\\end{cases}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>给出一个半正定矩阵 A</li>
+<li>判断题<ol>
+<li>二次型的矩阵是一个对称矩阵（Y）</li>
+<li>一个二次型没有交叉乘积项，当且仅当二次型的矩阵是对角矩阵（Y）</li>
+<li>二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 的主轴是 A 的特征向量（<strong>Y</strong>）</li>
+<li>一个正定二次型 Q 满足 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,Q(\mathbf x)&gt;0\)</span>（<strong>X</strong>）</li>
+<li>若对称矩阵 A的所有特征值都是正的，那么二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 是正定的（Y）</li>
+<li>对称矩阵 A 的<strong>楚列斯基分解</strong>具有形式 <span class="arithmatex">\(A=R^TR\)</span>，其中上三角矩阵 R 具有正的对角线元素（Y？）</li>
+<li>不等式 <span class="arithmatex">\(\|\mathbf x\|^2\)</span> 不是一个二次型（X）</li>
+<li>如果 A 对称且 P 是正交矩阵，那么变量代换 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span> 将 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 变换为没有交叉乘积项的二次型（<strong>X</strong>？）</li>
+<li>若 A 是 <span class="arithmatex">\(2\times 2\)</span> 对称矩阵，那么满足 <span class="arithmatex">\(\mathbf x^TA\mathbf x=c\)</span>（c 是常数）的 <span class="arithmatex">\(\bf x\)</span> 的集合对应的几何图形是圆，椭圆，或双曲线（X）</li>
+<li>一个不定二次型既不是半正定的，也不是半负定的（Y）</li>
+<li>假设 A 对称，<span class="arithmatex">\(\forall\bf x\ne0\)</span>，二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 仅有负值，那么 A 的所有特征值是正定（X）</li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(A=\begin{bmatrix}5&amp;1/3\\1/3&amp;1\end{bmatrix}\)</span>，若 <span class="arithmatex">\(\mathbf x=(6,1)\)</span>，计算二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span></li>
+<li>计算二次型 <span class="arithmatex">\(3x_1^2-4x_1x_2+5x_2^2\)</span> 的矩阵形式</li>
+<li>求一个变量代换 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span> 使得二次型 <span class="arithmatex">\(Q(\mathbf x)\)</span> 变换为没有交叉乘积项的形式<ol>
+<li><span class="arithmatex">\(Q(\mathbf x)=x_1^2+10x_1x_2+x_2^2\)</span></li>
+<li><span class="arithmatex">\(Q(\mathbf x)=9x_1^2+7x_2^2+11x_3^2-8x_1x_2+8x_1x_3\)</span></li>
+<li><span class="arithmatex">\(Q(\mathbf x)=2x_1^2+2x_2^2-6x_1x_2-6x_1x_3-6x_1x_4-6x_2x_3-6x_2x_4-x_3x_4\)</span></li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(\mathbf x\in\mathbb R^2\)</span>，且 <span class="arithmatex">\(\mathbf x^T\mathbf x=1\)</span>（即 <span class="arithmatex">\(x_1^2+x_2^2=1\)</span>），那么二次型 <span class="arithmatex">\(5x_1^2+8x_2^2\)</span> 的最大值是多少？</li>
+<li>假设 A 是 <span class="arithmatex">\(2\times 2\)</span> 矩阵，有二次型 <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span><ol>
+<li>证明：<span class="arithmatex">\(\det A&gt;0,a&gt;0\)</span>，则 Q 是正定的</li>
+<li>证明：<span class="arithmatex">\(\det A&gt;0,a&lt;0\)</span>，则 Q 是负定的</li>
+<li>证明：<span class="arithmatex">\(\det A&lt;0\)</span>，则 Q 是不定的</li>
+</ol>
+</li>
+<li>假设 B 是 <span class="arithmatex">\(m\times n\)</span> 矩阵<ol>
+<li>证明：<span class="arithmatex">\(B^TB\)</span> 是半正定的</li>
+<li>证明：若 B 是 <span class="arithmatex">\(n\times n\)</span> 可逆矩阵，那么 <span class="arithmatex">\(B^TB\)</span> 是正定的</li>
+</ol>
+</li>
+<li>证明：若 <span class="arithmatex">\(A\in M_{n\times n}\)</span> 是正定的，那么正定矩阵 <span class="arithmatex">\(\exists B\in M_{m\times n}\)</span> 使得 <span class="arithmatex">\(A=B^TB\)</span></li>
+<li>证明：<span class="arithmatex">\(A,B\in M_{n\times n}\)</span> 都是正定的，那么 <span class="arithmatex">\(A+B\)</span> 也是正定的</li>
+<li>证明：假设 <span class="arithmatex">\(A\in M_{n\times n}\)</span> 可逆并且对称，若二次型 <span class="arithmatex">\(\mathbf x^TA\mathbf x\)</span> 是正定的，那么 <span class="arithmatex">\(\mathbf x^TA^{-1}\mathbf x\)</span> 也是正定的</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 如：<span class="arithmatex">\(\begin{bmatrix}2&amp;0\\0&amp;1\end{bmatrix},\begin{bmatrix}2&amp;0\\0&amp;0\end{bmatrix},\begin{bmatrix}0&amp;0\\0&amp;0\end{bmatrix}\)</span> 均是半正定的</p>
+<p>(2.4) <span class="arithmatex">\(\bf x\)</span> 缺少假设 <span class="arithmatex">\(\bf\ne0\)</span>，(2.8) <span class="arithmatex">\(P^TAP\)</span> 必须是对角的</p>
+<p>(3) <span class="arithmatex">\(\mathbf x^TA\mathbf x=(5x_1^2+x_2^2)+(2/3)x_1x_2=185\)</span></p>
+<p>(4) <span class="arithmatex">\(\mathbf x^T\begin{bmatrix}3&amp;-2\\-2&amp;5\end{bmatrix}\mathbf x\)</span></p>
+<p>(5.1) <span class="arithmatex">\(Q(\mathbf x)=\mathbf x^TA\mathbf x\)</span>（<span class="arithmatex">\(A=\begin{bmatrix}1&amp;5\\5&amp;1\end{bmatrix}\)</span>）</p>
+<p>A 正交对角化为 <span class="arithmatex">\(A=PDP^T=\begin{bmatrix}1/\sqrt2&amp;-1/\sqrt2\\1/\sqrt2&amp;1/\sqrt2\end{bmatrix}\begin{bmatrix}6&amp;0\\0&amp;-4\end{bmatrix}\begin{bmatrix}1/\sqrt2&amp;-1/\sqrt2\\1/\sqrt2&amp;1/\sqrt2\end{bmatrix}^T\)</span></p>
+<p>设 <span class="arithmatex">\(\mathbf x=P\mathbf y\)</span>，于是 <span class="arithmatex">\(Q(\mathbf x)=\cdots=\mathbf y^TD\mathbf y=6y_1^2-4y_2^2\)</span>（<span class="arithmatex">\(\mathbf y=P^T\mathbf x\)</span>）</p>
+<p>(6) 最大值是 8
+</p>
 </blockquote>
 <h3 id="3">3. 条件优化</h3>
 <p><strong>无交叉乘积</strong>的二次型在 <span class="arithmatex">\(\mathbf x^T\mathbf x=1\)</span> 的条件下很容易求得最大值和最小值，并且 <span class="arithmatex">\(\min\{\lambda_i\}\le Q(\mathbf x)\le\max\{\lambda_i\}\)</span></p>

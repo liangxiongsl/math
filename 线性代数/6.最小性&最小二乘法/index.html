@@ -442,11 +442,6 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%AE%9A%E4%B9%89%28%E7%B2%BE%E7%BB%86%E5%8C%96%29/">
-        术语和定义(精细化)
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
         常见问题
       </a>
@@ -1364,7 +1359,7 @@
 <li><span class="arithmatex">\((A\mathbf x)\cdot(A\mathbf y)=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf x\cdot\mathbf y=0\)</span></li>
 </ol>
 </li>
-<li>正交矩阵：若 <span class="arithmatex">\(n\times n\)</span> 矩阵 A 满足 <span class="arithmatex">\(A^{-1}=A^T\)</span>，那么 A 称为<strong>正交矩阵</strong></li>
+<li>正交矩阵（即 单位正交方阵）：若 <span class="arithmatex">\(n\times n\)</span> 矩阵 A 满足 <span class="arithmatex">\(A^{-1}=A^T\)</span>，那么 A 称为<strong>正交矩阵</strong>（具有单位正交列的方阵）</li>
 </ol>
 </blockquote>
 <div class="admonition info">
@@ -1529,6 +1524,7 @@
 <ol>
 <li>假设 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，若 <span class="arithmatex">\(\mathbf y\in W\)</span>，那么 <span class="arithmatex">\(\text{proj}_W\mathbf y=\mathbf y\)</span></li>
 <li>假设 W 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间，<span class="arithmatex">\(\forall\mathbf y\notin W\)</span>，根据[正交分解定理]可以构造出非零向量 <span class="arithmatex">\(\mathbf y-\hat y\in W^\bot\)</span></li>
+<li><span class="arithmatex">\(\bf x\)</span> 在某向量的投影 <span class="arithmatex">\(\text{proj}_{L(\mathbf u)}\mathbf x\)</span> 对 <span class="arithmatex">\(\bf u\)</span> 没有要求，而 <span class="arithmatex">\(\bf x\)</span> 在某子空间上的投影 <span class="arithmatex">\(\text{proj}_W\mathbf x\)</span> 通常需要借助 W 的正交基才能计算</li>
 </ol>
 </blockquote>
 <div class="admonition info">
@@ -1615,7 +1611,7 @@
 <p>并且对于所有 <span class="arithmatex">\(i\le p\)</span>，有 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\dots,\mathbf v_i\}=\text{Span}\{\mathbf x_1,\dots,\mathbf x_i\}\)</span></p>
 <p>注：计算所得的 <span class="arithmatex">\(\mathbf v_i\)</span> 可能有分母，手算时允许进行倍乘消去分母</p>
 </blockquote>
-<p>由于 <span class="arithmatex">\(\forall i=1..p\mathbf v_i\)</span> 是 <span class="arithmatex">\(\mathbf x_i\)</span> 在子空间 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\cdots,\mathbf v_{i-1}\}\)</span> 上的正交分量，所以 <span class="arithmatex">\(\mathbf v_i\)</span> 正交于 <span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_{i-1}\)</span></p>
+<p>由于 <span class="arithmatex">\(\forall i=1..p,\mathbf v_i\)</span> 是 <span class="arithmatex">\(\mathbf x_i\)</span> 在子空间 <span class="arithmatex">\(\text{Span}\{\mathbf v_1,\cdots,\mathbf v_{i-1}\}\)</span> 上的正交分量，所以 <span class="arithmatex">\(\mathbf v_i\)</span> 正交于 <span class="arithmatex">\(\mathbf v_1,\cdots,\mathbf v_{i-1}\)</span></p>
 <p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">标准正交基</p>
@@ -1623,6 +1619,13 @@
 <blockquote>
 <p>由单位向量构成的正交基</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf x_1=\begin{bmatrix}3\\6\\0\end{bmatrix},\mathbf x_2=\begin{bmatrix}1\\2\\1\end{bmatrix}\)</span>，构造 <span class="arithmatex">\(W=\{\mathbf x_1,\mathbf x_2\}\)</span> 的一个正交基为 <span class="arithmatex">\(\mathcal C=\{\mathbf c_1,\mathbf c_2\}\)</span>（<span class="arithmatex">\(\mathbf c_1=\mathbf x_1=\begin{bmatrix}3\\6\\1\end{bmatrix},\mathbf c_2=\mathbf x_2-(\frac{\mathbf x_2\cdot\mathbf c_1}{\mathbf c_1\cdot\mathbf c_1})\mathbf c_1=\begin{bmatrix}1\\2\\0\end{bmatrix}\)</span>）</li>
+<li>上例中的一个单位正交基为 <span class="arithmatex">\(\mathcal D=\{\mathbf d_1,\mathbf d_2\}\)</span>（其中 <span class="arithmatex">\(\mathbf d_1=\frac{\mathbf c_1}{\|\mathbf c_1\|},\mathbf d_2=\frac{\mathbf c_2}{\|\mathbf c_2\|}\)</span>）</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">矩阵的 QR 分解</p>
 </div>
@@ -1632,19 +1635,85 @@
 <p>其中 <span class="arithmatex">\(Q\in\mathbb R^{m\times n}\)</span>，其列形成 <span class="arithmatex">\(\text{Col}A\)</span> 的一个标准正交基；<span class="arithmatex">\(R\in\mathbb R^{n\times n}\)</span> 为上三角可逆矩阵并且对角线上的元素为正数</p>
 <p>应用：<span class="arithmatex">\(A^TA=(QR)^T(QR)=R^TQ^TQR=R^TR\)</span></p>
 </blockquote>
+<p>(1) 若存在具有单位正交列的矩阵 Q，使得 <span class="arithmatex">\(A=QR\)</span>，那么 <span class="arithmatex">\(Q^TA=Q^TQR=R\)</span>（其中 <span class="arithmatex">\(Q^TQ=I_n\)</span>）</p>
+<p>(2) 证明 R 是上三角矩阵：</p>
+<p><span class="arithmatex">\(A=QR\)</span>，蕴涵 <span class="arithmatex">\(\forall i=1..n\)</span> 使得 <span class="arithmatex">\(\mathbf a_i=Q\mathbf r_i=\sum\limits_{j=1}^nr_{ji}\mathbf q_j\)</span></p>
+<p>假设 Q 的各列由[格拉姆-施密特算法]得到，蕴涵 <span class="arithmatex">\(\forall i=1..n,\text{Span}\{\mathbf a_1,\cdots,\mathbf a_i\}=\text{Span}\{\mathbf q_1,\cdots,\mathbf q_i\}\)</span>，蕴涵 <strong>唯一</strong><span class="arithmatex">\(\exists c_1,\cdots,c_i\)</span>，使得 <span class="arithmatex">\(\mathbf a_i=\sum\limits_{j=1}^ic_j\mathbf q_j\)</span></p>
+<p>于是 <span class="arithmatex">\(\forall i=1..n,r_{ji}=\begin{cases}c_j&amp;j\le i\\0&amp;j&gt;i\end{cases}\)</span>，即 R 是一个上三角矩阵</p>
+<p>(3) 证明 R 可逆并且对角线元素非负：</p>
+<p>假设 <span class="arithmatex">\(R\mathbf x=\mathbf 0\)</span>，于是 <span class="arithmatex">\(QR\mathbf x=\mathbf R\mathbf 0=\mathbf 0\)</span>，即 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span></p>
+<p>由于 A 的各列线性无关，于是 <span class="arithmatex">\(\mathbf x=\mathbf 0\)</span>，蕴涵 R 的列也线性无关</p>
+<p>又由 A 是方阵，于是 A 是可逆的</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>求 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;0&amp;0\\1&amp;1&amp;0\\1&amp;1&amp;1\\1&amp;1&amp;1\end{bmatrix}\)</span> 的一个 QR 分解<ol>
+<li><span class="arithmatex">\(\mathbf b_1=\mathbf a_1=\begin{bmatrix}1\\1\\1\\1\end{bmatrix},\mathbf b_2=\mathbf a_2-(\frac{\mathbf a_2\cdot\mathbf b_1}{\mathbf b_1\cdot\mathbf b_1})\mathbf b_1=\begin{bmatrix}-3/4\\1/4\\1/4\\1/4\end{bmatrix},\mathbf b_3=\mathbf a_3-(\frac{\mathbf a_3\cdot\mathbf b_1}{\mathbf b_1\cdot\mathbf b_1})\mathbf b_1-(\frac{\mathbf a_3\cdot\mathbf b_2'}{\mathbf b_2'\cdot\mathbf b_2'})\mathbf b_2'=\begin{bmatrix}0\\-2/3\\1/3\\1/3\end{bmatrix}\)</span>（其中 <span class="arithmatex">\(\mathbf b_2'=\begin{bmatrix}-3\\1\\1\\1\end{bmatrix}\)</span>）</li>
+<li>将 <span class="arithmatex">\(B=[\mathbf b_1~~\mathbf b_2~~\mathbf b_3]\)</span> 单位化得到 <span class="arithmatex">\(Q=\begin{bmatrix}1/3&amp;-3/\sqrt{12}&amp;0\\1/2&amp;1/\sqrt{12}&amp;-2/\sqrt6\\1/2&amp;1/\sqrt{12}&amp;1/\sqrt6\\1/2&amp;1\sqrt{12}&amp;1/\sqrt6\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\(R=Q^TA=\begin{bmatrix}2&amp;3/2&amp;1\\0&amp;3/\sqrt{12}&amp;2/\sqrt{12}\\0&amp;0&amp;2\sqrt6\end{bmatrix}\)</span></li>
+<li>于是 <span class="arithmatex">\(A=QR\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition info">
 <p class="admonition-title">总结</p>
 </div>
+<blockquote>
 <ol>
 <li>格拉姆-施密特方法：假设 <span class="arithmatex">\(\cal B\)</span> 是 <span class="arithmatex">\(\mathbb R^n\)</span> 的子空间 W 的一个基，<strong>格拉姆-施密特方法</strong>是一种变换 <span class="arithmatex">\(\mathcal B\mapsto\mathcal C\)</span>，使得 <span class="arithmatex">\(\cal C\)</span> 是 W 的正交基；具体而言，<span class="arithmatex">\(\forall i=1..n\)</span>，有 <span class="arithmatex">\(\mathbf c_i=\mathbf b_i-\text{proj}_{\text{Span}\{\mathbf c_1,\cdots,\mathbf c_{i-1}\}}\mathbf b_i=\mathbf b_i-\sum\limits_{j=1}^{i-1}(\frac{\mathbf b_i\cdot\mathbf c_j}{\mathbf c_j\cdot\mathbf c_j})\mathbf c_j\)</span></li>
-<li>QR 分解：若 <span class="arithmatex">\(A\in M_{m\times n}\)</span> 的各列线性无关，那么 A 可以分解为 <span class="arithmatex">\(A=QR\)</span>（<span class="arithmatex">\(Q\in M_{m\times n}\)</span> 为 <span class="arithmatex">\(\text{Col}A\)</span> 的一个<strong>单位正交基</strong>，<span class="arithmatex">\(R=Q^TA\)</span>）</li>
+<li>QR 分解：若 <span class="arithmatex">\(A\in M_{m\times n}\)</span> 的各列线性无关，那么 A 可以分解为 <span class="arithmatex">\(A=QR\)</span>（<span class="arithmatex">\(Q\in M_{m\times n}\)</span> 为 <span class="arithmatex">\(\text{Col}A\)</span> 的一个<strong>单位正交基</strong>，<span class="arithmatex">\(R=Q^TA\)</span>；R 是一个上三角可逆矩阵且对角线元素为正数）</li>
 </ol>
+</blockquote>
 <div class="admonition info">
 <p class="admonition-title">一级结论</p>
 </div>
+<blockquote>
 <ol>
+<li>[格拉姆-施密特方法]将(长度为 n 的)<strong>线性无关集</strong> <span class="arithmatex">\(\cal B\)</span> 映射为<strong>正交集</strong> <span class="arithmatex">\(\cal C\)</span>，并且 <span class="arithmatex">\(\forall i=1..n,\text{Span}\{\mathbf b_1,\cdots,\mathbf b_i\}=\text{Span}\{\mathbf c_1,\cdots,\mathbf c_i\}\)</span></li>
 <li>[格拉姆-施密特方法]的计算过程中或计算过后将 <span class="arithmatex">\(\forall i=1..n,\mathbf c_i\)</span> 单位化，可以得到单位正交基或标准正交基 <span class="arithmatex">\(\cal C'\)</span>；另外，在计算过程中将 <span class="arithmatex">\(\mathbf c_i\)</span> 去分母总是可以优化计算</li>
+<li>将 <span class="arithmatex">\(A\in M_{m\times n}\)</span> 进行 QR 分解为 <span class="arithmatex">\(A=QR\)</span>，一种分块形式为 <span class="arithmatex">\([A_1~~A_2]=\begin{bmatrix}Q_1~~Q_2\end{bmatrix}\begin{bmatrix}R_{11}&amp;R_{12}\\\mathbf 0&amp;R_{22}\end{bmatrix}=[Q_1R_{11}~~Q_1R_{12}+Q_2R_{22}]\)</span>（其中 <span class="arithmatex">\(R_{11}\in M_{p\times p}\)</span>）</li>
 </ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf x_1=\begin{bmatrix}1\\1\\1\end{bmatrix},\mathbf x_2=\begin{bmatrix}1/3\\1/3\\-2/3\end{bmatrix}\)</span> 构造 <span class="arithmatex">\(W=\text{Span}\{\mathbf x_1,\mathbf x_2\}\)</span> 的一个标准正交基</li>
+<li>证明：假设 <span class="arithmatex">\(A=QR\)</span>，其中 Q 是具有<strong>正交列</strong>的 <span class="arithmatex">\(m\times n\)</span> 矩阵，R 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，若 A 的列向量是线性相关的，则 R 是奇异矩阵（非可逆矩阵）</li>
+<li>判断题：（假设提到的向量和子空间都在 <span class="arithmatex">\(\mathbb R^n\)</span> 之下）<ol>
+<li>若 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}\)</span> 是 W 的正交基，那么用 c 去乘 <span class="arithmatex">\(\mathbf v_3\)</span> 可得新的正交基 <span class="arithmatex">\(\{\mathbf v_1,\mathbf v_2,c\mathbf v_3\}\)</span>（X）</li>
+<li>[格拉姆-施密特方法]将线性无关集 <span class="arithmatex">\(\cal U\)</span> 转化为正交集 <span class="arithmatex">\(\cal V\)</span>，蕴涵 <span class="arithmatex">\(\forall i=1..n,\text{Span}\{\mathbf u_1,\cdots,\mathbf u_i\}=\text{Span}\{\mathbf v_1,\cdots,\mathbf v_i\}\)</span>（Y）</li>
+<li>若 <span class="arithmatex">\(A=QR\)</span>，且 Q 有单位正交列，那么 <span class="arithmatex">\(R=Q^TA\)</span>（Y）</li>
+<li>假设 <span class="arithmatex">\(W=\text{Span}\{\mathbf x_1,\mathbf x_2,\mathbf x_3\}\)</span>，且 <span class="arithmatex">\(\{\mathbf x_1,\mathbf x_2,\mathbf x_3\}\)</span> 是线性无关集，若 <span class="arithmatex">\(S=\{\mathbf v_1,\mathbf v_2,\mathbf v_3\}\)</span> 是 W 的一个正交集，那么 S 是 W 的一个基（X）</li>
+<li><span class="arithmatex">\(\mathbf x\not\in W\)</span>，那么 <span class="arithmatex">\(\mathbf x-\text{proj}_W\mathbf x\ne\mathbf 0\)</span>（Y）</li>
+<li>在一个 QR 分解 <span class="arithmatex">\(A=QR\)</span> 中，Q 的列构成 A 的列子空间的标准正交基（Y）</li>
+</ol>
+</li>
+<li>如何计算：(1) 线性无关集 <span class="arithmatex">\(\cal B\)</span> 对应的正交集 <span class="arithmatex">\(\cal C\)</span>，(2) 列线性无关矩阵 A（A 的列满秩）对应的单位正交矩阵，(3) 列满秩矩阵 A 的 QR 分解</li>
+<li>证明：假设 <span class="arithmatex">\(A=QR\)</span>，R 可逆，那么 A 和 Q 有相同的列空间，即 <span class="arithmatex">\(\text{Col}A=\text{Col}Q\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 设 <span class="arithmatex">\(\mathcal U=\{\mathbf u_1~~\mathbf u_2\}\)</span> 是一个临时向量基</p>
+<p><span class="arithmatex">\(\mathbf u_1=\mathbf x_1=\begin{bmatrix}1\\1\\1\end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\mathbf u_2=\mathbf x_2-(\frac{\mathbf x_2\cdot\mathbf u_1}{\mathbf u_1\cdot\mathbf u_1})\mathbf u_1=\begin{bmatrix}1/3\\1/3\\-2/3\end{bmatrix}\)</span></p>
+<p>使用[格拉姆-施密特方法]将 <span class="arithmatex">\(\cal U\)</span> 单位正交化得到 <span class="arithmatex">\(\left\{\begin{bmatrix}1/3\\1/3\\1/3\end{bmatrix},\begin{bmatrix}1/\sqrt6\\1/\sqrt6\\-2/\sqrt6\end{bmatrix}\right\}\)</span></p>
+<p>(2) </p>
+<p>A 的列线性相关，蕴涵 <span class="arithmatex">\(\exists\mathbf x\ne\mathbf 0,A\mathbf x=\mathbf 0\)</span>，即 <span class="arithmatex">\((QR)\mathbf x=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\|QR\mathbf x\|=\|\mathbf 0\|\)</span></p>
+<p>根据[6.2结论6]和 Q 是单位正交矩阵，有 <span class="arithmatex">\(\|R\mathbf x\|=\|QR\mathbf x\|=\|\mathbf 0\|\)</span>，根据[6.1总结2]，有 <span class="arithmatex">\(R\mathbf x=\mathbf 0\)</span></p>
+<p>而 <span class="arithmatex">\(\mathbf x\ne\mathbf 0\)</span> ，于是 R 的列线性相关，又由[可逆矩阵定理]和 R 是方阵，有 R 是奇异的</p>
+<p>(3.4) 分析：假设蕴涵着 <span class="arithmatex">\(W=\mathbb R^3\)</span>，而不包含 S 是否张成 <span class="arithmatex">\(\mathbb R^3\)</span> 或 S 是否线性无关的信息（特别地，若 <span class="arithmatex">\(S=\{\mathbf 0,\mathbf 0,\mathbf 0\}\)</span>，那么 S 不是 W 的基，与假设矛盾）</p>
+<p>(5)</p>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf y\in\text{Col}A,\exists\mathbf x,\mathbf y=A\mathbf x=Q(R\mathbf x)\)</span>，蕴涵 <span class="arithmatex">\(\mathbf y\in\text{Col}Q\)</span>，即 <span class="arithmatex">\(\text{Col}A\subset\text{Col}Q\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf y\in\text{Col}Q,\exists\mathbf x,\mathbf y=Q\mathbf x=(AR^{-1})\mathbf x=A(R^{-1}\mathbf x)\)</span>，蕴涵 <span class="arithmatex">\(\mathbf y\in\text{Col}A\)</span>，即 <span class="arithmatex">\(\text{Col}Q\subset\text{Col}A\)</span></li>
+<li>于是 <span class="arithmatex">\(\text{Col}A=\text{Col}Q\)</span></li>
+</ol>
+</blockquote>
 <h3 id="5">5. 最小二乘问题</h3>
 <p>解一个矩形方程组 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，方程组无解时，最好的方法是寻找 <span class="arithmatex">\(\mathbf x\)</span> 使得 <span class="arithmatex">\(A\mathbf x\)</span> 尽可能接近 <span class="arithmatex">\(\mathbf b\)</span></p>
 <p>考虑 <span class="arithmatex">\(A\mathbf x\)</span> 为 <span class="arithmatex">\(\mathbf b\)</span> 的一个近似，而<strong>一般的最小二乘问题</strong>就是找出使 <span class="arithmatex">\(\|\mathbf b-A\mathbf x\|\)</span> 尽可能小的 <span class="arithmatex">\(\mathbf x\)</span></p>
@@ -1669,21 +1738,43 @@
 <p>其 <strong>法方程</strong> <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span> 的非空解集</p>
 <p>问：等价于 <span class="arithmatex">\(A\mathbf x=\hat b=\text{proj}_{\text{Col}~A}~\mathbf b\)</span> ？</p>
 <p>注：最小二乘解可以解释为满足 <span class="arithmatex">\(\mathbf b=\hat b+(\mathbf b-\hat b)\approx\hat b=A\hat x\)</span> 的最优近似解 <span class="arithmatex">\(\mathbf x=\hat x\)</span>；<span class="arithmatex">\(\|\mathbf b-\hat b\|\)</span> 称为 最小二乘误差</p>
-<p>注2：不仅 A 可能不可逆，而且 <span class="arithmatex">\(A^TA\)</span> 也可能不可逆（可能无穷多解）</p>
-<p>注3：最小二乘解问题的法方程可能是病态的，即 <span class="arithmatex">\(A^TA\)</span> 的计算过程中出现的误差有时会导致 <span class="arithmatex">\(\hat x\)</span> 的误差变大</p>
-<p>优化：<span class="arithmatex">\((A^TB)_{ij}=a_i\cdot b_j\)</span>（对称矩阵）</p>
+<p>注2：<span class="arithmatex">\(A^TA\)</span> 是一个对称的方阵，该矩阵有时不可逆</p>
+<p>注3：最小二乘解问题的法方程可能是病态的，即 <span class="arithmatex">\(A^TA\)</span> 的计算过程中出现的误差有时会导致 <span class="arithmatex">\(\hat x\)</span> 的误差变大
+</p>
 </blockquote>
+<p>(1) 假设有方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span></p>
+<p><span class="arithmatex">\(\mathbf b\)</span> 在 <span class="arithmatex">\(\text{Col}A\)</span> 上的正交分解为 <span class="arithmatex">\(\mathbf b=\hat b+\bar b\)</span>（<span class="arithmatex">\(\hat b=\text{proj}_{\text{Col}A}\mathbf b\in\text{Col}A\)</span>，<span class="arithmatex">\(\mathbf b-\hat b\in(\text{Col}A)^\bot\)</span>）</p>
+<p>于是 <span class="arithmatex">\(\exists\hat x\in\mathbb R^n,A\hat x=\hat b\)</span> </p>
+<p>并且 <span class="arithmatex">\(\forall\mathbf v\in\mathbb R^n,\|\mathbf b-\hat b\|\le\|\mathbf b-\mathbf v\|\)</span>，蕴涵 <span class="arithmatex">\(\forall\mathbf v\in\text{Col}A,\|\mathbf b-\hat b\|\le\|\mathbf b-\mathbf v\|\)</span></p>
+<p><span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,\|\mathbf b-A\hat x\|\le\|\mathbf b-A\mathbf x\|\)</span></p>
+<p>也就是说 <span class="arithmatex">\(\hat b\)</span> 对应的 <span class="arithmatex">\(\hat x\)</span>（可能有多解）是 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解</p>
+<p>由 <span class="arithmatex">\((\text{Col}A)^\bot=\text{Nul}A^T\)</span>，有 <span class="arithmatex">\(\mathbf b-\hat b\in\text{Nul}A^T\)</span>，蕴涵 <span class="arithmatex">\(A^T(\mathbf b-\hat b)=\mathbf 0\)</span>，</p>
+<p>蕴涵 <span class="arithmatex">\(A^T\mathbf b=A^T\hat b=A^TA\hat x\)</span>，即方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解 <span class="arithmatex">\(\hat x\)</span> 满足方程 <span class="arithmatex">\(A^TA\hat x=A^T\mathbf b\)</span>，后者为前者的法方程</p>
+<p>(2) 假设有方程 <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span>，即 <span class="arithmatex">\(A^T(A\mathbf x-\mathbf b)=\mathbf 0\)</span> </p>
+<p>蕴涵 <span class="arithmatex">\(A\mathbf x-\mathbf b\in(\text{Col}A)^\bot\)</span>，蕴涵 <span class="arithmatex">\(\mathbf b-A\mathbf x\in(\text{Col}A)^\bot\)</span></p>
+<p>又因 <span class="arithmatex">\(A\mathbf x\in\text{Col}A\)</span>，于是 <span class="arithmatex">\(\mathbf b=A\mathbf x+(\mathbf b-A\mathbf x)\)</span> 是 <span class="arithmatex">\(\mathbf b\)</span> 在 <span class="arithmatex">\(\text{Col}A\)</span> 上的正交分解，由 (1) 有 <span class="arithmatex">\(\mathbf x\)</span> 也是 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的最小二乘解</p>
+<p>综上，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解集等于其法方程 <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span> 的解集</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(A=\begin{bmatrix}4&amp;0\\0&amp;2\\1&amp;1\end{bmatrix},\mathbf b=\begin{bmatrix}2\\0\\11\end{bmatrix}\)</span>，计算方程 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的最小二乘解：<span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span>，等价于 <span class="arithmatex">\(\begin{bmatrix}17&amp;1\\1&amp;5\end{bmatrix}\mathbf x=\begin{bmatrix}19\\11\end{bmatrix}\)</span>，而 <span class="arithmatex">\(\begin{bmatrix}17&amp;1&amp;19\\1&amp;5&amp;11\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;1\\0&amp;1&amp;2\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的最小二乘解为 <span class="arithmatex">\(\hat x=\begin{bmatrix}1\\2\end{bmatrix}\)</span></li>
+<li></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">定理</p>
 </div>
 <blockquote>
 <p>设 <span class="arithmatex">\(A\in\mathbb R^{m\times n}\)</span>，那么下面的条件等价：</p>
 <ol>
-<li>对于所有 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有唯一最小二乘解</li>
+<li>对于所有 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有唯一最小二乘解 <span class="arithmatex">\(\hat x=(A^TA)^{-1}A^T\mathbf b\)</span></li>
 <li>A 的列线性无关</li>
 <li>矩阵 <span class="arithmatex">\(A^TA\)</span> 可逆</li>
 </ol>
 </blockquote>
+<p>(1) 假设 <span class="arithmatex">\(A^TA\)</span> 可逆</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <p>下面讨论 A 的列向量正交时，如何求出 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解；这类矩阵通常出现在线性回归问题中</p>
 <p>对于 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的法方程 <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span></p>
 <p>若通过对 A 进行 QR 分解有 <span class="arithmatex">\(A=QR\)</span>，</p>
@@ -1697,6 +1788,88 @@
 <p>那么对于 <span class="arithmatex">\(\mathbf b\in\mathbb R^m\)</span>，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 有唯一的最小二乘解，即 <span class="arithmatex">\(\mathbf x=R^{-1}Q^T\mathbf b\)</span></p>
 <p>等价于求解线性方程组 <span class="arithmatex">\(\mathbf x=R^{-1}Q^T\mathbf b\)</span></p>
 <p>注：若 <span class="arithmatex">\(\mathbf b\)</span> 与 <span class="arithmatex">\(\text{Col}A\)</span> 正交，那么上述方程等价于 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;3&amp;5\\1&amp;1&amp;0\\1&amp;1&amp;2\\1&amp;3&amp;3\end{bmatrix},\mathbf{b}=\begin{bmatrix}3\\5\\7\\-3\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的最小二乘解：<ol>
+<li>QR 分解：<span class="arithmatex">\(A=QR=\begin{bmatrix}1/2&amp;1/2&amp;1/2\\1/2&amp;-1/2&amp;-1/2\\1/2&amp;-1/2&amp;1/2\\1/2&amp;1/2&amp;-1/2\end{bmatrix}\begin{bmatrix}2&amp;4&amp;5\\0&amp;2&amp;3\\0&amp;0&amp;2\end{bmatrix}\)</span></li>
+<li><span class="arithmatex">\([R~~Q^T\mathbf b]=\begin{bmatrix}2&amp;4&amp;5&amp;6\\0&amp;2&amp;3&amp;-6\\0&amp;0&amp;2&amp;4\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;0&amp;10\\0&amp;1&amp;0&amp;-6\\0&amp;0&amp;1&amp;2\end{bmatrix}\)</span>，即 <span class="arithmatex">\(\hat{x}=\begin{bmatrix}10\\-6\\2\end{bmatrix}\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>最小二乘解，最小二乘误差：假设有矩阵方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，若 <span class="arithmatex">\(\exists\hat x\in\mathbb R^n,\forall\mathbf x\in\mathbb R^n\)</span>，使得 <span class="arithmatex">\(\|\mathbf b-A\hat x\|\le\|\mathbf b-A\mathbf x\|\)</span>，那么 <span class="arithmatex">\(\hat x\)</span> 称为该矩阵方程的<strong>最小二乘解</strong>，<span class="arithmatex">\(\mathbf b-\hat b\)</span> 称为该方程的<strong>最小二乘误差</strong></li>
+<li>最小二乘解定理：<span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span> 的最小二乘解集为 <span class="arithmatex">\(A\mathbf x=\text{proj}_{\text{Col}A}\mathbf b\)</span> 或 <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span> 的解集</li>
+<li>矩阵定理(补充)：假设 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，那么以下命题等价：<span class="arithmatex">\(\begin{cases}\forall\mathbf b\in\mathbb R^m,A\mathbf x=\mathbf b有唯一的最小二乘解\hat x=(A^TA)^{-1}A^T\mathbf b\\A的列线性无关\\A^TA可逆\end{cases}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>若矩阵 A 的各列线性无关，那么 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解为 <span class="arithmatex">\(\hat x=(A^TA)^{-1}A^T\mathbf b\)</span>，<span class="arithmatex">\(\bf b\)</span> 在 <span class="arithmatex">\(\text{Col}A\)</span> 上的投影为 <span class="arithmatex">\(\hat b=A\hat x=A(A^TA)^{-1}A^T\mathbf b\)</span>（其中 <span class="arithmatex">\(A(A^TA)^{-1}A^T\)</span> 称为帽矩阵）</li>
+<li>列线性无关矩阵 A 的 QR 分解为 <span class="arithmatex">\(A=QR\)</span>，那么 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解为 <span class="arithmatex">\(\hat x=R^{-1}Q^T\mathbf b\)</span>（可以通过 <span class="arithmatex">\([R~~Q^T\mathbf b]\sim[I_n~~R^{-1}Q^T\mathbf b]\)</span> 来优化计算）</li>
+<li>若矩阵 A 有单位正交列，那么 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解为 <span class="arithmatex">\(\hat x=A^T\mathbf b\)</span>，<span class="arithmatex">\(\bf b\)</span> 在 <span class="arithmatex">\(\text{Col}A\)</span> 上的投影为 <span class="arithmatex">\(\hat b=AA^T\mathbf b\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(A=\begin{bmatrix}1&amp;-3&amp;-3\\1&amp;5&amp;1\\1&amp;7&amp;2\end{bmatrix},\mathbf b=\begin{bmatrix}5\\-3\\-5\end{bmatrix}\)</span>，计算 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的一个最小二乘解，及其最小二乘误差</li>
+<li><span class="arithmatex">\(\bf b\)</span> 与 A 的列正交，<span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解有什么性质？</li>
+<li>判断题<ol>
+<li>一般最小二乘问题是求出 <span class="arithmatex">\(\bf x\)</span> 使得 <span class="arithmatex">\(A\mathbf x\)</span> 尽可能接近 <span class="arithmatex">\(\bf b\)</span>（Y）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解是满足方程 <span class="arithmatex">\(A\hat x=\hat b\)</span> 的向量 <span class="arithmatex">\(\hat x\)</span>，其中 <span class="arithmatex">\(\hat b\)</span> 是 <span class="arithmatex">\(\bf b\)</span> 在 <span class="arithmatex">\(\text{Col}A\)</span> 上的正交投影（Y）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解是向量 <span class="arithmatex">\(\hat x\)</span>，并且 <span class="arithmatex">\(\mathbf x\in\mathbb R^n,\|\mathbf b-A\mathbf x\|\le\|\mathbf b-A\hat x\|\)</span>（X）</li>
+<li>方程 <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span> 的任意解是方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解（Y）</li>
+<li>若 A 的列线性无关，那么方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 只有一个最小二乘解（Y）</li>
+<li>若 <span class="arithmatex">\(\mathbf b\in\text{Col}A\)</span>，那么方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的每个解都是最小二乘解（Y）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解是 <span class="arithmatex">\(\text{Col}A\)</span> 中最接近 <span class="arithmatex">\(\bf b\)</span> 的点（<strong>X</strong>）</li>
+<li>方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解是一系列的权，当它们作用在 A 的列时，产生 <span class="arithmatex">\(\bf b\)</span> 在 <span class="arithmatex">\(\text{Col}A\)</span> 上的正交投影（Y）</li>
+<li>若 <span class="arithmatex">\(\hat x\)</span> 是 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的一个最小二乘解，那么 <span class="arithmatex">\(\hat x=(A^TA)^{-1}A^T\mathbf b\)</span>（X）</li>
+<li>法方程计算最小二乘解的方法总是可靠的（X？）</li>
+<li>如果 A 有一个 QR 分解，如 <span class="arithmatex">\(A=QR\)</span>，那么求 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 最小二乘解的最好方法是计算 <span class="arithmatex">\(\hat x=R^{-1}Q^T\mathbf b\)</span>（Y）</li>
+</ol>
+</li>
+<li>假设有方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span>，(1) 该方程的最小二乘解的一般解法是？(2) 若 A 列满秩，那么最小二乘解有哪几种表示？(3) 最小二乘误差如何计算？</li>
+<li><span class="arithmatex">\(A=\begin{bmatrix}3&amp;4\\-2&amp;1\\3&amp;4\end{bmatrix},\mathbf{b}=\begin{bmatrix}11\\-9\\5\end{bmatrix},\mathbf{u}=\begin{bmatrix}5\\-1\end{bmatrix},\mathbf{v}=\begin{bmatrix}5\\-2\end{bmatrix}\)</span>，<span class="arithmatex">\(\bf u\)</span> 是否为 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解？</li>
+<li>假设 A 有线性无关列，<span class="arithmatex">\(\bf b\)</span> 已知，若 <span class="arithmatex">\(\exists\mathbf u\ne\mathbf v\in\mathbb R^n,\|\mathbf b-A\mathbf u\|=\|\mathbf b-A\mathbf v\|\)</span>，那么 <span class="arithmatex">\(\bf u,v\)</span> 是否为 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解</li>
+<li>假设 <span class="arithmatex">\(A\in M_{m\times n}\)</span><ol>
+<li>证明：<span class="arithmatex">\(\text{Nul}A^TA=\text{Nul}A\)</span></li>
+<li>证明：<span class="arithmatex">\(A^TA\)</span> 可逆，当且仅当 A 的列线性无关</li>
+<li>证明：<span class="arithmatex">\(\text{rank}A^TA=\text{rank}A\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(A^TA\mathbf x=A^T\mathbf b\)</span>，等价于 <span class="arithmatex">\(\begin{bmatrix}3&amp;9&amp;0\\9&amp;83&amp;28\\0&amp;28&amp;14\end{bmatrix}\mathbf x=\begin{bmatrix}-5\\-65\\-28\end{bmatrix}\)</span></p>
+<p>而 <span class="arithmatex">\(\begin{bmatrix}3&amp;9&amp;0&amp;-5\\9&amp;83&amp;28&amp;-65\\0&amp;28&amp;14&amp;-28\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;-3/2&amp;2\\0&amp;1&amp;1/2&amp;-1\\0&amp;0&amp;0&amp;0\end{bmatrix}\)</span></p>
+<p>于是 <span class="arithmatex">\(\hat x=t\begin{bmatrix}3/2\\-1/2\\1\end{bmatrix}+\begin{bmatrix}2\\-1\\-0\end{bmatrix}\)</span>（<span class="arithmatex">\(t\in\mathbb R\)</span>）是最小二乘解</p>
+<p>一个特解是 <span class="arithmatex">\(\hat x=\begin{bmatrix}2\\-1\\-0\end{bmatrix}\)</span>，最小二乘误差为 $\mathbf b-$</p>
+<p>(2) <span class="arithmatex">\(\mathbf b\)</span> 在 <span class="arithmatex">\(\text{Col}A\)</span> 上的(<strong>唯一</strong>)正交分解为 <span class="arithmatex">\(\mathbf b=\hat b+(\mathbf b-\hat b)\)</span>（<span class="arithmatex">\(\mathbf b-\hat b\in(\text{Col}A)^\bot\)</span>）</p>
+<p>为 <span class="arithmatex">\(\mathbf b\in(\text{Col}A)^\bot\)</span>，于是 <span class="arithmatex">\(\mathbf b-\hat b=\mathbf b\)</span>，即 <span class="arithmatex">\(\hat b=\mathbf 0\)</span></p>
+<p>(5) <span class="arithmatex">\(A\mathbf u=\begin{bmatrix}11\\-11\\11\end{bmatrix},A\mathbf v=\begin{bmatrix}7\\-12\\7\end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\|\mathbf b-A\mathbf u\|=\sqrt{40},\|\mathbf b-A\mathbf v\|=\sqrt{29}\)</span></p>
+<p>而 <span class="arithmatex">\(\|\mathbf b-A\mathbf u\|&gt;\|\mathbf b-A\mathbf v\|\)</span>，于是 <span class="arithmatex">\(\bf u\)</span> 不可能是 <span class="arithmatex">\(A\bf x=b\)</span> 的最小二乘解</p>
+<p>(6) 假设 <span class="arithmatex">\(\bf u,v\)</span> 均是方程 <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> 的最小二乘解，</p>
+<p>由 A 的列线性无关，蕴涵方程有唯一的最小二乘解，与假设矛盾，所以 <span class="arithmatex">\(\bf u,v\)</span> 都不是最小二乘解</p>
+<p>(7.1)</p>
+<ol>
+<li><span class="arithmatex">\(\forall\mathbf x\in\text{Nul}A,A\mathbf x=\mathbf 0,A^T(A\mathbf x)=A^T\mathbf 0=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\((A^TA)\mathbf x=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf x\in\text{Nul}(A^TA)\)</span>，于是 <span class="arithmatex">\(\text{Nul}A\subset\mathbf x\in\text{Nul}(A^TA)\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf x\in\text{Nul}A^TA,(A^TA)\mathbf x=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf x^TA^TA\mathbf x=\mathbf x^T\mathbf 0=\mathbf 0\)</span>，即 <span class="arithmatex">\((A\mathbf x)^TA\mathbf x=\mathbf 0\)</span>，即 <span class="arithmatex">\((A\mathbf x)\cdot(A\mathbf x)=\mathbf 0\)</span>，即 <span class="arithmatex">\(A\mathbf x=\mathbf 0\)</span>，蕴涵 <span class="arithmatex">\(\mathbf x\in\text{Nul}A\)</span>，于是 <span class="arithmatex">\(\text{Nul}(A^TA)\subset\mathbf x\in\text{Nul}A\)</span></li>
+<li>于是 <span class="arithmatex">\(\text{Nul}(A^TA)=\mathbf x\in\text{Nul}A\)</span></li>
+</ol>
 </blockquote>
 <h3 id="6">6. 线性模型中的应用</h3>
 <p>以下讨论使用在工程中常见的统计分析记号，即用 <span class="arithmatex">\(X\mathbf \beta=\mathbf y\)</span>，称 X 为设计矩阵，<span class="arithmatex">\(\beta\)</span> 为参数向量，<span class="arithmatex">\(\mathbf y\)</span> 为观测向量</p>
@@ -1736,6 +1909,41 @@
 <p>（其中 <span class="arithmatex">\(X_{ij}=\mathbf f_j^T(\mathbf x_i)\)</span>）</p>
 <p>若以 <span class="arithmatex">\(y_i-\hat y_i\)</span> 的平方和 <span class="arithmatex">\(\sum\limits_{i=1}^m(y_i-\hat y_i)^2\)</span> 作为“距离”的模型，那么 <span class="arithmatex">\(X\beta=\mathbf y\)</span> 最小二乘解 <span class="arithmatex">\(\hat\beta\)</span> 为该模型下的最优拟合</p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>最小二乘直线拟合：给定数据集 <span class="arithmatex">\(\forall i=1..n,(x_i,y_i)\)</span>，设有两个未知参数 <span class="arithmatex">\(\beta_0,\beta_1\)</span> 并构造方程组 <span class="arithmatex">\(\forall i=1..n,\beta_0+\beta_1x_i=y_i\)</span>，即矩阵方程 <span class="arithmatex">\(X\beta=\mathbf y\)</span> 或 <span class="arithmatex">\(\begin{bmatrix}1&amp;x_1\\\vdots&amp;\vdots\\1&amp;x_n\end{bmatrix}\begin{bmatrix}\beta_0\\\beta_1\end{bmatrix}=\begin{bmatrix}y_1\\\vdots\\y_n\end{bmatrix}\)</span>；若矩阵方程 <span class="arithmatex">\(X\beta=\mathbf y\)</span> 的最小二乘解为 <span class="arithmatex">\(\hat\beta\)</span>，那么数据集的<strong>最小二乘直线</strong>为 <span class="arithmatex">\(\hat y=\hat\beta_0+\hat\beta_1 x\)</span>（满足 <span class="arithmatex">\(\forall\mathbf v\in\mathbb R^n,\sum\limits_{i=1}^n(y_i-\hat y_i)^2=\|\mathbf y-\hat y\|^2\le\|\mathbf y-\mathbf v\|^2\)</span>）</li>
+<li>最小二乘曲线拟合：<span class="arithmatex">\(\forall i=1..m,(x_i,y_i)\)</span>，设有 n 个未知参数 <span class="arithmatex">\(\beta_1,\cdots,\beta_n\)</span> 和 n 个一元函数 <span class="arithmatex">\(f_1,\cdots,f_n\)</span>，构造方程组 <span class="arithmatex">\(\forall i=1..m,\sum\limits_{j=1}^n\beta_jf_j(x_i)=y_i\)</span>，即矩阵方程 <span class="arithmatex">\(\begin{bmatrix}f_1(x_1)&amp;\cdots&amp;f_n(x_1)\\\vdots&amp;&amp;\vdots\\f_1(x_m)&amp;\cdots&amp;f_n(x_m)\end{bmatrix}\begin{bmatrix}\beta_1\\\vdots\\\beta_n\end{bmatrix}=\begin{bmatrix}y_1\\\vdots\\y_m\end{bmatrix}\)</span>；若矩阵方程 <span class="arithmatex">\(X\beta=\mathbf y\)</span> 的最小二乘解为 <span class="arithmatex">\(\hat\beta\)</span>，那么数据集的<strong>最小二乘曲线</strong>为 <span class="arithmatex">\(\hat y=\sum\limits_{j=1}^n\hat\beta_jf_j(x)\)</span></li>
+<li>最小二乘多元函数拟合：（数据集中的每个元素为 <span class="arithmatex">\(k+1\)</span> 元向量，即 k 个输入数据，1 个输出数据；并且每个假设的函数都是 <span class="arithmatex">\(\mathbb R^k\to\mathbb R\)</span> 映射）</li>
+<li>最小二乘向量场拟合：（数据集中每个元素为 <span class="arithmatex">\(a+b\)</span> 元向量，即 a 个输入数据，b 个输出数据；并且每个假设的函数都是 <span class="arithmatex">\(\mathbb R^a\to\mathbb R^m\)</span> 映射）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>某产品的月销售额受几届波动影响，近似销售数据的曲线形如 <span class="arithmatex">\(y=\beta_0+\beta_1 x+\beta_2\sin(2\pi x/12)\)</span>（x 是按月统计的时间，<span class="arithmatex">\(\beta_0+\beta_1 x\)</span> 给出基本销售趋势，正弦想反映季节对销售的影响），给出上述线性模型对应的最小二乘拟合的设计矩阵和参数向量</li>
+<li>用直线模型 <span class="arithmatex">\(y=\beta_0+\beta_1 x\)</span> 拟合 <span class="arithmatex">\(\{(0,1),(1,1),(2,2),(3,2)\}\)</span></li>
+<li>用曲线模型 <span class="arithmatex">\(y=\beta_1+\beta_2 x^2\)</span> 拟合 <span class="arithmatex">\(\{(1,1.8),(2,2.7),(3,3.4),(4,3.8),(5,3.9)\}\)</span></li>
+<li>使用 <span class="arithmatex">\(y=\beta_1 x+\beta_2 x^2+\beta_3 x^3\)</span> 拟合 <span class="arithmatex">\(\{(4,1.58),(6,2.08),(8,2.5),(10,2.8),(12,3.1),(14,3.4),(16,3.8),(18,4.32)\}\)</span></li>
+<li>使用 <span class="arithmatex">\(y=\beta_1\cos x+\beta_2\sin x\)</span> 拟合 <span class="arithmatex">\(\{(1,7.9),(2,5.4),(3,-0.9)\}\)</span></li>
+<li>使用 <span class="arithmatex">\(y=\beta_1 e^{-0.02t}+\beta_2 e^{-0.07t}\)</span> 拟合 <span class="arithmatex">\(\{(10,21.34),(11,20.68),(12,20.05),(14,18.87),(15,18.30)\}\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 设计矩阵为 <span class="arithmatex">\(X=\begin{bmatrix}1&amp;x_1&amp;\sin(2\pi x_1/12)\\\vdots&amp;\vdots&amp;\vdots\\1&amp;x_n&amp;\sin(2\pi x_n/12)\end{bmatrix}\)</span></p>
+<p>参数向量为 <span class="arithmatex">\(\beta=\begin{bmatrix}\beta_0\\\beta_1\\\beta_2\end{bmatrix}\)</span></p>
+<p>(2) 设计矩阵和参数向量分别为 <span class="arithmatex">\(X=\begin{bmatrix}1&amp;0\\1&amp;1\\1&amp;2\\1&amp;3\end{bmatrix},\mathbf y=\begin{bmatrix}1\\1\\2\\2\end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(X^TX=\begin{bmatrix}4&amp;6\\6&amp;14\end{bmatrix},X^T\mathbf y=\begin{bmatrix}6\\11\end{bmatrix}\)</span></p>
+<p>由于 <span class="arithmatex">\(\begin{bmatrix}4&amp;6&amp;6\\6&amp;14&amp;11\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;9/10\\0&amp;1&amp;2/5\end{bmatrix}\)</span>，所以最小二乘解为 <span class="arithmatex">\(\beta=\begin{bmatrix}9/10\\2/5\end{bmatrix}\)</span>，</p>
+<p>也就是说最小二乘直线方程为 <span class="arithmatex">\(\hat y=(9/10)+(2/5)x\)</span></p>
+<p>(3) <span class="arithmatex">\(X=\begin{bmatrix}1&amp;1\\2&amp;4\\3&amp;9\\4&amp;16\\5&amp;25\end{bmatrix},\mathbf y=\begin{bmatrix}1.8\\2.7\\3.4\\3.8\\3.9\end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\([X^TX~~X^T\mathbf y]=\begin{bmatrix}55&amp;255&amp;52.1\\255&amp;979&amp;201.5\end{bmatrix}\sim\begin{bmatrix}1&amp;0&amp;0.0336852\\0&amp;1&amp;0.197048\end{bmatrix}\)</span>（存疑）</p>
+</blockquote>
 <h3 id="7">7. 内积空间</h3>
 <div class="admonition note">
 <p class="admonition-title">内积</p>
@@ -1752,6 +1960,14 @@
 <p>例1：<span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=\sum\limits_{i=1}^nc_iu_iv_i\)</span>（<span class="arithmatex">\(c_i\ge0\)</span>；c 不全为 0）定义了一个内积</p>
 <p>例2：对于 <span class="arithmatex">\(p,q\in\mathbb P_n\)</span>(多项式空间)，<span class="arithmatex">\(\langle p,q\rangle=\sum\limits_{i=0}^np(c_i)q(c_i)\)</span>也满足内积公理</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbb R^2\)</span> 上定义参数为 <span class="arithmatex">\(c_1=4,c_2=5\)</span> 的内积，即 <span class="arithmatex">\(\forall\mathbf u,\mathbf v\in\mathbb R^2\)</span>，有 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=4u_1v_1+5u_2v_2\)</span>（可以证明，该向量空间为内积空间，并且该空间称为欧式空间）</li>
+<li><span class="arithmatex">\(\mathbb P_n\)</span> 上定义参数为 <span class="arithmatex">\(t_0,t_1,\cdots,t_n\)</span> 的内积，即：<span class="arithmatex">\(\forall p,q\in\mathbb P_n\)</span>，有 <span class="arithmatex">\(\langle p,q\rangle=\sum\limits_{i=0}^np(t_i)q(t_i)\)</span>（可以证明，该向量空间为内积空间）</li>
+<li><span class="arithmatex">\(\mathbb P_2\)</span> 上定义参数为 <span class="arithmatex">\(t_0=0,t_1=1/2,t_2=1\)</span> 的内积，那么 <span class="arithmatex">\(\langle 12t^2,2t-1\rangle=(0)(-1)+(3)(0)+(12)(1)=12\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">长度，距离，正交性</p>
 </div>
@@ -1762,6 +1978,12 @@
 <p>距离：<span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 之间的距离为 <span class="arithmatex">\(\|\mathbf u-\mathbf v\|\)</span></p>
 <p>正交：<span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 正交，当且仅当 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=0\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbb P_2\)</span> 上定义参数为 <span class="arithmatex">\(t_0=0,t_1=1/2,t_2=1\)</span> 的内积，<span class="arithmatex">\(p(t)=12t^2,q(t)=2t-1\)</span>，那么 <span class="arithmatex">\(\|p\|=\sqrt{\langle p,p\rangle}=\sqrt{p(0)^2+p(1/2)^2+p(1)^2}=\sqrt{153},\|q\|=\sqrt{\langle q,q\rangle}=\sqrt{q(0)^2+q(1/2)^2+q(1)^2}=\sqrt{2}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">格拉姆-施密特方法</p>
 </div>
@@ -1781,15 +2003,44 @@
 <blockquote>
 <p>对于所有 <span class="arithmatex">\(\mathbf u,\mathbf v\in V\)</span>，有 <span class="arithmatex">\(|\langle\mathbf u,\mathbf v\rangle|\le\|\mathbf u\|\|\mathbf v\|\)</span></p>
 </blockquote>
+<p><span class="arithmatex">\(\|\text{proj}_{L(\bf u)}\mathbf v\|=\left\|\frac{\langle\bf v,u\rangle}{\langle\bf u,u\rangle}\bf u\right\|=\frac{|\langle\bf v,u\rangle|}{|\langle\bf u,u\rangle|}\|\mathbf u\|=\frac{|\langle\bf v,u\rangle|}{\|\mathbf u\|^2}\|\mathbf u\|=\frac{|\langle\bf v,u\rangle|}{\|\mathbf u\|}\)</span></p>
+<p>而 <span class="arithmatex">\(\|\text{proj}_{L(\bf u)}\mathbf v\|\le\|\mathbf v\|\)</span></p>
+<p>于是 <span class="arithmatex">\(\frac{|\langle\bf v,u\rangle|}{\|\mathbf u\|}\le\|\mathbf v\|\)</span>，或 <span class="arithmatex">\(|\langle\bf v,u\rangle|\le\|\mathbf u\|\|\mathbf v\|\)</span>，即 <span class="arithmatex">\(|\langle\bf u,v\rangle|\le\|\mathbf u\|\|\mathbf v\|\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">三角形不等式</p>
 </div>
 <blockquote>
 <p>对于所有 <span class="arithmatex">\(\mathbf u,\mathbf v\in V\)</span>，有 <span class="arithmatex">\(\|\mathbf u+\mathbf v\| \le \|\mathbf u\|+\|\mathbf v\|\)</span></p>
 </blockquote>
+<p><span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\langle\mathbf u+\mathbf v,\mathbf u+\mathbf v\rangle=\langle\mathbf u,\mathbf u\rangle+2\langle\mathbf u,\mathbf v\rangle+\langle\mathbf v,\mathbf v\rangle\)</span></p>
+<p><span class="arithmatex">\(=\|\mathbf u\|^2+2\langle\mathbf u,\mathbf v\rangle+\|\mathbf v\|^2\le\|\mathbf u\|^2+2\|\mathbf u\|\|\mathbf v\|+\|\mathbf v\|^2=(\|\mathbf u\|+\|\mathbf v\|)^2\)</span></p>
+<p>于是 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|\le\|\mathbf u\|+\|\mathbf v\|\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">C[a,b] 上的内积</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>内积空间公理：向量空间 v 称为以 <span class="arithmatex">\(c_1,\cdots,c_n\)</span><strong>内积空间</strong>，若 <span class="arithmatex">\(\forall\mathbf u,\mathbf v,\mathbf w\in V,c\in\mathbb R\)</span>，实值函数 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle\)</span> 满足：<ol>
+<li>交换律 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=\langle\mathbf v,\mathbf u\rangle\)</span></li>
+<li>加法与点积的分配率 <span class="arithmatex">\(\langle\mathbf u+\mathbf v,\mathbf w\rangle=\langle\mathbf u,\mathbf w\rangle+\langle\mathbf v,\mathbf w\rangle\)</span></li>
+<li>标量乘法与点积的结合律 <span class="arithmatex">\(c\langle\mathbf u,\mathbf v\rangle=\langle c\mathbf u,\mathbf v\rangle\)</span></li>
+<li><span class="arithmatex">\(\langle\mathbf u,\mathbf u\rangle\ge0\)</span>（<span class="arithmatex">\(\langle\mathbf u,\mathbf u\rangle=0\)</span>，当且仅当 <span class="arithmatex">\(\mathbf u=\mathbf 0\)</span>）</li>
+</ol>
+</li>
+<li>内积空间的例子：在 <span class="arithmatex">\(\mathbb R^n\)</span> 上定义点积 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=\sum\limits_{i=1}^nc_iu_iv_i\)</span>（<span class="arithmatex">\(c_1,\cdots,c_n\)</span> 已确定），该空间称为<strong>欧式空间</strong>；在 <span class="arithmatex">\(\mathbb P_n\)</span> 上定义点积 <span class="arithmatex">\(\langle p,q\rangle=\sum\limits_{i=0}^np(c_i)q(c_i)\)</span>（<span class="arithmatex">\(c_0,\cdots,c_n\)</span> 已确定）</li>
+<li>长度(范数)，单位向量，距离：假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in V,c\in\mathbb R\)</span>： <span class="arithmatex">\(\mathbf u\)</span> 的<strong>范数</strong>为 <span class="arithmatex">\(\|\mathbf u\|=\sqrt{\langle\bf u,u\rangle}\)</span>（<span class="arithmatex">\(\|\mathbf u\|^2=\langle\bf u,u\rangle\)</span>），满足 <span class="arithmatex">\(\|c\mathbf u\|=|c|\|\mathbf u\|\)</span>；<span class="arithmatex">\(\mathbf u\)</span> 的<strong>单位向量</strong>为 <span class="arithmatex">\(\pm\frac{\mathbf u}{\|\mathbf u\|}\)</span>；<span class="arithmatex">\(\mathbf u\)</span> 和 <span class="arithmatex">\(\mathbf v\)</span> 之间的<strong>距离</strong>为 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\|\mathbf u-\mathbf v\|\)</span></li>
+<li>正交，毕达哥拉斯定理(勾股定理)，正交补：<span class="arithmatex">\(\bf u,v\)</span> <strong>正交</strong>（记 <span class="arithmatex">\(\bf u\bot v\)</span>），当且仅当 <span class="arithmatex">\(\text{dist}(\mathbf u,\mathbf v)=\text{dist}(\mathbf u,-\mathbf v)\)</span>，等价于 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=0\)</span>，等价于 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2\)</span>（<strong>毕达哥拉斯定理</strong>）；<span class="arithmatex">\(\mathbf u\)</span> 与向量空间 W <strong>正交</strong>（记 <span class="arithmatex">\(\mathbf u\bot W\)</span>），当且仅当 <span class="arithmatex">\(\forall\mathbf v\in W,\langle\mathbf u,\mathbf v\rangle=0\)</span>；所有与子空间 W 正交的向量构成集合，称为 W 的<strong>正交补</strong>，记为 <span class="arithmatex">\(W^\bot=\{\mathbf u:~\mathbf u\in V,\mathbf u\bot W\}\)</span></li>
+<li>正交补的性质：(1) <span class="arithmatex">\(\mathbf x\in W^\bot\)</span>，当且仅当 <span class="arithmatex">\(\forall\mathbf v\in W,\langle\mathbf x,\mathbf v\rangle=0\)</span>，(2) V 的子空间，(3) <span class="arithmatex">\(\forall W,W^\bot\subset V\)</span>，<span class="arithmatex">\(\dim W+\dim W^\bot=n\)</span></li>
+<li>定理：若 <span class="arithmatex">\(A\in M_{m\times n}\)</span>，那么 (1) <span class="arithmatex">\((\text{Row}A)^\bot=\text{Nul}A\)</span>，(2) <span class="arithmatex">\((\text{Col}A)^\bot=\text{Nul}A^T\)</span></li>
+<li>角度：<span class="arithmatex">\(\mathbf u,\mathbf v\in V\)</span> 之间的<strong>角度</strong> <span class="arithmatex">\(\theta\)</span> 由 <span class="arithmatex">\(\langle\mathbf u,\mathbf v\rangle=\|\mathbf u\|~\|\mathbf v\|\cos\theta\)</span> 定义</li>
+<li>柯西-施瓦茨不等式，三角不等式：<span class="arithmatex">\(\forall\mathbf u,\mathbf v\in V\)</span>，都有 (1) <span class="arithmatex">\(|\langle\mathbf u,\mathbf v\rangle|\le\|\mathbf u\|\|\mathbf v\|\)</span>，(2) <span class="arithmatex">\(\|\mathbf u+\mathbf v\|\le\|\mathbf u\|+\|\mathbf v\|\)</span></li>
+</ol>
+</blockquote>
 <h3 id="8">8. 内积空间的应用</h3>
 </article>
 </div>
