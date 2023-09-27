@@ -432,6 +432,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%9C%9F%E9%A2%98/">
+        真题
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BB%93%E8%AE%BA/">
         结论
       </a>
@@ -1055,6 +1060,7 @@
 <p class="admonition-title">约定</p>
 <ol>
 <li>表示事件的花括号 <span class="arithmatex">\(\{\}\)</span> 在表示为概率的原像的时候可以省略，即 <span class="arithmatex">\(P(事件)=P(\{事件\})\)</span></li>
+<li><span class="arithmatex">\(A\cap B\)</span> 简记为 <span class="arithmatex">\(AB\)</span>，并且结合性比 <span class="arithmatex">\(\cup\)</span> 高</li>
 </ol>
 </div>
 <h3 id="1">1. 集合</h3>
@@ -1062,14 +1068,14 @@
 <p class="admonition-title">集合</p>
 </div>
 <blockquote>
-<p>元素：形成集合的对象，即集合由元素构成</p>
-<p><span class="arithmatex">\(x\in S\)</span>：x 是集合 S 的元素；与之相反的是 <span class="arithmatex">\(x\notin S\)</span></p>
+<p>集合：将一些研究对象放在一起形成<strong>集合</strong>，这些对象的称为集合的<strong>元素</strong></p>
+<p>若 x 是集合 S 的元素，那么 <span class="arithmatex">\(x\in S\)</span>，反之 <span class="arithmatex">\(x\notin S\)</span></p>
 <p>空集：记作 <span class="arithmatex">\(\emptyset\)</span></p>
-<p>集合的表示：<span class="arithmatex">\(S=\{x~|~x 满足性质 P\}\)</span>；<span class="arithmatex">\(S=\{x_1,x_2,\dots\}\)</span></p>
+<p>集合的表示：(1) <span class="arithmatex">\(S=\{x\in\Omega~|~x 满足性质 P\}\)</span>，(2) <span class="arithmatex">\(S=\{x_1,x_2,\dots\}\)</span></p>
 <p>可数无限集：由无限多个元素构成的集合</p>
-<p>子集，超集：S 是 T 的子集，当且仅当 T 是 S 的超集；记作 <span class="arithmatex">\(S\subset T\)</span> 或 <span class="arithmatex">\(T\supset S\)</span></p>
-<p>相等集合：<span class="arithmatex">\(S=T\)</span>，当且仅当 <span class="arithmatex">\(S\subset T\)</span> 并且 <span class="arithmatex">\(T\subset S\)</span></p>
-<p>空间：将我们感兴趣的所有元素放在一起，形成的集合，记作 <span class="arithmatex">\(\Omega\)</span></p>
+<p>子集，超集：S 是 T 的<strong>子集</strong>（记为 <span class="arithmatex">\(S\subset T\)</span>），当且仅当 T 是 S 的<strong>超集</strong>（记为 <span class="arithmatex">\(T\supset S\)</span>）</p>
+<p>集合相等：集合 S 与集合 T 相等（即 <span class="arithmatex">\(S=T\)</span>），当且仅当 <span class="arithmatex">\(S\subset T\)</span> 并且 <span class="arithmatex">\(T\subset S\)</span></p>
+<p>空间：将我们感兴趣的所有元素放在一起，形成的集合称为<strong>空间</strong>，记作 <span class="arithmatex">\(\Omega\)</span></p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">集合运算</p>
@@ -1087,7 +1093,73 @@
 <p>分配率：<span class="arithmatex">\(S\cap(T\cup U)=(S\cap T)\cup(S\cap U)\)</span>，<span class="arithmatex">\(S\cup(T\cap U)=(S\cup T)\cap(S\cup U)\)</span></p>
 <p><span class="arithmatex">\((S^c)^c=S\)</span>，<span class="arithmatex">\(S\cap S^c=\emptyset\)</span>，<span class="arithmatex">\(S\cup\Omega=\Omega\)</span>，<span class="arithmatex">\(S\cap\Omega=S\)</span></p>
 <p>德摩根定律：<span class="arithmatex">\((\bigcup\limits_{i=1}^nS_i)^c=\bigcap\limits_{i=1}^nS_i^c\)</span>，<span class="arithmatex">\((\bigcap\limits_{i=1}^nS_i)^c=\bigcup\limits_{i=1}^nS_i^c\)</span></p>
-<p>部分证明：<span class="arithmatex">\((\bigcap\limits_{i=1}^nS_i)^c=\{x~|~x\notin \bigcap\limits_{i=1}^nS_i\}=\{x~|~(\forall i,x\in S_i)'\}=\{x~|~\exists i,x\notin S_i\}=\{x~|~\exists i,x\in S_i^c\}\)</span></p>
+</blockquote>
+<p>证明德摩根定律：</p>
+<ol>
+<li><span class="arithmatex">\((\bigcup\limits_{i=1}^nS_i)^c=(\{x\in\Omega:\exists i=1..n,x\in S_i\})^c=\{x\in\Omega:\forall i=1..n,x\not\in S_i\}=\{x\in\Omega:\forall i=1..n,x\in S_i^c\}=\bigcap\limits_{i=1}^nS_i^c\)</span></li>
+<li><span class="arithmatex">\((\bigcap\limits_{i=1}^nS_i)^c=(\{x\in\Omega:\forall i=1..n,x\in S_i\})^c=\{x\in\Omega:\exists i=1..n,x\not\in S_i\}=\{x\in\Omega:\exists i=1..n,x\in S_i^c\}=\bigcup\limits_{i=1}^nS_i^c\)</span>（或者 <span class="arithmatex">\((\bigcup\limits_{i=1}^nS_i)^c=\bigcap\limits_{i=1}^nS_i^c\)</span> 蕴涵 <span class="arithmatex">\((\bigcup\limits_{i=1}^nS_i^c)^c=\bigcap\limits_{i=1}^n(S_i^c)^c=\bigcap\limits_{i=1}^nS_i\)</span>，蕴涵 <span class="arithmatex">\(((\bigcup\limits_{i=1}^nS_i^c)^c)^c=(\bigcap\limits_{i=1}^nS_i)^c\)</span>，于是 <span class="arithmatex">\((\bigcup\limits_{i=1}^nS_i^c)=(\bigcap\limits_{i=1}^nS_i)^c\)</span>）</li>
+</ol>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>集合，元素：将一些研究对象放在一起形成<strong>集合</strong>，这些对象的称为集合的<strong>元素</strong></li>
+<li>集合的表示：(1) <span class="arithmatex">\(S=\{x\in\Omega~|~x 满足性质 P\}\)</span>，(2) <span class="arithmatex">\(S=\{x_1,x_2,\dots\}\)</span></li>
+<li>元素与集合的关系：若 x 是集合 S 的元素，那么 <span class="arithmatex">\(x\in S\)</span>，否则 <span class="arithmatex">\(x\not\in S\)</span></li>
+<li>集合间的关系：S 是 T 的<strong>子集</strong>，记为 <span class="arithmatex">\(S\subset T\)</span>；T 是 S 的<strong>超集</strong>，记为 <span class="arithmatex">\(T\supset S\)</span>；集合 S 和集合 T 相等，记作 <span class="arithmatex">\(S=T\)</span></li>
+<li>定理：(1) <span class="arithmatex">\(S\subset T\iff T\supset S\)</span>，(2) <span class="arithmatex">\(S=T\iff S\subset T,T\subset S\)</span></li>
+<li>特殊的集合：(1) 空集，记为 <span class="arithmatex">\(\emptyset\)</span>，(2) 空间，是我们所要研究的对象，记为 <span class="arithmatex">\(\Omega\)</span></li>
+<li>集合运算：(1) 集合 S 相对于 <span class="arithmatex">\(\Omega\)</span> 的补集，记为 <span class="arithmatex">\(S^c=\{x\in\Omega~|~x\notin S\}\)</span>，(2) 集合 S 与集合 T 的并集，记为 <span class="arithmatex">\(S\cup T = \{x\in\Omega~|~x\in S\vee x\in T\}\)</span>，(3) 集合 S 与集合 T 的交集，记为 <span class="arithmatex">\(S\cap T = \{x\in\Omega~|~x\in S\wedge x\in T\}\)</span></li>
+<li>集合运算推广：<span class="arithmatex">\(\bigcup\limits_{i=1}^nS_i=\{x\in\Omega~|~\exists i=1..n,x\in S_i\}\)</span>，<span class="arithmatex">\(\bigcap\limits_{i=1}^nS_i=\{x\in\Omega~|~\forall i=1..n,x\in S_i\}\)</span></li>
+<li>集合公理：假设有集合 <span class="arithmatex">\(S,T,U\)</span>，那么：<ol>
+<li>交换律 <span class="arithmatex">\(S\cup T=T\cup S\)</span>，<span class="arithmatex">\(S\cap T=T\cap S\)</span></li>
+<li>结合律 <span class="arithmatex">\(S\cup(T\cup U)=(S\cup T)\cup U\)</span>，<span class="arithmatex">\(S\cap(T\cap U)=(S\cap T)\cap U\)</span></li>
+<li>交与并的分配律 <span class="arithmatex">\(S\cap(T\cup U)=(S\cap T)\cup(S\cap U)\)</span>，<span class="arithmatex">\(S\cup(T\cap U)=(S\cup T)\cap(S\cup U)\)</span></li>
+<li><span class="arithmatex">\((S^c)^c=S\)</span>，<span class="arithmatex">\(S\cap S^c=\emptyset\)</span>，<span class="arithmatex">\(S\cup\Omega=\Omega\)</span>，<span class="arithmatex">\(S\cap\Omega=S\)</span></li>
+<li>德摩根定律：<span class="arithmatex">\((\bigcap\limits_{i=1}^nS_i)^c=\bigcup\limits_{i=1}^nS_i^c\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>完备分解：<span class="arithmatex">\(A=AB\cup AB^c\)</span></li>
+<li><span class="arithmatex">\(AB=(A\cup B^c)(A^c\cup B)(A\cup B)\)</span></li>
+<li>子集性质：若 <span class="arithmatex">\(A\subset B\)</span>，那么 <span class="arithmatex">\(AB=A,A\cup B=B\)</span></li>
+<li>并集的不相交分解：(1) <span class="arithmatex">\(A\cup B=A\cup A^cB\)</span>，(2) <span class="arithmatex">\(\bigcup\limits_{i=1}^n A_i=\bigcup\limits_{i=1}^n\left(A_i\bigcap\limits_{j=1}^{i-1}A_j^c\right)\)</span></li>
+<li>定义 <span class="arithmatex">\(A-B=AB^c\)</span>，那么 <span class="arithmatex">\(AB=B-A^cB\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>假设 <span class="arithmatex">\(\Omega=\{1,2,3,4,5,6\}\)</span>，验证：<span class="arithmatex">\((A\cup B)^c=A^c\cap B^c\)</span>，<span class="arithmatex">\((A\cap B)^c=A^c\cup B^c\)</span></li>
+<li>证明：假设 A 和 B 是两个集合，那么 (1) <span class="arithmatex">\(A=(A\cap B)\cup(A\cap B^c)\)</span>，(2) <span class="arithmatex">\((A\cap B)^c=(A^c\cap B)\cup(A\cap B^c)\cup(A^c\cap B^c)\)</span></li>
+<li>*证明：<span class="arithmatex">\(A\cup\bigcap\limits_{i=1}^∞B_i=\bigcap\limits_{i=1}^∞(A\cup B_i)\)</span></li>
+<li>*康托尔的三角论证方法：指出单位区间 <span class="arithmatex">\([0,1]\)</span> 是不可数集合，即 <span class="arithmatex">\([0,1]\)</span> 中的数不能排成一个数列</li>
+<li>证明：<span class="arithmatex">\(A\cup B=A\cup A^cB\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 假设 <span class="arithmatex">\(A=\{2,4,6\},B=\{4,5,6\}\)</span>，于是 <span class="arithmatex">\(A^c=\{1,3,5\},B^c=\{1,2,3\}\)</span></p>
+<ol>
+<li><span class="arithmatex">\(A\cup B=\{2,4,5,6\}\)</span>，<span class="arithmatex">\((A\cup B)^c=\{1,3\}\)</span>，而 <span class="arithmatex">\(A^c\cap B^c=\{1,3\}\)</span>，于是 <span class="arithmatex">\((A\cup B)^c=A^c\cap B^c\)</span></li>
+<li><span class="arithmatex">\(A\cap B=\{4,6\}\)</span>，<span class="arithmatex">\((A\cap B)^c=\{1,2,3,5\}\)</span>，而 <span class="arithmatex">\(A^c\cup B^c=\{1,2,3,5\}\)</span>，于是 <span class="arithmatex">\((A\cap B)^c=A^c\cup B^c\)</span></li>
+</ol>
+<p>(2)</p>
+<ol>
+<li>根据[集合概率]有 <span class="arithmatex">\((A\cap B)\cup(A\cap B^c)=A\cap(B\cup B^c)=A\cap\Omega=A\)</span></li>
+<li>根据[集合公理]和 (1) 的结论有 <span class="arithmatex">\((A^c\cap B)\cup(A\cap B^c)\cup(A^c\cap B^c)=(A^c\cap B)\cup B^c=(A^c\cup B^c)\cap(B\cup B^c)=(A^c\cup B^c)\cap\Omega=A^c\cup B^c=(A\cap B)^c\)</span></li>
+</ol>
+<p>(5) <span class="arithmatex">\(A\cup B=(AA\cup AB)\cup(A^cA\cup A^cB)=(A\cup AB)\cup A^cB=A\cup A^cB\)</span></p>
 </blockquote>
 <h3 id="2">2. 概率模型</h3>
 <p>概率模型 是对不确定现象的数学描述</p>
@@ -1103,7 +1175,7 @@
 </div>
 <blockquote>
 <p>每一个概率模型都关联着一个<strong>试验</strong>，这个试验将产生试验<strong>结果</strong>（样本点？），这些所有可能的结果形成<strong>样本空间</strong>（记作 <span class="arithmatex">\(\Omega\)</span>）</p>
-<p>样本空间可由若干实验结果组成，也可由无限多个试验结果组成</p>
+<p>样本空间可由若干个试验结果组成，也可由无限多个试验结果组成</p>
 <p>注：不同实验结果（样本点）之间相互排斥</p>
 </blockquote>
 <div class="admonition tip">
@@ -1118,7 +1190,7 @@
 <p class="admonition-title">序贯模型</p>
 </div>
 <blockquote>
-<p>序贯树形图 用以表示所有实验结果的组成（每条从根到叶子的路径确定每个实验结果的“广义向量”）</p>
+<p>序贯树形图 用以表示所有试验结果的组成（每条从根到叶子的路径确定每个试验结果的“广义向量”）</p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">概率律</p>
@@ -1139,8 +1211,16 @@
 <blockquote>
 <p>离散概论律：设样本空间由有限个可能的结果组成，则事件的概率可由组成这个事件的试验结果决定；事件 <span class="arithmatex">\(\{s_1,s_2,\dots,s_n\}\)</span> 的概率是 <span class="arithmatex">\(P(s_i)\)</span> 之和，即 <span class="arithmatex">\(P(\{s_1,s_2,\dots,s_n\})=\sum\limits_{i=1}^nP(s_i)\)</span></p>
 <p>（注：<span class="arithmatex">\(P(\{s_i\})\)</span> 表示事件 <span class="arithmatex">\(\{s_i\}\)</span> 的概率，简记为 <span class="arithmatex">\(P(s_i)\)</span>）</p>
-<p>离散均匀概论律（古典概型）：设样本空间为 <span class="arithmatex">\(\Omega=\{s_1,s_2,\dots,s_n\}\)</span>，并且每个实验结果（样本点）都是等概率的，由归一化公理有 <span class="arithmatex">\(P(s_i)=\frac1n\)</span>（<span class="arithmatex">\(i=1..n\)</span>）；事件 <span class="arithmatex">\(A=\{s_{a_1},s_{a_2},\dots,s_{a_k}\}\)</span> 的概率为 <span class="arithmatex">\(P(A)=\frac kn\)</span></p>
+<p>离散均匀概论律（古典概型）：设样本空间为 <span class="arithmatex">\(\Omega=\{s_1,s_2,\dots,s_n\}\)</span>，并且每个试验结果（样本点）都是等概率的，由归一化公理有 <span class="arithmatex">\(P(s_i)=\frac1n\)</span>（<span class="arithmatex">\(i=1..n\)</span>）；事件 <span class="arithmatex">\(A=\{s_{a_1},s_{a_2},\dots,s_{a_k}\}\)</span> 的概率为 <span class="arithmatex">\(P(A)=\frac kn\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>抛掷一枚硬币（双面均匀），有两种(试验)结果：正面向上 <span class="arithmatex">\(\{H\}\)</span>，反面向上 <span class="arithmatex">\(\{T\}\)</span>，于是样本空间为 <span class="arithmatex">\(\Omega=\{H,T\}\)</span>，事件集为 <span class="arithmatex">\(\{\{H\},\{T\},\{H,T\},\emptyset\}\)</span>；根据[古典概型]，每个试验结果都是等概率的，又由[可加性]和[归一性]有 <span class="arithmatex">\(P(\{H\})=1/2,P(\{T\})=1/2,P(\{H,T\})=P(\{H\}+P\{T\})=1/2+1/2=1,P(\emptyset)=0\)</span></li>
+<li>抛掷 3 枚硬币（双面均匀），有 <span class="arithmatex">\(2^3=8\)</span> 种试验结果并且样本空间为：<span class="arithmatex">\(\Omega=\{HHH,HHT,HTH,HTT,THH,THT,TTH,TTT\}\)</span>，事件集是大小为 <span class="arithmatex">\(2^8=256\)</span> 集合；根据[古典概型]有 <span class="arithmatex">\(\forall x\in\Omega,P(x)=\frac1{|\Omega|}=1/8\)</span>，根据[可加性]有 <span class="arithmatex">\(P(\{两个正面向上,一个反面向上\})=P(\{HHT,HTH,THH\})=P(\{HHT\})+P(\{HTH\})+P(\{THH\})=3/8\)</span></li>
+<li>抛掷两次有 4 个面的骰子（4面均匀），并且满足[古典概型]，那么 <span class="arithmatex">\(P(\{两次点数总和为偶数\})=8/16,P(\{两次点数总和为奇数\})=8/16,P(\{第一次点数与第二次相同\})=4/16\)</span>，<span class="arithmatex">\(P(\{第一次点数比第二次点数大\})=6/16,P(\{至少有一次点数等于4\})=7/16\)</span>（用序贯模型能很好计算）</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">连续模型</p>
 </div>
@@ -1152,18 +1232,37 @@
 </ol>
 <p>注：其他满足概率公理的连续模型都是合理的模型</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>若试验的样本空间是 <span class="arithmatex">\(\Omega=[0,1]\)</span>，并且满足[连续均匀概率律]，那么 <span class="arithmatex">\(\forall0\le a\le b\le1,P([a,b])=(b-a)/1=b-a\)</span></li>
+<li>罗密欧和朱丽叶约会，并且延迟误差为 1h（两个人都不会在约定时间误差范围之外出现，如：只会在 <span class="arithmatex">\(9:00~10:00\)</span> 之间出现，而不会在如 <span class="arithmatex">\(8:55\)</span> 或 <span class="arithmatex">\(10:03\)</span> 出现），那么样本空间可以简单地表示为 <span class="arithmatex">\(\Omega=[0,1]\times[0,1]\)</span>（一个二维平面区域）；若约会成功的条件是两人的到达时间差值不大于 15min，那么 <span class="arithmatex">\(P(\{约会成功\})=\{|x-y|\le1/4与[0,1]\times[0,1]交集面积\}/\{[0,1]\times[0,1]的面积\}=7/16\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">概率律的性质</p>
 </div>
 <blockquote>
 <ol>
-<li>若 <span class="arithmatex">\(A\subset B\)</span>，则 <span class="arithmatex">\(P(A)\le P(B)\)</span></li>
-<li><span class="arithmatex">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)=P(A)+P(A^c\cap B)\)</span></li>
-<li><span class="arithmatex">\(P(A\cup B)\le P(A)+P(B)\)</span>；推广：<span class="arithmatex">\(P(\bigcup\limits_{i=1}^nA_i)\le\sum\limits_{i=1}^nP(A_i)\)</span></li>
-<li><span class="arithmatex">\(P(A\cup B\cup C)=P(A)+P(A^c\cap B)+P(A^c\cap B^c\cap C)\)</span> （由于 <span class="arithmatex">\(P(A)=P(A\cap B)+P(A\cap B^c)\)</span>）</li>
-<li>推广 (2),(4)：<span class="arithmatex">\(P(\bigcup\limits_{i=1}^nA_i)=\sum\limits_{i=1}^nP(\bigcap\limits_{j=1}^{i-1}A_j^c\cap A_i)\)</span></li>
+<li>不等式1：(1) <span class="arithmatex">\(P(AB)\le P(A)\)</span>，(2) <span class="arithmatex">\(P(A\cup B)\ge P(A)\)</span></li>
+<li>[子集性质]的推论：若 <span class="arithmatex">\(A\subset B\)</span>，则 <span class="arithmatex">\(P(A)\le P(B)\)</span></li>
+<li>[并集不相交分解]的推论：(1) <span class="arithmatex">\(P(A\cup B)=P(A)+P(A^c\cap B)\)</span>，(2) <span class="arithmatex">\(P\left(\bigcup\limits_{i=1}^n A_i\right)=\sum\limits_{i=1}^nP\left(A_i\bigcap\limits_{j=1}^{i-1}A_j^c\right)\)</span></li>
+<li>不等式2：(1) <span class="arithmatex">\(\forall k=1..n,P(\bigcap\limits_{i=1}^nA_i)\le P(A_k)\)</span>，(2) <span class="arithmatex">\(\forall k=1..n,P(A_k)\le P(\bigcup\limits_{i=1}^nA_i)\le\sum\limits_{i=1}^nP(A_i)\)</span></li>
 </ol>
 </blockquote>
+<p>(1)</p>
+<ol>
+<li><span class="arithmatex">\(P(AB)=1-P(A^c\cup B^c)=1-P(A^c\cup AB^c)=1-P(A^c)-P(AB^c)=P(A)-P(AB^c)\le P(A)\)</span></li>
+<li><span class="arithmatex">\(P(A\cup B)=P(A\cup A^cB)=P(A)+P(A^cB)\ge P(A)\)</span></li>
+</ol>
+<p>(2) <span class="arithmatex">\(A\subset B\)</span> 蕴涵 <span class="arithmatex">\(A=AB\)</span>，蕴涵 <span class="arithmatex">\(P(A)=P(AB)\)</span>，根据(1)的结论，<span class="arithmatex">\(P(A)\le P(B)\)</span></p>
+<p>(3)</p>
+<ol>
+<li><span class="arithmatex">\(P(A\cup B)=P(A\cup A^cB)=P(A)+P(A^cB)\)</span></li>
+<li><span class="arithmatex">\(P\left(\bigcup\limits_{i=1}^n A_i\right)=P\left(\bigcup\limits_{i=1}^n\left(A_i\bigcap\limits_{j=1}^{i-1}A_j^c\right)\right)=\sum\limits_{i=1}^nP\left(A_i\bigcap\limits_{j=1}^{i-1}A_j^c\right)\)</span></li>
+</ol>
+<p>(4)</p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">模型与现实</p>
 </div>
@@ -1188,19 +1287,127 @@
 <li>20世纪.现在已经不再以相对频率作为概率论的基础概念.代之以由科尔莫戈罗夫引入的普遍适用的概率论公理系统.与数学的其他分支一样,在公理系统的基础上发展起来的概率论只依赖于逻辑的正确性,而与实际物理现象的联系无关.然而,由于概率论能够描述和解释现实世界中绝大部分的不确定性现象,因而在科学和工程中,概率论得到广泛应用</li>
 </ol>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>概率模型，样本空间，概率律，概率：概率模型关联着一个<strong>试验</strong>，该试验的所有可能结果的集合称为<strong>样本空间</strong>，记为 <span class="arithmatex">\(\Omega\)</span>；而<strong>概率律</strong>为试验结果的子集 A 确定一个非负数 <span class="arithmatex">\(P(A)\)</span>（<span class="arithmatex">\(P:2^\Omega\to\mathbb R\)</span>），该数称为<strong>概率</strong>（刻画了我们对事件 A 的认识或所产生的信念的程度）</li>
+<li>事件：试验结果集的子集（即样本空间的子集）</li>
+<li>序贯模型：(1) <strong>序贯树形图</strong>：一颗多叉树，每条边表示一个当前情况的可能选择，每条从根到叶子的路径是一种试验结果，(2) 分为两个阶段的试验可以用二维表格表示</li>
+<li>概论律/概率公理：<ol>
+<li>非负性：<span class="arithmatex">\(\forall A\in2^\Omega,P(A)\ge0\)</span></li>
+<li>可加性：<span class="arithmatex">\(\forall A\cap B=\emptyset,P(A\cup B)=P(A)+P(B)\)</span>（更一般地，<span class="arithmatex">\(\forall i\ne j,A_i\cap A_j=\emptyset,P(\bigcup\limits_{i=1}^∞A_i)=\sum\limits_{i=1}^∞P(A_i)\)</span>）</li>
+<li>归一化：样本空间 <span class="arithmatex">\(\Omega\)</span> 的概率为 1，即 <span class="arithmatex">\(P(\Omega)=1\)</span>（蕴涵 <span class="arithmatex">\(P(\emptyset)=0\)</span>）</li>
+</ol>
+</li>
+<li>离散模型，离散概率律，离散均匀概率律(古典概型)：假设样本空间由有限个可能的结果组成，则事件的概率由组成这个事件的试验结果决定，称为<strong>离散概论律</strong>（事件 <span class="arithmatex">\(\{s_1,\cdots,s_n\}\)</span> 的概率为 <span class="arithmatex">\(P(s_i)\)</span> 之和，即 <span class="arithmatex">\(P(\{s_1,\cdots,s_n\})=\sum\limits_{i=1}^nP(s_i)\)</span>）；若一个离散概率模型对每个试验结果(样本点)都有相同的概率，即 <span class="arithmatex">\(\forall x\ne y\in\Omega,P(x)=P(y)\)</span>，那么该模型称为<strong>离散均匀概率律</strong>或<strong>古典概型</strong>（于是 <span class="arithmatex">\(\forall x\in\Omega,P(x)=\frac1{|\Omega|}\)</span>）</li>
+<li>连续模型，连续概率律，连续均匀概率律</li>
+<li>概率律的性质：假设 <span class="arithmatex">\(A,B,A_1,\cdots,A_n\subset2^\Omega\)</span>，那么：<ol>
+<li>不等式1：(1) <span class="arithmatex">\(P(AB)\le P(A)\)</span>，(2) <span class="arithmatex">\(P(A\cup B)\ge P(A)\)</span></li>
+<li>[子集性质]的推论：若 <span class="arithmatex">\(A\subset B\)</span>，则 <span class="arithmatex">\(P(A)\le P(B)\)</span></li>
+<li>[并集不相交分解]的推论：(1) <span class="arithmatex">\(P(A\cup B)=P(A)+P(A^c\cap B)\)</span>，(2) <span class="arithmatex">\(P\left(\bigcup\limits_{i=1}^n A_i\right)=\sum\limits_{i=1}^nP\left(A_i\bigcap\limits_{j=1}^{i-1}A_j^c\right)\)</span></li>
+<li>不等式2：(1) <span class="arithmatex">\(\forall k=1..n,P(\bigcap\limits_{i=1}^nA_i)\le P(A_k)\)</span>，(2) <span class="arithmatex">\(\forall k=1..n,P(A_k)\le P(\bigcup\limits_{i=1}^nA_i)\le\sum\limits_{i=1}^nP(A_i)\)</span></li>
+<li>[完备分解]的推论：假设 <span class="arithmatex">\(\{s_1,\cdots,s_n\}\)</span> 是 <span class="arithmatex">\(\Omega\)</span> 的一个分割，(1) <span class="arithmatex">\(P(A)=P(AB)+P(AB^c)\)</span>，(2) <span class="arithmatex">\(P(A)=\sum\limits_{i=1}^nP(A\cap S_i)\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>交集不等式：(1) <span class="arithmatex">\(P(AB)\ge P(A)+P(B)-1\)</span>，(2) <span class="arithmatex">\(P\left(\bigcap\limits_{i=1}^nA_i\right)\ge\sum\limits_{i=1}^nP(A_i)-(n-1)\)</span></li>
+<li>容斥原理：(1) <span class="arithmatex">\(P(A\cup B)=P(A)+P(B)-P(AB)\)</span>，(2) <span class="arithmatex">\(P(A\cup B\cup C)=P(A)+[P(B)-P(AB)]+[P(C)-P(AC)-P(BC)]+P(ABC)\)</span>，(3) <span class="arithmatex">\(P\left(\bigcup\limits_{i=1}^nA_i\right)=\sum\limits_{i=0}^n(-1)^{i-1}\sum\limits_{S\subset\{1..n\},|S|=i}P\left(\bigcap\limits_{j\in S}A_j\right)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li><span class="arithmatex">\(P(A)=0.6,P(B)=0.7,P(AB)=0.4\)</span>，计算 <span class="arithmatex">\(P(A^cB^c)\)</span></li>
+<li>6 面骰子偶数面出现概率为奇数面大一倍，不同的奇数面或偶数面出现概率相同；建立概论律，并求点数小于 4 的概率</li>
+<li>4 面骰子持续抛掷若干次，直到出现偶数面为止；该试验的样本空间是什么？</li>
+<li>证明：你参与下棋比赛，并且要与 3 人分别下一场，连续两场才算获胜，因此你成为胜者的概率与比赛次序有关，若与你比赛的选手中，最弱者与你进行第二场比赛，那么你的胜率最大（提示：第 2 场比赛必须胜利）</li>
+<li>样本空间 <span class="arithmatex">\(\Omega\)</span> 的<strong>分割</strong>是一个互不相容的事件组 <span class="arithmatex">\(\{s_1,\cdots,s_n\}\)</span>，并且 <span class="arithmatex">\(\Omega=\bigcup\limits_{i=1}^nS_i\)</span>，<span class="arithmatex">\(\forall i\ne j,S_i\cap S_j=\emptyset\)</span><ol>
+<li>证明：<span class="arithmatex">\(\forall A\subset\Omega,P(A)=\sum\limits_{i=1}^nP(A\cap S_i)\)</span></li>
+<li>证明：<span class="arithmatex">\(P(A)=P(AB)+P(AC)+P(AB^cC^c)-P(ABC)\)</span></li>
+</ol>
+</li>
+<li>证明：<span class="arithmatex">\(P(AB^c\cup A^cB)=P(A)+P(B)-2P(AB)\)</span></li>
+<li>证明：(1) <span class="arithmatex">\(P(AB)\ge P(A)+P(B)-1\)</span>，(2) <span class="arithmatex">\(P(\bigcap\limits_{i=1}^nA_i)\ge\sum\limits_{i=1}^nP(A_i)-(n-1)\)</span></li>
+<li>证明容斥原理：(1) <span class="arithmatex">\(P(A\cup B\cup C)=P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC)\)</span>，(2) <span class="arithmatex">\(P(\bigcup\limits_{i=1}^nA_i)=\sum\limits_{i=0}^n(-1)^{i-1}\sum\limits_{S\subset\{1..n\},|S|=i}P(\bigcap\limits_{j\in S}A_j)\)</span></li>
+<li>*证明概率的连续性：<ol>
+<li><span class="arithmatex">\(A_1,A_2,\dots\)</span> 是单调递增的事件序列（<span class="arithmatex">\(A_i\subset A_{i+1}\)</span>），令 <span class="arithmatex">\(A=\bigcup\limits_{i=1}^∞A_i\)</span>，证明 <span class="arithmatex">\(P(A)=\lim\limits_{n\to∞}P(A_i)\)</span></li>
+<li><span class="arithmatex">\(A_1,A_2,\dots\)</span> 是单调减增的事件序列（<span class="arithmatex">\(A_i\supset A_{i+1}\)</span>），令 <span class="arithmatex">\(A=\bigcap\limits_{i=1}^∞A_i\)</span>，证明 <span class="arithmatex">\(P(A)=\lim\limits_{n\to∞}P(A_i)\)</span></li>
+<li>证明：(1) <span class="arithmatex">\(P([0,∞))=\lim\limits_{n\to∞}P([0,n])\)</span>，(2) <span class="arithmatex">\(\lim\limits_{n\to∞}P([n,∞))=0\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 以下给出通用解法：<span class="arithmatex">\(P(A)=0.6,P(B)=0.7\)</span>，蕴涵 <span class="arithmatex">\(P(AB)+P(AB^c)=0.6,P(AB)+P(A^cB)=0.7\)</span></p>
+<p>又由 <span class="arithmatex">\(P(AB)+P(AB^c)+P(A^cB)+P(A^cB^c)=1\)</span></p>
+<p>得到线性方程组 <span class="arithmatex">\(\begin{bmatrix}1&amp;1&amp;0&amp;0\\1&amp;0&amp;1&amp;0\\1&amp;0&amp;0&amp;0\\1&amp;1&amp;1&amp;1\end{bmatrix}\begin{bmatrix}P(AB)\\P(AB^c)\\P(A^cB)\\P(A^cB^c)\end{bmatrix}=\begin{bmatrix}0.6\\0.7\\0.4\\1\end{bmatrix}\)</span>，解得 <span class="arithmatex">\(\begin{bmatrix}P(AB)\\P(AB^c)\\P(A^cB)\\P(A^cB^c)\end{bmatrix}=\begin{bmatrix}0.4\\0.2\\0.3\\0.1\end{bmatrix}\)</span></p>
+<p>于是 <span class="arithmatex">\(P(A^cB^c)=0.1\)</span></p>
+<p>(2) 该模型为离散非均匀模型，<span class="arithmatex">\(\forall a\in\{1,3,5\},b\in\{2,4,6\},P(\{b\})=2P(\{a\})\)</span></p>
+<p>由[归一化]有 <span class="arithmatex">\(9P(\{b\})=3P(\{a\})+3P(\{b\})=1\)</span>，于是 <span class="arithmatex">\(P(\{b\})=1/9\)</span>，于是 <span class="arithmatex">\(P(\{a\})=2/9\)</span></p>
+<p>于是 <span class="arithmatex">\(P(\{1,2,3\})=P(\{1\})+P(\{2\})+P(\{3\})=1/9+2/9+1/9=4/9\)</span></p>
+<p>(3) <span class="arithmatex">\(\Omega=\{n\in\mathbb N^+,\{a_1,\cdots,a_n\}:\forall i=1..n-1,a_i\in\{1,3\},a_n\in\{2,4\}\}\)</span></p>
+<p>(4) 设 <span class="arithmatex">\(p_i\)</span> 为你与第 i 场比赛的胜率，那么你成为胜者的概率为 <span class="arithmatex">\(p_2(p_1+(1-p_1)p_3)=p_2(p_1+p_3-p_1p_3)\)</span>（<span class="arithmatex">\(p_1\)</span> 和 <span class="arithmatex">\(p_3\)</span> 的次序与胜率无关）</p>
+<ol>
+<li>交换 <span class="arithmatex">\(p_2,p_1\)</span>，那么胜率变为 <span class="arithmatex">\(p_1(p_2+p_3-p_2p_3)\)</span>（此时 <span class="arithmatex">\(p_2\)</span> 和 <span class="arithmatex">\(p_3\)</span> 的次序与胜率无关）</li>
+<li>交换 <span class="arithmatex">\(p_2,p_3\)</span>，那么胜率变为 <span class="arithmatex">\(p_3(p_1+p_1-p_1p_2)\)</span>（此时 <span class="arithmatex">\(p_1\)</span> 和 <span class="arithmatex">\(p_2\)</span> 的次序与胜率无关）</li>
+</ol>
+<p>若 <span class="arithmatex">\(p_2(p_1+p_3-p_1p_3)\le p_1(p_2+p_3-p_2p_3)\)</span> 并且 <span class="arithmatex">\(p_2(p_1+p_3-p_1p_3)\le p_3(p_1+p_1-p_1p_2)\)</span>，解得 <span class="arithmatex">\(p_2\ge p_1,p_2\ge p_3\)</span>，反之亦然</p>
+<p>于是，要想胜率最大，<span class="arithmatex">\(p_2\)</span> 一定是最弱者</p>
+<p>(5.1) <span class="arithmatex">\(\forall i\ne j,S_i\cap S_j=\emptyset\)</span>，蕴涵 <span class="arithmatex">\(A(S_i\cap S_j)=A\emptyset\)</span>，蕴涵 <span class="arithmatex">\(AS_i\cap AS_j=\emptyset\)</span></p>
+<p>而 <span class="arithmatex">\(A=A\Omega=A\bigcup\limits_{i=1}^nS_i=\bigcup\limits_{i=1}^nAS_i\)</span></p>
+<p>于是 <span class="arithmatex">\(P(A)=P(\bigcup\limits_{i=1}^nAS_i)=\sum\limits_{i=1}^nP(AS_i)\)</span></p>
+<p>(5.2) <span class="arithmatex">\(P(AB)+P(AC)+P(AB^cC^c)-P(ABC)=P(ABC)+P(ABC^c)+P(ABC)+(AB^cC)+P(AB^cC^c)-P(ABC)\)</span></p>
+<p><span class="arithmatex">\(=P(ABC)+P(ABC^c)+(AB^cC)+P(AB^cC^c)=P(A)\)</span></p>
+<p>(6) <span class="arithmatex">\(P(AB^c\cup A^cB)=P(AB^c)+P(A^cB)=[P(A)-P(AB)]+[P(B)-P(AB)]=P(A)+P(B)-2P(AB)\)</span></p>
+<p>(7.1) <span class="arithmatex">\(P(AB)=P(A)-P(AB^c)=P(A)-[P(B^c)-P(A^cB^c)]=P(A)-P(B^c)+P(A^cB^c)\)</span></p>
+<p><span class="arithmatex">\(=P(A)+P(B)-1+P(A^cB^c)\ge P(A)+P(B)-1\)</span></p>
+<p>(7.2) <span class="arithmatex">\(P(\bigcap\limits_{i=1}^nA_i)=P(A_n\bigcap\limits_{i=1}^{n-1}A_i)\ge P(A_n)+P(\bigcap\limits_{i=1}^{n-1}A_i)-1\ge \dots\ge\sum\limits_{i=1}^nP(A_i)-(n-1)\)</span></p>
+<p>(8.1) <span class="arithmatex">\(P(A\cup B\cup C)=P(A)+P(A^cB)+P(A^cB^cC)\)</span></p>
+<p>其中 </p>
+<ol>
+<li><span class="arithmatex">\(P(A^cB)=P(B)-P(AB)\)</span></li>
+<li><span class="arithmatex">\(P(A^cB^cC)=P(C)-P(AB^cC)-P(A^cBC)-P(ABC)=P(C)-[P(AC)-P(ABC)]-[P(BC)-P(ABC)]-P(ABC)\)</span> <span class="arithmatex">\(=P(A^cB^cC)=P(C)-P(AC)-P(BC)+P(ABC)\)</span></li>
+</ol>
+<p>于是 <span class="arithmatex">\(P(A\cup B\cup C)=P(A)+[P(B)-P(AB)]+[P(C)-P(AC)-P(BC)]+P(ABC)\)</span></p>
+<p><span class="arithmatex">\(=[P(A)+P(B)+P(C)]-[P(AB)+P(AC)+P(BC)]+P(ABC)\)</span></p>
+</blockquote>
 <h3 id="3">3. 条件概率</h3>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>抛掷两次骰子，假设总点数为 9，那么第一次抛掷的点数为 6 的可能性为多少？</li>
+<li>在猜字游戏中，假设第一个字母为 t，那么第二个字母为 h 的可能性多大？</li>
+<li>假设某人的某些健康指标为阴性，那么这个人得病的概率是多少？</li>
+<li>假设雷达上出现一个点，最高点代表原书有一架飞机的可能性多大？</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">条件概率</p>
 </div>
 <blockquote>
-<p>条件概率是给定部分信息的基础上对试验结果的一种推断</p>
+<p>条件概率是给定<strong>部分信息</strong>的基础上对试验结果的一种推断</p>
 <p>假设我们已经知道给定的事件 B 发生了，而希望知道另一个给定的事件 A 发生的可能性；因此，我们构造一个新的概论律，它顾及了事件 B 硬件发生的信息，求出任何事件 A 发生的概率</p>
 <p>条件概率：给定事件 B 发生之下事件 A 发生的条件概率，记作 <span class="arithmatex">\(P(A|B)\)</span></p>
 <p>对于等概率模型，条件概率如此定义是合适的：<span class="arithmatex">\(P(A|B)=\frac{事件 A\cap B 的试验结果数}{事件 B 的试验结果数}\)</span></p>
-<p>条件概率的推广定义：<span class="arithmatex">\(P(A|B)=\frac{P(A\cap B)}{P(B)}\)</span>（仅当 <span class="arithmatex">\(P(B)&gt;0\)</span>）</p>
+<p>对上述形式进行推广，得到<strong>条件概率</strong>的定义：<span class="arithmatex">\(P(A|B)=\frac{P(A\cap B)}{P(B)}\)</span>（仅当 <span class="arithmatex">\(P(B)&gt;0\)</span>）</p>
 </blockquote>
-<p>归一化：<span class="arithmatex">\(P(\Omega|B)=\frac{P(\Omega\cap B)}{P(B)}=\frac{P(B)}{P(B)}=1\)</span></p>
-<p>可加性：假设 <span class="arithmatex">\(A_1\)</span> 与 <span class="arithmatex">\(A_2\)</span> 是任意不相容的事件，有 <span class="arithmatex">\(P(A_1\cup A_2|B)=\frac{P((A_1\cup A_2)\cap B)}{P(B)}=\frac{P((A_1\cap B)\cup(A_2\cap B))}{P(B)}=\frac{P(A_1\cap B)+P(A_2\cap B)}{P(B)}=\frac{P(A_1\cap B)}{P(B)}+\frac{P(A_2\cap B)}{P(B)}=P(A_1|B)+P(A_2|B)\)</span></p>
+<ol>
+<li>非负性：<span class="arithmatex">\(P(AB)\ge0,P(B)&gt;0\)</span>，蕴涵 <span class="arithmatex">\(P(A|B)=P(AB)/P(B)\ge0\)</span></li>
+<li>归一化：<span class="arithmatex">\(P(\Omega|B)=\frac{P(\Omega\cap B)}{P(B)}=\frac{P(B)}{P(B)}=1\)</span></li>
+<li>可加性：假设 <span class="arithmatex">\(A_1\)</span> 与 <span class="arithmatex">\(A_2\)</span> 是任意不相容的事件，有 <span class="arithmatex">\(P(A_1\cup A_2|B)=\frac{P((A_1\cup A_2)\cap B)}{P(B)}=\frac{P((A_1\cap B)\cup(A_2\cap B))}{P(B)}=\frac{P(A_1\cap B)+P(A_2\cap B)}{P(B)}=\frac{P(A_1\cap B)}{P(B)}+\frac{P(A_2\cap B)}{P(B)}=P(A_1|B)+P(A_2|B)\)</span></li>
+</ol>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">条件概率的性质</p>
 </div>
@@ -1225,6 +1432,14 @@
 </ol>
 </blockquote>
 <div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>(离散均匀模型)抛掷 3 次硬币，设 <span class="arithmatex">\(A=\{正面次数多于反面\},B=\{第一次是正面\}\)</span>，计算 <span class="arithmatex">\(P(A|B)\)</span>：<span class="arithmatex">\(P(B)=4/8,P(AB)=(C_2^2+C_2^1)/8=3/8\)</span>，于是 <span class="arithmatex">\(P(A|B)=P(AB)/P(B)=3/4\)</span></li>
+<li>(离散均匀模型)抛掷 2 次四面骰子，试验结果等可能，假设 <span class="arithmatex">\(X_i\)</span> 是第 i 次抛掷结果的点数，设 <span class="arithmatex">\(A=\{\max(X_1,X_2)=m\},B=\{\min(X_1,X_2)=2\}\)</span>，计算 <span class="arithmatex">\(P(A|B)\)</span>：借助二维序贯图可以清晰得出 <span class="arithmatex">\(P(AB)=\begin{cases}2/16&amp;m=3,4\\1/16&amp;m=2\\0/16&amp;m=1\end{cases}\)</span>，而 <span class="arithmatex">\(P(B)=5/16\)</span>，于是 <span class="arithmatex">\(P(A|B)=\begin{cases}2/5&amp;m=3,4\\1/5&amp;m=2\\0/5&amp;m=1\end{cases}\)</span></li>
+<li></li>
+</ol>
+</div>
+<div class="admonition tip">
 <p class="admonition-title">练习</p>
 <ol>
 <li><span class="arithmatex">\(P(B|A)=0.99,P(B|A^c)=0.1,P(A)=0.05\)</span>，求 <span class="arithmatex">\(P(A^cB),P(AB^c)\)</span>（参见p36）</li>
@@ -1233,6 +1448,13 @@
 <li>蒙提·霍尔问题(三门问题)</li>
 </ol>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<ol>
+<li>条件概率：假设事件 B 发生，那么事件 A 发生的概率称为<strong>条件概率</strong>，定义为 <span class="arithmatex">\(P(A|B)=\frac{P(AB)}{P(B)}\)</span>（<span class="arithmatex">\(P(B)&gt;0\)</span>）；在此概率模型下，事件 B 是<strong>全空间</strong>或<strong>必然事件</strong></li>
+<li></li>
+</ol>
 <h3 id="4">4. 全概率定理，贝叶斯公式</h3>
 <div class="admonition note">
 <p class="admonition-title">全概率定理</p>
