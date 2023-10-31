@@ -1172,46 +1172,159 @@
 <p class="admonition-title">分布积分法</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(\int f(x)g'(x) d_x = f(x)g(x) - \int g(x) f'(x) d_x\)</span></p>
-<p><span class="arithmatex">\(\int u \cdot d_v = u \cdot v - \int v \cdot d_u \iff \int u \cdot v d_x = u \cdot v^{(-1)} - \int u' \cdot v^{(-1)} d_x\)</span></p>
-<p><span class="arithmatex">\(\iff \int f\cdot g d_x = f \cdot g^{(-1)} - \int f' \cdot g^{(-1)} d_x\)</span></p>
-<p><span class="arithmatex">\(\iff \int f\cdot g d_x = f^{(-1)} \cdot g - \int f^{(-1)} \cdot g' d_x\)</span></p>
+<p>可微函数 <span class="arithmatex">\(f,g\)</span> 满足 <span class="arithmatex">\(\int f(x)g'(x) d_x = f(x)g(x) - \int g(x) f'(x) d_x\)</span></p>
+<p>或者函数 <span class="arithmatex">\(f,g\)</span> 满足 <span class="arithmatex">\(\int f(x)g(x)d_x=f(x)g^{[1]}(x)-\int f'(x)g^{[1]}(x)d_x\)</span></p>
+<p>推论1：<span class="arithmatex">\(\int fg~d_x=\sum\limits_{i=0}^{n-1}f^{(i)}g^{[i+1]}+(-1)^n\int f^{(n)}d(g^{[n+1]})\)</span></p>
+<p>推论2：<span class="arithmatex">\(\int f~d_x=\int f\cdot1~d_x=f\cdot x-\int f'\cdot x~d_x\)</span></p>
 </blockquote>
+<p><span class="arithmatex">\((
+fg)'=f'g+fg'\)</span>，方程两边对 x 求积分有 <span class="arithmatex">\(fg=\int f'g~d_x+\int fg'~d_x\)</span>，即 <span class="arithmatex">\(\int fg'~d_x=fg-\int f'g~d_x\)</span></p>
+<p>记 <span class="arithmatex">\(f^{[n]}\)</span> 表示 f 的 n 阶积分，于是 <span class="arithmatex">\(\int fg~d_x=fg^{[1]}-\int f'g^{[1]}~d_x\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li><mark class="critic">每一个 微分法则 都对应一个 积分法则</mark></li>
 <li>微分的乘法法则 对应了 积分的分部积分法</li>
 <li>而 微分的链式法则(复合函数的微分) 对应了 积分的换元法</li>
-<li>因此，可能正确的 "积分除法法则"：<span class="arithmatex">\(\int \frac fgd_x = \frac {f^{(-1)}}{g} + \int \frac {f^{(-1)}g'}{g^2} d_x，\int \frac {fg'}{g^2} d_x = \int \frac {f'}{g} d_x - \frac fg\)</span></li>
 </ul>
 </div>
-<div class="admonition 验证">
-<p class="admonition-title">验证</p>
-<ul>
-<li><span class="arithmatex">\(\displaystyle \int x^n e^x~d_x = (-1)^{(n)}n!e^x \sum\limits_{i=0}^n(-1)^i\frac {x^i}{i!}\)</span>，<span class="arithmatex">\(C_i = (-1)^{i-1}\frac {n!}{(n-i+1)!}C_1, i=2..n-1\)</span></li>
-<li><span class="arithmatex">\(\displaystyle \int x^n \sin x~d_x\)</span></li>
-<li><span class="arithmatex">\(\int \sin x^n~d_x\)</span></li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\int x\sin xd_x=(x)(-\cos x)-(1)(-\sin x)+C=-x\cos x+\sin x+C\)</span></li>
+<li><span class="arithmatex">\(\int x^4\sin xd_x=(x^4)(-\cos x)-(4x^3)(-\sin x)+(12x^2)(\cos x)-(24x)(\sin x)+(24)(-\cos x)+C\)</span> <span class="arithmatex">\(=(-x^4+12x^2-24)\cos x+(4x^3-24x)\sin x+C\)</span></li>
+<li><span class="arithmatex">\(\int\ln xd_x=(\ln x)x-\int\frac1x\cdot xd_x=x(\ln x-1)\)</span></li>
+<li><span class="arithmatex">\(\int(\ln x)^2d_x=(\ln x)^2x-\int\frac{2\ln x}x\cdot x=x\ln^2x-2x(\ln x-1)=x(\ln^2x-2\ln x+2)\)</span></li>
+<li><span class="arithmatex">\(\int\ln^n xd_x=(\ln^nx)(x)-\int\frac{n\ln^{n-1}x}x\cdot xd_x=x\ln^nx-n\int\ln^{n-1}x~d_x\)</span>，于是 <span class="arithmatex">\(\int\ln^n xd_x=x\ln^nx-n\int\ln^{n-1}x~d_x\)</span><ol>
+<li>解得 <span class="arithmatex">\(\int\ln^n xd_x=x\sum\limits_{i=0}^n(-1)^{n-i}\frac{n!}{(n-i)!}\ln^ix=x\sum\limits_{i=0}^n(-1)^{n-i}(n)_i\ln^ix\)</span></li>
+</ol>
+</li>
+</ol>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li><span class="arithmatex">\(\int \ln x~d_x = x\ln x - x + C\)</span></li>
-<li><span class="arithmatex">\(\int e^x\sin x~d_x = \frac 12 e^x(\sin x - \cos x) + C\)</span> （分部积分 + 解方程）</li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">例子2</p>
+<ol>
+<li>（指数函数和三角函数）<span class="arithmatex">\(\int e^x\sin x~d_x=(e^x)(-\cos x)-(e^x)(-\sin x)+\int(e^x)(-\sin x)d_x\)</span>，蕴含 <span class="arithmatex">\(\int e^x\sin x~d_x=\frac12e^x(\sin x-\cos x)+C\)</span></li>
+<li>（反函数的积分）：<span class="arithmatex">\(\int\tan^{-1}x~d_x=(\tan^{-1}x)(x)-\int\frac1{1+x^2}x~d_x=x\tan^{-1}x-\frac12\ln(1+x^2)\)</span><ol>
+<li><span class="arithmatex">\(原函数\to反函数\to反函数的导数\to反函数的积分\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\int\sin^{-1}xd_x=x\sin^{-1}x-\int\frac x{\sqrt{1-x^2}}d_x=x\sin^{-1}x+\frac12\int\frac1{\sqrt{1-x^2}}d(1-x^2)=x\sin^{-1}x+\sqrt{1-x^2}\)</span></li>
+</ol>
 </div>
 <div class="admonition 分部积分的定积分形式">
 <p class="admonition-title">分部积分的定积分形式</p>
-<p><span class="arithmatex">\(\int_a^b f(x)g'(x) d_x = f(x)g(x) - \int_a^b g(x) f'(x) d_x\)</span></p>
 </div>
+<blockquote>
+<p><span class="arithmatex">\(\int_a^b f(x)g'(x) d_x=\left[f(x)g(x)\right]_a^b-\int_a^b g(x) f'(x) d_x\)</span></p>
+</blockquote>
 <div class="admonition info">
 <p class="admonition-title">总结</p>
 </div>
 <blockquote>
 <ol>
-<li>分部积分推论：<span class="arithmatex">\(\int fg~d_x=\sum\limits_{i=0}^{n-1}(-1)^if^{(i)}g^{[i+1]}+(-1)^n\int f^{(n)}g^{[n]}d_x\)</span>（记 <span class="arithmatex">\(g^{[n]}\)</span> 为 g 的 n 阶原函数）</li>
+<li>分部积分法（乘法积分）：<span class="arithmatex">\(\int f(x)g'(x)d_x=f(x)g(x)-\int g(x)f'(x)d_x\)</span> 或 <span class="arithmatex">\(\int f(x)g(x)d_x=f(x)g^{[1]}(x)-\int f'(x)g^{[1]}(x)d_x\)</span></li>
+<li>分部积分推论：<span class="arithmatex">\(\int fg~d_x=\sum\limits_{i=0}^{n-1}f^{(i)}g^{[i+1]}+(-1)^n\int f^{(n)}d(g^{[n+1]})\)</span> 为 g 的 n 阶原函数）</li>
+<li>分部积分推论2：<span class="arithmatex">\(\int f~d_x=f\cdot x-\int f'\cdot x~d_x\)</span></li>
+<li>反三角积分：<span class="arithmatex">\(\begin{cases}\int\sin^{-1}xd_x=x\sin^{-1}x+\sqrt{1-x^2}&amp;\int\csc^{-1}xd_x=x\csc^{-1}x+\frac{x}{|x|}\ln|x+\sqrt{x^2-1}|&amp;\int\tan^{-1}xd_x=x\tan^{-1}x-\frac12\ln(1+x^2)\\
+\int\cos^{-1}xd_x=x\cos^{-1}x-\sqrt{1-x^2}&amp;\int\sec^{-1}xd_x=x\sec^{-1}x-\frac{x}{|x|}\ln|x+\sqrt{x^2-1}|&amp;\int\cot^{-1}x~d_x=x\cot^{-1}x+\frac12\ln(1+x^2)\end{cases}\)</span></li>
+<li>复合积分：<span class="arithmatex">\(\int f\circ g~d_x=\int (f^{[1]}\circ g)'/g'd_x\)</span>；重要推论：若 <span class="arithmatex">\(g\in\mathbb P_1\)</span>，那么 <span class="arithmatex">\(\int f\circ g~d_x=(f^{[1]}\circ g)/g'\)</span></li>
 </ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>若 <span class="arithmatex">\(f^{(n)}=k\)</span>（k 为常数），那么 <span class="arithmatex">\(\int fg~d_x=\sum\limits_{i=0}^n(-1)^if^{(i)}g^{[i+1]}\)</span></li>
+<li><span class="arithmatex">\(\int\ln^n xd_x=x\sum\limits_{i=0}^n(-1)^{n-i}\frac{n!}{(n-i)!}\ln^ix=x\sum\limits_{i=0}^n(-1)^{n-i}(n)_i\ln^ix\)</span>（其中 <span class="arithmatex">\(\int\ln^n xd_x=x\ln^nx-n\int\ln^{n-1}x~d_x\)</span>）</li>
+<li>非初等积分：<ol>
+<li>若 f 是超越函数（除了对数函数），且 <span class="arithmatex">\(g(x)=x^2\)</span>，那么 <span class="arithmatex">\(\int(f\circ g)(x)d_x\)</span> 不可积，如 <span class="arithmatex">\(\int e^{x^2}d_x,\int\sin x^2d_x,\int\cos x^2d_x\)</span></li>
+</ol>
+</li>
+<li>三角 n 次幂积分：记 <span class="arithmatex">\(p_n=\frac{(2n-1)!!}{(2n)!!},q_n=\frac{(2n)!!}{(2n+1)!!}\)</span>，那么<ol>
+<li><span class="arithmatex">\(\int\sin^nxd_x=\begin{cases}p_k\left(x-\sum\limits_{i=1}^kq_{i-1}\cos x\sin^{2i-1}x\right)&amp;2\mid n,k=n/2\\q_k\left(-\cos x-\sum\limits_{i=1}^kp_i\cos x\sin^{2i}x\right)&amp;2\nmid n,k=\lfloor n/2\rfloor\end{cases}\)</span></li>
+<li><span class="arithmatex">\(\int\cos^nxd_x=\begin{cases}p_k\left(x+\sum\limits_{i=1}^kq_{i-1}\sin x\cos^{2i-1}x\right)&amp;2\mid n,k=n/2\\q_k\left(\sin x+\sum\limits_{i=1}^kp_i\sin x\cos^{2i}x\right)&amp;2\nmid n,k=\lfloor n/2\rfloor\end{cases}\)</span></li>
+<li><span class="arithmatex">\(\int\sec^nxd_x=\begin{cases}q_{k-1}\sum\limits_{i=1}^kp_{i-1}\tan x\sec^{2i-2}x&amp;2\mid n,k=n/2\\p_k\left(\ln|\sec x+\tan x|+\sum\limits_{i=1}^kq_{i-1}\tan x\sec^{2i-1}x\right)&amp;2\nmid n,k=\lfloor n/2\rfloor\end{cases}\)</span></li>
+</ol>
+</li>
+<li>指数三角积分：<span class="arithmatex">\(\begin{cases}\int e^x\sin x~d_x=\frac12e^x(\sin x-\cos x)\\\int e^x\cos x~d_x=\frac12e^x(\sin x+\cos x)\end{cases}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">三级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设序列 <span class="arithmatex">\(\{a_n\},\{b_n\},\{c_n\}\)</span> 满足 <span class="arithmatex">\(a_n=b_n+c_na_{n-1}\)</span>，那么 <span class="arithmatex">\(a_n=\sum\limits_{i=1}^n\left[\left(\prod\limits_{j=i+1}^nc_j\right)b_i\right]+\left(\prod\limits_{j=1}^nc_j\right)a_0\)</span><ul>
+<li>或者 <span class="arithmatex">\(a_n=C_n\left(a_0+\sum\limits_{i=1}^nb_i/C_i\right)\)</span>，其中 <span class="arithmatex">\(C_n=\prod\limits_{j=1}^nc_i\)</span></li>
+</ul>
+</li>
+<li>跳阶乘(定义)：<span class="arithmatex">\(\begin{cases}(2n-1)!!=\prod\limits_{i=1}^n(2i-1)=\frac{(2n)!}{2^nn!}\\(2n)!!=\prod\limits_{i=1}^n(2i)=2^nn!\end{cases}\)</span>（其中 <span class="arithmatex">\(\frac{(2n)!!}{(2n-1)!!}=\frac{4^n(n!)^2}{(2n)!}\)</span>）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断题<ol>
+<li>若 <span class="arithmatex">\(f(x)\)</span> 的 <span class="arithmatex">\(n+1\)</span> 阶原函数容易求得，那么不定积分 <span class="arithmatex">\(\int x^nf(x)d_x\)</span> 也很容易计算（Y）</li>
+<li><span class="arithmatex">\(\int x^nf~d_x=\sum\limits_{i=0}^n(-1)^i(n)_ix^{n-i}f^{[i+1]}\)</span>（Y）</li>
+<li>积分 <span class="arithmatex">\(\int f(x)d_x\)</span> 可以归结为 <span class="arithmatex">\(\int f'(x)xd_x\)</span> 的积分（Y）</li>
+<li><span class="arithmatex">\(\int x^2\cos x^2d_x\)</span> 初等可积（X）</li>
+</ol>
+</li>
+<li>证明：降维公式 <span class="arithmatex">\(\int\sin^nxd_x=-\frac1n\cos x\sin^{n-1}x+\frac{n-1}n\int\sin^{n-2}xd_x\)</span>（假设 <span class="arithmatex">\(n\ge2\)</span>）</li>
+<li>证明：假设 <span class="arithmatex">\(k\ge1\)</span>，<span class="arithmatex">\(\int\sin^nxd_x=\begin{cases}\frac{(2k-1)!!}{(2k)!!}\left(x-\sum\limits_{i=1}^k\frac{\cos x\sin^{2i-1}x}{2i(2i-1)!!/(2i)!!}\right)&amp;2\mid n,k=n/2\\\frac{(2k)!!}{(2k+1)!!}\left(-\cos x-\sum\limits_{i=1}^k\frac{\cos x\sin^{2i}x}{(2i+1)(2i)!!/(2i+1)!!}\right)&amp;2\nmid n,k=\lfloor n/2\rfloor\end{cases}\)</span></li>
+<li>证明：<span class="arithmatex">\(\int_0^{\frac\pi2}\sin^nxd_x=\begin{cases}\frac\pi2\cdot\frac{(n-1)!!}{n!!}&amp;2\mid n\\\frac{(n-1)!!}{n!!}&amp;2\nmid n\end{cases}\)</span></li>
+<li>计算积分（假设 <span class="arithmatex">\(C=0\)</span>） (1) <span class="arithmatex">\(\int e^{2x}\sin 3x~d_x\)</span>，(2) <span class="arithmatex">\(\int(x^2+1)e^{-x}d_x\)</span>，(3) <span class="arithmatex">\(\int\cos(\ln x)d_x\)</span>，(4) <span class="arithmatex">\(\int x^3\cos x^2d_x\)</span>，(5) <span class="arithmatex">\(\int\sin\sqrt xd_x=\int\sin\sqrt x\cdot(2\sqrt x)d(\sqrt x)=2\int t\sin t~d_t=2(t)(-\cos t)-2(1)(-\sin t)=2(\sin t-t\cos t)=2(\sin\sqrt x-\sqrt x\cos\sqrt x)\)</span></li>
+<li>假设 f 是三角函数，计算 (1) <span class="arithmatex">\(\int f^n(x)d_x\)</span> 的递推式（降维公式），(2)  <span class="arithmatex">\(\int f^n(x)d_x\)</span> 的通项公式，(3) <span class="arithmatex">\(\int_0^{\pi/2} f^n(x)d_x\)</span></li>
+<li>假设 <span class="arithmatex">\(n\ne-\frac12\)</span>，证明：<span class="arithmatex">\(\int(x^2+a^2)^nd_x=\frac{x(x^2+a^2)^n}{2n+1}+\frac{2na^2}{2n+1}\int(x^2+a^2)^{n-1}d_x\)</span></li>
+<li>证明 Wallis 公式：<span class="arithmatex">\(\lim\limits_{n\to+∞}\frac{((2n)!!)^2}{(2n-1)!!(2n+1)!!}=\frac\pi2\)</span>（或者 <span class="arithmatex">\(\lim\limits_{n\to+∞}q_n/p_n=\frac\pi2\)</span>）</li>
+<li>构造一个矩形：初始时矩形为面积为 1 的正方形，进行 n 轮操作，每轮操作分别向矩形右侧和上侧拼接一个面积为 1 的矩形，计算 <span class="arithmatex">\(n\to+∞\)</span> 时矩形的宽高之比</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.4) <span class="arithmatex">\(\int x^2\cos x^2d_x=\int x\cdot x\cos x^2d_{x}=x(\frac12\sin x^2)-\frac12\int\sin x^2d_{x}\)</span>，其中 <span class="arithmatex">\(\int\sin x^2d_{x}\)</span> 不可积</p>
+<p>(2) <span class="arithmatex">\(\int\sin^nxd_x=\int\sin^{n-1}x\sin xd_x=\sin^{n-1}x(-\cos x)-\int(n-1)\sin^{n-2}x\cos x\cdot(-\cos x)d_x\)</span> <span class="arithmatex">\(=-\cos x\sin^{n-1}x+(n-1)\int\sin^{n-2}x\cos^2xd_x=-\cos x\sin^{n-1}x+(n-1)\int\sin^{n-2}xd_x-(n-1)\int\sin^nd_x\)</span></p>
+<p>于是 <span class="arithmatex">\(\int\sin^nxd_x=-\frac1n\cos x\sin^{n-1}x+\frac{n-1}n\int\sin^{n-2}d_x\)</span></p>
+<p>(3) 假设 <span class="arithmatex">\(k\ge1\)</span>，结合(2)中给出的递推式，</p>
+<p>(3.1) <span class="arithmatex">\(n=2k\)</span> 为偶数时，首项 <span class="arithmatex">\(\int\sin^2xd_x=\frac12(x-\sin x\cos x)\)</span></p>
+<p><span class="arithmatex">\(\int\sin^{2k}xd_x=\frac{(2k-1)!!}{(2k)!!}\left(\int\sin^2xd_x/(1/2)+\sum\limits_{i=2}^k(-\frac1{2i}\cos x\sin^{2i-1}x)/((2i-1)!!/(2i)!!)\right)\)</span> <span class="arithmatex">\(=\frac{(2k-1)!!}{(2k)!!}\left((x-\sin x\cos x)-\sum\limits_{i=2}^k\frac{\cos x\sin^{2i-1}x}{2i(2i-1)!!/(2i)!!}\right)=\frac{(2k-1)!!}{(2k)!!}\left(x-\sum\limits_{i=1}^k\frac{\cos x\sin^{2i-1}x}{2i(2i-1)!!/(2i)!!}\right)\)</span></p>
+<p>(3.2) <span class="arithmatex">\(n=2k+1\)</span> 为奇数时，首项 <span class="arithmatex">\(\int\sin^3xd_x=-\frac13\cos x(\sin^2x+2)\)</span></p>
+<p><span class="arithmatex">\(\int\sin^{2k+1}xd_x=\frac{(2k)!!}{(2k+1)!!}\left(\int\sin^3xd_x/(2/3)+\sum\limits_{i=2}^k(-\frac1{2i+1}\cos x\sin^{2i}x)/((2i)!!/(2i+1)!!)\right)\)</span> <span class="arithmatex">\(=\frac{(2k)!!}{(2k+1)!!}\left(-\frac12\cos x(\sin^2x+2)-\sum\limits_{i=2}^k\frac{\cos x\sin^{2i}x}{(2i+1)(2i)!!/(2i+1)!!}\right)=\frac{(2k)!!}{(2k+1)!!}\left(-\cos x-\sum\limits_{i=1}^k\frac{\cos x\sin^{2i}x}{(2i+1)(2i)!!/(2i+1)!!}\right)\)</span></p>
+<p>(4) <span class="arithmatex">\(\sin^nx\)</span> 的积分的另一种形式为 <span class="arithmatex">\(\int\sin^nxd_x=\begin{cases}\frac{(n-1)!!}{n!!}\left(x-\sum\limits_{i=1}^k\frac{\sin 2x\sin^{2i-2}x/2}{2i(2i-1)!!/(2i)!!}\right)&amp;2\mid n,k=n/2\\\frac{(n-1)!!}{n!!}\left(-\cos x-\sum\limits_{i=1}^k\frac{\sin 2x\sin^{2i-1}x}{(2i+1)(2i)!!/(2i+1)!!}\right)&amp;2\nmid n,k=\lfloor n/2\rfloor\end{cases}\)</span></p>
+<p>而 <span class="arithmatex">\(\Big[\sin2x\Big]_0^{\pi/2}=0\)</span>，于是</p>
+<ol>
+<li><span class="arithmatex">\(\forall 2\mid n,\int_0^{\pi/2}\sin^nxd_x=\left[\frac{(n-1)!!}{n!!}x\right]_0^{\pi/2}=\frac\pi2\cdot\frac{(n-1)!!}{n!!}\)</span></li>
+<li><span class="arithmatex">\(\forall 2\nmid n,\int_0^{\pi/2}\sin^nxd_x=\left[\frac{(n-1)!!}{n!!}(-\cos x)\right]_0^{\pi/2}=\frac{(n-1)!!}{n!!}\)</span></li>
+</ol>
+<p>(5) </p>
+<ol>
+<li><span class="arithmatex">\(\int e^{2x}\sin 3x~d_x=(e^{2x})(-\frac13\cos3x)-(2e^{2x})(-\frac19\sin3x)+\int(4e^{2x})(-\frac19\sin3x)d_x\)</span>，于是 <span class="arithmatex">\(\int e^{2x}\sin 3x~d_x=e^{2x}(-\frac3{13}\cos3x+\frac2{13}\sin3x)\)</span></li>
+<li><span class="arithmatex">\(\int(x^2+1)e^{-x}d_x=(x^2+1)(-e^{-x})-(2x)(e^{-x})+(2)(-e^{-x})=-e^{-x}(x^2+2x+3)\)</span></li>
+<li><span class="arithmatex">\(\int\cos(\ln x)d_x=\int x\frac{\cos(\ln x)}xd_x=x\sin(\ln x)-\int\sin(\ln x)d_x\)</span> 和 <span class="arithmatex">\(\int\sin(\ln x)d_x=x(-\cos(\ln x))-\int-\cos(\ln x)d_x=-x\cos(\ln x)+\int\cos(\ln x)d_x\)</span>，蕴含 <span class="arithmatex">\(\int\cos(\ln x)d_x=\frac12x(\sin(\ln x)+\cos(\ln x))\)</span>（使用换元也可）</li>
+<li>令 <span class="arithmatex">\(t=x^2\)</span>，<span class="arithmatex">\(\int x^3\cos x^2d_x=\frac12\int x^2\cos x^2d(x^2)=\frac12\int t\cos t~d_t=\frac12(t)(\sin t)-\frac12(1)(-\cos t)=\frac12t\sin t+\frac12\cos t=\frac12(x^2\sin x^2+\cos x^2)\)</span></li>
+<li>令 <span class="arithmatex">\(t=\sqrt x\)</span>，<span class="arithmatex">\(\int\sin\sqrt xd_x=\int\sin\sqrt x\cdot(2\sqrt x)d(\sqrt x)=2\int t\sin t~d_t=2(t)(-\cos t)-2(1)(-\sin t)=2(\sin t-t\cos t)=2(\sin\sqrt x-\sqrt x\cos\sqrt x)\)</span></li>
+</ol>
+<p>(6) </p>
+<p>猜测 <span class="arithmatex">\(\int\cos^nxd_x=\begin{cases}\frac{(2k-1)!!}{(2k)!!}\left(x+\sum\limits_{i=1}^k\frac{\sin x\cos^{2i-1}x}{2i(2i-1)!!/(2i)!!}\right)&amp;2\mid n,k=n/2\\\frac{(2k)!!}{(2k+1)!!}\left(\sin x+\sum\limits_{i=1}^k\frac{\sin x\cos^{2i}x}{(2i+1)(2i)!!/(2i+1)!!}\right)&amp;2\nmid n,k=\lfloor n/2\rfloor\end{cases}\)</span></p>
+<p>(6.1.5) 计算 <span class="arithmatex">\(\int\sec^nxd_x\)</span>：</p>
+<p>根据[分部积分法]得到 <span class="arithmatex">\(\int\sec^nxd_x=\frac{\tan x\sec^{n-2}x}{n-1}+\frac{n-2}{n-1}\int\sec^{n-2}xd_x\)</span></p>
+<p>蕴含 <span class="arithmatex">\(\int\sec^2xd_x=\tan x\)</span> 和 <span class="arithmatex">\(\int\sec^3xd_x=\frac12(\tan x\sec x+\ln|\sec x+\tan x|)\)</span></p>
+<p>若 <span class="arithmatex">\(n=2k\)</span> 为偶数，<span class="arithmatex">\(\int\sec^{2k}xd_x=\frac{(2k-2)!!}{(2k-1)!!}\left(\tan x+\sum\limits_{i=2}^k\frac{\tan x\sec^{2i-2}x}{2i-1}\Big/((2i-2)!!/(2i-1)!!)\right)\)</span> <span class="arithmatex">\(=\frac{(2k-2)!!}{(2k-1)!!}\sum\limits_{i=1}^k\frac{\tan x\sec^{2i-2}x}{(2i-1)(2i-2)!!/(2i-1)!!}\)</span></p>
+<p>若 <span class="arithmatex">\(n=2k+1\)</span> 为奇数，<span class="arithmatex">\(\int\sec^{2k+1}xd_x=\frac{(2k-1)!!}{(2k)!!}\left(\frac12(\tan x\sec x+\ln|\sec x+\tan x|)/(1/2)+\sum\limits_{i=2}^k\frac{\tan x\sec^{2i-1}x}{2i}\Big/((2i-1)!!/(2i)!!)\right)\)</span> <span class="arithmatex">\(=\frac{(2k-1)!!}{(2k)!!}\left(\ln|\sec x+\tan x|+\sum\limits_{i=1}^k\frac{\tan x\sec^{2i-1}x}{2i(2i-1)!!/(2i)!!}\right)\)</span></p>
+<p>于是 <span class="arithmatex">\(\int\sec^nxd_x=\begin{cases}\frac{(2k-2)!!}{(2k-1)!!}\sum\limits_{i=1}^k\frac{\tan x\sec^{2i-2}x}{(2i-1)(2i-2)!!/(2i-1)!!}&amp;2\mid n,k=n/2\\\frac{(2k-1)!!}{(2k)!!}\left(\ln|\sec x+\tan x|+\sum\limits_{i=1}^k\frac{\tan x\sec^{2i-1}x}{2i(2i-1)!!/(2i)!!}\right)&amp;2\nmid n,k=\lfloor n/2\rfloor\end{cases}\)</span></p>
+<p>(8) 记 <span class="arithmatex">\(I_n=\int_0^{\frac\pi2}\sin^nxd_x\)</span>，根据(4)有 <span class="arithmatex">\(I_n=\begin{cases}\frac\pi2\cdot\frac{(2n-1)!!}{(2n)!!}&amp;2\mid n\\\frac{(2n-1)!!}{(2n)!!}&amp;2\nmid n\end{cases}\)</span></p>
+<p>对于 <span class="arithmatex">\(\forall n\in\mathbb Z,x\in[0,\pi/2]\)</span> 有 <span class="arithmatex">\(\sin^nx\ge\sin^{n+1}x\)</span>，蕴含 <span class="arithmatex">\(I_n\ge I_{n+1}\)</span></p>
+<p><span class="arithmatex">\(\frac{I_{2n+2}}{I_{2n}}=\frac{p_{2n+2}}{p_{2n}}=\frac{(2n+1)!!/(2n+2)!!}{(2n-1)!!/(2n)!!}=\frac{2n+1}{2n+2}\)</span></p>
+<p>而 <span class="arithmatex">\(\frac{I_{2n+2}}{I_{2n}}=\frac{I_{2n+2}}{I_{2n+1}}\frac{I_{2n+1}}{I_{2n}}\le\frac{I_{2n+1}}{I_{2n}}\le1\)</span></p>
+<p>于是 <span class="arithmatex">\(\frac{2n+1}{2n+2}\le\frac{I_{2n+1}}{I_{2n}}\le1\)</span></p>
+<p>又由[夹逼原理]和 <span class="arithmatex">\(\lim\limits_{n\to+∞}\frac{2n+1}{2n+2}=1\)</span>，有 <span class="arithmatex">\(1=\lim\limits_{n\to+∞}\frac{I_{2n+1}}{I_{2n}}\)</span></p>
+<p>其中 <span class="arithmatex">\(\frac{I_{2n+1}}{I_{2n}}=\frac{(2n)!!/(2n+1)!!}{\frac\pi2(2n-1)!!/(2n)!!}=\frac{((2n)!!)^2}{(2n-1)!!(2n+1)!!}\)</span>，于是 <span class="arithmatex">\(\lim\limits_{n\to+∞}\frac{((2n)!!)^2}{(2n-1)!!(2n+1)!!}=\frac\pi2\)</span></p>
 </blockquote>
 <h3 id="2">2.三角函数的积分法</h3>
 <div class="admonition 常用公式">
@@ -1255,6 +1368,24 @@
 </li>
 </ol>
 </blockquote>
+<p>(1.1) <span class="arithmatex">\(2\nmid n\)</span> 时，记 <span class="arithmatex">\(n=2k+1\)</span>，</p>
+<p>设 <span class="arithmatex">\(t=\cos x\)</span>，<span class="arithmatex">\(\int\sin^{2k+1}x\cos^mxd_x=\int\sin^{2k}x\cos^mxd(-\cos x)=-\int (1-t^2)^kt^md_t=-\int \sum\limits_{i=0}^k\binom ki(-1)^it^{2i}t^md_t\)</span></p>
+<p><span class="arithmatex">\(=-\int\sum\limits_{i=0}^k\binom ki(-1)^it^{m+2i}d_t=-\sum\limits_{i=0}^k\frac{(-1)^i\binom ki}{m+2i+1}t^{m+2i+1}=-\sum\limits_{i=0}^k\frac{(-1)^i\binom ki}{m+2i+1}\cos^{m+2i+1}\)</span></p>
+<p>(1.2) <span class="arithmatex">\(2\nmid m\)</span> 时，记 <span class="arithmatex">\(m=2k+1\)</span>，</p>
+<p>设 <span class="arithmatex">\(t=\sin x\)</span>，<span class="arithmatex">\(\int\sin^nx\cos^{2k+1}xd_x=\int\sin^nx\cos^{2k}xd(\sin x)=\int t^n(1-t^2)^kd_t=\int t^n\sum\limits_{i=0}^k\binom ki(-1)^it^{2i}d_t\)</span></p>
+<p><span class="arithmatex">\(=\int\sum\limits_{i=0}^k\binom ki(-1)^it^{n+2i}d_t=\sum\limits_{i=0}^k\frac{(-1)^i\binom ki}{n+2i+1}t^{n+2i+1}=\sum\limits_{i=0}^k\frac{(-1)^i\binom ki}{n+2i+1}\sin^{n+2i+1}\)</span></p>
+<p>(1.3) <span class="arithmatex">\(\int\sin^{2k}x\cos^mxd_x=\int(1-\cos^2x)^k\cos^mxd_x=\sum\limits_{i=0}^k(-1)^i\binom ki\int\cos^{2i+m}xd_x\)</span></p>
+<p>(1.4) <span class="arithmatex">\(\int\sin^nx\cos^{2k}xd_x=\int\sin^nx(1-\sin^2x)^kd_x=\sum\limits_{i=0}^k(-1)^i\binom ki\int\sin^{2i+n}xd_x\)</span></p>
+<p>(1.5) <span class="arithmatex">\(\int\sin^{2c}x\cos^{2d}xd_x=\int\frac1{2^c}(1-\cos2x)^c\cdot\frac1{2^d}(1+\cos2x)^dd_x=\frac1{2^{c+d}}\sum\limits_{i=0}^c(-1)^i\binom ci\sum\limits_{j=0}^d\binom dj\int\cos^{i+j}2x~d_x\)</span></p>
+<p>(2.1) 设 <span class="arithmatex">\(t=\cot x\)</span>，<span class="arithmatex">\(\int\csc^{2k}x\cot^mx~d_x=-\int\csc^{2(k-1)}x\cot^mx~d(\cot x)=-\int(1+\cot^2x)^{k-1}\cot^mx~d(\cot x)\)</span></p>
+<p><span class="arithmatex">\(=-\int(1+t^2)^{k-1}t^m~d_t=-\int \sum\limits_{i=0}^{k-1}\binom{k-1}it^{2i+m}d_t=-\sum\limits_{i=0}^{k-1}\frac{\binom{k-1}i}{m+2i+1}t^{m+2i+1}=-\sum\limits_{i=0}^{k-1}\frac{\binom{k-1}i}{m+2i+1}\cot^{m+2i+1}x\)</span></p>
+<p>(2.2) 设 <span class="arithmatex">\(t=\csc x\)</span>，<span class="arithmatex">\(\int\csc^nx\cot^{2k+1}x~d_x=-\int\csc^{n-1}x\cot^{2k}x~d(\csc x)=-\int\csc^{n-1}x(\csc^2x-1)^k~d(\csc x)\)</span></p>
+<p><span class="arithmatex">\(=-\int t^{n-1}(t^2-1)^k~d_t=-\int\sum\limits_{i=0}^k(-1)^{n-i}\binom kit^{n+2i-1}d_t=-\sum\limits_{i=0}^k\frac{(-1)^{n-i}\binom ki}{n+2i}t^{n+2i}=-\sum\limits_{i=0}^k\frac{(-1)^{n-i}\binom ki}{n+2i}\csc^{n+2i}x\)</span></p>
+<p>(3.1) 设 <span class="arithmatex">\(t=\tan x\)</span>，<span class="arithmatex">\(\int\sec^{2k}x\tan^mx~d_x=\int\sec^{2k-2}x\tan^mx~d(\tan x)=\int(1+\tan^2x)^{k-1}\tan^mx~d(\tan x)=\int(1+t^2)^{k-1}t^m~d_t\)</span></p>
+<p><span class="arithmatex">\(=\int\sum\limits_{i=0}^{k-1}\binom{k-1}it^{m+2i}d_t=\sum\limits_{i=0}^{k-1}\frac{\binom{k-1}i}{m+2i+1}t^{m+2i+1}=\sum\limits_{i=0}^{k-1}\frac{\binom{k-1}i}{m+2i+1}\tan^{m+2i+1}x\)</span></p>
+<p>(3.2) 设 <span class="arithmatex">\(t=\sec x\)</span>，<span class="arithmatex">\(\int\sec^nx\tan^{2k+1}x~d_x=\int\sec^{n-1}x\tan^{2k}x~d(\sec x)=\int\sec^{n-1}x(\tan^2x-1)^k~d(\sec x)\)</span></p>
+<p><span class="arithmatex">\(=\int t^{n-1}(t^2-1)^k~d_t=-\int\sum\limits_{i=0}^k(-1)^{n-i}\binom kit^{n+2i-1}d_t=-\sum\limits_{i=0}^k\frac{(-1)^{n-i}\binom ki}{n+2i}t^{n+2i}=-\sum\limits_{i=0}^k\frac{(-1)^{n-i}\binom ki}{n+2i}\sec^{n+2i}x\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
@@ -1272,13 +1403,15 @@
 <p class="admonition-title">计算<span class="arithmatex">\(\int \sin {mx} \cdot \cos {nx}~d_x,~\int \sin {mx} \cdot \sin {nx}~d_x,~\int \cos {mx} \cdot \cos {nx}~d_x\)</span></p>
 </div>
 <blockquote>
-<p>需要用到的恒等式：</p>
-<ol>
-<li><span class="arithmatex">\(\sin A\cos B = \frac 12[\sin {(A - B)} + \sin {(A + B)}]\)</span></li>
-<li><span class="arithmatex">\(\sin A\sin B = \frac 12[\cos {(A - B)} - \cos {(A + B)}]\)</span></li>
-<li><span class="arithmatex">\(\cos A\cos B = \frac 12[\cos {(A - B)} + \cos {(A + B)}]\)</span></li>
-</ol>
+<p><span class="arithmatex">\(\begin{cases}\int\sin(nx)\cos(mx)d_x=-\frac{\cos[(n+m)x]}{2(n+m)}-\frac{\cos[(n-m)x]}{2(n-m)}\\\int\cos(nx)\cos(mx)d_x=\frac{\sin[(n+m)x]}{2(n+m)}+\frac{\sin[(n-m)x]}{2(n-m)}\\\int\sin(nx)\sin(mx)d_x=-\frac{\sin[(n+m)x]}{2(n+m)}+\frac{\sin[(n-m)x]}{2(n-m)}\end{cases}\)</span></p>
 </blockquote>
+<p>根据[和差化积公式]：<span class="arithmatex">\(\begin{cases}\sin x\cos y=\frac12(\sin(x+y)+\sin(x-y))\\\cos x\cos y=\frac12(\cos(x+y)+\cos(x-y))\\\sin x\sin y=\frac12(-\cos(x+y)+\cos(x-y))\end{cases}\)</span>，有：</p>
+<ol>
+<li><span class="arithmatex">\(\int\sin(nx)\cos(mx)d_x=\frac12\int\sin[(n+m)x]+\sin[(n-m)x]d_x=-\frac{\cos[(n+m)x]}{2(n+m)}-\frac{\cos[(n-m)x]}{2(n-m)}\)</span></li>
+<li><span class="arithmatex">\(\int\cos(nx)\cos(mx)d_x=\frac12\int\cos[(n+m)x]+\cos[(n-m)x]d_x=\frac{\sin[(n+m)x]}{2(n+m)}+\frac{\sin[(n-m)x]}{2(n-m)}\)</span></li>
+<li><span class="arithmatex">\(\int\sin(nx)\sin(mx)d_x=\frac12\int-\cos[(n+m)x]+\cos[(n-m)x]d_x=-\frac{\sin[(n+m)x]}{2(n+m)}+\frac{\sin[(n-m)x]}{2(n-m)}\)</span></li>
+</ol>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition 半角升幂">
 <p class="admonition-title">半角升幂</p>
 <ul>
@@ -1287,6 +1420,88 @@
 <li><span class="arithmatex">\(\sin \theta = 2\sin \frac \theta2 \cos \frac \theta2\)</span></li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>三角高次幂乘积积分：（假设 <span class="arithmatex">\(n,m\in\mathbb R\)</span>）<ol>
+<li><span class="arithmatex">\(\int\sin^nx\cos^mxd_x=\begin{cases}
+-\sum\limits_{i=0}^k\frac{(-1)^i\binom ki}{m+2i+1}\cos^{m+2i+1}x&amp;2\nmid n,k=\lfloor n/2\rfloor\\
+\sum\limits_{i=0}^k\frac{(-1)^i\binom ki}{n+2i+1}\sin^{n+2i+1}x&amp;2\nmid m,k=\lfloor m/2\rfloor\\
+\sum\limits_{i=0}^k(-1)^i\binom ki\int\cos^{2i+m}xd_x&amp;2\mid n,k=n/2\\
+\sum\limits_{i=0}^k(-1)^i\binom ki\int\sin^{2i+n}xd_x&amp;2\mid m,k=m/2\\
+\frac1{2^{c+d}}\sum\limits_{i=0}^c(-1)^i\binom ci\sum\limits_{j=0}^d\binom dj\int\cos^{i+j}2x~d_x&amp;2\mid n,2\mid m,c=n/2,d=m/2\end{cases}\)</span></li>
+<li><span class="arithmatex">\(\int\csc^nx\cot^mxd_x=\begin{cases}-\sum\limits_{i=0}^{k-1}\frac{\binom{k-1}i}{m+2i+1}\cot^{m+2i+1}x&amp;2\mid n,k=n/2\ne0\\-\sum\limits_{i=0}^k\frac{(-1)^{n-i}\binom ki}{n+2i}\csc^{n+2i}x&amp;2\nmid m,k=\lfloor m/2\rfloor\ne0\end{cases}\)</span></li>
+<li><span class="arithmatex">\(\int\sec^nx\tan^mxd_x=\begin{cases}\sum\limits_{i=0}^{k-1}\frac{\binom{k-1}i}{m+2i+1}\tan^{m+2i+1}x&amp;2\mid n,k=n/2\ne0\\\sum\limits_{i=0}^k\frac{(-1)^{n-i}\binom ki}{n+2i}\sec^{n+2i}x&amp;2\nmid m,k=\lfloor m/2\rfloor\ne0\end{cases}\)</span></li>
+</ol>
+</li>
+<li>三角倍角乘积积分：假设 <span class="arithmatex">\(n\ne m\)</span><ol>
+<li><span class="arithmatex">\(\begin{cases}\int\sin(nx)\cos(mx)d_x=-\frac{\cos[(n+m)x]}{2(n+m)}-\frac{\cos[(n-m)x]}{2(n-m)}\\\int\cos(nx)\cos(mx)d_x=\frac{\sin[(n+m)x]}{2(n+m)}+\frac{\sin[(n-m)x]}{2(n-m)}\\\int\sin(nx)\sin(mx)d_x=-\frac{\sin[(n+m)x]}{2(n+m)}+\frac{\sin[(n-m)x]}{2(n-m)}\end{cases}\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>高次幂定积分：假设 <span class="arithmatex">\(a,b\)</span> 形如 <span class="arithmatex">\(\frac\pi2k\)</span>（<span class="arithmatex">\(k\in\mathbb Z\)</span>）<ol>
+<li><span class="arithmatex">\(\int_a^b\sin^nxd_x=\begin{cases}p_n[x]_a^b&amp;2\mid n\\p_n[-\cos x]_a^b&amp;2\nmid n\end{cases}\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>降幂升角公式：(1) <span class="arithmatex">\(\sin^2x=\frac12(1-\cos2x)\)</span>，(2) <span class="arithmatex">\(\cos^2x=\frac12(1+\cos2x)\)</span>，(3) <span class="arithmatex">\(\sin x\cos x=\frac12\sin2x\)</span></li>
+<li>半角公式：(1) <span class="arithmatex">\(\cos x=2\cos^2\frac x2-1=1-2\sin^2\frac x2=\cos^2\frac x2-\sin^2\frac x2\)</span>，(2) <span class="arithmatex">\(\sin x=2\sin\frac x2\cos\frac x2\)</span></li>
+<li>和积化差：<span class="arithmatex">\(\begin{cases}\sin x\cos y=\frac12(\sin(x+y)+\sin(x-y))\\\cos x\cos y=\frac12(\cos(x+y)+\cos(x-y))\\\sin x\sin y=\frac12(-\cos(x+y)+\cos(x-y))\end{cases}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算定积分：(1) <span class="arithmatex">\(\int_{\pi/2}^{3\pi/4}\sin^5x\cos^3xd_x\)</span>，(2) <span class="arithmatex">\(\int_0^{\pi/2}\cos^2xd_x\)</span></li>
+<li>计算三角乘积不定积分：(1) <span class="arithmatex">\(\int\sin^3x\sqrt{\cos x}d_x\)</span>，(2) <span class="arithmatex">\(\int\cos x\cos^5(\sin x)d_x\)</span>，(3) <span class="arithmatex">\(\int\sec x\tan^3xd_x\)</span></li>
+<li>计算三角倍角不定积分：(1) <span class="arithmatex">\(\int\sin5x\sin2x~d_x=\int\frac12(-\cos7x+\cos3x)d_x=-\frac1{14}\sin7x+\frac16\sin3x\)</span>，(2) <span class="arithmatex">\(\int\sin3x\cos x~d_x=\int\frac12(\sin4x+\sin2x)d_x=-\frac18\cos4x-\frac14\cos2x\)</span>，(3) <span class="arithmatex">\(\int\cos7x\cos5x~d_x=\int\frac12(\cos12x+\cos2x)d_x=\frac1{24}\sin12x+\frac14\sin2x\)</span></li>
+<li>计算不定积分：(1) <span class="arithmatex">\(\int\frac1{\cos x-1}d_x\)</span>，(2) <span class="arithmatex">\(\int\frac{1-\tan^2x}{\sec^2x}d_x\)</span></li>
+<li>假设 <span class="arithmatex">\(n,m\in\mathbb Z\)</span>，证明：<span class="arithmatex">\(\begin{cases}\int_{-\pi}^{\pi}\sin(nx)\cos(mx)d_x=0\\\int_{-\pi}^{\pi}\cos(nx)\cos(mx)d_x=\begin{cases}0&amp;n\ne m\\\pi&amp;n=m\end{cases}\\\int_{-\pi}^{\pi}\sin(nx)\sin(mx)d_x=\begin{cases}0&amp;n\ne m\\\pi&amp;n=m\end{cases}\end{cases}\)</span></li>
+<li>有限傅里叶级数定义为 <span class="arithmatex">\(f(x)=\sum\limits_{i=1}^na_i\sin ix\)</span>，证明：<span class="arithmatex">\(\forall j=1..n,a_j=\frac1\pi\int_{-\pi}^\pi f(x)\sin jx~d_x\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) </p>
+<ol>
+<li>记 <span class="arithmatex">\(t=\sin x\)</span>，<span class="arithmatex">\(\int_{\pi/2}^{3\pi/4}\sin^5x\cos^3xd_x=\left[\frac16t^6-\frac18t^8x\right]_1^{1/\sqrt2}=-\frac{11}{384}\)</span></li>
+<li><span class="arithmatex">\(\int_0^{\pi/2}\cos^2xd_x=\left[\frac12(x+\sin x\cos x)\right]_0^{\pi/2}=\frac12(\pi/2+0)=\pi/4\)</span></li>
+</ol>
+<p>(2)</p>
+<ol>
+<li><span class="arithmatex">\(\int\sin^3x\sqrt{\cos x}d_x=-\frac1{3/2}\cos^{3/2}+\frac1{7/2}\cos^{7/3}x=-\frac23\cos^{3/2}+\frac27\cos^{7/2}x\)</span></li>
+<li>记 <span class="arithmatex">\(s=\sin x,t=\sin t\)</span>，<span class="arithmatex">\(\int\cos x\cos^5(\sin x)d_x=\int\cos^5s~d_s=\frac11t-\frac23t^3+\frac15t^5=\sin\sin x-\frac23\sin^3\sin x+\frac15\sin^5\sin x\)</span></li>
+<li>记 <span class="arithmatex">\(t=\sec x\)</span>，<span class="arithmatex">\(\int\sec x\tan^3xd_x=-\frac11t+\frac13t^3=-\sec x+\frac13\sec^3x\)</span></li>
+</ol>
+<p>(3)</p>
+<ol>
+<li><span class="arithmatex">\(\int\sin5x\sin2x~d_x=\int\frac12(-\cos7x+\cos3x)d_x=-\frac1{14}\sin7x+\frac16\sin3x\)</span></li>
+<li><span class="arithmatex">\(\int\sin3x\cos x~d_x=\int\frac12(\sin4x+\sin2x)d_x=-\frac18\cos4x-\frac14\cos2x\)</span></li>
+<li><span class="arithmatex">\(\int\cos7x\cos5x~d_x=\int\frac12(\cos12x+\cos2x)d_x=\frac1{24}\sin12x+\frac14\sin2x\)</span></li>
+</ol>
+<p>(4)</p>
+<ol>
+<li><span class="arithmatex">\(\int\frac1{\cos x-1}d_x=\int\frac1{(1-2\sin^2\frac x2)-1}d_x=-\frac12\int\csc^2\frac x2d_x=\cot\frac x2\)</span></li>
+<li><span class="arithmatex">\(\int\frac{1-\tan^2x}{\sec^2x}d_x=\int(\cos^2x-\sin^2x)d_x=\int\cos2x~d_x=\sin x\cos x\)</span></li>
+</ol>
+<p>(6) <span class="arithmatex">\(\frac1\pi\int_{-\pi}^\pi f(x)\sin jx~d_x=\frac1\pi\int_{-\pi}^\pi\left(\sum\limits_{i=1}^na_i\sin ix\right)\sin jx~d_x=\frac1\pi\sum\limits_{i=1}^na_i\int_{-\pi}^\pi\sin ix\sin jx~d_x=\frac1\pi a_j\int_{-\pi}^\pi\sin^2jx~d_x=\frac1\pi a_j\cdot\pi=a_j\)</span></p>
+</blockquote>
 <h3 id="3">3.三角代换积分法</h3>
 <div class="admonition note">
 <p class="admonition-title">逆换元 (逆代换)</p>
@@ -1337,6 +1552,19 @@
 </ul>
 </blockquote>
 <div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算 <span class="arithmatex">\(\int\frac{\sqrt{9-x^2}}{x^2}d_x\)</span>：令 <span class="arithmatex">\(x=3\sin t\)</span>（其中 <span class="arithmatex">\(t\in[-\frac\pi2,\frac\pi2]\)</span>），<span class="arithmatex">\(\int\frac{\sqrt{9-x^2}}{x^2}d_x=\int\frac{\sqrt{9-(3\sin t)^2}}{(3\sin t)^2}d(3\sin t)=\int\frac{\cos^2t}{\sin^2t}d_t=\int\cot^2t~d_t\)</span> <span class="arithmatex">\(=\int(\csc^2t-1)d_t=-\cot t-t=-\frac{\sqrt{9-x^2}}x-\sin^{-1}\frac x3\)</span>（注：其中 <span class="arithmatex">\(|\cos t|=\cos t\)</span>）</li>
+<li>计算 <span class="arithmatex">\(\int\sqrt{a^2-x^2}d_x\)</span>：令 <span class="arithmatex">\(x=a\sin t\)</span>（<span class="arithmatex">\(t\in[-\frac\pi2,\frac\pi2]\)</span>），<span class="arithmatex">\(\int\sqrt{a^2-x^2}d_x=\int\sqrt{a^2-a^2\sin^2t}~d(a\sin t)=\int a\cos t\cdot a\cos t~d_t=a^2\int\cos^2t~d_t=\frac12a^2(t+\sin t\cos t)\)</span> <span class="arithmatex">\(=\frac12a^2(\sin^{-1}\frac xa+\frac xa\cdot\frac{\sqrt{a^2-x^2}}a)=\frac12(a^2\sin^{-1}\frac xa+x\sqrt{a^2-x^2})\)</span></li>
+<li>计算椭圆 <span class="arithmatex">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> 的面积：其中 <span class="arithmatex">\(y=\pm\frac ba\sqrt{a^2-x^2}\)</span>，那么面积为 <span class="arithmatex">\(4\int_0^a\frac ba\sqrt{a^2-x^2}d_x=4\frac ba\left[\frac12(a^2\sin^{-1}\frac xa+x\sqrt{a^2-x^2})\right]_0^a=2\frac ba(a^2\sin^{-1}1-0)=2\frac ba\cdot a^2\frac12\pi=\pi ab\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac1{x^2\sqrt{x^2+4}}d_x\)</span>：设 <span class="arithmatex">\(x=2\tan t\)</span>（<span class="arithmatex">\(t\in(-\pi/2,\pi/2)\)</span>），<span class="arithmatex">\(\int\frac1{x^2\sqrt{x^2+4}}d_x=\int\frac{2\sec^2t}{4\tan^2t\cdot2\sec t}d_t=\frac14\int\sin^{-2}t\cos t~d_t=-\frac14\csc t=-\frac{\sqrt{4+x^2}}{4x}\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac x{\sqrt{x^2+4}}d_x\)</span>：令 <span class="arithmatex">\(x=2\tan t\)</span>，<span class="arithmatex">\(\int\frac x{\sqrt{x^2+4}}d_x=\int\frac{2\tan t}{\sqrt{4\tan^2t+4}}d(2\tan t)=2\int\frac{\tan t\sec^2t}{\sec t}d_t=2\sec t=2\cdot\frac{\sqrt{4+x^2}}2=\sqrt{4+x^2}\)</span>；而实际上使用积分的复合方法能计算很轻松！</li>
+<li>计算 <span class="arithmatex">\(\int\frac1{\sqrt{x^2-a^2}}d_x\)</span>：令 <span class="arithmatex">\(x=a\sec t\)</span>，<span class="arithmatex">\(\int\frac1{\sqrt{x^2-a^2}}d_x=\int\frac1{\sqrt{a^2\sec^2t-a^2}}d(a\sec t)=\int\frac{a\sec t\tan t}{a\tan t}d_t=\ln|\sec t+\tan t|=\ln|\frac xa+\frac{\sqrt{x^2-a^2}}a|=\ln|x+\sqrt{x^2-a^2}|\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac{x^3}{(4x^2+9)^{3/2}}d_x\)</span>：令 <span class="arithmatex">\(x=(3/2)\tan t\)</span>，<span class="arithmatex">\(\int\frac{x^3}{(4x^2+9)^{3/2}}d_x=\int\frac{(3/2)^3\tan^3t}{(9\tan^2t+9)^{3/2}}d((3/2)\tan t)=\frac3{16}\int\frac{\sec^2t\tan^3t}{\sec^3t}d_t=\frac3{16}\int\sin^3t\sec^2td_t\)</span> <span class="arithmatex">\(=\frac3{16}(\sec t+\cos t)=\frac3{16}(\frac{\sqrt{(3/2)^2+x^2}}{3/2}+\frac{3/2}{\sqrt{(3/2)^2+x^2}})=\frac1{16}(\sqrt{4x^2+9}+\frac9{\sqrt{4x^2+9}})\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac x{\sqrt{3-2x-x^2}}d_x\)</span>：令 <span class="arithmatex">\(x+1=2\sin t\)</span>，<span class="arithmatex">\(\int\frac x{\sqrt{3-2x-x^2}}d_x=\int\frac x{\sqrt{-(x+1)^2+4}}d_x=\int\frac{2\sin t-1}{\sqrt{-4\sin^2t+4}}d(2\sin t-1)=\int\frac{4\sin t\cos t-2\cos t}{2\cos t}d_t\)</span> <span class="arithmatex">\(=2\int\sin t~d_t-\int1d_t=-2\cos t-t=-2\frac{\sqrt{4-(x+1)^2}}2-\sin^{-1}\frac{x+1}2=-\sqrt{4-(x+1)^2}-\sin^{-1}\frac{x+1}2\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>在求逆换元时，通过表达式 <span class="arithmatex">\(x = f(\theta)\)</span> 构造关于 <span class="arithmatex">\(\theta\)</span> 的直角三角形，通过此三角形可以获取 <span class="arithmatex">\(\sin \theta, \cos \theta, \tan \theta, \csc \theta, \sec \theta, \cot \theta\)</span> 中的任何用于逆替换的方程</li>
@@ -1366,6 +1594,51 @@
 <li><span class="arithmatex">\(\int \frac x{\sqrt {3-2x-x^2}}~d_x\)</span></li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>三角换元：<span class="arithmatex">\(\begin{cases}\sqrt{a^2-x^2}\to x=a\sin t&amp;t\in[-\frac\pi2,\frac\pi2]\\\sqrt{x^2-a^2}\to x=a\sec t&amp;t\in[0,\frac\pi2)\cup[\pi,\frac32\pi)\\\sqrt{a^2+x^2}\to x=a\tan t&amp;t\in(-\frac\pi2,\frac\pi2)\end{cases}\)</span></li>
+<li>双曲代换：</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 <span class="arithmatex">\(\sqrt{ax^2+bx+c}=\sqrt{a(x+p)^2+q}\)</span>，其中 <span class="arithmatex">\(p=\frac b{2a},q=c-ap^2=c-b^2/(4a)\)</span>，那么设 <span class="arithmatex">\(\begin{cases}x+p=\sqrt{q/a}\sin t&amp;a&lt;0,p&gt;0\\x+p=\sqrt{q/a}\sec t&amp;a&gt;0,p&lt;0\\x+p=\sqrt{q/a}\tan t&amp;a,p&gt;0\end{cases}\)</span></li>
+<li>猜测：<span class="arithmatex">\(\int\frac1{a^2x^2-b^2}d_x=\frac1{2ab}\ln\left|\frac{a^2x^2+x^2}{a^2x^2-x^2}\right|\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：<span class="arithmatex">\(\begin{cases}\int\sqrt{a^2-x^2}d_x=\frac12(x\sqrt{a^2-x^2}+a^2\sin^{-1}\frac xa)\\\int\sqrt{x^2-a^2}d_x=\frac12(x\sqrt{x^2-a^2}-a^2\ln|x+\sqrt{x^2-a^2}|)\\\int\sqrt{x^2+a^2}d_x=\frac12(x\sqrt{x^2+a^2}+a^2\ln|x+\sqrt{x^2+a^2}|)\end{cases}\)</span></li>
+<li>证明：假设 <span class="arithmatex">\(a&gt;0,b\in\mathbb R\)</span>，那么 <span class="arithmatex">\(\int\sqrt{ax^2+b}d_x=\frac12(x\sqrt{ax^2+b}+(b/\sqrt a)\ln|\sqrt ax+\sqrt{ax^2+b}|)\)</span></li>
+<li>判断题：<ol>
+<li>计算不定积分 <span class="arithmatex">\(\int\frac{x^3}{\sqrt{x^2+9}}d_x\)</span> 必须使用三角代换(X)</li>
+</ol>
+</li>
+<li>证明：<span class="arithmatex">\(\begin{cases}\int\frac1{\sqrt{a^2-x^2}}d_x=\sin^{-1}\frac xa\\\int\frac1{\sqrt{x^2-a^2}}d_x=\ln|x+\sqrt{x^2-a^2}|\\\int\frac1{\sqrt{x^2+a^2}}d_x=\ln|x+\sqrt{x^2+a^2}|\end{cases}\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) 令 <span class="arithmatex">\(x=a\sin t\)</span>，<span class="arithmatex">\(\int\sqrt{a^2-x^2}d_x=a^2\int\cos^2t~d_t=\frac12a^2(t+\sin t\cos t)=\frac12(a^2\sin^{-1}\frac xa+x\sqrt{a^2-x^2})\)</span></p>
+<p>(1.2) 令 <span class="arithmatex">\(x=a\sec t\)</span>，<span class="arithmatex">\(\int\sqrt{x^2-a^2}d_x=a^2\int\sec t\tan^2t~d_t=a^2\int\sin^2t\sec^3t~d_t=a^2\int(1-\cos^2t)\sec^3t~d_t=a^2\int\sec^3t~d_t-a^2\int\sec t~d_t\)</span></p>
+<p><span class="arithmatex">\(=\frac12a^2(\ln|\sec t+\tan t|+\sec t\tan t)-a^2\ln|\sec t+\tan t|=\frac12a^2(-\ln|\sec t+\tan t|+\sec t\tan t)\)</span></p>
+<p><span class="arithmatex">\(=\frac12a^2\left(\frac{x\sqrt{x^2-a^2}}{a^2}-\ln\left|\frac{x}a+\frac{\sqrt{x^2-a^2}}a\right|\right)=\frac12(x\sqrt{x^2-a^2}-a^2\ln|x+\sqrt{x^2-a^2}|)\)</span></p>
+<p>(1.3) 令 <span class="arithmatex">\(x=a\tan t\)</span>，<span class="arithmatex">\(\int\sqrt{x^2+a^2}d_x=a^2\int\sec^3t~d_t=\frac12a^2(\ln|\sec t+\tan t|+\sec t\tan t)=\frac12a^2\left(\frac{\sqrt{x^2+a^2}x}{a^2}+\ln\left|\frac{\sqrt{x^2+a^2}}a+\frac{x}a\right|\right)=\frac12(x\sqrt{x^2+a^2}+a^2\ln|x+\sqrt{x^2+a^2}|)\)</span></p>
+<p>(2) 根据(1)有 <span class="arithmatex">\(\int\sqrt{x^2+b}d_x=\frac12(x\sqrt{x^2+b}+b\ln|x+\sqrt{x^2+b}|)\)</span></p>
+<p>根据[7.1复合积分] <span class="arithmatex">\(\int\sqrt{ax^2+b}d_x=\frac12(x\sqrt{ax^2+b}+(b/\sqrt a)\ln|\sqrt ax+\sqrt{ax^2+b}|)\)</span></p>
+<p>(4.1) 令 <span class="arithmatex">\(x=a\sin t\)</span>，<span class="arithmatex">\(\int\frac1{\sqrt{a^2-x^2}}d_x=\int\frac{a\cos t}{a\cos t}d_t=\int1d_t=t=\sin^{-1}\frac xa\)</span></p>
+<p>(4.2) 令 <span class="arithmatex">\(x=a\sec t\)</span>，<span class="arithmatex">\(\int\frac1{\sqrt{x^2-a^2}}d_x=\int\frac{a\sec t\tan t}{a\tan t}d_t=\int\sec t~d_t=\ln|\sec t+\tan t|=\ln\left|\frac xa+\frac{\sqrt{x^2-a^2}}a\right|=\ln|x+\sqrt{x^2-a^2}|\)</span></p>
+<p>(4.3) 令 <span class="arithmatex">\(x=a\tan t\)</span>，<span class="arithmatex">\(\int\frac1{\sqrt{x^2+a^2}}d_x=\int\frac{a\sec^2t}{a\sec t}d_t=\int\sec t~d_t=\ln|\sec t+\tan t|=\ln\left|\frac{\sqrt{x^2+a^2}}a+\frac xa\right|=\ln|x+\sqrt{x^2+a^2}|\)</span></p>
+</blockquote>
 <h3 id="4">4.有理函数的 部分分式积分法</h3>
 <p>本节介绍将有理函数表示成已知积分的 最简分式（即 部分分式）的和来求积分的方法</p>
 <div class="admonition 定义">
@@ -1434,6 +1707,93 @@
 <p class="admonition-title">有理代换</p>
 </div>
 <p>当求包含 <span class="arithmatex">\(\sqrt[n] {g(x)}\)</span> 的积分时，可以换元令 <span class="arithmatex">\(u = \sqrt[n] {g(x)}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">多项式除法</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\forall p,q\in\mathbb P,\exists r,s\in\mathbb P\)</span> 使得 <span class="arithmatex">\(p=rq+s,\deg s&lt;\deg q\)</span>，蕴含 <span class="arithmatex">\(\int\frac{p(x)}{q(x)}d_x=\int\frac{r(x)q(x)+s(x)}{q(x)}d_x=\int r(x)d_x+\int\frac{s(x)}{q(x)}d_x\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">多项式分解定理</p>
+</div>
+<blockquote>
+<p><span class="arithmatex">\(\forall p\in\mathbb P,\exists p_1,\cdots p_n\in\mathbb P_1\cup\mathbb P_2,c_1,\cdots,c_n\in\mathbb R\)</span>，使得 <span class="arithmatex">\(p=\prod\limits_{i=1}^n p_i^{c_i}\)</span></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">有理函数分解定理</p>
+</div>
+<blockquote>
+<p>假设 <span class="arithmatex">\(p,q\in\mathbb P,\deg p&lt;\deg q\)</span>，那么 <span class="arithmatex">\(\exists q_1,\cdots,q_n\in\mathbb P,c_1,\cdots,\in\mathbb R\)</span> 使得 <span class="arithmatex">\(\frac{p(x)}{q(x)}=\frac{p(x)}{\prod\limits_{i=1}^nq_i^{c_i}(x)}=\sum\limits_{i=1}^n\sum\limits_{j=1}^{c_i}\frac{r_{ij}(x)}{q_i^j(x)}\)</span>（其中 <span class="arithmatex">\(r_{ij}\in\mathbb P,\deg r_{ij}=\deg q_i-1\)</span>）</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\int\frac{x^2+2x-1}{2x^3+3x^2-2x}d_x=\int\frac{x^2+2x-1}{x(2x-1)(x+2)}d_x=\int\left(\frac ax+\frac b{2x-1}+\frac c{x+2}\right)d_x\)</span>，其中 <span class="arithmatex">\(\begin{cases}(2\cdot0-1)(0+2)a=0^2+2\cdot0-1\\(1/2)(1/2+2)b=(1/2)^2+2(1/2)-1\\(-2)(2(-2)-1)c=(-2)^2+2(-2)-1\end{cases}\)</span>，即 <span class="arithmatex">\(a=1/2,b=1/5,c=-1/10\)</span>，于是上述积分为 <span class="arithmatex">\(\int\left(\frac{1/2}x+\frac{1/5}{2x-1}+\frac{-1/10}{x+2}\right)d_x=\frac12\ln|x|+\frac1{10}\ln|2x-1|-\frac1{10}\ln|x+2|\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac{x^4-2x^2+4x+1}{x^3-x^2-x+1}d_x\)</span>：<span class="arithmatex">\(\frac{x^4-2x^2+4x+1}{x^3-x^2-x+1}=x+1+\frac{4x}{x^3-x^2-x+1}=x+1+\frac{4x}{(x-1)^2(x+1)}=x+1+\frac a{x-1}+\frac b{(x-1)^2}+\frac c{x+1}\)</span>，其中 <span class="arithmatex">\([0,4,0]=a[1,-1][1,1]+b[1,1]+c[1,-1]^2=[a+c,b-2c,-a+b+c]\)</span>，解得 <span class="arithmatex">\(a=1,b=2,c=-1\)</span>，于是 <span class="arithmatex">\(\int\frac{x^4-2x^2+4x+1}{x^3-x^2-x+1}d_x=\int(x+1+\frac1{x-1}+\frac2{(x-1)^2}+\frac{-1}{x+1})d_x\)</span> <span class="arithmatex">\(=\frac12x^2+x+\ln|x-1|-\frac2{x-1}-\ln|x+1|=\frac12x^2+x-\frac2{x-1}+\ln\left|\frac{x+1}{x-1}\right|\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac{2x^2-x+4}{x^3+4x}d_x\)</span>：<span class="arithmatex">\(\frac{2x^2-x+4}{x^3+4x}=\frac{2x^2-x+4}{x(x^2+4)}=\frac ax+\frac{bx+c}{x^2+4}\)</span>，其中 <span class="arithmatex">\([2,-1,4]=a[1,0,4]+b[1,0,0]+c[1,0]=[a+b,c,4a]\)</span>，解得 <span class="arithmatex">\(a=1,b=1,-1\)</span>，于是 <span class="arithmatex">\(\int\frac{2x^2-x+4}{x^3+4x}d_x=\int\left(\frac1x+\frac{x-1}{x^2+4}\right)d_x=\ln|x|+\frac12\ln|x^2+4|-\frac12\tan^{-1}\frac x2\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac{x-1}{4x^2-4x+3}d_x\)</span>：<span class="arithmatex">\(\frac{x-1}{4x^2-4x+3}=\frac{x-1}{4(x-1/2)^2+2}=\frac{x-1}{(2x-1)^2+2}=\frac{(1/2)(2x-1)}{(2x-1)^2+2}+\frac{-1/2}{(2x-1)^2+2}\)</span>，<span class="arithmatex">\(\int\frac{x-1}{4x^2-4x+3}d_x=\frac12\int\frac{2x-1}{(2x-1)^2+2}d_x-\frac12\int\frac1{(2x-1)^2+2}d_x=\frac18\ln|(2x-1)^2+4|-\frac1{4\sqrt2}\tan^{-1}\frac{2x-1}{\sqrt2}\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac{1-x+2x^2-x^3}{x(x^2+1)^2}d_x\)</span>：<span class="arithmatex">\(\frac{1-x+2x^2-x^3}{x(x^2+1)^2}=\frac ax+\frac{bx+c}{x^2+1}+\frac{dx+e}{(x^2+1)^2}\)</span>，其中 <span class="arithmatex">\([0,-1,2,-1,1]=a[1,0,2,0,1]+[b,c][1,0,1,0]+[d,e][1,0]=[a+b,c,2a+b+d,c+e,a]\)</span>，解得 <span class="arithmatex">\(a=1,b=-1,c=-1,d=1,e=0\)</span>，于是 <span class="arithmatex">\(\int\frac{1-x+2x^2-x^3}{x(x^2+1)^2}d_x=\int\left(\frac1x+\frac{-x-1}{x^2+1}+\frac{x}{(x^2+1)^2}\right)d_x=\ln|x|-\frac12\ln|x^2+1|-\tan^{-1}x-\frac1{2(x^2+1)}\)</span></li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>多项式除法：<span class="arithmatex">\(\forall p,q\in\mathbb P,\exists r,s\in\mathbb P\)</span> 使得 <span class="arithmatex">\(p=rq+s,\deg s&lt;\deg q\)</span>，蕴含 <span class="arithmatex">\(\int\frac{p(x)}{q(x)}d_x=\int\frac{r(x)q(x)+s(x)}{q(x)}d_x=\int r(x)d_x+\int\frac{s(x)}{q(x)}d_x\)</span></li>
+<li>多项式分解定理：<span class="arithmatex">\(\forall p\in\mathbb P,\exists p_1,\cdots p_n\in\mathbb P_1\cup\mathbb P_2,c_1,\cdots,c_n\in\mathbb R\)</span>，使得 <span class="arithmatex">\(p=\prod\limits_{i=1}^n p_i^{c_i}\)</span></li>
+<li>二次多项式配方：<span class="arithmatex">\(ax^2+bx+c=\frac{a}{|a|}(rx+s)^2+t\)</span>，其中 <span class="arithmatex">\(\begin{cases}r=\sqrt{|a|}\\s=\frac a{|a|}\cdot b/(2r)\\t=c-\frac a{|a|}\cdot s^2\end{cases}\)</span>（由于 <span class="arithmatex">\([(a/|a|)r^2,2(a/|a|)rs,a/|a|s^2+t]=[a,b,c]\)</span>）</li>
+<li>有理函数分解定理：假设 <span class="arithmatex">\(p,q\in\mathbb P,\deg p&lt;\deg q\)</span>，那么 <span class="arithmatex">\(\exists q_1,\cdots,q_n\in\mathbb P,c_1,\cdots,\in\mathbb R\)</span> 使得 <span class="arithmatex">\(\frac{p(x)}{q(x)}=\frac{p(x)}{\prod\limits_{i=1}^nq_i^{c_i}(x)}=\sum\limits_{i=1}^n\sum\limits_{j=1}^{c_i}\frac{r_{ij}(x)}{q_i^j(x)}\)</span>（其中 <span class="arithmatex">\(r_{ij}\in\mathbb P,\deg r_{ij}=\deg q_i-1\)</span>）<ol>
+<li>注：未知多项式 <span class="arithmatex">\(r_{ij}(x)\)</span> 取决于方程 <span class="arithmatex">\(p(x)=q(x)\sum\limits_{i=1}^n\sum\limits_{j=1}^{c_i}\frac{r_{ij}(x)}{q_i^j(x)}\)</span></li>
+<li>若 <span class="arithmatex">\(\forall i=1..n,c_i=1\)</span>，满足 <span class="arithmatex">\(q_i(x_0)=0\)</span> 的 <span class="arithmatex">\(x_0\)</span> 可以很容易求解未知多项式的参数</li>
+<li>若 <span class="arithmatex">\(\exists i,p_i\in\mathbb P_3,j=2\)</span>，那么需要对 <span class="arithmatex">\(p_i(x)\)</span> 进行[配方]得到 <span class="arithmatex">\(p_i(x)=\pm(ax+b)^2+c\)</span>，对 <span class="arithmatex">\(r_{ij}(x)\)</span> 进行关于 <span class="arithmatex">\(ax+b\)</span> 的除法分解</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>三角有理代换：假设 <span class="arithmatex">\(x\in(-\pi,\pi)\)</span>，令 <span class="arithmatex">\(t=\tan\frac x2\)</span>，蕴含 <span class="arithmatex">\(\begin{cases}\sin\frac x2=\frac t{\sqrt{1+t^2}}\\\cos\frac x2=\frac1{\sqrt{1+t^2}}\end{cases}\)</span>，那么 <span class="arithmatex">\(\begin{cases}\sin x=\frac{2t}{1+t^2}\\\cos x=\frac{1-t^2}{1+t^2}\end{cases}\)</span>，并且 <span class="arithmatex">\(d_x=\frac2{1+t^2}d_t\)</span>；该代换将有关 <span class="arithmatex">\(\sin x,\cos x\)</span> 的有理函数变换为关于 t 的有理函数</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算 (1) <span class="arithmatex">\(\int\frac{x^4}{x^4-1}d_x\)</span>，(2) <span class="arithmatex">\(\int\frac{4x^2-7x-12}{x(x+2)(x-3)}d_x\)</span></li>
+<li>计算 <span class="arithmatex">\(\int\frac{x^3}{\sqrt[3]{x^2+1}}d_x\)</span></li>
+<li>假设 <span class="arithmatex">\(x\in(-\pi,\pi)\)</span>，那么 (1) <span class="arithmatex">\(\begin{cases}\sin\frac x2=\frac t{\sqrt{1+t^2}}\\\cos\frac x2=\frac1{\sqrt{1+t^2}}\end{cases}\)</span>，(2) <span class="arithmatex">\(\begin{cases}\sin x=\frac{2t}{1+t^2}\\\cos x=\frac{1-t^2}{1+t^2}\end{cases}\)</span>，(3) <span class="arithmatex">\(d_x=\frac2{1+t^2}d_t\)</span></li>
+<li>计算 (1) <span class="arithmatex">\(\int\frac1{3-5\sin x}d_x\)</span>，(2) <span class="arithmatex">\(\int\frac1{2\sin x+\sin2x}d_x\)</span>，(3) <span class="arithmatex">\(\int\frac{\cot x+\tan x}{1+\sin x}d_x\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) 设有方程 <span class="arithmatex">\(\frac{x^4}{x^4-1}=1+\frac1{x^4-1}1+\frac1{(x-1)(x+1)(x^2+1)}=1+\frac a{x-1}+\frac b{x+1}+\frac c{x^2+1}\)</span>，其中 <span class="arithmatex">\([0,0,0,1]=a[1,1,1,1]+b[1,-1,1,-1]+c[0,1,0,-1]=[a+b,a-b+c,a+b,a-b-c]\)</span>，解得 <span class="arithmatex">\(a=1/4,b=-1/4,c=-1/2\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\int\frac{x^4}{x^4-1}d_x=\int1d_x+\frac14\int\frac1{x-1}d_x-\frac14\int\frac1{x+1}d_x-\frac12\int\frac1{x^2+1}d_x=x+\frac14\ln|x-1|-\frac14\ln|x+1|-\frac12\tan^{-1}x\)</span></p>
+<p>(1.2) 设有方程 <span class="arithmatex">\(\frac{4x^2-7x-12}{x(x+2)(x-3)}=\frac ax+\frac b{x+2}+\frac c{x-3}\)</span>，</p>
+<p>其中 <span class="arithmatex">\([4,-7,-12]=a[1,-1,-6]+b[1,-3,0]+c[1,2,0]=[a+b+c,-a-3b+2c,-6a]\)</span>，解得 <span class="arithmatex">\(a=2,b=9/5,c=1/5\)</span></p>
+<p>于是 <span class="arithmatex">\(\int\frac{4x^2-7x-12}{x(x+2)(x-3)}d_x=2\ln|x|+\frac95\ln|x+2|+\frac15\ln|x-3|\)</span></p>
+<p>(2)</p>
+<p>法1：设 <span class="arithmatex">\(t=\sqrt[3]{x^2+1}\)</span>，<span class="arithmatex">\(\int\frac{x^3}{\sqrt[3]{x^2+1}}d_x=\frac12\int\frac{x^2}{\sqrt[3]{x^2+1}}d(x^2)=\frac12\int\frac{t^3-1}td(t^3-1)=\frac32\int(t^4-t)d_t\)</span></p>
+<p><span class="arithmatex">\(=\frac32(\frac15t^5-\frac12t^2)=\frac32(x^2+1)^{2/3}\cdot(\frac15(x^2+1)-\frac12)=\frac3{20}(x^2+1)^{2/3}(2x^2-3)\)</span></p>
+<p>法2：设 <span class="arithmatex">\(t=x^2+1\)</span> <span class="arithmatex">\(\int\frac{x^3}{\sqrt[3]{x^2+1}}d_x=\int\frac{x^3/(2x)}{\sqrt[3]{x^2+1}}d(x^2+1)=\frac12\int\frac{t-1}{t^{1/3}}d_t=\frac12\int(t^{2/3}-t^{-1/3})d_t\)</span></p>
+<p><span class="arithmatex">\(=\frac12(\frac35t^{5/3}-\frac32t^{2/3})=\frac32t^{^{2/3}}(\frac15t^3-\frac12)=\frac3{20}(x^2+1)^{2/3}(2x^2-3)\)</span></p>
+<p>(3.1) 画出以 <span class="arithmatex">\(x/2\)</span> 为锐角的直角三角形，其中角 <span class="arithmatex">\(x/2\)</span> 的对边为 t，侧边为 1，蕴含斜边为 <span class="arithmatex">\(\sqrt{1+t^2}\)</span>，于是 <span class="arithmatex">\(\begin{cases}\sin\frac x2=\frac t{\sqrt{1+t^2}}\\\cos\frac x2=\frac1{\sqrt{1+t^2}}\end{cases}\)</span></p>
+<p>(3.2) </p>
+<ol>
+<li><span class="arithmatex">\(\sin x=2\sin\frac x2\cos\frac x2=2\cdot\frac t{\sqrt{1+t^2}}\cdot\frac1{\sqrt{1+t^2}}=\frac{2t}{|1+t^2|}=\frac{2t}{1+t^2}\)</span></li>
+<li><span class="arithmatex">\(\cos x=2\cos^2\frac x2-1=2\cdot\frac1{1+t^2}-1=\frac{1-t^2}{1+t^2}\)</span></li>
+</ol>
+<p>(3.3) <span class="arithmatex">\(\frac{dt}{d_x}=\frac d{d_x}(\tan\frac x2)=\frac12\cdot\sec^2\frac x2=\frac12\cdot(\sqrt{1+t^2})^2=\frac12(1+t^2)\)</span>，蕴含 <span class="arithmatex">\(d_x=\frac2{1+t^2}d_t\)</span></p>
+<p>(4.1) 设 <span class="arithmatex">\(t=\tan\frac x2\)</span>，<span class="arithmatex">\(\int\frac1{3-5\sin x}d_x=\int\frac{2/(1+t^2)}{3-5(2t/(1+t^2))}d_t=\int\frac2{3t^2-10t+3}d_t
+=2\int\left(\frac{-3/8}{3t-1}+\frac{1/8}{t-3}\right)d_t=\frac28\ln\left|\frac{t-3}{3t-1}\right|=\frac14\ln\left|\frac{\tan\frac x2-3}{3\tan\frac x2-1}\right|\)</span></p>
+<p>(4.2) <span class="arithmatex">\(t=\tan\frac x2\)</span>，<span class="arithmatex">\(\int\frac1{2\sin x+\sin2x}d_x=\frac12\int\frac1{\sin x(1+\cos x)}d_x=\frac12\int\frac{2/(1+t^2)}{(2t/(1+t^2))\cdot(1+(1-t^2)/(1+t^2))}d_t\)</span></p>
+<p><span class="arithmatex">\(=\frac12\int\frac{2(1+t^2)}{2t\cdot2}d_t=\frac14\int(\frac1t+t)d_t=\frac14\ln|t|+\frac18t^2=\frac14\ln|\tan\frac x2|+\frac18\tan^2\frac x2\)</span></p>
+</blockquote>
 <h3 id="5">5.积分策略</h3>
 <div class="admonition 积分策略">
 <p class="admonition-title">积分策略</p>

@@ -1184,9 +1184,9 @@
 </div>
 <blockquote>
 <ol>
-<li>分段函数：分段函数形如 <span class="arithmatex">\(f(x)=\begin{cases}f_1(x)&amp;x_1\in D_{f_1}\\~~~~\vdots&amp;~~~~~\vdots\\f_n(x)&amp;x_n\in D_{f_n}\end{cases}\)</span>（假设 <span class="arithmatex">\(\forall i\ne j,D_{f_i}\cap D_{f_j}=\emptyset\)</span>，并且 <span class="arithmatex">\(\bigcap\limits_{i=1}^nD_{f_i}=D_f\)</span>；即 <span class="arithmatex">\(D_{f_1},\cdots,D_{f_n}\)</span> 是 <span class="arithmatex">\(D_f\)</span> 的一个分割）<ul>
+<li>分段函数：分段函数形如 <span class="arithmatex">\(f(x)=\begin{cases}f_1(x)&amp;x_1\in D_{f_1}\\~~~~\vdots&amp;~~~~~\vdots\\f_n(x)&amp;x_n\in D_{f_n}\end{cases}\)</span>（假设 <span class="arithmatex">\(\forall i\ne j,D_{f_i}\cap D_{f_j}=\emptyset\)</span>，并且 <span class="arithmatex">\(\bigcup\limits_{i=1}^nD_{f_i}=D_f\)</span>；即 <span class="arithmatex">\(D_{f_1},\cdots,D_{f_n}\)</span> 是 <span class="arithmatex">\(D_f\)</span> 的一个分割）<ul>
 <li>绝对值函数：<span class="arithmatex">\(|x|\)</span> 称为<strong>绝对值函数</strong>，并且 <span class="arithmatex">\(|x|=\begin{cases}x&amp;x\ge0\\-x&amp;x&lt;0\end{cases}\)</span></li>
-<li>假设 <span class="arithmatex">\(D_{f_1},\cdots,D_{f_n}\)</span> 是一组连续的区间，<span class="arithmatex">\(f_1,\cdots,f_n\)</span> 是一组连续的函数，若 f 的分段点处不连续，那么称 f 为<strong>阶梯函数</strong></li>
+<li>假设 <span class="arithmatex">\(D_{f_1},\cdots,D_{f_n}\)</span> 是一组连续的区间，<span class="arithmatex">\(f_1,\cdots,f_n\)</span> 是一组连续的函数，若 f 的分段点处不连续，那么称 f 为<strong>阶梯函数</strong>？</li>
 </ul>
 </li>
 <li>对称性<ul>
@@ -1205,20 +1205,20 @@
 <p class="admonition-title">例子</p>
 <ol>
 <li>方程 <span class="arithmatex">\(f(x,y)=0\)</span> 的图像中心对称，等价于 <span class="arithmatex">\(f(-x,y)=f(x,-y)\)</span></li>
-<li>方程 <span class="arithmatex">\(f(x,y)=0\)</span> 的图像关于 x 轴对称，等价于 <span class="arithmatex">\(f(-x,y)=f(x,y)\)</span></li>
-<li>方程 <span class="arithmatex">\(f(x,y)=0\)</span> 的图像关于 y 轴对称，等价于 <span class="arithmatex">\(f(x,-y)=f(x,y)\)</span></li>
+<li>方程 <span class="arithmatex">\(f(x,y)=0\)</span> 的图像关于 y 轴对称，等价于 <span class="arithmatex">\(f(-x,y)=f(x,y)\)</span></li>
+<li>方程 <span class="arithmatex">\(f(x,y)=0\)</span> 的图像关于 x 轴对称，等价于 <span class="arithmatex">\(f(x,-y)=f(x,y)\)</span></li>
 </ol>
 </div>
 <div class="admonition note">
-<p class="admonition-title">实数</p>
+<p class="admonition-title">数集</p>
 </div>
 <blockquote>
 <ol>
 <li>全体实数集记为 <span class="arithmatex">\(\mathbb R\)</span></li>
-<li>全体有理数集记为 <span class="arithmatex">\(\mathbb Q\)</span></li>
-<li>全体无理数集记为 <span class="arithmatex">\(\mathbf{CrQ}\)</span></li>
+<li>全体有理数集记为 <span class="arithmatex">\(\mathbb Q=\{x=p/q|~p\in\mathbb Z,q\in\mathbb Z^+\}\)</span></li>
+<li>全体无理数集记为 <span class="arithmatex">\(\mathbf{CrQ}=\mathbb R^c\)</span></li>
 <li>全体整数集记为 <span class="arithmatex">\(\mathbb Z\)</span>（<span class="arithmatex">\(\mathbb Z=\mathbb Z^+\cup\mathbb Z^-\cup\{0\}\)</span>）</li>
-<li>全体分数集记为 <span class="arithmatex">\(\{x=p/q|~p\in\mathbb Z,q\in\mathbb Z^+\}\)</span></li>
+<li>全体分数集记为 <span class="arithmatex">\(\mathbb Q\cap\mathbb Z^c\)</span></li>
 </ol>
 <p>满足 <span class="arithmatex">\(\mathbb R=\mathbb Q\cup\mathbf{CrQ}=\mathbb Z\cup\{x=p/q|~p\in\mathbb Z,q\in\mathbb Z^+\}\cup\mathbf{CrQ}\)</span></p>
 </blockquote>
@@ -1230,6 +1230,20 @@
 <ol>
 <li>a 的邻域记为 <span class="arithmatex">\(U(a,\delta)=\{x\in\mathbb R|~~|x-a|&lt;\delta\}\)</span></li>
 <li>a 的去心邻域记为 <span class="arithmatex">\(\mathring U(a,\delta)=\{x\in\mathbb R|~~|x-a|&lt;\delta,x\ne a\}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>函数，定义域，余定义域，值域：假设 <span class="arithmatex">\(A,B\)</span> 是集合，<strong>函数</strong> f 定义为映射关系 <span class="arithmatex">\(f: A\to B\)</span>；其中 A 为 f 的<strong>定义域</strong>，记为 <span class="arithmatex">\(D_f=A\)</span>；B 为 f 的<strong>余定义域</strong>；<span class="arithmatex">\(R_f=\{f(x)|~x\in D_f\}\)</span> 定义为 f 的<strong>值域</strong></li>
+<li>函数的表示方法：(1) 代数方法，(2) 几何方法（函数图像，数值列表），(3) 描述法（自然语言）</li>
+<li>分段函数：假设 <span class="arithmatex">\(\forall i\ne j,D_{f_i}\cap D_{f_j}=\emptyset,\bigcup\limits_{i=1}^nD_{f_i}=D_f\)</span>，<span class="arithmatex">\(f(x)=\begin{cases}f_1(x)&amp;x_1\in D_{f_1}\\~~~~\vdots&amp;~~~~~\vdots\\f_n(x)&amp;x_n\in D_{f_n}\end{cases}\)</span> 称为分段函数（注：<span class="arithmatex">\(D_{f_1},\cdots,D_{f_n}\)</span> 是 <span class="arithmatex">\(D_f\)</span> 的一个分割）</li>
+<li>常见函数：(1) 绝对值函数 <span class="arithmatex">\(|x|=\begin{cases}x&amp;x\ge0\\-x&amp;x&lt;0\end{cases}\)</span>，(2) 向下取整函数 <span class="arithmatex">\(\lfloor x\rfloor\)</span>，(3) 阶梯函数</li>
+<li>对称性：<span class="arithmatex">\(\begin{cases}f为偶函数&amp;\forall x\in D_f,f(-x)=f(x)\\f为奇函数&amp;\forall x\in D_f,f(-x)=-f(x)\\f(x,y)=0中心对称&amp;f(-x,y)=f(x,y)\\f(x,y)=0关于y轴对称&amp;f(-x,y)=f(x,y)\\f(x,y)=0关于x轴对称&amp;f(x,-y)=f(x,y)\end{cases}\)</span></li>
+<li>数集：<span class="arithmatex">\(\begin{cases}全体实数集&amp;\mathbb R\\全体有理数集&amp;\mathbb Q=\{x=p/q|~p\in\mathbb Z,q\in\mathbb Z^+\}\\全体无理数集&amp;\mathbf{CrQ}=\mathbb R^c\\全体整数集&amp;\mathbb Z=\mathbb Z^+\cup\mathbb Z^-\cup\{0\}\\全体分数集&amp;\mathbb Q\cap\mathbb Z^c\end{cases}\)</span></li>
+<li>邻域，去心邻域：假设 <span class="arithmatex">\(\delta&gt;0\)</span> 是充分小的实数，<span class="arithmatex">\(a\in\mathbb R\)</span>，那么 a 的<strong>邻域</strong>定义为 <span class="arithmatex">\(U(a,\delta)=\{x\in\mathbb R|~~|x-a|&lt;\delta\}\)</span>；a 的<strong>去心邻域</strong>定义为 <span class="arithmatex">\(\mathring U(a,\delta)=\{x\in\mathbb R|~~|x-a|&lt;\delta,x\ne a\}\)</span></li>
 </ol>
 </blockquote>
 <h3 id="2">2.  数学模型：基本函数导引</h3>
@@ -1332,7 +1346,7 @@ end</code></pre>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <ul>
-<li><span class="arithmatex">\(x^x\)</span>，<span class="arithmatex">\(log_x{a}\)</span>，<span class="arithmatex">\(log_x{x}\)</span> 及其 复合函数 又该如何定义？</li>
+<li><span class="arithmatex">\(x^x\)</span>，<span class="arithmatex">\(\log_x{a}\)</span>，<span class="arithmatex">\(\log_x{x}\)</span> 及其 复合函数 又该如何定义？</li>
 </ul>
 </div>
 <h3 id="3">3.  从基本函数衍生新的函数</h3>
@@ -1379,8 +1393,8 @@ end</code></pre>
 </ul>
 <p>(2) 复合函数：<span class="arithmatex">\(f(x)\)</span> 与 <span class="arithmatex">\(g(x)\)</span> 的复合函数定义为 <span class="arithmatex">\((f\circ g)(x)=f(g(x))\)</span>，其中 <span class="arithmatex">\(D_{f\circ g}=\{x\in D_g|~g(x)\in D_f\}\)</span></p>
 <ul>
-<li>结合性：<span class="arithmatex">\(f\circ g\circ h=(f\circ g)\circ h\)</span>（<span class="arithmatex">\(f\circ g\circ h\ne f\circ(g\circ h)\)</span>）</li>
-<li><span class="arithmatex">\(f\circ g\)</span> 有意义，等价于 g 的值域是 f的定义域的子集，即 <span class="arithmatex">\(R_g\subset D_f\)</span></li>
+<li>结合性：<span class="arithmatex">\(f\circ g\circ h=(f\circ g)\circ h\)</span>？（<span class="arithmatex">\(f\circ g\circ h\ne f\circ(g\circ h)\)</span>）</li>
+<li><span class="arithmatex">\(f\circ g\)</span> 有意义，等价于 g 的值域是 f 的定义域有交集，即 <span class="arithmatex">\(R_g\cap D_f\ne\emptyset\)</span></li>
 </ul>
 </blockquote>
 <div class="admonition note">

@@ -1179,6 +1179,16 @@
 <p>若 <span class="arithmatex">\(f(x) - g(x)\)</span> 可正可负，则 <span class="arithmatex">\(A = \int_a^b |f(x) - g(x)| d_x\)</span></p>
 </blockquote>
 <div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(S=\{y=e^x,y=x,x=0,x=1\}\)</span>，那么 <span class="arithmatex">\(\|S\|=\int_0^1|e^x-x|d_x=\left[e^x-\frac12x^2\right]_0^1=e-\frac32\)</span></li>
+<li>假设 <span class="arithmatex">\(S=\{y=x^2,y=2x-x^2\}\)</span>，求解方程 <span class="arithmatex">\(y=x^2,y=2x-x^2\)</span> 得 <span class="arithmatex">\(x=0,x=1\)</span>，于是 <span class="arithmatex">\(\|S\|=\int_0^1|x^2-(2x-x^2)|d_x=\int_0^1(2x-2x^2)d_x=\Big[x^2-\frac23x^3\Big]_0^1=\frac13\)</span></li>
+<li>假设 <span class="arithmatex">\(S=\{y=x/\sqrt{x^2+1},y=x^4-x\}\)</span>，求解方程 <span class="arithmatex">\(x/\sqrt{x^2+1}=x^4-x\)</span> 得 <span class="arithmatex">\(x=0,x\approx1.18\)</span>，于是 <span class="arithmatex">\(\|S\|\approx\int_0^{1.18}|x/\sqrt{x^2+1}-(x^4-x)|d_x=\int_0^{1.18}|x/\sqrt{x^2+1}-(x^4-x)|d_x=\left[\sqrt{x^2+1}-\frac15x^5+\frac12x^2\right]_0^{1.18}\approx0.785\)</span></li>
+<li>假设 <span class="arithmatex">\(S=\{y=\sin x,y=\cos x,x=0,x=\frac\pi2\}\)</span>，求解方程 <span class="arithmatex">\(\sin x=\cos x,0\le x\le\frac\pi2\)</span> 得 <span class="arithmatex">\(x=\frac\pi4\)</span>，于是 <span class="arithmatex">\(\|S\|=\int_0^{\frac\pi2}|\sin x-\cos x|d_x=\left(-\int_0^{\frac\pi4}+\int_{\frac\pi4}^{\frac\pi2}\right)(\sin x-\cos x)d_x=-\left[-\cos x-\sin x\right]_0^{\frac\pi4}+\left[-\cos x-\sin x\right]_{\frac\pi4}^{\frac\pi2}=2\sqrt2-2\)</span></li>
+<li>假设 <span class="arithmatex">\(S=\{y=x-1,y^2=2x+6\}\)</span>，求解方程 <span class="arithmatex">\(y=x-1,y^2=2x+6\)</span> 得 <span class="arithmatex">\((x,y)=(-1,-2)\)</span> 或 <span class="arithmatex">\((x,y)=(5,4)\)</span>，<span class="arithmatex">\(\|S\|=\int_{-2}^4\left|(y+1)-\frac12(y^2-6)\right|d_y=\int_{-2}^4(-\frac12y^2+y+4)d_y=\left[-\frac16y^3+\frac12y^2+4y\right]_{-2}^4=18\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>可以注意到，上述的面积并不严格等于 f(x) 和 g(x) 之间的封闭区域面积</li>
@@ -1197,14 +1207,32 @@
 <li>假设区间为 [a, b]，则面积为 <span class="arithmatex">\(\int_a^b |x_R - x_L| d_y\)</span></li>
 </ul>
 </li>
-<li>f(x)，g(x) 均是 多值函数<ul>
-<li></li>
-</ul>
-</li>
+<li>f(x)，g(x) 均是 多值函数</li>
 </ol>
 </li>
 </ul>
 </div>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>曲边梯形：<span class="arithmatex">\(S=\{(x,y)|~x\in[a,b],\min\{f(x),g(x)\}\le y\le\max\{f(x),g(x)\}\}\)</span> 定义为<strong>曲边梯形</strong>，简记为 <span class="arithmatex">\(\{y=f(x),y=g(x),a\le x\le b\}\)</span>；区域 S 的面积记为 <span class="arithmatex">\(\|S\|\)</span></li>
+<li>曲边梯形的面积：假设曲边矩形 <span class="arithmatex">\(S=\{x\in[a,b],y=f(x),y=g(x)\}\)</span>，那么其面积为 <span class="arithmatex">\(\|S\|=\int_a^b|f(x)-g(x)|d_x\)</span></li>
+<li>函数封闭区域：<span class="arithmatex">\(y=f(x)\)</span> 与 <span class="arithmatex">\(y=g(x)\)</span> 之间围成的区域称为<strong>函数封闭区域</strong>，记为 <span class="arithmatex">\(S=\{y=f(x),y=g(x)\}\)</span></li>
+<li>函数封闭区域的面积：假设 <span class="arithmatex">\(S=\{y=f(x),y=g(x)\}\)</span>，若 <span class="arithmatex">\(\forall i=1..n,[a_i,b_i]\)</span> 为 <span class="arithmatex">\(y=f(x),y=g(x)\)</span> 的封闭区间，那么 S 的面积为 <span class="arithmatex">\(\|S\|=\sum\limits_{i=1}^n\int_{a_i}^{b_i}|f(x)-g(x)|d_x\)</span></li>
+<li>曲线封闭区域：一般曲线 <span class="arithmatex">\(f(x,y)=0\)</span> 与 <span class="arithmatex">\(g(x,y)=0\)</span> 围成的区域称为<strong>曲线封闭区域</strong>，记为 <span class="arithmatex">\(S=\{f(x,y)=0,g(x,y)=0\}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设曲边矩形 S 为 <span class="arithmatex">\(\{x\in[a,b],y=f(x),y=g(x)\}\)</span>，若 <span class="arithmatex">\(f,g\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上单射，那么 S 可记为 <span class="arithmatex">\(S=\{\min\{f^{-1}(a),f^{-1}(b)\}\le y\le\max\{f^{-1}(a),f^{-1}(b)\},x=f^{-1}(y),x=g^{-1}(y)\}\)</span></li>
+</ol>
+</blockquote>
 <h3 id="2">2.体积</h3>
 <p>将我们要测量体积的立体穿过一条轴线，我们通常取其为 x 轴，用一个垂直于x轴平面 S 截断 或 "扫描" 立体，得到 横截面 的面积 A，实际上这个面积是关于 x 的函数，记为 A(x)</p>
 <p>我们用n-1个平面 <span class="arithmatex">\(P_{x_i}\)</span> 将立体(或 要测量的区间 [a, b] 之间) 划分为 n 个 高 (或 宽) 为 <span class="arithmatex">\(\Delta x\)</span> 的 区域 或 "薄片"，在此基础上再讨论体积</p>
@@ -1218,13 +1246,31 @@
 <p class="admonition-title">体积定义</p>
 </div>
 <blockquote>
-<p>令 S 是介于 x=a 和 x=b 固体，如果经过点 x 垂直于 x 轴的平面 <span class="arithmatex">\(P_x\)</span> 在 S 上的横截面的面积为 A(x)，其中 A 为连续函数，那么体积为：</p>
+<p>令 S 是介于 <span class="arithmatex">\(x=a\)</span> 和 <span class="arithmatex">\(x=b\)</span> 固体，如果经过点 x 垂直于 x 轴的平面 <span class="arithmatex">\(P_x\)</span> 在 S 上的横截面的面积为 <span class="arithmatex">\(A(x)\)</span>，其中 A 为连续函数，那么体积为：</p>
 <p><span class="arithmatex">\(V = \lim\limits_{n\to +∞} \Delta x A(x_i^*) = \int_a^b A(x) d_x\)</span></p>
 </blockquote>
 <div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算半径为 r 的球体体积：球体记为 <span class="arithmatex">\(V=\{-r\le x\le r,A(x)=\pi(r^2-x^2)\}\)</span>（利用几何和代数计算 <span class="arithmatex">\(A(x)\)</span>），于是 <span class="arithmatex">\(\|V\|=\int_{-r}^r\pi(r^2-x^2)d_x=\left[\pi(r^2x-\frac13x^3)\right]_{-r}^r=\frac43\pi r^3\)</span></li>
+<li>计算 <span class="arithmatex">\(y=\sqrt x\)</span> 从 0 到 1 关于 x 轴旋转得到的区域体积：该区域为旋转立体 <span class="arithmatex">\(V=\{a\le x\le b,A(x)=\pi(\sqrt x)^2\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^1\pi|x|d_x=\frac12\pi x^2\Big|_0^1=\frac12\pi\)</span></li>
+<li>计算 <span class="arithmatex">\(y=x^3,y=8,x=0\)</span> 围成的区域绕 y 轴旋转得到的立体体积：该区域为旋转立体 <span class="arithmatex">\(V=\{0\le y\le 8,A(y)=\pi(\sqrt[3]y)^2\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^8\pi y^{2/3}d_y=\left[\frac35\pi y^{5/3}\right]_0^8=\frac{96}5\pi\)</span>（注意区分区域 <span class="arithmatex">\(\{0\le y\le 8,A(y)=\pi|(\sqrt[3]y)^2-2^2|\}\)</span>，其体积为 <span class="arithmatex">\(\|V\|=\int_0^8\pi(4-y^{2/3})d_y=\left[4\pi y-\frac35\pi y^{5/3}\right]_0^8=\frac{64}5\pi\)</span>）</li>
+<li>计算函数封闭区域 <span class="arithmatex">\(\{y=x,y=x^2\}\)</span> 绕 x 轴旋转得到的旋转立体 V 的体积：求解方程 <span class="arithmatex">\(x=x^2\)</span> 得 <span class="arithmatex">\(x=0,x=1\)</span>，那么 <span class="arithmatex">\(V=\{0\le x\le 1,A(x)=\pi|x^2-(x^2)^2|\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^1\pi|x^2-x^4|d_x=\left[\frac13\pi x^3-\frac15\pi x^5\right]_0^1=\frac2{15}\pi\)</span></li>
+<li>计算函数封闭区域 <span class="arithmatex">\(\{y=x,y=x^2\}\)</span> 绕 <span class="arithmatex">\(y=2\)</span> 旋转得到的一般旋转立体 V 的体积：<span class="arithmatex">\(V=\{x\in[0,1],A(x)=\pi|(x-x^2)(x+x^2-4)|\}\)</span>，<span class="arithmatex">\(\|V\|=\int_0^1\pi|(x-x^2)(x+x^2-4)|d_x=\pi\int_0^1(x^4-5x^2+4x)d_x=\pi\left[\frac15x^5-\frac53x^3+2x^2\right]_0^1=\frac8{15}\pi\)</span></li>
+<li>计算函数封闭区域 <span class="arithmatex">\(S=\{y=x,y=x^2\}\)</span> 绕 <span class="arithmatex">\(x=1\)</span> 旋转得到的旋转立体 V 的体积：根据[6.1一级结论]，S 可变换为 <span class="arithmatex">\(S=\{y\in[0,1],x=y,x=\sqrt y\}\)</span>，蕴含 <span class="arithmatex">\(V=\{y\in[0,1],A(y)=\pi|(y-\sqrt y)(y+\sqrt y-2)|\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^1\pi|(y-\sqrt y)(y+\sqrt y+2)|d_y=\pi\int_0^1(y^2+y-2\sqrt y)d_y=\pi\left[\frac13y^3+\frac12y^2-\frac13y^{3/2}\right]_0^1=\frac12\pi\)</span></li>
+<li>计算底面为半径为 r 的圆，垂直于底面的横截面为等边三角形的立体 V 的体积：在底面上建立 <span class="arithmatex">\(xoy\)</span>，<span class="arithmatex">\(\forall x_0\in[-r,r]\)</span>，<span class="arithmatex">\(x=x_0\)</span> 与 V 相交的等边三角形边长为 <span class="arithmatex">\(d=2\sqrt{r^2-x^2}\)</span>，蕴含其面积为 <span class="arithmatex">\(A(x)=\frac{\sqrt3}4d^2=\frac{\sqrt3}4(2\sqrt{r^2-x^2})^2=\sqrt3(r^2-x^2)\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_{-r}^r\sqrt3(r^2-x^2)d_x=2\int_0^r\sqrt3(r^2-x^2)d_x=2\sqrt3\left[r^2x-\frac13x^3\right]_0^r=\frac{4\sqrt3}3r^3\)</span>（注意到 <span class="arithmatex">\(A(x)\)</span> 的偶函数）</li>
+<li>计算底边长为 L，高为 h 的棱锥 V 的体积：<span class="arithmatex">\(\forall x_0\in[0,h]\)</span>，<span class="arithmatex">\(x=x_0\)</span> 与 V 相交的正方形边长的一半 d 满足 <span class="arithmatex">\(\frac h{L/2}=\frac x{d}\)</span>，蕴含 <span class="arithmatex">\(d=\frac{xL}{2h}\)</span>，于是 <span class="arithmatex">\(A(x)=(2d)^2=\frac{x^2L^2}{h^2}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^h\frac{L^2}{h^2}x^2d_x=\frac{L^2}{h^2}\left[\frac13x^3\right]_0^h=\frac13L^2h\)</span></li>
+<li>（锲的体积）假设足够高的圆柱体 W 半径为 r，平面 <span class="arithmatex">\(V_1\)</span> 垂直于 W 的轴，平面 <span class="arithmatex">\(V_2\)</span> 以 <span class="arithmatex">\(\theta\)</span> 角交于 <span class="arithmatex">\(V_1\cap W\)</span> 的直径，计算 <span class="arithmatex">\(W,V_1,V_2\)</span> 的封闭区域 V 的体积：<ol>
+<li>法1：<span class="arithmatex">\(\forall x_0\in[-r,r]\)</span>，<span class="arithmatex">\(x=x_0\)</span> 与 V 截得一个底边为 <span class="arithmatex">\(d=\sqrt{r^2-x^2}\)</span> 高为 <span class="arithmatex">\(d\tan\theta\)</span> 的直角三角形，蕴含 <span class="arithmatex">\(A(x)=\frac12d^2\tan\theta=\frac12(r^2-x^2)\tan\theta\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_{-r}^r\frac12(r^2-x^2)\tan\theta~d_x=\frac12\tan\theta\left[r^2x-\frac13x^3\right]_{-r}^r=\frac23r^3\tan\theta\)</span></li>
+<li>法2：<span class="arithmatex">\(\forall x_0\in[0,r]\)</span>，<span class="arithmatex">\(x=x_0\)</span> 与 V 截得一个底边为 <span class="arithmatex">\(d=2\sqrt{r^2-x^2}\)</span> 高为 <span class="arithmatex">\(x\tan\theta\)</span> 的矩形，蕴含 <span class="arithmatex">\(A(x)=2\sqrt{r^2-x^2}x\tan\theta\)</span>，于是 <span class="arithmatex">\(\int_0^r2\sqrt{r^2-x^2}x\tan\theta~d_x=2\tan\theta\int_{r^2}^0\sqrt{r^2-x^2}x/(-2x)~d(r^2-x^2)=-\tan\theta\int_{r^2}^0\sqrt t~d_t=\tan\theta\left[\frac23t^{3/2}\right]_0^{r^2}=\frac23r^3\tan\theta\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>“体积”这个概念是三维的，而“一维积分”只能处理 “一个自变量x和其函数f(x)的乘积” 的 “两维乘法问题”，此时就需要将 f(x) 复合一下：f = g o h</li>
+<li>“体积”这个概念是三维的，而“一维积分”只能处理 “一个自变量x和其函数 <span class="arithmatex">\(f(x)\)</span> 的乘积” 的 “两维乘法问题”，此时就需要将 <span class="arithmatex">\(f(x)\)</span> 复合一下：<span class="arithmatex">\(f=g\circ h\)</span></li>
 <li>在笛卡尔坐标系中<ol>
 <li>选定一个合适的x轴来 迭代 立体的每个横截面(坐标中心与立体的相对位置要合适)，然后 y 轴迭代 当前横截面的每条线；于是y轴与线长度函数积分得到当前横截面面积，然后 z轴 与 横截面面积函数 积分得到立体体积 (<span class="arithmatex">\(\int S(x) d_x = \int \int L(x, y)~d_y~d_x\)</span>)  (并不是划分得越细越好)</li>
 <li>选定一个合适的x轴来 迭代 立体的每个横截面，但是此时横截面的面积直接依赖于x (横截面的面积是x的函数)；于是x轴与横截面面积函数积分得到立体体积 (<span class="arithmatex">\(\int S(x) d_x\)</span>)</li>
@@ -1232,7 +1278,7 @@
 </ol>
 </li>
 <li>旋转问题：<ul>
-<li>f(x) 与 g(x) 围成n个封闭区域(有n+1零点)，再将其绕 x 轴旋转，求生成的立体体积：讨论某个封闭区域 <span class="arithmatex">\(x\in[a, b]\)</span>，那么横截面函数为 <span class="arithmatex">\(S(x) = \pi |g(x)^2 - f(x)^2|\)</span>，于是立体体积为 <span class="arithmatex">\(V = \int_a^b \pi |g(x)^2 - f(x)^2| d_x\)</span></li>
+<li><span class="arithmatex">\(f(x)\)</span> 与 <span class="arithmatex">\(g(x)\)</span> 围成n个封闭区域(有n+1零点)，再将其绕 x 轴旋转，求生成的立体体积：讨论某个封闭区域 <span class="arithmatex">\(x\in[a, b]\)</span>，那么横截面函数为 <span class="arithmatex">\(S(x) = \pi |g(x)^2 - f(x)^2|\)</span>，于是立体体积为 <span class="arithmatex">\(V = \int_a^b \pi |g(x)^2 - f(x)^2| d_x\)</span></li>
 <li>y=(f-g)(x) 绕 y=c 轴旋转：立体体积为 <span class="arithmatex">\(V = \int_a^b \pi |(c - g(x))^2 - (c - f(x))^2| d_x\)</span></li>
 <li>y=(f-g)(x) 绕 x=c 轴旋转：立体体积为 <span class="arithmatex">\(V = \int_a^b \pi |(c - g^{-1}(x))^2 - (c - f^{-1}(x))^2| d_x\)</span></li>
 </ul>
@@ -1256,6 +1302,101 @@
 </li>
 </ol>
 </div>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>曲面椎体：假设一个立体的上下表面是平面，侧面是曲面，若 x 轴垂直于上下表面，横截面积函数 <span class="arithmatex">\(A(x)\)</span> 是连续的，那么该立体称为<strong>曲面立方</strong>，记为 <span class="arithmatex">\(V=\{(x,y,z)|~a\le x\le b,A(x)=\|S(x)\|\}\)</span></li>
+<li>曲面椎体的体积：<span class="arithmatex">\(V=\{(x,y,z)|~a\le x\le b,A(x)=\|S(x)\|\}\)</span> 的体积为 <span class="arithmatex">\(\|V\|=\int_a^bA(x)d_x\)</span></li>
+<li>旋转立体（标准曲面椎体）：假设一个曲边梯形为 <span class="arithmatex">\(S=\{x\in[a,b],y=f(x),y=g(x)\}\)</span>，立体 V 由 S 旋转得到<ol>
+<li>若 V 由 S 绕 x 轴旋转一周而成，那么 V 称为<strong>关于 x 轴的旋转立体</strong>，记为 <span class="arithmatex">\(V=\{x\in[a,b],A(x)=\pi|f^2(x)-g^2(x)|\}\)</span></li>
+<li>若 V 由 S 绕 <span class="arithmatex">\(y=c\)</span> 旋转一周而成，那么 V 称为<strong>关于 <span class="arithmatex">\(y=c\)</span> 的旋转立体</strong>或<strong>一般旋转立体</strong>，记为 <span class="arithmatex">\(V=\{x\in[a,b],A(x)=\pi|(f(x)-c)^2-(g(x)-c)^2|\}\)</span> 或 <span class="arithmatex">\(V=\{x\in[a,b],A(x)=\pi|(f(x)-g(x))(f(x)+g(x)-2c)|\}\)</span></li>
+<li>若 V 由 S 绕 y 轴旋转一周而成，那么 V 称为<strong>关于 y 轴的旋转立体</strong>，记为 <span class="arithmatex">\(\{x\in[a,b],A(x)=2\pi|x|\cdot|f(x)-g(x)|\}\)</span></li>
+<li>若 V 由 S 绕 <span class="arithmatex">\(x=c\)</span> 旋转一周而成，那么 V 称为<strong>关于 <span class="arithmatex">\(x=c\)</span> 的旋转立体</strong>，记为 <span class="arithmatex">\(\{x\in[a,b],A(x)=2\pi|x-c|\cdot|f(x)-g(x)|\}\)</span></li>
+</ol>
+</li>
+</ol>
+<p>注：旋转轴不应与区域 S 相交，否则体积会重复计算；(3.1)和(3.2)是第一类旋转，(3.3)和(3.4)是第二类旋转</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>若关于 x 轴的曲边矩形 <span class="arithmatex">\(S=\{a\le x\le b,y=f(x),y=g(x)\}\)</span> 中，<span class="arithmatex">\(f,g\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上单射，那么 S 是可绕 <span class="arithmatex">\(x=c\)</span> 旋转的</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 <span class="arithmatex">\(xoy\)</span> 上的区域 S 与 <span class="arithmatex">\(l:ax+by+c=0\)</span> 不相交，若将 S 绕 l 旋转得到曲面椎体 V，那么 <span class="arithmatex">\(\|V\|=\iint_S2\pi\frac{|ax+by+c|}{\sqrt{a^2+b^2}}d_\sigma\)</span>（参考：<a href="https://zhuanlan.zhihu.com/p/576532100">曲线的旋转立体的体积</a>）</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">三级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>斜边为 a 的等边三角形面积为 <span class="arithmatex">\(\frac{\sqrt3}4a^2\)</span></li>
+<li>斜边为 a 的等边直角三角形面积为 <span class="arithmatex">\(\frac14a^2\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：内外半径分别为 <span class="arithmatex">\(r,R\)</span> 的圆环 V 的体积为 <span class="arithmatex">\(\|V\|=2\pi^2r^2R\)</span></li>
+<li>若立体 V 以椭圆 <span class="arithmatex">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> 为底面，对于 <span class="arithmatex">\(\forall c\in[-a,b]\)</span>，<span class="arithmatex">\(x=c\)</span> 与 V 交于一个等边直角三角形，证明 <span class="arithmatex">\(\|V\|=\frac43ab^2\)</span></li>
+<li>证明：半径为 r 的球体中，高为 h 的球帽体积为 <span class="arithmatex">\(\pi h^2(r-\frac13h)\)</span></li>
+<li>证明：高为 h，上下底半径分别为 <span class="arithmatex">\(R,r\)</span> 的正圆锥的平截头体 V 的体积为 <span class="arithmatex">\(\frac13\pi h(R^2+Rr+r^2)\)</span></li>
+<li>假设下列积分表示立体体积，反推这些立体 V 的表达式<ol>
+<li><span class="arithmatex">\(\pi\int_0^{\pi/2}\cos^2x~d_x\)</span></li>
+<li><span class="arithmatex">\(\pi\int_2^5y~d_y\)</span></li>
+<li><span class="arithmatex">\(\pi\int_0^1(y^4-y^8)d_y\)</span></li>
+<li><span class="arithmatex">\(\pi\int_0^{\pi/2}[(1+\cos x)^2-1^2]d_x\)</span></li>
+</ol>
+</li>
+<li>证明：两个半径均为 r 的圆柱正交的公共部分 V 的体积为 <span class="arithmatex">\(\frac{16}3r^3\)</span></li>
+<li>证明：两个半径均为 r 的球体相交，并且球心在另一个球体表面，两球的公共部分 V 的体积为 <span class="arithmatex">\(\frac54\sqrt3+4\pi\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1)</p>
+<p>法1：V 是由区域 <span class="arithmatex">\(\{y=R+\sqrt{r^2-x^2},y=R-\sqrt{r^2-x^2}\}\)</span> 绕 x 轴旋转得到的，即 <span class="arithmatex">\(V=\{x\in[-r,r],A(x)=\pi|(R+\sqrt{r^2-x^2})^2-(R-\sqrt{r^2-x^2})^2|\}\)</span></p>
+<p>其中 <span class="arithmatex">\(A(x)=\pi(2R)(2\sqrt{r^2-x^2})=4\pi R\sqrt{r^2-x^2}\)</span></p>
+<p>于是 <span class="arithmatex">\(\|V\|=4\pi R\int_{-r}^r\sqrt{r^2-x^2}d_x=4\pi R\cdot\frac12\pi r^2=2\pi^2r^2R\)</span></p>
+<p>法2（柱面法）：V 是由区域 <span class="arithmatex">\(\{x\in[R-r,R+r],y=0,y=\pm\sqrt{r^2-(R-x)^2}\}\)</span> 绕 y 轴旋转得到的，即 <span class="arithmatex">\(V=\{x\in[R-r,R+r],A(x)=2\pi x\cdot2\sqrt{r^2-(R-x)^2}\}\)</span></p>
+<p>于是 <span class="arithmatex">\(\|V\|=4\pi\int_{R-r}^{R+r}x\sqrt{r^2-(R-x)^2}d_x=-4\pi\int_r^{-r}x\sqrt{r^2-(R-x)^2}d(R-x)\)</span> <span class="arithmatex">\(=4\pi\int_{-r}^r(R-t)\sqrt{r^2-t^2}d_t=4\pi R\int_{-r}^r\sqrt{r^2-t^2}d_t=4\pi R\cdot\frac12\pi r^2=2\pi^2r^2R\)</span></p>
+<p>(2) <span class="arithmatex">\(\forall x_0\in[-a,a]\)</span>，<span class="arithmatex">\(x=x_0\)</span> 与 V 交于斜边长为 <span class="arithmatex">\(\left(2\frac ba\sqrt{a^2-x^2}\right)\)</span> 的等边直角三角形，其面积为 <span class="arithmatex">\(A(x)=\frac14\left(2\frac ba\sqrt{a^2-x^2}\right)^2=\frac{b^2}{a^2}(a^2-x^2)\)</span></p>
+<p>于是 <span class="arithmatex">\(V=\{x\in[-a,a],A(x)=\frac{b^2}{a^2}(a^2-x^2)\}\)</span>，那么 <span class="arithmatex">\(\|V\|=\frac{b^2}{a^2}\int_{-a}^a(a^2-x^2)d_x=2\frac{b^2}{a^2}\left[a^2x-\frac13x^3\right]_0^a=\frac43ab^2\)</span></p>
+<p>(3)（绕 x 轴）</p>
+<p>注意到球帽由区域 <span class="arithmatex">\(\{x\in[r-h,r],y\in[0,\sqrt{r^2-x^2}]\}\)</span> 绕 x 轴旋转所得</p>
+<p>于是 <span class="arithmatex">\(\|V\|=\int_{r-h}^r\pi(r^2-x^2)d_x=\pi\left[r^2x-\frac13x^3\right]_{r-h}^r\)</span></p>
+<p><span class="arithmatex">\(=\pi\left[r^2(r-(r-h))-\frac13(r^3-(r-h)^3)\right]=\pi[r^2h-\frac13h(r^2+r(r-h)+(r-h)^2)]=\pi h^2(r-\frac13h)\)</span></p>
+<p>(4) 记 u 为平截头体的母线的延长线与圆锥轴交点 P 到 V 的上表面的距离，满足 <span class="arithmatex">\(\frac ur=\frac{u+h}R\)</span>，即 <span class="arithmatex">\(u=\frac{hr}{R-r}\)</span></p>
+<p>V 为区域 <span class="arithmatex">\(\{x\in[u,u+h],y=0,y=\frac rux\}\)</span> 绕 x 轴旋转所得的立体，</p>
+<p>于是 <span class="arithmatex">\(\|V\|=\int_u^{u+h}\pi(\frac rux)^2d_x=\pi\frac{r^2}{u^2}\left[\frac13x^3\right]_u^{u+h}=\frac13\pi\frac{r^2}{u^2}\cdot h(3u^2+3uh+h^2)=\frac{\pi r^2h}3(3+3h/u+h^2/u^2)\)</span></p>
+<p><span class="arithmatex">\(=\frac{\pi r^2h}3(3+3\frac{R-r}r+\frac{(R-r)^2}{r^2})=\frac13\pi h(3Rr+R^2-2Rr+r^2)=\frac13\pi h(R^2+Rr+r^2)\)</span></p>
+<p>(5) （以下旋转均是第一类旋转）</p>
+<ol>
+<li><span class="arithmatex">\(V=\{x\in[0,\pi/2],y=0,y=\cos^2x\}\)</span>（<span class="arithmatex">\(\{y=0,y=\cos^2x\}\)</span> 绕 x 轴旋转）</li>
+<li><span class="arithmatex">\(V=\{y\in[2,5],x=0,x=\sqrt y\}\)</span>（<span class="arithmatex">\(\{x=0,x=y\}\)</span> 绕 y 轴旋转）</li>
+<li><span class="arithmatex">\(V=\{y\in[0,1],x=y^4,x=y^8\}\)</span>（<span class="arithmatex">\(\{x=y^4,x=y^8\}\)</span> 绕 y 轴旋转）</li>
+<li><span class="arithmatex">\(V=\{y\in[0,\pi/2],y=1+\cos x,y=1\}\)</span>（<span class="arithmatex">\(\{y=1+\cos x,y=1\}\)</span> 绕 x 轴旋转）</li>
+</ol>
+<p>(6) <span class="arithmatex">\(\forall x\in[-r,r]\)</span></p>
+<p>V 的俯视图形是两个正交圆柱的侧面图形的相交的封闭图形，即一个矩形，其边长计算为 <span class="arithmatex">\(2\sqrt{r^2-x^2}\)</span></p>
+<p>蕴含 <span class="arithmatex">\(A(x)=(2\sqrt{r^2-x^2})^2=4(r^2-x^2)\)</span></p>
+<p>于是 <span class="arithmatex">\(\|V\|=\int_{-r}^r4(r^2-x^2)d_x=8\int_0^r(r^2-x^2)d_x=\frac{16}3r^3\)</span></p>
+<p>(7) V 由 <span class="arithmatex">\(S_1=\{x\in[0,r/2],y=0,y=\sqrt{r^2-(x+r/2)^2}\}\)</span> 和 <span class="arithmatex">\(S_2=\{x\in[-r/2,0],y=0,y=\sqrt{r^2-(x-r/2)^2}\}\)</span> 绕 x 轴旋转所得，</p>
+<p>而其中 <span class="arithmatex">\(S_1\)</span> 与 <span class="arithmatex">\(S_2\)</span> 对称，于是 <span class="arithmatex">\(\|V\|=2\int_0^{r/2}\pi[r^2-(x+r/2)^2]d_x=\frac5{12}\pi r^3\)</span></p>
+</blockquote>
 <h3 id="3">3.柱面法求体积</h3>
 <p>如果 f(x) 绕 y 轴旋转，利用平面切割立体时难以计算横截面的面积，此时可用考虑 柱体薄壳法 来解决</p>
 <p>柱体薄壳法 通过将 <span class="arithmatex">\(x_{i-1}\)</span> 和 <span class="arithmatex">\(x_{i}\)</span> 之间的区域绕y轴旋转 得到 "薄壳"，此时高度设为 <span class="arithmatex">\(h=f(x_i^*)\)</span>，计算此薄壳体积为：</p>
@@ -1271,7 +1412,23 @@
 </div>
 <div class="admonition 柱体薄壳法">
 <p class="admonition-title">柱体薄壳法</p>
+</div>
+<blockquote>
 <p>由曲线 y=f(x) 从 a 到 b 下的区域绕 y 轴旋转所得立体体积为 <span class="arithmatex">\(V = \int_a^b 2\pi \cdot x f(x)~d_x\)</span>   &amp;  <span class="arithmatex">\(0\le a &lt; b\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算区域 <span class="arithmatex">\(\{y=0,y=2x^2-x^3\}\)</span> 绕 y 轴旋转所得立体 V 的体积：<span class="arithmatex">\(V=\{x\in[0,2],A(x)=2\pi x(2x^2-x^3)\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^22\pi x(2x^2-x^3)d_x=2\pi\left[\frac12x^4-\frac15x^5\right]_0^2=\frac{16}5\pi\)</span></li>
+<li>计算区域 <span class="arithmatex">\(\{y=x,y=x^2\}\)</span> 绕 y 轴旋转所得立体 V 的体积：<span class="arithmatex">\(V=\{x\in[0,2],A(x)=2\pi x(x-x^2)\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^12\pi x(x-x^2)d_x=2\pi\int_0^1(x^2-x^3)d_x=2\pi\left[\frac13x^3-\frac14x^4\right]_0^1=\frac16\pi\)</span></li>
+<li>计算区域 <span class="arithmatex">\(\{x\in[0,1],y=0,y=\sqrt x\}\)</span> 绕 x 轴旋转所得立体 V 的体积：<ol>
+<li>法1：<span class="arithmatex">\(V=\{x\in[0,1],A(x)=\pi(\sqrt x)^2\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^1\pi xd_x=\frac12\pi\)</span></li>
+<li>法2：<span class="arithmatex">\(V=\{y\in[0,1],A(y)=2\pi|y|\cdot|y^2-0|\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^12\pi y\cdot y^2d_y=\frac12\pi\)</span></li>
+</ol>
+</li>
+<li>计算区域 <span class="arithmatex">\(\{y=0,y=x-x^2\}\)</span> 绕 <span class="arithmatex">\(x=2\)</span> 旋转所得立体的体积：<span class="arithmatex">\(V=\{x\in[0,1],A(x)=2\pi|x-2|\cdot|(x-x^2)-0|\}\)</span>，于是 <span class="arithmatex">\(\|V\|=\int_0^12\pi|x-2|\cdot(x-x^2)d_x=2\pi\int_0^1(x^3-3x^2+2x)d_x=2\pi\left[\frac14x^4-x^3+x^2\right]_0^1=\frac12\pi\)</span></li>
+<li></li>
+</ol>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1292,6 +1449,43 @@
 <li><span class="arithmatex">\(= 2\pi r\Delta r h+\pi \Delta r^2h = 2\pi \Delta rh(r+\frac12\Delta r)\approx 2\pi \Delta rhr\)</span> （取 <span class="arithmatex">\(r\approx \overline r=r+\frac12\Delta r\)</span>）</li>
 </ul>
 </div>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>参见[6.2总结]</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>使用薄壳法（柱面法）计算 <span class="arithmatex">\(y=e^{-x^2},y=0\)</span>,x=0,x=1$ 所围成的区域绕 y 轴旋转所得立体的体积</li>
+<li>计算区域 <span class="arithmatex">\(\{y=x^2,y=0,x=1,x=2\}\)</span> 绕 <span class="arithmatex">\(x=4\)</span> 所得立体体积</li>
+<li>用两种方法表示区域 <span class="arithmatex">\(S=\{y\in[0,\pi],x=0,x=\sqrt{\sin y}\}\)</span> 绕 <span class="arithmatex">\(y=4\)</span> 所得立体体积</li>
+<li>若 <span class="arithmatex">\(\int_0^32\pi x^5d_x\)</span> 是薄壳法表示的立体体积，逆推该立体的表达式</li>
+<li>计算底半径为 r，高为 h 的正圆锥体积</li>
+<li>用半径为 r 的圆筒削去半径为 R 的球体（<span class="arithmatex">\(R&gt;r\)</span>）的中心，计算球体剩下部分的体积</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\int_0^12\pi x\cdot e^{-x^2}d_x=\int_0^{-1}2\pi xe^{-x^2}/(-2x)d(-x^2)=\int_{-1}^0\pi e^td_t=\pi(1-e^{-1})\)</span></p>
+<p>(2) <span class="arithmatex">\(\int_1^22\pi|x-4|\cdot x^2d_x=2\pi\int_1^2(4x^2-x^3)d_x=2\pi\left[\frac43x^3-\frac14x^4\right]_1^2=\frac{67}6\pi\)</span></p>
+<p>(3)</p>
+<ol>
+<li><span class="arithmatex">\(S=\{y\in[0,\pi],x=0,x=\sqrt{\sin y}\}\)</span> 时，<span class="arithmatex">\(\|V\|=\int_0^\pi2\pi|y-4|\cdot\sqrt{\sin y}~d_y\)</span></li>
+<li><span class="arithmatex">\(\|V\|=\int_0^\pi2\pi|y-4|\cdot\sqrt{\sin y}~d_y\)</span> 时，<span class="arithmatex">\(\|V\|=\int_0^1\pi|(\sin^{-1}x^2-4)^2-(0-4)^2|d_x\)</span></li>
+</ol>
+<p>(4) <span class="arithmatex">\(V=\{x\in[0,3],A(x)=2\pi x\cdot x^4\}\)</span></p>
+<p>(5) <span class="arithmatex">\(\int_0^r2\pi x\cdot|h-\frac hr x|d_x=2\pi\frac hr\int_0^r(rx-x^2)d_x=2\pi\frac hr\left[\frac12rx^2-\frac13x^3\right]_0^r=\frac13\pi r^2h\)</span></p>
+<p>(6) 球体剩下的部分为轴中心对称立体，于是可以方便地使用旋转法计算体积（区域按 x 轴旋转或按 y 轴旋转）</p>
+<p>而 <span class="arithmatex">\(V=\{x\in[-\sqrt{R^2-r^2},\sqrt{R^2-r^2}],A(x)=\pi|\sqrt{(R^2-x^2})^2-r^2|\}\)</span></p>
+<p>于是 <span class="arithmatex">\(\|V\|=\int_{-\sqrt{R^2-r^2}}^{\sqrt{R^2-r^2}}\pi|\sqrt{(R^2-x^2})^2-r^2|d_x=2\pi\int_0^{\sqrt{R^2-r^2}}(R^2-r^2-x^2)d_x=2\pi\left[(R^2-r^2)x-\frac13x^3\right]_0^{\sqrt{R^2-r^2}}=\frac43\pi(R^2-r^2)^{3/2}\)</span></p>
+</blockquote>
 <h3 id="4">4.功</h3>
 <h3 id="5">5.函数的均值</h3>
 <p>函数 f 在 [a, b] 之间的平均值为：<span class="arithmatex">\(\overline f = \frac 1{b-a}\int_a^b f(x) d_x\)</span></p>
@@ -1301,6 +1495,12 @@
 <blockquote>
 <p>如果 f 在 [a, b] 之间连续，那么 [a, b] 内存在 c 使得： <span class="arithmatex">\(\int_a^b f(x) d_x = f(c) (b-a)\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li><span class="arithmatex">\(f(x)=\cos^4x\sin x\)</span> 在 <span class="arithmatex">\([0,\pi]\)</span> 上的均值为 <span class="arithmatex">\(\frac{\int_0^\pi\cos^4x\sin x~d_x}{\pi-0}=\frac{-\frac15\cos^5x\Big|_0^\pi}{\pi}=\frac2{5\pi}\)</span></li>
+</ol>
+</div>
 </article>
 </div>
 </div>

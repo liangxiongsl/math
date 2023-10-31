@@ -416,6 +416,11 @@
     7.捕食者-被捕食者问题
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 补充习题
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1148,6 +1153,11 @@
     7.捕食者-被捕食者问题
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8. 补充习题
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1167,16 +1177,16 @@
 <blockquote>
 <p>假设1：理想状态下，种群增长量 和 种群数量 成正比</p>
 <p>定义变量：<span class="arithmatex">\(t = 时间\)</span> (自变量)，<span class="arithmatex">\(P = 种群中的个体数量\)</span> (因变量)</p>
-<p>模型：<span class="arithmatex">\(\frac {d_P}{d_t} = kP\)</span>，P(t) &gt; 0</p>
-<p>可以得到它的一个解： <span class="arithmatex">\(P(t) = Ce^{kt}\)</span>，C &gt; 0</p>
-<p>假设2： <span class="arithmatex">\(\frac {d_P}{d_t} \approx kP\)</span>，当 P 很小时；<span class="arithmatex">\(\frac {d_P}{d_t} &lt; 0\)</span>，当 P &gt; K 时</p>
-<p>模型（Logistic 逻辑斯蒂方程）：<span class="arithmatex">\(\frac {d_P}{d_t} = kP(1 - \frac PK)\)</span></p>
+<p>模型：<span class="arithmatex">\(\frac {d_P}{d_t} = kP\)</span>，<span class="arithmatex">\(P(t)&gt;0\)</span></p>
+<p>可以得到它的一个解： <span class="arithmatex">\(P(t) = Ce^{kt}\)</span>，<span class="arithmatex">\(C &gt; 0\)</span></p>
+<p>假设2：<span class="arithmatex">\(\begin{cases}\frac {d_P}{d_t} \approx kP&amp;P\le K\\\frac {d_P}{d_t} &lt; 0&amp;P&gt;K\end{cases}\)</span></p>
+<p>模型（Logistic 逻辑斯蒂方程）：<span class="arithmatex">\(\frac{d_P}{d_t}=kP(1-\frac PK)\)</span></p>
 </blockquote>
 <div class="admonition 弹簧震动模型">
 <p class="admonition-title">弹簧震动模型</p>
 </div>
 <blockquote>
-<p>弹簧承受的力与x成正比（x为弹簧 伸长 或 缩短 的长度，k为弹性系数 (k&gt;0) ），即 回复力 = -kx</p>
+<p>弹簧承受的力与x成正比（x为弹簧 伸长 或 缩短 的长度，k为弹性系数 (<span class="arithmatex">\(k&gt;0\)</span>) ），即 <span class="arithmatex">\(回复力=-kx\)</span></p>
 <p>弹簧垂直悬挂重物的模型：<span class="arithmatex">\(m\frac {d^2_x}{d_{t^2}} = -kx \implies \frac {d^2_x}{d_{t^2}} = -\frac {kx}m\)</span>，此模型为 二阶微分方程</p>
 <p>该模型表示 x 的二阶导数 与 x 成正比，比例系数为负，两种函数满足此性质：正弦 和 余弦函数</p>
 <p>实际上该模型可以用 正弦 和 余弦函数 的组合来表示（弹簧在平衡位置振荡）</p>
@@ -1188,14 +1198,60 @@
 <p>通常，微分方程是包含一个 未知函数 及其 多个导数 的等式，等式中导数的最高阶称为 微分方程的阶</p>
 <p>微分方程通常有一族解</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(y=\frac{1+ce^t}{1-ce^t}\)</span> 是微分方程 <span class="arithmatex">\(y'=\frac12(y^2-1)\)</span> 的解</li>
+<li>计算满足 <span class="arithmatex">\(y'=\frac12(y^2-1)\)</span>，<span class="arithmatex">\(y(0)=2\)</span> 的解：由 (1) 知 y 形如 <span class="arithmatex">\(y=\frac{1+ce^t}{1-ce^t}\)</span>，那么 <span class="arithmatex">\(2=y(0)=\frac{1+c}{1-c}\)</span>，解得 <span class="arithmatex">\(c=1/3\)</span>，于是 <span class="arithmatex">\(y=\frac{1+\frac13e^t}{1-\frac13e^t}=\frac{3+e^t}{3-e^t}\)</span></li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>微分方程：以函数 f 及其任意阶微分 <span class="arithmatex">\(f',f'',\cdots\)</span> 或 <span class="arithmatex">\(y',y'',\cdots\)</span> 为未知函数的方程，称为<strong>微分方程</strong></li>
+<li>通解：假设 <span class="arithmatex">\(\forall x\in D_g\)</span>，g 是某微分方程的解，那么称 g 是该微分方程的一个通解</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：(1) <span class="arithmatex">\(y=x-1/x\)</span> 是微分方程 <span class="arithmatex">\(xy'+y=2x\)</span> 的一个解，(2) <span class="arithmatex">\(y=\sin x\cos x-\cos x\)</span> 是初值问题 <span class="arithmatex">\(y'+(\tan x)y=\cos^2x\)</span>（<span class="arithmatex">\(y(0)=-1\)</span>）在 <span class="arithmatex">\([-\pi/2,\pi/2]\)</span> 上的一个解</li>
+<li>假设有微分方程 <span class="arithmatex">\(y''+9y=0\)</span><ol>
+<li>若一个解形如 <span class="arithmatex">\(y=\sin kt\)</span>，计算 k</li>
+<li>若一个解形如 <span class="arithmatex">\(y=A\sin kt+B\cos kt\)</span>（<span class="arithmatex">\(\forall A,B\in\mathbb R\)</span>），计算 k</li>
+</ol>
+</li>
+<li>微分方程 <span class="arithmatex">\(y''+y'-6y=0\)</span> 的一个解形如 <span class="arithmatex">\(y=e^{rx}\)</span>，计算 r</li>
+<li>证明 <span class="arithmatex">\(e^{-t},te^{-t}\)</span> 均是 <span class="arithmatex">\(y''+y'+y=0\)</span> 的解</li>
+<li>证明：<span class="arithmatex">\(\forall c,y=1/(x+c)\)</span> 不是 <span class="arithmatex">\(y'=-y^2\)</span> 的通解</li>
+<li>说明微分方程 <span class="arithmatex">\(y'=e^t(y-1)^2\)</span> 的性质</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(2.1) <span class="arithmatex">\(y''=-k^2\sin kt\)</span>，代入微分方程有 <span class="arithmatex">\(-k^2\sin kt+9\sin kt=0\)</span>，解得 <span class="arithmatex">\(k=\pm3\)</span></p>
+<p>(2.3) <span class="arithmatex">\(y''=-Ak^2\sin kt-Bk^2\cos kt=-k^2(A\sin kt+B\cos kt)\)</span>，带入微分方程有 <span class="arithmatex">\(-k^2(A\sin kt+B\cos kt)+9(A\sin kt+B\cos kt)=0\)</span>，解得 <span class="arithmatex">\(k=\pm3\)</span></p>
+<p>(3) 将 y 带入微分方程有 <span class="arithmatex">\(r^2e^r+re^r-6e^r=0\)</span>，蕴含 <span class="arithmatex">\(r^2+r-6=0\)</span>，解得 <span class="arithmatex">\(r=2\)</span> 或 <span class="arithmatex">\(r=-3\)</span></p>
+<p>(4) </p>
+<ol>
+<li>将 <span class="arithmatex">\(y=e^{-t},y'=-e^{-t},y''=e^{-t}\)</span> 带入微分方程有 <span class="arithmatex">\(e^{-t}-2e^{-t}+e^{-t}=0\)</span></li>
+<li>将 <span class="arithmatex">\(y=te^{-t},y'=(1-t)e^{-t},y''=(t-2)e^{-t}\)</span> 带入微分方程有 <span class="arithmatex">\((t-2)e^{-t}+2\cdot(1-t)e^{-t}+te^{-t}=0\)</span></li>
+</ol>
+<p>(5) 当 <span class="arithmatex">\(x=-c\)</span> 时，<span class="arithmatex">\(y=1/(x+c)\)</span> 不是该微分方程的解，于是 <span class="arithmatex">\(y=1/(x+c)\)</span> 不是通解，即便解 <span class="arithmatex">\(y=1/(x+c)\)</span> 满足该微分方程</p>
+<p>(6) <span class="arithmatex">\(\forall t,y'(t)\ge0\)</span>，<span class="arithmatex">\(y=f(t)\)</span> 的图像是递增的</p>
+</blockquote>
 <h3 id="2">2.方向场 &amp; 欧拉方法</h3>
 <p>通常没有明确的公式可以解微分方程，但还是可以利用图像 （方向场） 和 数值方式（欧拉方法）求解微分方程</p>
 <div class="admonition 方向场">
 <p class="admonition-title">方向场</p>
 </div>
 <blockquote>
-<p>一般说来，形如 <span class="arithmatex">\(y' = F(x, y)\)</span> 的一阶微分方程，表明曲线在 (x, y) 点处的斜率为 <span class="arithmatex">\(F(x, y)\)</span></p>
-<p>在多个点处画出斜率为 F(x, y) 的线段就得到了 方向场 （或 斜率场），借助这些线段知识了曲线在这些点处的延伸方向，因此可以近似地画出曲线的大致方向，通常可以借助计算机完成这个过程</p>
+<p>一般说来，形如 <span class="arithmatex">\(y'=F(x, y)\)</span> 的一阶微分方程，表明曲线在 <span class="arithmatex">\((x,y)\)</span> 点处的斜率为 <span class="arithmatex">\(F(x, y)\)</span></p>
+<p>在多个点处画出斜率为 <span class="arithmatex">\(F(x,y)\)</span> 的线段就得到了 方向场 （或 斜率场），借助这些线段知识了曲线在这些点处的延伸方向，因此可以近似地画出曲线的大致方向，通常可以借助计算机完成这个过程</p>
 </blockquote>
 <div class="admonition 欧拉方法">
 <p class="admonition-title">欧拉方法</p>
@@ -1203,6 +1259,15 @@
 <blockquote>
 <p>欧拉方法求近似解时，从已知的初始点开始，计算斜率并沿着斜率方向延伸一小段 h，然后停下并重新计算新的斜率，如此反复便可求得近似解</p>
 <p>数学描述如下： 假设步长为 h，初始点为 <span class="arithmatex">\((x_0, y_0)\)</span>，那么递推式为 <span class="arithmatex">\(y_{i+1} = y_{i} + h \cdot F(x_{i}, y_{i})\)</span>  &amp;  <span class="arithmatex">\(i\ge 0\)</span></p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>方向场：<strong>方向场</strong>定义为微分方程 <span class="arithmatex">\(y'=g(x,y)\)</span></li>
+<li>欧拉方法：假设步长为 h，初始点为 <span class="arithmatex">\((x_0,y_0)\)</span>，若某微分方程是一个向量场 <span class="arithmatex">\(y'=g(x,y)\)</span>，那么它的近似解可以满足 <span class="arithmatex">\(\forall i\in\mathbb Z^+\)</span>，<span class="arithmatex">\((x_i,y_i)=(x_{i-1}+h,y_{i-1}+h\cdot g(x_{i-1},y_{i-1}))\)</span>（其中 <span class="arithmatex">\(x_i=x_0+ih\)</span>）</li>
+</ol>
 </blockquote>
 <h3 id="3">3.分离变量法</h3>
 <p>上两节从 几何（方向场） 和 数值（欧拉方法） 角度 分析了一阶微分方程，以下介绍一种能精确求解微分方程的模式的方法</p>
@@ -1216,6 +1281,13 @@
 <li>当 <span class="arithmatex">\(f(y) = 0\)</span> ，该方程本身就是关于 y 的隐函数，而且 <span class="arithmatex">\(\frac {d_y}{d_x}=0\)</span></li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算微分方程 <span class="arithmatex">\(y'=\frac{x^2}{y^2}\)</span>：<span class="arithmatex">\(\int y^2d_y=\int x^2d_x\)</span>，蕴含 <span class="arithmatex">\(\frac13y^3=\frac13x^3+C\)</span>，即 <span class="arithmatex">\(y=\sqrt[3]{x^3+3C}\)</span> 或 <span class="arithmatex">\(y=\sqrt[3]{x^3+K}\)</span></li>
+<li>(1) 中微分方程满足 <span class="arithmatex">\(y(0)=2\)</span> 时，<span class="arithmatex">\(y=\sqrt[3]{x^3+8}\)</span></li>
+</ol>
+</div>
 <div class="admonition 正交轨线">
 <p class="admonition-title">正交轨线</p>
 </div>
@@ -1238,6 +1310,47 @@
 <div class="admonition 混合问题">
 <p class="admonition-title">混合问题</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>分离变量法：若方向场形如 <span class="arithmatex">\(y'=f(x)g(y)\)</span>，那么 <span class="arithmatex">\(\begin{cases}\int\frac1{g(y)}d_y=\int f(x)d_x&amp;g(y)\ne0\\y=C&amp;g(y)=0\end{cases}\)</span>；该方向场称为<strong>可分离方向场</strong></li>
+<li>正交轨线：某一条曲线与某曲线族中任意一条曲线正交，那么该曲线称为<strong>正交轨线</strong><ol>
+<li>若某曲线族由方向场 <span class="arithmatex">\(y'=g(x,y)\)</span> 定义，那么该曲线族的正交轨线的方向场为 <span class="arithmatex">\(y'=-\frac1{g(x,y)}\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算微分方程的解：(1) <span class="arithmatex">\(\frac{dy}{d_x}=\frac yx\)</span>，(2) <span class="arithmatex">\((x^2+1)y'=xy\)</span>，(3) <span class="arithmatex">\((1+\tan y)y'=x^2+1\)</span>，(4) <span class="arithmatex">\(y'=\frac{xy}{2\ln y}\)</span>，(5) <span class="arithmatex">\(\frac{dz}{d_t}+e^{t+z}=0\)</span></li>
+<li>计算微分方程初值问题 <span class="arithmatex">\(\frac{du}{d_t}=\frac{2t+\sec^2t}{2u},u(0)=-5\)</span></li>
+<li>描述微分方程初值问题 <span class="arithmatex">\(y'=(\sin x)/\sin y,y(0)=\pi/2\)</span></li>
+<li>假设 <span class="arithmatex">\(k\in\mathbb R\)</span>，计算曲线族 <span class="arithmatex">\(x=ky^2\)</span> 的正交轨线族</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) 若 <span class="arithmatex">\(y\ne0\)</span>，那么 <span class="arithmatex">\(\int\frac1yd_y=\int\frac1xd_x\)</span>，蕴含 <span class="arithmatex">\(\ln|y|=\ln|x|+C\)</span>，蕴含 <span class="arithmatex">\(|y|=e^C|x|\)</span>，蕴含 <span class="arithmatex">\(\exists K=\pm e^C\ne0,y=Kx\)</span></p>
+<p>当 <span class="arithmatex">\(y=0\)</span> 时，<span class="arithmatex">\(y=0\cdot x\)</span></p>
+<p>于是 <span class="arithmatex">\(\exists K\in\mathbb R,y=Kx\)</span></p>
+<p>(1.2) 若 <span class="arithmatex">\(y\ne0\)</span>，那么 <span class="arithmatex">\(\int\frac1yd_y=\int\frac x{x^2+1}d_x\)</span> 蕴含 <span class="arithmatex">\(\ln|y|=\frac12\ln|x^2+1|+C\)</span>，蕴含 <span class="arithmatex">\(\exists K=\pm e^C\ne0,y=K\sqrt{x^2+1}\)</span></p>
+<p>若 <span class="arithmatex">\(y=0\)</span>，允许 <span class="arithmatex">\(K=0\)</span> 时，<span class="arithmatex">\(y=K\sqrt{x^2+1}=0\)</span>；于是 <span class="arithmatex">\(\exists K\in\mathbb R,y=K\sqrt{x^2+1}\)</span></p>
+<p>(1.3) <span class="arithmatex">\(\int(1+\tan y)d_y=\int(x^2+1)d_x\)</span>，蕴含 <span class="arithmatex">\(y-\ln|\cos y|=\frac13x^3+x+C\)</span></p>
+<p>(1.4) <span class="arithmatex">\(\int\frac{\ln y}yd_y=\frac12\int xd_x\)</span>，蕴含 <span class="arithmatex">\(\frac12\ln^2y=\frac12\cdot\frac12x^2+C\)</span>，蕴含 <span class="arithmatex">\(\ln y=\pm\sqrt{\frac12x^2+C}\)</span>，于是 <span class="arithmatex">\(y=e^{\pm\sqrt{x^2/2+C}}\)</span></p>
+<p>(1.5) <span class="arithmatex">\(\int e^{-z}d_z=-\int e^td_t\)</span>，蕴含 <span class="arithmatex">\(\forall C\in\mathbb R,e^{-z}=e^t+C\)</span>，于是 <span class="arithmatex">\(z=-\ln(e
+^t+C)\)</span></p>
+<p>(2) <span class="arithmatex">\(2\int ud_u=\int(2t+\sec^2t)d_t\)</span> 蕴含 <span class="arithmatex">\(\exists C,u^2=t^2+\tan t+C\)</span>，蕴含 <span class="arithmatex">\(\pm\sqrt{t^2+\tan^2t+C}\)</span></p>
+<p>又由 <span class="arithmatex">\(u(0)=-5\)</span>，有 <span class="arithmatex">\((-5)^2=0^2+\tan0+C\)</span>，解得 <span class="arithmatex">\(C=25\)</span>，于是 <span class="arithmatex">\(u=\sqrt{t^2+\tan^2t+25}\)</span>（其中 <span class="arithmatex">\(u\le0\)</span>）</p>
+<p>(3) <span class="arithmatex">\(y'=(\sin x)/\sin y\)</span> 蕴含 <span class="arithmatex">\(\cos y=\cos x-C\)</span>，又由初值 <span class="arithmatex">\(y(0)=\pi/2\)</span> 得 <span class="arithmatex">\(C=1\)</span>，于是有 <span class="arithmatex">\(\cos y=\cos x-1\)</span>，其图像是无数个类似于椭圆的封闭曲线</p>
+<p>(4) 对 <span class="arithmatex">\(x=ky^2\)</span> 两边微分有 <span class="arithmatex">\(1=2kyy'\)</span>，即方向场 <span class="arithmatex">\(y'=\frac1{2ky}\)</span>，代入原方程消去参数后有 <span class="arithmatex">\(y'=\frac y{2x}\)</span></p>
+<p>使用[分离变量法]得到 <span class="arithmatex">\(y'=\frac y{2x}\)</span></p>
+<p>于是正交轨线的方向场为 <span class="arithmatex">\(y'=-\frac{2x}y\)</span>，解得 <span class="arithmatex">\(x^2+\frac12y^2=C\)</span></p>
+</blockquote>
 <h3 id="4">4.指数增长和衰变</h3>
 <div class="admonition note">
 <p class="admonition-title">初值问题</p>
@@ -1251,6 +1364,36 @@
 <li>（生物）种群增长模型，（物理）放射性物质的质量衰变比例和质量成正比，（化学）单分子一阶反应速度和物质浓度成正比，（金融学）复利存款账户的金额增长率和金额成正比</li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">结论</p>
+</div>
+<blockquote>
+<ol>
+<li>向量场 <span class="arithmatex">\(y'=ky\)</span> 的一个通解为 <span class="arithmatex">\(y(x)=y(0)e^{kt}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>假设 <span class="arithmatex">\(k&gt;0,c\ne0\)</span>，微分方程 <span class="arithmatex">\(y'=ky^{1+c}\)</span> 称为<strong>世界末日方程</strong><ol>
+<li>证明：记初值 <span class="arithmatex">\(y_0=y(0)\)</span>，那么世界末日方程有通解 <span class="arithmatex">\(y=\frac{y^c}{(1-cky_0^c\cdot x)^{1/c}}\)</span></li>
+<li>若 <span class="arithmatex">\(\lim\limits_{x\to l^-}y(x)=+∞\)</span>，计算世界末日 l</li>
+<li>若兔群以 <span class="arithmatex">\(ky^{1.01}\)</span> 的增长率大量繁殖，开始时有 2 只兔子，3 个月后增加到 16 只，计算世界末日</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) 通过[分离变量法]算得 <span class="arithmatex">\(\frac{y^{-c}}{-c}=kx+C\)</span>，</p>
+<p>若 <span class="arithmatex">\(x=0\)</span>，记 <span class="arithmatex">\(y_0=y(0)\)</span>，解得 <span class="arithmatex">\(C=\frac{y^{-c}_0}{-c}\)</span>，于是 <span class="arithmatex">\(\frac{y^{-c}}{-c}=kx-\frac{y^{-c}_0}c\)</span>，即 <span class="arithmatex">\(y^{-c}=-ckx+y^{-c}_0\)</span> 或 <span class="arithmatex">\(y=\frac1{(-ckx+y^{-c}_0)^{1/c}}\)</span> 或 <span class="arithmatex">\(y=\frac{y^c}{(1-cky_0^c\cdot x)^{1/c}}\)</span></p>
+<p>(1.2) <span class="arithmatex">\(l=\frac1{cky_0^c}\)</span></p>
+<p>(1.3) <span class="arithmatex">\(c=0.01,y(0)=2,y(3)=16\)</span></p>
+<p>由 (1.1) 有 <span class="arithmatex">\(\forall x\ne0\)</span>，<span class="arithmatex">\(k=\frac{y_0^{-c}-y^{-c}(x)}{cx}\)</span>，当 <span class="arithmatex">\(x=3\)</span> 时有 <span class="arithmatex">\(k=\frac{2^{-0.01}-(16)^{-0.01}}{0.01\cdot 3}\)</span></p>
+<p>由 (1.2) 有，世界末日为 <span class="arithmatex">\(l=\frac1{cky_0^c}\approx145.775\)</span>，即超过 12 年后世界末日才发生</p>
+</blockquote>
 <h3 id="5">5.逻辑斯蒂方程</h3>
 <div class="admonition 逻辑斯蒂模型">
 <p class="admonition-title">逻辑斯蒂模型</p>
@@ -1271,10 +1414,17 @@
 <p class="admonition-title">线性微分方程</p>
 </div>
 <blockquote>
-<p>若出现微分方程模式： <span class="arithmatex">\(\frac {d_y}{d_x} + P(x)y = Q(x)\)</span></p>
-<p>那么通解为： <span class="arithmatex">\(y = \frac {\int R(x)Q(x) d_x + C_0}{R(x)}\)</span> ，其中 <span class="arithmatex">\(R(x) = Ae^{\int P(x)d_x}\)</span></p>
+<p>微分方程 <span class="arithmatex">\(\frac {d_y}{d_x}+p(x)y=q(x)\)</span> 的通解为：</p>
+<p><span class="arithmatex">\(y=\frac{\int rq~d_x}r\)</span> ，其中 <span class="arithmatex">\(r(x)=e^{\int p~d_x}\)</span></p>
 <p>若给定函数中的一个键值对，就能确定该特定的函数的参数 C (分子中的积分求解后得到的常数)</p>
 </blockquote>
+<p>假设 <span class="arithmatex">\(C_1,C_2,D\in\mathbb R\)</span>，<span class="arithmatex">\(p=p(x),q=q(x),r=r(x)\)</span></p>
+<p>假设 <span class="arithmatex">\(r'=rp\)</span>，蕴含 <span class="arithmatex">\(\int\frac1rd_r=\int p~d_x\)</span>，蕴含 <span class="arithmatex">\(\ln|r|=\int p~d_x+C_1\)</span>，蕴含 <span class="arithmatex">\(r=\pm e^{\int p~d_x+C_1}=\pm e^{C_1}\cdot e^{\int p~d_x}\)</span></p>
+<p>令 <span class="arithmatex">\(C_2=\pm e^{C_1}\)</span>，有 <span class="arithmatex">\(r=C_2e^{\int p~d_x}\)</span></p>
+<p>而 <span class="arithmatex">\((ry)'=r'y+ry'=(rp)y+ry'=r(y'+py)=rq\)</span>，两侧对 x 积分有 <span class="arithmatex">\(ry=\int rq~d_x+D\)</span></p>
+<p>于是 <span class="arithmatex">\(y=\frac{\int rq~d_x+D}r=\frac{\int(C_2e^{\int p~d_x})q~d_x+D}{C_2e^{\int p~d_x}}=\frac{\int(e^{\int p~d_x})q~d_x+D/C_2}{e^{\int p~d_x}}\)</span></p>
+<p>令 <span class="arithmatex">\(C=D/C_2\)</span>，有 <span class="arithmatex">\(y=\frac{\int(e^{\int p~d_x})q~d_x+C}{e^{\int p~d_x}}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <ul>
@@ -1283,6 +1433,73 @@
 <li>若分子中的积分不能用初等函数表示（如 <span class="arithmatex">\(\int e^{x^2}~d_x\)</span> ），分子中的 <span class="arithmatex">\(C_0\)</span> 就显得尤为重要</li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>微分方程 <span class="arithmatex">\(y'+3x^2y=6x^2\)</span> 的解为 <span class="arithmatex">\(y=\frac{\int e^{\int 3x^2d_x}\cdot6x^2d_x}{e^{\int 3x^2d_x}}=\frac{\int e^{x^3}\cdot6x^2d_x}{e^{x^3}}=2+Ce^{x^3}\)</span></li>
+<li>计算初值问题 <span class="arithmatex">\(x^2y'+xy=1,y(1)=2\)</span>：<ol>
+<li><span class="arithmatex">\(y=\frac{\int e^{\int1/x~d_x}\cdot1/x^2d_x}{e^{\int1/x~d_x}}=\frac{\int|x|\cdot(1/x^2)d_x}{|x|}=\frac{\ln|x|+C}{|x|}\)</span></li>
+<li>由 <span class="arithmatex">\(y(1)=2\)</span> 有 <span class="arithmatex">\(2=y(1)=(\ln1+C)/1\)</span>，解得 <span class="arithmatex">\(C=2\)</span>，于是 <span class="arithmatex">\(y=\frac{\ln|x|+2}{|x|}\)</span></li>
+</ol>
+</li>
+<li>计算微分方程 <span class="arithmatex">\(y'+2xy=1\)</span> 的解：<span class="arithmatex">\(y=\frac{\int e^{\int2xd_x}\cdot1d_x}{e^{\int 2xd_x}}=e^{-x^2}\int e^{x^2}d_x\)</span></li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>(一阶)线性微分方程：形如 <span class="arithmatex">\(y'+p(x)y=q(x)\)</span> 的微分方程，称为(一阶)<strong>线性微分方程</strong></li>
+<li>一阶线性微分方程 <span class="arithmatex">\(y'+p(x)y=q(x)\)</span> 的一个通解为 <span class="arithmatex">\(y=\frac{\int(e^{\int p~d_x})q~d_x}{e^{\int p~d_x}}\)</span>（为计算方便，积分 <span class="arithmatex">\(\int p~d_x\)</span> 可不带常数）<ol>
+<li>简记为 <span class="arithmatex">\(y=\frac{\int e^{p^{[1]}}q~d_x}{e^{p^{[1]}}}\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>解微分方程：(1) <span class="arithmatex">\(y'+2y=2e^x\)</span>，(2) <span class="arithmatex">\(xy'+y=\sqrt x\)</span>，(3) <span class="arithmatex">\(y'=x\sin2x+y\tan x\)</span>（<span class="arithmatex">\(x\in[-\pi/2,\pi/2]\)</span>），(4) <span class="arithmatex">\(x^2y'+2xy=\cos^2x\)</span>，(5) <span class="arithmatex">\(t\ln t\frac{dr}{d_t}+r=te^t\)</span></li>
+<li>解微分方程的初值问题：(1) <span class="arithmatex">\(xy'=y+x^2\sin x,y(\pi)=0\)</span>，(2) <span class="arithmatex">\(xy'-\frac y{x+1}=x,y(1)=0\)</span></li>
+<li>假设 <span class="arithmatex">\(y=y(x),p=p(x),q=q(x)\)</span>，那么微分方程 <span class="arithmatex">\(y'+py=qy^n\)</span> 称为伯努利微分方程<ol>
+<li>证明：若 <span class="arithmatex">\(u=y^{1-n}\)</span>，那么有关于 u 的线性微分方程 <span class="arithmatex">\(u'+(1-n)pu=(1-n)q\)</span></li>
+<li>证明：若 <span class="arithmatex">\(n\ne1\)</span>，那么 <span class="arithmatex">\(\displaystyle y=\frac{[(1-n)\int e^{^{(1-n)\int p~d_x}}\cdot q~d_x]^{1/(1-n)}}{e^{\int p~d_x}}\)</span></li>
+</ol>
+</li>
+<li>解伯努利微分方程：(1) <span class="arithmatex">\(y'+\frac2xy=\frac{y^3}{x^2}\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1)</p>
+<ol>
+<li><span class="arithmatex">\(y=\frac{\int e^{\int2d_x}\cdot 2e^xd_x}{e^{\int2d_x}}=\frac{\int e^{2x}\cdot2e^xd_x}{e^{2x}}=\frac{(2/3)e^{3x}+C}{e^{2x}}=\frac23e^x+Ce^{-2x}\)</span></li>
+<li>若 <span class="arithmatex">\(x\ne0\)</span>，<span class="arithmatex">\(y=\frac{\int e^{\int1/xd_x}\cdot x^{-1/2}d_x}{e^{\int1/xd_x}}=\frac{\int|x|x^{-1/2}d_x}{|x|}=\frac{(2/3)x^{3/2}+C}x=\frac23\sqrt x+C/x\)</span>；若 <span class="arithmatex">\(x=0\)</span>，那么 <span class="arithmatex">\(y=0\)</span></li>
+<li><span class="arithmatex">\(y=\frac{\int e^{\int (-\tan x)d_x}\cdot x\sin2x~d_x}{e^{\int (-\tan x)d_x}}=\frac{\int e^{\ln|\cos x|}\cdot x(2\sin x\cos x)d_x}{e^{\ln|\cos x|}}=\frac{2\int x\sin x\cos^2x}{\cos x}\)</span>，而 <span class="arithmatex">\(y=\frac{\int e^{\int (-\tan x)d_x}\cdot x\sin2x~d_x}{e^{\int (-\tan x)d_x}}=\frac{\int e^{\ln|\cos x|}\cdot x(2\sin x\cos x)d_x}{e^{\ln|\cos x|}}=\frac{2\int x\sin x\cos^2x}{\cos x}\)</span> <span class="arithmatex">\(y=\frac{\int e^{\int (-\tan x)d_x}\cdot x\sin2x~d_x}{e^{\int (-\tan x)d_x}}=\frac{\int e^{\ln|\cos x|}\cdot x(2\sin x\cos x)d_x}{e^{\ln|\cos x|}}=\frac{2\int x\sin x\cos^2x}{\cos x}\)</span>，于是 <span class="arithmatex">\(y=\frac{-\frac23x\cos^3x+\frac23\sin x-\frac29\sin^3x+C}{\cos x}=-\frac23x\cos^2x+\frac29\tan x(3-\sin^2x)+C\sec x\)</span></li>
+<li><span class="arithmatex">\(x^2y'+2xy=\cos^2x\)</span> 蕴含 <span class="arithmatex">\(y'+\frac2xy=\frac{\cos^2x}{x^2}\)</span>，于是 <span class="arithmatex">\(y=\frac{\int e^{\int(2/x)d_x}\cdot\frac{\cos^2x}{x^2}d_x}{e^{\int(2/x)d_x}}=\frac{\int x^2\cdot\frac{\cos^2x}{x^2}d_x}{x^2}=\frac{\frac12(x+\sin x\cos x)+C}{x^2}=\frac1{2x}+\frac{\sin x\cos x}{2x^2}+\frac C{x^2}\)</span>（注：微分方程中 <span class="arithmatex">\(x=0\)</span> 时无解）</li>
+<li><span class="arithmatex">\(t\ln t\frac{dr}{d_t}+r=te^t\)</span> 蕴含 <span class="arithmatex">\(\frac{dr}{d_t}+\frac1{t\ln t}r=\frac{e^t}{\ln t}\)</span>，于是 <span class="arithmatex">\(r=\frac{\int e^{\int\frac1{t\ln t}d_t}\cdot\frac{e^t}{\ln t}d_t}{e^{\int\frac1{t\ln t}d_t}}=\frac{\int e^{\ln|\ln t|}\cdot\frac{e^t}{\ln t}d_t}{e^{\ln|\ln t|}}=\frac{\int\frac{|\ln t|}{\ln t}e^td_t}{|\ln t|}=\frac{\frac{|\ln t|}{\ln t}e^t+C}{|\ln t|}=\frac{e^t}{\ln t}+\frac C{|\ln t|}\)</span>？</li>
+</ol>
+<p>(2)</p>
+<ol>
+<li><span class="arithmatex">\(xy'=y+x^2\sin x\)</span> 蕴含 <span class="arithmatex">\(y=\frac{\int e^{\int(-1/x)d_x}\cdot x\sin xd_x}{e^{\int(-1/x)d_x}}=\frac{\int(1/x)\cdot x\sin xd_x}{1/x}=x(C-\cos x)\)</span>；由 <span class="arithmatex">\(y(\pi)=0\)</span> 有 <span class="arithmatex">\(\pi(C-\cos\pi)=0\)</span>，即 <span class="arithmatex">\(C=-1\)</span>，于是 <span class="arithmatex">\(y=-x(\cos x+1)\)</span></li>
+<li><span class="arithmatex">\(xy'-\frac y{x+1}=x\)</span> 蕴含 <span class="arithmatex">\(y'-\frac1{x(x+1)}y=1\)</span>，有 <span class="arithmatex">\(y=\frac{\int e^{\int(-1/(x(x+1)))d_x}\cdot1d_x}{e^{\int(-1/(x(x+1)))d_x}}=\frac{\int e^{\ln|(x+1)/x|}d_x}{e^{\ln|(x+1)/x|}}=\frac{\int(x+1)/x~d_x}{(x+1)/x}=\frac{x+\ln x+C}{(x+1)/x}\)</span>；而由 <span class="arithmatex">\(y(1)=0\)</span> 解得 <span class="arithmatex">\(C=-1\)</span>，于是 <span class="arithmatex">\(y=\frac{x(x+\ln x-1)}{x+1}\)</span></li>
+</ol>
+<p>(3.1) <span class="arithmatex">\(u=y^{1-n}\)</span> 蕴含 <span class="arithmatex">\(u'=(1-n)y^{-n}y'\)</span></p>
+<p>对 <span class="arithmatex">\(y'+py=qy^n\)</span> 两侧乘以 <span class="arithmatex">\((1-n)y^{-n}\)</span> 有 <span class="arithmatex">\((1-n)y^{-n}y'+(1-n)py^{1-n}=(1-n)q\)</span>，</p>
+<p>于是 <span class="arithmatex">\(u'+(1-n)pu=(1-n)q\)</span></p>
+<p>(3.2) 由 (3.1) 的线性微分方程解得 <span class="arithmatex">\(u=\frac{\int e^{\int(1-n)p~d_x}\cdot(1-n)q~d_x}{e^{\int(1-n)p~d_x}}=\frac{(1-n)\int e^{(1-n)\int p~d_x}\cdot q~d_x}{e^{(1-n)\int p~d_x}}\)</span></p>
+<p>于是 <span class="arithmatex">\(y=u^{1/(1-n)}=\frac{[(1-n)\int e^{^{(1-n)\int p~d_x}}\cdot q~d_x]^{1/(1-n)}}{e^{\int p~d_x}}\)</span></p>
+<p>(4.1) 令 <span class="arithmatex">\(u=y^{-2}\)</span>，有 <span class="arithmatex">\(u'-\frac4xu=-\frac2{x^2}\)</span></p>
+<p>于是 <span class="arithmatex">\(u=\frac{\int e^{\int(-4/x)d_x}\cdot(-2/x^2)d_x}{e^{\int(-4/x)d_x}}=\frac{\int x^{-4}(-2/x^2)d_x}{x^{-4}}
+=\frac{(2/5)x^{-5}+C}{x^{-4}}=\frac{2+5Cx^5}{5x}\)</span></p>
+<p>所以 <span class="arithmatex">\(y=\pm u^{-1/2}=\pm\left(\frac{2+5Cx^5}{5x}\right)^{-1/2}\)</span></p>
+<p>(4.2) 令 <span class="arithmatex">\(u=y^{-2}\)</span>，有 <span class="arithmatex">\(u'-2u=-2x\)</span></p>
+<p>于是 <span class="arithmatex">\(u=\frac{\int e^{\int(-2)d_x}\cdot(-2x)d_x}{e^{\int(-2)d_x}}=\frac{\int e^{-2x}(-2x)d_x}{e^{-2x}}=\frac{-2[(x)(\frac1{-2}e^{-2x})-(1)(\frac14e^{-2x})]+C}{e^{-2x}}=x+\frac12+Ce^{2x}\)</span></p>
+<p>所以 <span class="arithmatex">\(y=\pm u^{-1/2}=\pm\left(x+\frac12+Ce^{2x}\right)^{-1/2}\)</span></p>
+</blockquote>
 <h3 id="7-">7.捕食者-被捕食者问题</h3>
 <p>以下讨论两个种群 捕食者-被捕食者 之间种群数量的变化关系</p>
 <p>用 R(t) 表示兔子 (被捕食者)，W(t) 表示狼 (捕食者)</p>
@@ -1297,6 +1514,15 @@
 </ul>
 </li>
 </ol>
+<h3 id="8">8. 补充习题</h3>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>一阶微分方程求解：<span class="arithmatex">\(\begin{cases}y'=f(x)g(y)&amp;\begin{cases}\int\frac1{g(y)}d_y=\int f(x)d_x&amp;g(y)\ne0\\y=C&amp;g(y)=0\end{cases}\\y'+p(x)y=q(x)&amp;y=\frac{\int e^{\int p~d_x}\cdot q~d_x}{e^{\int p~d_x}}\\y'+p(x)y=q(x)y^n,n\ne1&amp;y=\left[\frac{\int e^{\int(1-n)p~d_x}\cdot(1-n)q~d_x}{e^{\int(1-n)p~d_x}}\right]^{1/(1-n)}\end{cases}\)</span></li>
+</ol>
+</blockquote>
 </article>
 </div>
 </div>

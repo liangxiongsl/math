@@ -1264,9 +1264,10 @@
 <div class="admonition tip">
 <p class="admonition-title">练习</p>
 <ol>
-<li>假设步长为 <span class="arithmatex">\(\Delta x\)</span> 或 <span class="arithmatex">\(\delta\)</span>，分别用左值，右值，中间值近似定积分 <span class="arithmatex">\(\int_2^{10}\sqrt{x^3+1}d_x\)</span></li>
+<li>假设步长为 <span class="arithmatex">\(\Delta x\)</span> 或 <span class="arithmatex">\(\delta\)</span>，分别用左值，右值，中间值，几何平均值近似定积分 <span class="arithmatex">\(\int_2^{10}\sqrt{x^3+1}d_x\)</span></li>
 <li>证明：<span class="arithmatex">\(2\le\int_{-1}^1\sqrt{1+x^2}d_x\le2\sqrt2\)</span></li>
 <li>假设 f 在 <span class="arithmatex">\([a,b]\)</span> 连续，证明：<span class="arithmatex">\(\left|\int_a^bf(x)d_x\right|\le\int_a^b|f(x)|d_x\)</span></li>
+<li>使用几何平均值近似积分 <span class="arithmatex">\(\int_a^bx^{-2}d_x\)</span>，证明误差为 0</li>
 </ol>
 </div>
 <div class="admonition tip">
@@ -1281,6 +1282,9 @@
 </ol>
 <p>(2) 设 <span class="arithmatex">\(f(x)=\sqrt{1+x^2}\)</span>，那么 <span class="arithmatex">\(\forall x\in[-1,1]\)</span>，<span class="arithmatex">\(\max\{f(x)\}=f(1)=2\)</span>，<span class="arithmatex">\(\min\{f(x)\}=f(0)=1\)</span></p>
 <p>根据[积分比较性质]，<span class="arithmatex">\(2\le\int_{-1}^1\sqrt{1+x^2}d_x\le2\sqrt2\)</span></p>
+<p>(4) 步长为 <span class="arithmatex">\(\delta\)</span> 时，区间划分数为 <span class="arithmatex">\(n=(b-a)/\delta\)</span></p>
+<p>于是 <span class="arithmatex">\(\delta\sum\limits_{i=0}^{n-1}\frac1{(\sqrt{(a+\delta i)(a+\delta(i+1))})^2}=\sum\limits_{i=0}^{n-1}\left(\frac1{a+\delta i}-\frac1{a+\delta(i+1)}\right)=\frac1a-\frac1{a+\delta n}=\frac1a-\frac1b\)</span></p>
+<p>而根据[5.4]的方法 <span class="arithmatex">\(\int_a^bx^{-2}d_x=\frac1a-\frac1b\)</span>，于是用几何平均数近似该积分没有误差</p>
 </blockquote>
 <h3 id="3">3.积分基本定理</h3>
 <div class="admonition tip">
@@ -1353,6 +1357,7 @@
 </ol>
 <p>这里 F 是 f 的任意一个原函数，即 F' = f  (实际上 F 为 f 的 原函数族 或 原函数集合)</p>
 </blockquote>
+<hr/>
 <div class="admonition info">
 <p class="admonition-title">总结</p>
 </div>
@@ -1523,6 +1528,7 @@
 <li>f 在 [a, b] 连续，在 (a, b) 可微，那么 <span class="arithmatex">\(c \in (a, b)\)</span>，使得 <span class="arithmatex">\(f'(c) = \frac {\int_a^b f'(x) d_x}{b-a}\)</span></li>
 </ul>
 </div>
+<hr/>
 <div class="admonition info">
 <p class="admonition-title">总结</p>
 </div>
@@ -1533,7 +1539,7 @@
 <li>三角积分：<span class="arithmatex">\(\begin{cases}\int\sin xd_x=-\cos x&amp;\int\csc xd_x=\ln|\csc x-\cot x|=\ln|\tan\frac x2|&amp;\int\cot xd_x=\ln|\sin x|\\\int\cos xd_x=\sin x&amp;\int\sec xd_x=\ln|\sec x+\tan x|=\ln|\tan(\frac x2+\frac\pi4)|&amp;\int\tan xd_x=-\ln|\cos x|\end{cases}\)</span></li>
 <li>(反)三角（逆向导数）：<span class="arithmatex">\(\begin{cases}&amp;\int\csc x\cot xd_x=-\csc x&amp;\int\csc^2xd_x=-\cot x
 \\&amp;\int\sec x\tan xd_x=\sec x&amp;\int\sec^2xd_x=\tan x\\
-\int\frac1{\sqrt{1-x^2}}d_x=\sin^{-1}x=-\cos^{-1}x&amp;\int\frac1{x\sqrt{x^2-1}}d_x=-\csc^{-1}x=\sec^{-1}x&amp;\int\frac1{1+x^2}d_x=-\cot^{-1}x=\tan^{-1}x\\
+\int\frac1{\sqrt{1-x^2}}d_x=\sin^{-1}x=-\cos^{-1}x&amp;\int\frac1{|x|\sqrt{x^2-1}}d_x=-\csc^{-1}x=\sec^{-1}x&amp;\int\frac1{1+x^2}d_x=-\cot^{-1}x=\tan^{-1}x\\
 \int\frac1{\sqrt{x^2+1}}d_x=\sinh^{-1}x&amp;\int\frac1{|x|\sqrt{x^2+1}}d_x=-\text{csch}^{-1}x&amp;\int\frac1{1-x^2}d_x=\coth^{-1}x=\tanh^{-1}x\\
 \int\frac1{\sqrt{x^2-1}}d_x=\cosh^{-1}x&amp;\int\frac1{|x|\sqrt{1-x^2}}d_x=-\text{sech}^{-1}x&amp;\end{cases}\)</span></li>
 <li>(3) 的部分推广：</li>
