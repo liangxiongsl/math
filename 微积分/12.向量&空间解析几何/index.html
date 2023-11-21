@@ -8,11 +8,11 @@
 <link href="../11.%E6%97%A0%E7%A9%B7%E5%BA%8F%E5%88%97%26%E7%BA%A7%E6%95%B0/" rel="prev"/>
 <link href="../13.%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.0.3" name="generator"/>
 <title>12.向量&amp;空间解析几何 - 数学</title>
-<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -42,7 +42,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -159,7 +159,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+<ol class="md-search-result__list"></ol>
 </div>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
+<div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
@@ -238,12 +238,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<nav aria-label="概述" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -273,14 +273,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-label="微积分" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           微积分
@@ -382,7 +382,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           12.向量&amp;空间解析几何
           <span class="md-nav__icon md-icon"></span>
@@ -468,12 +468,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
           线性代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           线性代数
@@ -548,12 +548,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_4" tabindex="0">
           概率导论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率导论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           概率导论
@@ -613,12 +613,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_5" tabindex="0">
           矩阵代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-label="矩阵代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           矩阵代数
@@ -713,12 +713,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_6" tabindex="0">
           数学分析
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学分析" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           数学分析
@@ -808,12 +808,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_7" tabindex="0">
           初等数论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-label="初等数论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           初等数论
@@ -903,12 +903,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_8" tabindex="0">
           数学扩充
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学扩充" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           数学扩充
@@ -928,14 +928,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/">线性代数1</a>
 <label for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数1" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           线性代数1
@@ -995,12 +995,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
-<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_10" tabindex="0">
           概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率论及其应用" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
           概率论及其应用
@@ -1190,6 +1190,53 @@
 <li>(h, k, l)，半径为 r 的球面方程为 <span class="arithmatex">\((x-h)^2 + (y-k)^2 + (z-l) = r^2\)</span></li>
 </ul>
 </div>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>三维立方体坐标体系：假设选择一个固定点 O 作为<strong>原点</strong>，通过该点延伸三条相互正交的射线或有向直线（称为<strong>坐标轴</strong>），称其中两条轴 x 轴和 y 轴是水平的，而 z 轴是垂直的，并且 z 轴满足[右手法则]<ol>
+<li>右手法则：右手四指穿过 x 轴，然后往 y 轴方向弯曲，此时拇指的指向即为 z 轴正方向</li>
+<li>三元实数组 <span class="arithmatex">\(\mathbf u\in\mathbb R^3=\{(x,y,z)|~x,y,z\in\mathbb R\}\)</span> 与三维立方体坐标体系中的点一一对应或满射</li>
+<li>卦限：<span class="arithmatex">\(x,y,z\)</span> 轴将空间平分为 8 个<strong>卦限</strong></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>点，向量：点和向量一般表示同一个概念，一般记为 <span class="arithmatex">\(P(x,y,z)\)</span> 或 <span class="arithmatex">\(\mathbf u=(u_1,u_2,u_3)\)</span></li>
+<li>两点距离：有两种定义：<ol>
+<li><span class="arithmatex">\(P_1(x_1,y_1,z_1)\)</span> 和 <span class="arithmatex">\(P_2(x_2,y_2,z_2)\)</span> 之间的距离为 <span class="arithmatex">\(|P_1 P_2| = \sqrt {(x_2-x_1)^2 + (y_2-y_1)^2 + (z_1-z_2)^2}\)</span></li>
+<li><span class="arithmatex">\(\bf u\)</span> 和 <span class="arithmatex">\(\bf v\)</span> 之间的距离为 <span class="arithmatex">\(\|\mathbf u-\mathbf v\|=\sqrt{\bf u\cdot v}=\sqrt{\sum\limits_{i=1}^n(u_i-v_i)^2}\)</span></li>
+</ol>
+</li>
+<li>球面方程：假设 <span class="arithmatex">\(\mathbf x=(x,y,z)\)</span> 是未知量，那么以 <span class="arithmatex">\(P(a,b,c)=\bf u\)</span> 为圆心，半径为 r（<span class="arithmatex">\(r&gt;0\)</span>）的球面方程为 <span class="arithmatex">\((x-a)^2+(y-b)^2+(z-c)^2=r^2\)</span> 或 <span class="arithmatex">\(\|\mathbf x-\mathbf u\|=r\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>描述下列等式或不等式在 <span class="arithmatex">\(\mathbb R^3\)</span> 的区域（尽管这种表示不严格）：(1) <span class="arithmatex">\(0\le z\le 6\)</span>，(2) <span class="arithmatex">\(x=3\)</span>，(3) <span class="arithmatex">\(y=z\)</span>，(4) <span class="arithmatex">\(x^2+y^2+z^2&gt;1\)</span>，(5) <span class="arithmatex">\(3\le x^2+z^2\le9\)</span>，(6) <span class="arithmatex">\(xyz=0\)</span></li>
+<li>证明：<span class="arithmatex">\(P_1(x_1,y_1,z_1)=\bf u\)</span> 到 <span class="arithmatex">\(P_2(x_2,y_2,z_2)=\bf v\)</span> 的线段的中点为 <span class="arithmatex">\(\left(\frac{x_1+x_2}2,\frac{y_1+y_2}2,\frac{z_1+z_2}2\right)\)</span> 或 <span class="arithmatex">\(\frac12(\bf u+v)\)</span></li>
+<li>对于任意三角形，某条边中点到该边的对角顶点的线段称为<strong>中线</strong>（或者定义为：某个顶点到其对边中点的线段）</li>
+<li>证明：假设某三角形以 <span class="arithmatex">\(\bf u,v,w\)</span> 为顶点，它们的对边分别为为 <span class="arithmatex">\(a=\sqrt{\|\mathbf v-\mathbf w\|^2},b=\sqrt{\|\mathbf u-\mathbf v\|^2},c=\sqrt{\|\mathbf u-\mathbf w\|^2}\)</span>，这些对边对应的中线分别为 <span class="arithmatex">\(m_a,m_b,m_c\)</span>，那么 <span class="arithmatex">\(m_a=\frac12\sqrt{2(b^2+c^2)-a^2}\)</span>（提示：<span class="arithmatex">\(m_a=\|\mathbf u-\frac12(\mathbf v+\mathbf w)\|\)</span>）</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.6) 坐标平面的并集</p>
+<p>(4) <span class="arithmatex">\(m_a^2=\|\mathbf u-\frac12(\mathbf v+\mathbf w)\|^2=\sum\limits_{i=1}^n(u_i-(v_i+w_i)/2)^2=\frac14\sum\limits_{i=1}^n(4u_i^2-4u_i(v_i+w_i)+(v_i+w_i)^2)\)</span></p>
+<p><span class="arithmatex">\(a^2=\|\mathbf v-\mathbf w\|^2=\sum\limits_{i=1}^n(v_i-w_i)^2\)</span>，<span class="arithmatex">\(b^2=\|\mathbf u-\mathbf v\|^2=\sum\limits_{i=1}^n(u_i-v_i)^2\)</span>，<span class="arithmatex">\(c^2=\|\mathbf u-\mathbf w\|^2=\sum\limits_{i=1}^n(u_i-w_i)^2\)</span></p>
+<p>于是 <span class="arithmatex">\(4m_a^2+a^2=\sum\limits_{i=1}^n(4u_i^2-4u_i(v_i+w_i)+(v_i+w_i)^2+(v_i-w_i)^2)=\sum\limits_{i=1}^n(4u_i^2+2v_i^2+2w_i^2-4u_iv_i-4u_iw_i))\)</span> <span class="arithmatex">\(=\sum\limits_{i=1}^n(2(u_i-v_i)^2+2(u_i-w_i)^2)=2(b^2+c^2)\)</span></p>
+<p>即 <span class="arithmatex">\(4m_a^2=2(b^2+c^2)-a^2\)</span>，所以 <span class="arithmatex">\(m_a=\frac12\sqrt{2(b^2+c^2)-a^2}\)</span></p>
+</blockquote>
 <h3 id="2">2.向量</h3>
 <div class="admonition 向量">
 <p class="admonition-title">向量</p>
@@ -1265,6 +1312,53 @@
 <li>在物理和工程中应用广泛，如在物理中描述速度，加速度，力等量</li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>向量，向量分量：具有大小和方向的量定义为<strong>向量</strong>，几何上为<strong>箭头</strong>或<strong>有向线段</strong>，记为 <span class="arithmatex">\(\mathbf u=(u_1,\cdots,u_n)\)</span> 或 <span class="arithmatex">\(\vec u\)</span> 或 <span class="arithmatex">\(\overrightarrow{AB}=\bf v-u\)</span>（假设 <span class="arithmatex">\(A=\mathbf u,B=\mathbf v\)</span>；起点 A 称为 尾部，终点 B 称为头部）；其中 <span class="arithmatex">\(u_1,\cdots,u_n\)</span> 称为向量 <span class="arithmatex">\(\bf u\)</span> 的<strong>分量</strong>（注：微积分中的向量一般指<strong>实向量</strong>）</li>
+<li>向量范数（长度）：向量 <span class="arithmatex">\(\mathbf u\in\mathbb R^n\)</span> 的<strong>范数</strong>或<strong>长度</strong>定义为 <span class="arithmatex">\(\|\mathbf u\|=\sqrt{\sum\limits_{i=1}^nu_i^2}\)</span></li>
+<li>零向量，单位向量：满足 <span class="arithmatex">\(\|\mathbf u\|=0\)</span> 的向量，称为<strong>零向量</strong>，记为 <span class="arithmatex">\(\bf 0\)</span>（零向量是唯一没有明确方向的向量）；若 <span class="arithmatex">\(\bf\ne0\)</span>，那么 <span class="arithmatex">\(\bf u\)</span> 的<strong>单位向量</strong>定义为 <span class="arithmatex">\(\bf v=\frac{u}{\|u\|}\)</span></li>
+<li>向量相等：若 <span class="arithmatex">\(\|\mathbf u\|=\|\mathbf v\|\)</span> 并且 <span class="arithmatex">\(\bf u,v\)</span> 方向相等，那么称 <span class="arithmatex">\(\bf u\)</span> 和 <span class="arithmatex">\(\bf v\)</span> 是相等的，记为 <span class="arithmatex">\(\bf u=v\)</span>（另一种定义：<span class="arithmatex">\(\forall i=1..n,u_i=v_i\)</span>）</li>
+<li>向量加法，向量标量乘法：假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n,c\in\mathbb R\)</span>，那么 <span class="arithmatex">\(\bf u,v\)</span> 之间的加法定义为 <span class="arithmatex">\(\mathbf u+\mathbf v=(u_1+v_1,\cdots,u_n+v_n)\)</span>；c 与 <span class="arithmatex">\(\bf u\)</span> 的标量乘法定义为 <span class="arithmatex">\(c\mathbf u=(cu_1,\cdots,cu_n)\)</span></li>
+<li>向量公理：假设 <span class="arithmatex">\(\mathbf u,\mathbf v,\mathbf w\in V\)</span>，<span class="arithmatex">\(c,d\in\mathbb R\)</span>，那么：<ol>
+<li>加法/标量乘法/加法逆元/标量乘法逆元的封闭性：<span class="arithmatex">\(\exists\mathbf u+\mathbf v,c\mathbf u,\mathbf 0,-\mathbf u\in\mathbb R^n\)</span>（其中 <span class="arithmatex">\(\bf u+0=u\)</span>，<span class="arithmatex">\(\bf u+(-u)=0\)</span>）</li>
+<li>加法交换律 <span class="arithmatex">\(\mathbf u+\mathbf v=\mathbf v+\mathbf u\)</span>，加法结合律 <span class="arithmatex">\((\mathbf u+\mathbf v)+\mathbf w=\mathbf u+(\mathbf v+\mathbf w)\)</span></li>
+<li>加法与标量乘法的相互分配律 (1) <span class="arithmatex">\(c(\mathbf u+\mathbf v)=c\mathbf u+c\mathbf v\)</span>，(2) <span class="arithmatex">\((c+d)\mathbf u=c\mathbf u+d\mathbf u\)</span></li>
+<li>实数乘法与标量乘法的结合律 <span class="arithmatex">\(c(d\mathbf u)=(cd)\mathbf u\)</span></li>
+<li>标量乘法单位元 <span class="arithmatex">\(1\mathbf u=\mathbf u\)</span></li>
+</ol>
+</li>
+<li>标准向量，标准向量基：<span class="arithmatex">\(\mathbb R^n\)</span> 上的<strong>标准向量</strong>定义为只有第 i 个分量非零的单位向量，记为 <span class="arithmatex">\(\mathbf e_i=(0,\cdots,1,\cdots,0)\)</span>；<span class="arithmatex">\(\mathbb R^n\)</span> 上的标准向量基定义为其所有标准向量构成的一个向量组，记为 <span class="arithmatex">\(\{\mathbf e_1,\cdots,\mathbf e_n\}\)</span><ol>
+<li>在 <span class="arithmatex">\(\mathbb R^2\)</span> 中，两个标准向量分别记为 <span class="arithmatex">\(\mathbf i=(1,0),\mathbf j=(0,1)\)</span></li>
+<li>在 <span class="arithmatex">\(\mathbb R^3\)</span> 中，三个标准向量分别记为 <span class="arithmatex">\(\mathbf i=(1,0,0),\mathbf j=(0,1,0),\mathbf k=(0,0,1)\)</span></li>
+<li>注：<span class="arithmatex">\(\mathbb R^n\)</span> 中任意一个向量可以唯一表示为标准向量基的线性组合，即 <span class="arithmatex">\(\forall \mathbf u\in\mathbb R^n,\mathbf u=\sum\limits_{i=1}^nu_i\mathbf e_i\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算向量的单位向量：(1) <span class="arithmatex">\((9,-5)\)</span>，(2) <span class="arithmatex">\(8\mathbf i-\mathbf j+4\mathbf k\)</span></li>
+<li>向量 <span class="arithmatex">\(\bf u\)</span> 位于第一卦限，与 x 轴正方向夹角为 <span class="arithmatex">\(\pi/3\)</span>，并且 <span class="arithmatex">\(\|\mathbf u\|=4\)</span>，计算 <span class="arithmatex">\(\bf u\)</span></li>
+<li>证明：若某三角形的顶点分别为 <span class="arithmatex">\(\bf u,v,w\)</span>，那么任意两条边的中点的连线 <span class="arithmatex">\(\bf r\)</span> 平行于第三条边</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) </p>
+<ol>
+<li><span class="arithmatex">\(\frac1{\sqrt{9^2+(-5^2)}}(9,-5)=(9/\sqrt{106},-5/\sqrt{106})\)</span></li>
+<li><span class="arithmatex">\(\frac1{\sqrt{8^2+(-1)^2+4^2}}(8\mathbf i-\mathbf j+4\mathbf k)=(\frac89\mathbf i-\frac19\mathbf j+\frac49\mathbf k)\)</span></li>
+</ol>
+<p>(2) <span class="arithmatex">\(\bf u\)</span> 的方向向量为 <span class="arithmatex">\((\cos\frac\pi3,\sin\frac\pi3)=(1/2,\sqrt3/2)\)</span>，于是 <span class="arithmatex">\(\mathbf u=\|\mathbf u\|(1/2,\sqrt3/2)=(2,2\sqrt3)\)</span></p>
+<p>(3) <span class="arithmatex">\(\mathbf r=\frac12(\mathbf u+\mathbf v)-\frac12(\mathbf u+\mathbf w)=\frac12(\mathbf v-\mathbf w)\)</span>，得证</p>
+<p>其他情况类似</p>
+</blockquote>
 <h3 id="3">3. 向量的点积</h3>
 <div class="admonition 点积">
 <p class="admonition-title">点积</p>
@@ -1274,8 +1368,15 @@
 <li>注：向量点积得到的是一个实数</li>
 </ul>
 </div>
-<div class="admonition 点积的性质">
-<p class="admonition-title">点积的性质</p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\((2,4)\cdot(3,-1)=(2)(3)+(4)(-1)=2\)</span></li>
+<li><span class="arithmatex">\((\mathbf i+2\mathbf j-3\mathbf k)\cdot(2\mathbf j-\mathbf k)=(1)(0)+(2)(2)+(-3)(-1)=7\)</span></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">点积的定律，推论</p>
 <ol>
 <li><span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow a = |a|^2\)</span></li>
 <li><span class="arithmatex">\(\overrightarrow a \cdot \overrightarrow b = \overrightarrow b \cdot \overrightarrow a\)</span></li>
@@ -1284,8 +1385,8 @@
 <li><span class="arithmatex">\(\overrightarrow 0\cdot \overrightarrow a = 0\)</span></li>
 </ol>
 </div>
-<div class="admonition 点积的物理定义">
-<p class="admonition-title">点积的物理定义</p>
+<div class="admonition 点积的几何推论">
+<p class="admonition-title">点积的几何推论</p>
 <ul>
 <li>向量 <strong>a, b</strong> 的夹角为 <span class="arithmatex">\(\theta\)</span>，那么</li>
 <li><span class="arithmatex">\(\overrightarrow a\cdot \overrightarrow b = |a||b|\cos \theta\)</span></li>
@@ -1298,6 +1399,14 @@
 </ul>
 </li>
 </ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\bf u,v\)</span> 的长度分别为 <span class="arithmatex">\(4,6\)</span>，夹角为 <span class="arithmatex">\(\pi/3\)</span>，那么 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\|\mathbf u\|\|\mathbf v\|\cos\frac{\pi}3=12\)</span></li>
+<li>假设 <span class="arithmatex">\(\mathbf u=(2,2,-1),\mathbf v=(5,-3,2)\)</span>，那么它们之间的夹角为 <span class="arithmatex">\(\theta=\cos^{-1}\frac{\bf u\cdot v}{\bf \|u\|\|v\|}=\cos^{-1}\frac{(2)(5)+(2)(-3)+(-1)(2)}{\sqrt{2^2+2^2+(-1)^2}\sqrt{5^2+(-3)^2+2^2}}=\cos^{-1}\frac2{3\sqrt{38}}\approx1.46=84°\)</span></li>
+<li><span class="arithmatex">\((2,2,-1)\)</span> 与 <span class="arithmatex">\((5,-4,2)\)</span> 正交，因为 <span class="arithmatex">\((2)(5)+(2)(-4)+(-1)(2)=0\)</span></li>
+</ol>
 </div>
 <div class="admonition note">
 <p class="admonition-title">向量的 方向角 &amp; 方向余弦</p>
@@ -1314,6 +1423,12 @@
 </li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li><span class="arithmatex">\((1,2,3)\)</span> 的范数为 <span class="arithmatex">\(\sqrt{1^2+2^2+3^2}=\sqrt{14}\)</span>，所以它的方向角分别为 <span class="arithmatex">\(\cos^{-1}\frac1{\sqrt{14}}\approx74°,\cos^{-1}\frac2{\sqrt{14}}\approx58°,\cos^{-1}\frac3{\sqrt{14}}\approx37°\)</span></li>
+</ol>
+</div>
 <div class="admonition 投影">
 <p class="admonition-title">投影</p>
 <ul>
@@ -1326,6 +1441,93 @@
 </li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u=(1,1,1)\)</span> 在 <span class="arithmatex">\(\mathbf v=(-2,3,1)\)</span> 的投影为 <span class="arithmatex">\(\text{proj}_{\bf v}\mathbf u=\left(\frac{\bf u\cdot v}{\|\mathbf v\|^2}\right)\mathbf v=\frac{3}{14}\mathbf v=(-3/7,9/14,3/14)\)</span>，投影范数为 <span class="arithmatex">\(\text{comp}_{\bf v}\mathbf u=\|\text{proj}_{\bf v}\mathbf u\|=\frac3{14}\cdot\sqrt{14}=\frac3{\sqrt{14}}\)</span></li>
+<li>一个力向量 <span class="arithmatex">\(\bf f\)</span> 将物体从 <span class="arithmatex">\(\bf u\)</span> 移动到 <span class="arithmatex">\(\bf v\)</span> 所作的功为 <span class="arithmatex">\(W=\mathbf f\cdot(\mathbf u-\mathbf v)\)</span> 或 <span class="arithmatex">\(W=\mathbf f\cdot\mathbf u-\mathbf f\cdot\mathbf v\)</span></li>
+</ol>
+</div>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>点积：两实向量 <span class="arithmatex">\(\bf u,v\in\mathbb R^n\)</span> 的定义为 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\sum\limits_{i=1}^nu_iv_i\)</span></li>
+<li>点积定律：假设 <span class="arithmatex">\(\bf u,v,w\in\mathbb R^n\)</span>，那么（<strong>通常不满足结合律</strong>！）<ol>
+<li>交换律 <span class="arithmatex">\(\bf u\cdot v=v\cdot\bf u\)</span></li>
+<li>点积与加法的分配律 <span class="arithmatex">\(\bf u\cdot(v+w)=u\cdot v+u\cdot w\)</span></li>
+<li>点积与标量乘法的结合律：<span class="arithmatex">\((c\mathbf u)\cdot\mathbf v=c(\mathbf u\cdot\mathbf v)=\mathbf u\cdot(c\mathbf v)\)</span></li>
+</ol>
+</li>
+<li>点积的推论：<span class="arithmatex">\(\forall \bf u\in\mathbb R^n\)</span>，(1) <span class="arithmatex">\(\mathbf u\cdot\mathbf u=\|\mathbf u\|^2\)</span>，(2) <span class="arithmatex">\(\mathbf 0\cdot\mathbf u=0\)</span></li>
+<li>点积的几何推论：假设 <span class="arithmatex">\(\bf u,v\in\mathbb R^n\)</span>，<span class="arithmatex">\(\theta\)</span> 是 <span class="arithmatex">\(\bf u,v\)</span> 的夹角，那么<ol>
+<li><span class="arithmatex">\(\mathbf u\cdot\mathbf v=\|\mathbf u\|\|\mathbf v\|\cos\theta\)</span>，或 <span class="arithmatex">\(\cos\theta=\frac{\mathbf u\cdot\mathbf v}{\|\mathbf u\|\|\mathbf v\|}\)</span></li>
+<li><span class="arithmatex">\(\begin{cases}\mathbf u\cdot\mathbf v=0&amp;\mathbf u,\mathbf v正交\\\mathbf u\cdot\mathbf v=\|\mathbf u\|\|\mathbf v\|&amp;\mathbf u,\mathbf v方向相同\\\mathbf u\cdot\mathbf v=-\|\mathbf u\|\|\mathbf v\|&amp;\mathbf u,\mathbf v方向相反\end{cases}\)</span></li>
+</ol>
+</li>
+<li>方向余弦，方向角：假设 <span class="arithmatex">\(\bf u\in\mathbb R^n,u\ne0\)</span>，那么非零向量 <span class="arithmatex">\(\bf u\)</span> 的<strong>方向余弦</strong>为其单位向量的分量，即 <span class="arithmatex">\(\frac{u_1}{\|\mathbf u\|},\cdots,\frac{u_n}{\|\mathbf u\|}\)</span>；<strong>方向角</strong>分别为 <span class="arithmatex">\(\cos^{-1}\frac{u_1}{\|\mathbf u\|},\cdots,\cos^{-1}\frac{u_n}{\|\mathbf u\|}\)</span><ol>
+<li>若 <span class="arithmatex">\(\mathbf u\in\mathbb R^2\)</span>，那么 <span class="arithmatex">\(\bf u\)</span> 的方向角分别为 <span class="arithmatex">\(\alpha,\beta\)</span>，方向余弦分别为 <span class="arithmatex">\(\cos\alpha,\cos\beta\)</span>，满足 (1) <span class="arithmatex">\(\cos^2\alpha+\cos^2\beta=1\)</span>，(2) <span class="arithmatex">\(\mathbf u=\|\mathbf u\|(\cos\alpha,\cos\beta)\)</span>，(3) <span class="arithmatex">\(|\cos\alpha|=|\sin\beta|\)</span>，<span class="arithmatex">\(|\cos\beta|=|\sin\alpha|\)</span></li>
+<li>若 <span class="arithmatex">\(\mathbf u\in\mathbb R^3\)</span>，那么 <span class="arithmatex">\(\bf u\)</span> 的方向角分别为 <span class="arithmatex">\(\alpha,\beta,\gamma\)</span>，方向余弦分别为 <span class="arithmatex">\(\cos\alpha,\cos\beta,\cos\gamma\)</span>，满足 (1) <span class="arithmatex">\(\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1\)</span>，(2) <span class="arithmatex">\(\mathbf u=\|\mathbf u\|(\cos\alpha,\cos\beta,\cos\gamma)\)</span></li>
+</ol>
+</li>
+<li>投影，投影大小，投影范数：假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span>，那么 <span class="arithmatex">\(\bf u\)</span> 在 <span class="arithmatex">\(\bf v\)</span> 上的<strong>投影</strong>为 <span class="arithmatex">\(\text{proj}_{\bf v}\mathbf u=\left(\frac{\bf u\cdot v}{\|\mathbf v\|^2}\right)\mathbf v\)</span>，对应的<strong>投影大小</strong>为 <span class="arithmatex">\(\text{comp}_{\bf v}\mathbf u=\|\text{proj}_{\bf v}\mathbf u\|=\frac{\bf u\cdot v}{\|\mathbf v\|}\)</span>；<strong>投影范数</strong>为 <span class="arithmatex">\(\|\text{proj}_{\bf v}\mathbf u\|=|\text{comp}_{\bf v}\mathbf u|\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>定理证明：（假设 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^n\)</span>）<ol>
+<li><span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2+2\mathbf u\cdot\mathbf v\)</span></li>
+<li>柯西-施瓦茨不等式：<span class="arithmatex">\(|\bf u\cdot v|\le\|u\|\|v\|\)</span></li>
+<li>三角不等式：<span class="arithmatex">\(\bf\|u+v\|\le\|u\|+\|v\|\)</span></li>
+<li>平行四边形法则：<span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2+\|\mathbf u-\mathbf v\|^2=2(\|\mathbf u\|^2+\|\mathbf v\|^2)\)</span></li>
+<li>毕达哥拉斯定理：若 <span class="arithmatex">\(\bf u\)</span> 和 <span class="arithmatex">\(\bf v\)</span> 正交，那么 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2\)</span></li>
+</ol>
+</li>
+<li>假设有 <span class="arithmatex">\(\mathbb R^2\)</span> 上的直线 <span class="arithmatex">\(l:ax+by+c=0\)</span><ol>
+<li>证明：向量 <span class="arithmatex">\(\mathbf n=(a,b)\)</span> 与 l 垂直（正交）</li>
+<li>证明：<span class="arithmatex">\(P=\mathbf u\in\mathbb R^2\)</span> 到 l 的距离为 <span class="arithmatex">\(\frac{au_1+bu_2+c}{\sqrt{a^2+b^2}}\)</span></li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(\bf u,v\in\mathbb R^n,u,v\ne0\)</span><ol>
+<li>若 <span class="arithmatex">\(\text{comp}_{\bf v}\mathbf u=\text{comp}_{\bf u}\mathbf v\)</span>，那么 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=0\)</span> 或 <span class="arithmatex">\(\|\mathbf u\|=\|\mathbf v\|\)</span></li>
+<li>若 <span class="arithmatex">\(\text{proj}_{\bf v}\mathbf u=\text{proj}_{\bf u}\mathbf v\)</span>，那么 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=0\)</span> 或 <span class="arithmatex">\(\bf u=v\)</span></li>
+</ol>
+</li>
+<li>证明：假设 <span class="arithmatex">\(\mathbf r=(x,y,z)\)</span> 是未知向量，若 <span class="arithmatex">\(\mathbf u,\mathbf v\in\mathbb R^3\)</span>，那么 <span class="arithmatex">\((\mathbf r-\mathbf u)\cdot(\mathbf r-\mathbf v)=0\)</span> 是以 <span class="arithmatex">\(\frac12(\mathbf u+\mathbf v)\)</span> 为圆心，半径为 <span class="arithmatex">\(\frac12(\mathbf u-\mathbf v)\)</span> 的圆（即该圆以 <span class="arithmatex">\(\bf u-v\)</span> 为直径）</li>
+<li>定义 <span class="arithmatex">\(\bf u\)</span> 在 <span class="arithmatex">\(\bf v\)</span> 上的<strong>正交投影</strong>为 <span class="arithmatex">\(\text{orth}_{\bf v}\mathbf u=\mathbf u-\text{proj}_{\bf v}\mathbf u\)</span>，证明 <span class="arithmatex">\(\mathbf v\cdot\text{orth}_{\bf v}\mathbf u=0\)</span></li>
+<li>计算与 <span class="arithmatex">\(\bf i+j,i+k\)</span> 都正交的单位向量</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\sum\limits_{i=1}^n(u_i+v_i)^2=\sum\limits_{i=1}^n(u_i^2+v_i^2+2u_iv_i)=\|\mathbf u\|^2+\|\mathbf v\|^2+2\mathbf u\cdot\mathbf v\)</span></p>
+<p>(1.2) 由 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=\|\mathbf u\|\|\mathbf v\|\cos\theta\)</span> 有 <span class="arithmatex">\(|\mathbf u\cdot\mathbf v|=\|\mathbf u\|\|\mathbf v\||\cos\theta|\le\|\mathbf u\|\|\mathbf v\|\)</span></p>
+<p>(1.3) <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2+2\mathbf u\cdot\mathbf v\)</span> 和 <span class="arithmatex">\((\|\mathbf u\|+\|\mathbf v\|)^2=\|\mathbf u\|^2+\|\mathbf v\|^2+2\|\mathbf u\|\|\mathbf v\|\)</span></p>
+<p>又由[柯西-施瓦茨不等式]，<span class="arithmatex">\(\|\mathbf u\|\|\mathbf v\|\ge|\mathbf u\cdot\mathbf v|\ge\mathbf u\cdot\mathbf v\)</span>，于是 <span class="arithmatex">\((\|\mathbf u\|+\|\mathbf v\|)^2\ge\|\mathbf u+\mathbf v\|^2\)</span></p>
+<p>而范数是非零的，所以上式蕴含 <span class="arithmatex">\(\|\mathbf u\|+\|\mathbf v\|\ge\|\mathbf u+\mathbf v\|\)</span></p>
+<p>(1.4) <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2+2\mathbf u\cdot\mathbf v\)</span></p>
+<p><span class="arithmatex">\(\|\mathbf u-\mathbf v\|^2=\|\mathbf u\|^2+\|-\mathbf v\|^2+2\mathbf u\cdot(-\mathbf v)=\|\mathbf u\|^2+\|\mathbf v\|^2-2\mathbf u\cdot\mathbf v\)</span></p>
+<p>于是 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2+\|\mathbf u-\mathbf v\|^2=2(\|\mathbf u\|^2+\|\mathbf v\|^2)\)</span></p>
+<p>(1.5) 由 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=0\)</span> 有：</p>
+<p><span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2+2\mathbf u\cdot\mathbf v=\|\mathbf u\|^2+\|\mathbf v\|^2\)</span></p>
+<p><span class="arithmatex">\(\|\mathbf u-\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2-2\mathbf u\cdot\mathbf v=\|\mathbf u\|^2+\|\mathbf v\|^2\)</span></p>
+<p>所以 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u-\mathbf v\|^2\)</span>，又由[平行四边形法则]有 <span class="arithmatex">\(2\|\mathbf u+\mathbf v\|^2=2(\|\mathbf u\|^2+\|\mathbf v\|^2)\)</span>，即 <span class="arithmatex">\(\|\mathbf u+\mathbf v\|^2=\|\mathbf u\|^2+\|\mathbf v\|^2\)</span></p>
+<p>(2.1) 假设 <span class="arithmatex">\(\mathbf u\ne\mathbf v\in l\)</span>，那么满足 <span class="arithmatex">\(au_1+bu_2+c=0\)</span> 和 <span class="arithmatex">\(av_1+bv_2+c=0\)</span>，蕴含 <span class="arithmatex">\(au_1+bu_2=av_1+bv_2=-c\)</span>，或者 <span class="arithmatex">\(\mathbf n\cdot\mathbf u=\mathbf n\cdot\mathbf v\)</span></p>
+<p><span class="arithmatex">\(\mathbf n\cdot(\mathbf u-\mathbf v)=\mathbf n\cdot\mathbf u-\mathbf n\cdot\mathbf v=0\)</span>，于是 <span class="arithmatex">\(\mathbf n=(a,b)\)</span> 与 l 正交</p>
+<p>(2.2) 设 <span class="arithmatex">\(\mathbf n=(a,b),\mathbf v\in l\)</span>，那么 <span class="arithmatex">\(\bf u\)</span> 到 l 的距离等于 <span class="arithmatex">\(\bf u-v\)</span> 在 <span class="arithmatex">\(\bf n\)</span> 上的投影范数，即 <span class="arithmatex">\(|\text{comp}_{\bf n}(\mathbf u-\mathbf v)|=\frac{|\bf n\cdot(u-v)|}{\|\bf n\|}=\frac{\mathbf n\cdot\mathbf u-\mathbf n\cdot\mathbf v}{\sqrt{a^2+b^2}}=\frac{|au_1+bu_2-(av_1+bv_2)|}{\sqrt{a^2+b^2}}=\frac{|au_1+bu_2+c|}{\sqrt{a^2+b^2}}\)</span></p>
+<p>(3.1) <span class="arithmatex">\(\text{comp}_{\bf v}\mathbf u=\text{comp}_{\bf u}\mathbf v\)</span> 蕴含 <span class="arithmatex">\(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|}=\frac{\mathbf v\cdot\mathbf u}{\|\mathbf u\|}\)</span>，蕴含 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=0\)</span> 或 <span class="arithmatex">\(\frac1{\|\mathbf v\|}=\frac1{\|\mathbf u\|}\)</span>（即 <span class="arithmatex">\(\|\mathbf v\|=\|\mathbf u\|\)</span>）</p>
+<p>(3.2) <span class="arithmatex">\(\text{proj}_{\bf v}\mathbf u=\text{proj}_{\bf u}\mathbf v\)</span>，蕴含 <span class="arithmatex">\(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\mathbf v=\frac{\mathbf v\cdot\mathbf u}{\|\mathbf u\|^2}\mathbf u\)</span>，那么 <span class="arithmatex">\(\mathbf u\cdot\mathbf v=0\)</span></p>
+<p>或者 <span class="arithmatex">\(\frac1{\|\mathbf v\|^2}\mathbf v=\frac1{\|\mathbf u\|^2}\mathbf u\)</span>，蕴含 <span class="arithmatex">\(\frac1{\|\mathbf v\|^2}\|\mathbf v\|=\frac1{\|\mathbf u\|^2}\|\mathbf u\|\)</span>，即 <span class="arithmatex">\(\|\mathbf u\|=\|\mathbf v\|\)</span>，于是 <span class="arithmatex">\(\bf u=v\)</span></p>
+<p>(5) <span class="arithmatex">\(\mathbf v\cdot\text{orth}_{\bf v}\mathbf u=\mathbf v\cdot(\mathbf u-\text{proj}_{\bf v}\mathbf u)=\mathbf v\cdot\mathbf u-\mathbf v\cdot\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\mathbf v=\mathbf v\cdot\mathbf u-\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\|\mathbf v\|^2=0\)</span></p>
+<p>(6) <span class="arithmatex">\(\begin{bmatrix}1&amp;1&amp;0\\1&amp;0&amp;1\end{bmatrix}\mathbf x=\mathbf 0\)</span>，解得 <span class="arithmatex">\(\mathbf x=(-t,t,t)\)</span>，而 <span class="arithmatex">\(\|\mathbf x\|=1\)</span>，于是 <span class="arithmatex">\(3t^2=1\)</span>，解得 <span class="arithmatex">\(t=\pm\frac1{\sqrt3}\)</span></p>
+<p>所以满足条件的向量为 <span class="arithmatex">\((-\frac1{\sqrt3},\frac1{\sqrt3},\frac1{\sqrt3})\)</span> 或 <span class="arithmatex">\((\frac1{\sqrt3},-\frac1{\sqrt3},-\frac1{\sqrt3})\)</span>
+</p>
+</blockquote>
 <h3 id="4">4.向量的叉积</h3>
 <div class="admonition 叉积">
 <p class="admonition-title">叉积</p>
@@ -1335,6 +1537,13 @@
 <p>那么，向量 <strong>a, b</strong> 的叉积为 <span class="arithmatex">\(\overrightarrow a \times \overrightarrow b = \langle a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1 \rangle\)</span></p>
 <p>或者 <span class="arithmatex">\(\overrightarrow{a}\times\overrightarrow{b}=\left|\begin{array}{ccc}\overrightarrow{i}&amp;\overrightarrow{j}&amp;\overrightarrow{k}\\ \\ a_1&amp;a_2&amp;a_3\\ \\ b_1&amp;b_2&amp;b_3\end{array}\right| = \left|\begin{array}{c c c}{a_{2}}&amp;{a_{3}}\\ {b_{2}}&amp;{b_{3}}\\ \end{array}\right|\overrightarrow{i}-\left|\begin{array}{c c}{a_{1}}&amp;{a_{3}}\\ {b_{1}}&amp;{b_{3}}\\ \end{array}\right|\overrightarrow{j}+\left|\begin{array}{c c}{a_{1}}&amp;{a_{2}}\\ {b_{1}}&amp;{b_{2}}\\ \end{array}\right|\overrightarrow{k}\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\((1,3,4)\times(2,7,-5)=\begin{vmatrix}\bf i&amp;\bf j&amp;\bf k\\1&amp;3&amp;4\\2&amp;7&amp;-5\end{vmatrix}=(-43,13,1)\)</span></li>
+<li><span class="arithmatex">\(\forall\mathbf u\in\mathbb R^3\)</span>，<span class="arithmatex">\(\mathbf u\times\mathbf u=\begin{vmatrix}\bf i&amp;\bf j&amp;\bf k\\u_1&amp;u_2&amp;u_3\\u_1&amp;u_2&amp;u_3\end{vmatrix}=\mathbf 0\)</span></li>
+</ol>
+</div>
 <div class="admonition 叉积的性质">
 <p class="admonition-title">叉积的性质</p>
 </div>
@@ -1371,6 +1580,14 @@
 <li>推论：<span class="arithmatex">\(\overrightarrow a \cdot (\overrightarrow b \times \overrightarrow c) = 0\)</span> <span class="arithmatex">\(\iff\)</span> <strong>a, b, c</strong> 共面</li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf u=(1,4,6),\mathbf v=(-2,5,-1),\mathbf w=(1,-1,1)\)</span> 确定一个三角形平面，垂直于该平面的向量为 <span class="arithmatex">\({\bf(v-u)\times(w-u)}=(-3,1,-7)\times(0,-5,-5)=(-40,-15,15)\)</span></li>
+<li>以 <span class="arithmatex">\(\mathbf u=(1,4,6),\mathbf v=(-2,5,-1),\mathbf w=(1,-1,1)\)</span> 生成的平行四边形的面积等于它们叉积的大小为 <span class="arithmatex">\(\|{\bf(v-u)\times(w-u)}\|=\|(-40,-15,15)\|=5\sqrt{82}\)</span></li>
+<li>对于 <span class="arithmatex">\(\mathbf u=(1,4,-7),\mathbf v=(2,-1,4),\mathbf w=(0,-9,18)\)</span>，而 <span class="arithmatex">\({\bf u\cdot(v\times w)}=(1,4,-7)\cdot(18,-36,-18)=0\)</span>，于是 <span class="arithmatex">\(\bf u,v,w\)</span> 共面</li>
+</ol>
+</div>
 <div class="admonition 自由探索">
 <p class="admonition-title">自由探索</p>
 <ul>
@@ -1387,7 +1604,64 @@
 </li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>叉积：<span class="arithmatex">\(\mathbb R^3\)</span> 上的向量 <span class="arithmatex">\(\bf u,v\)</span> 之间的<strong>叉积</strong>定义为 <span class="arithmatex">\(\mathbf u\times\mathbf v=\begin{vmatrix}\bf i&amp;\bf j&amp;\bf k\\u_1&amp;u_2&amp;u_3\\v_1&amp;v_2&amp;v_3\end{vmatrix}=(u_2v_3-u_3v_2,u_3v_1-u_1v_3,u_1v_2-u_2v_1)\)</span><ol>
+<li><span class="arithmatex">\(\bf u\times v\)</span> 的方向满足 <span class="arithmatex">\(\bf u\)</span> 和 <span class="arithmatex">\(\bf v\)</span> 的[右手法则]</li>
+<li>假设 <span class="arithmatex">\(\bf u,v\)</span> 之间的夹角为 <span class="arithmatex">\(\theta\in[0,\pi]\)</span>，那么 <span class="arithmatex">\(\|\mathbf u\times\mathbf v\|=\|\mathbf u\|\|\mathbf v\|\sin\theta\)</span></li>
+<li><span class="arithmatex">\(\mathbf u\times\mathbf v\)</span> 同时与 <span class="arithmatex">\(\bf u,v\)</span> 正交：<span class="arithmatex">\(\mathbf u\cdot(\mathbf u\times\mathbf v)=0\)</span>，<span class="arithmatex">\(\mathbf v\cdot(\mathbf u\times\mathbf v)=0\)</span></li>
+</ol>
+</li>
+<li>叉积定律：假设 <span class="arithmatex">\(\bf u,v,w\in\mathbb R^n,c\in\mathbb R\)</span>，那么（通常不满足<strong>交换律</strong>和<strong>结合律</strong>）<ol>
+<li>反交换律 <span class="arithmatex">\(\mathbf u\times\mathbf v=-\mathbf v\times\mathbf u\)</span></li>
+<li>叉积与加法的分配律：<span class="arithmatex">\(\mathbf u\times(\mathbf v+\mathbf w)=\mathbf u\times\mathbf v+\mathbf u\times\mathbf w\)</span>，<span class="arithmatex">\((\mathbf u+\mathbf v)\times\mathbf w=\mathbf u\times\mathbf w+\mathbf v\times\mathbf w\)</span></li>
+<li>叉积与标量乘法的结合律：<span class="arithmatex">\((c\mathbf u)\times\mathbf v=c(\mathbf u\times\mathbf v)=\mathbf u\times(c\mathbf v)\)</span></li>
+</ol>
+</li>
+<li>叉积推论：<ol>
+<li>混合积：<span class="arithmatex">\(\bf u\cdot(v\times w)=(u\times v)\cdot w=\begin{bmatrix}u_1&amp;u_2&amp;u_3\\v_1&amp;v_2&amp;v_3\\w_1&amp;w_2&amp;w_3\end{bmatrix}\)</span></li>
+<li>连叉积：<span class="arithmatex">\(\bf u\times(v\times w)=(u\cdot w)\mathbf v-(u\cdot v)w\)</span></li>
+</ol>
+</li>
+<li>叉积的几何推论：<ol>
+<li><span class="arithmatex">\(\bf u,v\)</span> 确定的平行四边形的面积为 <span class="arithmatex">\(\|\bf u\times v\|\)</span></li>
+<li><span class="arithmatex">\(\bf u,v,w\)</span> 确定的六面体的体积为 <span class="arithmatex">\(|\bf u\cdot(v\times w)|\)</span></li>
+<li>若 <span class="arithmatex">\(\bf u\cdot(v\times w)=0\)</span>，那么 <span class="arithmatex">\(\bf u,v,w\)</span> 共面</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：假设 <span class="arithmatex">\(\bf u,v,w\in\mathbb R^n\)</span>，若 <span class="arithmatex">\(\bf u\cdot v=u\cdot w\)</span> 并且 <span class="arithmatex">\(\bf u\times v=u\times w\)</span>，那么 <span class="arithmatex">\(\bf v=w\)</span></li>
+<li>假设 <span class="arithmatex">\(\bf u,v,w,x\in\mathbb R^n\)</span><ol>
+<li>证明：<span class="arithmatex">\({\bf(u-v)\times(u+v)=2(u\times v)}\)</span></li>
+<li>证明：连叉积 <span class="arithmatex">\({\bf u\times(v\times w)=(u\cdot w)v-(u\cdot v)w}\)</span></li>
+<li>证明：<span class="arithmatex">\({\bf u\times(v\times w)+v\times(w\times u)+w\times(u\times v)=0}\)</span></li>
+<li>证明：<span class="arithmatex">\({\bf(u\times v)\cdot(w\times x)}=\begin{vmatrix}\bf u\cdot w&amp;\bf v\cdot w\\\bf u\cdot x&amp;\bf v\cdot x\end{vmatrix}\)</span></li>
+</ol>
+</li>
+<li>证明：假设 L 是直线，若 <span class="arithmatex">\(\mathbf a,\mathbf b\in L\)</span>，那么 <span class="arithmatex">\(\mathbf u\in\mathbb R^n\)</span> 到 L 的距离为 <span class="arithmatex">\(\frac{\|(\bf b-a)\times(u-a)\|}{\|\bf b-a\|}\)</span></li>
+<li>证明：假设 S 是平面，若 <span class="arithmatex">\(\mathbf a,\mathbf b,\mathbf c\in S\)</span>，那么 <span class="arithmatex">\(\mathbf u\in\mathbb R^n\)</span> 到 S 的距离为 <span class="arithmatex">\(\frac{|[(\bf b-a)\times(c-a)]\cdot(u-a)|}{\|(\bf b-a)\times(c-a)\|}\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\bf u\cdot v=u\cdot w,u\times v=u\times w\)</span> 蕴含 <span class="arithmatex">\({\bf u\cdot(v-w)}=0,{\bf u\times(v-w)=0}\)</span></p>
+<p>即 <span class="arithmatex">\(\bf u\ne0\)</span> 同时与 <span class="arithmatex">\(\bf v-w\)</span> 正交并且平行，于是 <span class="arithmatex">\(\bf v-w=0\)</span>，即 <span class="arithmatex">\(\bf v=w\)</span></p>
+<p>(2.1) <span class="arithmatex">\({\bf(u-v)\times(u+v)=u\times u-v\times u+u\times v-v\times v=-v\times u+u\times v=}2(\mathbf u\times\mathbf v)\)</span></p>
+<p>(2/4) <span class="arithmatex">\({\bf(u\times v)\cdot(w\times x)=u\cdot(v\times(w\times x))=u\cdot((v\cdot x)w-(v\cdot w)x)=(v\cdot x)(u\cdot w)-(v\cdot w)(u\cdot x)}=\begin{vmatrix}\bf u\cdot w&amp;\bf v\cdot w\\\bf u\cdot x&amp;\bf v\cdot x\end{vmatrix}\)</span></p>
+</blockquote>
 <h3 id="5">5.直线与平面方程</h3>
+<p>（根据线性代数的思想）一般意义上的<strong>直线</strong>是指 <span class="arithmatex">\(\mathbb R^n\)</span> 上的一维子空间通过平移所得的图形</p>
+<p>而<strong>平面</strong>是指 <span class="arithmatex">\(\mathbb R^n\)</span> 上的二维子空间通过平移得到的图形</p>
+<hr/>
 <p>三维空间中的直线 L，可以通过直线上的一个点 <span class="arithmatex">\(P_0(x_0, y_0, z_0)\)</span> 和 这条直线的方向 确定这条直线，</p>
 <p>令 <strong>v</strong> 为平行于 L 的向量，<span class="arithmatex">\(P(x, y, z)\)</span> 为 L 上的任意一点，<strong>r0, r</strong> 分别为 <span class="arithmatex">\(P_0, P\)</span> 的 位置向量（即 <span class="arithmatex">\(\overrightarrow {OP_0}, \overrightarrow {OP}\)</span>），</p>
 <p>如果 <strong>a</strong> 为 <span class="arithmatex">\(\overrightarrow {P_0P}\)</span> 的表示向量，根据三角形法则 和 平行向量的特性：<strong>r = r0 + a = r0 + </strong>t <strong>v</strong></p>
@@ -1400,6 +1674,13 @@
 <p>直线的参数表示：<span class="arithmatex">\(x = x_0+at, y = y_0+bt, z = z_0+ct\)</span></p>
 <p>直线的对称方程：<span class="arithmatex">\(\frac {x-x_0}a = \frac {y-y_0}b = \frac {z-z_0}c, a, b, c \ne 0\)</span> 或 <span class="arithmatex">\(x=x_0, \frac {y-y_0}b = \frac {z-z_0}c, b,c\ne 0\)</span> 或 <span class="arithmatex">\(y=y_0, \frac {x-x_0}a = \frac {z-z_0}c, a,c\ne 0\)</span>，<span class="arithmatex">\(\dots\)</span> （总共 <span class="arithmatex">\(2^3-1=8-1\)</span> 种表示对称方程；<strong>v = 0</strong> 时仅表示空间上的点 <span class="arithmatex">\(P_0\)</span>）</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+<ol>
+<li>通过 <span class="arithmatex">\((5,1,3)\)</span>，平行于 <span class="arithmatex">\(\mathbf i+4\mathbf j-2\mathbf k\)</span> 的直线的向量方程为 <span class="arithmatex">\(\mathbf r=(5+t)\mathbf i+(1+4t)\mathbf j+(3-2t)\mathbf k\)</span>，参数方程为 <span class="arithmatex">\(x=5+t,y=1+4t,z=3-2t\)</span></li>
+<li>通过 <span class="arithmatex">\((2,4,-3),(3,-1,1)\)</span> 的直线的参数方程为 <span class="arithmatex">\(\mathbf r=(2+t)\mathbf i+(4-5t)\mathbf j+(-3+4t)\mathbf k\)</span>，对称方程为 <span class="arithmatex">\(\frac{x-2}1=\frac{y-4}{-5}=\frac{z+3}4\)</span></li>
+</ol>
+</div>
 <div class="admonition 线段方程">
 <p class="admonition-title">线段方程</p>
 </div>
@@ -1422,9 +1703,16 @@
 <blockquote>
 <p><span class="arithmatex">\(\overrightarrow n \cdot (\overrightarrow r - \overrightarrow r_0) = 0\)</span></p>
 <p><span class="arithmatex">\(\overrightarrow n \cdot \overrightarrow r = \overrightarrow n \cdot \overrightarrow r_0\)</span></p>
-<p>令 <span class="arithmatex">\(\overrightarrow n = \langle a, b, c \rangle, \overrightarrow r - \overrightarrow r_0 = \langle x-x_0, y-y_0, z-z_0 \rangle\)</span> （a，b，c 不全为 0，否则表示整个三维空间？）</p>
+<p>令 <span class="arithmatex">\(\overrightarrow n = \langle a, b, c \rangle, \overrightarrow r - \overrightarrow r_0 = \langle x-x_0, y-y_0, z-z_0 \rangle\)</span> （a，b，c 不全为 0？）</p>
 <p>有：<span class="arithmatex">\(a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\)</span> 或 <span class="arithmatex">\(ax + by + cz = ax_0 + by_0 + cy_0\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>通过点 <span class="arithmatex">\((2,4,-1)\)</span>，法向量为 <span class="arithmatex">\((2,3,4)\)</span> 的平面的一般方程为 <span class="arithmatex">\(2(x-2)+3(y-4)+4(z+1)=0\)</span> 或 <span class="arithmatex">\(2x+3y+4z=12\)</span></li>
+<li>通过点 <span class="arithmatex">\(\mathbf u=(1,3,2),\mathbf v=(3,-1,6),\mathbf w=(5,2,0)\)</span> 的平面的法向量为 <span class="arithmatex">\({\bf n=(v-u)\times(w-u)}=12\mathbf i+20\mathbf j+14\mathbf k\)</span>，其点法式方程为 <span class="arithmatex">\(12(x-1)+20(y-3)+13(z-2)=0\)</span> 或 <span class="arithmatex">\(6x+10y+7z=50\)</span></li>
+</ol>
+</div>
 <div class="admonition 三维平面的截距">
 <p class="admonition-title">三维平面的截距</p>
 </div>
@@ -1478,6 +1766,127 @@
 </li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>直线参数方程 <span class="arithmatex">\(x=2+3t,y=-4t,z=5+t\)</span> 与平面 <span class="arithmatex">\(4x+5y-2z=18\)</span> 的交点：<ol>
+<li>法1：将直线方程化为两行的方程组，再联立平面方程，求解 <span class="arithmatex">\(3\times3\)</span> 的线性方程组即可</li>
+<li>法2：将参数方程代入平面方程，求解 t，从而得到交点</li>
+</ol>
+</li>
+<li>有平面 <span class="arithmatex">\(x+y+z=1\)</span> 和 <span class="arithmatex">\(x-2y+3z=1\)</span>，两平面夹角为 <span class="arithmatex">\(\theta=\cos^{-1}\frac{(1,1,1)\cdot(1,-2,3)}{\|(1,1,1)\|\|(1,-2,3)\|}=\cos^{-1}\frac2{\sqrt{42}}\)</span>，两平面交线为 <span class="arithmatex">\((-5/3,2/3,1)t+(1,0,0)\)</span>（求解线性方程组即可）</li>
+<li><span class="arithmatex">\(\mathbf u\)</span> 到平面 <span class="arithmatex">\(ax+by+cz+d=0\)</span> 的距离为 <span class="arithmatex">\(\frac{|au_1+bu_2+cu_3+d|}{\sqrt{a^2+b^2+c^2}}\)</span></li>
+<li>平面 <span class="arithmatex">\(10x+2y-2z=5\)</span> 到平面 <span class="arithmatex">\(5x+y-z=1\)</span> 之间的距离为平面 1 的特殊点 <span class="arithmatex">\((1/2,0,0)\)</span> 到平面 2 的距离，即 <span class="arithmatex">\(\frac{|5(1/2)+0-0-1|}{\sqrt{5^2+1^2+(-1)^2}}=\frac{3/2}{\sqrt{27}}=\frac{\sqrt3}6\)</span></li>
+<li>求两相错直线 <span class="arithmatex">\(\mathbf r=(1,-2,4)+(1,3,-1)t\)</span> 和 <span class="arithmatex">\(\mathbf r=(0,3,-3)+(2,1,4)s\)</span> 之间的距离为 <span class="arithmatex">\(\frac{|(\mathbf v_1\times\mathbf v_2)\cdot(\mathbf r_1-\mathbf r_2)|}{\|\mathbf v_1\times\mathbf v_2\|}=\frac{\|(13,-6,-5)\cdot(1,-5,7)\|}{\|(13,-6,-5)\|}=\frac8{\sqrt{230}}\)</span></li>
+</ol>
+</div>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>直线方程：假设 <span class="arithmatex">\(\mathbf r=(x,y,z)\)</span>，经过初始点 <span class="arithmatex">\(\mathbf r_0=(x_0,y_0,z_0)\)</span>，方向向量为 <span class="arithmatex">\(\mathbf v=(a,b,c)\)</span> 的直线方程如下：<ol>
+<li>参数向量方程：<span class="arithmatex">\(\mathbf r=\mathbf r_0+t\mathbf v\)</span></li>
+<li>参数方程：<span class="arithmatex">\(\begin{cases}x=x_0+at\\y=y_0+bt\\z=z_0+ct\end{cases}\)</span></li>
+<li>对称方程，如：<span class="arithmatex">\(\frac{x-x_0}a=\frac{y-y_0}b=\frac{z-z_0}c\)</span> 或 <span class="arithmatex">\(\begin{cases}\frac{x-x_0}a=\frac{y-y_0}b\\\frac{y-y_0}b=\frac{z-z_0}c\end{cases}\)</span></li>
+</ol>
+</li>
+<li>线段方程：假设 <span class="arithmatex">\(\mathbf r=(x,y,z)\)</span>，以 <span class="arithmatex">\(\mathbf r_0,\mathbf r_1\)</span> 为始末向量的线段方程为 <span class="arithmatex">\(\mathbf r=\mathbf r_0+t(\mathbf r_1-\mathbf r_0)=(1-t)\mathbf r_0+t\mathbf r_1\)</span>（<span class="arithmatex">\(t\in[0,1]\)</span>）</li>
+<li>相错直线：既不相交也不平行的两条直线，称它们是<strong>相错的</strong></li>
+<li>平面方程：假设 <span class="arithmatex">\(\mathbf r=(x,y,z)\)</span> 为未知向量，经过初始点 <span class="arithmatex">\(\mathbf r_0=(x_0,y_0,z_0)\)</span>，法向量为 <span class="arithmatex">\(\mathbf n=(a,b,c)\)</span> 的平面方程为：<ol>
+<li>参数向量方程：<span class="arithmatex">\(\mathbf r=\mathbf r_0+s\mathbf v_1+t\mathbf v_2\)</span>（其中 <span class="arithmatex">\(\mathbf v_1\times\mathbf v_2=\mathbf n\)</span>）</li>
+<li>向量方程：<span class="arithmatex">\(\mathbf n\cdot(\mathbf r-\mathbf r_0)=0\)</span> 或 <span class="arithmatex">\(\mathbf n\cdot\mathbf r=\mathbf n\cdot\mathbf r_0\)</span></li>
+<li>一般方程：<span class="arithmatex">\(a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\)</span> 或 <span class="arithmatex">\(ax+by+cz+d=0\)</span>，其中 <span class="arithmatex">\(d=-\mathbf n\cdot\mathbf r_0=-(ax_0 + by_0 + cy_0)\)</span></li>
+<li>任意点 <span class="arithmatex">\(\mathbf u\)</span> 到该平面的距离为 <span class="arithmatex">\(|\text{comp}_{\bf n}(\mathbf u-\mathbf r)|\)</span> 或 <span class="arithmatex">\(\frac{au_1+bu_2+cu_3+d}{\sqrt{a^2+b^2+c^2}}\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\mathbb R^n\)</span> 中的一个方程表示 <span class="arithmatex">\(n-1\)</span> 维子空间的平移/旋转/扭曲？</li>
+<li>在 <span class="arithmatex">\(\mathbb R^2\)</span> 中<ol>
+<li>直线 <span class="arithmatex">\(ax+by+c=0\)</span> 的法向量为 <span class="arithmatex">\((a,b)\)</span></li>
+<li>点到直线的距离为 <span class="arithmatex">\(\frac{|au_1+bu_2+c|}{\sqrt{a^2+b^2}}\)</span></li>
+</ol>
+</li>
+<li>在 <span class="arithmatex">\(\mathbb R^3\)</span> 中，<span class="arithmatex">\(\forall i=0..2\)</span>，假设有直线 <span class="arithmatex">\(l_i:\mathbf r=\mathbf r_i+t\mathbf v_i\)</span> 和平面 <span class="arithmatex">\(S_i:\mathbf n_i\cdot(\mathbf r-\mathbf r_i)=0\)</span>，那么：<ol>
+<li>平面 <span class="arithmatex">\(S_0\)</span> 的法向量为 <span class="arithmatex">\(\mathbf n_0=(a,b,c)\)</span></li>
+<li>若 <span class="arithmatex">\(a\ne0,b\ne0,c\ne0\)</span>，那么平面 <span class="arithmatex">\(S_0\)</span> 到 <span class="arithmatex">\(x,y,z\)</span> 轴的截距分别为 <span class="arithmatex">\(A=\frac{\mathbf n_0\cdot\mathbf r_0}a,B=\frac{\mathbf n_0\cdot\mathbf r_0}b,C=\frac{\mathbf n_0\cdot\mathbf r_0}c\)</span>（满足 <span class="arithmatex">\(aA=bB=cC=\mathbf n_0\cdot\mathbf r_0=-d\)</span>）</li>
+<li>点 <span class="arithmatex">\(\bf u\)</span> 到直线 <span class="arithmatex">\(l_0\)</span> 的距离为 <span class="arithmatex">\(\frac{\|\mathbf v_0\times(\mathbf r_0-\mathbf u)\|}{\|\mathbf v_0\|}\)</span></li>
+<li>点 <span class="arithmatex">\(\bf u\)</span> 到平面 <span class="arithmatex">\(S_0\)</span> 的距离为 <span class="arithmatex">\(|\text{comp}_{\bf n_0}(\mathbf r_0-\mathbf u)|\)</span> 或 <span class="arithmatex">\(\frac{|au_1+bu_2+cu_3+d|}{\sqrt{a^2+b^2+c^2}}\)</span></li>
+<li>两平行平面 <span class="arithmatex">\(S_1,S_2\)</span> 之间的距离为 <span class="arithmatex">\(|\text{comp}_{\bf n_2}(\mathbf r_1-\mathbf r_2)|\)</span>；若 <span class="arithmatex">\(\mathbf n_1=\mathbf n_2\)</span> 并且 <span class="arithmatex">\(\mathbf n_1\cdot\mathbf r_1=-d_1,\mathbf n_2\cdot\mathbf r_2=-d_2\)</span>，那么 <span class="arithmatex">\(\frac{|d_2-d_1|}{\|\sqrt{a^2+b^2+c^2}\|}\)</span></li>
+<li>两交错直线 <span class="arithmatex">\(l_1,l_2\)</span> 之间的距离为 <span class="arithmatex">\(|\text{comp}_{\mathbf v_1\times\mathbf v_2}(\mathbf r_1-\mathbf r_2)|\)</span></li>
+<li><span class="arithmatex">\(l_1,l_2\)</span> 的交点：若线性方程组 <span class="arithmatex">\(\begin{bmatrix}\mathbf v_1&amp;-\mathbf v_2\end{bmatrix}\begin{bmatrix}s\\t\end{bmatrix}=\mathbf r_2-\mathbf r_1\)</span> 的解为 <span class="arithmatex">\((s,t)\)</span>，那么交点为 <span class="arithmatex">\(\mathbf r_1+s\mathbf v_1\)</span> 或 <span class="arithmatex">\(\mathbf r_2+t\mathbf v_2\)</span></li>
+<li>两不重合直线 <span class="arithmatex">\(l_1,l_2\)</span> 的生成平面为 <span class="arithmatex">\(\begin{cases}(\mathbf v_1\times\mathbf v_2)\cdot(\mathbf r-\mathbf r_1)=0&amp;l_1,l_2相交\\(\mathbf v_1\times(\mathbf r_1-\mathbf r_2))\cdot(\mathbf r-\mathbf r_1)=0&amp;l_1,l_2平行\end{cases}\)</span></li>
+</ol>
+</li>
+<li>若 <span class="arithmatex">\(l_1\)</span> 与 <span class="arithmatex">\(l_2\)</span> 相交，那么 <span class="arithmatex">\(\exists s,t\)</span> 使得 <span class="arithmatex">\(\mathbf r_1+s\mathbf v_1=\mathbf r_2+t\mathbf v_2\)</span></li>
+<li>直线 <span class="arithmatex">\(l_0:\mathbf r=\mathbf r_0+t_1\mathbf v_0\)</span> 与平面 <span class="arithmatex">\(s_1:\mathbf r=\mathbf r_1+t_2\mathbf u_1+t_3\mathbf v_1\)</span> 的交点：解方程 <span class="arithmatex">\(\begin{bmatrix}\mathbf u_0&amp;-\mathbf u_1&amp;-\mathbf v_1\end{bmatrix}\mathbf t=\mathbf r_1-\mathbf r_0\)</span>，然后将 <span class="arithmatex">\(t_1\)</span> 代入 <span class="arithmatex">\(l_0\)</span> 即可</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：向量 <span class="arithmatex">\(\mathbf u\)</span> 到初始点为 <span class="arithmatex">\(\mathbf r_0=(x_0,y_0,z_0)\)</span>，法向量为 <span class="arithmatex">\(\mathbf n=(a,b,c)\)</span> 的平面的距离为 <span class="arithmatex">\(\frac{|au_1+bu_2+cu_3+d|}{\sqrt{a^2+b^2+c^2}}\)</span></li>
+<li>相错直线之间的距离<ol>
+<li>证明 <span class="arithmatex">\(x=y=z\)</span> 和 <span class="arithmatex">\(x+1=y/2=z/3\)</span> 相错</li>
+<li>计算 (1) 中两直线的距离</li>
+<li>计算 <span class="arithmatex">\(x=1+t,y=1+6t,z=2t\)</span> 和 <span class="arithmatex">\(x=1+2s,y=5+15s,z=-2+6s\)</span> 之间的距离</li>
+</ol>
+</li>
+<li>某平面 <span class="arithmatex">\(S_1\)</span> 与 <span class="arithmatex">\(S_2:x+2y-2z=1\)</span> 平行，且它们距离为 2，计算 <span class="arithmatex">\(S_1\)</span></li>
+<li>计算 <span class="arithmatex">\(\mathbf u=(1,2,3)\)</span> 到 <span class="arithmatex">\(x=2+t,y=2-3t,z=5t\)</span> 的距离</li>
+<li>计算 <span class="arithmatex">\(\mathbf u=(2,8,5)\)</span> 到 <span class="arithmatex">\(x-2y-2z=1\)</span> 的距离</li>
+<li>证明：若平面 S 到 <span class="arithmatex">\(x,y,z\)</span> 轴的截距分别为 <span class="arithmatex">\(A,B,C\ne0\)</span>（即 S 不经过原点），那么 S 的方程为 <span class="arithmatex">\(\frac xA+\frac yB+\frac zC=1\)</span></li>
+<li>假设有两直线 <span class="arithmatex">\(l_1:\mathbf r=\mathbf r_1+t\mathbf v_1,l_2:\mathbf r=\mathbf r_2+t\mathbf v_2\)</span>，计算 (1) <span class="arithmatex">\(l_1,l_2\)</span> 的交点，(2) 相交直线 <span class="arithmatex">\(l_1,l_2\)</span> 的生成平面</li>
+<li>证明：若 <span class="arithmatex">\(\bf u\)</span> 与 <span class="arithmatex">\(\bf a,b\)</span> 都垂直（即 <span class="arithmatex">\(\mathbf u\cdot\mathbf a=0,\mathbf u\cdot\mathbf b=0\)</span>），那么 <span class="arithmatex">\(\bf u\)</span> 与 <span class="arithmatex">\(\bf a\times b\)</span> 平行（即 <span class="arithmatex">\(\exists k\ne0,\mathbf u=k(\bf a\times b)\)</span>）</li>
+<li>若 <span class="arithmatex">\(l_0\)</span> 通过点 <span class="arithmatex">\((0,1,2)\)</span>，并且与 <span class="arithmatex">\(S_1:x+y=z=2\)</span> 平行，与 <span class="arithmatex">\(l_1:x=1+t,y=1-t,z=2t\)</span> 垂直，计算 <span class="arithmatex">\(l_0\)</span> 的方程</li>
+<li>若 <span class="arithmatex">\(l_0\)</span> 通过点 <span class="arithmatex">\((0,1,2)\)</span>，并且与 <span class="arithmatex">\(l_1:x=1+t,y=1-t,z=2t\)</span> 垂直，且 <span class="arithmatex">\(l_0\)</span> 与 <span class="arithmatex">\(l_1\)</span> 相交，计算 <span class="arithmatex">\(l_0\)</span> 的方程</li>
+<li>待续...</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(|\text{comp}_{\bf n}(\mathbf u-\mathbf r)|=\frac{|\mathbf n\cdot(\mathbf u-\mathbf r)|}{\|\mathbf n\|}=\frac{|\mathbf n\cdot\mathbf u-\mathbf n\cdot\mathbf r|}{\|\mathbf n\|}=\frac{|\mathbf n\cdot\mathbf u-\mathbf n\cdot\mathbf r_0|}{\|\mathbf n\|}=\frac{au_1+bu_2+cu_3+d}{\sqrt{a^2+b^2+c^2}}\)</span></p>
+<p>(2.1) 线性方程组 <span class="arithmatex">\(\begin{cases}x=y\\y=z\\x+1=y/2\\y/2=z/3\end{cases}\)</span> 无解，所以两直线无交点</p>
+<p>其他做法：计算同时具有两个相同分量的点（如 <span class="arithmatex">\(x,y\)</span> 坐标相同），若这些点的另一个坐标都不相同，那么两直线无交点</p>
+<p>又因它们的方向向量不成比例，即 <span class="arithmatex">\(\forall k,(1,1,1)\ne k(1,2,3)\)</span>，那么两直线不共线</p>
+<p>于是这两条直线相错</p>
+<p>(2.2) 两相错直线的距离为 <span class="arithmatex">\(\frac{|(\mathbf v_1\times\mathbf v_2)\cdot(\mathbf r_1-\mathbf r_2)|}{\|\mathbf v_1\times\mathbf v_2\|}=\frac{|(1,-2,1)\cdot(1,0,0)|}{\|(1,-2,1)\|}=\frac1{\sqrt6}\)</span>，</p>
+<p>其中 <span class="arithmatex">\(\mathbf r_1=(0,0,0),\mathbf v_1=(1,1,1)\)</span>，<span class="arithmatex">\(\mathbf r_2=(-1,0,0),\mathbf v_2=(1,2,3)\)</span></p>
+<p>(2.3) <span class="arithmatex">\(\frac{|(\mathbf v_1\times\mathbf v_2)\cdot(\mathbf r_1-\mathbf r_2)|}{\|\mathbf v_1\times\mathbf v_2\|}=\frac{|(6,-2,3)\cdot(0,-4,2)|}{\|(6,-2,3)\|}=\frac{14}{\sqrt{49}}=2\)</span></p>
+<p>其中 <span class="arithmatex">\(\mathbf v_1\times\mathbf v_2=(1,6,2)\times(2,15,6)=(6,-2,3)\)</span>，<span class="arithmatex">\(\mathbf r_1-\mathbf r_2=(1,1,0)-(1,5,-2)=(0,-4,2)\)</span></p>
+<p>(3) 设平面 <span class="arithmatex">\(S_1\)</span> 为 <span class="arithmatex">\(x+2y-2z+d=0\)</span>，于是 <span class="arithmatex">\(S_1\)</span> 和 <span class="arithmatex">\(S_2\)</span> 之间的距离为 <span class="arithmatex">\(2=\frac{|d-(-1)|}{\sqrt{1^2+2^2+(-2)^2}}\)</span>，解得 <span class="arithmatex">\(d=5\)</span> 或 <span class="arithmatex">\(d=-7\)</span></p>
+<p>(4) <span class="arithmatex">\(\frac{\|\mathbf v_0\times(\mathbf r_0-\mathbf u)\|}{\|\mathbf v_0\|}=\frac{\|(1,-3,5)\times(1,0,-3)\|}{\|(1,-3,5)\|}=\frac{\|(9,8,3)\|}{\sqrt{35}}=\sqrt{154/35}=\sqrt{22/5}\)</span></p>
+<p>(5) 设 <span class="arithmatex">\(\mathbf n_0=(1,-2,-2),\mathbf r_0=(1,0,0)\)</span>，于是距离为 <span class="arithmatex">\(\frac{|\mathbf n_0\cdot(\mathbf r_0-\mathbf u)|}{\|\mathbf n_0\|}=\frac{|(1,-2,-2)\cdot(-1,-8,-5)|}{\|(1,-2,-2)\|}=\frac{25}{\sqrt{1^2+(-2)^2+(-2)^2}}=25/3\)</span></p>
+<p>或者，距离为 <span class="arithmatex">\(\frac{|(1)(2)+(-2)(8)+(-2)(5)-1|}{\sqrt{1^2+(-2)^2+(-2)^2}}=\frac{|-25|}{\sqrt{9}}=25/3\)</span></p>
+<p>(6) 设 S 的方程为 <span class="arithmatex">\(ax+by+cz=\mathbf n_0\cdot\mathbf r_0\)</span>（其中 <span class="arithmatex">\(\mathbf n_0\cdot\mathbf r_0\ne0\)</span>）</p>
+<p>蕴含 S 的方程为 <span class="arithmatex">\(\frac a{\mathbf n_0\cdot\mathbf r_0}x+\frac b{\mathbf n_0\cdot\mathbf r_0}y+\frac c{\mathbf n_0\cdot\mathbf r_0}z=1\)</span>，即 <span class="arithmatex">\(\frac xA+\frac yB+\frac zC=1\)</span></p>
+<p>(7)</p>
+<ol>
+<li>有线性方程组 <span class="arithmatex">\(\begin{bmatrix}1&amp;1\\-1&amp;-1\\2&amp;0\end{bmatrix}\begin{bmatrix}s\\t\end{bmatrix}=\begin{bmatrix}2\\0\\2\end{bmatrix}-\begin{bmatrix}1\\1\\0\end{bmatrix}\)</span>，解得 <span class="arithmatex">\(s=1,t=0\)</span>，于是交点为 <span class="arithmatex">\((2,0,2)\)</span></li>
+<li>两平面的生成平面为 <span class="arithmatex">\(((1,-1,2)\times(-1,1,0))\cdot(x-1,y-1,z)=0\)</span>，即 <span class="arithmatex">\((-2,-2,0)\cdot(x-1,y-1,z)=0\)</span>，即 <span class="arithmatex">\(x+y=2\)</span></li>
+</ol>
+<p>(8) <span class="arithmatex">\(\mathbf u\times(\mathbf a\times\mathbf b)=(\mathbf u\cdot\mathbf b)\mathbf a-(\mathbf u\cdot\mathbf a)\mathbf b=\mathbf 0\)</span>，所以 <span class="arithmatex">\(\bf u\)</span> 与 <span class="arithmatex">\(\bf a\times b\)</span> 平行</p>
+<p>(9) <span class="arithmatex">\(\mathbf r_0=(0,1,2)\)</span>，</p>
+<p><span class="arithmatex">\(l_0\)</span> 与 <span class="arithmatex">\(S_1\)</span> 平行，蕴含 <span class="arithmatex">\(\mathbf v_0\cdot\mathbf n_1=0\)</span>，</p>
+<p><span class="arithmatex">\(l_0\)</span> 与 <span class="arithmatex">\(l_1\)</span> 垂直，蕴含 <span class="arithmatex">\(\mathbf v_0\cdot\mathbf v_1=0\)</span></p>
+<p>法1：于是 <span class="arithmatex">\(\bf v_0\)</span> 与 <span class="arithmatex">\(\mathbf n_1\times v_1=(1,1,1)\times(1,-1,2)=(3,-1,-2)\)</span> 平行，于是 <span class="arithmatex">\(l_0\)</span> 的方程为 <span class="arithmatex">\(\mathbf r=(0,1,2)+t(3,-1,-2)\)</span></p>
+<p>法2：设 <span class="arithmatex">\(\mathbf v_0=(a,b,c)\)</span>，求解欠定方程组 <span class="arithmatex">\(\begin{bmatrix}1&amp;1&amp;1\\1&amp;-1&amp;2\end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}=\mathbf 0\)</span> 得 <span class="arithmatex">\(\begin{bmatrix}a\\b\\c\end{bmatrix}=k\begin{bmatrix}-3/2\\1/2\\1\end{bmatrix}\)</span>，于是 <span class="arithmatex">\(k=2\)</span> 时，有 <span class="arithmatex">\(l_0\)</span> 的方程：<span class="arithmatex">\(\mathbf r=(0,1,2)+t(-3,1,2)\)</span></p>
+<p>(10) <span class="arithmatex">\(\mathbf r_0=(0,1,2)\)</span>，<span class="arithmatex">\(l_0\)</span> 与 <span class="arithmatex">\(l_1\)</span> 垂直，蕴含 <span class="arithmatex">\(\mathbf v_0\cdot\mathbf v_1=0\)</span></p>
+<p><span class="arithmatex">\(l_0\)</span> 与 <span class="arithmatex">\(l_1\)</span> 相交，蕴含 <span class="arithmatex">\(\exists s,t\)</span> 使得 <span class="arithmatex">\(\mathbf r_0+s\mathbf v_0=\mathbf r_1+t\mathbf v_1\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\mathbf r_0\cdot\mathbf v_1+s\mathbf v_0\cdot\mathbf v_1=\mathbf r_1\cdot\mathbf v_1+t\mathbf v_1\cdot\mathbf v_1\)</span>，蕴含 <span class="arithmatex">\(\mathbf r_0\cdot\mathbf v_1=\mathbf r_1\cdot\mathbf v_1+t\|\mathbf v_1\|^2\)</span>，蕴含 <span class="arithmatex">\(t=\frac{(\mathbf r_0-\mathbf r_1)\cdot\mathbf v_1}{\|\mathbf v_1\|^2}=(-1,0,2)\cdot(1,-1,2)/6=1/2\)</span></p>
+<p>令 <span class="arithmatex">\(l_0,l_1\)</span> 的交点为 <span class="arithmatex">\(\mathbf u=\mathbf r_1+t\mathbf v_1=(3/2,1/2,1)\)</span></p>
+<p>令 <span class="arithmatex">\(l_0\)</span> 的方向向量为 <span class="arithmatex">\(\mathbf v_0=2(\mathbf u-\mathbf r_0)=(-3,1,2)\)</span></p>
+<p>于是 <span class="arithmatex">\(l_0\)</span> 的方程为 <span class="arithmatex">\(\mathbf r=(0,1,2)+t(-3,1,2)\)</span></p>
+</blockquote>
 <h3 id="6">6.柱面 &amp; 二次曲面</h3>
 <p>我们已经研究了两种特殊曲面——平面（12.5），球面（12.1），下面将研究 柱面 和 二次曲面</p>
 <div class="admonition 柱面">
@@ -1486,11 +1895,14 @@
 <blockquote>
 <p>直线沿着定曲线平移所得到的曲面称为 柱面，该直线称为 母线（通常是 垂直于某个坐标面 或 平行于某个坐标轴 的直线）</p>
 </blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>类似 <span class="arithmatex">\(z=x^2\)</span> 的称为 抛物柱面</li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(z=x^2\)</span> 不含 y，可以看作 <span class="arithmatex">\(xz\)</span> 坐标平面上的抛物线 <span class="arithmatex">\(z=x^2\)</span> 沿着 <span class="arithmatex">\(\mathbf r=t(0,1,0)\)</span> 移动所得的<strong>抛物柱面</strong></li>
+<li>若某个方程不含 <span class="arithmatex">\(x,y,z\)</span> 其中之一，那么该方程是柱面方程</li>
+<li><span class="arithmatex">\(x^2+y^2=1\)</span> 是 <span class="arithmatex">\(xy\)</span> 平面上的单位圆生成的<strong>圆柱面</strong></li>
+<li><span class="arithmatex">\(y^2+z^2=1\)</span> 是 <span class="arithmatex">\(yz\)</span> 平面上的单位圆生成的圆柱面</li>
+</ol>
 </div>
 <div class="admonition 二次曲面">
 <p class="admonition-title">二次曲面</p>
@@ -1530,11 +1942,52 @@
 <li><span class="arithmatex">\(Ax^2+By^2+Iz=0, A,B\ne 0, I=0\)</span> <span class="arithmatex">\(\implies\)</span> 坐标轴 或 平面</li>
 </ol>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(z=4x^2+y^2\)</span> 是“开口向上的”椭圆抛物面</li>
+<li><span class="arithmatex">\(z=y^2-x^2\)</span> 是双曲抛物面</li>
+<li><span class="arithmatex">\(x^2+y^2/9+z^2/4=1\)</span> 是椭球面</li>
+<li><span class="arithmatex">\(x^2+y^2-z^2=1\)</span> 是单叶双曲面</li>
+<li><span class="arithmatex">\(x^2+y^2-z^2=-1\)</span> 是双叶双曲面</li>
+<li><span class="arithmatex">\(x^2+y^2-z^2=0\)</span> 是锥面</li>
+<li>曲面方程 <span class="arithmatex">\(x^2+2z^2-6x-y+10=0\)</span> 等价于 <span class="arithmatex">\((x-3)^2+2z^2-(y-1)=0\)</span>，于是该曲面为顶点在 <span class="arithmatex">\((3,1,0)\)</span> 上，开口朝 y 轴正方向的椭圆抛物面</li>
+</ol>
+</div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <ul>
 <li>如何画出二次曲面的图形？分别设 x, y, z = k (<span class="arithmatex">\(k\in R\)</span>) 得到各个平行于坐标轴的截面来画出图形</li>
 </ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>柱面，母线：某直线沿着一条与之垂直的曲线平移所经过的区域或曲面称为<strong>柱面</strong>，这条直线称为<strong>母线</strong></li>
+<li>二次曲面</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>标准柱面的大致分类：<span class="arithmatex">\(\begin{cases}抛物柱面&amp;Ax^2+Cy=0\\椭圆柱面&amp;Ax^2+By^2+D=0,AB&gt;0,D&lt;0\\双曲柱面&amp;Ax^2+By^2+D=0,AB&lt;0\end{cases}\)</span></li>
+<li>标准二次曲面的大致分类：<span class="arithmatex">\(\begin{cases}椭圆抛物面&amp;Ax^2+By^2+Dz=0,AB&gt;0\\双曲抛物面&amp;Ax^2+By^2+Dz=0,AB&lt;0\\椭圆椭圆面&amp;Ax^2+By^2+Cz^2+E=0,ABC&gt;0,E&lt;0\\锥面&amp;Ax^2+By^2+Cz^2+E=0,AB&gt;0,C&lt;0,E=0\\单叶双曲面&amp;Ax^2+By^2+Cz^2+E=0,AB&gt;0,C&lt;0,E&lt;0\\双叶双曲面&amp;Ax^2+By^2+Cz^2+E=0,AB&gt;0,C&lt;0,E&gt;0\end{cases}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断题<ol>
+<li>给定 <span class="arithmatex">\(\mathbb R^3\)</span> 上的一个标准的二次方程 <span class="arithmatex">\(Ax^a+By^b+Cz^c+D=0\)</span>，若 <span class="arithmatex">\(a+b+c\)</span> 为 3 或 4，那么该曲面为柱面；若 <span class="arithmatex">\(a+b+c\)</span> 为 5 或 6，那么该曲面为二次曲面(Y)</li>
+<li>若三元的最高次为二次的方程具有交叉乘积项，如 <span class="arithmatex">\(xy,yz,zx\)</span>，那么该方程表示旋转的二次曲面(Y)</li>
+<li>完整的二次曲面方程具有 10 个项，如 <span class="arithmatex">\(\begin{bmatrix}x&amp;y&amp;z&amp;1\end{bmatrix}M\begin{bmatrix}x\\y\\z\\1\end{bmatrix}=0\)</span>(Y)</li>
+</ol>
+</li>
+</ol>
 </div>
 <h3 id="7">7.柱面坐标系 &amp; 球坐标系</h3>
 <p>在平面几何中，我们为了方便描述曲线或者区域的时候，给出了 <strong>极坐标系</strong>，</p>
@@ -1548,6 +2001,14 @@
 <p>柱面坐标 =&gt; 直角坐标：<span class="arithmatex">\(x = r\cos \theta, y = r\sin \theta, z = z\)</span></p>
 <p>直角坐标 =&gt; 柱面坐标：<span class="arithmatex">\(r^2 = x^2 + y^2, \tan \theta = \frac yx, z = z\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\((r,\theta,z)\)</span> 是柱面坐标系中的坐标，<span class="arithmatex">\([x,y,z]\)</span> 是对应的直角坐标，那么 <span class="arithmatex">\((2,2\pi/3,1)=[-1,\sqrt3,1]\)</span>，<span class="arithmatex">\([3,-3,-7]=(3\sqrt2,-\pi/4,-7)\)</span></li>
+<li>柱面坐标方程 <span class="arithmatex">\(z=r\)</span> 等价于直角坐标方程 <span class="arithmatex">\(z^2=x^2+y^2\)</span>，是一个锥面</li>
+<li>直角坐标方程 <span class="arithmatex">\(4x^2+4y^2+z^2=1\)</span> 等价于柱面坐标方程 <span class="arithmatex">\(z^2=1-4r^2\)</span></li>
+</ol>
+</div>
 <div class="admonition 球坐标系">
 <p class="admonition-title">球坐标系</p>
 </div>
@@ -1578,13 +2039,90 @@
 <li><span class="arithmatex">\(P_1(x, y, z) =&gt; P_3(\sqrt {x^2 + y^2 + z^2}, \cos^{-1} \frac x{\rho\sin\phi}, \cos^{-1}\frac z\rho) = P_3(\sqrt {x^2 + y^2 + z^2}, \cos^{-1} \frac x{\sqrt{x^2+y^2}}, \cos^{-1}\frac z\rho)\)</span></li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\((\rho,\theta,\phi)\)</span> 是球面坐标系中的坐标，<span class="arithmatex">\([x,y,z]\)</span> 是对应的直角坐标，那么 <span class="arithmatex">\((2,\pi/4,\pi/3)=[\sqrt6/2,\sqrt6/2,1],[0,2\sqrt3,-2]=(4,\pi/2,2\pi/3)\)</span></li>
+<li>双叶双曲面 <span class="arithmatex">\(x^2-y^2-z^2=1\)</span> 的球面方程为 <span class="arithmatex">\(\rho^2(\sin^2\phi\cos^2\theta-\sin^2\phi\sin^2\theta-\cos^2\phi)=1\)</span>，即 <span class="arithmatex">\(\rho^2(2\sin^2\phi\cos^2\theta-\sin^2\phi-\cos^2\phi)=1\)</span>，即 <span class="arithmatex">\(\rho^2(2\sin^2\phi\cos^2\theta-1)=1\)</span></li>
+<li>球面坐标方程 <span class="arithmatex">\(\rho=\sin\theta\sin\phi\)</span> 的直角坐标方程为 <span class="arithmatex">\(x^2+y^2+z^2=y\)</span></li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>柱面坐标系：在极坐标系的基础上添加一维 z，<span class="arithmatex">\(\mathbb R^3\)</span> 上任意一点 P 可以用三元组 <span class="arithmatex">\((r,\theta,z)\)</span> 表示<ol>
+<li>其中 r 是 P 到 z 轴的距离，<span class="arithmatex">\(\theta\)</span> 是 <span class="arithmatex">\(OP\)</span> 在 <span class="arithmatex">\(xy\)</span> 平面上的投影从极轴出发逆时针旋转扫过的夹角</li>
+<li><span class="arithmatex">\(\forall\theta,r,z\)</span> 有 (1) <span class="arithmatex">\((0,\theta,0)\)</span> 表示原点 O，(2) <span class="arithmatex">\((r,\theta+2\pi,z)=(r,\theta,z)\)</span>，(3) <span class="arithmatex">\((-r,\theta,z)=(r,\theta+\pi,z)\)</span></li>
+<li>坐标变换：(1) <span class="arithmatex">\(\begin{cases}r=\sqrt{x^2+y^2}\\\theta=\tan^{-1}\frac yx\\z=z\end{cases}\)</span>，(2) <span class="arithmatex">\(\begin{cases}x=r\cos\theta=f(\theta)\cos\theta\\y=r\sin\theta=f(\theta)\sin\theta\\z=z\end{cases}\)</span></li>
+</ol>
+</li>
+<li>球坐标系：假设 <span class="arithmatex">\(\rho\ge0,\phi\in[0,\pi]\)</span>，那么 <span class="arithmatex">\(\mathbb R^3\)</span> 上任意一点 P 可以用三元组 <span class="arithmatex">\((\rho,\theta,\phi)\)</span> 表示<ol>
+<li>其中 <span class="arithmatex">\(\rho=\|OP\|\)</span>，<span class="arithmatex">\(\theta\)</span> 是 <span class="arithmatex">\(OP\)</span> 在 <span class="arithmatex">\(xy\)</span> 平面上的投影从极轴出发逆时针旋转扫过的夹角，<span class="arithmatex">\(\phi\)</span> 是 <span class="arithmatex">\(OP\)</span> 与 z 轴正方向的夹角</li>
+<li>坐标变换：(1) <span class="arithmatex">\(\begin{cases}\rho=\sqrt{x^2+y^2+z^2}\\\theta=\tan^{-1}\frac yx\\\phi=\cos^{-1}\frac z\rho\end{cases}\)</span>，(2) <span class="arithmatex">\(\begin{cases}x=\rho\sin\phi\cos\theta\\y=\rho\sin\phi\sin\theta\\ z=\rho\cos\phi\end{cases}\)</span></li>
+</ol>
+</li>
+<li>柱面坐标系与求坐标系的坐标变换：(1) <span class="arithmatex">\(\begin{cases}\rho=\sqrt{x^2+y^2+z^2}\\\theta=\tan^{-1}\frac yx\\\phi=\cos^{-1}\frac z\rho\end{cases}\)</span>，(2) <span class="arithmatex">\(\begin{cases}r=\sqrt{\rho^2-z^2}\\\theta=\theta\\z=\rho\cos\theta\end{cases}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>直角坐标转柱面坐标：(1) <span class="arithmatex">\((1,-1,4)\)</span>，(2) <span class="arithmatex">\((3,4,5)\)</span></li>
+<li>直角坐标转球坐标：(1) <span class="arithmatex">\((1,\sqrt3,2\sqrt3)\)</span>，(2) <span class="arithmatex">\((0,\sqrt3,1)\)</span></li>
+<li>柱面坐标转直角坐标：(1) <span class="arithmatex">\((2,\pi/4,1)\)</span>，(3) <span class="arithmatex">\((1,\pi,e)\)</span></li>
+<li>柱面坐标转球坐标：(1) <span class="arithmatex">\((1,\pi/6,\sqrt3)\)</span>，(2) <span class="arithmatex">\((\sqrt3,\pi/2,-1)\)</span></li>
+<li>球坐标转直角坐标：(1) <span class="arithmatex">\((1,0,0)\)</span>，(2) <span class="arithmatex">\((1,\pi/6,\pi/6)\)</span></li>
+<li>球坐标转柱面坐标：(1) <span class="arithmatex">\((2,0,0)\)</span>，(2) <span class="arithmatex">\((8,\pi/6,\pi/2)\)</span></li>
+<li>描述如下曲面：(1) <span class="arithmatex">\(r=3\)</span>，(2) <span class="arithmatex">\(\theta=\pi/3\)</span>，(3) <span class="arithmatex">\(\rho=3\)</span>，(4) <span class="arithmatex">\(\phi=\pi/3\)</span></li>
+<li>描述 <span class="arithmatex">\(z=\sqrt{x^2+y^2}\)</span> 之上，<span class="arithmatex">\(x^2+y^2+z^2=z\)</span> 的上球面之下的实心部分</li>
+<li>给出如下直角方程的 (a) 柱面坐标，(b) 球坐标<ol>
+<li><span class="arithmatex">\(x^2-y^2-2z^2=4\)</span></li>
+<li><span class="arithmatex">\(z=x^2+y^2\)</span></li>
+<li><span class="arithmatex">\(x^2+y^2+z^2+2z=0\)</span></li>
+<li><span class="arithmatex">\(x^2+y^2=2y\)</span></li>
+<li><span class="arithmatex">\(z=x^2-y^2\)</span></li>
+</ol>
+</li>
+<li>描述不等式区域：(1) <span class="arithmatex">\(r^2\le z\le2-r^2\)</span>，(2) <span class="arithmatex">\(\theta\in[0,\pi/2],z\in[r,2]\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(7)</p>
+<ol>
+<li>半径为 3 的圆柱面 <span class="arithmatex">\(x^2+y^2=3^2\)</span></li>
+<li>半平面 <span class="arithmatex">\(|y|=\sqrt3|x|\)</span></li>
+<li>半径为 3 的球面 <span class="arithmatex">\(x^2+y^2+z^2=3^2\)</span></li>
+<li>锥面：<span class="arithmatex">\(1/2=\cos\phi=z/\sqrt{x^2+y^2+z^2}\)</span></li>
+</ol>
+<p>(8) <span class="arithmatex">\(z\ge\sqrt{x^2+y^2}\)</span> 蕴含 <span class="arithmatex">\(z^2\ge x^2+y^2\)</span>，蕴含 <span class="arithmatex">\(2z^2\ge\rho^2\)</span>，蕴含 <span class="arithmatex">\(2\cos^2\phi\ge1\)</span>，蕴含 <span class="arithmatex">\(\phi\in[0,\pi/4]\)</span></p>
+<p><span class="arithmatex">\(x^2+y^2+z^2=z\)</span> 蕴含 <span class="arithmatex">\(\rho^2=\rho\cos\phi\)</span>，蕴含 <span class="arithmatex">\(\rho=\cos\phi\)</span>，于是 <span class="arithmatex">\(0\le\rho\le\cos\phi\)</span></p>
+<p>所以区域可以描述为 <span class="arithmatex">\(\{\phi\in[0,\pi/4],\rho\in[0,\cos\phi]\}\)</span></p>
+<p>(9)</p>
+<ol>
+<li><span class="arithmatex">\(2z^2=r^2\cos2\theta-4\)</span>，<span class="arithmatex">\(\rho^2(\sin^2\phi\cos2\theta-2\cos^2\phi)=4\)</span></li>
+<li><span class="arithmatex">\(z=r^2\)</span>，<span class="arithmatex">\(\rho=\cot\phi\csc\phi\)</span></li>
+<li><span class="arithmatex">\(r^2+(z+1)^2=1\)</span>，<span class="arithmatex">\(\rho=-2\cos\phi\)</span></li>
+<li><span class="arithmatex">\(r=2\sin\theta\)</span>，<span class="arithmatex">\(\rho\sin\phi=2\sin\theta\)</span></li>
+<li><span class="arithmatex">\(z=r^2\cos2\theta\)</span>，<span class="arithmatex">\(\cos\phi=\rho\sin^2\phi\cos2\theta\)</span></li>
+</ol>
+<p>(10)</p>
+<ol>
+<li><span class="arithmatex">\(r^2\le z\le2-r^2\)</span> 表示开口向上的椭圆抛物面 <span class="arithmatex">\(x^2+y^2=z\)</span> 的上方，开口向下的椭圆抛物面 <span class="arithmatex">\(x^2+y^2+z=2\)</span> 的下方所包围的区域</li>
+<li><span class="arithmatex">\(\theta\in[0,\pi/2],z\in[r,2]\)</span> 表示 <span class="arithmatex">\(x&gt;0,y&gt;0\)</span> 的区域内，<span class="arithmatex">\(z=2\)</span> 之下，锥面 <span class="arithmatex">\(\sqrt{x^2+y^2}=z\)</span> 之上的部分</li>
+</ol>
+</blockquote>
 </article>
 </div>
 </div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </button>
+          </a>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -1593,20 +2131,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                上一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  上一页
+                </span>
                 11.无穷序列&amp;级数
               </div>
 </div>
 </a>
 <a aria-label="下一页: 13.向量函数" class="md-footer__link md-footer__link--next" href="../13.%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0/" rel="next">
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                下一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  下一页
+                </span>
                 13.向量函数
               </div>
 </div>
@@ -1624,10 +2162,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -1637,8 +2175,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

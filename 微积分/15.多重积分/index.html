@@ -8,11 +8,11 @@
 <link href="../14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/" rel="prev"/>
 <link href="../16.%E5%90%91%E9%87%8F%E7%A7%AF%E5%88%86/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.0.3" name="generator"/>
 <title>15.多重积分 - 数学</title>
-<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -42,7 +42,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -159,7 +159,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+<ol class="md-search-result__list"></ol>
 </div>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
+<div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
@@ -238,12 +238,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<nav aria-label="概述" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -273,14 +273,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-label="微积分" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           微积分
@@ -397,7 +397,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           15.多重积分
           <span class="md-nav__icon md-icon"></span>
@@ -482,12 +482,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
           线性代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           线性代数
@@ -562,12 +562,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_4" tabindex="0">
           概率导论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率导论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           概率导论
@@ -627,12 +627,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_5" tabindex="0">
           矩阵代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-label="矩阵代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           矩阵代数
@@ -727,12 +727,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_6" tabindex="0">
           数学分析
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学分析" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           数学分析
@@ -822,12 +822,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_7" tabindex="0">
           初等数论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-label="初等数论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           初等数论
@@ -917,12 +917,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_8" tabindex="0">
           数学扩充
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学扩充" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           数学扩充
@@ -942,14 +942,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/">线性代数1</a>
 <label for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数1" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           线性代数1
@@ -1009,12 +1009,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
-<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_10" tabindex="0">
           概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率论及其应用" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
           概率论及其应用
@@ -1202,7 +1202,7 @@
 <div class="admonition note">
 <p class="admonition-title">二重积分</p>
 <ul>
-<li>定义闭矩形区域 <span class="arithmatex">\(R=[a,b]\times[c,d] = \{(x,y)|a\le x\le b,c\le y\le d,(x,y)\in \mathbb R^2\}\)</span> </li>
+<li>定义闭矩形区域 <span class="arithmatex">\(R=[a,b]\times[c,d] = \{(x,y)\in \mathbb R^2|~a\le x\le b,c\le y\le d\}\)</span> </li>
 <li>将区间 [a,b] 分成 n 个区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span>（<span class="arithmatex">\(i=1..n\)</span>）,其中 <span class="arithmatex">\(\Delta x=x_i-x_{i-1}=\frac {b-a}n\)</span></li>
 <li>将区间 [c,d] 分成 m 个区间 <span class="arithmatex">\([y_{i-1},y_i]\)</span>（<span class="arithmatex">\(i=1..m\)</span>）,其中 <span class="arithmatex">\(\Delta y=y_i-y_{i-1}=\frac {d-c}m\)</span></li>
 <li>每个子区域为 <span class="arithmatex">\(R=[x_{i-1},x_i]\times[y_{j-1},y_j] = \{(x,y)|x_{i-1}\le x\le x_i,y_{j-1}\le y\le y_j,(x,y)\in \mathbb R^2\}\)</span> ，对应的面积为 <span class="arithmatex">\(\Delta A = \Delta A_{ij} = (x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x\Delta y\)</span><ul>
@@ -1230,6 +1230,12 @@
 <li>如果 <span class="arithmatex">\(f(x,y)\ge 0\)</span>，那么以矩形 R 为底，z=f(x,y) 形成的曲面为定的立体的体积 V 可以表示为： <span class="arithmatex">\(V = \iint f(x,y)~d_A\)</span></li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(R=[-1,1]\times[-2,2]\)</span>，计算 <span class="arithmatex">\(\iint\limits_R\sqrt{1-x^2}d_A\)</span>：可以将其看作曲面 <span class="arithmatex">\(z=\sqrt{1-x^2}\)</span> 在 R 下的面积，即一个圆柱 <span class="arithmatex">\(x^2+z^2=1\)</span> 的上半部分在 R 下的面积，即 <span class="arithmatex">\(\frac12\cdot\pi(1^2)\cdot4=2\pi\)</span></li>
+</ol>
+</div>
 <div class="admonition 二重样本点的选择">
 <p class="admonition-title">二重样本点的选择</p>
 </div>
@@ -1241,6 +1247,12 @@
 <li>辛普森法则：<span class="arithmatex">\(S_{n,m}=\sum\limits_{i=1}^{\frac n2}\sum\limits_{j=1}^{\frac m2} \frac{[f(x_{2i-2}) + 4f(x_{2i-1}) + f(x_{2i})]\cdot[f(y_{2i-2}) + 4f(y_{2i-1}]}9\Delta A\)</span></li>
 </ul>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(n=2,m=2\)</span> 时，使用中值法估计 <span class="arithmatex">\(\iint\limits_R(x-3y^2)d_A\approx\sum\limits_{i=0}^1\sum\limits_{j=0}^1f(\frac{x_i+x_{i+1}}2,\frac{y_j+y_{j+1}}2)\Delta A=\sum\limits_{i=0}^1\sum\limits_{j=0}^1f(\frac12+i,\frac54+\frac12j)\cdot\frac12=-\frac{95}8\)</span></li>
+</ol>
+</div>
 <div class="admonition 函数平均值">
 <p class="admonition-title">函数平均值</p>
 </div>
@@ -1266,6 +1278,44 @@
 </li>
 </ol>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>二重积分：假设 <span class="arithmatex">\(R=[a,b]\times[c,d] = \{(x,y)\in \mathbb R^2|~a\le x\le b,c\le y\le d\}\)</span>，那么 <span class="arithmatex">\(f(x,y)\)</span> 在 R 上的二重积分定义为 <span class="arithmatex">\(\iint\limits_Rf(x,y)d_A=\lim\limits_{n,m\to+∞}\sum\limits_{i=0}^{n-1}\sum\limits_{j=0}^{m-1}f(x_{ij}^*,y_{ij}^*)\Delta A\)</span>（其中 <span class="arithmatex">\(\Delta A=\Delta x\Delta y,\Delta x=\frac{b-a}n,\Delta y=\frac{d-c}m\)</span>；<span class="arithmatex">\(x_{ij}^*\in[x_i,x_{i+1}]=[a+\Delta xi,a+\Delta x(i+1)],y_{ij}^*\in(y_j,y_{j+1})=[c+\Delta yj,c+\Delta y(j+1)]\)</span>）</li>
+<li>二重积分的精确定义：若 <span class="arithmatex">\(\forall\epsilon&gt;0,\exists N&gt;0\)</span> 使得 <span class="arithmatex">\(\forall n,m&gt;N\)</span>，有 <span class="arithmatex">\(\left|\iint\limits_Rf(x,y)d_A-\lim\limits_{n,m\to+∞}\sum\limits_{i=0}^{n-1}\sum\limits_{j=0}^{m-1}f(x_{ij}^*,y_{ij}^*)\Delta A\right|&lt;\epsilon\)</span>，那么记 <span class="arithmatex">\(\iint\limits_Rf(x,y)d_A=\lim\limits_{n,m\to+∞}\sum\limits_{i=0}^{n-1}\sum\limits_{j=0}^{m-1}f(x_{ij}^*,y_{ij}^*)\Delta A\)</span></li>
+<li>二重积分的特殊样本点：二重积分中的样本点 <span class="arithmatex">\((x_{ij}^*,y_{ij}^*)\)</span> 通常统一使用某类特殊样本点：(1) 左下角 <span class="arithmatex">\((x_i,y_j)\)</span>，(2) 重点法则 <span class="arithmatex">\((\frac{x_i+x_{i+1}}2,\frac{y_j+y_{j+1}}2)\)</span>，(3) 梯度法则 <span class="arithmatex">\((x_{ij}^*,y_{ij}^*)=\frac{f(x_i,y_j)+f(x_i,y_{j+1})}2\)</span>，(4) 辛普森法则</li>
+<li>函数平均值：<span class="arithmatex">\(f(x,y)\)</span> 在矩形区域 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span> 的平均值为 <span class="arithmatex">\(f_{ave}=\frac{\iint\limits_Rf(x,y)~d_A}{(b-a)(d-c)}\)</span></li>
+<li>二重积分的性质：(1) 线性 <span class="arithmatex">\(\iint\limits_R[f(x,y)+g(x,y)]d_A=\iint\limits_Rf(x,y)d_A+\iint\limits_Rg(x,y)d_A\)</span>，<span class="arithmatex">\(\iint\limits_Rcf(x,y)d_A=c\iint\limits_Rf(x,y)d_A\)</span>，(2) 序：若 <span class="arithmatex">\(\forall(x,y)\in R,f(x,y)\ge g(x,y)\)</span>，那么 <span class="arithmatex">\(\iint\limits_Rf(x,y)d_A\ge\iint\limits_Rf(x,y)d_A\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>二重积分的几何意义：假设 <span class="arithmatex">\(f(x,y)\ge0\)</span>，R 是矩形区域，那么 <span class="arithmatex">\(\iint\limits_Rf(x,y)d_A\)</span> 是曲面 <span class="arithmatex">\(z=f(x,y)\)</span> 在区域 R 之下的围成的立体的体积</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>假设 <span class="arithmatex">\(R=[0,4]\times[0,2]\)</span>，计算 <span class="arithmatex">\(\iint\limits_R\sqrt{9-y^2}d_A\)</span>（参见[15.2]的做法）</li>
+<li>使用常见的估计方法（中点值法，梯度法，辛普森法）估算二重积分：<ol>
+<li><span class="arithmatex">\(\iint\limits_R(5-x)d_A,R=[0,5]\times[0,3]\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_R(4-2y)d_A,R=[0,1]\times[0,1]\)</span></li>
+</ol>
+</li>
+<li>证明：假设 <span class="arithmatex">\(R=[0,1]\times[0,1]\)</span>，那么 <span class="arithmatex">\(0\le\iint\limits_R\sin(x+y)d_A\le1\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\iint\limits_R\sqrt{9-y^2}d_A=\int_0^41d_x\int_0^2\sqrt{9-y^2}d_y=4\cdot\frac12\left[y\sqrt{9-y^2}+9\sin^{-1}\frac y3\right]_0^2=4\sqrt5+18\sin^{-1}\frac23\)</span></p>
+</blockquote>
 <h3 id="2">2.累次积分</h3>
 <p>本节我们将看到 二重积分 可以表示成 累次积分 的形式，即二重积分通过两次一重积分得到</p>
 <div class="admonition note">
@@ -1277,6 +1327,13 @@
 <p>然后，<span class="arithmatex">\(\int_a^b A(x)~d_x = \int_a^b[\int_c^d f(x,y)~d_y]~d_x\)</span>，称之为 <strong>累次积分</strong></p>
 <p>性质：<span class="arithmatex">\(\int_a^b[\int_c^d f(x,y)~d_y]~d_x = \int_a^b\int_c^d f(x,y)~d_y~d_x\)</span>，<span class="arithmatex">\(\int_c^d[\int_a^b f(x,y)~d_x]~d_y = \int_c^d\int_a^b f(x,y)~d_x~d_y\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\int_0^3\int_1^2x^2y~d_yd_x=\int_0^3\left[\frac12x^2y^2\right]_{y=1}^{y=2}d_x=\frac32\int_0^3x^2d_x=\frac32\cdot9=\frac{27}2\)</span></li>
+<li><span class="arithmatex">\(\int_1^2\int_0^3x^2y~d_xd_y=\int_1^2\left[\frac13x^3y\right]_{x=0}^{x=3}d_y=9\int_1^2yd_y=9\cdot\frac32=\frac{27}2\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Fubini 傅比尼定理</p>
 </div>
@@ -1289,15 +1346,84 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>累计积分的顺序（即先对什么变量进行积分）可以简化计算</li>
+<li>改变累次积分的顺序（即先对什么变量进行积分）可以简化计算</li>
 </ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>反常积分未必满足傅比尼定理：<span class="arithmatex">\(\int_0^1\int_0^1\frac{x-y}{(x+y)^3}d_xd_y=1\ne-1=\int_0^1\int_0^1\frac{x-y}{(x+y)^3}d_yd_x\)</span></li>
+<li>假设 <span class="arithmatex">\(R=[0,2]\times[1,2]\)</span>，计算 <span class="arithmatex">\(\iint\limits_R(x-3y^2)d_A\)</span>：根据[富比尼定理]有 <span class="arithmatex">\(\iint\limits_R(x-3y^2)d_A=\int_0^2\int_1^2(x-3y^2)d_yd_x=\int_0^2\left[xy-y^3\right]_{y=1}^{y=2}d_x=\int_0^2(x-7)d_x=\left[\frac12x^2-7x\right]_0^2=-12\)</span></li>
+<li>假设 <span class="arithmatex">\(R=[1,2]\times[0,\pi]\)</span>，计算 <span class="arithmatex">\(\iint\limits_Ry\sin xy~d_A\)</span>：<ol>
+<li>法1：<span class="arithmatex">\(\iint\limits_Ry\sin xy~d_A=\int_1^2\int_0^\pi y\sin xy~d_yd_x=\int_1^2\left[(y)(-\frac1x\cos xy)-(-\frac1{x^2}\sin xy)\right]_{y=0}^{y=\pi} d_x=\int_1^2[-\frac\pi x\cos\pi x+\frac1{x^2}\sin\pi x]d_x\)</span> <span class="arithmatex">\(=[(-\frac\pi x)(\frac1\pi\sin\pi x)]_1^2-\int_1^2(\frac\pi{x^2})(\frac1\pi\sin\pi x)d_x+\int_1^2\frac1{x^2}\sin\pi xd_x=0\)</span></li>
+<li>法2：<span class="arithmatex">\(\int_0^\pi\int_1^2y\sin xy~d_xd_y=\int_0^\pi\left[-\cos xy\right]_{x=1}^{x=2}d_y=\int_0^\pi(\cos y-\cos 2y)d_y=[\sin y-\frac12\sin2y]_0^\pi=0\)</span></li>
+</ol>
+</li>
+<li>计算 <span class="arithmatex">\(x^2+2y^2+z=16\)</span> 与 <span class="arithmatex">\(x=2,y=2\)</span> 以及三个坐标平面围成的立体的体积：立体可以表示为 <span class="arithmatex">\(\iint\limits_R(16-x^2-2y^2)d_A=\int_0^2\int_0^2(16-x^2-y^2)d_xd_y=\int_0^2(32-\frac83-2y^2)d_y=[\frac{88}3y-\frac23y^3]_0^2=\frac{160}3\)</span>，也即 <span class="arithmatex">\(z=16-x^2-y^2\)</span> 在 <span class="arithmatex">\(R=[0,2]\times[0,2]\)</span> 之下围成的封闭立体，其体积为 <span class="arithmatex">\(\iint\limits_R(16-x^2-2y^2)d_A=\int_0^2\int_0^2(16-x^2-y^2)d_xd_y=\int_0^2(32-\frac83-2y^2)d_y=[\frac{88}3y-\frac23y^3]_0^2=\frac{160}3\)</span></li>
+<li>假设 <span class="arithmatex">\(R=[0,\pi2]\times[0,\pi/2]\)</span>，那么 <span class="arithmatex">\(\iint\limits_R\sin x\cos y~d_A=\int_0^{\pi/2}\sin x~d_x\cdot\int_0^{\pi/2}\sin y~d_y=1\cdot1=1\)</span></li>
+</ol>
 </div>
 <div class="admonition note">
 <p class="admonition-title">累次积分的 性质</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(\int\limits_R f(x)g(y)~d_A = \int_a^b f(x)~d_x\int_c^d g(y)~d_y\)</span>，当 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span></p>
+<p><span class="arithmatex">\(\iint\limits_R f(x)g(y)~d_A = \int_a^b f(x)~d_x\int_c^d g(y)~d_y\)</span>，当 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span></p>
 <p>注：但是遇到 x 和 y 耦合的情况如何解决？</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>部分积分，累次积分：<span class="arithmatex">\(\int_a^bf(x,y)d_x\)</span> 或 <span class="arithmatex">\(\int_c^df(x,y)d_y\)</span> 称为<strong>部分积分</strong>；<span class="arithmatex">\(\int_a^b\int_c^df(x,y)d_yd_x\)</span> 或 <span class="arithmatex">\(\int_c^d\int_a^bf(x,y)d_xd_y\)</span> 称为<strong>累次积分</strong></li>
+<li>（Fubini）傅比尼定理：假设 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span>，而且 f 在 R 上<strong>连续</strong>，那么 <span class="arithmatex">\(\iint\limits_Rf(x,y)d_A=\int_c^d\int_a^bf(x,y)d_xd_y=\int_a^b\int_c^df(x,y)d_yd_x\)</span></li>
+<li>累次积分的性质：假设 f 在 <span class="arithmatex">\(R=[a,b]\times[c,d]\)</span> 上连续，那么 <span class="arithmatex">\(\iint\limits_Rf(x)g(y)d_A=\int_a^bf(x)d_x\int_c^df(y)d_y\)</span>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断题<ol>
+<li>积分中的[富比尼定理]与微分中的[14.3克莱罗定理]相似(Y)</li>
+<li>在被积函数的不连续区域中的二重积分（反常积分）不一定满足[富比尼定理] (Y)</li>
+</ol>
+</li>
+<li>计算累次积分：<ol>
+<li><span class="arithmatex">\(\int_1^4\int_1^2(x/y+y/x)d_yd_x\)</span></li>
+<li><span class="arithmatex">\(\int_0^1\int_0^1\frac{xy}{\sqrt{x^2+y^2+1}}d_yd_x\)</span></li>
+</ol>
+</li>
+<li>计算二重积分：<ol>
+<li><span class="arithmatex">\(\iint\limits_R\frac{xy^2}{x^2+1}d_A,R=[0,1]\times[-3,3]\)</span></li>
+<li><span class="arithmatex">\(\iint\limits_Rx\sin(x+y)d_A,R=[0,\pi/6]\times[0,\pi/3]\)</span></li>
+</ol>
+</li>
+<li>描述累次积分所对应的立体：(1) <span class="arithmatex">\(\int_0^1\int_0^1(4-x-2y)d_xd_y\)</span>，(2) <span class="arithmatex">\(\int_0^1\int_0^1(2-x^2-y^2)d_xd_y\)</span></li>
+<li>计算 <span class="arithmatex">\(x^2/4+y^2/9+z=1\)</span> 之下，<span class="arithmatex">\(R=[-1,1]\times[-2,2]\)</span> 之上的立体体积</li>
+<li>计算 <span class="arithmatex">\(z=1+(x-1)^2+4y^2\)</span> 和 <span class="arithmatex">\(x=3\)</span>，<span class="arithmatex">\(y=2\)</span> 以及坐标平面所围成的立体的体积</li>
+<li>计算 <span class="arithmatex">\(z=9-y^2\)</span> 与 <span class="arithmatex">\(x=2\)</span> 在第一卦限中围成的立体的体积</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(2.1) <span class="arithmatex">\(\int_1^4\int_1^2(x/y+y/x)d_yd_x=\int_1^4\left[x\ln|y|+\frac12y^2/x\right]_{y=1}^{y=2}d_x=\int_1^4(x\ln2+\frac3{2x})d_x=\left[\frac{\ln2}2x^2+\frac32\ln|x|\right]_1^4=\frac{21}2\ln2\)</span></p>
+<p>法2：<span class="arithmatex">\(\int_1^4\int_1^2(x/y+y/x)d_yd_x=\int_1^4xd_x\cdot\int_1^2\frac1yd_x+\int_1^4\frac1xd_x\cdot\int_1^2yd_x=\frac{15}2\cdot\ln2+\ln4\cdot\frac32=\frac{21}2\ln2\)</span></p>
+<p>(2.2) <span class="arithmatex">\(\int_0^1\int_0^1\frac{xy}{\sqrt{x^2+y^2+1}}d_yd_x=\int_0^1\frac x2\left[2\sqrt{x^2+y^2+1}\right]_{y=0}^{y=1}d_x=\int_0^1x(\sqrt{x^2+2}-\sqrt{x^2+1})d_x\)</span></p>
+<p><span class="arithmatex">\(=\left[\frac13(x^2+2)^{3/2}-\frac13(x^2+1)^{3/2}\right]_0^1=\frac13(3^{3/2}-1)=\frac13(3\sqrt3-4\sqrt2+1)\)</span></p>
+<p>(4)</p>
+<ol>
+<li><span class="arithmatex">\(\int_0^1\int_0^1(4-x-2y)d_xd_y\)</span> 表示平面 <span class="arithmatex">\(x+2y+z=4\)</span> 在 <span class="arithmatex">\([0,1]\times[0,1]\)</span> 下所围成的立体的净体积</li>
+<li><span class="arithmatex">\(\int_0^1\int_0^1(2-x^2-y^2)d_xd_y\)</span> 表示平面 <span class="arithmatex">\(z+x^2+y^2=2\)</span> 在 <span class="arithmatex">\([0,1]\times[0,1]\)</span> 下所围成的立体的净体积</li>
+</ol>
+<p>(5) <span class="arithmatex">\(\iint\limits_R(1-x^2/4-y^2/9)d_A=\int_{-1}^1\int_{-2}^2(1-x^2/4-y^2/9)d_xd_y=2\cdot4-4\int_{-1}^1(x^2/4)d_x-2\int_{-2}^2(y^2/9)d_y=\frac{166}{27}\)</span></p>
+<p>(6) 所描述的立体为 <span class="arithmatex">\(z=1+(x-1)^2+4y^2\)</span> 在 <span class="arithmatex">\(R=[0,3]\times[0,2]\)</span> 之下所围成的立体，体积为 <span class="arithmatex">\(\iint\limits_R(1+(x-1)^2+4y^2)d_A=\int_0^3\int_0^2(1+(x-1)^2+4y^2)d_xd_y=3\cdot2+2\int_0^3(x-1)^2d_x+3\int_0^2(4y^2)d_y\)</span> <span class="arithmatex">\(=6+\frac23(x-1)^3\Big|_0^3+4y^3\Big|_0^2=44\)</span></p>
+<p>(7) 第一卦限中 <span class="arithmatex">\(z\ge0\)</span>，蕴含 <span class="arithmatex">\(9-y^2\ge0\)</span>，即 <span class="arithmatex">\(y\le3\)</span>；于是立体为 <span class="arithmatex">\(z=9-y^2\)</span> 在 <span class="arithmatex">\([0,2]\times[0,3]\)</span> 之下所围成的立体，于是体积为 <span class="arithmatex">\(\iint\limits_R(9-y^2)d_A=\int_0^2\int_0^3(9-y^2)d_yd_x=2\int_0^3(9-y^2)d_y=36\)</span></p>
 </blockquote>
 <h3 id="3">3.一般区域上的二重积分</h3>
 <p>我们考虑在更一般的区域 D 上的积分，其中 D 可能不是一个矩形</p>
@@ -1321,6 +1447,27 @@
 <li>可以观察到，在计算最内层积分时，可以将除了该层中的积分变量以外的所有变量及其函数作为常量（即便是积分上下界也是如此）</li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 D 为 <span class="arithmatex">\(y=2x^2\)</span> 与 <span class="arithmatex">\(y=1+x^2\)</span> 所围成的区域，计算 <span class="arithmatex">\(\iint\limits_D(x+2y)d_A\)</span>：D 可以表示为 <span class="arithmatex">\(D=[-1,1]\times[2x^2,1+x^2]\)</span>，于是 <span class="arithmatex">\(\iint\limits_D(x+2y)d_A=\int_{-1}^1\int_{2x^2}^{1+x^2}(x+2y)d_xd_y=\int_{-1}^1\left[xy+y^2\right]_{y=2x^2}^{y=1+x^2}d_x\)</span> <span class="arithmatex">\(=\int_{-1}^1(x(1-x^2)+(1+3x^2)(1-x^2))d_x=\int_{-1}^1(-3x^4-x^3+2x^2+x+1)d_x=\frac{32}{15}\)</span></li>
+<li>假设 D 为 <span class="arithmatex">\(y=2x\)</span> 与 <span class="arithmatex">\(y=x^2\)</span> 围成的区域，计算 <span class="arithmatex">\(\iint\limits_D(x^2+y^2)d_A\)</span>：其中 <span class="arithmatex">\(D=[0,2]\times[x^2,2x]\)</span>，于是 <span class="arithmatex">\(\iint\limits_D(x^2+y^2)d_A=\int_0^2\int_{x^2}^{2x}(x^2+y^2)d_yd_x=\int_0^2\left[x^2y+\frac13y^3\right]_{y=x^2}^{y=2x}d_x\)</span> <span class="arithmatex">\(=\int_0^2(x^2(2x-x^2)+\frac13(4x^2+2x^3+x^4)(2x-x^2))d_x=\frac13\int_0^2(-x^6-3x^4+14x^3)d_x=\frac{216}{35}\)</span><ol>
+<li>或者 <span class="arithmatex">\(D=[y/2,\sqrt y]\times[0,4]\)</span>，于是 <span class="arithmatex">\(\iint\limits_D(x^2+y^2)d_A=\int_0^4\int_{y/2}^{\sqrt y}(x^2+y^2)d_xd_y=\int_0^4\left[\frac13x^3+xy^2\right]_{x=y/2}^{x=\sqrt y}d_y=\int_0^4(\frac13(y\sqrt y-y^3/8)+y^2(\sqrt y-y/2))d_y\)</span> <span class="arithmatex">\(=\int_0^4(\frac13y^{3/2}-\frac1{24}y^3+y^{5/2}-\frac12y^3)d_y=[\frac2{15}y^{5/2}-\frac1{96}y^4+\frac27y^{7/2}-\frac18y^4]_0^4=\frac{216}{35}\)</span></li>
+</ol>
+</li>
+<li>假设 D 为 <span class="arithmatex">\(y=x-1\)</span> 与 <span class="arithmatex">\(y^2=2x+6\)</span> 围成的区域，计算 <span class="arithmatex">\(\iint\limits_Dxyd_A\)</span>：<ol>
+<li>法1：<span class="arithmatex">\(D=[-3,-1]\times[-\sqrt{2x+6},\sqrt{2x+6}]\cup[-1,5]\times[x-1,\sqrt{2x+6}]\)</span>，于是 <span class="arithmatex">\(\iint\limits_Dxyd_A=\int_{-3}^{-1}\int_{-\sqrt{2x+6}}^{\sqrt{2x+6}}xy~d_yd_x+\int_{-1}^5\int_{x-1}^{\sqrt{2x+6}}xy~d_yd_x=\cdots\)</span></li>
+<li>法2：<span class="arithmatex">\(D=[y^2/2-3,y+1]\times[-2,4]\)</span>，于是 <span class="arithmatex">\(\iint\limits_Dxyd_A=\int_{-2}^4\int_{y^2/2-3}^{y+1}xy~d_xd_y=\int_{-2}^4\frac12y((y+1)^2-(y^2/2-3)^2)d_y\)</span> <span class="arithmatex">\(=\int_{-2}^4\left(-\frac18y^5+2y^3+y^2-4y\right)d_y=\left[-\frac1{48}y^6+\frac12y^4+\frac13y^3-2y^2\right]_{-2}^4=36\)</span></li>
+</ol>
+</li>
+<li>计算由平面 <span class="arithmatex">\(x+2y+z=2\)</span> 和 <span class="arithmatex">\(x=2y\)</span>，<span class="arithmatex">\(x=0\)</span>，<span class="arithmatex">\(z=0\)</span> 所围成的立体的体积：（务必画出立体的三维图形，以及在某个坐标平面上的投影图）<ol>
+<li>平面 <span class="arithmatex">\(x+2y+z=2\)</span> 在平面 <span class="arithmatex">\(z=0\)</span> 处的截线为 <span class="arithmatex">\(x+2y=2,z=0\)</span>，即 <span class="arithmatex">\(y=-x/2+1,z=0\)</span>，该直线与 <span class="arithmatex">\(y=x/2,z=0\)</span> 交于 <span class="arithmatex">\((1,1/2,0)\)</span></li>
+<li>设 <span class="arithmatex">\(D=[0,1]\times[x/2,-x/2+1]\)</span>，那么立体体积为 <span class="arithmatex">\(\iint\limits_D(2-x-2y)d_A=\int_0^1\int_{x/2}^{1-x/2}(2-x-2y)d_yd_x=\int_0^1\left[2y-xy-y^2\right]_{x/2}^{1-x/2}d_x\)</span> <span class="arithmatex">\(=\int_0^1(x^2-2x+1)d_x=\frac13\)</span></li>
+</ol>
+</li>
+<li>（积分变换）计算 <span class="arithmatex">\(\int_0^1\int_x^1\sin y^2~d_yd_x\)</span>：由于 <span class="arithmatex">\(D=[0,1]\times[x,1]=[0,y]\times[0,1]\)</span>，所以 <span class="arithmatex">\(\int_0^1\int_x^1\sin y^2~d_yd_x=\int_0^1\int_0^y\sin y^2~d_xd_y=\int_0^1y\sin y^2~d_y=\frac12\left[-\cos y^2\right]_0^1=\frac12(1-\cos1)\)</span></li>
+</ol>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <ul>
@@ -1341,6 +1488,88 @@
 <li><span class="arithmatex">\(\iint\limits_D 1~d_A = A(D)\)</span></li>
 <li>若 <span class="arithmatex">\(m \le f(x,y) \le M\)</span>（<span class="arithmatex">\((x,y)\in D\)</span>），则 <span class="arithmatex">\(mA(D) \le \iint\limits_D f(x,y)~d_A \le MA(D)\)</span></li>
 </ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设圆盘 <span class="arithmatex">\(D=[-2,2]\times[-\sqrt{4-x^2},\sqrt{4-x^2}]\)</span>，估计 <span class="arithmatex">\(\iint\limits_De^{\sin x\cos y}d_A\)</span>：<span class="arithmatex">\(e^{-1}\le e^{\sin x\cos y}\le e^1\)</span> 蕴含 <span class="arithmatex">\(\iint\limits_De^{-1}d_A\le\iint\limits_De^{\sin x\cos y}d_A\le\iint\limits_De^1d_A\)</span>，蕴含 <span class="arithmatex">\(4\pi e^{-1}\le\iint\limits_De^{\sin x\cos y}d_A\le4\pi e\)</span></li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>一般区域的二重积分（一般的累次积分）：<ol>
+<li>若 <span class="arithmatex">\(D=\{(x,y)|~x\in[a,b],y\in[g_1(x),g_2(x)]\}\)</span>，那么 <span class="arithmatex">\(\iint\limits_Df(x,y)d_A=\int_a^b\int_{g_1(x)}^{g_2(x)}f(x,y)d_yd_x\)</span>；记 <span class="arithmatex">\(D=[a,b]\times[g_1(x),g_2(x)]\)</span></li>
+<li>若 <span class="arithmatex">\(D=\{(x,y)|~y\in[c,d],x\in[h_1(y),h_2(y)]\}\)</span>，那么 <span class="arithmatex">\(\iint\limits_Df(x,y)d_A=\int_c^d\int_{h_1(y)}^{h_2(y)}f(x,y)d_xd_y\)</span>；记 <span class="arithmatex">\(D=[h_1(y),h_2(y)]\times[c,d]\)</span></li>
+</ol>
+</li>
+<li>一般二重积分的性质：<ol>
+<li>加法：<span class="arithmatex">\(\iint_D[f(x,y)+g(x,y)]d_A=\iint_Df(x,y)d_A+\iint\limits_Dg(x,y)d_A\)</span></li>
+<li>标量乘法：<span class="arithmatex">\(\iint_Dcf(x,y)d_A=c\iint\limits_Df(x,y)d_A\)</span></li>
+<li>序：若 <span class="arithmatex">\(\forall(x,y)\in D,f(x,y)\ge g(x,y)\)</span>，那么 <span class="arithmatex">\(\iint\limits_Df(x,y)d_A\ge\iint\limits_Dg(x,y)d_A\)</span></li>
+<li>若 <span class="arithmatex">\(D=D_1\cup D_2,D_1\cap D_2=\emptyset\)</span>，那么 <span class="arithmatex">\(\iint\limits_Df(x,y)d_A=\iint\limits_{D_1}f(x,y)d_A+\iint\limits_{D_2}f(x,y)d_A\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>计算体积，一般的二重积分等类似问题通常要借助几何方法（作图）来辅助计算过程</li>
+<li>累次积分变换积分次序后可能简化计算（通常这类变换由几何方式占主导）</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算累次积分 <span class="arithmatex">\(\int_0^{\pi/2}\int_0^{\cos\theta}e^{\sin\theta}d_rd_\theta\)</span></li>
+<li>计算二重积分 <span class="arithmatex">\(\iint\limits_Dx\cos y~d_A\)</span>，其中 D 是 <span class="arithmatex">\(y=0,y=x^2,x=1\)</span> 围成的区域</li>
+<li>计算二重积分 <span class="arithmatex">\(\iint\limits_D(2x-y)d_A\)</span>，其中 D 是 <span class="arithmatex">\(xy\)</span> 坐标平面中以 <span class="arithmatex">\((0,0)\)</span> 为圆心，半径为 2 的圆盘</li>
+<li>不同方式描述下的立体体积：<ol>
+<li>计算平面 <span class="arithmatex">\(z=xy\)</span> 之下，<span class="arithmatex">\(xy\)</span> 坐标平面中 <span class="arithmatex">\((1,1),(4,1),(1,2)\)</span> 围成的三角形区域</li>
+<li>计算 5 种曲面 <span class="arithmatex">\(z=x^2+3y^2,x=0,y=1,y=x,z=0\)</span> 围成的立体体积</li>
+<li>计算两个柱面 <span class="arithmatex">\(x^2+y^2=r^2,y^2+z^2=r^2\)</span> 围成的立体体积</li>
+<li>计算曲面 <span class="arithmatex">\(z=x^3y^4+xy^2\)</span> 之下，<span class="arithmatex">\(xy\)</span> 坐标平面中 <span class="arithmatex">\(y=x^2+x\)</span> 与 <span class="arithmatex">\(y=x^3-x\)</span> 以及 <span class="arithmatex">\(x\ge0\)</span> 围成的区域之上的立体体积</li>
+</ol>
+</li>
+<li>交换二重积分次序：<ol>
+<li><span class="arithmatex">\(\int_1^2\int_0^{\ln x}f(x,y)d_yd_x\)</span></li>
+<li><span class="arithmatex">\(\int_0^3\int_{-\sqrt{9-y^2}}^{\sqrt{9-y^2}}f(x,y)d_xd_y\)</span></li>
+<li><span class="arithmatex">\(\int_0^1\int_{\tan^{-1}x}^{\pi/4}f(x,y)d_yd_x\)</span></li>
+</ol>
+</li>
+<li>计算累次积分（强制交换顺序）<ol>
+<li><span class="arithmatex">\(\int_0^8\int_{\sqrt[3]y}^2e^{x^4}d_xd_y\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(\int_0^{\pi/2}\int_0^{\cos\theta}e^{\sin\theta}d_rd_\theta=\int_0^{\pi/2}e^{\sin\theta}\cos\theta~d_\theta=\left[e^{\sin\theta}\right]_0^{\pi/2}=e-1\)</span></p>
+<p>(2) 作图后可知 <span class="arithmatex">\(D=[0,1]\times[0,x^2]\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_Dx\cos y~d_A=\int_0^1\int_0^{x^2}x\cos y~d_yd_x=\int_0^1[x\cdot\sin y]_{y=0}^{y=x^2}d_x=\int_0^1x\sin x^2d_x\)</span>  $=\frac12\int_0^1\sin x<sup>2~d(x</sup>2)=\frac12(1-\cos1)
+$</p>
+<p>(3) 作图可知 <span class="arithmatex">\(D=[-2,2]\times[-\sqrt{4-x^2},\sqrt{4-x^2}]\)</span></p>
+<p>于是 <span class="arithmatex">\(\iint\limits_D(2x-y)d_A=\int_{-2}^2\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}(2x-y)d_yd_x=\int_{-2}^2\left[2xy-\frac12y^2\right]_{y=-\sqrt{4-x^2}}^{y=\sqrt{4-x^2}}d_x\)</span> <span class="arithmatex">\(=\int_{-2}^24x\sqrt{4-x^2}d_x=4\int_{-4}^{-4}x\sqrt{4-x^2}/(-2x)~d(-x^2)=0\)</span></p>
+<p>法2：</p>
+<p>(4.1) 法1：<span class="arithmatex">\(D=[1,4]\times[1,(7-x)/3]\)</span>，于是立体体积为 <span class="arithmatex">\(\iint\limits_Dxy~d_A=\int_1^4\int_1^{(7-x)/3}xy~d_yd_x=\int_1^4\left[\frac12xy^2\right]_{y=1}^{y=(7-x)/3}d_x\)</span> <span class="arithmatex">\(=\frac12\int_1^4x((7-x)^2/9-1)d_x=\frac1{18}\int_1^4(x^3-14x^2+40x)d_x=\frac1{18}(\frac14x^4-\frac{14}3x^3+20x^2)\Big|_1^4\)</span> <span class="arithmatex">\(=\frac1{18}(\frac{255}4-\frac{14}3\cdot63+20\cdot15)=\frac{31}8\)</span></p>
+<p>法2：<span class="arithmatex">\(D=[1,7-3y]\times[1,2]\)</span>，于是立体体积为 <span class="arithmatex">\(\iint\limits_Dxy~d_A=\int_1^2\int_1^{7-3y}xy~d_xd_y=\int_1^2\left[\frac12x^2y\right]_{x=1}^{x=7-3y}d_y\)</span> <span class="arithmatex">\(=\frac12\int_1^2(9y^3-42y^2+48y)d_y=\frac12\left[\frac94y^4-14y^3+24y^2\right]_1^2=\frac{31}8\)</span></p>
+<p>(4.2) 设 <span class="arithmatex">\(D=[0,1]\times[x,1]\)</span>，于是立体体积为 <span class="arithmatex">\(\iint\limits_D(x^2+3y^2)d_A=\int_0^1\int_x^1(x^2+3y^2)~d_yd_x=\int_0^1(x^2(1-x)+(1-x^3))d_x\)</span> <span class="arithmatex">\(=\int_0^1(-2x^3+x^2+1)d_x=\frac56\)</span></p>
+<p>(4.3) 法1：<span class="arithmatex">\(D=[-r,r]\times[-\sqrt{r^2-x^2},\sqrt{r^2-x^2}]\)</span>，再根据对称性有 <span class="arithmatex">\(2\iint\limits_D\sqrt{r^2-y^2}d_A=2\int_{-r}^r\int_{-\sqrt{r^2-x^2}}^{\sqrt{r^2-x^2}}\sqrt{r^2-y^2}~d_yd_x=\cdots=\frac{16}3r^3\)</span></p>
+<p>法2：<span class="arithmatex">\(D=[-\sqrt{r^2-y^2},\sqrt{r^2-y^2}]\times[-r,r]\)</span>，再根据对称性有 <span class="arithmatex">\(2\iint\limits_D\sqrt{r^2-y^2}d_A=2\int_{-r}^r\int_{-\sqrt{r^2-y^2}}^{\sqrt{r^2-y^2}}\sqrt{r^2-y^2}~d_xd_y=4\int_{-r}^r(r^2-y^2)d_y=\frac{16}3r^3\)</span></p>
+<p>(4.4) 解方程 <span class="arithmatex">\(x^2+x=x^3-x\)</span> 有 <span class="arithmatex">\(x=-1,0,2\)</span>，再根据图像可知该立体在 <span class="arithmatex">\(xy\)</span> 平面上的投影为 <span class="arithmatex">\(D=[0,2]\times[x^3-x,x^2+x]\)</span>，于是立体体积为 <span class="arithmatex">\(\iint\limits_D(x^3y^4+xy^2)d_A=\int_0^2\int_{x^3-x}^{x^2+x}(x^3y^4+xy^2)d_yd_x=\frac{13,984,735,616
+}{14,549,535}\)</span></p>
+<p>(5.1) 由 <span class="arithmatex">\([2,1]\times[0,\ln x]=[e^y,2]\times[0,\ln2]\)</span> 有 <span class="arithmatex">\(\int_1^2\int_0^{\ln x}f(x,y)d_yd_x=\int_0^{\ln2}\int_{e^y}^2f(x,y)d_xd_y\)</span></p>
+<p>(5.2) <span class="arithmatex">\(\int_0^3\int_{-\sqrt{9-y^2}}^{\sqrt{9-y^2}}f(x,y)d_xd_y=\int_{-3}^3\int_0^{\sqrt{9-x^2}}f(x,y)d_yd_x\)</span></p>
+<p>(5.3) <span class="arithmatex">\(\int_0^1\int_{\tan^{-1}x}^{\pi/4}f(x,y)d_yd_x=\int_0^{\pi/4}\int_0^{\tan y}f(x,y)d_xd_y\)</span></p>
+<p>(6.1) 由 <span class="arithmatex">\([\sqrt[3]y,2]\times[0,8]=[0,2]\times[0,x^3]\)</span>，有 <span class="arithmatex">\(\int_0^8\int_{\sqrt[3]y}^2e^{x^4}d_xd_y=\int_0^2\int_0^{x^3}e^{x^4}d_yd_x=\int_0^2x^3e^{x^4}d_x=\frac14(e^{16}-1)\)</span></p>
 </blockquote>
 <h3 id="4">4.极坐标下的二重积分</h3>
 <p>定义 极矩形 为：<span class="arithmatex">\(R = \{(r,\theta) | a\le r\le b, \alpha\le \theta\le \beta\}\)</span></p>
@@ -1369,6 +1598,9 @@
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">第 II 类区域</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">结论</p>
 </div>
 <h3 id="5">5.二重积分的应用</h3>
 <p>从上几节可以观察到，二重积分的用途可以是计算 体积，接下来将讨论如何计算物理量 质量，电荷量，质心，惯性矩</p>
@@ -1636,10 +1868,10 @@
 </article>
 </div>
 </div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </button>
+          </a>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -1648,20 +1880,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                上一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  上一页
+                </span>
                 14.多元函数的偏导数
               </div>
 </div>
 </a>
 <a aria-label="下一页: 16.向量积分" class="md-footer__link md-footer__link--next" href="../16.%E5%90%91%E9%87%8F%E7%A7%AF%E5%88%86/" rel="next">
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                下一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  下一页
+                </span>
                 16.向量积分
               </div>
 </div>
@@ -1679,10 +1911,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -1692,8 +1924,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

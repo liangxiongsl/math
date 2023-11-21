@@ -8,11 +8,11 @@
 <link href="../12.%E5%90%91%E9%87%8F%26%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95/" rel="prev"/>
 <link href="../14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.0.3" name="generator"/>
 <title>13.向量函数 - 数学</title>
-<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -42,7 +42,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -159,7 +159,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+<ol class="md-search-result__list"></ol>
 </div>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
+<div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
@@ -238,12 +238,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<nav aria-label="概述" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -273,14 +273,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-label="微积分" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           微积分
@@ -387,7 +387,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           13.向量函数
           <span class="md-nav__icon md-icon"></span>
@@ -453,12 +453,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
           线性代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           线性代数
@@ -533,12 +533,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_4" tabindex="0">
           概率导论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率导论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           概率导论
@@ -598,12 +598,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_5" tabindex="0">
           矩阵代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-label="矩阵代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           矩阵代数
@@ -698,12 +698,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_6" tabindex="0">
           数学分析
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学分析" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           数学分析
@@ -793,12 +793,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_7" tabindex="0">
           初等数论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-label="初等数论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           初等数论
@@ -888,12 +888,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_8" tabindex="0">
           数学扩充
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学扩充" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           数学扩充
@@ -913,14 +913,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/">线性代数1</a>
 <label for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数1" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           线性代数1
@@ -980,12 +980,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
-<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_10" tabindex="0">
           概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率论及其应用" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
           概率论及其应用
@@ -1144,6 +1144,17 @@
 <p>若 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle = f(t)\overrightarrow i + g(t)\overrightarrow j + h(t)\overrightarrow k\)</span>，那么 <span class="arithmatex">\(\lim\limits_{t\to a}\overrightarrow r(t) = \langle \lim\limits_{t\to a}f(t), \lim\limits_{t\to a}g(t), \lim\limits_{t\to a}h(t) \rangle\)</span> （假设分量函数的极限都存在）</p>
 <p><span class="arithmatex">\(\epsilon-\delta\)</span> 定义详见 练习43</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\lim\limits_{t\to 0}((1+t^3),te^{-t},\frac{\sin t}t)=\left(\lim\limits_{t\to 0}(1+t^3),\lim\limits_{t\to 0}te^{-t},\lim\limits_{t\to 0}\frac{\sin t}t\right)=(1,0,1)\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(1+t,2+5t,-1+6t)\)</span> 是一条经过 <span class="arithmatex">\(\mathbf r_0=(1,2,-1)\)</span>，平行于 <span class="arithmatex">\(\mathbf v=(1,5,6)\)</span> 的直线</li>
+<li><span class="arithmatex">\(\mathbf r(t)=(\cos t)\mathbf i+(\sin t)\mathbf j+t\mathbf k\)</span> 是一条螺旋线</li>
+<li>点 <span class="arithmatex">\((1,3,-2)\)</span> 到点 <span class="arithmatex">\((2,-1,3)\)</span> 的线段的向量方程为 <span class="arithmatex">\(\mathbf r(t)=(1+t,3-4y,-2+5t)\)</span>，其中 <span class="arithmatex">\(t\in[0,1]\)</span>，参数方程为 <span class="arithmatex">\(\begin{cases}x=1+t\\y=3-4y\\z=-2+5t\end{cases}\)</span>（满足 <span class="arithmatex">\(t\in[0,1]\)</span>）</li>
+<li>计算圆柱面 <span class="arithmatex">\(x^2+y^2=1\)</span> 与平面 <span class="arithmatex">\(y+z=2\)</span> 的交线的向量方程：设有换元 <span class="arithmatex">\(x=\cos t,y=\sin t\)</span>（<span class="arithmatex">\(t\in[0,2\pi]\)</span>），那么 <span class="arithmatex">\(\sin t+z=2\)</span>，解得 <span class="arithmatex">\(z=2-\sin t\)</span>，于是交线的向量方程为 <span class="arithmatex">\(\mathbf r(t)=(\cos t,\sin t,2-\sin t)\)</span>（<span class="arithmatex">\(t\in[0,2\pi]\)</span>）</li>
+<li>曲线 <span class="arithmatex">\(z=x^2+3y^2,3-z=2x^2+y^2\)</span> 的向量方程为 <span class="arithmatex">\(\mathbf r(t)=\left(t,\pm\frac{\sqrt3}2\sqrt{1-t^2},\frac94-\frac54t^2\right)\)</span>（实则是两条曲线）</li>
+</ol>
+</div>
 <div class="admonition 运算法则">
 <p class="admonition-title">运算法则</p>
 </div>
@@ -1178,12 +1189,79 @@
 <div class="admonition 计算机绘制空间曲线">
 <p class="admonition-title">计算机绘制空间曲线</p>
 <ul>
-<li>环形螺旋线：<span class="arithmatex">\(&lt;(4+\sin t)\cos t, (4+\sin 20t)\sin t, \cos 20t&gt;\)</span></li>
+<li>环形螺旋线：<span class="arithmatex">\(((4+\sin20t)\cos t,(4+\sin20t)\sin t,\cos20t)\)</span></li>
 <li>三叶形扭结：<span class="arithmatex">\(&lt;(2+\cos 1.5t)\cos t, (2+\cos 1.5t)\sin t, \sin 1.5t&gt;\)</span></li>
 <li>三次绕线：<span class="arithmatex">\(&lt;t, t^2, t^3&gt;\)</span></li>
 <li>螺旋线：<span class="arithmatex">\(&lt;2\cos t, \sin t, t&gt;\)</span></li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>向量函数：向量函数是定义域为实数，余定义域为 <span class="arithmatex">\(\mathbb R^n\)</span> 的函数，即 <span class="arithmatex">\(\mathbf r:~\mathbb R\to\mathbb R^n\)</span>，记为 <span class="arithmatex">\(\mathbf r=(f_1,\cdots,f_n)\)</span><ol>
+<li>其中 <span class="arithmatex">\(D_{\bf r}=\bigcap\limits_{i=1}^nD_{f_i}\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(f_1,\cdots,f_n)(t)=(f_1(t),\cdots,f_n(t))\)</span></li>
+</ol>
+</li>
+<li>向量函数的极限：<span class="arithmatex">\(\lim\limits_{t\to a}\mathbf r(t)=\left(\lim\limits_{t\to a}f_1(t),\cdots,\lim\limits_{t\to a} f_n(t)\right)\)</span></li>
+<li>向量函数的连续性：若 <span class="arithmatex">\(\lim\limits_{t\to a}\mathbf r(t)=\mathbf r(a)\)</span>，那么 <span class="arithmatex">\(\bf r\)</span> 在 a 处连续</li>
+<li>向量函数的极限运算法则：假设 <span class="arithmatex">\(\mathbf u,\mathbf v\)</span> 是 n 维向量函数，那么<ol>
+<li><span class="arithmatex">\(\lim\limits_{t\to a}(\mathbf u+\mathbf v)(t)=\lim\limits_{t\to a}\mathbf u(t)+\lim\limits_{t\to a}\mathbf v(t)\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{t\to a}(c\mathbf u)(t)=c\lim\limits_{t\to a}\mathbf u(t)\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{t\to a}(\mathbf u\cdot\mathbf v)(t)=\lim\limits_{t\to a}\mathbf u(t)\cdot\lim\limits_{t\to a}\mathbf v(t)\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{t\to a}(\mathbf u\times\mathbf v)(t)=\lim\limits_{t\to a}\mathbf u(t)\times\lim\limits_{t\to a}\mathbf v(t)\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>两个向量 <span class="arithmatex">\(\mathbf r_1,\mathbf r_2\)</span> 之间线段的向量方程为 <span class="arithmatex">\(\mathbf r(t)=(1-t)\mathbf r_1+t\mathbf r_2\)</span>（<span class="arithmatex">\(t\in[0,1]\)</span>）</li>
+<li>两个平面交线的向量方程的计算：可以选择性的换元使得其中一个方程能被满足，然后代入另一个方程计算其他未知变量</li>
+<li>对于二维向量函数 <span class="arithmatex">\(\bf r\)</span>，那么 <span class="arithmatex">\(\bf r,r'\)</span> 的倾斜角函数分别为 <span class="arithmatex">\(\theta=\tan^{-1}\frac{\|\text{proj}_{\bf j}\mathbf r\|}{\|\text{proj}_{\bf i}\mathbf r\|}=\tan^{-1}\frac{f_2}{f_1}\)</span>，<span class="arithmatex">\(\phi=\tan^{-1}\frac{\|\text{proj}_{\bf j}\mathbf r'\|}{\|\text{proj}_{\bf i}\mathbf r'\|}=\tan^{-1}\frac{f_2'}{f_1'}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算向量函数的定义域 <span class="arithmatex">\(\mathbf r(t)=\left(\frac{t-2}{t+2},\sqrt{t+3},\ln(16-t^2)\right)\)</span></li>
+<li>计算向量函数的极限 <span class="arithmatex">\(\lim\limits_{t\to0}\left(\frac{\sin t}t,\frac{\sqrt{1+t}-1}t,(1+kt)^{1/t}\right)\)</span></li>
+<li>将向量方程分解为两个或三个平面的交：(1) <span class="arithmatex">\(\mathbf r(t)=(\sin t,3,\cos t)\)</span>，(2) <span class="arithmatex">\(\mathbf r(t)=(t^2,t^4,t^6)\)</span>，(3) <span class="arithmatex">\(\mathbf r(t)=(t,t,\cos t)\)</span>，(4) <span class="arithmatex">\((e^{-t}\cos10t,e^{-t}\sin10t,e^{-t})\)</span></li>
+<li>计算从 <span class="arithmatex">\(\mathbf u=(1,0,1)\)</span> 到 <span class="arithmatex">\(\mathbf v=(2,3,1)\)</span> 的（线段）向量方程</li>
+<li>计算平面交线的向量方程：(1) <span class="arithmatex">\(x^2+y^2=4,z=xy\)</span>，(2) <span class="arithmatex">\(z=\sqrt{x^2+y^2},z=1+y\)</span>，(3) <span class="arithmatex">\(z=4x^2+y^2,y=x^2\)</span></li>
+<li>判断题<ol>
+<li>曲线方程的向量方程与参数方程是可以一一对应的(Y)</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) <span class="arithmatex">\(t\in[-3,-2)\cup(-2,4)\)</span></p>
+<p>(2) <span class="arithmatex">\(\lim\limits_{t\to0}\left(\frac{\sin t}t,\frac{\sqrt{1+t}-1}t,(1+kt)^{1/t}\right)=(1,1,e^k)\)</span></p>
+<p>(3)</p>
+<ol>
+<li><span class="arithmatex">\(x^2+z^2=1\)</span> 与 <span class="arithmatex">\(y=3\)</span></li>
+<li><span class="arithmatex">\(y=x^2\)</span>，<span class="arithmatex">\(z=x^3\)</span> 与 <span class="arithmatex">\(z=y^{3/2}\)</span></li>
+<li><span class="arithmatex">\(x=y\)</span> 与 <span class="arithmatex">\(z=\cos x\)</span></li>
+<li>该向量方程表示 <span class="arithmatex">\(x^2+y^2=z^2\)</span> 的子集，但更具体细节可能没法表示</li>
+<li></li>
+</ol>
+<p>(4) <span class="arithmatex">\(\mathbf r(t)=\mathbf u+t(\mathbf v-\mathbf u)=(1-t)\mathbf u+t\mathbf v=(1+t,3t,1)\)</span>，其中 <span class="arithmatex">\(t\in[0,1]\)</span></p>
+<p>(5)</p>
+<ol>
+<li><span class="arithmatex">\(x=2\cos t,y=2\sin t,z=2\sin 2t\)</span>（<span class="arithmatex">\(t\in[0,2\pi]\)</span>）</li>
+<li><span class="arithmatex">\(x=t,y=(t^2-1)/2,z=(t^2+1)/2\)</span></li>
+<li><span class="arithmatex">\(x=t,y=t^2,z=4t^2+t^4\)</span></li>
+</ol>
+</blockquote>
 <h3 id="2">2.向量函数的导数和积分</h3>
 <p>若下面的极限存在，那么 <span class="arithmatex">\(\frac {d_{\overrightarrow r}}{d_t} = \overrightarrow r'(t) = \lim\limits_{h\to 0}\frac {\overrightarrow r(t+h)-\overrightarrow r(t)}{h}\)</span></p>
 <p>割线向量：<span class="arithmatex">\(\overrightarrow r(t+h)-\overrightarrow r(t)\)</span></p>
@@ -1202,6 +1280,13 @@
 <p>如果 <span class="arithmatex">\(\overrightarrow r(t) = \langle f(t), g(t), h(t) \rangle = f(t)\overrightarrow i + g(t)\overrightarrow j + h(t)\overrightarrow k\)</span>，这里 f,g,h 是可微函数，那么</p>
 <p><span class="arithmatex">\(\overrightarrow r'(t) = \langle f'(t), g'(t), h'(t) \rangle = f'(t)\overrightarrow i + g'(t)\overrightarrow j + h'(t)\overrightarrow k\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf r(t)=(1+t^3,te^{-t},\sin2t)\)</span> 的导数为 <span class="arithmatex">\(\mathbf r'(t)=(3t^2,(1-t)e^{-t},2\cos2t)\)</span>，在 <span class="arithmatex">\(t=0\)</span> 处的单位切向量为 <span class="arithmatex">\(\frac{\mathbf r'(0)}{\|\mathbf r'(0)\|}=(0,1/\sqrt5,2/\sqrt5)\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(\sqrt t,(2-t))\)</span> 的导数为 <span class="arithmatex">\(\mathbf r'(t)=(1/(2\sqrt t),-1))\)</span>，在 <span class="arithmatex">\(t=1\)</span> 处的位置向量和切向量分别为 <span class="arithmatex">\(\mathbf r(1)=(1,1),\mathbf r'(1)=(1/2,-1)\)</span></li>
+</ol>
+</div>
 <div class="admonition 光滑">
 <p class="admonition-title">光滑</p>
 </div>
@@ -1210,6 +1295,14 @@
 <p>若向量函数由有限多的光滑片段构成，那么就称这条曲线为 分段光滑</p>
 <p>若存在一个点 t=a，使得 <span class="arithmatex">\(\overrightarrow r'(a)=0\)</span>，那么可以称 a 为一个 尖点</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf r(t)=(1+3t^3,t^2)\)</span> 的导数为 <span class="arithmatex">\(\mathbf r'(t)=(9t^2,2t)\)</span>，于是该曲线在 <span class="arithmatex">\(t=0\)</span> 处（即 <span class="arithmatex">\((1,0)\)</span>）是不光滑的，即 <span class="arithmatex">\((1,0)\)</span> 是尖点</li>
+<li>若 <span class="arithmatex">\(\|\mathbf r(t)\|=c\)</span>，那么 <span class="arithmatex">\(\|\mathbf r(t)\|^2=c^2\)</span>，蕴含 <span class="arithmatex">\((\mathbf r\cdot\mathbf r)(t)=c^2\)</span>，蕴含 <span class="arithmatex">\((2\mathbf r'\cdot\mathbf r)(t)=0\)</span>，即 <span class="arithmatex">\(\mathbf r\)</span> 与 <span class="arithmatex">\(\mathbf r'\)</span> 正交</li>
+<li>若 <span class="arithmatex">\(\|\mathbf r(t)\|=c\)</span>，那么 <span class="arithmatex">\(\|\mathbf r\times\mathbf r'\|=\|\mathbf r\|\|\mathbf r'\|\)</span></li>
+</ol>
+</div>
 <div class="admonition 求导法则">
 <p class="admonition-title">求导法则</p>
 </div>
@@ -1224,19 +1317,6 @@
 <li><span class="arithmatex">\(\frac d{d_t}[\overrightarrow u(f(t))] = f'(t) \overrightarrow u'(f(t))\)</span></li>
 </ol>
 </blockquote>
-<div class="admonition 证明">
-<p class="admonition-title">证明</p>
-<ul>
-<li>如果 <span class="arithmatex">\(|\mathbf r(t)|=c\)</span> (一个常数)，那么对于所有的 t，<span class="arithmatex">\(\mathbf r'(t)\)</span> 和 <span class="arithmatex">\(\mathbf r(t)\)</span> 相垂直</li>
-<li>证明：<ul>
-<li><span class="arithmatex">\(\mathbf r\cdot \mathbf r = |\mathbf r|^2 = c^2\)</span></li>
-<li>对两边求导有：<span class="arithmatex">\(\mathbf r'\cdot \mathbf r + \mathbf r\cdot \mathbf r' = 2\mathbf r'\cdot \mathbf r = 0\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\mathbf r \cdot \mathbf r' = 0\)</span></li>
-<li>因此 <span class="arithmatex">\(\mathbf r\)</span> 和 <span class="arithmatex">\(\mathbf r'\)</span> 相互垂直</li>
-</ul>
-</li>
-<li>推论：<span class="arithmatex">\(|\mathbf r\times \mathbf r'|=|\mathbf r||\mathbf r'|\sin {90} = |\mathbf r||\mathbf r'|\)</span></li>
-</ul>
-</div>
 <div class="admonition 积分">
 <p class="admonition-title">积分</p>
 </div>
@@ -1244,6 +1324,8 @@
 <p><span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = \lim\limits_{n\to ∞}\sum\limits_{i=1}^n \overrightarrow r(t_i^*) \Delta t = \lim\limits_{n\to ∞} [(\sum\limits_{i=1}^n f(t_i^*)\Delta t)\overrightarrow i, (\sum\limits_{i=1}^n g(t_i^*)\Delta t)\overrightarrow j, (\sum\limits_{i=1}^n h(t_i^*)\Delta t)\overrightarrow k]\)</span></p>
 <p>于是，<span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = (\int_a^b f(t)~d_t)\overrightarrow i + (\int_a^b g(t)~d_t)\overrightarrow j + (\int_a^b h(t)~d_t)\overrightarrow k\)</span></p>
 </blockquote>
+<p><span class="arithmatex">\(\int_a^b\mathbf r(t)~d_t=\lim\limits_{n\to+∞}\delta\sum\limits_{i=0}^{n-1}\mathbf r(t_i^*)=\left(\lim\limits_{n\to+∞}\delta\sum\limits_{i=0}^{n-1}f_1(t_i^*),\cdots,\lim\limits_{n\to+∞}\delta\sum\limits_{i=0}^{n-1}f_k(t_i^*)\right)=\left(\int_a^bf_1(t)d_t,\cdots,\int_a^bf_k(t)d_t\right)\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">微积分基本定理(扩展)</p>
 </div>
@@ -1251,6 +1333,67 @@
 <p><span class="arithmatex">\(\int_a^b \overrightarrow r(t)~d_t = \overrightarrow R(t)]_a^b = \overrightarrow R(b) - \overrightarrow R(b)\)</span></p>
 <p>这里 <strong>R</strong> 是 <strong>r</strong> 的一个原函数，即 <strong>R</strong>'(t) = <strong>r</strong>(t)</p>
 <p><span class="arithmatex">\(\int \overrightarrow r(t)~d_t\)</span> 表示不定积分</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>向量函数的导数：假设向量函数 <span class="arithmatex">\(\mathbf r=(f_1,\cdots,f_n)\)</span> 的分量函数 <span class="arithmatex">\(f_1,\cdots,f_n\)</span> 可微，那么 <span class="arithmatex">\(\mathbf r\)</span> 可微，即 <span class="arithmatex">\(\mathbf r'=(f_1',\cdots,f_n')\)</span><ol>
+<li>因为 <span class="arithmatex">\(\mathbf r'(t)=\frac{d\bf r}{d_t}=\lim\limits_{h\to0}\frac{\mathbf r(t+h)-\mathbf r(t)}h\)</span> 和[向量函数的极限法则]</li>
+<li>向量曲线方程 <span class="arithmatex">\(\mathbf r(t)=\cdots\)</span> 在 t 处的取值称为<strong>位置向量</strong>，在 t 处的导数称为<strong>切向量</strong></li>
+<li>若 <span class="arithmatex">\(\exists a,\mathbf r'(a)=0\)</span>，那么称 a 为 <span class="arithmatex">\(\bf r\)</span> 的一个<strong>尖点</strong>或<strong>不光滑点</strong>，反之称为<strong>光滑点</strong></li>
+</ol>
+</li>
+<li>向量函数的求导法则：假设 <span class="arithmatex">\(\bf u,v\)</span> 是 n 维可微向量函数，<span class="arithmatex">\(c\in\mathbb R\)</span>，f 是实函数，那么：<ol>
+<li><span class="arithmatex">\((\mathbf u+\mathbf v)'=\mathbf u'+\mathbf v'\)</span></li>
+<li><span class="arithmatex">\((c\mathbf u)'=c\mathbf u'\)</span></li>
+<li><span class="arithmatex">\((f\mathbf u)'=f'\mathbf u+f\mathbf u'\)</span></li>
+<li><span class="arithmatex">\((\mathbf u\cdot\mathbf v)'=\mathbf u'\cdot\mathbf v+\mathbf u\cdot\mathbf v'\)</span></li>
+<li><span class="arithmatex">\((\mathbf u\times\mathbf v)'=\mathbf u'\times\mathbf v+\mathbf u\times\mathbf v'\)</span></li>
+<li><span class="arithmatex">\((\mathbf u\circ f)'=(\mathbf u'\circ f)f'\)</span></li>
+</ol>
+</li>
+<li>向量函数的积分：假设 <span class="arithmatex">\(\bf r\)</span> 是 k 维向量函数，那么 <span class="arithmatex">\(\bf r\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上的积分为 <span class="arithmatex">\(\int_a^b\mathbf r(t)~d_t=\left(\int_a^bf_1(t)d_t,\cdots,\int_a^bf_k(t)d_t\right)\)</span></li>
+<li>向量函数的微积分基本定理：<ol>
+<li>若 <span class="arithmatex">\(\bf r\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 连续，那么存在向量函数 <span class="arithmatex">\(\bf R\)</span> 使得 <span class="arithmatex">\(\mathbf R(t)=\int_a^t\mathbf r(u)d_u\)</span>，并且 <span class="arithmatex">\(\mathbf R'(t)=\mathbf r(t)\)</span></li>
+<li>若 <span class="arithmatex">\(\mathbf R'=\mathbf r\)</span>，那么 <span class="arithmatex">\(\int_a^b\mathbf r(t)~d_t=\mathbf R(t)\Big|_a^b=\mathbf R(b)-\mathbf R(a)\)</span></li>
+</ol>
+</li>
+<li>注：还有很多其他微积分理论可以推广到向量函数上，如：不定积分，积分中值定理，微分中值定理</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>假设 <span class="arithmatex">\(\bf r\)</span> 是向量函数，若 <span class="arithmatex">\(\|\mathbf r\|=c\)</span>，那么 <span class="arithmatex">\(\mathbf r\cdot\mathbf r'=0\)</span>，<span class="arithmatex">\(\|\mathbf r\times\mathbf r'\|=\|\mathbf r\|\|\mathbf r'\|=c\|\mathbf r'\|\)</span></li>
+<li>向量函数 <span class="arithmatex">\(\bf r\)</span> 的<strong>单位切向量函数</strong>为 <span class="arithmatex">\(\mathbf T=\frac{\mathbf r'}{\|\mathbf r'\|}\)</span></li>
+<li>若 <span class="arithmatex">\(\bf r\)</span> 是单位向量，那么 <span class="arithmatex">\(\|\mathbf r\times\mathbf r'\|=\|\mathbf r'\|\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>假设 <span class="arithmatex">\(\bf r,u,v,w\)</span> 是向量函数<ol>
+<li>证明：<span class="arithmatex">\((\|\mathbf r\|)'=\frac1{\|\mathbf r\|}\mathbf r\cdot\mathbf r'\)</span></li>
+<li>证明：<span class="arithmatex">\((\mathbf r\times\mathbf r')'=\mathbf r\times\mathbf r''\)</span></li>
+<li>证明：<span class="arithmatex">\((\mathbf u\cdot(\mathbf v\times\mathbf w))'=\mathbf u'\cdot(\mathbf v\times\mathbf w)+\mathbf v'\cdot(\mathbf w\times\mathbf u)+\mathbf w'\cdot(\mathbf u\times\mathbf v)\)</span></li>
+<li>证明：<span class="arithmatex">\([\mathbf r\cdot(\mathbf r'\times\mathbf r'')]'=\mathbf r\cdot(\mathbf r'\times\mathbf r''')\)</span></li>
+</ol>
+</li>
+<li>计算向量函数导数或切向量 <span class="arithmatex">\(\bf r'\)</span>，单位切向量 <span class="arithmatex">\(\bf T\)</span>，积分，不定积分，倾斜角，<span class="arithmatex">\(\bf r'\)</span> 的倾斜角如何计算？</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) <span class="arithmatex">\(\|\mathbf r\|^2=\mathbf r\cdot\mathbf r\)</span>，对两边微分有 <span class="arithmatex">\(2(\|\mathbf r\|)'\|\mathbf r\|=2\mathbf r'\cdot\mathbf r\)</span>，于是 <span class="arithmatex">\((\|\mathbf r\|)'=\frac1{\|\mathbf r\|}\mathbf r\cdot\mathbf r'\)</span></p>
+<p>(1.2) <span class="arithmatex">\((\mathbf r\times\mathbf r')'=\mathbf r'\times\mathbf r'+\mathbf r\times\mathbf r''=\mathbf r\times\mathbf r''\)</span></p>
+<p>(1.3) <span class="arithmatex">\((\mathbf u\cdot(\mathbf v\times\mathbf w))'=\mathbf u'\cdot(\mathbf v\times\mathbf w)+\mathbf u\cdot(\mathbf v\times\mathbf w)'=\mathbf u'\cdot(\mathbf v\times\mathbf w)+\mathbf u\cdot(\mathbf v'\times\mathbf w+\mathbf v\times\mathbf w')\)</span> <span class="arithmatex">\(=\mathbf u'\cdot(\mathbf v\times\mathbf w)+\mathbf v'\cdot(\mathbf w\times\mathbf u)+\mathbf w'\cdot(\mathbf u\times\mathbf v)\)</span>（其中 <span class="arithmatex">\(\mathbf u\cdot(\mathbf v'\times\mathbf w)=(\mathbf u\times\mathbf v')\cdot\mathbf w=-(\mathbf v'\times\mathbf u)\cdot\mathbf w=-\mathbf v'\cdot(\mathbf u\times\mathbf w)=\mathbf v'\cdot(\mathbf w\times\mathbf u)\)</span>，<span class="arithmatex">\(\mathbf u\cdot(\mathbf v\times\mathbf w')=-\mathbf u\cdot(\mathbf w'\times\mathbf v)=-(\mathbf u\times\mathbf w')\cdot\mathbf v=(\mathbf w'\times\mathbf u)\cdot\mathbf v=\mathbf w'\cdot(\mathbf u\times\mathbf v)\)</span>）</p>
+<p>(1.4) <span class="arithmatex">\([\mathbf r\cdot(\mathbf r'\times\mathbf r'')]'=\mathbf r'\cdot(\mathbf r'\times\mathbf r'')+\mathbf r\cdot(\mathbf r''\times\mathbf r''+\mathbf r'\times\mathbf r''')=\mathbf r\cdot(\mathbf r'\times\mathbf r''')\)</span></p>
 </blockquote>
 <h3 id="3">3.弧长 &amp; 曲率</h3>
 <p>参考平面参数方程 x=f(t), y=g(t), <span class="arithmatex">\(a\le t\le b\)</span> 的曲线长度为它的内接多边形长度的极限，如果 f', g' 连续，那么有 <span class="arithmatex">\(L = \int_a^b \sqrt {[f'(t)]^2 + [g'(t)]^2}~d_t = \int_a^b \sqrt {(\frac {d_x}{d_t})^2 + (\frac {d_y}{d_t})^2} d_t\)</span>，空间上的曲线长度可以得到类似的结论</p>
@@ -1276,6 +1419,12 @@
 <p>我们定义弧长函数为 <span class="arithmatex">\(s(t) = \int_a^t |\overrightarrow r'(u)|~d_u = \int_a^t \sqrt {(\frac {d_x}{d_u})^2 + (\frac{d_y}{d_u})^2 + (\frac{d_z}{d_u})^2}~d_u\)</span></p>
 <p>对两边使用微积分基本定理： <span class="arithmatex">\(\frac {d_s}{d_t} = |\overrightarrow r(t)|\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf r(t)=(\cos t,\sin t,t)\)</span> 从 <span class="arithmatex">\((1,0,0)\)</span> 到 <span class="arithmatex">\((1,0,2\pi)\)</span> 的弧长为 <span class="arithmatex">\(\int_0^{2\pi}\sqrt{((-\sin t)')^2+((\cos t)')^2+((t)')^2}~d_t=\int_0^{2\pi}\sqrt2~d_t=2\sqrt2\pi\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">向量函数参数逆变换</p>
 </div>
@@ -1285,6 +1434,12 @@
 <p>如果 <span class="arithmatex">\(s(t)\)</span> 单射，那么就能计算出 <span class="arithmatex">\(t = s^{-1}(s)\)</span> （简记 <span class="arithmatex">\(s = \int_a^t |\overrightarrow r'(u)|~d_u\)</span>），</p>
 <p>将其代入 <span class="arithmatex">\(\overrightarrow r(t)\)</span> 中得到：<span class="arithmatex">\(\overrightarrow r(s^{-1}(s))\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>以 <span class="arithmatex">\((1,0,0)\)</span> 作为参数表示螺旋线 <span class="arithmatex">\(\mathbf r(t)=(\cos t,\sin t,t)\)</span>：<span class="arithmatex">\(s(t)=\int_0^t\|\mathbf r(u)\|~d_u=\sqrt2t\)</span>，记 <span class="arithmatex">\(u=s(t)\)</span>，于是 <span class="arithmatex">\(s^{-1}(u)=u/\sqrt2\)</span>，于是 <span class="arithmatex">\(\mathbf r(t)=(\mathbf r\circ s^{-1})(u)=(\cos(u/\sqrt2),\sin(u/\sqrt2),u/\sqrt2)\)</span></li>
+</ol>
+</div>
 <div class="admonition 单位切向量">
 <p class="admonition-title">单位切向量</p>
 </div>
@@ -1298,47 +1453,33 @@
 <p class="admonition-title">曲率</p>
 </div>
 <blockquote>
-<p>曲率定义为 单位切向量 和 相应弧长 的比值，用以描述曲线在这一个点<mark class="critic">方向变化快慢程度</mark></p>
-<p>曲率为 <span class="arithmatex">\(K = |\frac {d_{\overrightarrow T}}{d_s}|\)</span></p>
-<ul>
-<li>
-<p>假设曲线用参数 t 表示，那么 <span class="arithmatex">\(K = |\frac {d_{\overrightarrow T}}{d_s}| = |\frac {d_{\overrightarrow T}/d_t}{d_s/d_t}|\)</span>，</p>
-<ul>
-<li>又由 <span class="arithmatex">\(|\overrightarrow r'(t)| = \frac {d_s}{d_t}\)</span></li>
-<li>有 <span class="arithmatex">\(K = \frac {|\overrightarrow T'(t)|}{|\overrightarrow r'(t)|}\)</span></li>
-</ul>
-</li>
-</ul>
+<p>向量方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 的曲率定义为单位切向量和相应弧长的比值，用以描述曲线在这一个点<mark class="critic">方向变化快慢程度</mark>，记为 <span class="arithmatex">\(\kappa=\left\|\frac{d\mathbf T}{ds}\right\|\)</span> 或 <span class="arithmatex">\(\kappa=\frac{\|\mathbf T'\|}{\|\mathbf r'\|}\)</span>，于是：</p>
+<ol>
+<li>在 <span class="arithmatex">\(\mathbb R^3\)</span> 下，<span class="arithmatex">\(\kappa=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|^3}\)</span></li>
+<li>在 <span class="arithmatex">\(\mathbb R^2\)</span> 下，参数曲线方程 <span class="arithmatex">\(x=f(t),y=g(t)\)</span> 的曲率函数为 <span class="arithmatex">\(\kappa=\frac{|\dot x\ddot y-\ddot x\dot y|}{(\dot x^2+\dot y^2)^{3/2}}\)</span>（参见[10.2练习]）</li>
+<li>在 <span class="arithmatex">\(\mathbb R^2\)</span> 下，函数曲线方程 <span class="arithmatex">\(y=f(x)\)</span> 的曲率函数为 <span class="arithmatex">\(\kappa=\frac{|f''|}{(1+(f')^2)^2}\)</span>（参见[10.2练习]）</li>
+</ol>
 </blockquote>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<ul>
-<li>该推理是否正确？<span class="arithmatex">\(\displaystyle K = \frac {|\overrightarrow T'(t)|}{|\overrightarrow r'(t)|} = \frac {|d{\overrightarrow T(t)}/d_t|}{|\overrightarrow r'(t)|} = \frac {|d{\frac {\overrightarrow r'(t)}{|\overrightarrow r'(t)|}}/d_t|}{|\overrightarrow r'(t)|} = \frac {|d{\overrightarrow r'(t)}/d_t|}{|\overrightarrow r'(t)|^2} = \frac {|{\overrightarrow r^{"}(t)}|}{|\overrightarrow r'(t)|^2}\)</span></li>
-</ul>
+<p><span class="arithmatex">\(\kappa=\left\|\frac{d\mathbf T}{ds}\right\|=\left\|\frac{d\mathbf T/dt}{ds/dt}\right\|=\left\|\frac{\mathbf T'}{s'}\right\|\)</span></p>
+<p>(1) <span class="arithmatex">\(\mathbf T=\frac{\mathbf r'}{\|\mathbf r'\|}\)</span>，蕴含 <span class="arithmatex">\(\mathbf r'=\|\mathbf r'\|\mathbf T=s'\mathbf T\)</span></p>
+<p>两边对 t 微分有：<span class="arithmatex">\(\mathbf r''=s''\mathbf T+\mathbf s'\mathbf T'\)</span></p>
+<p><span class="arithmatex">\(\mathbf r'\times\mathbf r''=(s'\mathbf T)\times(s''\mathbf T+\mathbf s'\mathbf T')=(s')^2(\mathbf T\times\mathbf T')\)</span></p>
+<p><span class="arithmatex">\(\|\mathbf r'\times\mathbf r''\|=\|(s')^2(\mathbf T\times\mathbf T')\|=|s'|^2\|\mathbf T\times\mathbf T'\|=|s'|^2\|\mathbf T\|\|\mathbf T'\|=|s'|^2\|\mathbf T'\|\)</span>（根据[13.2一级结论] 和 <span class="arithmatex">\(\|\mathbf T\|=1\)</span>）</p>
+<p>于是 <span class="arithmatex">\(\|\mathbf T'\|=\frac{\|\mathbf r'\times\mathbf r''\|}{|(s')|^2}=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|^2}\)</span></p>
+<p>然后，<span class="arithmatex">\(\kappa=\left\|\frac{\mathbf T'}{s'}\right\|=\left\|\frac{\|\mathbf r'\times\mathbf r''\|/\|\mathbf r'\|^2}{\|\mathbf r'\|}\right\|=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|^3}\)</span></p>
+<p>(2) </p>
+<p>(3) <span class="arithmatex">\(\mathbf r(t)=(t,f(t),0)\)</span> 蕴含 <span class="arithmatex">\(\mathbf r'(t)=(1,f'(t),0)\)</span>，蕴含 <span class="arithmatex">\(\mathbf r''(t)=(0,f''(t),0)\)</span>，于是 <span class="arithmatex">\(\mathbf r'\times\mathbf r''=(0,0,f''(t))\)</span></p>
+<p>于是 <span class="arithmatex">\(\kappa=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|^3}=\frac{|f''|}{(\sqrt{1+(f')^2})^3}=\frac{|f''|}{[1+(f')^2]^{3/2}}\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>圆 <span class="arithmatex">\(\mathbf r(t)=(r\cos t,r\sin t)\)</span> 的曲率：<span class="arithmatex">\(\mathbf r'(t)=(-r\sin t,r\cos t)\)</span> 蕴含 <span class="arithmatex">\(\mathbf T(t)=\frac{\mathbf r'(t)}{\|\mathbf r'(t)\|}=(-\sin t,\cos t)\)</span>，蕴含 <span class="arithmatex">\(\mathbf T'(t)=(-\cos t,-\sin t)\)</span>，于是 <span class="arithmatex">\(\kappa=\frac{\|\mathbf T'\|}{\|\mathbf r'\|}=\frac1r\)</span></li>
+<li>螺旋线 <span class="arithmatex">\(\mathbf r(t)=(r\cos t,r\sin t,at)\)</span> 的曲率：由 <span class="arithmatex">\(\mathbf r'=(-r\sin t,r\cos t,a)\)</span>，<span class="arithmatex">\(\mathbf r''=(-r\cos t,-r\sin t,0)\)</span>，有 <span class="arithmatex">\(\mathbf r'\times\mathbf r''=(ar\sin t,-ar\cos t,r^2)\)</span>，于是 <span class="arithmatex">\(\kappa=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|}=\frac{r\sqrt{a^2+r^2}}{(\sqrt{a^2+r^2})^3}=\frac r{r^2+a^2}\)</span></li>
+<li>三次绕线 <span class="arithmatex">\(\mathbf r(t)=(t,t^2,t^3)\)</span> 在 <span class="arithmatex">\(t=0\)</span> 处的曲率：<span class="arithmatex">\(\mathbf r'(t)=(1,2t,3t^2),\mathbf r''(t)=(0,2,6t)\)</span>，蕴含 <span class="arithmatex">\(\mathbf r'\times\mathbf r''=(6t^2,-6t,2)\)</span>，于是 <span class="arithmatex">\(\kappa(0)=\frac{\|(0,0,2)\|}{\|(1,0,0)\|^3}=2\)</span></li>
+<li>抛物线 <span class="arithmatex">\(y=x^2\)</span> 的曲率为 <span class="arithmatex">\(\kappa(x)=\frac{|f''|}{[1+(f')^2]^{3/2}}=\frac2{(1+4x^2)^{3/2}}\)</span></li>
+</ol>
 </div>
-<p>由 <span class="arithmatex">\(\mathbf T = \frac {\mathbf r'}{|\mathbf r'|}\)</span> 和 <span class="arithmatex">\(|\mathbf r'| = \frac {d_s}{d_t}\)</span>，有 <span class="arithmatex">\(\mathbf r'=|\mathbf r'|\mathbf T = \frac {d_s}{d_t}\mathbf T\)</span> (1)</p>
-<p>又由乘法法则有 <span class="arithmatex">\(\mathbf r^{"} = \frac {d_s^2}{d_{t^2}}\mathbf T + \frac {d_s}{d_t}\mathbf T'\)</span> (2)</p>
-<p>因而，<span class="arithmatex">\(\mathbf r'\times \mathbf r^{"} = \frac {d_s}{d_t}\mathbf T\times \frac {d_s^2}{d_{t^2}}\mathbf T + \frac {d_s}{d_t}\mathbf T\times \frac {d_s}{d_t}\mathbf T' = (\frac {d_s}{d_t})^2\mathbf T \times \mathbf T'\)</span> (3)</p>
-<p>又因为 <span class="arithmatex">\(\mathbf T\)</span> 的定义是单位切向量，故而 <span class="arithmatex">\(|\mathbf T| = 1\)</span>，</p>
-<p>由 13.2 中“求导法则”后的证明有 <span class="arithmatex">\(\mathbf T\)</span> 和 <span class="arithmatex">\(\mathbf T'\)</span> 相互垂直，并且 <span class="arithmatex">\(|\mathbf T\times \mathbf T'| = |\mathbf T||\mathbf T'| = 1|\mathbf T'| = |\mathbf T'|\)</span></p>
-<p>对 (3) 两边取绝对值有 <span class="arithmatex">\(|\mathbf r'\times \mathbf r^{"}|  = (\frac {d_s}{d_t})^2 |\mathbf T \times \mathbf T'| = (\frac {d_s}{d_t})^2\mathbf |\mathbf T'|\)</span>，得到 <span class="arithmatex">\(\displaystyle |\mathbf T'| = \frac {|\mathbf r'\times \mathbf r^{"}|} {(\frac {d_s}{d_t})^2}\)</span></p>
-<p>最后，<span class="arithmatex">\(K = \frac {|\mathbf T'|}{|\mathbf r'|} = \frac {|\mathbf r'\times \mathbf r^{"}|}{(\frac {d_s}{d_t})^2|\mathbf r'|} = \frac {|\mathbf r'\times \mathbf r^{"}|}{|\mathbf r'|^3}\)</span></p>
-<div class="admonition 定理">
-<p class="admonition-title">定理</p>
-</div>
-<blockquote>
-<p>向量函数 <span class="arithmatex">\(\mathbf r\)</span> 所确定的曲线的曲率为 <span class="arithmatex">\(\displaystyle  K(t) = \frac {|\mathbf r'(r)\times \mathbf r^{"}(t)|}{|\mathbf r'(t)|^3}\)</span></p>
-</blockquote>
-<div class="admonition 二维曲线斜率">
-<p class="admonition-title">二维曲线斜率</p>
-</div>
-<blockquote>
-<p>给定平面曲线 y = f(x)，以 x 为参数有 <span class="arithmatex">\(\mathbf r(x) = x\mathbf i + f(x)\mathbf j\)</span></p>
-<p>对两边分别求 1 次 和 2 次导数，有 <span class="arithmatex">\(\mathbf r'(x) = \mathbf i + f'(x)\mathbf j\)</span>，<span class="arithmatex">\(\mathbf r^{"}(x) = f^{"}(x)\mathbf j\)</span>，</p>
-<p>那么，<span class="arithmatex">\(\mathbf r'(x)\times \mathbf r^{"}(x) = f^{"}(x)\mathbf i\times \mathbf j + f'(x)f^{"}(x)\mathbf j\times \mathbf j = f^{"}(x)\mathbf i\times \mathbf j = f^{"}(x) k\)</span></p>
-<p>由曲率定理有 <span class="arithmatex">\(\displaystyle  K(x) = \frac {|\mathbf r'(x)\times \mathbf r^{"}(x)|}{|\mathbf r'(x)|^3} = \frac {|f^{"}(x) \mathbf k|}{|\mathbf i + f'(x)\mathbf j|^3} = \frac {f^{"}(x)}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
-<p>因此，二维曲线的斜率为：<span class="arithmatex">\(\displaystyle K(x) = \frac {|f^{"}(x)|}{[1+f'(x)^2]^{\frac 32}}\)</span></p>
-</blockquote>
 <div class="admonition 单位法向量">
 <p class="admonition-title">单位法向量</p>
 </div>
@@ -1349,8 +1490,21 @@
 <p class="admonition-title">副法线向量</p>
 </div>
 <blockquote>
-<p><span class="arithmatex">\(\mathbf B(t) = \mathbf T(t) \times \mathbf N(t)\)</span></p>
+<p><span class="arithmatex">\(\mathbf B(t) = \mathbf T(t) \times \mathbf N(t)\)</span>，而且 <span class="arithmatex">\(\|\mathbf B\|=1\)</span></p>
 </blockquote>
+<p><span class="arithmatex">\(\|\mathbf B\|=\|\mathbf T\times\mathbf N\|=\|\mathbf T\times(\mathbf T'/\|\mathbf T'\|)\|=\|\mathbf T\times\mathbf T'\|/\|\mathbf T'\|=\|\mathbf T'\|/\|\mathbf T'\|=1\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>讨论螺旋线 <span class="arithmatex">\(\mathbf r(t)=(\cos t,\sin t,t)\)</span> 的单位法向量，副法线向量：<ol>
+<li><span class="arithmatex">\(\mathbf r'(t)=(-\sin t,\cos t,1)\)</span></li>
+<li><span class="arithmatex">\(\mathbf T=\frac1{\sqrt2}(-\sin t,\cos t,1),\mathbf T'=\frac1{\sqrt2}(-\cos t,-\sin t,0)\)</span></li>
+<li>于是 <span class="arithmatex">\(\mathbf N=(-\cos t,-\sin t,0),\mathbf B=\mathbf T\times\mathbf N=\frac1{\sqrt2}(\sin t,-\cos t,1)\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">法平面 &amp; 密切面 &amp; 密切圆</p>
 </div>
@@ -1368,15 +1522,135 @@
 <li>密切圆：？？？</li>
 </ul>
 </div>
-<div class="admonition 公式总结">
-<p class="admonition-title">公式总结</p>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
 <ol>
-<li><span class="arithmatex">\(\displaystyle \mathbf T(t) = \frac {\mathbf r'(t)}{|\mathbf r'(t)|}\)</span></li>
-<li><span class="arithmatex">\(\displaystyle \mathbf N(t) = \frac {\mathbf T'(t)}{|\mathbf T'(t)|}\)</span></li>
-<li><span class="arithmatex">\(\displaystyle \mathbf B(t) = \mathbf T(t) \times \mathbf N(t)\)</span></li>
-<li><span class="arithmatex">\(\displaystyle K = |\frac {d_{\mathbf T}}{d_s}| = |\frac {\mathbf T'(t)}{\mathbf r'(t)}| = \frac {|\mathbf r'(t)\times \mathbf r^{"}(t)|}{\mathbf r'(t)}^3\)</span></li>
+<li>向量曲线方程的弧长：假设向量方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 从 a 到 b 只通过曲线一次，那么曲线在 <span class="arithmatex">\(t\in[a,b]\)</span> 内的弧长为 <span class="arithmatex">\(\int_a^b\|\mathbf r'(t)\|~d_t=\int_a^b\sqrt{\sum\limits_{i=1}^n(f_i')^2(t)}~d_t\)</span></li>
+<li>弧长函数：假设向量方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 从 a 到 b 只通过曲线一次，定义弧长函数为 <span class="arithmatex">\(s(t)=\int_a^t\|\mathbf r'(u)\|~d_u\)</span>（其中 <span class="arithmatex">\(t\in[a,b]\)</span>），于是 <span class="arithmatex">\(\frac{ds}{d_t}=\|\mathbf r'\|\)</span>（根据[FCT1]）</li>
+<li>弧长换元：假设 <span class="arithmatex">\(\bf r\)</span> 的弧长函数为 <span class="arithmatex">\(s(t)=\int_a^t\|\mathbf r'(u)\|~d_u\)</span>，若 s 单射，那么有 <span class="arithmatex">\(\mathbf r(t)=(\mathbf r\circ s^{-1})(u)\)</span></li>
+<li>切向量(Tangent)，单位切向量：向量曲线方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 的<strong>切向量函数</strong>为 <span class="arithmatex">\(\mathbf r'\)</span>，<strong>单位切向量函数</strong>定义为 <span class="arithmatex">\(\mathbf T=\frac{\mathbf r'}{\|\mathbf r'\|}\)</span></li>
+<li>曲率：向量曲线方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 定义为单位切向量和相应弧长的比值，用以描述曲线在这一个点方向变化快慢程度，即 <span class="arithmatex">\(\kappa=\left\|\frac{d\mathbf T}{ds}\right\|\)</span><ol>
+<li>定理0：在 <span class="arithmatex">\(\mathbb R^n\)</span> 下，<span class="arithmatex">\(\kappa=\frac{\|\mathbf T'\|}{\|\mathbf r'\|}\)</span></li>
+<li>定理1：在 <span class="arithmatex">\(\mathbb R^3\)</span> 下，<span class="arithmatex">\(\kappa=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|^3}\)</span></li>
+<li>定理2：在 <span class="arithmatex">\(\mathbb R^2\)</span> 下，参数曲线方程 <span class="arithmatex">\(x=f(t),y=g(t)\)</span> 的曲率函数为 <span class="arithmatex">\(\kappa=\frac{|\dot x\ddot y-\ddot x\dot y|}{(\dot x^2+\dot y^2)^{3/2}}\)</span></li>
+<li>定理3：在 <span class="arithmatex">\(\mathbb R^2\)</span> 下，函数曲线方程 <span class="arithmatex">\(y=f(x)\)</span> 的曲率函数为 <span class="arithmatex">\(\kappa=\frac{|f''|}{(1+(f')^2)^2}\)</span></li>
+</ol>
+</li>
+<li>法向量(Normal)，单位法向量：向量曲线方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 的<strong>法向量函数</strong>为 <span class="arithmatex">\(\mathbf T'\)</span>，<strong>单位法向量函数</strong>定义为 <span class="arithmatex">\(\mathbf N=\frac{\mathbf T'}{\|\mathbf T'\|}\)</span>（指向曲线内凹部分）</li>
+<li>副法线向量(Binormal)：向量曲线方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 的<strong>副法线向量函数</strong>定义为 <span class="arithmatex">\(\bf B=T\times N\)</span>（其中 <span class="arithmatex">\(\|\mathbf B\|=1\)</span>）</li>
+<li>法平面，从切面，密切面，密切圆：向量曲线方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 在点 P 处分别正交于 <span class="arithmatex">\(\bf T,N,B\)</span> 的平面分别称为<strong>法平面，从切面，密切面</strong>；在密切面上，法线指向圆心，并且半径为 <span class="arithmatex">\(1/\kappa\)</span>（存疑）的圆，称为<strong>密切圆</strong>或<strong>曲率圆</strong></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\mathbf T'=\left(\frac{\mathbf r'}{\|\mathbf r'\|}\right)'=\frac{\mathbf r''\|\mathbf r'\|-\mathbf r'((\mathbf r'\cdot\mathbf r'')/\|\mathbf r'\|)}{\|\mathbf r'\|^2}=\frac{\mathbf r''-(\mathbf T\cdot\mathbf r'')\mathbf T}{\|\mathbf r'\|}\)</span></li>
+<li>记 <span class="arithmatex">\(\mathbf X'=\frac{d\mathbf X}{dt}\)</span>，<span class="arithmatex">\(\mathbf{\dot X}=\frac{d\bf X}{ds}\)</span>，那么有<ol>
+<li><span class="arithmatex">\(\mathbf T\cdot\mathbf T'=0\)</span>，<span class="arithmatex">\(\mathbf N\cdot\mathbf N'=0\)</span>，<span class="arithmatex">\(\mathbf B\cdot\mathbf B'=0\)</span></li>
+<li>福莱纳-塞雷特公式：<span class="arithmatex">\(\bf\dot T=\kappa N\)</span>，<span class="arithmatex">\(\bf\dot N=-\kappa T+\tau B\)</span>，<span class="arithmatex">\(\bf\dot B=-\tau N\)</span>（其中 <span class="arithmatex">\(\tau=\frac{(\mathbf r'\times\mathbf r'')\cdot\mathbf r'''}{\|\mathbf r'\times\mathbf r''\|^2}\)</span>）</li>
+<li><span class="arithmatex">\(\mathbf T\cdot\mathbf{\dot T}=0\)</span>，<span class="arithmatex">\(\mathbf N\cdot\mathbf{\dot N}=0\)</span>，<span class="arithmatex">\(\mathbf B\cdot\mathbf{\dot B}=0\)</span></li>
+<li><span class="arithmatex">\(\mathbf T'=s'\mathbf{\dot T}\)</span>，<span class="arithmatex">\(\mathbf N'=s'\mathbf{\dot N}\)</span>，<span class="arithmatex">\(\mathbf B'=s'\mathbf{\dot B}\)</span></li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(\mathbf u=(x,y,z)\)</span> 是未知向量，那么向量曲线方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 在 t 处的法平面方程为 <span class="arithmatex">\(\mathbf u=\mathbf r(t)+a\mathbf r''(t)+b\mathbf r'''(t)\)</span>（<span class="arithmatex">\(a,b\)</span> 为参数），或 <span class="arithmatex">\(\mathbf r'(t)(\mathbf u-\mathbf r(t))=0\)</span></li>
+<li>假设 <span class="arithmatex">\(\mathbf u=(x,y,z)\)</span> 是未知向量，那么向量曲线方程 <span class="arithmatex">\(\mathbf r=\mathbf r(t)\)</span> 在 t 处的密切圆为 <span class="arithmatex">\(\left\|\mathbf u-(\mathbf r+\frac1\kappa\mathbf N)\right\|=\frac1\kappa\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">三级结论</p>
+</div>
+<blockquote>
+<ol>
+<li><span class="arithmatex">\(\mathbb R^3\)</span> 下曲线每一点对应的 <span class="arithmatex">\(\bf T,N,B\)</span> 都构成 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个单位正交基</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>福莱纳-塞雷特公式：<ol>
+<li>证明：<span class="arithmatex">\(\frac{d\bf T}{ds}=\kappa\mathbf N\)</span></li>
+<li>证明：<span class="arithmatex">\(\frac{d\bf N}{ds}=-\kappa\mathbf T+\tau\mathbf B\)</span>，其中 <span class="arithmatex">\(\tau(s)\)</span> 称为<strong>扭曲度</strong></li>
+<li>证明：<span class="arithmatex">\(\frac{d\bf B}{ds}=-\tau\mathbf N\)</span></li>
+</ol>
+</li>
+<li>证明：在 <span class="arithmatex">\(\mathbb R^2\)</span> 下，<span class="arithmatex">\(\kappa=\left|\frac{d\phi}{ds}\right|\)</span></li>
+<li>解释：平面曲线的扭曲度为 0</li>
+<li>福莱纳-塞雷特公式推论：<ol>
+<li>证明：<span class="arithmatex">\(\mathbf r''=s''\mathbf T+\kappa(s')^2\mathbf N\)</span></li>
+<li>证明：<span class="arithmatex">\(\mathbf r'\times\mathbf r''=\kappa(s')^3\mathbf B\)</span></li>
+<li>证明：<span class="arithmatex">\(\mathbf r'''=[s'''-\kappa^2(s')^3]\mathbf T+[3\kappa s's''+\kappa'(s')^2]\mathbf N+\kappa\tau(s')^3\mathbf B\)</span></li>
+<li>证明：在 <span class="arithmatex">\(\mathbb R^3\)</span> 上，<span class="arithmatex">\(\tau=\frac{(\mathbf r'\times\mathbf r'')\cdot\mathbf r'''}{\|\mathbf r'\times\mathbf r''\|^2}\)</span></li>
+</ol>
+</li>
+<li>证明：螺旋线 <span class="arithmatex">\(\mathbf r(t)=(a\cos t,a\sin t,bt)\)</span> 的曲率和扭曲度分别为 <span class="arithmatex">\(\kappa=\frac a{a^2+b^2}\)</span>，<span class="arithmatex">\(\tau=\frac b{a^2+b^2}\)</span></li>
+<li>计算 <span class="arithmatex">\(\mathbf r=(t,t^2/3,t^3/3)\)</span> 的曲率，扭曲度</li>
+<li>判断题<ol>
+<li><span class="arithmatex">\(\mathbb R^2\)</span> 下的曲线只能观察到密切面(Y)</li>
+</ol>
+</li>
+<li>计算向量曲线方程的弧长：<ol>
+<li><span class="arithmatex">\(\mathbf r(t)=(\sqrt2t,e^t,e^{-t})\)</span>，<span class="arithmatex">\(t\in[0,1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(t^2,2t,\ln t)\)</span>，<span class="arithmatex">\(t\in[1,e]\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(1,t^2,t^3)\)</span>，<span class="arithmatex">\(t\in[0,1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(12t,8t^{3/2},3t^2)\)</span>，<span class="arithmatex">\(t\in[0,1]\)</span></li>
+</ol>
+</li>
+<li>以到 <span class="arithmatex">\(t=0\)</span> 对应的点的弧长为参数表示向量曲线方程，其中 <span class="arithmatex">\(s(t)=\int_0^t\|\mathbf r'(u)\|d_u\)</span><ol>
+<li><span class="arithmatex">\(\mathbf r(t)=(3\sin t,4t,3\cos t)\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(e^{2t}\cos2t,2,e^{2t}\sin2t)\)</span></li>
+<li><span class="arithmatex">\(\mathbf r(t)=(2t,1-3t,5+4t)\)</span></li>
+</ol>
+</li>
+<li>计算 <span class="arithmatex">\(\mathbf r(t)=(2\sin t,5t,2\cos t)\)</span> 的单位切向量 <span class="arithmatex">\(\bf T\)</span>，单位法向量 <span class="arithmatex">\(\bf N\)</span>，副法线向量 <span class="arithmatex">\(\bf B\)</span></li>
 </ol>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) 由 <span class="arithmatex">\(\kappa=\left\|\frac{d\mathbf T}{ds}\right\|=\left\|\frac{\mathbf T'}{s'}\right\|=\frac{\|\mathbf T'\|}{s'}\)</span>，以及 <span class="arithmatex">\(\mathbf N=\frac{\mathbf T'}{\|\mathbf T'\|}\)</span> 有 <span class="arithmatex">\(\kappa\mathbf N=\frac{\|\mathbf T'\|}{s'}\frac{\mathbf T'}{\|\mathbf T'\|}=\frac{\mathbf T'}{s'}=\frac{d\bf T}{ds}\)</span></p>
+<p>(1.2) <span class="arithmatex">\(\mathbf B\cdot\frac{d\bf B}{ds}=\mathbf B\cdot\frac{\mathbf B'}{s'}=0\)</span></p>
+<p><span class="arithmatex">\(\mathbf T\cdot\frac{d\mathbf B}{ds}=\mathbf T\cdot\frac{\mathbf B'}{s'}=\frac1{s'}\mathbf T\cdot(\mathbf T\times\mathbf N)'=\frac1{s'}\mathbf T\cdot(\mathbf T'\times\mathbf N+\mathbf T\times\mathbf N')\)</span> <span class="arithmatex">\(=\frac1{s'}\mathbf T\cdot(\mathbf T'\times\mathbf N)=\frac1{s'}\mathbf T\cdot(\mathbf T'\times\frac{\mathbf T'}{\|\mathbf T'\|})=0\)</span></p>
+<p>所以 <span class="arithmatex">\(\frac{d\mathbf B}{ds}\)</span> 正交于 <span class="arithmatex">\(\bf B\)</span> 和 <span class="arithmatex">\(\bf T\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\exists k,\frac{d\mathbf B}{ds}=k(\mathbf B\times\mathbf T)=k((\mathbf T\times\mathbf N)\times\mathbf T)=k[(\mathbf T\cdot\mathbf T)\mathbf N-(\mathbf T\cdot\mathbf N)\mathbf T]=k(\mathbf T\cdot\mathbf T)\mathbf N=k\|\mathbf T\|^2\mathbf N\)</span>，记 <span class="arithmatex">\(\tau=-k\|\mathbf T\|^2\)</span>，那么 <span class="arithmatex">\(\frac{d\mathbf B}{ds}=-\tau\mathbf N\)</span></p>
+<p>(1.3) 根据 (1.1) 和 (1.2) 有 <span class="arithmatex">\(\frac{d\mathbf N}{ds}=\frac{d(\mathbf B\times\mathbf T)}{ds}=\frac{d\mathbf B}{ds}\times\mathbf T+\mathbf B\times\frac{d\mathbf T}{ds}={\bf(-\tau N)\times T+B\times(\kappa N)}=\tau\mathbf B-\kappa\mathbf T\)</span></p>
+<p>(4.1) <span class="arithmatex">\(s''\mathbf T=(\|\mathbf r'\|)'\frac{\mathbf r'}{\|\mathbf r'\|}=\left(\frac{\mathbf r'\cdot\mathbf r''}{\|\mathbf r'\|}\right)\left(\frac{\mathbf r'}{\|\mathbf r'\|}\right)=\frac{(\mathbf r'\cdot\mathbf r'')\mathbf r'}{\|\mathbf r'\|^2}\)</span></p>
+<p>而 <span class="arithmatex">\(\kappa(s')^2\mathbf N=\left(\frac{\|\mathbf T'\|}{s'}\right)(s')^2\left(\frac{\mathbf T'}{\|\mathbf T'\|}\right)=s'\mathbf T'=\|\mathbf r'\|\left(\frac{\mathbf r'}{\|\mathbf r'\|}\right)'\)</span> <span class="arithmatex">\(=\|\mathbf r'\|\left(\frac{\mathbf r''\|\mathbf r'\|-\mathbf r'(\mathbf r'\cdot\mathbf r''/\|\mathbf r'\|)}{\|\mathbf r'\|^2}\right)=\mathbf r''-\frac{(\mathbf r'\cdot\mathbf r'')\mathbf r'}{\|\mathbf r'\|^2}\)</span></p>
+<p>于是 <span class="arithmatex">\(s''\mathbf T+\kappa(s')^2\mathbf N=\mathbf r''\)</span></p>
+<p>法2：<span class="arithmatex">\(\mathbf T=\mathbf r'/\|\mathbf r'\|\)</span> 和 <span class="arithmatex">\(s'=\|\mathbf r'\|\)</span> 蕴含 <span class="arithmatex">\(\mathbf r'=s'\mathbf T\)</span></p>
+<p>两边对 t 微分，有 <span class="arithmatex">\(\mathbf r''=s''\mathbf T+s'\mathbf T'=s''\mathbf T+s'((d\mathbf T/ds)(ds/dt))=s''\mathbf T+s'(\mathbf{\dot T}s')=s''\mathbf T+(s')^2\mathbf{\dot T}=s''\mathbf T+(s')^2\kappa\mathbf N\)</span></p>
+<p>(4.2) 根据 (4.1)，有 <span class="arithmatex">\(\mathbf r'\times\mathbf r''=(s'\mathbf T)\times(s''\mathbf T+\kappa(s')^2\mathbf N)=(s's'')\mathbf T\times\mathbf T+(\kappa(s')^3)\mathbf T\times\mathbf N=\kappa(s')^3\mathbf B\)</span></p>
+<p>(4.3) 根据 (4.1)，有 <span class="arithmatex">\(\mathbf r'''=(s''\mathbf T+\kappa(s')^2\mathbf N)'=s'''\mathbf T+s''\mathbf T'+[\kappa'(s')^2+2\kappa s's'']\mathbf N+\kappa(s')^2\mathbf N'\)</span></p>
+<p>又因 <span class="arithmatex">\(s''\mathbf T'=s''(s'\mathbf{\dot T})=s''(\kappa s'\mathbf N)=(\kappa s's'')\mathbf N\)</span> 和 <span class="arithmatex">\(\kappa(s')^2\mathbf N'=(\kappa(s')^2)(s'\mathbf{\dot N})=(\kappa(s')^2)(s'(-\kappa\mathbf T+\tau\mathbf B))=\kappa(s')^3(-\kappa\mathbf T+\tau\mathbf B)\)</span></p>
+<p>于是 <span class="arithmatex">\(\mathbf r'''=[s'''-\kappa^2(s')^3]\mathbf T+[3\kappa s's''+\kappa'(s')^2]\mathbf N+\kappa\tau(s')^3\mathbf B\)</span></p>
+<p>(4.4) 根据 (4.1)，(4.2)，(4.3) 和 <span class="arithmatex">\(\bf T,N,B\)</span> 是 <span class="arithmatex">\(\mathbb R^3\)</span> 的一个单位正交基，有 <span class="arithmatex">\(\frac{(\mathbf r'\times\mathbf r'')\cdot\mathbf r'''}{\|\mathbf r'\times\mathbf r''\|^2}=\frac{(\kappa(s')^3)(\kappa\tau(s')^3)}{(\kappa(s')^3)^2}=\tau\)</span></p>
+<p>(5) <span class="arithmatex">\(\mathbf r(t)=(a\cos t,a\sin t,bt)\)</span> 蕴含 <span class="arithmatex">\(\mathbf r'=(-a\sin t,a\cos t,b),\mathbf r''=(-a\cos t,-a\sin t,0),\mathbf r'''=(a\sin t,-a\cos t,0)\)</span></p>
+<p>所以 <span class="arithmatex">\(\mathbf r'\times\mathbf r''=(ab\sin t,-ab\cos t,a^2)\)</span></p>
+<p>于是 <span class="arithmatex">\(\kappa=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|^3}=\frac{\sqrt{a^2(a^2+b^2)}}{(a^2+b^2)^{3/2}}=\frac a{a^2+b^2}\)</span></p>
+<p><span class="arithmatex">\(\tau=\frac{(\mathbf r'\times\mathbf r'')\cdot\mathbf r'''}{\|\mathbf r'\times\mathbf r''\|^2}=\frac{a^2b}{a^2(a^2+b^2)}=\frac b{a^2+b^2}\)</span></p>
+<p>(6) <span class="arithmatex">\(\mathbf r=(t,t^2/3,t^3/3),\mathbf r'=(1,t,t^2),\mathbf r''=(0,1,2t),\mathbf r'''=(0,0,2)\)</span></p>
+<p>所以 <span class="arithmatex">\(\mathbf r'\times\mathbf r''=(t^2,-2t,1)\)</span></p>
+<p>于是 <span class="arithmatex">\(\kappa=\frac{\|\mathbf r'\times\mathbf r''\|}{\|\mathbf r'\|^3}=\frac{\sqrt{t^4+4t^2+1}}{(t^4+t^2+1)^{3/2}}\)</span></p>
+<p><span class="arithmatex">\(\tau=\frac{(\mathbf r'\times\mathbf r'')\cdot\mathbf r'''}{\|\mathbf r'\times\mathbf r''\|^2}=\frac2{t^4+4t^2+1}\)</span></p>
+<p>(9)</p>
+<ol>
+<li><span class="arithmatex">\(\mathbf r'=(\sqrt2,e^t,-e^{-t})\)</span>，于是 <span class="arithmatex">\(\int_0^1\|\mathbf r'\|d_t=\int_0^1\sqrt{2+e^{2t}+e^{-2t}}~d_t=\int_0^1\sqrt{(e^t+e^{-t})^2}~d_t=\int_0^1(e^t+e^{-t})d_t=\left[e^t-e^{-t}\right]_0^1=e-e^{-1}\)</span></li>
+<li><span class="arithmatex">\(\int_1^e\|\mathbf r'(t)\|d_t=\int_1^e\sqrt{4t^2+4+1/t^2}d_t=\int_1^e\sqrt{(2t+1/t)^2}d_t=\int_1^e(2t+1/t)d_t=(t^2+\ln t)\Big|_1^e=e^2+1-1=e^2\)</span></li>
+<li><span class="arithmatex">\(\mathbf r'(t)=(0,2t,3t^2)\)</span>，于是 <span class="arithmatex">\(\int_0^1\|\mathbf r'(t)\|d_t=\int_0^1\sqrt{4t^2+9t^4}d_t=\int_0^1t\sqrt{4+9t^2}d_t=\int_4^{13}t\sqrt{4+9t^2}/(18t)d(4+9t^2)\)</span> <span class="arithmatex">\(=\frac1{18}\int_4^{13}\sqrt u~d_u=\frac1{27}u^{3/2}\Big|_4^{13}=\frac1{27}(13\sqrt{13}-8)\)</span></li>
+<li><span class="arithmatex">\(\mathbf r'(t)=(12,12\sqrt t,6t)\)</span>，于是 <span class="arithmatex">\(\int_0^1\|\mathbf r'(t)\|d_t=\int_0^1\sqrt{(12)^2+(12\sqrt t)^2+(6t)^2}~d_t=6\int_0^1\sqrt{4+4t+t^2}d_t=6\int_0^1(t+2)d_t=6(t^2/2+2t)\Big|_0^1=15\)</span></li>
+</ol>
+<p>(9)</p>
+<ol>
+<li><span class="arithmatex">\(s(t)=\int_0^t\sqrt{(3\cos u)^2+(4)^2+(-3\sin u)^2}d_u=\int_0^t5d_u=5t\)</span>，所以 <span class="arithmatex">\(s^{-1}(u)=u/5\)</span>，于是 <span class="arithmatex">\((\mathbf r\circ s^{-1})(u)=(3\sin(u/5),4u/5,3\cos(u/5))\)</span></li>
+<li><span class="arithmatex">\(s(t)=\int_0^t\|\mathbf r'(u)\|d_u=\int_0^t2e^{2u}\sqrt{(\cos2u-\sin2u)^2+(\cos2u+\sin2u)^2}d_u=2\sqrt2\int_0^te^{2u}d_u=\sqrt2(e^{2t}-1)\)</span>，蕴含 <span class="arithmatex">\(s^{-1}(u)=\frac12\ln(u/\sqrt2+1)\)</span>，于是 <span class="arithmatex">\((\mathbf r\circ s^{-1})(u)=((u/\sqrt2+1)\cos\ln(u/\sqrt2+1),2,(u/\sqrt2+1)\sin\ln(u/\sqrt2+1))\)</span></li>
+<li><span class="arithmatex">\(s(t)=\int_0^t\sqrt{(2)^2+(-3)^2+4^2}d_t=\sqrt{29}t,s^{-1}(u)=u/\sqrt{29}\)</span>，于是 <span class="arithmatex">\(\mathbf r(t)=(\mathbf r\circ s^{-1})(u)=(2u/\sqrt{29},1-3u/\sqrt{29},5+4u/\sqrt{29})\)</span></li>
+</ol>
+<p>(10) <span class="arithmatex">\(\mathbf r(t)=(2\sin t,5t,2\cos t)\)</span> 蕴含 <span class="arithmatex">\(\mathbf r'(t)=(2\cos t,5,-2\sin t)\)</span>，蕴含 <span class="arithmatex">\(\mathbf T(t)=\frac{\mathbf r'(t)}{\|\mathbf r'(t)\|}=\frac1{\sqrt{29}}(2\cos t,5,-2\sin t)\)</span>，蕴含 <span class="arithmatex">\(\mathbf T'(t)=\frac1{\sqrt{29}}(-2\sin t,0,-2\cos t)\)</span>，蕴含 <span class="arithmatex">\(\mathbf N(t)=\frac{\mathbf T'(t)}{\|\mathbf T'(t)\|}=(-\sin t,0,-\cos t)\)</span>，于是 <span class="arithmatex">\(\mathbf B(t)=(\mathbf T\times\mathbf N)(t)=\frac1{\sqrt{29}}(-5\cos t,2,5\sin t)\)</span></p>
+</blockquote>
 <h3 id="4">4.空间运动：速度 &amp; 加速度</h3>
 <p>本节使用 切向量，法向量，曲率 等概念研究曲线运动物体的 速度，加速度</p>
 <div class="admonition 速度">
@@ -1449,10 +1723,10 @@
 </article>
 </div>
 </div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </button>
+          </a>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -1461,20 +1735,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                上一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  上一页
+                </span>
                 12.向量&amp;空间解析几何
               </div>
 </div>
 </a>
 <a aria-label="下一页: 14.多元函数的偏导数" class="md-footer__link md-footer__link--next" href="../14.%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E5%AF%BC%E6%95%B0/" rel="next">
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                下一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  下一页
+                </span>
                 14.多元函数的偏导数
               </div>
 </div>
@@ -1492,10 +1766,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -1505,8 +1779,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

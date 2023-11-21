@@ -8,11 +8,11 @@
 <link href="../13.%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0/" rel="prev"/>
 <link href="../15.%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/" rel="next"/>
 <link href="https://static.javatpoint.com/math/images/math-home.jpeg" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.0.3" name="generator"/>
 <title>14.多元函数的偏导数 - 数学</title>
-<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link href="../../assets/stylesheets/main.6b71719e.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64 64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h128c35.3 0 64 28.7 64 64v288c0 35.3-28.7 64-64 64H160c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h128V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256c0-22.1-17.9-40-40-40s-40 17.9-40 40 17.9 40 40 40 40-17.9 40-40zm152 40c22.1 0 40-17.9 40-40s-17.9-40-40-40-40 17.9-40 40 17.9 40 40 40zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -42,7 +42,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--lifted" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="数学" class="md-header__button md-logo" data-md-component="logo" href="/" title="数学">
 <img alt="logo" src="https://static.javatpoint.com/math/images/math-home.jpeg"/>
@@ -159,7 +159,7 @@
 <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+<ol class="md-search-result__list"></ol>
 </div>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div>
 </nav>
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
+<div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%BF%B0/%E8%80%83%E7%BA%B2/">
@@ -238,12 +238,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_1" tabindex="0">
           概述
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<nav aria-label="概述" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           概述
@@ -273,14 +273,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">微积分</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-label="微积分" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           微积分
@@ -392,7 +392,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           14.多元函数的偏导数
           <span class="md-nav__icon md-icon"></span>
@@ -473,12 +473,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_3" tabindex="0">
           线性代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           线性代数
@@ -553,12 +553,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_4" tabindex="0">
           概率导论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率导论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           概率导论
@@ -618,12 +618,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_5" tabindex="0">
           矩阵代数
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-label="矩阵代数" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           矩阵代数
@@ -718,12 +718,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_6" tabindex="0">
           数学分析
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学分析" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           数学分析
@@ -813,12 +813,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_7" tabindex="0">
           初等数论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<nav aria-label="初等数论" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           初等数论
@@ -908,12 +908,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_8" tabindex="0">
           数学扩充
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<nav aria-label="数学扩充" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           数学扩充
@@ -933,14 +933,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/">线性代数1</a>
 <label for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<nav aria-label="线性代数1" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           线性代数1
@@ -1000,12 +1000,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
-<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_10" tabindex="0">
           概率论及其应用
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<nav aria-label="概率论及其应用" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
           概率论及其应用
@@ -1178,53 +1178,36 @@
 <p class="admonition-title">二元函数</p>
 </div>
 <blockquote>
-<p>二元函数 f 是指在集合 D 中的每个有序实数对 (x, y) 都有<strong>唯一</strong>的实数 f(x, y) 与前者对应</p>
+<p>二元函数 f 是指在集合 D 中的每个有序实数对 <span class="arithmatex">\((x, y)\)</span> 都有<strong>唯一</strong>的实数 <span class="arithmatex">\(f(x, y)\)</span> 与前者对应</p>
 <p>这里 D 是函数的 <strong>定义域</strong>，f 能取到的值叫做 <strong>值域</strong>，记作 <span class="arithmatex">\(\{ f(x, y) | (x, y) \in D \}\)</span></p>
 <p>几何解释：二元函数 f 满足： 二维平面 <span class="arithmatex">\(\mathbb R^2\)</span> 的子集（即定义域）的每一个点能通过 f 唯一映射到一个一维数轴 <span class="arithmatex">\(\mathbb R\)</span> 上的点（这些点构成集合——值域）</p>
 </blockquote>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>通常将二元函数记为 z = f(x, y)，其中 x 和 y 为自变量，z 为因变量</li>
-<li>若函数 f 没指定定义域，则 f 的定义域为能使表达式对应于一个确定实数的所有 (x, y) 的集合</li>
-<li>以下结论用于讨论二元函数定义域的几何表示：<ul>
-<li>区域 <span class="arithmatex">\(\{ (x,y) | x\le F(y) \}\)</span> 表示曲线 x=F(y) 及其 左半部分 的并集；同理，<span class="arithmatex">\(\{ (x,y) | x\ge F(y) \}\)</span> 表示曲线 x=F(y) 及其 右半部分 的并集</li>
-<li>区域 <span class="arithmatex">\(\{ (x,y) | y\le F(x) \}\)</span> 表示曲线 y=F(x) 及其 下半部分 的并集；同理，<span class="arithmatex">\(\{ (x,y) | y\ge F(x) \}\)</span> 表示曲线 y=F(x) 及其 上半部分 的并集</li>
-<li>不包含 <span class="arithmatex">\(x=F(y)\)</span> 或 <span class="arithmatex">\(y=F(x)\)</span> 的情况类似</li>
-</ul>
-</li>
-</ul>
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(f(x,y)=\frac{\sqrt{x+y+1}}{x-1}\)</span> 的定义域为 <span class="arithmatex">\(\{(x,y)|~x\ne1,x+y+1\ge0\}\)</span></li>
+<li><span class="arithmatex">\(f(x,y)=x\ln(y^2-x)\)</span> 的定义域为 <span class="arithmatex">\(\{(x,y)|~y^2-x&gt;0\}\)</span></li>
+<li><span class="arithmatex">\(\{(x,y)|~y&lt;f(x)\}\)</span> 表示 <span class="arithmatex">\(y=f(x)\)</span> y 的负半轴方向的区域</li>
+<li><span class="arithmatex">\(\{(x,y)|~x&lt;f(x)\}\)</span> 表示 <span class="arithmatex">\(x=f(y)\)</span> x 的负半轴方向的区域</li>
+<li><span class="arithmatex">\(g(x,y)=\sqrt{9-x^2-y^2}\)</span> 的定义域为 <span class="arithmatex">\(\{(x,y)|~x^2+y^2\le9\}\)</span>，值域为 <span class="arithmatex">\([0,3]\)</span></li>
+</ol>
 </div>
 <div class="admonition note">
 <p class="admonition-title">二元函数 图像</p>
 </div>
 <blockquote>
-<p>如果 f 是一个以 <span class="arithmatex">\(D\subset \mathbb R^2\)</span> 为定义域的二元函数，那么 f 的图像就是在 <span class="arithmatex">\(\mathbb R^3\)</span> 中所有的点 (x, y, z)，</p>
-<p>这里 z=f(x, y) 并且 (x, y) 在 D 中</p>
+<p>如果 f 是一个以 <span class="arithmatex">\(D\subset \mathbb R^2\)</span> 为定义域的二元函数，那么 f 的图像就是在 <span class="arithmatex">\(\mathbb R^3\)</span> 中所有的点 <span class="arithmatex">\((x, y, z)\)</span>，</p>
+<p>这里 <span class="arithmatex">\(z=f(x, y)\)</span> 并且 <span class="arithmatex">\((x, y)\)</span> 在 D 中</p>
 </blockquote>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">例子</p>
 <ol>
-<li>(连续)一元函数的图像是曲线，f 的图像在 x 轴与 D 交集的上部分或部分</li>
-<li>(连续)二元函数的图像是曲面，f 的图像在 xoy 与 D 交集的上部分或部分</li>
+<li>假设 <span class="arithmatex">\(f(x,y)=6-3x-2y\)</span>，那么 <span class="arithmatex">\(z=f(x,y)\)</span> 的图像是 <span class="arithmatex">\(x,y,z\)</span> 轴截距分别为 <span class="arithmatex">\(2,3,6\)</span> 的平面</li>
+<li>若 <span class="arithmatex">\(g(x,y)=\sqrt{9-x^2-y^2}\)</span>，那么方程 <span class="arithmatex">\(z=f(x,y)\)</span> 的图像是以 <span class="arithmatex">\((0,0)\)</span> 为圆心，半径为 3 的圆的上半部分</li>
+<li>若 <span class="arithmatex">\(h(x,y)=4x^2+y^2\)</span>，由[12.6]，<span class="arithmatex">\(z=h(x,y)\)</span> 是椭圆抛物面</li>
 </ol>
 </div>
-<div class="admonition 平面画图">
-<p class="admonition-title">平面画图</p>
-<ul>
-<li>假设 <span class="arithmatex">\(f(x, y) = ax + by + c\)</span>（二元线性函数，同时也能确定三维平面）</li>
-<li>方法1：例如：<ul>
-<li>令 <span class="arithmatex">\(x=0\)</span>，得到 xoy 截 当前平面 的斜线</li>
-<li>令 <span class="arithmatex">\(y=z=0\)</span>，得到 当前平面 在 x 轴的截距</li>
-</ul>
-</li>
-<li>方法2：例如：<ul>
-<li>分别令 y 和 z，z 和 x，x 和 y 取 0，分别得到 x / y / z 的截距</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">计算机画图</p>
 <ul>
 <li>试着画出如下函数图像：<span class="arithmatex">\((x^2 + 3y^2)e^{-x^2-y^2}\)</span>，<span class="arithmatex">\(\sin x + \sin y\)</span>，<span class="arithmatex">\(\frac {\sin x\sin y}{xy}\)</span></li>
@@ -1235,7 +1218,7 @@
 </div>
 <blockquote>
 <p>二元函数 f 的等高线就是方程 <span class="arithmatex">\(f(x, y) = k\)</span> 所对应的曲线（k 为常数）</p>
-<p>同时也可以认为 <span class="arithmatex">\(f(x, y) = k\)</span> 是 f 在 xoy 上的投影</p>
+<p>同时也可以认为 <span class="arithmatex">\(f(x, y) = k\)</span> 是 f 在 <span class="arithmatex">\(xoy\)</span> 上的投影</p>
 <p>二元函数的等高线 可以推广到 一元函数的端点，也可以对应于 三元函数的<strong>等高面</strong></p>
 </blockquote>
 <div class="admonition 等高线的应用">
@@ -1245,7 +1228,7 @@
 <li>温度带：设温度 f 是经纬度 x 和 y 的函数，那么 f 的一族等高线就是某一时刻的温度等温线</li>
 </ul>
 </div>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">试着用等高线画图</p>
 <ul>
 <li><span class="arithmatex">\(-xye^{-x^2-y^2}\)</span>，<span class="arithmatex">\(\frac {-3y}{x^2+y^2+1}\)</span></li>
@@ -1257,6 +1240,12 @@
 <blockquote>
 <p>三元函数 f 对于定义域 <span class="arithmatex">\(D\subset \mathbb R^3\)</span> 内的每个三元组 (x, y, z) 都有唯一的实数 f(x, y, z) 与其对应</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(f(x,y,z)=\ln(z-y)+xy\sin z\)</span> 的定义域是 <span class="arithmatex">\(\{(x,y,z)\in\mathbb R^3|~z-y&gt;0\}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">三元函数的 <mark class="critic">等高面</mark></p>
 </div>
@@ -1284,6 +1273,30 @@
 <ul>
 <li>我们将所有数组 <span class="arithmatex">\(((x_1, x_2, \dots, x_n))\)</span> 构成的集合为 <span class="arithmatex">\(\mathbb R^n\)</span></li>
 </ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>多元函数：假设 <span class="arithmatex">\(D_f\subset\mathbb R^n\)</span>，<strong>多元函数</strong>定义为映射关系 <span class="arithmatex">\(f:~D_f^n\to\mathbb R\)</span>，其中 <span class="arithmatex">\(D_f,R_f=\{\mathbf x\in\mathbb R^n|~\mathbf x\in D_f\}\)</span> 分别为 f 的定义域和值域，<span class="arithmatex">\(\mathbb R\)</span> 是 f 的余定义域（注：<span class="arithmatex">\(\mathbf x=(x,y,z,\cdots)\)</span> 或 <span class="arithmatex">\(\mathbf x=(x_1,x_2,\cdots)\)</span>）<ol>
+<li>若 <span class="arithmatex">\(n=1\)</span>，那么函数方程 <span class="arithmatex">\(y=f(x)\)</span> 表示 <span class="arithmatex">\(\mathbb R^2\)</span> 下的向量集或者曲线</li>
+<li>若 <span class="arithmatex">\(n=2\)</span>，那么函数方程 <span class="arithmatex">\(z=f(x,y)\)</span> 表示 <span class="arithmatex">\(\mathbb R^3\)</span> 下的向量集或者曲面</li>
+<li>若 <span class="arithmatex">\(n\in\mathbb Z^+\)</span>，那么函数方程 <span class="arithmatex">\(u=f(\mathbf x)\)</span> 表示 <span class="arithmatex">\(\mathbb R^{n+1}\)</span> 下的向量集</li>
+</ol>
+</li>
+<li>等高线，等值面：假设 <span class="arithmatex">\({a_k}\)</span> 是一个（等差）数组，那么 <span class="arithmatex">\(z=f(x,y)\)</span> 的一组<strong>等高线</strong>是 <span class="arithmatex">\(f(x,y)=a_1,\cdots,f(x,y)=a_k\)</span>；<span class="arithmatex">\(u=f(x,y,z)\)</span> 的一组<strong>等值面</strong>是 <span class="arithmatex">\(f(x,y,z)=a_1,\cdots,f(x,y,z)=a_k\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习<ol>
+<li>使用“等值方法”画出如下方程：(1) <span class="arithmatex">\(z=\sin\sqrt{x^2+y^2}\)</span>，(2) <span class="arithmatex">\(z=x^2y^2e^{-x^2-y^2}\)</span>，(3) <span class="arithmatex">\(z=\frac1{x^2+4y^2}\)</span>，(4) <span class="arithmatex">\(z=x^3-3xy^2\)</span>，(5) <span class="arithmatex">\(z=\sin x\sin y\)</span>，(6) <span class="arithmatex">\(z=\sin^2x+\frac14y^2\)</span></li>
+<li>如何计算多元函数的定义域，值域，各处取值？</li>
+<li>如何做图像变换？（见[第1章]）</li>
+<li>使用“等值方法”画出如下函数的图像：(1) <span class="arithmatex">\(xy\)</span>，(2) <span class="arithmatex">\(x^2-y^2\)</span>，(3) <span class="arithmatex">\(y-\ln x\)</span>，(4) <span class="arithmatex">\(e^{y/x}\)</span>，(5) <span class="arithmatex">\(\sqrt{x+y}\)</span>，(6) <span class="arithmatex">\(y\sec x\)</span>，(7) <span class="arithmatex">\(x-y^2\)</span>，(8) <span class="arithmatex">\(y/(x^2+y^2)\)</span></li>
+<li>画出如下函数的图像：(1) <span class="arithmatex">\(|x|+|y|\)</span>，(2) <span class="arithmatex">\(|xy|\)</span>，(3) <span class="arithmatex">\(1/(1+x^2+y^2)\)</span>，(4) <span class="arithmatex">\((x^2-y^2)^2\)</span>，(5) <span class="arithmatex">\((x-y)^2\)</span>，(6) <span class="arithmatex">\(\sin{|x|+|y|}\)</span></li>
+</ol>
+</p>
 </div>
 <h3 id="2">2.多元函数的极限 &amp; 连续性</h3>
 <div class="admonition 二元函数极限">
@@ -1324,6 +1337,21 @@
 <li>该定理是一元函数情况下的推广：一元函数左右两侧极限不相等 <span class="arithmatex">\(\iff\)</span> 该处极限不存在</li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>讨论 <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{x^2-y^2}{x^2+y^2}\)</span>：若 <span class="arithmatex">\(C_1:x=y,C_2:x=2y\)</span>，蕴含 <span class="arithmatex">\(C_1:(x,y)\to(0,0),f(x,y)\to0\)</span>，<span class="arithmatex">\(C_2:(x,y)\to(0,0),f(x,y)=\frac{4y^2-y^2}{4y^2+y^2}\to3/5\)</span>，所以极限不存在</li>
+<li>讨论 <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{xy}{x^2+y^2}\)</span>：若 <span class="arithmatex">\(C_1:x=0,C_2:x=y\)</span>，蕴含 <span class="arithmatex">\(C_1:(x,y)\to(0,0),f(x,y)\to0\)</span>，<span class="arithmatex">\(C_2:(x,y)\to(0,0),f(x,y)=\frac{x^2}{x^2+x^2}\to1/2\)</span>，所以极限不存在</li>
+<li>讨论 <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{xy^2}{x^2+y^4}\)</span>：若 <span class="arithmatex">\(C_1:x=0,C_2:x=y^2\)</span>，蕴含 <span class="arithmatex">\(C_1:(x,y)\to(0,0),f(x,y)\to0\)</span> 和 <span class="arithmatex">\(C_2:(x,y)\to(0,0),f(x,y)=\frac{y^4}{y^4+y^4}\to1/2\)</span>，所以极限不存在</li>
+<li>讨论 <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{3x^2y}{x^2+y^2}\)</span>：<ol>
+<li>预处理：存在 <span class="arithmatex">\(C:x=0\)</span> 使得 <span class="arithmatex">\((x,y)\to(0,0),f(x,y)\to0\)</span>，假设 <span class="arithmatex">\(L=0\)</span>，有 <span class="arithmatex">\(|f(x,y)-L|=\left|\frac{3x^2y}{x^2+y^2}-0\right|=3\frac{x^2}{x^2+y^2}|y|\le3|y|\le3\sqrt{x^2+y^2}\)</span></li>
+<li>假设 <span class="arithmatex">\(\delta=\epsilon/3\)</span> 使得 <span class="arithmatex">\(\|\mathbf x-\mathbf a\|&lt;\delta\)</span>，即 <span class="arithmatex">\(\sqrt{x^2+y^2}&lt;\epsilon/3\)</span></li>
+<li>而 <span class="arithmatex">\(|f(x,y)-L|=\left|\frac{3x^2y}{x^2+y^2}-0\right|=3\frac{x^2}{x^2+y^2}|y|\le3|y|\le3\sqrt{x^2+y^2}&lt;\epsilon\)</span>，于是极限 <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{3x^2y}{x^2+y^2}\)</span> 存在</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac {\sin (x^2+y^2)}{x^2+y^2}\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title"><mark class="critic">二元函数极限策略</mark></p>
 <ol>
@@ -1352,13 +1380,6 @@
 </li>
 </ol>
 </div>
-<div class="admonition 练习">
-<p class="admonition-title">练习</p>
-<ul>
-<li><span class="arithmatex">\((x,y)\to (0,0)\)</span> 时，判断下列极限的存在性，若存在，求其极限</li>
-<li><span class="arithmatex">\(\displaystyle \frac {\sin (x^2+y^2)}{x^2+y^2}\)</span>，<span class="arithmatex">\(\displaystyle \frac {x^2-y^2}{x^2+y^2}\)</span>，<span class="arithmatex">\(\displaystyle \frac {xy}{x^2+y^2}\)</span>，<span class="arithmatex">\(\displaystyle \frac {xy^2}{x^2+y^4}\)</span>，<span class="arithmatex">\(\displaystyle \frac {3x^2y}{x^2+y^2}\)</span></li>
-</ul>
-</div>
 <div class="admonition 二元函数连续性">
 <p class="admonition-title">二元函数连续性</p>
 </div>
@@ -1372,6 +1393,16 @@
 <li>连续指自变量变化一点，而函数也仅仅变化一点点</li>
 <li>在曲面上，连续的含义是没有 断面 和 洞</li>
 </ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\lim\limits_{(x,y)\to(1,2)}(x^2y^3-x^3y^2+3x+2y)=1^2\cdot2^3-1^3\cdot2^2+3\cdot1+2\cdot2=11\)</span></li>
+<li><span class="arithmatex">\(f(x,y)=\frac{x^2-y^2}{x^2+y^2}\)</span> 在定义域 <span class="arithmatex">\(\{(x,y)|~x^2+y^2\ne0\}\)</span> 处连续</li>
+<li><span class="arithmatex">\(g(x,y)=\begin{cases}\frac{x^2-y^2}{x^2+y^2}&amp;(x,y)\ne(0,0)\\0&amp;(x,y)=(0,0)\end{cases}\)</span> 在 <span class="arithmatex">\((0,0)\)</span> 处不连续，因为 <span class="arithmatex">\((0,0)\)</span> 处极限不存在（注：g 不是二元初等函数，只能称 g 分段初等）</li>
+<li><span class="arithmatex">\(f(x,y)=\begin{cases}\frac{3x^2y}{x^2+y^2}&amp;(x,y)\ne(0,0)\\0&amp;(x,y)=(0,0)\end{cases}\)</span> 处处连续，其中 <span class="arithmatex">\((0,0)\)</span> 处极限存在且等于 <span class="arithmatex">\(f(0,0)\)</span></li>
+<li><span class="arithmatex">\(f(x,y)=\tan^{-1}(y/x)\)</span> 在除 <span class="arithmatex">\(x\ne0\)</span> 以外的地方连续</li>
+</ol>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">结论</p>
@@ -1410,6 +1441,61 @@
 <blockquote>
 <p>f 在 <span class="arithmatex">\(\mathbf a\)</span> 处连续，如果 <span class="arithmatex">\(\lim\limits_{\mathbf x \to \mathbf a} f(\mathbf x) = f(\mathbf a)\)</span></p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>多元函数的极限：假设 <span class="arithmatex">\(\mathbf a\in\mathbb R^n,L\in\mathbb R\)</span>，若 <span class="arithmatex">\(\forall\epsilon&gt;0,\exists\delta&gt;0\)</span> 使得 <span class="arithmatex">\(\forall\mathbf x\in\mathring U(\mathbf a,\delta),f(\mathbf x)\in U(L,\epsilon)\)</span>，那么称 f 在 <span class="arithmatex">\(\bf a\)</span> 处取存在极限 L，记为 <span class="arithmatex">\(\lim\limits_{\bf x\to a}f(\mathbf x)=L\)</span>（其中，<span class="arithmatex">\(\mathring U(\mathbf a,\delta)=\{\mathbf x\in\mathbb R^n|~\|\mathbf x-\mathbf a\|&lt;\delta,\mathbf x\ne\mathbf a\}\)</span>）<ol>
+<li>或者记为 <span class="arithmatex">\(\mathbf x\to\mathbf a,f(\mathbf x)\to L\)</span>；沿着路径 C 的极限记为 <span class="arithmatex">\(C:\mathbf x\to\mathbf a,f(\mathbf x)\to L\)</span></li>
+</ol>
+</li>
+<li>定理：若存在两条不同路径 <span class="arithmatex">\(\exists C_1\ne C_2\)</span> 使得 <span class="arithmatex">\(C_1:\mathbf x\to\mathbf a,f(\mathbf x)\to L_1\)</span>，<span class="arithmatex">\(C_2:\mathbf x\to\mathbf a,f(\mathbf x)\to L_2\)</span>，并且 <span class="arithmatex">\(L_1\ne L_2\)</span>，那么 <span class="arithmatex">\(\lim\limits_{\bf x\to a}f(\mathbf x)\)</span> 不存在</li>
+<li>多元函数的连续性（点连续，区间连续）：假设 f 是 n 元的，若 <span class="arithmatex">\(\lim\limits_{\bf x\to a}f(\mathbf x)=f(\mathbf a)\)</span>，那么称 f 在 <span class="arithmatex">\(\bf a\)</span> 处<strong>连续</strong>；若 <span class="arithmatex">\(\forall\mathbf x\in D_f,\lim\limits_{\bf u\to x}f(\mathbf u)=f(\mathbf x)\)</span>，那么称 f 是<strong>连续函数</strong>或在 <span class="arithmatex">\(D_f\)</span> 上连续</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>多元函数极限（实用性定义）：假设 <span class="arithmatex">\(\mathbf a\in\mathbb R^n,L\in\mathbb R\)</span>，若 <span class="arithmatex">\(\forall\epsilon&gt;0,\exists\delta&gt;0\)</span> 使得 <span class="arithmatex">\(\forall\|\mathbf x-\mathbf a\|&lt;\delta\)</span> 使得 <span class="arithmatex">\(|f(x)-L|&lt;\epsilon\)</span></li>
+<li>多元初等函数在定义域内连续</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断题<ol>
+<li>连续函数在定义域处的极限等于函数值(Y)</li>
+<li>连续函数在边界处但未定义的点的极限经常被研究(Y)</li>
+<li>分段连续的函数在边界点处的极限也经常被研究(Y)</li>
+</ol>
+</li>
+<li>讨论极限值：(1) <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{x^2}{x^2+y^2}\)</span>，(2) <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{xy}{\sqrt{x^2+y^2}}\)</span>，(3) <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{2x^2y}{x^4+y^2}\)</span>，(4) <span class="arithmatex">\(\lim\limits_{(x,y,z)\to(0,0,0)}\frac{x^2+2y^2+3z^2}{x^2+y^2+z^2}\)</span>，(5) <span class="arithmatex">\(\lim\limits_{(x,y,z)\to(0,0,0)}\frac{xy+yz^2+xz^2}{x^2+y^2+z^4}\)</span></li>
+<li>使用极坐标计算极限：(1) <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{x^3+y^3}{x^2+y^2}\)</span>，(2) <span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}(x^2+y^2)\ln(x^2+y^2)\)</span></li>
+<li>使用球坐标计算极限：<span class="arithmatex">\(\lim\limits_{(x,y,z)\to(0,0,0)}\frac{xyz}{x^2+y^2+z^2}\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(2)</p>
+<ol>
+<li>函数沿着 <span class="arithmatex">\(C_1:x=0,C_2:y=x\)</span> 接近 <span class="arithmatex">\((0,0)\)</span> 的极限分别为 <span class="arithmatex">\(0,1/2\)</span>，所以极限不存在</li>
+<li>因为沿着 <span class="arithmatex">\(C:x=0\)</span> 接近 <span class="arithmatex">\((0,0)\)</span> 的极限为 0，所以假设极限值为 <span class="arithmatex">\(L=0\)</span>，又 <span class="arithmatex">\(|f(x,y)-0|=\frac{|xy|}{\sqrt{x^2+y^2}}\le\frac{\sqrt{x^2+y^2}\cdot\sqrt{x^2+y^2}}{\sqrt{x^2+y^2}}=\sqrt{x^2+y^2}\)</span>，假设 <span class="arithmatex">\(\delta=\epsilon\)</span>，有 <span class="arithmatex">\(\|(x,y)-(0,0)\|&lt;\delta\)</span>，即 <span class="arithmatex">\(\sqrt{x^2+y^2}&lt;\epsilon\)</span>，于是 <span class="arithmatex">\(|f(x,y)-0|&lt;\epsilon\)</span>，所以极限为 0</li>
+<li>函数沿着 <span class="arithmatex">\(C_1:x=0,C_2:y=x^2\)</span> 接近 <span class="arithmatex">\((0,0)\)</span> 的极限分别为 <span class="arithmatex">\(0,1\)</span>，所以极限不存在</li>
+<li>函数沿着 <span class="arithmatex">\(C_1:y=0,z=0\)</span> 或 <span class="arithmatex">\(C_2:x=0,z=0\)</span> 接近 <span class="arithmatex">\((0,0,0)\)</span> 的极限分别为 <span class="arithmatex">\(1,2\)</span>，所以极限不存在（注：<span class="arithmatex">\(\mathbb R^n\)</span> 下的一条曲线可以由 <span class="arithmatex">\(n-1\)</span> 个方程定义）</li>
+<li>函数沿着 <span class="arithmatex">\(C_1:x=0,y=0\)</span> 或 <span class="arithmatex">\(C_2:x=z^2,y=z^2\)</span> 的极限分别为 <span class="arithmatex">\(0,1\)</span>，所以极限不存在</li>
+</ol>
+<p>(3)</p>
+<ol>
+<li><span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}\frac{x^3+y^3}{x^2+y^2}=\lim\limits_{r\to0^+}\frac{r^3\cos^3\theta+r^3\sin^3\theta}{r^2\cos^2\theta+r^2\sin^2\theta}=\lim\limits_{r\to0^+}r(\cos^3\theta+\sin^3\theta)=0\)</span></li>
+<li><span class="arithmatex">\(\lim\limits_{(x,y)\to(0,0)}(x^2+y^2)\ln(x^2+y^2)=\lim\limits_{r\to0^+}r^2\ln r^2=2\lim\limits_{r\to0^+}\frac{\ln r}{1/r^2}=2\lim\limits_{r\to0^+}\frac{1/r}{-2/r^3}=0\)</span></li>
+</ol>
+<p>(4) <span class="arithmatex">\(\lim\limits_{(x,y,z)\to(0,0,0)}\frac{xyz}{x^2+y^2+z^2}=\lim\limits_{\rho\to0^+}\frac{\rho\sin\phi\cos\theta\cdot\rho\sin\phi\sin\theta\cdot\rho\cos\phi}{\rho^2}=\lim\limits_{\rho\to0^+}\rho\sin^2\phi\cos\phi\cos\theta\sin\theta=0\)</span></p>
+</blockquote>
 <h3 id="3">3.多元函数的偏导数</h3>
 <div class="admonition note">
 <p class="admonition-title">二元函数 偏导数</p>
@@ -1429,10 +1515,16 @@
 <div class="admonition 偏导数求导法则">
 <p class="admonition-title">偏导数求导法则</p>
 <ul>
-<li>若 z=f(x,y)</li>
+<li>若 <span class="arithmatex">\(z=f(x,y)\)</span></li>
 <li>为求 <span class="arithmatex">\(f_x\)</span>，把 y 看作常数，对 x 求导</li>
 <li>为求 <span class="arithmatex">\(f_y\)</span>，把 x 看作常数，对 y 求导</li>
 </ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(f(x,y)=x^3+x^2y^3-2y^2\)</span> 的偏导数分别为 <span class="arithmatex">\(f_x(x,y)=3x^2+2xy^3\)</span>，<span class="arithmatex">\(f_y(x,y)=3x^2y^2-4y\)</span></li>
+</ol>
 </div>
 <div class="admonition 二元偏导数的几何意义">
 <p class="admonition-title">二元偏导数的几何意义</p>
@@ -1442,6 +1534,12 @@
 <p><span class="arithmatex">\(f_x(a,b)\)</span> 表示曲线 <span class="arithmatex">\(z=f(x,y), y=b\)</span>（即 <span class="arithmatex">\(F(x,b,z)=0\)</span>） 的斜率</p>
 <p><span class="arithmatex">\(f_y(a,b)\)</span> 表示曲线 <span class="arithmatex">\(z=f(x,y), x=a\)</span>（即 <span class="arithmatex">\(F(a,y,z)=0\)</span>） 的斜率</p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(f(x,y)=4-x^2-2y^2\)</span> 的偏导数分别为 <span class="arithmatex">\(f_x(x,y)=-2x,f_y(x,y)=-4y\)</span>，那么 <span class="arithmatex">\(f_x(1,1)\)</span> 表示 <span class="arithmatex">\(z=f(x,y)\)</span> 沿着曲线 <span class="arithmatex">\(z=4-x^2-2,y=1\)</span> 的切线斜率，那么 <span class="arithmatex">\(f_y(1,1)\)</span> 表示 <span class="arithmatex">\(z=f(x,y)\)</span> 沿着曲线 <span class="arithmatex">\(z=4-1-2y^2,x=1\)</span> 的切线斜率</li>
+</ol>
+</div>
 <div class="admonition 三元偏导数">
 <p class="admonition-title">三元偏导数</p>
 </div>
@@ -1481,12 +1579,6 @@
 <blockquote>
 <p>在 f 的定义域 D 内含有点 (a,b)，如果 <span class="arithmatex">\(f_{xy}, f_{yx}\)</span> 都在 D 内连续，那么 <span class="arithmatex">\(f_{xy}(a,b) = f_{yx}(a,b)\)</span></p>
 </blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>如果对每个 元 最多导一次，那么 n 元函数至少有 <span class="arithmatex">\(2^n\)</span> 种本质不同偏导数，<span class="arithmatex">\(C_n^i\)</span> 个 i 阶导数</li>
-</ul>
-</div>
 <div class="admonition 偏微分方程举例">
 <p class="admonition-title">偏微分方程举例</p>
 <ul>
@@ -1507,6 +1599,72 @@
 </li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>二元函数偏导数：若函数 f 是二元的，它的两个偏导数分别定义为：<span class="arithmatex">\(f_x(x,y)=\lim\limits_{h\to0}\frac{f(x+h,y)-f(x,y)}h\)</span>，<span class="arithmatex">\(f_y(x,y)=\lim\limits_{h\to0}\frac{f(x,y+h)-f(x,y)}h\)</span>；对于函数方程 <span class="arithmatex">\(z=f(x,y)\)</span>，记：<ol>
+<li><span class="arithmatex">\(f_x=\frac{\partial f}{\partial x}=\frac\partial{\partial x}f=\frac{\partial z}{\partial x}=f_1=D_1f=D_xf\)</span></li>
+<li><span class="arithmatex">\(f_y=\frac{\partial f}{\partial y}=\frac\partial{\partial y}f=\frac{\partial z}{\partial y}=f_2=D_2f=D_yf\)</span></li>
+</ol>
+</li>
+<li>二元函数偏导数的几何意义：<ol>
+<li><span class="arithmatex">\(f_x(x,y)\)</span> 表示 <span class="arithmatex">\(z=f(x,y)\)</span> 沿着向量曲线方程 <span class="arithmatex">\(\mathbf r(t)=(t,y,f(t,y))\)</span> 在点 <span class="arithmatex">\((x,y,f(x,y))\)</span> 上的切线斜率，该切线为 <span class="arithmatex">\(\mathbf r(t)=(x,y,f(x,y))+t(1,0,f_x(x,y))\)</span></li>
+<li><span class="arithmatex">\(f_y(x,y)\)</span> 表示 <span class="arithmatex">\(z=f(x,y)\)</span> 沿着向量曲线方程 <span class="arithmatex">\(\mathbf r(t)=(x,t,f(x,t))\)</span> 在点 <span class="arithmatex">\((x,y,f(x,y))\)</span> 上的切线斜率，该切线为 <span class="arithmatex">\(\mathbf r(t)=(x,y,f(x,y))+t(0,1,f_y(x,y))\)</span></li>
+</ol>
+</li>
+<li>高阶偏导数：<ol>
+<li>若 f 是二元的，那么记 <span class="arithmatex">\((f_x)_x=f_{xx}=f_{11}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial^2f}{\partial x^2}=\frac {\partial^2z}{\partial x^2}\)</span>，以及 <span class="arithmatex">\((f_x)_y=f_{xy}=f_{12}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial^2f}{\partial y\partial x}=\frac {\partial^2z}{\partial y\partial x}\)</span></li>
+</ol>
+</li>
+<li>克莱罗定理（高阶偏导数交换律）：假设 f 是二元的，若 <span class="arithmatex">\(f_{xy},f_{yx}\)</span> 均在 <span class="arithmatex">\((a,b)\)</span> 的邻域内连续，那么 <span class="arithmatex">\(f_{xy}(a,b)=f_{yx}(a,b)\)</span></li>
+<li>n 元函数的偏导数：若 <span class="arithmatex">\(u=f(x_1,\cdots,x_n)\)</span>，那么第 i 个变量的偏导数为 <span class="arithmatex">\(\frac{\partial u}{\partial x_i}=\lim\limits_{t\to0}\frac{f(x_1,\cdots,x_i+t,\cdots,x_n)-f(x_1,\cdots,x_n)}t\)</span></li>
+<li>n 元函数的高阶偏导数：<span class="arithmatex">\(\frac{\partial^ku}{\partial x_i^k}=f_i^{(k)}(\mathbf x)\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断题<ol>
+<li>二元函数 f 的 n 阶偏导数有 <span class="arithmatex">\(2^n\)</span> 种</li>
+<li>若二元函数 f 的 n 阶偏导数均连续，那么这些偏导数有 <span class="arithmatex">\(n+1\)</span> 种(Y)</li>
+</ol>
+</li>
+<li>计算 <span class="arithmatex">\(f(x,y)=\begin{cases}\frac{x^3y-xy^3}{x^2+y^2}&amp;(x,y)\ne(0,0)\\0&amp;(x,y)=(0,0)\end{cases}\)</span> 的偏导数 <span class="arithmatex">\(f_x,f_y,f_{xy},f_{yx}\)</span></li>
+<li>计算 <span class="arithmatex">\(f(x,y)=\frac{xe^{\sin(x^2y)}}{(x^2+y^2)^{3/2}}\)</span> 的偏导数 <span class="arithmatex">\(f_x(1,0)\)</span></li>
+<li>计算椭圆 <span class="arithmatex">\(4x^2+2y^2+z^2=16,y=2\)</span> 在 <span class="arithmatex">\((1,2,2)\)</span> 上的切线的向量方程</li>
+<li>对于内角分别为 <span class="arithmatex">\(A,B,C\)</span>，相应对边为 <span class="arithmatex">\(a,b,c\)</span> 的三角形，余弦定理为 <span class="arithmatex">\(a^2=b^2+c^2-2bc\cos A\)</span>，证明：(1) <span class="arithmatex">\(\frac{\partial A}{\partial a}=\frac a{bc\sin A}\)</span>，(2) <span class="arithmatex">\(\frac{\partial A}{\partial b}=\frac{c\cos A-b}{bc\sin A}\)</span>，(3) <span class="arithmatex">\(\frac{\partial A}{\partial c}=\frac{b\cos A-c}{bc\sin A}\)</span></li>
+<li>假设 f 是二元的，证明：<span class="arithmatex">\(f_x(x,y)=x+4y,f_y(x,y)=3x-y\)</span> 是矛盾的</li>
+<li>对于并联电阻 <span class="arithmatex">\(R_1,\cdots,R_2\)</span>，总电阻满足 <span class="arithmatex">\(\frac1R=\sum\limits_{i=1}^n\frac1{R_i}\)</span>，证明：<span class="arithmatex">\(\forall i=1..n,\frac{\partial R}{\partial R_i}=\frac{R^2}{R_i^2}\)</span></li>
+<li>证明：<span class="arithmatex">\(u=1/\sqrt{x^2+y^2+z^2}\)</span> 是三维拉普拉斯方程 <span class="arithmatex">\(u_{xx}+u_{yy}+u_{zz}=0\)</span> 的一个解</li>
+<li>证明：(1) <span class="arithmatex">\(u=\sin(kx)\sin(akt)\)</span>，(2) <span class="arithmatex">\(u=t/(a^2t^2-x^2)\)</span>，(3) <span class="arithmatex">\(u=(x-at)^6+(x+at)^6\)</span>，(4) <span class="arithmatex">\(u=\sin(x-at)+\ln(x+at)\)</span> 均是波动方程 <span class="arithmatex">\(u_{tt}=a^2u_{xx}\)</span> 的一个解</li>
+<li>若 <span class="arithmatex">\(f,g\)</span> 二阶可微，那么 <span class="arithmatex">\(u(x,t)=f(x+at)+g(x-at)\)</span> 是波动方程的解</li>
+<li>证明：假设 <span class="arithmatex">\(\mathbf a,\mathbf x\in\mathbb R^n\)</span>，<span class="arithmatex">\(\mathbf a\cdot\mathbf a=1\)</span>，那么 <span class="arithmatex">\(u(\mathbf x)=e^{\bf a\cdot x}\)</span> 是 <span class="arithmatex">\(\sum\limits_{i=1}^n\frac{\partial^2u}{\partial x_i^2}=u\)</span> 的一个解</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(2) 若 <span class="arithmatex">\((x,y)\ne0\)</span>，有 <span class="arithmatex">\(f_x(x,y)=\frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\)</span>，而 <span class="arithmatex">\(f_x(0,0)=\lim\limits_{t\to0}\frac{f(0+t,0)-f(0,0)}t=0\)</span>，于是 <span class="arithmatex">\(f_x(x,y)=\begin{cases}\frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}&amp;(x,y)\ne(0,0)\\0&amp;(x,y)=(0,0)\end{cases}\)</span></p>
+<p>若 <span class="arithmatex">\((x,y)\ne0\)</span>，有 <span class="arithmatex">\(f_y(x,y)=\frac{x^5-4x^3y^2-xy^4}{(x^2+y^2)^2}\)</span>，而 <span class="arithmatex">\(f_y(0,0)=\lim\limits_{t\to0}\frac{f(0,0+t)-f(0,0)}t=0\)</span>，于是 <span class="arithmatex">\(f_y(x,y)=\begin{cases}\frac{x^5-4x^3y^2-xy^4}{(x^2+y^2)^2}&amp;(x,y)\ne(0,0)\\0&amp;(x,y)=(0,0)\end{cases}\)</span></p>
+<p>若 <span class="arithmatex">\((x,y)\ne0\)</span>，有 <span class="arithmatex">\(f_{xy}=f_{yx}=\frac{x^6+9x^4y^2-9x^2y^4-y^6}{(x^2+y^2)^3}\)</span>（由于克莱罗法则）</p>
+<p>而 <span class="arithmatex">\(f_{xy}(0,0)=\lim\limits_{t\to0}\frac{f_x(0,0+t)-f_x(0,0)}t=\lim\limits_{t\to0}\frac{t(-t^4)/t^4}t=-1\)</span>，<span class="arithmatex">\(f_{yx}(0,0)=\lim\limits_{t\to0}\frac{f_y(0+t,0)-f_y(0,0)}t=\lim\limits_{t\to0}\frac{t^5/t^4 }t=1\)</span></p>
+<p>于是 <span class="arithmatex">\(f_{xy}(x,y)=\begin{cases}\frac{x^6+9x^4y^2-9x^2y^4-y^6}{(x^2+y^2)^3}&amp;(x,y)\ne(0,0)\\-1&amp;(x,y)=(0,0)\end{cases}\)</span>，<span class="arithmatex">\(f_{yx}(x,y)=\begin{cases}\frac{x^6+9x^4y^2-9x^2y^4-y^6}{(x^2+y^2)^3}&amp;(x,y)\ne(0,0)\\1&amp;(x,y)=(0,0)\end{cases}\)</span></p>
+<p>(3) <span class="arithmatex">\(f_x(1,0)=\lim\limits_{t\to0}\frac{f(1+t,0)-f(1,0)}t=\lim\limits_{t\to0}\frac{(1+t)^{-2}-1}t=\lim\limits_{t\to0}\frac{1-(1+t)^2}{t(1+t)^2}\)</span> <span class="arithmatex">\(=\lim\limits_{t\to0}\frac{-2t-t^2}{t(1+t)^2}=\lim\limits_{t\to0}\frac{-2-t}{(1+t)^2}=-2\)</span></p>
+<p>法2：<span class="arithmatex">\(f(x,0)=x(x^2)^{-3/2}=x^{-2}\)</span>，那么 <span class="arithmatex">\(f_x(x,0)=-2x^{-3}\)</span>，于是 <span class="arithmatex">\(f_x(1,0)=-3\)</span></p>
+<p>(4) <span class="arithmatex">\(4x^2+2y^2+z^2=16\)</span> 蕴含 <span class="arithmatex">\(8x+2z\frac{\partial z}{\partial x}=0\)</span>，蕴含 <span class="arithmatex">\(\frac{\partial z}{\partial x}=-4x/z\)</span></p>
+<p>于是，在 <span class="arithmatex">\((1,2,2)\)</span> 处，<span class="arithmatex">\(\frac{\partial z}{\partial x}=-2\)</span>，该处的切线向量方程为 <span class="arithmatex">\(\mathbf r(t)=(1,2,2)+t(1,0,-2)\)</span>（因为该切线在平面 <span class="arithmatex">\(y=2\)</span> ）</p>
+<p>(6) <span class="arithmatex">\(f_x(x,y)=x+4y\)</span> 蕴含 <span class="arithmatex">\(f_{xy}(x,y)=4\)</span></p>
+<p><span class="arithmatex">\(f_y(x,y)=3x-y\)</span> 蕴含 <span class="arithmatex">\(f_{yx}(x,y)=3\)</span></p>
+<p>由[克莱罗定理]和 <span class="arithmatex">\(f_{xy},f_{yx}\)</span> 均是连续的，有 <span class="arithmatex">\(f_{xy}=f_{yx}\)</span>，矛盾</p>
+<p>(7) <span class="arithmatex">\(\forall i=1..n\)</span>，<span class="arithmatex">\(-\frac1{R^2}\frac{\partial R}{\partial R_i}=-\frac1{R_i^2}\)</span>，蕴含 <span class="arithmatex">\(\frac{\partial R}{\partial R_i}=\frac{R^2}{R_i^2}\)</span></p>
+<p>(8) <span class="arithmatex">\(u=1/\sqrt{x^2+y^2+z^2}\)</span> 蕴含 <span class="arithmatex">\(u_x=-\frac{2x}{2(x^2+y^2+z^2)^{3/2}}=-\frac{x}{(x^2+y^2+z^2)^{3/2}}\)</span>，蕴含 <span class="arithmatex">\(u_{xx}=\frac{-(x^2+y^2+z^2)^{3/2}-(-x)(3/2)\sqrt{x^2+y^2+z^2}(2x)}{(x^2+y^2+z^2)^3}=\frac{-(x^2+y^2+z^2)+3x^2}{(x^2+y^2+z^2)^{5/2}}\)</span></p>
+<p>根据对称性 <span class="arithmatex">\(u_{yy}=\frac{-(x^2+y^2+z^2)+3y^2}{(x^2+y^2+z^2)^{5/2}}\)</span>，<span class="arithmatex">\(u_{zz}=\frac{-(x^2+y^2+z^2)+3z^2}{(x^2+y^2+z^2)^{5/2}}\)</span></p>
+<p>于是 <span class="arithmatex">\(u_{xx}+u_{yy}+u_{zz}=0\)</span></p>
+<p>(11) <span class="arithmatex">\(\forall i=1..n\)</span> 有 <span class="arithmatex">\(\frac{\partial^2u}{\partial x_i^2}=\frac{\partial^2}{\partial x_i^2}(e^{\mathbf a\cdot\mathbf x})=\frac{\partial}{\partial x_i}((\mathbf a\cdot\mathbf x')e^{\mathbf a\cdot\mathbf x})=\frac{\partial}{\partial x_i}(a_ie^{\mathbf a\cdot\mathbf x})=a_i^2e^{\bf a\cdot x}\)</span>，于是 <span class="arithmatex">\(\sum\limits_{i=1}^n\frac{\partial^2u}{\partial x_i^2}=\sum\limits_{i=1}^na_i^2e^{\bf a\cdot x}=e^{\bf a\cdot x}\sum\limits_{i=1}^na_i^2=e^{\bf a\cdot x}=u\)</span></p>
+</blockquote>
 <h3 id="4">4.切平面 &amp; 线性近似</h3>
 <p>一元微积分中，我们将函数曲线的一段小区间用它的切线近似</p>
 <p>而二元微积分中，我们将函数曲面的一段小区域用它的切面来近似</p>
@@ -1522,10 +1680,22 @@
 <p class="admonition-title">曲面的切平面</p>
 </div>
 <blockquote>
-<p>假定 f 有连续的偏导数，平面 C: <span class="arithmatex">\(z=f(x,y)\)</span> 在点 <span class="arithmatex">\(P(x_0,y_0,z_0)\)</span> 的切平面方程是：</p>
-<p>G: <span class="arithmatex">\(z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)\)</span></p>
-<p>注：<span class="arithmatex">\((x,y)\)</span> 是 G 上的任意点，而 <span class="arithmatex">\((x_0,y_0)\)</span> 是 C 上的任意点</p>
+<p>假设二元函数 f 有连续偏导数，那么 <span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 处的切平面的向量参数方程为 <span class="arithmatex">\(\mathbf r(u,v)=(a,b,f(a,b))+u(1,0,f_x(a,b))+v(0,1,f_y(a,b))\)</span></p>
+<p>或者，该切平面的向量方程为 <span class="arithmatex">\(z-f(a,b)=f_x(a,b)(x-a)+f_y(a,b)(y-b)\)</span></p>
 </blockquote>
+<p><span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 处沿着曲线 <span class="arithmatex">\(z=f(x,y),y=b\)</span> 的切线向量为 <span class="arithmatex">\((1,0,f_x(a,b))\)</span></p>
+<p>沿着曲线 <span class="arithmatex">\(z=f(x,y),x=a\)</span> 的切线向量为 <span class="arithmatex">\((0,1,f_y(a,b))\)</span>，于是：</p>
+<p>(1) <span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 处的切平面的向量参数方程为 <span class="arithmatex">\(\mathbf r(u,v)=(a,b,f(a,b))+u(1,0,f_x(a,b))+v(0,1,f_y(a,b))\)</span></p>
+<p>(2) <span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 处的切平面的向量方程为 <span class="arithmatex">\(((1,0,f_x(a,b))\times(0,1,f_y(a,b)))\cdot((x,y,z)-(a,b,f(a,b)))=0\)</span></p>
+<p>其中 <span class="arithmatex">\((1,0,f_x(a,b))\times(0,1,f_y(a,b))=(-f_x(a,b),-f_y(a,b),1)\)</span>，<span class="arithmatex">\((x,y,z)-(a,b,f(a,b))=(x-a,y-b,z-f(a,b))\)</span></p>
+<p>于是 <span class="arithmatex">\(z-f(a,b)=f_x(a,b)(x-a)+f_y(a,b)(y-b)\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算 <span class="arithmatex">\(z=2x^2+y^2\)</span> 在点 <span class="arithmatex">\((1,1,3)\)</span> 上的切平面：设 <span class="arithmatex">\(f(x,y)=2x^2+y^2\)</span>，蕴含 <span class="arithmatex">\(f_x(x,y)=4x,f_y(x,y)=2y\)</span>，那么 <span class="arithmatex">\((1,1,3)\)</span> 处的切平面为 <span class="arithmatex">\(z-3=f_x(1,1)(x-1)+f_y(1,1)(y-1)\)</span>，即 <span class="arithmatex">\(z-3=4(x-1)+2(y-1)\)</span>，即 <span class="arithmatex">\(z=4x+2y-3\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">线性近似</p>
 </div>
@@ -1533,6 +1703,12 @@
 <p>我们称 f 在 (a,b) 的线性化为：<span class="arithmatex">\(L(x, y) = f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-b)\)</span></p>
 <p>称 f 在点 (a,b) 的 线性近似 或 切平面近似 为：<span class="arithmatex">\(f(x,y) \approx f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-b)\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(f(x,y)=xe^{xy}\)</span> 有偏导数 <span class="arithmatex">\(f_x(x,y)=e^{xy}(1+xy),f_y(x,y)=x^2e^{xy}\)</span>，于是 f 在 <span class="arithmatex">\((1,0)\)</span> 的线性近似为 <span class="arithmatex">\(g(x,y)=f(1,0)+f_x(1,0)(x-1)+f_y(1,0)(y-0)=x+y\)</span>；而 <span class="arithmatex">\(g(1,1,-0.1)=1\approx0.98542\approx f(1.1,-0.1)\)</span></li>
+</ol>
+</div>
 <p>由第 3 章，若 f(x) 在 a 处可微，那么 <span class="arithmatex">\(\Delta y = f'(a)\Delta x + \epsilon\Delta\)</span>，其中 <span class="arithmatex">\(\Delta\to 0\)</span> 时 <span class="arithmatex">\(\epsilon\to 0\)</span>（<span class="arithmatex">\(\Delta y = f(a + \Delta x) - f(a)\)</span>）</p>
 <div class="admonition 定义">
 <p class="admonition-title">定义</p>
@@ -1555,6 +1731,15 @@
 <p>可微函数 z=f(x,y) 的全微分定义为：<span class="arithmatex">\(d_z = f_x(x,y)d_x + f_y(x,y)d_y = \frac {\partial z}{\partial x}d_x + \frac {\partial z}{\partial y}d_y\)</span></p>
 </blockquote>
 <div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>若 <span class="arithmatex">\(z=f(x,y)=x^2+3xy-y^2\)</span>，那么它的全微分为 <span class="arithmatex">\(dz=\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy=(2x+3y)dx+(-2y+3x)dy\)</span><ol>
+<li>若 <span class="arithmatex">\((2,3)\to(2.05,2.96)\)</span>，那么 <span class="arithmatex">\(\Delta z=f(2.05,2.96)-f(2,3)=0.6449\)</span>，而 <span class="arithmatex">\(dx=0.05,dy=-0.04,dz=(2\cdot2+3\cdot3)(0.05)+(-2\cdot3+3\cdot2)(-0.04)=0.65\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>在 (a,b) 附近，可以令 <span class="arithmatex">\(d_x=\Delta x = x-a, d_y=\Delta y = y-b\)</span></li>
@@ -1571,26 +1756,70 @@
 <p>若 <span class="arithmatex">\(\omega = f(x,y,z)\)</span>，那么 <span class="arithmatex">\(\omega\)</span> 的增量是： <span class="arithmatex">\(\Delta \omega = f(x+\Delta x, y+\Delta y, z+\Delta z) - f(x,y,z)\)</span></p>
 <p>微分 <span class="arithmatex">\(d_{\omega} = \frac {\partial \omega}{\partial x}d_x + \frac {\partial \omega}{\partial y}d_y + \frac {\partial \omega}{\partial z}d_z\)</span></p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>切平面：假设二元函数 f 有连续偏导数，那么 <span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 处的切平面的向量参数方程为 <span class="arithmatex">\(\mathbf r(u,v)=(a,b,f(a,b))+u(1,0,f_x(a,b))+v(0,1,f_y(a,b))\)</span>，对应的向量方程为 <span class="arithmatex">\(z-f(a,b)=f_x(a,b)(x-a)+f_y(a,b)(y-b)\)</span></li>
+<li>线性近似：二元函数 f 在 <span class="arithmatex">\((a,b)\)</span> 点的线性近似为 <span class="arithmatex">\(g(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)\)</span>（<span class="arithmatex">\((a,b)\)</span> 附近有 <span class="arithmatex">\(g(x,y)\approx f(x,y)\)</span>）</li>
+<li>可微：假设 <span class="arithmatex">\(z=f(x,y)\)</span>，若 <span class="arithmatex">\(\epsilon_1 \to 0,\epsilon_2 \to 0,\Delta x\to0,\Delta y\to0\)</span> 时，有 <span class="arithmatex">\(f_x(a,b)\Delta x+f_y(a,b)\Delta y+\epsilon_1\Delta x+\epsilon_2\Delta y=\Delta z\)</span>，那么 f 在 <span class="arithmatex">\((a,b)\)</span> 处<strong>可微</strong></li>
+<li>可微定理：若 <span class="arithmatex">\(f_x,f_y\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 附近存在，并且在 <span class="arithmatex">\((a,b)\)</span> 处连续，那么 f 在 <span class="arithmatex">\((a,b)\)</span> 处可微</li>
+<li>全微分：假设 f 是二元的，且 <span class="arithmatex">\(z=f(x,y)\)</span>，那么 f 的<strong>全微分</strong>定义为 <span class="arithmatex">\(dz=f_x(x,y)d_x+f_y(x,y)d_y\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算切平面（假设 <span class="arithmatex">\(z=f(x,y)\)</span>）：(1) <span class="arithmatex">\(z=\sqrt{4-x^2-2y^2},(1,-1,1)\)</span>，(2) <span class="arithmatex">\(z=e^{x^2-y^2},(1,-1,1)\)</span></li>
+<li>计算 <span class="arithmatex">\(f(x,y)=\tan^{-1}(x+2y)\)</span> 在 <span class="arithmatex">\((1,0)\)</span> 处的线性近似</li>
+<li>计算 <span class="arithmatex">\(z=5x^2+y^2\)</span> 从 <span class="arithmatex">\((1,2)\)</span> 变到 <span class="arithmatex">\((1.05,2.1)\)</span> 时，<span class="arithmatex">\(dz\)</span> 和 <span class="arithmatex">\(\Delta z\)</span> 的值</li>
+<li>通过定义证明：<span class="arithmatex">\(f(x,y)=x^2+y^2\)</span> 可微</li>
+<li>证明：<span class="arithmatex">\(\lim\limits_{(\Delta x,\Delta y)\to(0,0)}f(a+\Delta x,b+\Delta  y)=f(a,b)\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) <span class="arithmatex">\(f_x(x,y)=\frac{-2x}{2\sqrt{4-x^2-2y^2}}=\frac{-x}{\sqrt{4-x^2-2y^2}}\)</span>，<span class="arithmatex">\(f_y(x,y)=\frac{-4y}{2\sqrt{4-x^2-2y^2}}=\frac{-2y}{\sqrt{4-x^2-2y^2}}\)</span></p>
+<p>于是 <span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((1,-1)\)</span> 处的切平面为 <span class="arithmatex">\(z-f(1,-1)=f_x(1,-1)(x-1)+f_y(1,-1)(y+1)\)</span>，即 <span class="arithmatex">\(z-1=-(x-1)+2(y+1)\)</span>，即 <span class="arithmatex">\(z=-x+2y+4\)</span></p>
+<p>(1.2) <span class="arithmatex">\(f_x(1,-1)=d(e^{x^2-1})/dx\Big|_{x=1}=(2xe^{x^2-1})\Big|_{x=1}=2\)</span>，<span class="arithmatex">\(f_y(1,-1)=d(e^{1-y^2})/dx\Big|_{y=-1}=(-2ye^{1-y^2})\Big|_{y=-1}=2\)</span></p>
+<p>于是 <span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((1,-1)\)</span> 处的切平面为 <span class="arithmatex">\(z-f(1,-1)=2(x-1)+2(y+1)\)</span>，即 <span class="arithmatex">\(z=2x+2y+1\)</span></p>
+<p>(2) <span class="arithmatex">\(f_x(x,y)=\frac1{1+(x+2y)^2},f_y(x,y)=\frac2{1+(x+2y)^2}\)</span>，</p>
+<p>于是 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\((1,0)\)</span> 处的线性近似为 <span class="arithmatex">\(g(x,y)=f(1,0)+f_x(1,0)(x-1)+f_y(1,0)(y-0)=\pi/4+\frac12(x-1)+y=x/2+y+\pi/4-1/2\)</span></p>
+</blockquote>
 <h3 id="5">5.多元函数的链式法则</h3>
 <div class="admonition note">
 <p class="admonition-title">链式法则(情况 1)</p>
 </div>
 <blockquote>
-<p>z=f(x,y) 是一个关于 x 和 y 的可微函数，而 x=g(t) 和 y=h(t) 均为 t 的可微函数，那么 z 就是 t 的一个可微函数，</p>
+<p><span class="arithmatex">\(z=f(x,y)\)</span> 是一个关于 x 和 y 的可微函数，而 <span class="arithmatex">\(x=g(t)\)</span> 和 <span class="arithmatex">\(y=h(t)\)</span> 均为 t 的可微函数，那么 z 就是 t 的一个可微函数，</p>
 <p>并且有： <span class="arithmatex">\(\frac {d_z}{d_t} = \frac {\partial f}{\partial x}\frac {d_x}{d_t} + \frac {\partial f}{\partial y}\frac {d_y}{d_t}\)</span></p>
 <p>通常记为： <span class="arithmatex">\(\frac {d_z}{d_t} = \frac {\partial z}{\partial x}\frac {d_x}{d_t} + \frac {\partial z}{\partial y}\frac {d_y}{d_t}\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(z=x^2y+3xy^4,x=\sin 2t,y=\cos t\)</span>，计算 <span class="arithmatex">\(\frac{dz}{d_t}\)</span>：<ol>
+<li>传统链式法则：<span class="arithmatex">\(\frac{dz}{d_t}=(2x(2\cos2t))y+x^2(-s\sin t)+3(2\cos2t)y^4+3x(4y^3(-\sin t))\)</span></li>
+<li>二元链式法则：<span class="arithmatex">\(\frac{dz}{d_t}=(2xy+3y^4)(2\cos2t)+(x^2+12xy^3)(-\sin t)\)</span></li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(z=e^x\sin y,x=st^2,y=s^2t\)</span>，那么 <span class="arithmatex">\(\frac{\partial z}{\partial s}=(e^x\sin y)(t^2)+(e^x\cos y)(2st)\)</span>，<span class="arithmatex">\(\frac{\partial z}{\partial t}=(e^x\sin y)(2st)+(e^x\cos y)(2s^2)\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">链式法则(情况 2)</p>
 </div>
 <blockquote>
-<p>z=f(x,y) 是一个关于 x 和 y 的可微函数，而 x=g(s,t) 和 y=h(s,t) 均为 s 和 t 的可微函数，那么 z 就是 s 和 t 的一个可微函数，</p>
+<p><span class="arithmatex">\(z=f(x,y)\)</span> 是一个关于 x 和 y 的可微函数，而 <span class="arithmatex">\(x=g(s,t)\)</span> 和 <span class="arithmatex">\(y=h(s,t)\)</span> 均为 s 和 t 的可微函数，那么 z 就是 s 和 t 的一个可微函数，</p>
 <p>并且有： <span class="arithmatex">\(\frac {\partial z}{\partial s} = \frac {\partial f}{\partial x}\frac {\partial x}{\partial s} + \frac {\partial f}{\partial y}\frac {\partial y}{\partial s}\)</span>，<span class="arithmatex">\(\frac {\partial z}{\partial t} = \frac {\partial f}{\partial x}\frac {\partial x}{\partial t} + \frac {\partial f}{\partial y}\frac {\partial y}{\partial t}\)</span></p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>由于 f(x,y) = f(g(s,t), h(s,t))，即 f 可以是两个变量 s 和 t 的函数，所以使用偏微分符号 <span class="arithmatex">\(\frac {\partial z}{\partial s}\)</span> 或 <span class="arithmatex">\(\frac {\partial z}{\partial t}\)</span></li>
+<li>由于 <span class="arithmatex">\(f(x,y) = f(g(s,t), h(s,t))\)</span>，即 f 可以是两个变量 s 和 t 的函数，所以使用偏微分符号 <span class="arithmatex">\(\frac {\partial z}{\partial s}\)</span> 或 <span class="arithmatex">\(\frac {\partial z}{\partial t}\)</span></li>
 <li>链式法则(情况 2)有些违反直觉，例如：<span class="arithmatex">\(\frac {\partial z}{\partial s} = \frac {\partial f}{\partial x}\frac {\partial x}{\partial s} + \frac {\partial f}{\partial y}\frac {\partial y}{\partial s} = 2\frac {\partial z}{\partial s}\)</span> （等式右边可能不正确？）</li>
 </ul>
 </div>
@@ -1609,16 +1838,19 @@
 <li>用“树图”的方式可以直观地表示 因变量，中间变量，独立变量 之间的关系（因变量作为这棵树的根结点）</li>
 </ul>
 </div>
-<div class="admonition 练习">
-<p class="admonition-title">练习</p>
-<ul>
-<li><span class="arithmatex">\(g(s,t)=f(s^2-t^2,t^2-s^2)\)</span> 且 f (关于s,t)可微，证明：<span class="arithmatex">\(t\frac {\partial g}{\partial s} + s\frac {\partial g}{\partial t}=0\)</span></li>
-<li>若 <span class="arithmatex">\(z=f(r^2+s^2, 2rs)\)</span>，求 (a) <span class="arithmatex">\(\frac {\partial z}{\partial r}\)</span>，(b) <span class="arithmatex">\(\frac {\partial ^2z}{\partial r^2}\)</span></li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(w=f(x,y,z,u),x=x(s,t),y=y(s,t),z=z(s,t),u=u(s,t)\)</span>，那么 (1) <span class="arithmatex">\(\frac{\partial w}{\partial s}=\frac{\partial w}{\partial x}\frac{\partial x}{\partial s}+\frac{\partial w}{\partial y}\frac{\partial y}{\partial s}+\frac{\partial w}{\partial z}\frac{\partial z}{\partial s}+\frac{\partial w}{\partial u}\frac{\partial u}{\partial s}\)</span>，(2) <span class="arithmatex">\(\frac{\partial w}{\partial t}=\frac{\partial w}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial w}{\partial y}\frac{\partial y}{\partial t}+\frac{\partial w}{\partial z}\frac{\partial z}{\partial t}+\frac{\partial w}{\partial u}\frac{\partial u}{\partial t}\)</span></li>
+<li>计算一般的偏微分总是会计算梯度向量 <span class="arithmatex">\(\nabla f\)</span>（参见[14.6]）的分量</li>
+<li><span class="arithmatex">\(g(s,t)=f(s^2-t^2,t^2-s^2)\)</span> 且 f 可微，那么 <span class="arithmatex">\(\frac{\partial g}{\partial s}=f_1'\cdot(2s)+f_2'\cdot(-2s)\)</span> 和 <span class="arithmatex">\(\frac{\partial g}{\partial t}=f_1'\cdot(-2t)+f_2'\cdot(2t)\)</span>，于是 <span class="arithmatex">\(t\frac{\partial g}{\partial s}+s\frac{\partial g}{\partial t}=0\)</span>（有时为了记号“严谨”，会设 <span class="arithmatex">\(x=s^2-t^2,y=t^2-s^2\)</span>，蕴含 <span class="arithmatex">\(f(x,y)=f(s^2-t^2,t^2-s^2)\)</span>，蕴含 <span class="arithmatex">\(f_1'=\frac{\partial f}{\partial x},f_2'=\frac{\partial f}{\partial y}\)</span>）</li>
+<li>假设 <span class="arithmatex">\(z=f(x,y)\)</span> 有二阶偏导数，且 <span class="arithmatex">\(x=r^2+s^2,y=2rs\)</span>，那么 <span class="arithmatex">\(\frac{\partial z}{\partial r}=f_1'\cdot(2r)+f_2'\cdot(2s)\)</span>，计算 <span class="arithmatex">\(\frac{\partial^2z}{\partial r^2}\)</span>：<ol>
+<li>普通做法：<span class="arithmatex">\(\frac{\partial^2z}{\partial r^2}=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial r}\right)=(f_{11}''\cdot(2r)+f_{12}''\cdot(2s))\cdot(2r)+f_1'\cdot(2)+(f_{21}''\cdot(2r)+f_{22}''\cdot(2s))\cdot(2s)+f_2'\cdot0\)</span> <span class="arithmatex">\(=4r^2f_{11}''+8rsf_{12}''+4s^2f_{22}''+2f_1'\)</span></li>
+<li>优化做法：<span class="arithmatex">\(\frac{\partial^2z}{\partial r^2}=\frac{\partial}{\partial r}\left(\frac{\partial z}{\partial r}\right)=(2rf_{11}''+2sf_{21}'')(2r)+(2rf_{12}''+2sf_{22}'')(2s)+2f_1'=4r^2f_{11}''+8rsf_{12}''+4s^2f_{22}''+2f_1'\)</span></li>
+</ol>
+</li>
+</ol>
 </div>
-<p>假设 F(x,y)=0 的方程定义了 y 关于 x 的可微隐函数（即 y=f(x) 使得对于 f 的定义域上的所有 x，均有 <span class="arithmatex">\(F(x,f(x))=0\)</span>）</p>
-<p>如果 F 可微，那么对 F(x,y)=0 两边对 x 求微分有：<span class="arithmatex">\(\frac {\partial F}{\partial x}\frac {d_x}{d_x} + \frac {\partial F}{\partial y}\frac {d_y}{d_x} = 0\)</span></p>
-<p>由于 <span class="arithmatex">\(\frac {d_x}{d_x}=1\)</span> 有 <span class="arithmatex">\(\frac {d_y}{d_x} = -\frac {\partial F/\partial x}{\partial F/\partial y} = -\frac {F_x}{F_y}\)</span> （<span class="arithmatex">\(F_y\ne 0\)</span>）</p>
 <div class="admonition note">
 <p class="admonition-title">隐函数导数(一元)</p>
 </div>
@@ -1626,16 +1858,98 @@
 <p>根据微积分定理，当 F 定义在一个 盘型域，它上面的点 (a, b) 有 <span class="arithmatex">\(F(a,b)=0, F_y(a, b)\ne 0\)</span>，而且 <span class="arithmatex">\(F_x\)</span> 和 <span class="arithmatex">\(F_y\)</span> 在盘型域中连续，那么方程 F(x,y)=0 在点 (a,b) 附近定义了一个 y 作为 x 的一个函数，且这个函数是可微的</p>
 <p>其偏导数为 <span class="arithmatex">\(\frac {d_y}{d_x} = -\frac {F_x}{F_y}\)</span></p>
 </blockquote>
-<p>假设 F(x,y,z)=0 的方程定义了 z 关于 x 和 y 的可微隐函数（即 z=f(x,y) 使得对于 f 的定义域上的所有 (x,y)，均有 <span class="arithmatex">\(F(x, y, f(x,y))=0\)</span>）</p>
-<p>如果 F 和 f 均可微，那么对 F(x,y,z)=0 两边对 x 求微分有：<span class="arithmatex">\(\frac {\partial F}{\partial x}\frac {\partial x}{\partial x} + \frac {\partial F}{\partial y}\frac {\partial y}{\partial x} + \frac {\partial F}{\partial z}\frac {\partial z}{\partial x} = 0\)</span></p>
-<p>由于 <span class="arithmatex">\(\frac {\partial x}{\partial x}=1\)</span>，<span class="arithmatex">\(\frac {\partial y}{\partial x}=0\)</span> 有 <span class="arithmatex">\(\frac {\partial z}{\partial x} = -\frac {\partial F/\partial x}{\partial F/\partial z} = -\frac {F_x}{F_z}\)</span> （<span class="arithmatex">\(F_z\ne 0\)</span>）</p>
-<p>同理有：<span class="arithmatex">\(\frac {\partial z}{\partial y} = -\frac {\partial F/\partial y}{\partial F/\partial z} = -\frac {F_y}{F_z}\)</span> （<span class="arithmatex">\(F_z\ne 0\)</span>）</p>
+<p><span class="arithmatex">\(F(x,y)=0\)</span> 两边对 x 求导，有 <span class="arithmatex">\(F_1'+F_2'\frac{dy}{dx}=0\)</span></p>
+<p>假设 <span class="arithmatex">\(F_2'\ne0\)</span>，有 <span class="arithmatex">\(\frac{dy}{dx}=-F_1'/F_2'\)</span>，<span class="arithmatex">\(\frac{\partial z}{\partial y}=-F_2'/F_3'\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">隐函数导数(二元)</p>
 </div>
 <blockquote>
 <p>根据微积分定理，当 F 定义在一个包含 (a,b,c) 的 球体 上，它上面的点 (a,b,c) 有 <span class="arithmatex">\(F(a,b,c)=0, F_z(a, b, c)\ne 0\)</span>，而且 <span class="arithmatex">\(F_x(a,b,c)\ne 0\)</span>，而且 <span class="arithmatex">\(F_x,F_y,F_z\)</span> 在球体内部连续，那么方程 F(x,y,z)=0 在点 (a,b,c) 附近定义了一个 z 作为 x 和 y 的一个函数，且这个函数是可微的</p>
 <p>其偏导数为 <span class="arithmatex">\(\frac {\partial z}{\partial x} = -\frac {F_x}{F_z}\)</span>，<span class="arithmatex">\(\frac {\partial z}{\partial y} = -\frac {F_y}{F_z}\)</span></p>
+</blockquote>
+<p><span class="arithmatex">\(F(x,y,z)=0\)</span> 分别对 <span class="arithmatex">\(x,y\)</span> 求偏导数，有 <span class="arithmatex">\(\begin{cases}F_1'+F_3'\frac{\partial z}{\partial x}=0\\F_2'+F_3'\frac{\partial z}{\partial y}=0\end{cases}\)</span>，</p>
+<p>假设 <span class="arithmatex">\(F_3'\ne0\)</span>，有 <span class="arithmatex">\(\frac{\partial z}{\partial x}=-F_1'/F_3'\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(x^3+y^3=6xy,y=f(x)\)</span>，设 <span class="arithmatex">\(F(x,y)=x^3+y^3-6xy\)</span>，于是 <span class="arithmatex">\(y'=-\frac{3x^2-6y}{3y^2-6x}=\frac{2y-x^2}{y^2-2x}\)</span></li>
+<li>假设 <span class="arithmatex">\(x^3+y^3+z^3+6xyz=1,z=f(x,y)\)</span>，设 <span class="arithmatex">\(F(x,y,z)=x^3+y^3+z^3+6xyz-1\)</span>，于是 <span class="arithmatex">\(\frac{\partial z}{\partial x}=-\frac{3x^2+6yz}{3z^2+6xy}=-\frac{x^2+2yz}{z^2+2xy}\)</span>，<span class="arithmatex">\(\frac{\partial z}{\partial y}=-\frac{3y^2+6xz}{3z^2+6xy}=-\frac{y^2+2xz}{z^2+2xy}\)</span></li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>二元链式法则（递归定义）：假设 f 是二元的，那么 <span class="arithmatex">\(z=f(x,y)\)</span> 对 t 的偏导数为 <span class="arithmatex">\(\frac{\partial z}{\partial t}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial t}\)</span> 或 <span class="arithmatex">\(\frac{\partial z}{\partial t}=f_1'\frac{\partial x}{\partial t}+f_2'\frac{\partial y}{\partial t}\)</span><ol>
+<li>特别的，若 <span class="arithmatex">\(z=(f\circ(g,h))(t)\)</span>，那么 <span class="arithmatex">\(\frac{dz}{dt}=\frac{\partial z}{\partial x}\frac{d x}{d_t}+\frac{\partial z}{\partial y}\frac{d y}{d_t}\)</span></li>
+</ol>
+</li>
+<li>多元链式法则：假设 f 是 n 元的，若 <span class="arithmatex">\(z=(f\circ(x_1,\cdots,x_n))(t_1,\cdots,t_m)\)</span>，那么 <span class="arithmatex">\(\forall i=1..m,\frac{\partial z}{\partial t_i}=\sum\limits_{j=1}^n\frac{\partial z}{\partial x_k}\frac{\partial x_k}{\partial t_i}\)</span> 或者 <span class="arithmatex">\(\frac{\partial z}{\partial t_i}=\sum\limits_{k=1}^nf_k'\frac{\partial x_k}{\partial t_i}\)</span><ol>
+<li>其中，函数 <span class="arithmatex">\(\frac{\partial z}{\partial t_i}\)</span> 可表示为 <span class="arithmatex">\(\frac{\partial z}{\partial t_i}=g(x_1,\cdots,x_n,t_i)\)</span></li>
+<li>二阶偏导数：<span class="arithmatex">\(\frac{\partial^2z}{\partial t_j\partial t_i}=\mathbf u^T\begin{bmatrix}\frac{\partial x_1}{\partial t_i}\frac{\partial}{\partial x_1}\\\vdots\\\frac{\partial x_n}{\partial t_i}\frac{\partial}{\partial x_n}\end{bmatrix}\begin{bmatrix}\frac{\partial x_1}{\partial t_j}f_1'&amp;\cdots&amp;\frac{\partial x_n}{\partial t_j}f_n'\end{bmatrix}\mathbf u+\sum\limits_{k=1}^n\frac{\partial^2x_k}{\partial t_j\partial t_i}f_k'\)</span>，其中 <span class="arithmatex">\(\mathbf u^T=[1\cdots1]\)</span></li>
+</ol>
+</li>
+<li>隐函数偏导数：（更具实用性的隐函数求导，参见[3.6]）<ol>
+<li>对于 <span class="arithmatex">\(F(x,y)=0,y=f(x)\)</span>，有 <span class="arithmatex">\(\frac{dy}{dx}=-F_1'/F_2'\)</span></li>
+<li>对于 <span class="arithmatex">\(F(x,y,z)=0,z=f(x,y)\)</span>，有 <span class="arithmatex">\(\frac{\partial z}{\partial x}=-F_1'/F_3',\frac{\partial z}{\partial y}=-F_2'/F_3'\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>微分应当分为“直接微分”（如：<span class="arithmatex">\(f_i'=\frac{\partial f}{\partial x_i}\)</span>）和“路径微分”（如：<span class="arithmatex">\(\frac{\partial f}{\partial t}=f_i'\frac{\partial x_i}{\partial t}\)</span>）</li>
+<li>多元链式法则重用推论：假设 <span class="arithmatex">\(z=f(x,y),x=g(s,t),y=h(s,t)\)</span>，那么 <span class="arithmatex">\(\frac{\partial z}{\partial s}=[x_s'~~y_s']\begin{bmatrix}f_1'\\f_2'\end{bmatrix}\)</span>，<span class="arithmatex">\(\frac{\partial^2z}{\partial s\partial t}=[x_s'x_t'~~x_s'y_t'+x_t'y_s'~~y_s'y_t'~~x_{st}''~~y_{st}'']\begin{bmatrix}f_{11}''\\f_{12}''\\f_{22}''\\f_1'\\f_2'\end{bmatrix}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>判断题<ol>
+<li>假设一个 n 元函数间接依赖于 m 个变量，对 m 个变量进行二阶偏微分，可以得到项数为 <span class="arithmatex">\(\frac{n(n+1)}2+n=\frac{n(n+3)}2\)</span> 的式子(Y)</li>
+</ol>
+</li>
+<li>若二元函数 f 满足 <span class="arithmatex">\(\forall t,f(tx,ty)=t^nf(x,y)\)</span>，那么称 f 是<strong> n 阶齐次的</strong><ol>
+<li>证明：<span class="arithmatex">\(f(x,y)=x^2y+2xy^2+5y^3\)</span></li>
+<li>证明：[线性代数]中的 n 元二次型是 n 阶齐次的</li>
+<li>证明：若 f 是 n 阶齐次函数，那么 f 是偏微分方程 <span class="arithmatex">\(x\frac{\partial f}{\partial x}+y\frac{\partial f}{\partial y}=nf(x,y)\)</span> 的一个解</li>
+<li>证明：若 f 是 n 阶齐次的，那么 f 是偏微分方程 <span class="arithmatex">\(x^2\frac{\partial^2f}{\partial x^2}+2xy\frac{\partial^2f}{\partial x\partial y}+y^2\frac{\partial^2f}{\partial y^2}=n(n-1)f(x,y)\)</span> 的一个解</li>
+<li>证明：若 f 是 n 阶齐次的，那么 f 是偏微分方程 <span class="arithmatex">\(f_x(tx,ty)=t^{n-1}f_x(x,y)\)</span> 的一个解</li>
+</ol>
+</li>
+<li>（环形依赖难题）假设 <span class="arithmatex">\(F(x,y,z)=0\)</span> 定义了如下三个函数：<span class="arithmatex">\(z=f(x,y),y=g(x,z),x=h(y,z)\)</span>，并且 <span class="arithmatex">\(F_x',F_y',F_z'\)</span> 均不为 0，证明：<span class="arithmatex">\(\frac{\partial z}{\partial x}\frac{\partial x}{\partial y}\frac{\partial y}{\partial z}=-1\)</span></li>
+<li>假设 <span class="arithmatex">\(z=e^r\cos\theta,r=st,\theta=\sqrt{s^2+t^2}\)</span>，计算 <span class="arithmatex">\(\frac{\partial z}{\partial s},\frac{\partial z}{\partial t}\)</span></li>
+<li>（极坐标/柱面坐标的偏微分）假设 <span class="arithmatex">\(z=f(x,y),x=r\cos\theta,y=r\sin\theta\)</span>，<ol>
+<li>计算 <span class="arithmatex">\(\frac{\partial z}{\partial r},\frac{\partial z}{\partial \theta},\frac{\partial^2z}{\partial r^2},\frac{\partial^2z}{\partial\theta^2},\frac{\partial^2z}{\partial r\partial\theta}\)</span></li>
+<li>证明：<span class="arithmatex">\(\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2=\left(\frac{\partial z}{\partial r}\right)^2+\frac1{r^2}\left(\frac{\partial z}{\partial\theta}\right)^2\)</span></li>
+<li>证明：<span class="arithmatex">\(\frac{\partial^2z}{\partial x^2}+\frac{\partial^2z}{\partial y^2}=\frac{\partial^2z}{\partial r^2}+\frac1{r^2}\frac{\partial^2z}{\partial \theta^2}+\frac1r\frac{\partial z}{\partial r}\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(3) 若 <span class="arithmatex">\(z=f(x,y)\)</span>，根据隐函数求导法则 <span class="arithmatex">\(\frac{\partial z}{\partial x}=-F_1'/F_3'\)</span></p>
+<p>同样地，若 <span class="arithmatex">\(y=g(x,z)\)</span> 或 <span class="arithmatex">\(x=h(y,z)\)</span>，那么 <span class="arithmatex">\(\frac{\partial x}{\partial y}=-F_2'/F_1'\)</span>，<span class="arithmatex">\(\frac{\partial y}{\partial z}=-F_3'/F_2'\)</span></p>
+<p>于是 <span class="arithmatex">\(\frac{\partial z}{\partial x}\frac{\partial x}{\partial y}\frac{\partial y}{\partial z}=\left(-\frac{F_1'}{F_3'}\right)\left(-\frac{F_2'}{F_1'}\right)\left(-\frac{F_3'}{F_2'}\right)=-1\)</span></p>
+<p>(4) <span class="arithmatex">\(\frac{\partial z}{\partial s}=e^r\cos\theta\cdot t-e^r\sin\theta\cdot\frac s{\sqrt{s^2+t^2}}\)</span></p>
+<p><span class="arithmatex">\(\frac{\partial z}{\partial t}=e^r\cos\theta\cdot s-e^r\sin\theta\cdot\frac t{\sqrt{s^2+t^2}}\)</span></p>
+<p>(5.1) 根据[14.5二级结论]有：</p>
+<ol>
+<li><span class="arithmatex">\(\frac{\partial z}{\partial r}=\cos\theta f_1'+\sin\theta f_2'\)</span></li>
+<li><span class="arithmatex">\(\frac{\partial z}{\partial \theta}=-r\sin\theta f_1'+r\cos\theta f_2'\)</span></li>
+<li><span class="arithmatex">\(\frac{\partial^2z}{\partial r^2}=\cos^2\theta f_{11}''+2\cos\theta\sin\theta f_{12}''+\sin^2\theta f_{22}''+0\cdot f_1'+0\cdot f_2'\)</span></li>
+<li><span class="arithmatex">\(\frac{\partial^2z}{\partial\theta^2}=r^2\sin^2\theta f_{11}''-2r^2\cos\theta\sin\theta f_{12}''+r^2\cos^2\theta f_{22}''+-\sin\theta f_1'+\cos\theta f_2'\)</span></li>
+<li><span class="arithmatex">\(\frac{\partial^2z}{\partial r\partial\theta}=-r\sin\theta\cos\theta f_{11}''+r(\cos^2\theta-\sin^2\theta)f_{12}''+r\sin\theta\cos\theta f_{22}''-r\sin\theta f_1'-r\cos\theta f_2'\)</span></li>
+</ol>
 </blockquote>
 <h3 id="6">6.方向导数 &amp; 梯度向量</h3>
 <p>我们希望找到 <span class="arithmatex">\((x_0,y_0)\)</span> 附近，沿着任意方向的单位向量 <span class="arithmatex">\(\mathbf u=\langle a, b\rangle\)</span> 中 z=f(x,y) 的变化率，</p>
@@ -1657,16 +1971,6 @@
 <li><span class="arithmatex">\(\displaystyle D_{\mathbf j} f = f_y(x_0,y_0) = \lim\limits_{h\to 0}\frac {f(x_0,y_0+h)-f(x_0,y_0)}h\)</span>（<span class="arithmatex">\(\mathbf j = \langle 0,1 \rangle\)</span>）</li>
 </ul>
 </div>
-<div class="admonition 定理">
-<p class="admonition-title">定理</p>
-</div>
-<blockquote>
-<p>如果 f 是 x 和 y 的一个可微函数，那么对于任何一个单位向量 <span class="arithmatex">\(\mathbf u = \langle a,b \rangle\)</span>，f 都有一个方向导数，其表达式为：</p>
-<p><span class="arithmatex">\(D_{\mathbf u}f(x,y) = f_x(x,y)a + f_y(x,y)b\)</span></p>
-<p>证明详见 P255</p>
-<p>若 <span class="arithmatex">\(a^2+b^2=1\)</span>(即 <span class="arithmatex">\(\mathbf u\)</span> 为单位向量)，我们构造 <span class="arithmatex">\(a=\cos \theta, b=\sin \theta\)</span>，其中 <span class="arithmatex">\(\theta\)</span> 为 <span class="arithmatex">\(\mathbf u\)</span> 与 x 轴正方向的夹角</p>
-<p><span class="arithmatex">\(D_{\mathbf u}f(x,y) = f_x(x,y)\cos\theta + f_y(x,y)\sin\theta\)</span></p>
-</blockquote>
 <div class="admonition 梯度向量">
 <p class="admonition-title">梯度向量</p>
 </div>
@@ -1674,11 +1978,27 @@
 <p>如果 f 是 x 和 y 的一个两个变量函数，则 f 的梯度就是向量函数 <span class="arithmatex">\(\mathbf {grad} f\)</span> 或 <span class="arithmatex">\(\nabla f\)</span>：</p>
 <p><span class="arithmatex">\(\nabla f(x,y) = \langle f_x(x,y), f_y(x,y)\rangle = \frac {\partial f}{\partial x}\mathbf i + \frac {\partial f}{\partial y}\mathbf j\)</span></p>
 </blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>方向导数可以表示为：<span class="arithmatex">\(D_{\mathbf u}f(x,y) = \nabla f\cdot \mathbf u\)</span></li>
-</ul>
+<div class="admonition 定理">
+<p class="admonition-title">定理</p>
+</div>
+<blockquote>
+<p>如果 f 是 x 和 y 的一个可微函数，那么对于任何一个单位向量 <span class="arithmatex">\(\mathbf u = \langle a,b \rangle\)</span>，f 都有一个方向导数，其表达式为：</p>
+<p><span class="arithmatex">\(D_{\mathbf u}f(x,y) = f_x(x,y)a + f_y(x,y)b\)</span></p>
+<p>即 <span class="arithmatex">\(D_{\mathbf u}f(x,y) = \nabla f\cdot \mathbf u\)</span></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>若 <span class="arithmatex">\(a^2+b^2=1\)</span>(即 <span class="arithmatex">\(\mathbf u\)</span> 为单位向量)，我们构造 <span class="arithmatex">\(a=\cos \theta, b=\sin \theta\)</span>，其中 <span class="arithmatex">\(\theta\)</span> 为 <span class="arithmatex">\(\mathbf u\)</span> 与 x 轴正方向的夹角；那么 <span class="arithmatex">\(D_{\mathbf u}f(x,y) = f_x(x,y)\cos\theta + f_y(x,y)\sin\theta\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(f(x,y)=x^3-3xy+4y^2\)</span>，<span class="arithmatex">\(\mathbf u=(\cos\frac\pi6,\sin\frac\pi6)\)</span>，那么 <span class="arithmatex">\(D_{\bf u}f(x,y)=(f_x(x,y),f_y(x,y))\cdot\mathbf u=(3x^2-3y,8y-3x)\cdot(\sqrt3/2,1/2)=\frac{\sqrt3}2(3x^2-3y)+\frac12(8y-3x)\)</span></li>
+<li>假设 <span class="arithmatex">\(f(x,y)=\sin x+e^{xy}\)</span>，那么 <span class="arithmatex">\(\nabla f(x,y)=(\cos x+ye^{xy},xe^{xy})\)</span></li>
+<li>计算 <span class="arithmatex">\(f(x,y)=x^2y^3-4y\)</span> 在 <span class="arithmatex">\((2,-1)\)</span> 对于 <span class="arithmatex">\(\mathbf u=(2,5)\)</span> 的方向导数：<span class="arithmatex">\(D_{\bf u}f(2,-1)=(-4,8)\cdot(2,5)/\sqrt{2^2+5^2}=32/\sqrt{29}\)</span></li>
+</ol>
 </div>
 <div class="admonition 三个变量函数的情况">
 <p class="admonition-title">三个变量函数的情况</p>
@@ -1697,6 +2017,12 @@
 </li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算 <span class="arithmatex">\(f(x,y,z)=x\sin yz\)</span> 在 <span class="arithmatex">\((1,3,0)\)</span> 处沿着 <span class="arithmatex">\(\mathbf u=(1,2,-1)\)</span> 的方向导数：<span class="arithmatex">\(\text D_{\bf u}f=(\sin yz,xz\cos yz,xy\cos yz)\cdot\mathbf u/\|\mathbf u\|\)</span>，于是 <span class="arithmatex">\(\text D_{\bf u}f(1,3,0)=(0,0,3)\cdot(1,2,-1)/\sqrt6=-3/\sqrt6\)</span></li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">n 个变量函数的情况</p>
 </div>
@@ -1708,15 +2034,23 @@
 <li><span class="arithmatex">\(D_{\mathbf u}f(\mathbf {x_0}) = \nabla f(\mathbf {x_0})\cdot \mathbf u\)</span></li>
 </ol>
 </blockquote>
-<p><span class="arithmatex">\(D_{\mathbf u}f = \nabla f\cdot \mathbf u = |\nabla f| |\mathbf u|\cos\theta\)</span>（<span class="arithmatex">\(\mathbf u\)</span> 是单位向量）</p>
-<p><span class="arithmatex">\(\max\{D_{\mathbf u}f\} = |\nabla f|\)</span>，仅当 <span class="arithmatex">\(\theta=0\)</span>（即<span class="arithmatex">\(\nabla f\)</span> 与 <span class="arithmatex">\(\mathbf u\)</span> 同向）</p>
 <div class="admonition 方向导数最大值">
 <p class="admonition-title">方向导数最大值</p>
 </div>
 <blockquote>
-<p>设 f 是一个二元函数 或 三元函数</p>
-<p>方向导数 <span class="arithmatex">\(\max\{D_{\mathbf u}f(\mathbf x)\} = |\nabla f(\mathbf x)|\)</span>，并且当 <span class="arithmatex">\(\mathbf u\)</span> 与梯度向量 <span class="arithmatex">\(\nabla f(x)\)</span> 同向时取到该最大值</p>
+<p>假设 f 是 n 元的，<span class="arithmatex">\(\mathbf a\in\mathbb R^n\)</span>，</p>
+<p>那么<span class="arithmatex">\(\bf a\)</span> 处的方向导数的最大值为 <span class="arithmatex">\(\max\limits_{\mathbf u\in\mathbb R^n}\{\text D_{\bf u}f(\mathbf a)\}=\|\nabla f(\mathbf a)\|\)</span>，即 <span class="arithmatex">\(\arg\max\limits_{\mathbf u\in\mathbb R^n}\text D_{\bf u}f(\mathbf a)=\nabla f(\mathbf a)\)</span></p>
 </blockquote>
+<p><span class="arithmatex">\(\forall\mathbf u\in\mathbb R^n\)</span>，<span class="arithmatex">\(\text D_{\bf u}f=\frac{\nabla f\cdot\mathbf u}{\|\mathbf u\|}\le\|\nabla f\|\|\mathbf u\|/\|\mathbf u\|=\|\nabla f\|\)</span></p>
+<p>而 <span class="arithmatex">\(\text D_{\nabla f}f=\frac{\nabla f\cdot\nabla f}{\|\nabla f\|}=\|\nabla f\|\)</span></p>
+<p>于是当 <span class="arithmatex">\(\mathbf u=\nabla f\)</span> 时，<span class="arithmatex">\(\text D_{\bf u}f\)</span> 有最大值，即 <span class="arithmatex">\(\arg\max\limits_{\mathbf u\in\mathbb R^n}\text D_{\bf u}f=\nabla f\)</span></p>
+<p><span class="arithmatex">\(\blacksquare\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(f(x,y)=xe^y\)</span> 在 <span class="arithmatex">\((2,0)\)</span> 上方向导数的最大值为 <span class="arithmatex">\(\text D_{\nabla f}f(2,0)=\|\nabla f(2,0)\|=\|(e^0,2e^0)\|=\sqrt5\)</span></li>
+</ol>
+</div>
 <p>假设 S 是 <span class="arithmatex">\(F(x,y,z)=k\)</span> 确定的曲面（即 三元函数的等值面/等高面 或 二元函数的图像）</p>
 <p><span class="arithmatex">\(F(x,y,z)=k\)</span> 可以表示为 <span class="arithmatex">\(F(\mathbf r(t))=F(x(t),y(t),z(t))=k\)</span>，</p>
 <p>两边对 t 求微分有：<span class="arithmatex">\(\frac {\partial F}{\partial x}\frac {d_x}{d_t} + \frac {\partial F}{\partial y}\frac {d_y}{d_t} + \frac {\partial F}{\partial z}\frac {d_z}{d_t} = 0\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\nabla F \cdot \mathbf r'(t) = 0\)</span></p>
@@ -1744,6 +2078,12 @@
 </li>
 </ol>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li><span class="arithmatex">\(\frac{x^2}4+y^2+\frac{z^2}9=3\)</span> 在 <span class="arithmatex">\((-2,1,-3)\)</span> 的切平面为 $$</li>
+</ol>
+</div>
 <div class="admonition 梯度向量的含义">
 <p class="admonition-title">梯度向量的含义</p>
 <ul>
@@ -1751,6 +2091,54 @@
 <li><span class="arithmatex">\(\nabla F(\mathbf {x_0})\)</span> 正交于 f 过点 <span class="arithmatex">\(P(\mathbf {x_0})\)</span> 的等值区域 S</li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>方向导数：假设 <span class="arithmatex">\(\mathbf a,\mathbf u\in\mathbb R^n\)</span>，函数 f 是 n 元可微的，那么 f 在点 <span class="arithmatex">\(\bf a\)</span> 上关于 <span class="arithmatex">\(\mathbf u\)</span> 的<strong>方向导数</strong>为 <span class="arithmatex">\(\text D_{\bf u}f(\mathbf a)=\lim\limits_{t\to0}\frac{f(\mathbf a+t\mathbf u)-f(\mathbf a)}t\)</span>（注：方向导数可以称为<strong>变化率</strong>）<ol>
+<li>若 <span class="arithmatex">\(n=2\)</span>，那么 (1) <span class="arithmatex">\(\text D_{\bf u}f(a_1,a_2)=\lim\limits_{t\to0}\frac{f(a_1+tu_1,a_2+tu_2)-f(a_1,a_2)}t\)</span>，(2) <span class="arithmatex">\(\text D_{\bf i}f(a_1,a_2)=f_x'(a_1,a_2)\)</span>，(3) <span class="arithmatex">\(\text D_{\bf j}f(a_1,a_2)=f_y'(a_1,a_2)\)</span></li>
+</ol>
+</li>
+<li>梯度：假设函数 f 是 n 元可微的，那么 f 的<strong>梯度</strong>定义为 <span class="arithmatex">\(\nabla f=(f_1',\cdots,f_n')\)</span>，或者记为 <span class="arithmatex">\(\mathbf{grad}f\)</span></li>
+<li>定理：假设函数 f 是 n 元可微的，那么 <span class="arithmatex">\(\forall\mathbf u\in\mathbb R^n\)</span>，有 <span class="arithmatex">\(\text D_{\bf u}f=\frac{(\nabla f)\cdot \mathbf u}{\|\mathbf u\|}\)</span></li>
+<li>方向导数的最值：假设 <span class="arithmatex">\(\mathbf a\in\mathbb R^n\)</span>，并且 f 是 n 元可微的，那么 f 在 <span class="arithmatex">\(\bf a\)</span> 处沿着 <span class="arithmatex">\(\nabla f\)</span> 方向时，方向导数取最大值，即 <span class="arithmatex">\(\max\limits_{\mathbf u\in\mathbb R^n}\{\text D_{\bf u}f(\mathbf a)\}=\|\nabla f(\mathbf a)\|\)</span> 或 <span class="arithmatex">\(\arg\max\limits_{\mathbf u\in\mathbb R^n}\text D_{\bf u}f(\mathbf a)=\nabla f(\mathbf a)\)</span></li>
+<li>曲面的切平面，法线：在 <span class="arithmatex">\(\mathbb R^3\)</span> 上，<ol>
+<li>曲面 <span class="arithmatex">\(f(x,y,z)=0\)</span> 在 <span class="arithmatex">\((a,b,c)\)</span> 处的切平面为 <span class="arithmatex">\(\nabla f(a,b,c)\cdot(x-a,y-b,z-c)=0\)</span>，法线为 <span class="arithmatex">\(\mathbf u=(a,b,c)+t\nabla f(a,b,c)\)</span>（其中 <span class="arithmatex">\(\mathbf u=(x,y,z)\)</span> 是未知向量）</li>
+<li>函数曲面 <span class="arithmatex">\(z=f(x,y)\)</span> 在 <span class="arithmatex">\((a,b,c)\)</span> 处的切平面为 <span class="arithmatex">\((f_1'(a,b,c),f_2'(a,b,c),-1)\cdot(x-a,y-b,z-c)=0\)</span>，法线为 <span class="arithmatex">\(\mathbf u=(a,b,c)+t(f_1'(a,b,c),f_2'(a,b,c),-1)\)</span></li>
+</ol>
+</li>
+<li>切空间：假设 <span class="arithmatex">\(\mathbf a\in\mathbb R^n\)</span>，f 是 n 元的，那么几何空间 <span class="arithmatex">\(f(\mathbf x)=0\)</span> 在 <span class="arithmatex">\(\bf x=a\)</span> 处的<strong>切空间</strong>为 <span class="arithmatex">\(\nabla f(\mathbf a)\cdot(\mathbf x-\mathbf a)=0\)</span><ol>
+<li>若 <span class="arithmatex">\(n=2\)</span>，那么 <span class="arithmatex">\(f(x,y)=0\)</span> 在 <span class="arithmatex">\((a,b)\)</span> 的切线为 <span class="arithmatex">\(\nabla f(a,b)\cdot(x-a,y-b)=0\)</span></li>
+<li>若 <span class="arithmatex">\(n=3\)</span>，那么 <span class="arithmatex">\(f(x,y,z)=0\)</span> 在 <span class="arithmatex">\((a,b,c)\)</span> 处的切平面为 <span class="arithmatex">\(\nabla f(a,b,c)\cdot(x-a,y-b,z-c)=0\)</span></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>梯度算子的性质：假设 <span class="arithmatex">\(u,v\)</span> 是 n 元可微的，<span class="arithmatex">\(c\in\mathbb R\)</span>，那么 (1) <span class="arithmatex">\(\nabla(cu)=c\nabla u\)</span>，(2) <span class="arithmatex">\(\nabla(uv)=u\nabla v+v\nabla u\)</span>，(3) <span class="arithmatex">\(\nabla\frac uv=\frac{v\nabla u-u\nabla v}{v^2}\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>证明：<span class="arithmatex">\(\sqrt x+\sqrt y+\sqrt z=\sqrt d\)</span> 在任意一处的切平面在三个坐标轴的截距之和为 d</li>
+<li>计算[10.5]讨论的曲线的切线，以及[12.6]讨论的曲面的切平面</li>
+<li>如何计算函数 f 的梯度 <span class="arithmatex">\(\nabla f\)</span>？如何计算 f 在 <span class="arithmatex">\(\bf a\)</span> 处沿着向量 <span class="arithmatex">\(\bf u\)</span> 的方向导数 <span class="arithmatex">\(\text D_{\bf u}(\mathbf a)\)</span>？方向导数和梯度有什么关系？</li>
+<li>梯度的最大值，最小值如何计算？</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1) 该平面在任意一处 <span class="arithmatex">\((a,b,c)\)</span> 的切平面为 <span class="arithmatex">\((1/\sqrt a,1/\sqrt b,1/\sqrt c)\cdot(x-a,y-b,z-c)=0\)</span>，即 <span class="arithmatex">\((1/\sqrt a,1/\sqrt b,1/\sqrt c)\cdot(x,y,z)=(1/\sqrt a,1/\sqrt b,1/\sqrt c)\cdot(a,b,c)\)</span>，即 <span class="arithmatex">\(x/\sqrt a+y/\sqrt b+z/\sqrt c=\sqrt a+\sqrt b+\sqrt c\)</span></p>
+<p>3 个截距之和为 <span class="arithmatex">\(\sqrt a(\sqrt a+\sqrt b+\sqrt c)+\sqrt b(\sqrt a+\sqrt b+\sqrt c)+\sqrt c(\sqrt a+\sqrt b+\sqrt c)=(\sqrt a+\sqrt b+\sqrt c)^2=(\sqrt d)^2=d\)</span></p>
+</blockquote>
 <h3 id="7">7.多元函数的 极大值 &amp; 极小值</h3>
 <p>正如第 4 章所见，导数的主要用途之一是计算 极值 或 最值</p>
 <div class="admonition 定义">
@@ -1793,6 +2181,20 @@
 <p>部分证明详见：P274</p>
 </blockquote>
 <div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>讨论 <span class="arithmatex">\(f(x,y)=x^4+y^4-4xy+1\)</span> 的极值，鞍点：<ol>
+<li><span class="arithmatex">\(\nabla f(x,y)=(4x^3-4y,4y^3-4x)\)</span>，解方程 <span class="arithmatex">\(\nabla f(x,y)=\mathbf0\)</span> 有 <span class="arithmatex">\((x,y)=\)</span> <span class="arithmatex">\((0,0)\)</span> 或 <span class="arithmatex">\((1,1)\)</span> 或 <span class="arithmatex">\((-1,-1)\)</span></li>
+<li>记 <span class="arithmatex">\(g(x,y)=f_{11}''(x,y)f_{22}''(x,y)-(f_{12}'')^2(x,y)=(12x^2)(12y^2)-(-4)^2=4^2(9x^2y^2-1)\)</span></li>
+<li><span class="arithmatex">\(f_{11}''(0,0)=0\)</span>，于是 <span class="arithmatex">\((0,0)\)</span> 是鞍点</li>
+<li><span class="arithmatex">\(f_{11}''(1,1)=12&gt;0,g(1,1)=128&gt;0\)</span>，于是 <span class="arithmatex">\((1,1)\)</span> 是极小值点</li>
+<li><span class="arithmatex">\(f_{11}''(-1,-1)=12&gt;0,g(-1,-1)=128&gt;0\)</span>，于是 <span class="arithmatex">\((-1,-1)\)</span> 是极小值点</li>
+</ol>
+</li>
+<li>借助计算器对 <span class="arithmatex">\(f(x,y)=10x^2y-5x^2-4y^2-x^4-2y^4\)</span> 的临界点进行分类</li>
+</ol>
+</div>
+<div class="admonition tip">
 <p class="admonition-title">应用</p>
 <ul>
 <li>点 到 平面 <span class="arithmatex">\(ax+by+cz+d=0\)</span> 的距离可以使用上述定理转化为极值问题</li>
@@ -1817,8 +2219,64 @@
 <li>步骤 1 和 2 的最大的值为最大值，最小的则是最小值</li>
 </ol>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(f(x,y)=x^2-2xy+2y\)</span>，<span class="arithmatex">\(D_f=[0,3]\times[0,2]\)</span>，计算 f 的最值：<ol>
+<li><span class="arithmatex">\(\nabla f(x,y)=(2x-2y,2-2x)\)</span>，解方程 <span class="arithmatex">\(\nabla f(x,y)=0\)</span> 有 <span class="arithmatex">\((x,y)=(1,1)\)</span>，而 <span class="arithmatex">\(f(1,1)=1\)</span>（而 <span class="arithmatex">\(g(x,y)=(f_{11}''f_{22}''-(f_{12}'')^2)(x,y)=2\cdot(-2)-(-2)^2=-8&lt;0\)</span>，<span class="arithmatex">\(f_{11}''=2&gt;0\)</span>，于是 <span class="arithmatex">\((1,1)\)</span> 是极小值点）</li>
+<li>若 <span class="arithmatex">\(x=0\)</span>，那么 <span class="arithmatex">\(f(x,y)=2y\)</span>，此时极小值，极大值分别为 <span class="arithmatex">\(f(0,0)=0,(0,2)=4\)</span></li>
+<li>若 <span class="arithmatex">\(x=3\)</span>，那么 <span class="arithmatex">\(f(x,y)=9-4y\)</span>，此时极小值，极大值分别为 <span class="arithmatex">\(f(3,2)=1,f(3,0)=9\)</span></li>
+<li>若 <span class="arithmatex">\(y=0\)</span>，那么 <span class="arithmatex">\(f(x,y)=x^2\)</span>，此时极小值，极大值分别为 <span class="arithmatex">\(f(0,0)=0,f(3,0)=9\)</span></li>
+<li>若 <span class="arithmatex">\(y=2\)</span>，那么 <span class="arithmatex">\(f(x,y)=x^2-4x+4=(x-2)^2\)</span>，此时极小值，极大值分别为 <span class="arithmatex">\(f(2,2)=0,f(0,2)=4\)</span></li>
+<li>通过比较上述 1 个临界值和 8 个边界值，f 的最小值为 <span class="arithmatex">\(f(0,0)=f(2,2)=0\)</span>，最大值为 <span class="arithmatex">\(f(3,0)=9\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>最值，最值点：假设 f 是 n 元的<ol>
+<li>若 <span class="arithmatex">\(\exists\mathbf u\in\mathbb R^n,\forall\mathbf a\in\mathbb R^n\)</span> 使得 <span class="arithmatex">\(f(\mathbf u)\ge f(\mathbf a)\)</span>，那么 <span class="arithmatex">\(\mathbf u\)</span> 称为 f 的<strong>最大值点</strong>，<span class="arithmatex">\(f(\mathbf u)\)</span> 称为 f 的<strong>最大值</strong>，记 <span class="arithmatex">\(\mathbf u=\arg\max\limits_{\mathbf a\in D_f}f(\mathbf a)\)</span></li>
+<li>若 <span class="arithmatex">\(\exists\mathbf u\in\mathbb R^n,\forall\mathbf a\in\mathbb R^n\)</span> 使得 <span class="arithmatex">\(f(\mathbf u)\le f(\mathbf a)\)</span>，那么 <span class="arithmatex">\(\mathbf u\)</span> 称为 f 的<strong>最小值点</strong>，<span class="arithmatex">\(f(\mathbf u)\)</span> 称为 f 的<strong>最小值</strong>，记 <span class="arithmatex">\(\mathbf u=\arg\min\limits_{\mathbf a\in D_f}f(\mathbf a)\)</span></li>
+</ol>
+</li>
+<li>极值，极值点：假设 f 是 n 元的，那么 <span class="arithmatex">\(\begin{cases}\mathbf u是极大值点&amp;\mathbf u=\arg\max\limits_{\mathbf x\in U(\mathbf a,\delta)}f(\mathbf x)\\\mathbf u是极小值点&amp;\mathbf u=\arg\min\limits_{\mathbf x\in U(\mathbf a,\delta)}f(\mathbf x)\end{cases}\)</span></li>
+<li>费马定理（n 元的情况）：假设 f 是 n 元的，若 <span class="arithmatex">\(\bf a\)</span> 是 f 的极值点，那么 <span class="arithmatex">\(\nabla f(\mathbf a)=\mathbf 0\)</span></li>
+<li>临界点（驻点），鞍点：假设 f 是 n 元的，若 <span class="arithmatex">\(\nabla f(\mathbf a)=\mathbf 0\)</span> 或 <span class="arithmatex">\(\nabla f(\mathbf a)\)</span> 不存在，那么 <span class="arithmatex">\(\bf a\)</span> 称为 f 的<strong>临界点</strong>或<strong>驻点</strong>；又若 <span class="arithmatex">\(\bf a\)</span> 不是极值点，那么 <span class="arithmatex">\(\bf a\)</span> 又称<strong>鞍点</strong>（注：极值点是临界的非鞍点）</li>
+<li>（极值的）二阶导数判别法：假设 f 是二元的，<span class="arithmatex">\(A(\mathbf u)=\begin{bmatrix}f_{11}''(\mathbf u)&amp;f_{12}''(\mathbf u)\\f_{21}(\mathbf u)&amp;f_{22}''(\mathbf u)\end{bmatrix}\)</span>，若 <span class="arithmatex">\(\nabla f(\mathbf u)=\mathbf 0\)</span>，那么 <span class="arithmatex">\(\begin{cases}\mathbf u是f的一个极大值点&amp;|A(\mathbf u)|&gt;0,f_{11}''&lt;0\\\mathbf u是f的一个极小值点&amp;|A(\mathbf u)|&gt;0,f_{11}''&gt;0\\\mathbf u是f的一个鞍点&amp;|A(\mathbf u)|&lt;0\\不提供信息&amp;|A(\mathbf u)=0|\end{cases}\)</span></li>
+<li>最值存在定理：假设 f 是二元的，若 <span class="arithmatex">\(D_f\)</span> 是<strong>有界闭集</strong>，那么 <span class="arithmatex">\(\exists\mathbf u_1,\mathbf u_2\in\mathbb R^2\)</span> 使得 <span class="arithmatex">\(\mathbf u_1,\mathbf u_2\)</span> 分别是 f 的最大值点，最小值点</li>
+<li>最值判定定理：假设 f 是定义在有界闭集上的函数，那么 f 的最值点是 f 的 (1) 边界点 和 (2) 极值点 中的最值点（有时无需结合极值判别法来获取极值点，而只需讨论边界点和临界点）</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">二级结论</p>
+</div>
+<blockquote>
+<ol>
+<li>特殊点分类：<span class="arithmatex">\(\begin{cases}临界点(驻点)\begin{cases}极值点\\鞍点\end{cases}\\边界点\end{cases}\)</span>；最值点是极值点或边界点</li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>计算三角形闭区域内函数的最值：<ol>
+<li><span class="arithmatex">\(f(x,y)=1+4x-5y\)</span>，<span class="arithmatex">\(D_f\)</span> 以 <span class="arithmatex">\((0,0),(2,0),(0,3)\)</span> 为顶点</li>
+<li><span class="arithmatex">\(f(x,y)=3+xy-x-2y\)</span>，<span class="arithmatex">\(D_f\)</span> 以 <span class="arithmatex">\((1,0),(5,0),(1,4)\)</span> 为顶点</li>
+</ol>
+</li>
+<li>计算 <span class="arithmatex">\(f(x,y)=x^3-3x-y^3+12y\)</span> 的最值，其中 <span class="arithmatex">\(D_f\)</span> 是以 <span class="arithmatex">\((-2,3),(2,3),(2,2),(-2,-2)\)</span> 为顶点的四边形</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<ol>
+<li></li>
+</ol>
 <h3 id="8lagrange">8.lagrange 乘子</h3>
-<p>证明：lagrange 乘子算法：</p>
 <div class="admonition note">
 <p class="admonition-title">lagrange 乘子算法</p>
 </div>
@@ -1837,11 +2295,23 @@
 <p><span class="arithmatex">\(\nabla f = \lambda \nabla g\)</span> 和 g(x,y,z)=k 等价于：</p>
 <p><span class="arithmatex">\(\displaystyle \begin{cases} f_x = \lambda g_x \\ f_y = \lambda g_y \\ f_z = \lambda g_z \\ g(x,y,z)=k \end{cases}\)</span></p>
 </blockquote>
-<div class="admonition note">
-<p class="admonition-title">应用</p>
-<ul>
-<li>f 在圆盘域的边界点上的极值</li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>假设 <span class="arithmatex">\(x,y,z\ne0\)</span>，计算 <span class="arithmatex">\(f(x,y,z)=xyz\)</span> 在 <span class="arithmatex">\(xy+2(x+y)z-12=0\)</span> 的条件下的最大值：由[拉格朗日乘子算法]，<span class="arithmatex">\(\exists\lambda\)</span> 使得 <span class="arithmatex">\(\nabla f(x,y,z)=\lambda\nabla g(x,y,z)\)</span>，即 <span class="arithmatex">\((yz,xz,xy)=\lambda(y+2z,x+2z,2(x+y))\)</span>，解得 <span class="arithmatex">\((x,y,z)=(2,2,1)\)</span>，所以最值为 <span class="arithmatex">\(f(2,2,1)=4\)</span>（注：）</li>
+<li>计算 <span class="arithmatex">\(f(x,y)=x^2+2y^2\)</span> 在 <span class="arithmatex">\(x^2+y^2=1\)</span> 的条件下的极值：<span class="arithmatex">\(\exists\lambda\)</span> 使得 <span class="arithmatex">\(\nabla f(x,y)=\lambda\nabla g(x,y)\)</span>，即 <span class="arithmatex">\((2x,4y)=\lambda(2x,2y)\)</span><ol>
+<li>若 <span class="arithmatex">\(x\ne0\)</span>，蕴含 <span class="arithmatex">\(\lambda=1\)</span>，蕴含 <span class="arithmatex">\(y=0\)</span>，蕴含 <span class="arithmatex">\(x=\pm1\)</span></li>
+<li>若 <span class="arithmatex">\(y\ne0\)</span>，蕴含 <span class="arithmatex">\(\lambda=2\)</span>，蕴含 <span class="arithmatex">\(x=0\)</span>，蕴含 <span class="arithmatex">\(y=\pm1\)</span></li>
+<li>于是 f 在 <span class="arithmatex">\((\pm1,0)\)</span> 处取最小值，在 <span class="arithmatex">\((0,\pm1)\)</span> 处最大值</li>
+</ol>
+</li>
+<li>假设 <span class="arithmatex">\(f(x,y)=x^2+2y^2\)</span>，并且 <span class="arithmatex">\(D_f=\{(x,y)|~x^2+y^2\le1\}\)</span> 的最值<ol>
+<li>讨论临界点：假设 <span class="arithmatex">\(\nabla f(x,y)=(2x,4y)\)</span>，解方程 <span class="arithmatex">\(\nabla f(x,y)=0\)</span> 得 <span class="arithmatex">\((x,y)=(0,0)\)</span>，<span class="arithmatex">\(f(0,0)=0\)</span></li>
+<li>讨论边界点：<span class="arithmatex">\(\exists\lambda,\nabla f(x,y)=\lambda\nabla g(x,y)\)</span>，即 <span class="arithmatex">\((2x,4y)=\lambda(2x,2y)\)</span>，类似于 (2) 有 <span class="arithmatex">\((x,y)=(\pm1,\pm1)\)</span></li>
+<li>于是 f 的最小值为 <span class="arithmatex">\(f(0,0)=0\)</span>，最大值为 <span class="arithmatex">\(f(0,\pm1)=2\)</span></li>
+</ol>
+</li>
+</ol>
 </div>
 <div class="admonition note">
 <p class="admonition-title">两个约束条件下的 lagrange 乘子算法</p>
@@ -1851,16 +2321,111 @@
 <p>存在两个常数 <span class="arithmatex">\(\lambda\)</span> 和 <span class="arithmatex">\(\mu\)</span>（lagrange 乘子），使得 <span class="arithmatex">\(\nabla f = \lambda \nabla g + \mu \nabla h\)</span></p>
 <p>其等价于 <span class="arithmatex">\(\displaystyle \begin{cases} f_x = \lambda g_x + \mu h_x \\ f_y = \lambda g_y + \mu h_y \\ f_z = \lambda g_z + \mu h_z \\ g(x,y,z)=k \\ h(x,y,z)=c \end{cases}\)</span></p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">例子</p>
+<ol>
+<li>计算 <span class="arithmatex">\(f(x,y,z)=x+2y+3z\)</span> 在限制 <span class="arithmatex">\(g(x,y,z)=x-y+z-1=0,h(x,y,z)=x^2+y^2-1=0\)</span> 下的最大值：<ol>
+<li><span class="arithmatex">\(\exists u,v\)</span> 使得 <span class="arithmatex">\(\nabla f=u\nabla g+v\nabla h\)</span>，即 <span class="arithmatex">\((1,2,3)=u(1,-1,1)+v(2x,2y,0)\)</span></li>
+<li>初步解得 <span class="arithmatex">\(x=\pm2/\sqrt{29},y=\pm5/\sqrt{29}\)</span>，而 <span class="arithmatex">\(z=1-x+y\)</span>，可以计算得到最大值为 <span class="arithmatex">\(3+\sqrt{29}\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition note">
 <p class="admonition-title">扩展到 n 个变量</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+</div>
+<blockquote>
+<ol>
+<li>拉格朗日乘子算法：假设 <span class="arithmatex">\(c,d\in\mathbb R\)</span>，f 是三元的，<span class="arithmatex">\(\nabla g\ne0\)</span><ol>
+<li>若 <span class="arithmatex">\(\mathbf u=\arg\max\limits_{\mathbf x\in D_f,g(\mathbf x)=c}f(\mathbf x)\)</span>，那么 <span class="arithmatex">\(\exists\lambda\in\mathbb R\)</span>，使得 <span class="arithmatex">\(\begin{cases}\nabla f(\mathbf u)=\lambda\nabla g(\mathbf u)\\g(\mathbf u)=c\end{cases}\)</span></li>
+<li>若 <span class="arithmatex">\(\mathbf u=\arg\max\limits_{\mathbf x\in D_f,g(\mathbf x)=c,h(\mathbf x)=d}f(\mathbf x)\)</span>，那么 <span class="arithmatex">\(\exists\lambda,\mu\in\mathbb R\)</span> 使得 <span class="arithmatex">\(\begin{cases}\nabla f(\mathbf u)=\lambda\nabla g(\mathbf u)+\nabla h(\mathbf u)\\g(\mathbf u)=c\\h(\mathbf u)=d\end{cases}\)</span></li>
+<li>注：在实际运用该算法时，注意先假设 <span class="arithmatex">\(\nabla g\)</span> 的各个分量非零时的情况</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">一级结论</p>
+</div>
+<ol>
+<li></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">练习</p>
+<ol>
+<li>（几何平均值，算术平均值）假设 <span class="arithmatex">\(\mathbf x\in\mathbb R^n,c\in\mathbb R\)</span><ol>
+<li>证明：<span class="arithmatex">\(f(\mathbf x)=\sqrt[n]{\prod\limits_{i=1}^nx_i}\)</span> 在 <span class="arithmatex">\(\sum\limits_{i=1}^nx_i=c\)</span> 的限制下的最大值为 <span class="arithmatex">\(\frac cn\)</span></li>
+<li>由 (1) 可知 <span class="arithmatex">\(\forall\mathbf x\in\mathbb R^n,\sqrt[n]{\prod\limits_{i=1}^nx_i}\le\frac1n\sum\limits_{i=1}^n\)</span>，讨论何时等式成立？</li>
+</ol>
+</li>
+<li>（柯西-施瓦茨不等式）假设 <span class="arithmatex">\(\mathbf x,\mathbf y,\mathbf a,\mathbf b\in\mathbb R^n\)</span><ol>
+<li>证明：<span class="arithmatex">\(f(\mathbf x,\mathbf y)\)</span> 在 <span class="arithmatex">\(\sum\limits_{i=1}^nx_i^2=1,\sum\limits_{i=1}^ny_i^2=1\)</span> 的限制条件下的最大值为 1</li>
+<li>令 <span class="arithmatex">\(\forall i=1..n,x_i=\frac{a_i}{\sqrt{\sum\limits_{j=1}^na_j^2}},y_i=\frac{b_i}{\sqrt{\sum\limits_{j=1}^nb_j^2}}\)</span>，证明：<span class="arithmatex">\(\sum\limits_{i=1}^na_ib_i\le\sqrt{\sum\limits_{i=1}^na_i^2}\sqrt{\sum\limits_{i=1}^nb_i^2}\)</span></li>
+</ol>
+</li>
+<li>计算 <span class="arithmatex">\(\mathbb R^3\)</span> 中的椭圆曲线 <span class="arithmatex">\(4x-3y+8z=5,z^2=x^2+y^2\)</span> 的最高点，最低点</li>
+<li>计算 <span class="arithmatex">\(\mathbb R^3\)</span> 中的椭圆曲线 <span class="arithmatex">\(x+y+2z=2,z=x^2+y^2\)</span> 离原点的最近点，最远点</li>
+<li>长方形盒子表面积为 a，所有边周长为 b，计算盒子体积的最大值</li>
+<li>证明：矩形周长为 p 时，矩形为正方形时面积最大</li>
+<li>证明：三角形周长为 p 时，三边相等时面积最大（海伦公式：三角形面积为 <span class="arithmatex">\(\sqrt{s(s-x)(s-y)(s-z)}\)</span>，其中 <span class="arithmatex">\(s=p/2\)</span>，<span class="arithmatex">\(x,y,z\)</span> 分别为三角形的三条边）</li>
+<li>计算给定条件下的最值：（假设 <span class="arithmatex">\(g,h\)</span> 为限制函数）<ol>
+<li><span class="arithmatex">\(f(x,y)=x^2-y^2,x^2+y^2=1\)</span></li>
+<li><span class="arithmatex">\(f(x,y,z)=x^2+y^2+z^2,x^4+y^4+z^4=1\)</span></li>
+<li><span class="arithmatex">\(f(x,y,z)=x^2y^2z^2,x^2+y^2+z^2=1\)</span></li>
+<li><span class="arithmatex">\(f(x,y,z)=yz+xy,xy=1,y^2+z^2=1\)</span></li>
+</ol>
+</li>
+<li>计算 f 的最值：<ol>
+<li><span class="arithmatex">\(f(x,y)=2x^2+3y^2-4x-5,D_f=\{(x,y)|~x^2+y^2\le16\}\)</span></li>
+<li><span class="arithmatex">\(f(x,y)=e^{-xy},D_f=\{(x,y)|~x^2+4y^2\le1\}\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+</div>
+<blockquote>
+<p>(1.1) <span class="arithmatex">\(\exists\lambda,\nabla f(\mathbf x)=\lambda\nabla g(\mathbf x)\)</span>，即 <span class="arithmatex">\(\sqrt[n]{\prod\limits_{i=1}^nx_i}\left(\frac1{nx_1},\cdots,\frac1{nx_n}\right)=\lambda(1,\cdots,1)\)</span></p>
+<p>解得 <span class="arithmatex">\(x_1=\cdots=x_n\)</span>，即 <span class="arithmatex">\(\forall i=1..n,x_i=\frac cn\)</span></p>
+<p>(1.2) 仅当 <span class="arithmatex">\(\forall i\ne j,x_i=x_j\)</span> 时成立</p>
+<p>(3) 假设 <span class="arithmatex">\(f(x,y,z)=z,g(x,y,z)=4x-3y+8z-5,h(x,y,z)=x^2+y^2-z^2\)</span>，</p>
+<p>于是 <span class="arithmatex">\(\exists u,v\)</span> 使得 <span class="arithmatex">\(\nabla f(x,y,z)=u\nabla g(x,y,z)+v\nabla h(x,y,z)\)</span>，即 <span class="arithmatex">\((0,0,1)=u(4,-3,8)+v(2x,2y,-2z)\)</span>，消去 <span class="arithmatex">\(u,v\)</span> 得 <span class="arithmatex">\(x=-\frac43y\)</span></p>
+<p>然后解方程组 <span class="arithmatex">\(\begin{cases}x=-\frac43y\\4x-3y+8z=5\\x^2+y^2=z^2\end{cases}\)</span> 得 <span class="arithmatex">\((x,y,z)=\)</span> <span class="arithmatex">\((\frac4{13},-\frac3{13},\frac5{13})\)</span> 或 <span class="arithmatex">\((-\frac43,1,\frac53)\)</span></p>
+<p>所以椭圆上的最高点为 <span class="arithmatex">\((-\frac43,1,\frac53)\)</span>，高度为 <span class="arithmatex">\(\frac53\)</span></p>
+<p>椭圆上的最低点为 <span class="arithmatex">\((\frac4{13},-\frac3{13},\frac5{13})\)</span>，高度为 <span class="arithmatex">\(\frac5{13}\)</span></p>
+<p>(4) 记 <span class="arithmatex">\(f(x,y,z)=x^2+y^2+z^2,g(x,y,z)=x+y+2z-2,h(x,y,z)=x^2+y^2-z\)</span></p>
+<p><span class="arithmatex">\(\exists u,v\)</span> 使得 <span class="arithmatex">\(\nabla f(x,y,z)=u\nabla g(x,y,z)+v\nabla h(x,y,z)\)</span>，即 <span class="arithmatex">\((2x,2y,2z)=u(1,1,2)+v(2x,2y,-1)\)</span> 或 <span class="arithmatex">\(\begin{bmatrix}1&amp;2x\\1&amp;2y\\2&amp;-1\end{bmatrix}\begin{bmatrix}u\\v\end{bmatrix}=\begin{bmatrix}2x\\2y\\2z\end{bmatrix}\)</span>，后者对系数进行初等变换有 <span class="arithmatex">\(\begin{bmatrix}1&amp;2x&amp;2x\\1&amp;2y&amp;2y\\2&amp;-1&amp;2z\end{bmatrix}\sim\begin{bmatrix}1&amp;2x&amp;2x\\0&amp;y-x&amp;y-x\\0&amp;1+4x&amp;4x-2z\end{bmatrix}\)</span></p>
+<ol>
+<li>若 <span class="arithmatex">\(y\ne x\)</span>，蕴含 <span class="arithmatex">\(v=1\)</span>，那么 <span class="arithmatex">\(1+4x=4x-2z\)</span>，即 <span class="arithmatex">\(z=-1/2\)</span>，而与 <span class="arithmatex">\(z=x^2+y^2\ge0\)</span> 矛盾</li>
+<li>若 <span class="arithmatex">\(y=x\)</span>，可以得到方程组 <span class="arithmatex">\(\begin{cases}x+z=1\\z=2x^2\end{cases}\)</span>，结合 <span class="arithmatex">\(y=x\)</span> 的假设，解得 <span class="arithmatex">\((x,y,z)=\)</span> <span class="arithmatex">\((-1,-1,2)\)</span> 或 <span class="arithmatex">\((1/2,1/2,1/2)\)</span></li>
+</ol>
+<p>于是椭圆上离原点最远的点是 <span class="arithmatex">\((1/2,1/2,1/2)\)</span>，此时距离为 <span class="arithmatex">\(\sqrt{f(1/2,1/2,1/2)}=\sqrt3/2\)</span></p>
+<p>椭圆上离原点最远的点是 <span class="arithmatex">\((-1,-1,2)\)</span>，此时距离为 <span class="arithmatex">\(\sqrt{f(-1,-1,2)}=\sqrt6\)</span></p>
+<p>(5) 记 <span class="arithmatex">\(f(x,y,z)=xyz,2(xy+yz+zx)=a,2(x+y+z)=b\)</span></p>
+<p>存在 <span class="arithmatex">\(u,v\)</span> 使得 <span class="arithmatex">\(\nabla f(x,y,z)=u\nabla g(x,y,z)+v\nabla h(x,y,z)\)</span>，容易解得 <span class="arithmatex">\(x=y\)</span> 或 <span class="arithmatex">\(y=z\)</span> 或 <span class="arithmatex">\(x=z\)</span></p>
+<p>...</p>
+<p>(8.1) <span class="arithmatex">\(f(x,y)=x^2-y^2,g(x,y)=x^2+y^2-1\)</span></p>
+<p><span class="arithmatex">\(\exists u,\nabla f=u\nabla g\)</span>，即 <span class="arithmatex">\((2x,-2y)=u(2x,2y)\)</span>，解得 <span class="arithmatex">\((x,y)=\)</span> <span class="arithmatex">\((0,\pm1)\)</span> 或 <span class="arithmatex">\((\pm1,0)\)</span></p>
+<p>于是 f 的最大值为 <span class="arithmatex">\(f(\pm1,0)=1\)</span>，最小值为 <span class="arithmatex">\(f(0,\pm1)=-1\)</span></p>
+<p>(8.2) <span class="arithmatex">\(f(x,y,z)=x^2+y^2+z^2,x^4+y^4+z^4=1\)</span></p>
+<p><span class="arithmatex">\(\exists u,\nabla f=u\nabla g\)</span>，即 <span class="arithmatex">\((2x,2y,2z)=u(4x^3,4y^3,4z^3)\)</span></p>
+<ol>
+<li>若 <span class="arithmatex">\(x\ne0\)</span>，可以得到四种可能：<span class="arithmatex">\(x^2=y^2=z^2\)</span> 或 <span class="arithmatex">\(x^2=y^2,z=0\)</span> 或 <span class="arithmatex">\(y=0,x^2=z^2\)</span> 或 <span class="arithmatex">\(y=0,z=0\)</span>，可以解得 <span class="arithmatex">\((x,y,z)=\)</span> <span class="arithmatex">\((\pm\frac1{\sqrt[4]3},\pm\frac1{\sqrt[4]3},\pm\frac1{\sqrt[4]3})\)</span> 或 <span class="arithmatex">\((\pm\frac1{\sqrt[4]2},\pm\frac1{\sqrt[4]2},0)\)</span> 或 <span class="arithmatex">\((\pm\frac1{\sqrt[4]2},0,\pm\frac1{\sqrt[4]2})\)</span> 或 <span class="arithmatex">\((\pm1,0,0)\)</span>？</li>
+<li><span class="arithmatex">\(x=0\)</span> 或 <span class="arithmatex">\(y\ne0\)</span> 或 <span class="arithmatex">\(y=0\)</span> 或 <span class="arithmatex">\(z\ne0\)</span> 或 <span class="arithmatex">\(z=0\)</span> 时，可以得到类似的解？</li>
+</ol>
+<p>可以得到 f 的最大值为 <span class="arithmatex">\(f(\pm\frac1{\sqrt[4]2},\pm\frac1{\sqrt[4]2},\pm\frac1{\sqrt[4]2})=\sqrt3\)</span>，最小值为 <span class="arithmatex">\(f(\pm1,0,0)=1\)</span></p>
+</blockquote>
 </article>
 </div>
 </div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             回到页面顶部
-          </button>
+          </a>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
@@ -1869,20 +2434,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                上一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  上一页
+                </span>
                 13.向量函数
               </div>
 </div>
 </a>
 <a aria-label="下一页: 15.多重积分" class="md-footer__link md-footer__link--next" href="../15.%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/" rel="next">
 <div class="md-footer__title">
-<span class="md-footer__direction">
-                下一页
-              </span>
 <div class="md-ellipsis">
+<span class="md-footer__direction">
+                  下一页
+                </span>
                 15.多重积分
               </div>
 </div>
@@ -1900,10 +2465,10 @@
 </div>
 <div class="md-social">
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
 <a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
-<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
 </a>
 </div>
 </div>
@@ -1913,8 +2478,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
 <script src="../../res/extra.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
